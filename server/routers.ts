@@ -6,6 +6,7 @@ import { z } from "zod";
 import { getOrCreateProfile, updateProfile, getProfileByUserId } from "./db";
 import { stripeRouter } from "./stripeRouter";
 import { adminRouter } from "./adminRouter";
+import { aiCoachRouter } from "./aiCoachRouter";
 
 export const appRouter = router({
   system: systemRouter,
@@ -140,6 +141,9 @@ export const appRouter = router({
 
   // Admin Router
   admin: adminRouter,
+
+  // AI Coach Router
+  aiCoach: aiCoachRouter,
 });
 
 export type AppRouter = typeof appRouter;

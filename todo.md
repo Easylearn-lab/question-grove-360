@@ -83,7 +83,8 @@
 - [x] Implement subscription management (cancel, upgrade, downgrade)
 - [ ] Build payment failure retry logic
 - [x] Add invoice/receipt download functionality
-- [ ] Create subscription status page
+- [x] Create subscription status page
+- [x] Generate and email full PDF report (pdfGenerator.ts)
 
 ## Phase 10: SCA AI Consultation Simulator
 - [x] Design SCA case selection interface
@@ -109,12 +110,12 @@
 
 ## Phase 12: AI Coach360 Assistant
 - [x] Design chat interface component with message history (AICoachChat component)
-- [ ] Implement persistent conversation storage
-- [ ] Build Claude AI integration with user performance context injection
-- [ ] Create accessibility from every page (floating chat icon)
-- [ ] Implement streaming message support
+- [x] Implement persistent conversation storage (userChatHistory table + aiCoachRouter)
+- [x] Build Claude AI integration with user performance context injection (aiCoachRouter)
+- [x] Create accessibility from every page (floating chat icon - AICoachWidget)
+- [x] Implement streaming message support (via Streamdown)
 - [x] Add markdown rendering for AI responses
-- [ ] Build conversation history management
+- [x] Build conversation history management (getChatHistory procedure)
 
 ## Phase 13: Polish & Optimization
 - [x] Implement comprehensive error handling and user feedback (errorHandler.ts)
@@ -124,8 +125,8 @@
 - [x] Add comprehensive test coverage with Vitest (features.test.ts)
 - [ ] Optimize mobile responsiveness
 - [x] Implement analytics tracking (analytics.ts)
-- [ ] Add security hardening (CSRF, XSS prevention, rate limiting)
-- [ ] Create comprehensive documentation and deployment guide
+- [x] Add security hardening (CSRF, XSS prevention, rate limiting - security.ts)
+- [x] Create comprehensive documentation and deployment guide (README_FINAL.md)
 
 ## Phase 14: Content Seeding & Launch Prep
 - [ ] Create seed script for initial admin user

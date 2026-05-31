@@ -17,6 +17,7 @@ import AdminPanel from "./pages/AdminPanel";
 import AICoach from "./pages/AICoach";
 import Payments from "./pages/Payments";
 import ActiveMockExam from "./pages/ActiveMockExam";
+import { AICoachWidget } from "./components/AICoachWidget";
 
 function Router() {
   // make sure to consider if you need authentication for certain routes
@@ -57,6 +58,7 @@ function App() {
         <TooltipProvider>
           <Toaster />
           <Router />
+          <AICoachWidget />
         </TooltipProvider>
       </ThemeProvider>
     </ErrorBoundary>

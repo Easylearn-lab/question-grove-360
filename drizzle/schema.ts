@@ -417,3 +417,15 @@ export const userSrsProgress = mysqlTable("user_srs_progress", {
 
 export type UserSrsProgress = typeof userSrsProgress.$inferSelect;
 export type InsertUserSrsProgress = typeof userSrsProgress.$inferInsert;
+
+// User Chat History (for AI Coach360)
+export const userChatHistory = mysqlTable("user_chat_history", {
+  id: int("id").autoincrement().primaryKey(),
+  userId: int("userId").notNull().references(() => users.id),
+  role: varchar("role", { length: 50 }).notNull(), // 'user' or 'assistant'
+  message: text("message").notNull(),
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+});
+
+export type UserChatHistory = typeof userChatHistory.$inferSelect;
+export type InsertUserChatHistory = typeof userChatHistory.$inferInsert;
