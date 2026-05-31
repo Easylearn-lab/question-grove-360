@@ -11,6 +11,10 @@ import QuestionBank from "./pages/QuestionBank";
 import MockExams from "./pages/MockExams";
 import Note360 from "./pages/Note360";
 import PatternRecognition from "./pages/PatternRecognition";
+import SCASimulator from "./pages/SCASimulator";
+import Pricing from "./pages/Pricing";
+import AdminPanel from "./pages/AdminPanel";
+import AICoach from "./pages/AICoach";
 
 function Router() {
   // make sure to consider if you need authentication for certain routes
@@ -23,6 +27,10 @@ function Router() {
       <Route path={"/mocks"} component={MockExams} />
       <Route path={"/notes"} component={Note360} />
       <Route path={"/flashcards"} component={PatternRecognition} />
+      <Route path={"/sca"} component={SCASimulator} />
+      <Route path={"/pricing"} component={Pricing} />
+      <Route path={"/admin"} component={AdminPanel} />
+      <Route path={"/coach"} component={AICoach} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />

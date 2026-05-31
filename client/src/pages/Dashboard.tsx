@@ -141,7 +141,7 @@ export default function Dashboard() {
         </div>
 
         {/* SCA Simulator */}
-        <Card className="mt-8 p-8 border-slate-200 bg-gradient-to-r from-teal-50 to-blue-50 hover:shadow-lg transition-all cursor-pointer">
+        <Card className="mt-8 p-8 border-slate-200 bg-gradient-to-r from-teal-50 to-blue-50 hover:shadow-lg transition-all cursor-pointer" onClick={() => navigate("/sca")}>
           <div className="flex items-start justify-between">
             <div className="flex-1">
               <div className="flex items-center gap-3 mb-3">
@@ -156,6 +156,30 @@ export default function Dashboard() {
             </div>
             <div className="hidden md:block w-32 h-32 bg-gradient-to-br from-teal-200 to-blue-200 rounded-2xl opacity-20"></div>
           </div>
+        </Card>
+
+        {/* AI Coach */}
+        <Card className="mt-8 p-8 border-slate-200 hover:shadow-lg transition-all cursor-pointer" onClick={() => navigate("/coach")}>
+          <div className="flex items-start justify-between mb-4">
+            <Zap className="w-12 h-12 text-purple-600" />
+          </div>
+          <h3 className="text-2xl font-bold text-slate-900 mb-2">AI Coach360</h3>
+          <p className="text-slate-600 mb-6">Get personalized study guidance powered by your complete learning profile</p>
+          <Button className="bg-purple-600 hover:bg-purple-700 text-white w-full">
+            Chat with Coach
+          </Button>
+        </Card>
+
+        {/* Pricing */}
+        <Card className="mt-8 p-8 border-slate-200 hover:shadow-lg transition-all cursor-pointer" onClick={() => navigate("/pricing")}>
+          <div className="flex items-start justify-between mb-4">
+            <BarChart3 className="w-12 h-12 text-green-600" />
+          </div>
+          <h3 className="text-2xl font-bold text-slate-900 mb-2">Upgrade Your Plan</h3>
+          <p className="text-slate-600 mb-6">Unlock premium features and accelerate your exam preparation</p>
+          <Button className="bg-green-600 hover:bg-green-700 text-white w-full">
+            View Plans
+          </Button>
         </Card>
       </main>
     </div>
