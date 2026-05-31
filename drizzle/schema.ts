@@ -40,6 +40,11 @@ export const profiles = mysqlTable("profiles", {
   dailyQuestionGoal: int("dailyQuestionGoal").default(30),
   weeklyHourGoal: int("weeklyHourGoal").default(10),
   leaderboardOptIn: boolean("leaderboardOptIn").default(false),
+  stripeCustomerId: varchar("stripeCustomerId", { length: 255 }),
+  stripeSubscriptionId: varchar("stripeSubscriptionId", { length: 255 }),
+  subscriptionStatus: varchar("subscriptionStatus", { length: 50 }).default("inactive"),
+  subscriptionPlan: varchar("subscriptionPlan", { length: 50 }),
+  trialEndsAt: timestamp("trialEndsAt"),
   createdAt: timestamp("createdAt").defaultNow().notNull(),
   updatedAt: timestamp("updatedAt").defaultNow().onUpdateNow().notNull(),
 });

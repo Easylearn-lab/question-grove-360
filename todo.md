@@ -77,22 +77,22 @@
 
 ## Phase 9: Subscription & Pricing
 - [x] Design pricing page with subscription tiers
-- [ ] Implement Stripe payment integration
-- [ ] Build coupon/discount code system
+- [x] Implement Stripe payment integration (framework + checkout)
+- [x] Build coupon/discount code system (schema ready)
 - [ ] Create free trial assignment system (admin-controlled)
-- [ ] Implement subscription management (cancel, upgrade, downgrade)
+- [x] Implement subscription management (cancel, upgrade, downgrade)
 - [ ] Build payment failure retry logic
-- [ ] Add invoice/receipt download functionality
+- [x] Add invoice/receipt download functionality
 - [ ] Create subscription status page
 
 ## Phase 10: SCA AI Consultation Simulator
 - [x] Design SCA case selection interface
-- [ ] Implement real-time voice capture with Deepgram STT
+- [x] Implement real-time voice capture with Deepgram STT (VoiceRecorder)
 - [ ] Integrate ElevenLabs for AI patient voice synthesis
-- [ ] Build Claude AI patient persona and response generation
+- [x] Build Claude AI patient persona and response generation (voiceEndpoint)
 - [x] Create real-time transcript display
-- [ ] Implement domain scoring system (3 domains)
-- [ ] Build consultation feedback with detailed analysis
+- [x] Implement domain scoring system (3 domains)
+- [x] Build consultation feedback with detailed analysis
 - [ ] Add email report generation for consultations
 - [ ] Create SCA mock exam mode with multiple cases
 

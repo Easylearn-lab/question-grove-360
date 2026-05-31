@@ -15,6 +15,7 @@ import SCASimulator from "./pages/SCASimulator";
 import Pricing from "./pages/Pricing";
 import AdminPanel from "./pages/AdminPanel";
 import AICoach from "./pages/AICoach";
+import Payments from "./pages/Payments";
 
 function Router() {
   // make sure to consider if you need authentication for certain routes
@@ -31,6 +32,7 @@ function Router() {
       <Route path={"/pricing"} component={Pricing} />
       <Route path={"/admin"} component={AdminPanel} />
       <Route path={"/coach"} component={AICoach} />
+      <Route path={"/payments"} component={Payments} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />
