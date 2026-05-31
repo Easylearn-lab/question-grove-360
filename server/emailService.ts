@@ -1,0 +1,245 @@
+import { storagePut } from './storage';
+
+interface ExamReport {
+  userId: number;
+  userEmail: string;
+  userName: string;
+  examName: string;
+  score: number;
+  totalQuestions: number;
+  accuracy: number;
+  specialtyBreakdown: Record<string, number>;
+  completedAt: Date;
+  pdfUrl?: string;
+}
+
+interface ConsultationReport {
+  userId: number;
+  userEmail: string;
+  userName: string;
+  caseTitle: string;
+  transcript: string;
+  domainScores: Record<string, number>;
+  feedback: string;
+  completedAt: Date;
+  pdfUrl?: string;
+}
+
+/**
+ * Send exam report email with PDF attachment
+ */
+export async function sendExamReportEmail(report: ExamReport) {
+  try {
+    // Generate PDF report
+    const pdfBuffer = await generateExamPDF(report);
+    
+    // Upload PDF to storage
+    const { url: pdfUrl } = await storagePut(
+      `reports/exam-${report.userId}-${Date.now()}.pdf`,
+      pdfBuffer,
+      'application/pdf'
+    );
+
+    // Prepare email content
+    const emailContent = `
+Dear ${report.userName},
+
+Congratulations on completing the ${report.examName} mock exam!
+
+**Your Results:**
+- Score: ${report.score}/${report.totalQuestions}
+- Accuracy: ${report.accuracy}%
+- Completed: ${report.completedAt.toLocaleDateString()}
+
+**Specialty Breakdown:**
+${Object.entries(report.specialtyBreakdown)
+  .map(([specialty, score]) => `- ${specialty}: ${score}%`)
+  .join('\n')}
+
+Your detailed report is attached. Review the areas where you need improvement and focus your study accordingly.
+
+Best regards,
+Question Grove 360 Team
+    `;
+
+    // Send email via Resend
+    const response = await fetch('https://api.resend.com/emails', {
+      method: 'POST',
+      headers: {
+        'Authorization': `Bearer ${process.env.RESEND_API_KEY}`,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        from: 'noreply@questiongrove360.com',
+        to: report.userEmail,
+        subject: `Your ${report.examName} Results - ${report.accuracy}% Accuracy`,
+        html: emailContent,
+        attachments: [
+          {
+            filename: `exam-report-${report.examName}.pdf`,
+            content: pdfBuffer.toString('base64'),
+          },
+        ],
+      }),
+    });
+
+    if (!response.ok) {
+      throw new Error(`Failed to send email: ${response.statusText}`);
+    }
+
+    return { success: true, pdfUrl };
+  } catch (error) {
+    console.error('Error sending exam report email:', error);
+    throw error;
+  }
+}
+
+/**
+ * Send consultation report email with feedback
+ */
+export async function sendConsultationReportEmail(report: ConsultationReport) {
+  try {
+    // Generate PDF report
+    const pdfBuffer = await generateConsultationPDF(report);
+    
+    // Upload PDF to storage
+    const { url: pdfUrl } = await storagePut(
+      `reports/consultation-${report.userId}-${Date.now()}.pdf`,
+      pdfBuffer,
+      'application/pdf'
+    );
+
+    // Prepare email content
+    const emailContent = `
+Dear ${report.userName},
+
+Thank you for completing the SCA consultation simulation: ${report.caseTitle}
+
+**Your Performance:**
+${Object.entries(report.domainScores)
+  .map(([domain, score]) => `- ${domain}: ${score}/10`)
+  .join('\n')}
+
+**Feedback:**
+${report.feedback}
+
+Your detailed report is attached. Use this feedback to improve your clinical skills and prepare for the actual exam.
+
+Best regards,
+Question Grove 360 Team
+    `;
+
+    // Send email via Resend
+    const response = await fetch('https://api.resend.com/emails', {
+      method: 'POST',
+      headers: {
+        'Authorization': `Bearer ${process.env.RESEND_API_KEY}`,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        from: 'noreply@questiongrove360.com',
+        to: report.userEmail,
+        subject: `Your SCA Consultation Results - ${report.caseTitle}`,
+        html: emailContent,
+        attachments: [
+          {
+            filename: `consultation-report-${report.caseTitle}.pdf`,
+            content: pdfBuffer.toString('base64'),
+          },
+        ],
+      }),
+    });
+
+    if (!response.ok) {
+      throw new Error(`Failed to send email: ${response.statusText}`);
+    }
+
+    return { success: true, pdfUrl };
+  } catch (error) {
+    console.error('Error sending consultation report email:', error);
+    throw error;
+  }
+}
+
+/**
+ * Generate exam PDF report
+ */
+function generateExamPDF(report: ExamReport): Buffer {
+  // This would use a PDF generation library like pdf-lib or pdfkit
+  // For now, return a placeholder buffer
+  const pdfContent = `
+EXAM REPORT
+===========
+
+Exam: ${report.examName}
+Date: ${report.completedAt.toLocaleDateString()}
+User: ${report.userName}
+
+Score: ${report.score}/${report.totalQuestions}
+Accuracy: ${report.accuracy}%
+
+Specialty Breakdown:
+${Object.entries(report.specialtyBreakdown)
+  .map(([specialty, score]) => `${specialty}: ${score}%`)
+  .join('\n')}
+
+Generated by Question Grove 360
+  `;
+
+  return Buffer.from(pdfContent, 'utf-8');
+}
+
+/**
+ * Generate consultation PDF report
+ */
+async function generateConsultationPDF(report: ConsultationReport): Promise<Buffer> {
+  const pdfContent = `
+CONSULTATION REPORT
+===================
+
+Case: ${report.caseTitle}
+Date: ${report.completedAt.toLocaleDateString()}
+User: ${report.userName}
+
+Domain Scores:
+${Object.entries(report.domainScores)
+  .map(([domain, score]) => `${domain}: ${score}/10`)
+  .join('\n')}
+
+Feedback:
+${report.feedback}
+
+Transcript:
+${report.transcript}
+
+Generated by Question Grove 360
+  `;
+
+  return Buffer.from(pdfContent, 'utf-8');
+}
+
+/**
+ * Schedule email report to be sent (for async processing)
+ */
+export async function scheduleEmailReport(
+  type: 'exam' | 'consultation',
+  report: ExamReport | ConsultationReport,
+  delayMs: number = 0
+) {
+  return new Promise((resolve) => {
+    setTimeout(async () => {
+      try {
+        if (type === 'exam') {
+          const result = await sendExamReportEmail(report as ExamReport);
+          resolve(result);
+        } else {
+          const result = await sendConsultationReportEmail(report as ConsultationReport);
+          resolve(result);
+        }
+      } catch (error) {
+        console.error(`Failed to send ${type} report email:`, error);
+        resolve({ success: false, error });
+      }
+    }, delayMs);
+  });
+}
