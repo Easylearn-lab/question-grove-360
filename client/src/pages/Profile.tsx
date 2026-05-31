@@ -82,8 +82,8 @@ const COUNTRIES = [
 export default function Profile() {
   const { user, isAuthenticated } = useAuth();
   const [, navigate] = useLocation();
-  const { data: profile, isLoading: profileLoading } = trpc.profile.get.useQuery();
-  const updateProfileMutation = trpc.profile.update.useMutation();
+  const { data: profile, isLoading: profileLoading } = trpc.profile.getProfile.useQuery();
+  const updateProfileMutation = trpc.profile.updateProfile.useMutation();
 
   const [formData, setFormData] = useState({
     fullName: "",
@@ -124,7 +124,12 @@ export default function Profile() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
-      await updateProfileMutation.mutateAsync(formData);
+      await updateProfileMutation.mutateAsync({
+        specialty: formData.specialty,
+        trainingYear: parseInt(formData.trainingYear) || undefined,
+        targetExam: formData.targetExam,
+        country: formData.country,
+      });
       toast.success("Profile updated successfully!");
     } catch (error) {
       toast.error("Failed to update profile");

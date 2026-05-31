@@ -9,7 +9,7 @@ import { trpc } from "@/lib/trpc";
 export default function Dashboard() {
   const { user, logout, isAuthenticated } = useAuth();
   const [, navigate] = useLocation();
-  const { data: profile } = trpc.profile.get.useQuery();
+  const { data: profile } = trpc.profile.getProfile.useQuery();
 
   useEffect(() => {
     if (!isAuthenticated) {
