@@ -16,6 +16,7 @@ import Pricing from "./pages/Pricing";
 import AdminPanel from "./pages/AdminPanel";
 import AICoach from "./pages/AICoach";
 import Payments from "./pages/Payments";
+import ActiveMockExam from "./pages/ActiveMockExam";
 
 function Router() {
   // make sure to consider if you need authentication for certain routes
@@ -33,6 +34,7 @@ function Router() {
       <Route path={"/admin"} component={AdminPanel} />
       <Route path={"/coach"} component={AICoach} />
       <Route path={"/payments"} component={Payments} />
+      <Route path={"/mock-exam/:id"} component={ActiveMockExam} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />
