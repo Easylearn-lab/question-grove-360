@@ -31,8 +31,8 @@
 - [x] Build exam mode with end-of-exam feedback
 - [x] Implement question bookmarking and flagging
 - [x] Add personal note-taking per question
-- [ ] Build progress tracking (accuracy %, specialty breakdown)
-- [ ] Implement "Explain this further" button with Claude AI integration
+- [x] Build progress tracking (accuracy %, specialty breakdown - DashboardMetrics)
+- [x] Implement "Explain this further" button with Claude AI integration (QuestionProgress)
 - [ ] Add related questions suggestion
 - [ ] Create session summary after study sessions
 
@@ -84,17 +84,17 @@
 - [ ] Build payment failure retry logic
 - [x] Add invoice/receipt download functionality
 - [x] Create subscription status page
-- [x] Generate and email full PDF report (pdfGenerator.ts)
+- [x] Generate and email full PDF report (emailService.ts)
 
 ## Phase 10: SCA AI Consultation Simulator
 - [x] Design SCA case selection interface
-- [x] Implement real-time voice capture with Deepgram STT (VoiceRecorder)
-- [ ] Integrate ElevenLabs for AI patient voice synthesis
-- [x] Build Claude AI patient persona and response generation (voiceEndpoint)
+- [ ] Implement real-time voice capture with Deepgram STT
+- [x] Integrate ElevenLabs for AI patient voice synthesis (voiceSynthesis.ts)
+- [ ] Build Claude AI patient persona and response generation
 - [x] Create real-time transcript display
-- [x] Implement domain scoring system (3 domains)
-- [x] Build consultation feedback with detailed analysis
-- [ ] Add email report generation for consultations
+- [ ] Implement domain scoring system (3 domains)
+- [ ] Build consultation feedback with detailed analysis
+- [x] Add email report generation for consultations (emailService.ts)
 - [ ] Create SCA mock exam mode with multiple cases
 
 ## Phase 11: Admin Panel
