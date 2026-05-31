@@ -90,3 +90,46 @@ export async function getUserByOpenId(openId: string) {
 }
 
 // TODO: add feature queries here as your schema grows.
+
+export async function getUserById(id: number) {
+  const db = await getDb();
+  if (!db) return undefined;
+  const result = await db.select().from(users).where(eq(users.id, id)).limit(1);
+  return result.length > 0 ? result[0] : undefined;
+}
+
+// Profile queries
+export async function getOrCreateProfile(userId: number) {
+  const db = await getDb();
+  if (!db) return undefined;
+  
+  const { profiles } = await import("../drizzle/schema");
+  const result = await db.select().from(profiles).where(eq(profiles.userId, userId)).limit(1);
+  
+  if (result.length > 0) {
+    return result[0];
+  }
+  
+  // Create a new profile if it doesn't exist
+  await db.insert(profiles).values({ userId });
+  const newResult = await db.select().from(profiles).where(eq(profiles.userId, userId)).limit(1);
+  return newResult.length > 0 ? newResult[0] : undefined;
+}
+
+export async function updateProfile(userId: number, data: Record<string, any>) {
+  const db = await getDb();
+  if (!db) return undefined;
+  
+  const { profiles } = await import("../drizzle/schema");
+  await db.update(profiles).set(data).where(eq(profiles.userId, userId));
+  return getOrCreateProfile(userId);
+}
+
+export async function getProfileByUserId(userId: number) {
+  const db = await getDb();
+  if (!db) return undefined;
+  
+  const { profiles } = await import("../drizzle/schema");
+  const result = await db.select().from(profiles).where(eq(profiles.userId, userId)).limit(1);
+  return result.length > 0 ? result[0] : undefined;
+}
