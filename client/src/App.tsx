@@ -7,6 +7,10 @@ import { ThemeProvider } from "./contexts/ThemeContext";
 import Home from "./pages/Home";
 import Dashboard from "./pages/Dashboard";
 import Profile from "./pages/Profile";
+import QuestionBank from "./pages/QuestionBank";
+import MockExams from "./pages/MockExams";
+import Note360 from "./pages/Note360";
+import PatternRecognition from "./pages/PatternRecognition";
 
 function Router() {
   // make sure to consider if you need authentication for certain routes
@@ -15,6 +19,10 @@ function Router() {
       <Route path={"/"} component={Home} />
       <Route path={"/dashboard"} component={Dashboard} />
       <Route path={"/profile"} component={Profile} />
+      <Route path={"/questions"} component={QuestionBank} />
+      <Route path={"/mocks"} component={MockExams} />
+      <Route path={"/notes"} component={Note360} />
+      <Route path={"/flashcards"} component={PatternRecognition} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />

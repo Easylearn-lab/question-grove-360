@@ -25,19 +25,19 @@
 - [x] Create 404 and error pages
 
 ## Phase 4: Question Bank Feature
-- [ ] Design question card component with vignette formatting
-- [ ] Implement question filtering system (specialty, difficulty, status, tags)
-- [ ] Build tutor mode with immediate feedback
-- [ ] Build exam mode with end-of-exam feedback
-- [ ] Implement question bookmarking and flagging
-- [ ] Add personal note-taking per question
+- [x] Design question card component with vignette formatting
+- [x] Implement question filtering system (specialty, difficulty, status, tags)
+- [x] Build tutor mode with immediate feedback
+- [x] Build exam mode with end-of-exam feedback
+- [x] Implement question bookmarking and flagging
+- [x] Add personal note-taking per question
 - [ ] Build progress tracking (accuracy %, specialty breakdown)
 - [ ] Implement "Explain this further" button with Claude AI integration
 - [ ] Add related questions suggestion
 - [ ] Create session summary after study sessions
 
 ## Phase 5: Mock Exams Feature
-- [ ] Design mock exam interface with full-screen immersive mode
+- [x] Design mock exam interface with full-screen immersive mode
 - [ ] Implement countdown timer with visual urgency indicators
 - [ ] Build question navigation and flagging during exam
 - [ ] Implement auto-submit on time expiry
@@ -49,21 +49,21 @@
 - [ ] Create downloadable PDF score report
 
 ## Phase 6: Note360 Study Notes Feature
-- [ ] Build Note360 landing page with specialty cards and completion tracking
-- [ ] Create specialty detail pages with exam-focused revision notes
-- [ ] Implement search across all Note360 content
+- [x] Build Note360 landing page with specialty cards and completion tracking
+- [x] Create specialty detail pages with exam-focused revision notes
+- [x] Implement search across all Note360 content
 - [ ] Add bookmark functionality for note sections
 - [ ] Implement personal annotation system for notes
 - [ ] Add print/PDF export functionality
-- [ ] Display last updated date and curriculum version
+- [x] Display last updated date and curriculum version
 
 ## Phase 7: Pattern Recognition Flashcards
-- [ ] Design flashcard component with 3D flip animation
+- [x] Design flashcard component with 3D flip animation
 - [ ] Implement swipe gestures (left/right) for mobile
-- [ ] Build mastery level tracking (Learning/Reviewing/Mastered)
+- [x] Build mastery level tracking (Learning/Reviewing/Mastered)
 - [ ] Add specialty filtering
-- [ ] Create stats dashboard (total cards, % mastered, daily progress)
-- [ ] Implement spaced repetition algorithm (SM-2)
+- [x] Create stats dashboard (total cards, % mastered, daily progress)
+- [x] Implement spaced repetition algorithm (SM-2)
 
 ## Phase 8: User Dashboard
 - [ ] Build dashboard overview with key metrics

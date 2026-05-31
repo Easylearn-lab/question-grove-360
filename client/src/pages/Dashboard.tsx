@@ -91,7 +91,7 @@ export default function Dashboard() {
         {/* Main Features Grid */}
         <div className="grid md:grid-cols-2 gap-8">
           {/* Question Bank */}
-          <Card className="p-8 border-slate-200 hover:shadow-lg transition-all cursor-pointer group">
+          <Card className="p-8 border-slate-200 hover:shadow-lg transition-all cursor-pointer group" onClick={() => navigate("/questions")}>
             <div className="flex items-start justify-between mb-4">
               <BookOpen className="w-12 h-12 text-teal-600 group-hover:scale-110 transition-transform" />
               <span className="text-xs font-semibold text-teal-600 bg-teal-50 px-3 py-1 rounded-full">NEW</span>
@@ -104,7 +104,7 @@ export default function Dashboard() {
           </Card>
 
           {/* Mock Exams */}
-          <Card className="p-8 border-slate-200 hover:shadow-lg transition-all cursor-pointer group">
+          <Card className="p-8 border-slate-200 hover:shadow-lg transition-all cursor-pointer group" onClick={() => navigate("/mocks")}>
             <div className="flex items-start justify-between mb-4">
               <BarChart3 className="w-12 h-12 text-blue-600 group-hover:scale-110 transition-transform" />
             </div>
@@ -116,7 +116,7 @@ export default function Dashboard() {
           </Card>
 
           {/* Note360 */}
-          <Card className="p-8 border-slate-200 hover:shadow-lg transition-all cursor-pointer group">
+          <Card className="p-8 border-slate-200 hover:shadow-lg transition-all cursor-pointer group" onClick={() => navigate("/notes")}>
             <div className="flex items-start justify-between mb-4">
               <BookOpen className="w-12 h-12 text-purple-600 group-hover:scale-110 transition-transform" />
             </div>
@@ -128,7 +128,7 @@ export default function Dashboard() {
           </Card>
 
           {/* Pattern Recognition */}
-          <Card className="p-8 border-slate-200 hover:shadow-lg transition-all cursor-pointer group">
+          <Card className="p-8 border-slate-200 hover:shadow-lg transition-all cursor-pointer group" onClick={() => navigate("/flashcards")}>
             <div className="flex items-start justify-between mb-4">
               <Brain className="w-12 h-12 text-orange-600 group-hover:scale-110 transition-transform" />
             </div>
