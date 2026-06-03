@@ -5,7 +5,7 @@ import { Route, Switch } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import Home from "./pages/Home";
-import Dashboard from "./pages/Dashboard";
+import Dashboard from "./pages/DashboardRedesigned";
 import Profile from "./pages/Profile";
 import QuestionBank from "./pages/QuestionBank";
 import MockExams from "./pages/MockExams";
@@ -18,13 +18,13 @@ import AICoach from "./pages/AICoach";
 import Payments from "./pages/Payments";
 import ActiveMockExam from "./pages/ActiveMockExam";
 import Onboarding from "./pages/Onboarding";
-import { AICoachWidget } from "./components/AICoachWidget";
+import { AICoachFloating } from "./components/AICoachFloating";
 
 function Router() {
   // make sure to consider if you need authentication for certain routes
   return (
     <Switch>
-      <Route path={"/ "} component={Home} />
+      <Route path={"/"} component={Home} />
       <Route path={"/onboarding"} component={Onboarding} />
       <Route path={"/dashboard"} component={Dashboard} />
       <Route path={"/profile"} component={Profile} />
@@ -60,7 +60,7 @@ function App() {
         <TooltipProvider>
           <Toaster />
           <Router />
-          <AICoachWidget />
+          <AICoachFloating />
         </TooltipProvider>
       </ThemeProvider>
     </ErrorBoundary>

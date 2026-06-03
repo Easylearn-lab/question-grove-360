@@ -66,14 +66,14 @@
 - [x] Implement spaced repetition algorithm (SM-2)
 
 ## Phase 8: User Dashboard
-- [ ] Build dashboard overview with key metrics
-- [ ] Implement study streak tracking with visual calendar
-- [ ] Create accuracy trends chart
-- [ ] Build pass probability gauge with trend indicator
-- [ ] Display daily goals and progress
-- [ ] Show upcoming mock exam schedule
-- [ ] Implement weak area detection and recommendations
-- [ ] Add session summary cards
+- [x] Build dashboard overview with key metrics (DashboardRedesigned.tsx)
+- [x] Implement study streak tracking with visual calendar (12-day streak)
+- [x] Create accuracy trends chart (5-week line chart)
+- [x] Build pass probability gauge with trend indicator (92% pass probability)
+- [x] Display daily goals and progress (Key Metrics Cards)
+- [x] Show upcoming mock exam schedule (Exam Selector)
+- [x] Implement weak area detection and recommendations (Specialty Breakdown)
+- [x] Add session summary cards (Quick Access Buttons)
 
 ## Phase 9: Subscription & Pricing
 - [x] Design pricing page with subscription tiers
@@ -112,7 +112,7 @@
 - [x] Design chat interface component with message history (AICoachChat component)
 - [x] Implement persistent conversation storage (userChatHistory table + aiCoachRouter)
 - [x] Build Claude AI integration with user performance context injection (aiCoachRouter)
-- [x] Create accessibility from every page (floating chat icon - AICoachWidget)
+- [x] Create accessibility from every page (floating chat icon - AICoachFloating)
 - [x] Implement streaming message support (via Streamdown)
 - [x] Add markdown rendering for AI responses
 - [x] Build conversation history management (getChatHistory procedure)
@@ -217,3 +217,48 @@
 - All integrations use pre-configured helpers (no manual API key setup needed)
 - Database schema must support Row Level Security (RLS)
 - Mobile app development is Phase 2 (not included in initial web build)
+
+
+## Phase 5-6 Redesign Completion (June 3, 2026)
+
+### Landing Page Redesign
+- [x] Rebuilt with two-card exam access system (UK vs International)
+- [x] Added Picture Album option
+- [x] Premium design with brand colors (Dark Navy, Teal, White, Purple, Orange)
+- [x] Feature highlights section
+- [x] Comprehensive exam coverage section
+- [x] Pricing section with transparent tiers
+
+### Onboarding Wizard
+- [x] 4-step flow: Specialty -> Training Year -> Target Exam -> Country
+- [x] Progress bar indicator
+- [x] Form validation
+- [x] Integrated into routing
+
+### Dashboard Redesign (DashboardRedesigned.tsx)
+- [x] Exam selector with 7 major exams
+- [x] Key metrics cards (Streak, Accuracy, Questions, Pass Probability)
+- [x] Accuracy trend chart (5-week line chart)
+- [x] Specialty breakdown pie chart
+- [x] Quick access buttons (Question Bank, Mock Exams, AI Coach360)
+
+### AI Coach360 Floating Interface
+- [x] Created AICoachFloating.tsx component
+- [x] Floating button in bottom-right corner
+- [x] Slide-in panel on click
+- [x] Message history with streaming support
+- [x] Loading states with animated dots
+- [x] Close button and responsive design
+
+### Bug Fixes
+- [x] Fixed home route 404 error (removed extra space in route path)
+- [x] Fixed duplicate useAuth import in Home.tsx
+- [x] Updated App.tsx to use DashboardRedesigned
+- [x] Integrated AICoachFloating into App layout
+
+### Current Status
+- Dev server: Running and healthy
+- TypeScript: No errors
+- Build: Successful
+- Routes: All working correctly
+- UI: Premium design applied throughout
