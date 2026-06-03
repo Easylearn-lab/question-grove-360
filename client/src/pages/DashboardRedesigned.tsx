@@ -5,7 +5,7 @@ import { useLocation } from "wouter";
 import { trpc } from "@/lib/trpc";
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, PieChart, Pie, Cell } from "recharts";
 import { BookOpen, Brain, Zap, TrendingUp, Flame, Award } from "lucide-react";
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
 
 // Extended mock data with daily granularity for date range filtering
 const allAccuracyData = [
@@ -118,14 +118,26 @@ function AccuracyTooltip({ active, payload, label }: any) {
 }
 
 export default function DashboardRedesigned() {
-  const { user, isAuthenticated } = useAuth();
+  const { user, isAuthenticated, loading } = useAuth();
   const [, navigate] = useLocation();
   const [selectedExam, setSelectedExam] = useState("MRCGP AKT");
   const [dateRange, setDateRange] = useState<DateRange>("1M");
 
-  if (!isAuthenticated) {
-    navigate("/");
-    return null;
+  useEffect(() => {
+    if (!loading && !isAuthenticated) {
+      navigate("/");
+    }
+  }, [loading, isAuthenticated, navigate]);
+
+  if (loading || !isAuthenticated) {
+    return (
+      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
+        <div className="text-center">
+          <div className="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-teal-600"></div>
+          <p className="mt-4 text-gray-600">Loading dashboard...</p>
+        </div>
+      </div>
+    );
   }
 
   // Filter accuracy data based on selected date range

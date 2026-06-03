@@ -4,10 +4,17 @@ import { Card } from "@/components/ui/card";
 import { getLoginUrl } from "@/const";
 import { BookOpen, Brain, Zap, BarChart3, Users, Award, ArrowRight, CheckCircle2 } from "lucide-react";
 import { useLocation } from "wouter";
+import { useEffect } from "react";
 
 export default function Home() {
   const { user, isAuthenticated, loading } = useAuth();
   const [, navigate] = useLocation();
+
+  useEffect(() => {
+    if (!loading && isAuthenticated && user) {
+      navigate("/dashboard");
+    }
+  }, [loading, isAuthenticated, user, navigate]);
 
   if (loading) {
     return (
@@ -21,8 +28,14 @@ export default function Home() {
   }
 
   if (isAuthenticated && user) {
-    navigate("/dashboard");
-    return null;
+    return (
+      <div className="min-h-screen bg-white flex items-center justify-center">
+        <div className="text-center">
+          <div className="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-teal-600"></div>
+          <p className="mt-4 text-slate-600">Redirecting to dashboard...</p>
+        </div>
+      </div>
+    );
   }
 
   return (
