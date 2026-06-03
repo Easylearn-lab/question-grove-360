@@ -43,15 +43,32 @@
 }
 
 :root {
-  --primary: var(--color-blue-700);
-  --primary-foreground: var(--color-blue-50);
-  --sidebar-primary: var(--color-blue-600);
-  --sidebar-primary-foreground: var(--color-blue-50);
-  --chart-1: var(--color-blue-300);
-  --chart-2: var(--color-blue-500);
-  --chart-3: var(--color-blue-600);
-  --chart-4: var(--color-blue-700);
-  --chart-5: var(--color-blue-800);
+  /* Brand colour system */
+  --color-bg-primary: #0a0f1e;        /* Dark navy — main page background */
+  --color-bg-secondary: #0f172a;      /* Slightly lighter navy — card backgrounds */
+  --color-bg-card: #111827;           /* Card background */
+  --color-bg-card-hover: #1a2234;     /* Card hover state */
+  --color-accent-teal: #0d9488;       /* Primary teal — buttons, highlights */
+  --color-accent-teal-light: #14b8a6; /* Lighter teal — hover states */
+  --color-accent-green: #22c55e;      /* Green — success states, checkmarks */
+  --color-accent-purple: #6366f1;     /* Purple — international exams */
+  --color-accent-orange: #f97316;     /* Orange — picture album */
+  --color-text-primary: #ffffff;      /* Primary white text */
+  --color-text-secondary: #94a3b8;    /* Muted grey text — subtitles */
+  --color-text-muted: #64748b;        /* Lighter muted text */
+  --color-border: #1e293b;            /* Subtle border colour */
+  --color-nav-bg: #ffffff;            /* Navigation bar — white */
+  --color-nav-text: #0f172a;          /* Nav text — dark navy */
+  
+  --primary: var(--color-accent-teal);
+  --primary-foreground: var(--color-text-primary);
+  --sidebar-primary: var(--color-accent-teal);
+  --sidebar-primary-foreground: var(--color-text-primary);
+  --chart-1: #0891b2;
+  --chart-2: #0d9488;
+  --chart-3: #14b8a6;
+  --chart-4: #22c55e;
+  --chart-5: #6366f1;
   --radius: 0.65rem;
   --background: oklch(1 0 0);
   --foreground: oklch(0.235 0.015 65);
@@ -63,26 +80,26 @@
   --secondary-foreground: oklch(0.4 0.015 65);
   --muted: oklch(0.967 0.001 286.375);
   --muted-foreground: oklch(0.552 0.016 285.938);
-  --accent: oklch(0.967 0.001 286.375);
-  --accent-foreground: oklch(0.141 0.005 285.823);
-  --destructive: oklch(0.577 0.245 27.325);
+  --accent: var(--color-accent-teal);
+  --accent-foreground: var(--color-text-primary);
+  --destructive: #ef4444;
   --destructive-foreground: oklch(0.985 0 0);
-  --border: oklch(0.92 0.004 286.32);
-  --input: oklch(0.92 0.004 286.32);
-  --ring: oklch(0.623 0.214 259.815);
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.235 0.015 65);
-  --sidebar-accent: oklch(0.967 0.001 286.375);
-  --sidebar-accent-foreground: oklch(0.141 0.005 285.823);
-  --sidebar-border: oklch(0.92 0.004 286.32);
-  --sidebar-ring: oklch(0.623 0.214 259.815);
+  --border: var(--color-border);
+  --input: var(--color-border);
+  --ring: var(--color-accent-teal);
+  --sidebar: #ffffff;
+  --sidebar-foreground: var(--color-nav-text);
+  --sidebar-accent: var(--color-accent-teal);
+  --sidebar-accent-foreground: var(--color-text-primary);
+  --sidebar-border: #e2e8f0;
+  --sidebar-ring: var(--color-accent-teal);
 }
 
 .dark {
-  --primary: var(--color-blue-700);
-  --primary-foreground: var(--color-blue-50);
-  --sidebar-primary: var(--color-blue-500);
-  --sidebar-primary-foreground: var(--color-blue-50);
+  --primary: var(--color-accent-teal);
+  --primary-foreground: var(--color-text-primary);
+  --sidebar-primary: var(--color-accent-teal);
+  --sidebar-primary-foreground: var(--color-text-primary);
   --background: oklch(0.141 0.005 285.823);
   --foreground: oklch(0.85 0.005 65);
   --card: oklch(0.21 0.006 285.885);

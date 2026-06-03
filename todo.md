@@ -12,7 +12,7 @@
 - [x] Implement Google OAuth sign-in (via Manus OAuth)
 - [x] Implement role-based access control (user/admin roles)
 - [x] Build user profile page with specialty, training year, target exam, country
-- [ ] Implement password reset functionality
+- [x] Implement password reset functionality (passwordReset.ts)
 - [ ] Add 2FA option (TOTP via authenticator app)
 - [x] Build session management and "remember me" functionality
 
