@@ -17,13 +17,15 @@ import AdminPanel from "./pages/AdminPanel";
 import AICoach from "./pages/AICoach";
 import Payments from "./pages/Payments";
 import ActiveMockExam from "./pages/ActiveMockExam";
+import Onboarding from "./pages/Onboarding";
 import { AICoachWidget } from "./components/AICoachWidget";
 
 function Router() {
   // make sure to consider if you need authentication for certain routes
   return (
     <Switch>
-      <Route path={"/"} component={Home} />
+      <Route path={"/ "} component={Home} />
+      <Route path={"/onboarding"} component={Onboarding} />
       <Route path={"/dashboard"} component={Dashboard} />
       <Route path={"/profile"} component={Profile} />
       <Route path={"/questions"} component={QuestionBank} />
