@@ -262,3 +262,7 @@
 - Build: Successful
 - Routes: All working correctly
 - UI: Premium design applied throughout
+
+## Dashboard Improvements (June 3, 2026)
+- [x] Add interactive tooltips to accuracy trend chart (hover to see exact values)
+- [x] Add date range filter for accuracy trend chart (1W, 2W, 1M, 3M, All)
