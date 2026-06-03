@@ -123,23 +123,6 @@ export default function DashboardRedesigned() {
   const [selectedExam, setSelectedExam] = useState("MRCGP AKT");
   const [dateRange, setDateRange] = useState<DateRange>("1M");
 
-  useEffect(() => {
-    if (!loading && !isAuthenticated) {
-      navigate("/");
-    }
-  }, [loading, isAuthenticated, navigate]);
-
-  if (loading || !isAuthenticated) {
-    return (
-      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
-        <div className="text-center">
-          <div className="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-teal-600"></div>
-          <p className="mt-4 text-gray-600">Loading dashboard...</p>
-        </div>
-      </div>
-    );
-  }
-
   // Filter accuracy data based on selected date range
   const filteredAccuracyData = useMemo(() => {
     const days = getDaysForRange(dateRange);
@@ -165,6 +148,23 @@ export default function DashboardRedesigned() {
       direction: diff > 0 ? ("up" as const) : diff < 0 ? ("down" as const) : ("flat" as const),
     };
   }, [filteredAccuracyData]);
+
+  useEffect(() => {
+    if (!loading && !isAuthenticated) {
+      navigate("/");
+    }
+  }, [loading, isAuthenticated, navigate]);
+
+  if (loading || !isAuthenticated) {
+    return (
+      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
+        <div className="text-center">
+          <div className="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-teal-600"></div>
+          <p className="mt-4 text-gray-600">Loading dashboard...</p>
+        </div>
+      </div>
+    );
+  }
 
   const specialtyData = [
     { name: "Cardiology", value: 88 },
