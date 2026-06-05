@@ -4,7 +4,8 @@ import { Card } from "@/components/ui/card";
 import { useLocation } from "wouter";
 import { trpc } from "@/lib/trpc";
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, PieChart, Pie, Cell } from "recharts";
-import { BookOpen, Brain, Zap, TrendingUp, Flame, Award } from "lucide-react";
+import { BookOpen, Brain, Zap, TrendingUp, Flame, Award, LogOut, Menu } from "lucide-react";
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuSeparator, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
 import { useState, useMemo, useEffect } from "react";
 
 // Extended mock data with daily granularity for date range filtering
@@ -118,7 +119,7 @@ function AccuracyTooltip({ active, payload, label }: any) {
 }
 
 export default function DashboardRedesigned() {
-  const { user, isAuthenticated, loading } = useAuth();
+  const { user, isAuthenticated, loading, logout } = useAuth();
   const [, navigate] = useLocation();
   const [selectedExam, setSelectedExam] = useState("MRCGP AKT");
   const [dateRange, setDateRange] = useState<DateRange>("1M");
@@ -195,9 +196,31 @@ export default function DashboardRedesigned() {
             <h1 className="text-3xl font-bold text-gray-900">Welcome back, {user?.name}!</h1>
             <p className="text-gray-600 mt-1">Keep up your learning momentum</p>
           </div>
-          <Button onClick={() => navigate("/profile")} className="bg-teal-600 hover:bg-teal-700 text-white">
-            Profile Settings
-          </Button>
+          <div className="flex items-center gap-3">
+            <Button variant="outline" size="sm" onClick={() => navigate("/pricing")}>Pricing</Button>
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button variant="outline" size="sm" className="flex items-center gap-2">
+                  <div className="w-7 h-7 rounded-full bg-teal-100 flex items-center justify-center text-teal-700 font-semibold text-sm">
+                    {user?.name?.charAt(0) || "U"}
+                  </div>
+                  <span className="hidden md:inline">{user?.name}</span>
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="end" className="w-48">
+                <DropdownMenuItem onClick={() => navigate("/profile")}>Profile Settings</DropdownMenuItem>
+                <DropdownMenuItem onClick={() => navigate("/payments")}>Subscription</DropdownMenuItem>
+                {user?.role === "admin" && (
+                  <DropdownMenuItem onClick={() => navigate("/admin")}>Admin Panel</DropdownMenuItem>
+                )}
+                <DropdownMenuSeparator />
+                <DropdownMenuItem onClick={() => logout()} className="text-red-600">
+                  <LogOut className="w-4 h-4 mr-2" />
+                  Sign Out
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
+          </div>
         </div>
       </div>
 

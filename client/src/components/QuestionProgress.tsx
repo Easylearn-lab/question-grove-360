@@ -25,7 +25,7 @@ export function QuestionProgress({ questionId, userAnswer, correctAnswer, isCorr
 
     setLoading(true);
     try {
-      // Call AI explanation endpoint
+      // Call explanation endpoint
       const response = await fetch('/api/trpc/questions.explainQuestion', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -73,7 +73,7 @@ export function QuestionProgress({ questionId, userAnswer, correctAnswer, isCorr
       <Dialog open={showExplanation} onOpenChange={setShowExplanation}>
         <DialogContent className="max-w-2xl max-h-[80vh] overflow-y-auto">
           <DialogHeader>
-            <DialogTitle>AI-Powered Explanation</DialogTitle>
+            <DialogTitle>Detailed Explanation</DialogTitle>
           </DialogHeader>
           
           <div className="space-y-4">

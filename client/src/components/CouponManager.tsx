@@ -45,9 +45,10 @@ export function CouponManager() {
 
     createCoupon.mutate({
       code: newCode.toUpperCase(),
-      discountPercent: parseInt(discountPercent),
-      maxUses: parseInt(maxUses),
-      expiryDate: expiryDate ? new Date(expiryDate) : null,
+      discountType: "percentage" as const,
+      discountValue: parseInt(discountPercent),
+      maxUsageCount: parseInt(maxUses),
+      expiryDate: expiryDate || null,
     });
   };
 

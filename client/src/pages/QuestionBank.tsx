@@ -1,15 +1,15 @@
 import { useAuth } from "@/_core/hooks/useAuth";
 import { useLocation } from "wouter";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useMemo } from "react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { ArrowLeft, Bookmark, Flag, MessageCircle, ChevronRight, ChevronLeft, Loader2 } from "lucide-react";
+import { ArrowLeft, Bookmark, Flag, ChevronRight, ChevronLeft, BookOpen, Search } from "lucide-react";
 import { trpc } from "@/lib/trpc";
 import { toast } from "sonner";
+import { SubscriptionGate } from "@/components/SubscriptionGate";
 
 const SPECIALTIES = [
   "All Specialties",
@@ -27,7 +27,7 @@ const SPECIALTIES = [
 const DIFFICULTIES = ["All Levels", "Easy", "Medium", "Hard"];
 
 export default function QuestionBank() {
-  const { user, isAuthenticated } = useAuth();
+  const { user, isAuthenticated, loading } = useAuth();
   const [, navigate] = useLocation();
   const [mode, setMode] = useState<"tutor" | "exam">("tutor");
   const [specialty, setSpecialty] = useState("All Specialties");
@@ -41,50 +41,56 @@ export default function QuestionBank() {
   const [notes, setNotes] = useState("");
 
   useEffect(() => {
-    if (!isAuthenticated) {
+    if (!loading && !isAuthenticated) {
       navigate("/");
     }
-  }, [isAuthenticated, navigate]);
+  }, [loading, isAuthenticated, navigate]);
 
-  if (!isAuthenticated || !user) {
-    return null;
+  // Fetch questions from server
+  const questionsQuery = trpc.questions.getQuestions.useQuery(
+    {
+      specialty: specialty === "All Specialties" ? undefined : specialty,
+      limit: 50,
+      offset: 0,
+    },
+    { enabled: isAuthenticated }
+  );
+
+  const recordAttempt = trpc.mockExams.recordAttempt.useMutation();
+  const bookmarkMutation = trpc.questions.bookmarkQuestion.useMutation();
+
+  // Filter questions client-side for difficulty and search
+  const filteredQuestions = useMemo(() => {
+    if (!questionsQuery.data) return [];
+    let filtered = [...questionsQuery.data];
+
+    if (difficulty !== "All Levels") {
+      filtered = filtered.filter((q) => q.difficulty === difficulty);
+    }
+
+    if (searchQuery.trim()) {
+      const query = searchQuery.toLowerCase();
+      filtered = filtered.filter(
+        (q) =>
+          q.question.toLowerCase().includes(query) ||
+          (q.specialty && q.specialty.toLowerCase().includes(query))
+      );
+    }
+
+    return filtered;
+  }, [questionsQuery.data, difficulty, searchQuery]);
+
+  if (loading || !isAuthenticated || !user) {
+    return (
+      <div className="min-h-screen bg-slate-50 flex items-center justify-center">
+        <div className="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-teal-600"></div>
+      </div>
+    );
   }
 
-  // Mock question data - replace with actual tRPC query
-  const mockQuestions = [
-    {
-      id: 1,
-      question: "A 45-year-old man presents with chest pain and shortness of breath. What is the most likely diagnosis?",
-      optionA: "Acute Myocardial Infarction",
-      optionB: "Pulmonary Embolism",
-      optionC: "Aortic Dissection",
-      optionD: "Pneumothorax",
-      optionE: "Pericarditis",
-      correctAnswer: "A",
-      explanationCorrect: "The clinical presentation of chest pain with shortness of breath in a middle-aged man is classic for acute myocardial infarction. The patient would typically have risk factors such as hypertension, diabetes, or smoking.",
-      specialty: "Cardiology",
-      difficulty: "Medium",
-      reference: "Harrison's Principles of Internal Medicine, 21st Edition",
-    },
-    {
-      id: 2,
-      question: "Which of the following is the most common cause of acute kidney injury in hospitalized patients?",
-      optionA: "Sepsis",
-      optionB: "Acute Tubular Necrosis",
-      optionC: "Prerenal Azotemia",
-      optionD: "Contrast-induced Nephropathy",
-      optionE: "Drug-induced Nephrotoxicity",
-      correctAnswer: "B",
-      explanationCorrect: "Acute tubular necrosis (ATN) is the most common cause of acute kidney injury in hospitalized patients, accounting for approximately 45-50% of cases. It is typically caused by ischemia or nephrotoxins.",
-      specialty: "Renal",
-      difficulty: "Hard",
-      reference: "Kidney Disease: Improving Global Outcomes (KDIGO)",
-    },
-  ];
-
-  const currentQuestion = mockQuestions[currentQuestionIndex];
-  const totalQuestions = mockQuestions.length;
-  const progress = ((currentQuestionIndex + 1) / totalQuestions) * 100;
+  const currentQuestion = filteredQuestions[currentQuestionIndex];
+  const totalQuestions = filteredQuestions.length;
+  const progress = totalQuestions > 0 ? ((currentQuestionIndex + 1) / totalQuestions) * 100 : 0;
 
   const handleNext = () => {
     if (currentQuestionIndex < totalQuestions - 1) {
@@ -109,48 +115,97 @@ export default function QuestionBank() {
   };
 
   const handleSubmitAnswer = () => {
-    if (selectedAnswer) {
-      setShowExplanation(true);
-      if (mode === "tutor") {
-        toast.success(selectedAnswer === currentQuestion.correctAnswer ? "Correct!" : "Incorrect. Review the explanation.");
-      }
-    } else {
-      toast.error("Please select an answer");
+    if (!selectedAnswer || !currentQuestion) return;
+
+    const isCorrect = selectedAnswer === currentQuestion.correctAnswer;
+    setShowExplanation(true);
+
+    // Record the attempt
+    recordAttempt.mutate({
+      questionId: currentQuestion.id,
+      examId: currentQuestion.examId,
+      selectedAnswer,
+      isCorrect,
+      timeTaken: 0,
+      mode,
+    });
+
+    if (mode === "tutor") {
+      toast[isCorrect ? "success" : "error"](
+        isCorrect ? "Correct! Well done." : "Incorrect. Review the explanation below."
+      );
     }
   };
 
+  const handleBookmark = () => {
+    if (!currentQuestion) return;
+    setBookmarked(!bookmarked);
+    bookmarkMutation.mutate(currentQuestion.id);
+    toast.success(bookmarked ? "Bookmark removed" : "Question bookmarked");
+  };
+
+  // Empty state when no questions are available
+  if (!questionsQuery.isLoading && totalQuestions === 0) {
+    return (
+      <div className="min-h-screen bg-slate-50">
+        <header className="bg-white border-b border-slate-200 sticky top-0 z-40">
+          <div className="max-w-7xl mx-auto px-4 py-4 flex items-center gap-4">
+            <Button variant="ghost" size="sm" onClick={() => navigate("/dashboard")}>
+              <ArrowLeft className="w-4 h-4" />
+            </Button>
+            <h1 className="text-2xl font-bold text-slate-900">Question Bank</h1>
+          </div>
+        </header>
+        <main className="max-w-3xl mx-auto px-4 py-16 text-center">
+          <div className="w-20 h-20 mx-auto mb-6 bg-teal-100 rounded-full flex items-center justify-center">
+            <BookOpen className="w-10 h-10 text-teal-600" />
+          </div>
+          <h2 className="text-2xl font-bold text-slate-900 mb-3">No Questions Available</h2>
+          <p className="text-slate-600 mb-6 max-w-md mx-auto">
+            {questionsQuery.data?.length === 0
+              ? "Questions haven't been added to the database yet. Check back soon or contact your administrator."
+              : "No questions match your current filters. Try adjusting your specialty or difficulty settings."}
+          </p>
+          <div className="flex gap-3 justify-center">
+            <Button variant="outline" onClick={() => { setSpecialty("All Specialties"); setDifficulty("All Levels"); setSearchQuery(""); }}>
+              Reset Filters
+            </Button>
+            <Button onClick={() => navigate("/dashboard")} className="bg-teal-600 hover:bg-teal-700 text-white">
+              Back to Dashboard
+            </Button>
+          </div>
+        </main>
+      </div>
+    );
+  }
+
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100">
+    <div className="min-h-screen bg-slate-50">
       {/* Header */}
       <header className="bg-white border-b border-slate-200 sticky top-0 z-40">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
+        <div className="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
           <div className="flex items-center gap-4">
-            <Button
-              variant="ghost"
-              size="sm"
-              onClick={() => navigate("/dashboard")}
-              className="text-slate-600 hover:text-slate-900"
-            >
+            <Button variant="ghost" size="sm" onClick={() => navigate("/dashboard")}>
               <ArrowLeft className="w-4 h-4" />
             </Button>
             <h1 className="text-2xl font-bold text-slate-900">Question Bank</h1>
           </div>
           <div className="flex items-center gap-2">
             <span className="text-sm text-slate-600">
-              Question {currentQuestionIndex + 1} of {totalQuestions}
+              {totalQuestions > 0 ? `Question ${currentQuestionIndex + 1} of ${totalQuestions}` : "Loading..."}
             </span>
           </div>
         </div>
       </header>
 
       {/* Main Content */}
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <main className="max-w-7xl mx-auto px-4 py-8">
         <div className="grid lg:grid-cols-4 gap-8">
           {/* Sidebar Filters */}
           <div className="lg:col-span-1">
             <Card className="p-6 border-slate-200 sticky top-24">
               <h2 className="text-lg font-bold text-slate-900 mb-6">Filters</h2>
-              
+
               <div className="space-y-6">
                 {/* Mode Selection */}
                 <div>
@@ -159,9 +214,7 @@ export default function QuestionBank() {
                     <button
                       onClick={() => setMode("tutor")}
                       className={`w-full text-left px-4 py-2 rounded-lg transition-colors ${
-                        mode === "tutor"
-                          ? "bg-teal-600 text-white"
-                          : "bg-slate-100 text-slate-700 hover:bg-slate-200"
+                        mode === "tutor" ? "bg-teal-600 text-white" : "bg-slate-100 text-slate-700 hover:bg-slate-200"
                       }`}
                     >
                       Tutor Mode
@@ -169,9 +222,7 @@ export default function QuestionBank() {
                     <button
                       onClick={() => setMode("exam")}
                       className={`w-full text-left px-4 py-2 rounded-lg transition-colors ${
-                        mode === "exam"
-                          ? "bg-teal-600 text-white"
-                          : "bg-slate-100 text-slate-700 hover:bg-slate-200"
+                        mode === "exam" ? "bg-teal-600 text-white" : "bg-slate-100 text-slate-700 hover:bg-slate-200"
                       }`}
                     >
                       Exam Mode
@@ -181,8 +232,8 @@ export default function QuestionBank() {
 
                 {/* Specialty Filter */}
                 <div>
-                  <Label htmlFor="specialty" className="text-slate-700 font-medium">Specialty</Label>
-                  <Select value={specialty} onValueChange={setSpecialty}>
+                  <Label className="text-slate-700 font-medium">Specialty</Label>
+                  <Select value={specialty} onValueChange={(v) => { setSpecialty(v); setCurrentQuestionIndex(0); }}>
                     <SelectTrigger className="mt-2">
                       <SelectValue />
                     </SelectTrigger>
@@ -196,8 +247,8 @@ export default function QuestionBank() {
 
                 {/* Difficulty Filter */}
                 <div>
-                  <Label htmlFor="difficulty" className="text-slate-700 font-medium">Difficulty</Label>
-                  <Select value={difficulty} onValueChange={setDifficulty}>
+                  <Label className="text-slate-700 font-medium">Difficulty</Label>
+                  <Select value={difficulty} onValueChange={(v) => { setDifficulty(v); setCurrentQuestionIndex(0); }}>
                     <SelectTrigger className="mt-2">
                       <SelectValue />
                     </SelectTrigger>
@@ -211,14 +262,16 @@ export default function QuestionBank() {
 
                 {/* Search */}
                 <div>
-                  <Label htmlFor="search" className="text-slate-700 font-medium">Search</Label>
-                  <Input
-                    id="search"
-                    placeholder="Search questions..."
-                    value={searchQuery}
-                    onChange={(e) => setSearchQuery(e.target.value)}
-                    className="mt-2"
-                  />
+                  <Label className="text-slate-700 font-medium">Search</Label>
+                  <div className="relative mt-2">
+                    <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400" />
+                    <Input
+                      placeholder="Search questions..."
+                      value={searchQuery}
+                      onChange={(e) => { setSearchQuery(e.target.value); setCurrentQuestionIndex(0); }}
+                      className="pl-9"
+                    />
+                  </div>
                 </div>
               </div>
             </Card>
@@ -226,166 +279,147 @@ export default function QuestionBank() {
 
           {/* Question Display */}
           <div className="lg:col-span-3">
-            {/* Progress Bar */}
-            <div className="mb-8">
-              <div className="flex justify-between items-center mb-2">
-                <span className="text-sm font-medium text-slate-700">Progress</span>
-                <span className="text-sm text-slate-600">{Math.round(progress)}%</span>
+            {questionsQuery.isLoading ? (
+              <div className="flex items-center justify-center py-16">
+                <div className="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-teal-600"></div>
               </div>
-              <div className="w-full bg-slate-200 rounded-full h-2">
-                <div
-                  className="bg-teal-600 h-2 rounded-full transition-all duration-300"
-                  style={{ width: `${progress}%` }}
-                ></div>
-              </div>
-            </div>
-
-            {/* Question Card */}
-            <Card className="p-8 border-slate-200 mb-8">
-              <div className="mb-6">
-                <div className="flex items-center justify-between mb-4">
-                  <div className="flex items-center gap-3">
-                    <span className="px-3 py-1 bg-slate-100 text-slate-700 rounded-full text-sm font-medium">
-                      {currentQuestion.specialty}
-                    </span>
-                    <span className={`px-3 py-1 rounded-full text-sm font-medium ${
-                      currentQuestion.difficulty === "Easy" ? "bg-green-100 text-green-700" :
-                      currentQuestion.difficulty === "Medium" ? "bg-yellow-100 text-yellow-700" :
-                      "bg-red-100 text-red-700"
-                    }`}>
-                      {currentQuestion.difficulty}
-                    </span>
+            ) : currentQuestion ? (
+              <>
+                {/* Progress Bar */}
+                <div className="mb-8">
+                  <div className="flex justify-between items-center mb-2">
+                    <span className="text-sm font-medium text-slate-700">Progress</span>
+                    <span className="text-sm text-slate-600">{Math.round(progress)}%</span>
                   </div>
-                  <div className="flex items-center gap-2">
-                    <Button
-                      variant="ghost"
-                      size="sm"
-                      onClick={() => setBookmarked(!bookmarked)}
-                      className={bookmarked ? "text-teal-600" : "text-slate-400"}
-                    >
-                      <Bookmark className="w-5 h-5" fill={bookmarked ? "currentColor" : "none"} />
-                    </Button>
-                    <Button
-                      variant="ghost"
-                      size="sm"
-                      onClick={() => setFlagged(!flagged)}
-                      className={flagged ? "text-orange-600" : "text-slate-400"}
-                    >
-                      <Flag className="w-5 h-5" fill={flagged ? "currentColor" : "none"} />
-                    </Button>
+                  <div className="w-full bg-slate-200 rounded-full h-2">
+                    <div className="bg-teal-600 h-2 rounded-full transition-all duration-300" style={{ width: `${progress}%` }} />
                   </div>
                 </div>
 
-                <h2 className="text-2xl font-bold text-slate-900 mb-6">{currentQuestion.question}</h2>
-              </div>
-
-              {/* Answer Options */}
-              <div className="space-y-3 mb-8">
-                {["A", "B", "C", "D", "E"].map((option) => {
-                  const optionKey = `option${option}` as keyof typeof currentQuestion;
-                  const optionText = currentQuestion[optionKey];
-                  if (!optionText) return null;
-
-                  const isSelected = selectedAnswer === option;
-                  const isCorrect = option === currentQuestion.correctAnswer;
-                  const showCorrect = showExplanation && isCorrect;
-                  const showIncorrect = showExplanation && isSelected && !isCorrect;
-
-                  return (
-                    <button
-                      key={option}
-                      onClick={() => !showExplanation && setSelectedAnswer(option)}
-                      disabled={showExplanation}
-                      className={`w-full text-left p-4 rounded-lg border-2 transition-all ${
-                        showCorrect
-                          ? "border-green-500 bg-green-50"
-                          : showIncorrect
-                          ? "border-red-500 bg-red-50"
-                          : isSelected
-                          ? "border-teal-600 bg-teal-50"
-                          : "border-slate-200 bg-white hover:border-slate-300"
-                      }`}
-                    >
+                {/* Question Card */}
+                <Card className="p-8 border-slate-200 mb-8">
+                  <div className="mb-6">
+                    <div className="flex items-center justify-between mb-4">
                       <div className="flex items-center gap-3">
-                        <div className={`w-6 h-6 rounded-full border-2 flex items-center justify-center font-medium ${
-                          showCorrect
-                            ? "border-green-500 bg-green-500 text-white"
-                            : showIncorrect
-                            ? "border-red-500 bg-red-500 text-white"
-                            : isSelected
-                            ? "border-teal-600 bg-teal-600 text-white"
-                            : "border-slate-300"
-                        }`}>
-                          {option}
-                        </div>
-                        <span className="text-slate-900">{optionText}</span>
+                        {currentQuestion.specialty && (
+                          <span className="px-3 py-1 bg-slate-100 text-slate-700 rounded-full text-sm font-medium">
+                            {currentQuestion.specialty}
+                          </span>
+                        )}
+                        {currentQuestion.difficulty && (
+                          <span className={`px-3 py-1 rounded-full text-sm font-medium ${
+                            currentQuestion.difficulty === "Easy" ? "bg-green-100 text-green-700" :
+                            currentQuestion.difficulty === "Medium" ? "bg-yellow-100 text-yellow-700" :
+                            "bg-red-100 text-red-700"
+                          }`}>
+                            {currentQuestion.difficulty}
+                          </span>
+                        )}
                       </div>
-                    </button>
-                  );
-                })}
-              </div>
+                      <div className="flex items-center gap-2">
+                        <Button variant="ghost" size="sm" onClick={handleBookmark} className={bookmarked ? "text-teal-600" : "text-slate-400"}>
+                          <Bookmark className="w-5 h-5" fill={bookmarked ? "currentColor" : "none"} />
+                        </Button>
+                        <Button variant="ghost" size="sm" onClick={() => setFlagged(!flagged)} className={flagged ? "text-orange-600" : "text-slate-400"}>
+                          <Flag className="w-5 h-5" fill={flagged ? "currentColor" : "none"} />
+                        </Button>
+                      </div>
+                    </div>
 
-              {/* Submit Button */}
-              {!showExplanation && (
-                <Button
-                  onClick={handleSubmitAnswer}
-                  disabled={!selectedAnswer}
-                  className="w-full bg-teal-600 hover:bg-teal-700 text-white"
-                >
-                  Submit Answer
-                </Button>
-              )}
+                    <h2 className="text-xl font-bold text-slate-900 mb-6">{currentQuestion.question}</h2>
+                  </div>
 
-              {/* Explanation */}
-              {showExplanation && (
-                <div className="mt-8 p-6 bg-slate-50 rounded-lg border border-slate-200">
-                  <h3 className="font-bold text-slate-900 mb-3">Explanation</h3>
-                  <p className="text-slate-700 mb-4">{currentQuestion.explanationCorrect}</p>
-                  <p className="text-sm text-slate-600">
-                    <strong>Reference:</strong> {currentQuestion.reference}
-                  </p>
+                  {/* Answer Options */}
+                  <div className="space-y-3 mb-8">
+                    {["A", "B", "C", "D", "E"].map((option) => {
+                      const optionKey = `option${option}` as keyof typeof currentQuestion;
+                      const optionText = currentQuestion[optionKey] as string | null;
+                      if (!optionText) return null;
+
+                      const isSelected = selectedAnswer === option;
+                      const isCorrect = option === currentQuestion.correctAnswer;
+                      const showCorrect = showExplanation && isCorrect;
+                      const showIncorrect = showExplanation && isSelected && !isCorrect;
+
+                      return (
+                        <button
+                          key={option}
+                          onClick={() => !showExplanation && setSelectedAnswer(option)}
+                          disabled={showExplanation}
+                          className={`w-full text-left p-4 rounded-lg border-2 transition-all ${
+                            showCorrect ? "border-green-500 bg-green-50" :
+                            showIncorrect ? "border-red-500 bg-red-50" :
+                            isSelected ? "border-teal-600 bg-teal-50" :
+                            "border-slate-200 bg-white hover:border-slate-300"
+                          }`}
+                        >
+                          <div className="flex items-center gap-3">
+                            <div className={`w-6 h-6 rounded-full border-2 flex items-center justify-center font-medium text-sm ${
+                              showCorrect ? "border-green-500 bg-green-500 text-white" :
+                              showIncorrect ? "border-red-500 bg-red-500 text-white" :
+                              isSelected ? "border-teal-600 bg-teal-600 text-white" :
+                              "border-slate-300"
+                            }`}>
+                              {option}
+                            </div>
+                            <span className="text-slate-900">{optionText}</span>
+                          </div>
+                        </button>
+                      );
+                    })}
+                  </div>
+
+                  {/* Submit Button */}
+                  {!showExplanation && (
+                    <Button onClick={handleSubmitAnswer} disabled={!selectedAnswer} className="w-full bg-teal-600 hover:bg-teal-700 text-white">
+                      Submit Answer
+                    </Button>
+                  )}
+
+                  {/* Explanation (Tutor Mode) */}
+                  {showExplanation && mode === "tutor" && (
+                    <div className="mt-8 p-6 bg-slate-50 rounded-lg border border-slate-200">
+                      <h3 className="font-bold text-slate-900 mb-3">Explanation</h3>
+                      <p className="text-slate-700 mb-4">{currentQuestion.explanationCorrect || "No explanation available for this question."}</p>
+                      {currentQuestion.reference && (
+                        <p className="text-sm text-slate-600">
+                          <strong>Reference:</strong> {currentQuestion.reference}
+                        </p>
+                      )}
+                    </div>
+                  )}
+
+                  {/* Notes */}
+                  {showExplanation && (
+                    <div className="mt-6">
+                      <Label className="text-slate-700 font-medium">Personal Notes</Label>
+                      <textarea
+                        value={notes}
+                        onChange={(e) => setNotes(e.target.value)}
+                        placeholder="Add your notes for this question..."
+                        className="w-full mt-2 p-3 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-600 resize-none"
+                        rows={3}
+                      />
+                    </div>
+                  )}
+                </Card>
+
+                {/* Navigation */}
+                <div className="flex items-center justify-between">
+                  <Button onClick={handlePrevious} disabled={currentQuestionIndex === 0} variant="outline" className="gap-2">
+                    <ChevronLeft className="w-4 h-4" />
+                    Previous
+                  </Button>
+                  <div className="text-sm text-slate-600">
+                    {currentQuestionIndex + 1} / {totalQuestions}
+                  </div>
+                  <Button onClick={handleNext} disabled={currentQuestionIndex === totalQuestions - 1} className="bg-teal-600 hover:bg-teal-700 text-white gap-2">
+                    Next
+                    <ChevronRight className="w-4 h-4" />
+                  </Button>
                 </div>
-              )}
-
-              {/* Notes */}
-              {showExplanation && (
-                <div className="mt-6">
-                  <Label htmlFor="notes" className="text-slate-700 font-medium">Personal Notes</Label>
-                  <textarea
-                    id="notes"
-                    value={notes}
-                    onChange={(e) => setNotes(e.target.value)}
-                    placeholder="Add your notes for this question..."
-                    className="w-full mt-2 p-3 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-600 resize-none"
-                    rows={3}
-                  />
-                </div>
-              )}
-            </Card>
-
-            {/* Navigation */}
-            <div className="flex items-center justify-between">
-              <Button
-                onClick={handlePrevious}
-                disabled={currentQuestionIndex === 0}
-                variant="outline"
-                className="gap-2"
-              >
-                <ChevronLeft className="w-4 h-4" />
-                Previous
-              </Button>
-              <div className="text-sm text-slate-600">
-                {currentQuestionIndex + 1} / {totalQuestions}
-              </div>
-              <Button
-                onClick={handleNext}
-                disabled={currentQuestionIndex === totalQuestions - 1}
-                className="bg-teal-600 hover:bg-teal-700 text-white gap-2"
-              >
-                Next
-                <ChevronRight className="w-4 h-4" />
-              </Button>
-            </div>
+              </>
+            ) : null}
           </div>
         </div>
       </main>

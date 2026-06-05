@@ -424,3 +424,24 @@ export async function getUserStudyStats(userId: number) {
     return undefined;
   }
 }
+
+// Update profile by Stripe subscription ID (used by webhooks)
+export async function updateProfileByStripeSubscriptionId(
+  stripeSubscriptionId: string,
+  data: Record<string, any>
+) {
+  const db = await getDb();
+  if (!db) return undefined;
+
+  try {
+    const { profiles } = await import("../drizzle/schema");
+    await db
+      .update(profiles)
+      .set(data)
+      .where(eq(profiles.stripeSubscriptionId, stripeSubscriptionId));
+    return true;
+  } catch (error) {
+    console.error("[Database] Failed to update profile by stripe subscription ID:", error);
+    return false;
+  }
+}

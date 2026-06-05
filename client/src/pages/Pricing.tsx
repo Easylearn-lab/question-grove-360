@@ -73,7 +73,7 @@ export default function Pricing() {
             planKey="ELITE"
             features={[
               "Everything in Professional",
-              "SCA AI Consultation Simulator",
+              "SCA Consultation Simulator",
               "AI Coach360 (24/7 available)",
               "Real-time voice feedback",
               "1-on-1 strategy sessions (monthly)",

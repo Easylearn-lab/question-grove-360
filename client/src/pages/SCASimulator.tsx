@@ -95,7 +95,7 @@ export default function SCASimulator() {
     setTranscript("");
     setIsLoading(true);
 
-    // Simulate AI response
+    // Simulate patient response
     setTimeout(() => {
       setMessages((prev) => [
         ...prev,
@@ -127,7 +127,7 @@ export default function SCASimulator() {
             >
               <ArrowLeft className="w-4 h-4" />
             </Button>
-            <h1 className="text-2xl font-bold text-slate-900">SCA AI Consultation Simulator</h1>
+            <h1 className="text-2xl font-bold text-slate-900">SCA Consultation Simulator</h1>
           </div>
         </header>
 

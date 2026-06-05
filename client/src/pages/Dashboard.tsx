@@ -148,8 +148,8 @@ export default function Dashboard() {
                 <Zap className="w-6 h-6 text-teal-600" />
                 <span className="text-xs font-semibold text-teal-600 bg-teal-100 px-3 py-1 rounded-full">PREMIUM</span>
               </div>
-              <h3 className="text-2xl font-bold text-slate-900 mb-2">SCA AI Consultation Simulator</h3>
-              <p className="text-slate-600 mb-4">Experience real-time voice-based AI patient consultations with instant feedback</p>
+              <h3 className="text-2xl font-bold text-slate-900 mb-2">SCA Consultation Simulator</h3>
+              <p className="text-slate-600 mb-4">Experience real-time voice-based patient consultations with instant feedback</p>
               <Button className="bg-teal-600 hover:bg-teal-700 text-white">
                 Start Simulation
               </Button>
@@ -158,7 +158,7 @@ export default function Dashboard() {
           </div>
         </Card>
 
-        {/* AI Coach */}
+        {/* Coach360 */}
         <Card className="mt-8 p-8 border-slate-200 hover:shadow-lg transition-all cursor-pointer" onClick={() => navigate("/coach")}>
           <div className="flex items-start justify-between mb-4">
             <Zap className="w-12 h-12 text-purple-600" />

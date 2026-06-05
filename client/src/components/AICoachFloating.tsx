@@ -20,7 +20,7 @@ export function AICoachFloating() {
     setInput("");
     setIsLoading(true);
 
-    // Simulate AI response
+    // Simulate Coach360 response
     setTimeout(() => {
       const aiResponse = {
         role: "assistant" as const,

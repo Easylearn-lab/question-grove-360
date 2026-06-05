@@ -64,7 +64,7 @@ export default function Home() {
             One Platform. <span className="text-teal-500">Global Success.</span>
           </h1>
           <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-            The world's most advanced medical exam preparation platform. Powered by AI.
+            The world's most advanced medical exam preparation platform.
           </p>
         </div>
       </section>
@@ -86,7 +86,7 @@ export default function Home() {
                   <span className="text-teal-600 font-bold">✓</span> 15+ UK postgraduate exams
                 </div>
                 <div className="flex items-center gap-2 text-gray-700">
-                  <span className="text-teal-600 font-bold">✓</span> AI-powered SCA consultation simulator
+                  <span className="text-teal-600 font-bold">✓</span> SCA consultation simulator with instant feedback
                 </div>
                 <div className="flex items-center gap-2 text-gray-700">
                   <span className="text-teal-600 font-bold">✓</span> AKT question bank 1,600+ questions
