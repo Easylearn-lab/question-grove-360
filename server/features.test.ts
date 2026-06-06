@@ -170,12 +170,14 @@ describe("Question Grove 360 - Feature Tests", () => {
       const adminCtx = createMockContext();
       adminCtx.user!.role = "admin";
       const caller = appRouter.createCaller(adminCtx);
+      const futureDate = new Date(Date.now() + 30 * 24 * 60 * 60 * 1000);
+      const expiryDateStr = futureDate.toISOString().split('T')[0];
       const coupon = await caller.admin.createCoupon({
         code: "TEST20",
         discountType: "percentage",
         discountValue: 20,
-        maxUses: 100,
-        expiresAt: new Date(Date.now() + 30 * 24 * 60 * 60 * 1000),
+        maxUsageCount: 100,
+        expiryDate: expiryDateStr,
       });
       expect(coupon).toBeDefined();
       expect(coupon.code).toBe("TEST20");
