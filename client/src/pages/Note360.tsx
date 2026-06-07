@@ -6,6 +6,8 @@ import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { ArrowLeft, Search, BookMarked, Zap, Heart, Brain, Stethoscope, Pill, Baby, Bone, Eye, Activity } from "lucide-react";
 import { Streamdown } from "streamdown";
+import { SubscriptionGate } from "@/components/SubscriptionGate";
+import { useSubscription } from "@/hooks/useSubscription";
 
 const SPECIALTIES = [
   { id: "cardiology", name: "Cardiology", icon: Heart, color: "bg-red-100 text-red-600", noteCount: 24 },
@@ -177,7 +179,9 @@ export default function Note360() {
     }
   }, [loading, isAuthenticated, navigate]);
 
-  if (loading || !isAuthenticated || !user) {
+  const { isPremium, isLoading: subLoading } = useSubscription();
+
+  if (loading || !isAuthenticated || !user || subLoading) {
     return (
       <div className="min-h-screen bg-slate-50 flex items-center justify-center">
         <div className="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-teal-600"></div>
@@ -303,6 +307,7 @@ export default function Note360() {
       </header>
 
       <main className="max-w-7xl mx-auto px-4 py-12">
+        <SubscriptionGate isPremium={isPremium} featureName="Note360 Revision Notes">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold text-slate-900 mb-3">Choose a Specialty</h2>
           <p className="text-slate-600 max-w-lg mx-auto">
@@ -330,6 +335,7 @@ export default function Note360() {
             );
           })}
         </div>
+        </SubscriptionGate>
       </main>
     </div>
   );

@@ -283,9 +283,12 @@
 
 
 ## User Progress Dashboard (June 6, 2026)
-- [ ] Create backend queries for mock exam scores and flashcard mastery trends
-- [ ] Build Progress Dashboard page with score trends visualization
-- [ ] Add flashcard mastery breakdown and statistics
-- [ ] Implement date range filtering (1W, 2W, 1M, 3M, All)
-- [ ] Add export to CSV functionality for progress data
-- [ ] Write tests for progress dashboard queries and components
+- [x] Create backend queries for mock exam scores and flashcard mastery trends
+- [x] Build Progress Dashboard page with score trends visualization
+- [x] Add flashcard mastery breakdown and statistics
+- [x] Implement date range filtering (1W, 2W, 1M, 3M, All)
+- [x] Add export to CSV functionality for progress data
+- [x] Write tests for progress dashboard queries and components
+- [x] Add SubscriptionGate to all premium pages (QuestionBank, MockExams, PatternRecognition, SCA, Note360)
+- [x] Create useSubscription hook for centralized premium status
+- [x] Add logout button to Profile/Settings page

@@ -10,6 +10,7 @@ import { ArrowLeft, Bookmark, Flag, ChevronRight, ChevronLeft, BookOpen, Search 
 import { trpc } from "@/lib/trpc";
 import { toast } from "sonner";
 import { SubscriptionGate } from "@/components/SubscriptionGate";
+import { useSubscription } from "@/hooks/useSubscription";
 
 const SPECIALTIES = [
   "All Specialties",
@@ -80,7 +81,9 @@ export default function QuestionBank() {
     return filtered;
   }, [questionsQuery.data, difficulty, searchQuery]);
 
-  if (loading || !isAuthenticated || !user) {
+  const { isPremium, isLoading: subLoading } = useSubscription();
+
+  if (loading || !isAuthenticated || !user || subLoading) {
     return (
       <div className="min-h-screen bg-slate-50 flex items-center justify-center">
         <div className="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-teal-600"></div>
@@ -200,6 +203,7 @@ export default function QuestionBank() {
 
       {/* Main Content */}
       <main className="max-w-7xl mx-auto px-4 py-8">
+        <SubscriptionGate isPremium={isPremium} featureName="Question Bank">
         <div className="grid lg:grid-cols-4 gap-8">
           {/* Sidebar Filters */}
           <div className="lg:col-span-1">
@@ -422,6 +426,7 @@ export default function QuestionBank() {
             ) : null}
           </div>
         </div>
+        </SubscriptionGate>
       </main>
     </div>
   );

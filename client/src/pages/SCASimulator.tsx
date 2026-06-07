@@ -8,6 +8,8 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { ArrowLeft, Mic, MicOff, Send, Loader2, AlertCircle, CheckCircle2 } from "lucide-react";
 import { trpc } from "@/lib/trpc";
 import { toast } from "sonner";
+import { SubscriptionGate } from "@/components/SubscriptionGate";
+import { useSubscription } from "@/hooks/useSubscription";
 
 const SCA_CASES = [
   {
@@ -35,6 +37,7 @@ const SCA_CASES = [
 
 export default function SCASimulator() {
   const { user, isAuthenticated } = useAuth();
+  const { isPremium, isLoading: subLoading } = useSubscription();
   const [, navigate] = useLocation();
   const [selectedCase, setSelectedCase] = useState<typeof SCA_CASES[0] | null>(null);
   const [isRecording, setIsRecording] = useState(false);
@@ -46,10 +49,10 @@ export default function SCASimulator() {
   const audioChunksRef = useRef<Blob[]>([]);
 
   useEffect(() => {
-    if (!isAuthenticated) {
+    if (!isAuthenticated && !subLoading) {
       navigate("/");
     }
-  }, [isAuthenticated, navigate]);
+  }, [isAuthenticated, subLoading, navigate]);
 
   const startRecording = async () => {
     try {
@@ -133,6 +136,7 @@ export default function SCASimulator() {
 
         {/* Main Content */}
         <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+          <SubscriptionGate isPremium={isPremium} featureName="SCA Consultation Simulator">
           <div className="grid md:grid-cols-3 gap-6">
             {SCA_CASES.map((caseItem) => (
               <Card
@@ -166,6 +170,7 @@ export default function SCASimulator() {
               </Card>
             ))}
           </div>
+          </SubscriptionGate>
         </main>
       </div>
     );

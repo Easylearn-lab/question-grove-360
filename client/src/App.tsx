@@ -18,6 +18,7 @@ import AICoach from "./pages/AICoach";
 import Payments from "./pages/Payments";
 import ActiveMockExam from "./pages/ActiveMockExam";
 import Onboarding from "./pages/Onboarding";
+import Progress from "./pages/Progress";
 import { AICoachFloating } from "./components/AICoachFloating";
 
 function Router() {
@@ -38,6 +39,7 @@ function Router() {
       <Route path={"/coach"} component={AICoach} />
       <Route path={"/payments"} component={Payments} />
       <Route path={"/mock-exam/:id"} component={ActiveMockExam} />
+      <Route path={"/progress"} component={Progress} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />

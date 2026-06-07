@@ -6,7 +6,7 @@ import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { ArrowLeft, Save, Loader2 } from "lucide-react";
+import { ArrowLeft, Save, Loader2, LogOut } from "lucide-react";
 import { trpc } from "@/lib/trpc";
 import { toast } from "sonner";
 
@@ -80,7 +80,7 @@ const COUNTRIES = [
 ];
 
 export default function Profile() {
-  const { user, isAuthenticated } = useAuth();
+  const { user, isAuthenticated, logout } = useAuth();
   const [, navigate] = useLocation();
   const { data: profile, isLoading: profileLoading } = trpc.profile.getProfile.useQuery();
   const updateProfileMutation = trpc.profile.updateProfile.useMutation();
@@ -358,6 +358,20 @@ export default function Profile() {
             </div>
           </form>
         )}
+
+        {/* Account Actions */}
+        <Card className="mt-8 p-6 border-red-200 bg-red-50">
+          <h3 className="text-lg font-bold text-slate-900 mb-2">Account</h3>
+          <p className="text-sm text-slate-600 mb-4">Sign out of your account on this device.</p>
+          <Button
+            variant="outline"
+            className="border-red-300 text-red-600 hover:bg-red-100 gap-2"
+            onClick={() => { logout(); navigate("/"); }}
+          >
+            <LogOut className="w-4 h-4" />
+            Sign Out
+          </Button>
+        </Card>
       </main>
     </div>
   );

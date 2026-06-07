@@ -6,6 +6,8 @@ import { Card } from "@/components/ui/card";
 import { ArrowLeft, Clock, CheckCircle2, AlertCircle, Play, FileText, Timer, BarChart3 } from "lucide-react";
 import { trpc } from "@/lib/trpc";
 import { toast } from "sonner";
+import { SubscriptionGate } from "@/components/SubscriptionGate";
+import { useSubscription } from "@/hooks/useSubscription";
 
 const MOCK_EXAMS = [
   { id: 1, name: "MRCGP AKT - Full Mock 1", exam: "MRCGP AKT", questions: 200, duration: 180, passMark: 72, examId: 1 },
@@ -136,7 +138,9 @@ export default function MockExams() {
     return `${mins}:${secs.toString().padStart(2, "0")}`;
   };
 
-  if (loading || !isAuthenticated || !user) {
+  const { isPremium, isLoading: subLoading } = useSubscription();
+
+  if (loading || !isAuthenticated || !user || subLoading) {
     return (
       <div className="min-h-screen bg-slate-50 flex items-center justify-center">
         <div className="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-teal-600"></div>
@@ -379,6 +383,7 @@ export default function MockExams() {
       </header>
 
       <main className="max-w-7xl mx-auto px-4 py-12">
+        <SubscriptionGate isPremium={isPremium} featureName="Mock Exams">
         {/* Stats */}
         <div className="grid md:grid-cols-4 gap-6 mb-12">
           {[
@@ -433,6 +438,7 @@ export default function MockExams() {
             </Card>
           ))}
         </div>
+        </SubscriptionGate>
       </main>
     </div>
   );

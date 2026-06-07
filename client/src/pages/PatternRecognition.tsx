@@ -6,6 +6,8 @@ import { Card } from "@/components/ui/card";
 import { ArrowLeft, ChevronLeft, ChevronRight, RotateCcw, CheckCircle2, AlertCircle, Brain } from "lucide-react";
 import { trpc } from "@/lib/trpc";
 import { toast } from "sonner";
+import { SubscriptionGate } from "@/components/SubscriptionGate";
+import { useSubscription } from "@/hooks/useSubscription";
 
 const FLASHCARDS = [
   {
@@ -71,7 +73,9 @@ export default function PatternRecognition() {
     }
   }, [loading, isAuthenticated, navigate]);
 
-  if (loading || !isAuthenticated || !user) {
+  const { isPremium, isLoading: subLoading } = useSubscription();
+
+  if (loading || !isAuthenticated || !user || subLoading) {
     return (
       <div className="min-h-screen bg-slate-50 flex items-center justify-center">
         <div className="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-teal-600"></div>
@@ -155,6 +159,7 @@ export default function PatternRecognition() {
       </header>
 
       <main className="max-w-4xl mx-auto px-4 py-12">
+        <SubscriptionGate isPremium={isPremium} featureName="Pattern Recognition Flashcards">
         {/* Progress Bar */}
         <div className="mb-8">
           <div className="flex justify-between items-center mb-2">
@@ -279,6 +284,7 @@ export default function PatternRecognition() {
             </Card>
           ))}
         </div>
+        </SubscriptionGate>
       </main>
     </div>
   );
