@@ -1,0 +1,852 @@
+[
+  {
+    "id": "QG-PSYCH-006-001",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Psychiatry",
+    "difficulty": "Medium",
+    "question": "A 78-year-old woman with Alzheimer's disease (MMSE 21/30) is visited at home following a neighbour's concern. She is unkempt, thin and her home is in poor condition. When asked about help with washing, meals and benefits, she says clearly: 'I am fine, I don't want any strangers in my house. I can manage.' She demonstrates understanding of the consequences of declining. What is the most appropriate action?",
+    "options": {
+      "A": "Arrange immediate compulsory admission under the Mental Health Act",
+      "B": "Refer to adult safeguarding and override her refusal — she has dementia so lacks capacity",
+      "C": "Conduct a formal mental capacity assessment for this specific decision; if she has capacity, respect her decision while documenting concerns and maintaining contact",
+      "D": "Contact social services without informing the patient — her safety overrides her autonomy",
+      "E": "Prescribe nutritional supplements and discharge — she has refused help"
+    },
+    "correct_answer": "C",
+    "explanation": {
+      "correct": "Per the Mental Capacity Act 2005 (MCA) and NICE NG97, capacity is decision-specific and time-specific. Having dementia does NOT automatically mean someone lacks capacity. The MCA requires a two-stage test: (1) Is there an impairment or disturbance of mind/brain? (2) Does this cause inability to understand, retain, use/weigh information, or communicate? If she demonstrates she can weigh up consequences and make an informed decision, she has capacity and her decision must be respected. A 'unwise decision' does not equal lack of capacity. Document concerns, maintain contact and safety-net.",
+      "A": "Incorrect — Mental Health Act is for mental health treatment, not social care. There is no acute mental health crisis described.",
+      "B": "Incorrect — Dementia diagnosis alone does not mean lack of capacity. A formal capacity assessment is required.",
+      "C": "CORRECT — Capacity assessment for this specific decision; if capacity confirmed, respect her decision per MCA 2005/NICE NG97.",
+      "D": "Incorrect — Contacting social services without informing the patient may be appropriate if she lacks capacity or is at risk, but her autonomy must first be properly assessed.",
+      "E": "Incorrect — Simply discharging without safety-netting and documented review is inadequate."
+    },
+    "reference": "Mental Capacity Act 2005. NICE NG97 — Dementia. https://www.nice.org.uk/guidance/ng97",
+    "tags": [
+      "mental capacity",
+      "Alzheimer's",
+      "autonomy",
+      "MCA 2005",
+      "capacity assessment",
+      "NICE NG97"
+    ],
+    "source": "Question Grove 360"
+  },
+  {
+    "id": "QG-PSYCH-006-002",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Psychiatry",
+    "difficulty": "Hard",
+    "question": "A 75-year-old man with moderate Alzheimer's disease (MMSE 18/30) is found by his GP to be living in squalid conditions, not eating adequately and not taking his medications. When assessed formally, he cannot explain what would happen if he continued without help and cannot retain information about services offered for more than a minute. He has no next of kin. What is the most appropriate next step?",
+    "options": {
+      "A": "Respect his wishes — any intervention would be paternalistic",
+      "B": "Refer to the Court of Protection for a welfare decision and initiate a best interests meeting",
+      "C": "Arrange admission under Section 2 of the Mental Health Act",
+      "D": "Contact the police for a welfare check and discharge",
+      "E": "Prescribe donepezil and review in 6 weeks"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "This patient has FAILED the capacity assessment — he cannot retain information or weigh consequences. Under MCA 2005, when someone lacks capacity, decisions must be made in their BEST INTERESTS. For complex welfare decisions (where to live, care arrangements), a best interests meeting should be convened involving healthcare and social care professionals. If there is no consensus or family to act as decision-maker, the Court of Protection can appoint a Deputy or make a specific decision. Local authority safeguarding and social services should be involved urgently.",
+      "A": "Incorrect — Lack of capacity means autonomous refusal cannot be respected. Best interests decision-making takes over.",
+      "B": "CORRECT — Lacks capacity → best interests meeting → Court of Protection if needed per MCA 2005.",
+      "C": "Incorrect — Section 2 MHA is for assessment of mental disorder for treatment — not for social care decisions in dementia.",
+      "D": "Incorrect — Police welfare check is not sufficient. A formal best interests process is required.",
+      "E": "Incorrect — Prescribing alone does not address the safeguarding and welfare concerns."
+    },
+    "reference": "Mental Capacity Act 2005. Court of Protection. NICE NG97 — Dementia.",
+    "tags": [
+      "lacks capacity",
+      "best interests",
+      "Court of Protection",
+      "MCA 2005",
+      "dementia",
+      "safeguarding"
+    ],
+    "source": "Question Grove 360"
+  },
+  {
+    "id": "QG-PSYCH-006-003",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Psychiatry",
+    "difficulty": "Medium",
+    "question": "A GP is discussing social services referral with an 80-year-old woman with early Alzheimer's (MMSE 22/30). She has capacity and declines a formal social services assessment. Her daughter is pressing the GP to arrange it anyway. What is the correct ethical and legal position?",
+    "options": {
+      "A": "Arrange the referral — the daughter's concerns override the patient's refusal",
+      "B": "The patient has capacity and can decline a social services referral. The GP should document this, explain the services available, encourage the patient to reconsider and maintain a safety net",
+      "C": "Override her refusal because her daughter has power of attorney",
+      "D": "Refer anonymously under adult safeguarding without informing the patient",
+      "E": "Enforce a social services assessment — it is in her best interests"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per MCA 2005 and GMC Good Medical Practice, a capacitous patient has the legal right to refuse any intervention, including social services involvement. The GP should: document the capacity assessment and the patient's decision, ensure she understands what services could offer, encourage her to reconsider and provide information, create a safety net with planned review, and address the daughter's concerns sensitively. A Lasting Power of Attorney for health and welfare does NOT override a capacitous person's decision.",
+      "A": "Incorrect — Family concerns do not override the patient's capacitous decision.",
+      "B": "CORRECT — Capacitous patient can decline social services referral. Document, safety-net and maintain contact per MCA 2005.",
+      "C": "Incorrect — LPA only activates when the person lacks capacity. It cannot override a capacitous decision.",
+      "D": "Incorrect — Anonymous safeguarding referral without patient knowledge is only appropriate when there is a risk to others or the patient lacks capacity.",
+      "E": "Incorrect — 'Best interests' applies only when capacity is lacking. This patient has capacity."
+    },
+    "reference": "Mental Capacity Act 2005. GMC — Good Medical Practice. NICE NG97.",
+    "tags": [
+      "capacity",
+      "social services",
+      "autonomy",
+      "LPA",
+      "MCA 2005",
+      "Alzheimer's"
+    ],
+    "source": "Question Grove 360"
+  },
+  {
+    "id": "QG-PSYCH-006-004",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Psychiatry",
+    "difficulty": "Easy",
+    "question": "A 79-year-old man with mild Alzheimer's disease wishes to continue driving. His MMSE is 23/30. His wife reports he has got lost twice in familiar areas and had a minor collision. He believes he is safe to drive. What is the GP's duty?",
+    "options": {
+      "A": "Respect his autonomy — do not interfere with his driving as he has capacity",
+      "B": "Advise him he must inform the DVLA of his diagnosis, advise against driving until DVLA assessment; if he refuses, the GP has a duty to inform the DVLA after warning him",
+      "C": "Refer to neurology for driving assessment — GPs have no role in driving restrictions",
+      "D": "Contact the DVLA without informing the patient as his driving is dangerous",
+      "E": "Advise him to stop driving permanently and contact the police"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per DVLA guidelines and GMC guidance, a diagnosis of dementia MUST be declared to the DVLA. The GP should: advise the patient to notify the DVLA (legal obligation), advise against driving pending assessment, discuss the safety concerns and GP's concerns. If the patient refuses to inform the DVLA and continues to drive posing a danger, the GP must warn the patient they intend to notify the DVLA, then report to the DVLA if the patient does not. This is one of the specific exceptions to patient confidentiality (public safety).",
+      "A": "Incorrect — Public safety overrides full autonomy in driving with dementia.",
+      "B": "CORRECT — Advise DVLA notification + advise not to drive; if refused, GP notifies DVLA after warning per DVLA/GMC guidance.",
+      "C": "Incorrect — GPs have a central role in advising patients about DVLA notification for medical conditions.",
+      "D": "Incorrect — The patient must be warned of the GP's intention to contact DVLA BEFORE the GP does so.",
+      "E": "Incorrect — The police are not the primary authority for medical fitness to drive. DVLA is the correct authority."
+    },
+    "reference": "DVLA — Assessing fitness to drive 2023. GMC — Confidentiality: patients' fitness to drive.",
+    "tags": [
+      "dementia",
+      "driving",
+      "DVLA",
+      "confidentiality",
+      "Alzheimer's",
+      "fitness to drive"
+    ],
+    "source": "Question Grove 360"
+  },
+  {
+    "id": "QG-PSYCH-006-005",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Psychiatry",
+    "difficulty": "Hard",
+    "question": "An 82-year-old woman with moderate Alzheimer's disease is admitted to hospital. Her son holds a Lasting Power of Attorney (LPA) for property and financial affairs. The medical team wish to perform a hip replacement but her son refuses consent, saying he believes it is not in her best interests. The patient cannot make this decision herself. What is the legally correct process?",
+    "options": {
+      "A": "The son's LPA for financial affairs allows him to refuse medical treatment",
+      "B": "Proceed with surgery — the son's financial LPA has no authority over medical decisions",
+      "C": "Convene a best interests meeting; if there is no LPA for health and welfare, the clinical team makes the best interests decision using MCA 2005 principles, consulting the son as someone interested in her welfare",
+      "D": "Apply for emergency Section 3 MHA detention to perform surgery",
+      "E": "Cancel surgery permanently — family refusal must always be respected"
+    },
+    "correct_answer": "C",
+    "explanation": {
+      "correct": "Under MCA 2005, an LPA for property and financial affairs does NOT grant authority over health and welfare decisions. Only an LPA for HEALTH AND WELFARE (specifically activated with the patient lacking capacity) can make health decisions. If no health and welfare LPA exists, the clinical team makes decisions in the patient's best interests under Section 4 MCA, consulting anyone interested in the patient's welfare (including family) — but family do not have a veto. For serious/contested decisions, an Independent Mental Capacity Advocate (IMCA) should be appointed or Court of Protection consulted.",
+      "A": "Incorrect — Financial LPA has no authority over medical/health decisions.",
+      "B": "Incorrect — While the financial LPA has no authority, the best interests process must still be followed — not unilateral proceeding.",
+      "C": "CORRECT — Best interests meeting under MCA 2005 Section 4; financial LPA has no health decision authority; consult son as interested party but no veto.",
+      "D": "Incorrect — MHA Section 3 is for mental disorder treatment — not for physical healthcare decisions.",
+      "E": "Incorrect — Family refusal without a health and welfare LPA does not have legal force to override best interests decision."
+    },
+    "reference": "Mental Capacity Act 2005, Sections 4, 9-14. Office of the Public Guardian — LPA guidance.",
+    "tags": [
+      "LPA",
+      "mental capacity",
+      "best interests",
+      "MCA 2005",
+      "health and welfare",
+      "financial LPA"
+    ],
+    "source": "Question Grove 360"
+  },
+  {
+    "id": "QG-PSYCH-007-001",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Psychiatry",
+    "difficulty": "Medium",
+    "question": "A 35-year-old man presents with episodic palpitations, agitation, breathlessness and sweating that last 10-15 minutes. He recently left prison 4 weeks ago after a 6-month sentence. He appears thin, pale and anxious. He has track marks on his forearms. ECG shows sinus tachycardia (HR 118 bpm). What is the most likely diagnosis and most appropriate management?",
+    "options": {
+      "A": "Panic disorder — CBT and sertraline",
+      "B": "Opiate withdrawal — assess withdrawal severity, offer methadone or buprenorphine substitution therapy",
+      "C": "Stimulant intoxication (cocaine/amphetamine) — supportive care and observation",
+      "D": "Alcohol withdrawal — chlordiazepoxide reducing regime",
+      "E": "Pulmonary embolism — Wells PE score and CT-PA"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Recently released prisoners have extremely high rates of substance misuse relapse, particularly opiates. Opiate withdrawal features: agitation, anxiety, palpitations, tachycardia, sweating, yawning, rhinorrhoea, myalgia, diarrhoea, piloerection. Track marks confirm IV drug use. Per NICE NG58 (Drug misuse in over 16s), management: assess withdrawal severity using COWS (Clinical Opiate Withdrawal Scale), offer opioid substitution therapy (methadone or buprenorphine), harm reduction advice, hepatitis B/C and HIV testing, needle exchange referral.",
+      "A": "Incorrect — Panic disorder does not cause track marks or occur acutely post-prison release in this pattern.",
+      "B": "CORRECT — Opiate withdrawal post-prison: COWS assessment, methadone/buprenorphine substitution per NICE NG58.",
+      "C": "Incorrect — Stimulant intoxication causes euphoria, aggression, dilated pupils — track marks suggest opiate use not stimulant.",
+      "D": "Incorrect — Alcohol withdrawal causes tremor, confusion, seizures — not the predominant picture here.",
+      "E": "Incorrect — PE is possible but opiate withdrawal with track marks is the most likely diagnosis."
+    },
+    "reference": "NICE NG58 — Drug misuse in over 16s: opioid detoxification. https://www.nice.org.uk/guidance/ng58",
+    "tags": [
+      "opiate withdrawal",
+      "substance misuse",
+      "methadone",
+      "buprenorphine",
+      "prison",
+      "NICE NG58"
+    ],
+    "source": "Question Grove 360"
+  },
+  {
+    "id": "QG-PSYCH-007-002",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Psychiatry",
+    "difficulty": "Medium",
+    "question": "A 38-year-old man recently released from prison presents requesting methadone for heroin dependence. He claims he was on 60mg daily in prison but prison records cannot be verified. He last used heroin 24 hours ago. His COWS score is 12 (moderate withdrawal). What is the safest initial methadone prescribing approach?",
+    "options": {
+      "A": "Start methadone 60mg immediately as he states this was his prison dose",
+      "B": "Start at 10-30mg per day, observe for 2-4 hours post-dose, titrate over days-weeks to achieve comfort; do not start high doses without verified tolerance",
+      "C": "Refuse methadone — require urine drug screen first before prescribing",
+      "D": "Start buprenorphine 24mg immediately",
+      "E": "Start methadone 60mg and review in 1 week"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per NICE NG58 and Orange Guidelines (Clinical Guidelines on Drug Misuse), methadone must be started conservatively even when patients claim high prior doses — tolerance changes rapidly and overdose risk is highest in the first 2 weeks. Starting dose: 10-30mg (maximum 30mg if not observed, up to 40mg if observed in clinic). Observe patient for 2-4 hours post first dose. Titrate by 5-10mg increments every 3-5 days. Methadone accumulates — takes 3-5 days to reach steady state. Deaths occur most commonly in first 2 weeks of treatment from respiratory depression.",
+      "A": "Incorrect — Starting at 60mg without verified tolerance risks fatal respiratory depression — extremely dangerous.",
+      "B": "CORRECT — Start conservatively 10-30mg, observe, titrate slowly per NICE NG58 and Orange Guidelines.",
+      "C": "Incorrect — Urine drug screen is useful but should not delay treatment of moderate withdrawal causing suffering.",
+      "D": "Incorrect — Buprenorphine 24mg is the maintenance dose. Starting dose is 4-8mg, and it must be given in moderate withdrawal (COWS ≥8) to avoid precipitating severe withdrawal.",
+      "E": "Incorrect — Starting at 60mg and leaving without observation risks overdose death."
+    },
+    "reference": "NICE NG58 — Drug misuse. Orange Guidelines — Drug misuse and dependence 2017.",
+    "tags": [
+      "methadone",
+      "opiate substitution",
+      "starting dose",
+      "COWS",
+      "NICE NG58",
+      "Orange Guidelines"
+    ],
+    "source": "Question Grove 360"
+  },
+  {
+    "id": "QG-PSYCH-007-003",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Psychiatry",
+    "difficulty": "Hard",
+    "question": "A 40-year-old man with heroin dependence is found collapsed at home 2 hours after collecting his supervised methadone dose. He is unconscious with pinpoint pupils, respiratory rate of 6 breaths/min and cyanotic. His partner called 999. What is the emergency treatment?",
+    "options": {
+      "A": "IV flumazenil — reverses benzodiazepine overdose",
+      "B": "Naloxone 400 mcg IM or intranasal — opioid reversal agent; repeat every 2-3 minutes if no response; call 999 if not already done",
+      "C": "Recovery position and await ambulance",
+      "D": "IV glucose — hypoglycaemic coma is more likely",
+      "E": "IV thiamine (Pabrinex) — Wernicke's encephalopathy"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Opioid overdose triad: unconsciousness, pinpoint pupils, respiratory depression. Naloxone is the specific opioid antagonist. Per NICE and Resuscitation Council UK guidance: naloxone 400 mcg IM, IV or intranasal every 2-3 minutes if no response (maximum 10mg). Naloxone has a shorter half-life than methadone (methadone lasts 24-36 hours) — repeat doses or IV infusion required. 999 must be called. Naloxone Take-Home programmes are available for people at risk. Recovery position while awaiting paramedics if breathing maintained.",
+      "A": "Incorrect — Flumazenil reverses benzodiazepines — not opioids. Pinpoint pupils point to opioid toxidrome.",
+      "B": "CORRECT — Naloxone 400 mcg IM/intranasal for opioid overdose; repeat as needed per Resuscitation Council/NICE.",
+      "C": "Incorrect — RR 6 with cyanosis requires immediate naloxone administration, not just positioning.",
+      "D": "Incorrect — While hypoglycaemia should be excluded, the triad of pinpoint pupils + coma + respiratory depression = opioid overdose.",
+      "E": "Incorrect — Wernicke's is for alcoholic patients with confusion/eye signs — not acute respiratory depression with pinpoint pupils."
+    },
+    "reference": "NICE — Naloxone for opioid overdose. Resuscitation Council UK. Orange Guidelines 2017.",
+    "tags": [
+      "opioid overdose",
+      "naloxone",
+      "methadone toxicity",
+      "respiratory depression",
+      "pinpoint pupils",
+      "emergency"
+    ],
+    "source": "Question Grove 360"
+  },
+  {
+    "id": "QG-PSYCH-007-004",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Psychiatry",
+    "difficulty": "Medium",
+    "question": "A 32-year-old woman is being assessed in primary care following prison release. She uses cocaine regularly and presents with episodes of palpitations, chest pain, agitation and elated mood lasting 20-30 minutes. Her BP is 168/102 mmHg during an episode. ECG shows sinus tachycardia with no ischaemic changes. What is the most likely explanation for her episodic symptoms?",
+    "options": {
+      "A": "Phaeochromocytoma — plasma metanephrines",
+      "B": "Cocaine intoxication — sympathomimetic toxidrome causing episodic hypertension, tachycardia, palpitations and agitation",
+      "C": "Panic disorder — SSRI and CBT",
+      "D": "Hyperthyroidism — TFTs",
+      "E": "MDMA intoxication — supportive care and cooling"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Cocaine is a sympathomimetic drug that blocks catecholamine reuptake, causing: episodic hypertension, tachycardia, palpitations, chest pain, agitation, euphoria/elated mood, hyperthermia, dilated pupils. Episodes are short (20-30 minutes) corresponding to cocaine's short half-life. The episodic hypertension pattern in a known cocaine user is most likely cocaine intoxication. Key complication: cocaine-induced chest pain can represent coronary vasospasm/MI — ECG and troponin must be checked. Per NICE CG53 (Psychosis with substance misuse), dual-diagnosis management is required.",
+      "A": "Incorrect — Phaeochromocytoma is possible but cocaine is more common in a known user. Phaeo would give sustained hypertension between episodes typically.",
+      "B": "CORRECT — Cocaine sympathomimetic toxidrome: episodic hypertension + tachycardia + palpitations + elated mood in cocaine user.",
+      "C": "Incorrect — Panic disorder does not cause hypertension to 168/102 or elated mood.",
+      "D": "Incorrect — Hyperthyroidism causes persistent rather than episodic tachycardia, not acute elation.",
+      "E": "Incorrect — MDMA causes hyperthermia, hyponatraemia, serotonergic features — not described specifically here."
+    },
+    "reference": "NICE CG53 — Psychosis with coexisting substance misuse. TOXBASE — Cocaine toxicology.",
+    "tags": [
+      "cocaine",
+      "sympathomimetic",
+      "palpitations",
+      "hypertension",
+      "substance misuse",
+      "NICE CG53"
+    ],
+    "source": "Question Grove 360"
+  },
+  {
+    "id": "QG-PSYCH-007-005",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Psychiatry",
+    "difficulty": "Easy",
+    "question": "A 30-year-old man recently released from prison is registered with a GP. He is known to misuse heroin. Per NICE NG58, what harm reduction interventions should be offered at first contact?",
+    "options": {
+      "A": "Immediate referral to psychiatry — primary care has no role in substance misuse",
+      "B": "Hepatitis B vaccination, hepatitis B and C and HIV testing, needle exchange referral, naloxone take-home kit, opioid substitution therapy assessment, advice on safer injecting",
+      "C": "Random urine drug screens and discharge if positive for illicit drugs",
+      "D": "Prescribe antidepressants — substance misuse is always driven by depression",
+      "E": "Advise complete abstinence as the only acceptable treatment goal"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per NICE NG58, harm reduction for IV drug users should include: hepatitis B vaccination (if unvaccinated), hepatitis B, C and HIV testing (blood-borne virus BBV screening), referral to needle and syringe exchange programme, take-home naloxone provision (prevents overdose death), assessment for opioid substitution therapy (methadone or buprenorphine), safer injecting advice (avoid femoral injecting, clean equipment, rotate sites). These interventions significantly reduce morbidity and mortality in people who inject drugs.",
+      "A": "Incorrect — Primary care has a key role in harm reduction and substance misuse management per NICE NG58.",
+      "B": "CORRECT — Full harm reduction package: BBV testing, Hep B vaccine, needle exchange, naloxone, OST assessment per NICE NG58.",
+      "C": "Incorrect — Urine drug screens are monitoring tools — withholding care for positive results is unethical and contrary to NICE guidance.",
+      "D": "Incorrect — While comorbid mental health issues should be assessed, immediate antidepressants without assessment are inappropriate.",
+      "E": "Incorrect — Harm reduction (not abstinence-only) is the NICE-recommended approach for active drug users."
+    },
+    "reference": "NICE NG58 — Drug misuse in over 16s. https://www.nice.org.uk/guidance/ng58",
+    "tags": [
+      "harm reduction",
+      "substance misuse",
+      "hepatitis B",
+      "naloxone",
+      "needle exchange",
+      "NICE NG58"
+    ],
+    "source": "Question Grove 360"
+  },
+  {
+    "id": "QG-PSYCH-018-001",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Psychiatry",
+    "difficulty": "Medium",
+    "question": "A 72-year-old woman with end-stage brain tumour is in the last days of life at home. She is no longer able to swallow and is having seizure activity. Her family is distressed. What is the most appropriate medication to prescribe via syringe driver for seizure control in the dying patient?",
+    "options": {
+      "A": "Haloperidol — first-line anticonvulsant in syringe driver",
+      "B": "Midazolam — subcutaneous benzodiazepine, first-line for seizure control in palliative syringe drivers",
+      "C": "IV phenytoin — gold standard for seizure control",
+      "D": "Oral levetiracetam — continue regular seizure medications",
+      "E": "Phenobarbital — only option for refractory seizures in palliative care"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per NICE NG31 (Care of dying adults) and Palliative Care formulary, midazolam is the first-line benzodiazepine for seizure control via syringe driver (CSCI) in the last days of life. Typical dose: 10-30mg/24 hours via CSCI (titrated). Midazolam also treats agitation and anxiety in dying patients. Haloperidol is used in the syringe driver for nausea/vomiting and terminal agitation (not seizures). IV phenytoin is impractical when the patient can no longer have IV access. Phenobarbital is second-line for refractory seizures.",
+      "A": "Incorrect — Haloperidol is used for nausea, vomiting and terminal agitation — not seizure control.",
+      "B": "CORRECT — Midazolam via syringe driver/CSCI is first-line for seizure control in dying patients per NICE NG31/PCF.",
+      "C": "Incorrect — IV phenytoin is impractical in dying patients at home and requires IV access and cardiac monitoring.",
+      "D": "Incorrect — Patient cannot swallow. Oral medication is not appropriate.",
+      "E": "Incorrect — Phenobarbital (SC) is second-line for refractory seizures when midazolam is insufficient."
+    },
+    "reference": "NICE NG31 — Care of dying adults in the last days of life. Palliative Care Formulary (PCF).",
+    "tags": [
+      "syringe driver",
+      "midazolam",
+      "seizure",
+      "palliative care",
+      "CSCI",
+      "NICE NG31"
+    ],
+    "source": "Question Grove 360"
+  },
+  {
+    "id": "QG-PSYCH-018-002",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Psychiatry",
+    "difficulty": "Medium",
+    "question": "A 68-year-old man with end-stage COPD in the last days of life develops severe agitation, restlessness and distress (terminal agitation). He is no longer conscious. His family find his behaviour distressing. What is the most appropriate medication to add to his syringe driver?",
+    "options": {
+      "A": "Midazolam alone — sufficient for all end-of-life symptoms",
+      "B": "Haloperidol (or levomepromazine for refractory cases) added to the syringe driver for terminal agitation",
+      "C": "Oral diazepam — benzodiazepines are best for agitation",
+      "D": "IV haloperidol — faster onset than subcutaneous",
+      "E": "Morphine — increased opioid dose resolves agitation"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Terminal agitation (terminal restlessness) requires antipsychotics. Per NICE NG31 and PCF: haloperidol 2.5-5mg/24hrs via CSCI is first-line for terminal agitation. Levomepromazine 12.5-50mg/24hrs CSCI is used for refractory agitation (more sedating). Midazolam can be added if agitation is not controlled with antipsychotic alone. Benzodiazepines alone are less effective for agitation with a delirium/confusion component. Increasing opioids risks respiratory depression without treating the agitation.",
+      "A": "Incorrect — Midazolam is primarily for anxiety and seizures. Antipsychotic is more appropriate for terminal agitation.",
+      "B": "CORRECT — Haloperidol via CSCI for terminal agitation; levomepromazine for refractory cases per NICE NG31/PCF.",
+      "C": "Incorrect — Oral medication is not possible in an unconscious patient.",
+      "D": "Incorrect — IV route is unnecessary when subcutaneous CSCI is available and equally effective.",
+      "E": "Incorrect — Increasing opioids without an agitation indication risks respiratory depression."
+    },
+    "reference": "NICE NG31 — Care of dying adults. PCF6 — Palliative Care Formulary.",
+    "tags": [
+      "terminal agitation",
+      "haloperidol",
+      "levomepromazine",
+      "syringe driver",
+      "CSCI",
+      "NICE NG31"
+    ],
+    "source": "Question Grove 360"
+  },
+  {
+    "id": "QG-PSYCH-018-003",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Psychiatry",
+    "difficulty": "Easy",
+    "question": "A district nurse calls a GP to prescribe anticipatory medications for a dying patient at home. The patient has advanced cancer and cannot swallow. What four medication classes should be prescribed as 'just in case' medications for the last days of life per NICE NG31?",
+    "options": {
+      "A": "Morphine (pain/breathlessness), midazolam (anxiety/seizures), haloperidol (nausea/agitation), hyoscine butylbromide (respiratory secretions)",
+      "B": "Paracetamol, ibuprofen, ondansetron, diazepam",
+      "C": "Fentanyl patch, oral morphine, diazepam, metoclopramide",
+      "D": "IV morphine, IV midazolam, IV haloperidol, IV dexamethasone",
+      "E": "Tramadol, levomepromazine, cyclizine, phenobarbital"
+    },
+    "correct_answer": "A",
+    "explanation": {
+      "correct": "Per NICE NG31, anticipatory 'just in case' medications for the last days of life (subcutaneous, prescribed in advance for use if needed) include: (1) Opioid for pain and breathlessness — morphine or diamorphine SC; (2) Benzodiazepine for anxiety and seizures — midazolam SC; (3) Antipsychotic for nausea, vomiting and agitation — haloperidol SC (or levomepromazine); (4) Antimuscarinic for respiratory secretions ('death rattle') — hyoscine butylbromide SC (or glycopyrronium). These four cover the main last-days-of-life symptoms.",
+      "A": "CORRECT — Morphine + midazolam + haloperidol + hyoscine butylbromide are the four standard anticipatory medications per NICE NG31.",
+      "B": "Incorrect — Oral medications and ondansetron are not appropriate for subcutaneous anticipatory prescribing.",
+      "C": "Incorrect — Fentanyl patches and oral medications are inappropriate when a patient cannot swallow.",
+      "D": "Incorrect — IV access is not typically available at home. Subcutaneous route is standard.",
+      "E": "Incorrect — Tramadol is not recommended in dying patients; phenobarbital is only for refractory seizures."
+    },
+    "reference": "NICE NG31 — Care of dying adults in the last days of life. https://www.nice.org.uk/guidance/ng31",
+    "tags": [
+      "anticipatory medications",
+      "syringe driver",
+      "last days of life",
+      "midazolam",
+      "haloperidol",
+      "NICE NG31"
+    ],
+    "source": "Question Grove 360"
+  },
+  {
+    "id": "QG-PSYCH-018-004",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Psychiatry",
+    "difficulty": "Hard",
+    "question": "A 65-year-old man with end-stage cancer is on a syringe driver containing morphine 20mg/24hr and midazolam 10mg/24hr. His pain is not controlled (pain score 8/10). He is no longer able to take oral medication. What is the most appropriate approach to optimise his pain management?",
+    "options": {
+      "A": "Add haloperidol to the syringe driver — this improves opioid efficacy",
+      "B": "Increase morphine dose in the syringe driver (increase by 30-50% if inadequately controlled), and prescribe a breakthrough subcutaneous morphine dose of 1/6th of the 24-hour dose PRN",
+      "C": "Stop the syringe driver and restart oral morphine",
+      "D": "Add oral paracetamol as adjunct — step down the analgesic ladder",
+      "E": "Fentanyl transdermal patch is superior to subcutaneous morphine in dying patients"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per NICE NG31 and PCF, opioid dose titration for pain in dying patients: if pain is uncontrolled, increase the total 24-hour opioid dose by 30-50%. Prescribe breakthrough (rescue) dose: 1/6th of the 24-hour CSCI dose subcutaneously PRN (every 2-4 hours). Review after 24 hours and adjust CSCI dose based on breakthrough use. Oral medications are not appropriate when swallowing is impaired.",
+      "A": "Incorrect — Haloperidol does not improve opioid analgesic efficacy. It is for nausea and agitation.",
+      "B": "CORRECT — Increase CSCI morphine by 30-50% + 1/6th 24-hour dose as breakthrough SC per NICE NG31/PCF.",
+      "C": "Incorrect — Patient cannot swallow — oral medication is not possible.",
+      "D": "Incorrect — Oral paracetamol is not possible. Step-down is inappropriate for uncontrolled cancer pain.",
+      "E": "Incorrect — Fentanyl patches take 12-24 hours to reach therapeutic levels and cannot be rapidly titrated — not ideal for acute uncontrolled pain."
+    },
+    "reference": "NICE NG31 — Care of dying adults. PCF6 — Palliative Care Formulary. SIGN 143.",
+    "tags": [
+      "syringe driver",
+      "morphine titration",
+      "breakthrough dose",
+      "palliative care",
+      "CSCI",
+      "NICE NG31"
+    ],
+    "source": "Question Grove 360"
+  },
+  {
+    "id": "QG-PSYCH-018-005",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Psychiatry",
+    "difficulty": "Medium",
+    "question": "A 70-year-old woman dying of ovarian cancer develops nausea and vomiting in the last days of life. She has a syringe driver with morphine and midazolam. Which antiemetic is most appropriate to add to the syringe driver for nausea?",
+    "options": {
+      "A": "Ondansetron — 5-HT3 antagonist, most effective antiemetic",
+      "B": "Haloperidol 2.5-5mg/24hr via CSCI — first-line antiemetic in palliative care syringe drivers",
+      "C": "Oral metoclopramide — prokinetic for gastric stasis",
+      "D": "IV cyclizine — antihistamine antiemetic",
+      "E": "Oral domperidone — does not cross blood-brain barrier"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per NICE NG31 and PCF, haloperidol (1.5-5mg/24hr CSCI) is the preferred first-line antiemetic via syringe driver in palliative care. It is a central dopamine D2 antagonist acting on the chemoreceptor trigger zone (CTZ). It also treats agitation. Cyclizine (antihistamine H1) is an alternative via CSCI. Metoclopramide can be used for gastric stasis/bowel obstruction via CSCI. Ondansetron is effective but expensive and less evidence in palliative nausea compared to haloperidol. Oral medications are not possible.",
+      "A": "Incorrect — Ondansetron is effective for chemotherapy-induced and postoperative nausea but is not first-line in palliative CSCI.",
+      "B": "CORRECT — Haloperidol 2.5-5mg/24hr CSCI is first-line antiemetic in palliative syringe drivers per NICE NG31/PCF.",
+      "C": "Incorrect — Oral medication is not possible in a dying patient who cannot swallow.",
+      "D": "Incorrect — Cyclizine can be given SC/CSCI but is second-line; IV route not standard.",
+      "E": "Incorrect — Oral medication is inappropriate. Domperidone has limited evidence in palliative care."
+    },
+    "reference": "NICE NG31 — Care of dying adults. PCF6 — Palliative Care Formulary.",
+    "tags": [
+      "haloperidol",
+      "antiemetic",
+      "syringe driver",
+      "palliative care",
+      "CSCI",
+      "NICE NG31"
+    ],
+    "source": "Question Grove 360"
+  },
+  {
+    "id": "QG-PSYCH-054-001",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Psychiatry",
+    "difficulty": "Medium",
+    "question": "A 26-year-old woman is 6 weeks postpartum. She was referred to perinatal psychiatry due to a history of self-harm, emotional dysregulation, unstable relationships and impulsive behaviour — features consistent with emotionally unstable/borderline personality disorder (BPD). She has not attended her psychiatric appointment (DNA). Her midwife calls the GP concerned. What is the most appropriate immediate action?",
+    "options": {
+      "A": "Discharge from the referral — she has chosen not to engage",
+      "B": "Contact the patient directly to understand barriers to attendance, conduct a risk assessment, liaise with perinatal psychiatry team and ensure safeguarding of the infant is considered",
+      "C": "Inform social services and arrange immediate removal of the baby",
+      "D": "Prescribe an SSRI as she likely has postnatal depression",
+      "E": "Wait for her to re-refer herself when she is ready"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per NICE NG192 (Antenatal and postnatal mental health) and safeguarding guidance, a postpartum woman with a history of self-harm and known BPD who DNAs psychiatric services is at increased risk — both for herself and potentially for her infant's care. The GP should: actively contact her to understand barriers to engagement (chaotic presentation is common in BPD), conduct a risk assessment for self-harm and harm to infant, liaise with perinatal psychiatry team, and consider whether a safeguarding assessment for the baby is needed (BPD does not automatically mean parenting is unsafe — this requires assessment).",
+      "A": "Incorrect — Non-attendance must not be taken as withdrawal of consent to care, especially with a postpartum woman with risk history.",
+      "B": "CORRECT — Active outreach + risk assessment + perinatal psychiatry liaison + safeguarding consideration per NICE NG192.",
+      "C": "Incorrect — Immediate infant removal is not indicated based solely on DNA and BPD diagnosis without safeguarding assessment.",
+      "D": "Incorrect — While postnatal depression may coexist, BPD and PND have different management. SSRI alone is insufficient.",
+      "E": "Incorrect — Self-referral waiting in the postpartum period with a vulnerable woman is clinically inappropriate."
+    },
+    "reference": "NICE NG192 — Antenatal and postnatal mental health. https://www.nice.org.uk/guidance/ng192",
+    "tags": [
+      "BPD",
+      "postnatal",
+      "perinatal psychiatry",
+      "DNA",
+      "safeguarding",
+      "NICE NG192"
+    ],
+    "source": "Question Grove 360"
+  },
+  {
+    "id": "QG-PSYCH-054-002",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Psychiatry",
+    "difficulty": "Hard",
+    "question": "A 28-year-old woman 3 months postpartum has a known diagnosis of BPD (emotionally unstable personality disorder). She presents to her GP after superficially cutting her forearm following a row with her partner. Her baby is 3 months old and in good physical health. She is not experiencing psychotic symptoms. What is the most appropriate management?",
+    "options": {
+      "A": "Admit to psychiatric inpatient unit immediately for self-harm",
+      "B": "Risk assessment, wound management, crisis plan including crisis team contact, safeguarding consideration for infant, perinatal CMHT referral",
+      "C": "Start an SSRI immediately — BPD with self-harm responds well to antidepressants",
+      "D": "Discharge — superficial self-harm in BPD is attention-seeking behaviour",
+      "E": "Refer to social services only and discharge from psychiatric services"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per NICE NG225 (Self-harm) and NICE NG62 (BPD), self-harm in BPD requires: thorough risk assessment, wound care, crisis plan with specific crisis team contacts (24-hour crisis line), and exploration of precipitants. Inpatient admission for BPD self-harm often worsens outcomes (regression, institutional dependency) — community management with crisis planning is preferred unless risk is severe. Safeguarding of the infant must be considered (not automatically referred but assessed). Dialectical Behaviour Therapy (DBT) is the evidence-based treatment for BPD, not SSRIs.",
+      "A": "Incorrect — Inpatient admission for BPD self-harm is generally avoided unless high acute risk — per NICE NG62, community management is preferred.",
+      "B": "CORRECT — Risk assessment + wound care + crisis plan + safeguarding consideration + perinatal CMHT per NICE NG225/NG62.",
+      "C": "Incorrect — SSRIs are not the evidence-based treatment for BPD. DBT and psychological therapies are recommended per NICE NG62.",
+      "D": "Incorrect — Dismissing self-harm as 'attention-seeking' is clinically and ethically inappropriate per NICE NG225.",
+      "E": "Incorrect — Social services alone without psychiatric and crisis management is inadequate."
+    },
+    "reference": "NICE NG225 — Self-harm. NICE NG62 — Borderline personality disorder. NICE NG192.",
+    "tags": [
+      "BPD",
+      "self-harm",
+      "postpartum",
+      "crisis plan",
+      "safeguarding",
+      "NICE NG62"
+    ],
+    "source": "Question Grove 360"
+  },
+  {
+    "id": "QG-PSYCH-054-003",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Psychiatry",
+    "difficulty": "Medium",
+    "question": "A GP reviews a 25-year-old woman 8 weeks postpartum with a suspected diagnosis of BPD and postpartum depression (Edinburgh Postnatal Depression Score 18). She has not self-harmed recently but is feeling low, hopeless and has poor attachment with her baby. What is the recommended psychological therapy for BPD per NICE NG62?",
+    "options": {
+      "A": "CBT alone — first-line for BPD",
+      "B": "Dialectical Behaviour Therapy (DBT) — the recommended psychological treatment for BPD per NICE NG62",
+      "C": "Cognitive Analytic Therapy (CAT) only",
+      "D": "Mindfulness-based cognitive therapy (MBCT)",
+      "E": "Eye Movement Desensitisation and Reprocessing (EMDR)"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per NICE NG62 (Borderline personality disorder), Dialectical Behaviour Therapy (DBT) is the recommended evidence-based psychological treatment. DBT is specifically designed for BPD and combines cognitive behavioural techniques with mindfulness and dialectical philosophy. It addresses emotional dysregulation, self-harm and interpersonal difficulties. DBT includes: individual therapy, skills training group, phone coaching. A DBT-informed approach within the perinatal period can also address mother-infant relationship difficulties.",
+      "A": "Incorrect — CBT is effective for depression and anxiety but DBT is specifically recommended for BPD per NICE NG62.",
+      "B": "CORRECT — DBT is the recommended psychological treatment for BPD per NICE NG62.",
+      "C": "Incorrect — CAT is a valid therapy for BPD but is not the primary NICE recommendation.",
+      "D": "Incorrect — MBCT is for recurrent depression prevention — not specifically recommended for BPD.",
+      "E": "Incorrect — EMDR is for PTSD — not primary treatment for BPD."
+    },
+    "reference": "NICE NG62 — Borderline personality disorder: recognition and management. https://www.nice.org.uk/guidance/ng62",
+    "tags": [
+      "BPD",
+      "DBT",
+      "dialectical behaviour therapy",
+      "borderline personality",
+      "NICE NG62",
+      "psychological therapy"
+    ],
+    "source": "Question Grove 360"
+  },
+  {
+    "id": "QG-PSYCH-054-004",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Psychiatry",
+    "difficulty": "Easy",
+    "question": "A 27-year-old woman with suspected BPD is 10 weeks postpartum. Her Edinburgh Postnatal Depression Scale score is 22 (high risk). She expresses passive suicidal ideation ('I wish I wasn't here'). She has no specific plan but is struggling to care for her baby. What is the most appropriate immediate management?",
+    "options": {
+      "A": "Arrange a routine GP follow-up in 2 weeks",
+      "B": "Urgent same-day referral to perinatal crisis team/CMHT; complete risk assessment; involve health visitor and midwife; consider safeguarding for infant",
+      "C": "Prescribe sertraline 50mg and review in 4 weeks",
+      "D": "Refer to IAPT for low-intensity CBT",
+      "E": "Reassure — passive suicidal ideation in BPD is common and does not require immediate action"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per NICE NG192 (Perinatal mental health), a postpartum woman with EPDS ≥13 plus suicidal ideation requires urgent specialist assessment. Perinatal mental health crisis services (or on-call CMHT/crisis team) should be contacted same day. Risk assessment must consider: risk to self, risk to infant, capacity to parent. Health visitor and midwife involvement is essential for monitoring mother-infant dyad. Medication alone (sertraline) without crisis assessment is inadequate for high-risk presentation.",
+      "A": "Incorrect — EPDS 22 with suicidal ideation in a postpartum woman requires same-day urgent assessment, not routine follow-up.",
+      "B": "CORRECT — Urgent perinatal crisis team referral + risk assessment + health visitor + safeguarding consideration per NICE NG192.",
+      "C": "Incorrect — Prescribing without crisis assessment is inadequate for this risk level.",
+      "D": "Incorrect — Low-intensity IAPT is for mild-moderate anxiety/depression — not for high-risk postpartum presentation with suicidal ideation.",
+      "E": "Incorrect — Suicidal ideation in the postpartum period requires immediate clinical action — it must never be dismissed."
+    },
+    "reference": "NICE NG192 — Antenatal and postnatal mental health: clinical management. https://www.nice.org.uk/guidance/ng192",
+    "tags": [
+      "postnatal depression",
+      "EPDS",
+      "suicidal ideation",
+      "perinatal crisis",
+      "BPD",
+      "NICE NG192"
+    ],
+    "source": "Question Grove 360"
+  },
+  {
+    "id": "QG-PSYCH-054-005",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Psychiatry",
+    "difficulty": "Hard",
+    "question": "A 30-year-old woman with BPD is breastfeeding her 8-week-old baby. Her GP wants to start an antidepressant for concurrent postnatal depression. Which antidepressant is considered safest in breastfeeding per NICE NG192 and the UK Drugs in Lactation Advisory Service?",
+    "options": {
+      "A": "Fluoxetine — preferred in breastfeeding due to long half-life",
+      "B": "Sertraline or paroxetine — lowest transfer into breast milk and most evidence for safety in breastfeeding",
+      "C": "Venlafaxine — SNRI, higher efficacy in BPD comorbid depression",
+      "D": "Amitriptyline — tricyclic, minimal transfer into breast milk",
+      "E": "Citalopram — equally safe as sertraline in breastfeeding"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per NICE NG192 and UKDILAS, sertraline and paroxetine have the most evidence for safety during breastfeeding — they have low transfer into breast milk, no reported adverse effects in breastfed infants, and extensive use data. Fluoxetine is less preferred due to its long half-life (active metabolite norfluoxetine) and higher breast milk transfer. Citalopram has moderate transfer. Venlafaxine and amitriptyline should be avoided unless benefits clearly outweigh risks. The choice should also consider the mother's prior response history.",
+      "A": "Incorrect — Fluoxetine has the highest breast milk transfer and longest active metabolite half-life — least preferred SSRI in breastfeeding.",
+      "B": "CORRECT — Sertraline or paroxetine — lowest breast milk transfer, best evidence per NICE NG192/UKDILAS.",
+      "C": "Incorrect — Venlafaxine has higher breast milk transfer and is second-line in breastfeeding.",
+      "D": "Incorrect — Amitriptyline data is limited; sedation and anticholinergic effects in infants are concerns.",
+      "E": "Incorrect — Citalopram has moderate breast milk transfer — sertraline preferred over citalopram in breastfeeding."
+    },
+    "reference": "NICE NG192 — Perinatal mental health. UKDILAS — Drugs in breastfeeding guidance.",
+    "tags": [
+      "breastfeeding",
+      "antidepressant",
+      "sertraline",
+      "BPD",
+      "postnatal depression",
+      "NICE NG192"
+    ],
+    "source": "Question Grove 360"
+  },
+  {
+    "id": "QG-PSYCH-077-001",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Psychiatry",
+    "difficulty": "Medium",
+    "question": "A 10-year-old child has atopic eczema affecting the eyelids and periorbital area. Topical hydrocortisone 1% was prescribed but has not controlled the eczema after 4 weeks. His parents are concerned about continuing steroids near the eyes. What is the most appropriate next topical treatment per NICE NG190?",
+    "options": {
+      "A": "Increase to betamethasone 0.1% on the eyelids",
+      "B": "Topical tacrolimus 0.03% (calcineurin inhibitor) — appropriate for facial/periorbital eczema when TCS are not effective or appropriate",
+      "C": "Topical clobetasol 0.05% — very potent TCS for refractory eczema",
+      "D": "Topical clotrimazole — likely fungal superinfection",
+      "E": "Refer to ophthalmology before any further treatment"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per NICE NG190 (Atopic eczema in under 12s), topical calcineurin inhibitors (TCIs) — tacrolimus 0.03% ointment (children ≥2 years) or pimecrolimus 1% cream — are indicated for moderate-severe eczema on the face/periorbital area when topical corticosteroids are not effective or are inappropriate due to side effect risk. Unlike corticosteroids, TCIs do not cause skin atrophy, telangiectasia or raised intraocular pressure — making them safer on the face and eyelids. Potent/very potent TCS on periorbital skin risk glaucoma and cataracts.",
+      "A": "Incorrect — Betamethasone 0.1% (potent TCS) on eyelids risks intraocular pressure rise, glaucoma and cataracts with prolonged use.",
+      "B": "CORRECT — Topical tacrolimus 0.03% is appropriate for periorbital eczema when mild TCS insufficient per NICE NG190.",
+      "C": "Incorrect — Very potent clobetasol on periorbital skin significantly increases risk of glaucoma and skin atrophy.",
+      "D": "Incorrect — There is no indication of fungal infection described.",
+      "E": "Incorrect — Ophthalmology referral may be needed if eye involvement (conjunctivitis), but the next treatment step for periorbital eczema can be managed in primary care/dermatology."
+    },
+    "reference": "NICE NG190 — Atopic eczema in under 12s. https://www.nice.org.uk/guidance/ng190",
+    "tags": [
+      "atopic eczema",
+      "periorbital",
+      "tacrolimus",
+      "calcineurin inhibitor",
+      "TCS alternative",
+      "NICE NG190"
+    ],
+    "source": "Question Grove 360"
+  },
+  {
+    "id": "QG-PSYCH-077-002",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Psychiatry",
+    "difficulty": "Easy",
+    "question": "A 25-year-old woman has moderate atopic eczema on her face. She has been using hydrocortisone 1% for 6 weeks with partial response. She asks about tacrolimus ointment. What is an important counselling point about tacrolimus?",
+    "options": {
+      "A": "Tacrolimus causes skin atrophy — use for no more than 2 weeks",
+      "B": "Tacrolimus carries a black box warning about theoretical malignancy risk — avoid sunlight during use and do not use under 2 years of age; benefits outweigh risks for moderate-severe eczema",
+      "C": "Tacrolimus is safe in pregnancy — no precautions needed",
+      "D": "Tacrolimus is an antifungal and also treats secondary skin infections",
+      "E": "Tacrolimus suppresses the HPA axis and causes systemic immunosuppression at standard doses"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per NICE NG190, MHRA and the tacrolimus SPC: topical tacrolimus carries a black box warning (MHRA) due to a theoretical increased risk of malignancy (lymphoma, skin cancer) based on case reports and systemic immunosuppression data. Current evidence does not confirm increased cancer risk with topical use, but as a precaution: avoid prolonged sun exposure/use sunscreen, not licensed for children under 2 years, use minimum effective amount for shortest duration. NICE confirms benefits outweigh risks for moderate-severe eczema. Tacrolimus does NOT cause skin atrophy (unlike TCS).",
+      "A": "Incorrect — Tacrolimus does NOT cause skin atrophy — this is a key advantage over topical corticosteroids.",
+      "B": "CORRECT — Theoretical malignancy risk (black box warning), avoid sun exposure, not for under 2s per MHRA/NICE NG190.",
+      "C": "Incorrect — Tacrolimus should be used with caution in pregnancy — limited data; not recommended routinely.",
+      "D": "Incorrect — Tacrolimus is a calcineurin inhibitor (immunomodulator) — not antifungal.",
+      "E": "Incorrect — Topical tacrolimus at standard doses does not cause clinically significant systemic immunosuppression or HPA axis suppression unlike oral tacrolimus."
+    },
+    "reference": "NICE NG190 — Atopic eczema. MHRA — Tacrolimus black box warning. Tacrolimus SPC.",
+    "tags": [
+      "tacrolimus",
+      "calcineurin inhibitor",
+      "malignancy risk",
+      "eczema",
+      "MHRA warning",
+      "NICE NG190"
+    ],
+    "source": "Question Grove 360"
+  },
+  {
+    "id": "QG-PSYCH-077-003",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Psychiatry",
+    "difficulty": "Medium",
+    "question": "A 35-year-old man has eczema on his eyelids, face and neck. He uses tacrolimus 0.1% (adult strength). He reports burning and stinging on application which usually settles after 1 week. After 3 months of treatment his eczema is well controlled. He asks about long-term use. What is the appropriate advice?",
+    "options": {
+      "A": "Stop tacrolimus after 3 months — it cannot be used long-term",
+      "B": "Tacrolimus can be used for maintenance — apply twice weekly to previously affected areas to maintain remission (proactive therapy)",
+      "C": "Switch back to potent topical corticosteroid for long-term use",
+      "D": "No maintenance required — eczema is cured after 3 months of tacrolimus",
+      "E": "Tacrolimus must be used daily indefinitely without breaks"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per NICE NG190 and tacrolimus SPC, tacrolimus 0.1% (adult formulation) can be used as proactive maintenance therapy — applying twice weekly to previously affected areas to prevent flares, in addition to daily emollients. This approach (twice-weekly application to previously affected skin) has evidence for reducing flare frequency in adults with moderate-severe atopic eczema, particularly on the face and sensitive areas. Initial burning/stinging usually settles within the first 1-2 weeks and is not a reason to discontinue.",
+      "A": "Incorrect — Tacrolimus can be used long-term for maintenance. No time limit is specified in NICE NG190 for proactive use.",
+      "B": "CORRECT — Twice-weekly proactive maintenance therapy with tacrolimus is NICE-recommended for reducing flares.",
+      "C": "Incorrect — Switching to potent TCS for long-term facial use risks the side effects (atrophy, glaucoma) that tacrolimus was chosen to avoid.",
+      "D": "Incorrect — Atopic eczema is a chronic condition — remission maintenance is required.",
+      "E": "Incorrect — Daily indefinite use is not the recommended maintenance schedule — twice-weekly proactive use is evidence-based."
+    },
+    "reference": "NICE NG190 — Atopic eczema in under 12s (and CKS adult eczema). Tacrolimus proactive therapy evidence.",
+    "tags": [
+      "tacrolimus",
+      "proactive therapy",
+      "maintenance eczema",
+      "twice weekly",
+      "atopic eczema",
+      "NICE NG190"
+    ],
+    "source": "Question Grove 360"
+  },
+  {
+    "id": "QG-PSYCH-077-004",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Psychiatry",
+    "difficulty": "Hard",
+    "question": "A 7-year-old child has severe eczema on the face and body that has not responded to moderate TCS and tacrolimus 0.03%. Her POEM score is 22 (severe). Parents ask about systemic treatment options. Per NICE guidance, what is the most appropriate next step?",
+    "options": {
+      "A": "Start oral prednisolone 1mg/kg for 2 weeks",
+      "B": "Refer to paediatric dermatology for assessment of systemic treatment (dupilumab is NICE-approved for severe atopic eczema from age 6)",
+      "C": "Start oral ciclosporin — first-line systemic for severe paediatric eczema",
+      "D": "Start oral methotrexate 5mg weekly",
+      "E": "Refer to immunology for hyposensitisation therapy"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per NICE TA1050 (Dupilumab for atopic eczema in children aged 6 to 11 years, 2024), dupilumab (anti-IL-4/IL-13 monoclonal antibody) is NICE-approved for severe atopic eczema (IGA ≥3, EASI ≥16) in children aged ≥6 years who have not responded to intensive topical therapy. This is a biologic given as subcutaneous injection every 2 weeks (after initial loading dose). Specialist paediatric dermatology referral is required. Dupilumab has transformed severe paediatric eczema management.",
+      "A": "Incorrect — Oral prednisolone causes severe rebound flare on withdrawal in eczema and is not recommended for routine management per NICE NG190.",
+      "B": "CORRECT — Refer to paediatric dermatology; dupilumab NICE-approved from age 6 for severe eczema per NICE TA1050.",
+      "C": "Incorrect — Ciclosporin is a systemic option but not first-line over dupilumab in children following NICE TA1050.",
+      "D": "Incorrect — Methotrexate is used in adult eczema but not standard first-line systemic for children.",
+      "E": "Incorrect — Hyposensitisation is for allergic rhinitis/asthma — not established eczema treatment."
+    },
+    "reference": "NICE TA1050 — Dupilumab for atopic eczema in children 6-11 years. NICE NG190.",
+    "tags": [
+      "dupilumab",
+      "severe eczema",
+      "paediatric",
+      "biologic",
+      "NICE TA1050",
+      "atopic eczema"
+    ],
+    "source": "Question Grove 360"
+  },
+  {
+    "id": "QG-PSYCH-077-005",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Psychiatry",
+    "difficulty": "Easy",
+    "question": "A 3-year-old child has periorbital eczema not responding to hydrocortisone 1%. The parents have heard about tacrolimus but are concerned it is not licensed for young children. What is the correct licensing information for tacrolimus in children?",
+    "options": {
+      "A": "Tacrolimus 0.1% is licensed from 2 years old",
+      "B": "Tacrolimus 0.03% is licensed for children aged 2 years and over; tacrolimus 0.1% is for adults and adolescents over 16 years",
+      "C": "Tacrolimus is not licensed for any child under 16 years",
+      "D": "Both tacrolimus 0.03% and 0.1% are licensed from 6 months of age",
+      "E": "Tacrolimus is only licensed for adults — use in children is off-label"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per MHRA licensing and NICE NG190: tacrolimus 0.03% ointment (Protopic) is licensed for use in children aged 2 years and over with moderate-severe atopic eczema. Tacrolimus 0.1% ointment is the adult and adolescent (≥16 years) formulation — it is NOT licensed for use in children under 16 years. This child is 3 years old, so tacrolimus 0.03% is appropriate. As hydrocortisone has failed and tacrolimus is appropriate for periorbital eczema, this would be the correct next step in children ≥2 years.",
+      "A": "Incorrect — Tacrolimus 0.1% (stronger) is NOT licensed for children — 0.03% is the correct formulation from age 2.",
+      "B": "CORRECT — Tacrolimus 0.03% licensed from age 2; tacrolimus 0.1% for adults/adolescents ≥16 per MHRA/NICE NG190.",
+      "C": "Incorrect — Tacrolimus 0.03% IS licensed for children from age 2.",
+      "D": "Incorrect — Neither formulation is licensed from 6 months. Age 2 is the lower age limit.",
+      "E": "Incorrect — Tacrolimus 0.03% is specifically licensed for children ≥2 years."
+    },
+    "reference": "NICE NG190 — Atopic eczema. MHRA — Tacrolimus (Protopic) SPC.",
+    "tags": [
+      "tacrolimus",
+      "licensing",
+      "children",
+      "0.03%",
+      "periorbital eczema",
+      "NICE NG190"
+    ],
+    "source": "Question Grove 360"
+  }
+]

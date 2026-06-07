@@ -1,0 +1,522 @@
+[
+  {
+    "id": "AKT-DERM-001",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Dermatology",
+    "difficulty": "Easy",
+    "question": "A 35-year-old woman presents with a 6-month history of well-defined, erythematous plaques with silvery-white scales on her elbows and knees. She also has nail pitting. What is the most likely diagnosis and first-line treatment?",
+    "options": {
+      "A": "Eczema — emollients and mild topical corticosteroid",
+      "B": "Psoriasis — topical corticosteroid combined with vitamin D analogue",
+      "C": "Tinea corporis — topical clotrimazole",
+      "D": "Seborrhoeic dermatitis — ketoconazole shampoo",
+      "E": "Pityriasis rosea — reassurance and emollients"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per NICE NG10 (Psoriasis: assessment and management), chronic plaque psoriasis (well-defined erythematous plaques with silvery scales on extensor surfaces + nail pitting) is treated first-line with a combination of a potent topical corticosteroid and a vitamin D analogue (e.g. calcipotriol). Combination products (e.g. Dovobet — calcipotriol/betamethasone) are used once daily. Vitamin D analogue alone is used on the face and flexures.",
+      "A": "Incorrect — Eczema presents with poorly defined, itchy, flexural patches. Treatment is emollients and mild corticosteroids, but this is not eczema.",
+      "B": "CORRECT — Plaque psoriasis: topical corticosteroid + vitamin D analogue combination is first-line per NICE NG10.",
+      "C": "Incorrect — Tinea corporis (ringworm) presents with an annular scaly lesion with central clearing, not symmetric extensor plaques with nail changes.",
+      "D": "Incorrect — Seborrhoeic dermatitis affects sebaceous gland-rich areas (scalp, face, chest), not elbows and knees.",
+      "E": "Incorrect — Pityriasis rosea presents with herald patch followed by smaller oval lesions in a Christmas-tree distribution on trunk, self-limiting."
+    },
+    "reference": "NICE NG10 — Psoriasis: assessment and management. https://www.nice.org.uk/guidance/ng10",
+    "tags": ["psoriasis", "plaque psoriasis", "topical corticosteroid", "vitamin D analogue", "NICE NG10", "nail pitting"]
+  },
+  {
+    "id": "AKT-DERM-002",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Dermatology",
+    "difficulty": "Medium",
+    "question": "A 4-year-old boy is brought in with intensely itchy vesicular blisters on the scalp, face, trunk and limbs in different stages of development. He has a low-grade fever. His 7-year-old sister had a similar illness 2 weeks ago. What is the diagnosis and most appropriate management?",
+    "options": {
+      "A": "Impetigo — oral flucloxacillin for 7 days",
+      "B": "Chickenpox — calamine lotion, chlorphenamine for itch, keep cool, avoid aspirin",
+      "C": "Hand, foot and mouth disease — reassurance and analgesia",
+      "D": "Scabies — topical permethrin 5%",
+      "E": "Eczema herpeticum — urgent aciclovir"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Chickenpox (varicella zoster) presents with: prodromal fever followed by intensely pruritic vesicular rash in different stages (papules, vesicles, crusts), starting on face/scalp/trunk, spreading peripherally. Contact history (sister 2 weeks ago = incubation 10-21 days) confirms diagnosis. Management: symptomatic — calamine lotion, chlorphenamine (antihistamine for itch), paracetamol for fever. AVOID aspirin (risk of Reye's syndrome). Keep fingernails short to prevent secondary infection from scratching.",
+      "A": "Incorrect — Impetigo presents with honey-crusted superficial lesions, typically around mouth/nose. Not vesicular with different stages.",
+      "B": "CORRECT — Chickenpox: vesicular rash in crops + contact history. Symptomatic management, avoid aspirin per NICE/PHE guidance.",
+      "C": "Incorrect — HFMD causes vesicles on palms, soles and in mouth — not widespread crops on scalp and trunk.",
+      "D": "Incorrect — Scabies causes intensely itchy burrows in web spaces, wrists, genitals — not vesicular crops.",
+      "E": "Incorrect — Eczema herpeticum is HSV superinfection of eczematous skin causing punched-out erosions in a child with eczema — not described here."
+    },
+    "reference": "NICE CKS — Chickenpox. PHE — Chickenpox guidance for primary care.",
+    "tags": ["chickenpox", "varicella", "vesicular rash", "calamine", "aspirin", "Reye's syndrome"]
+  },
+  {
+    "id": "AKT-DERM-003",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Dermatology",
+    "difficulty": "Hard",
+    "question": "A 70-year-old man presents with a 3-month history of a pigmented lesion on his back. It measures 12mm, has irregular borders, multiple colours (brown, black, red), and has been changing in size. What is the most appropriate management?",
+    "options": {
+      "A": "Monitor for 3 months with digital dermoscopy",
+      "B": "Punch biopsy in primary care",
+      "C": "Urgent 2-week wait referral for suspected melanoma",
+      "D": "Reassure — seborrhoeic keratosis is most likely at this age",
+      "E": "Apply topical imiquimod and review in 4 weeks"
+    },
+    "correct_answer": "C",
+    "explanation": {
+      "correct": "Per NICE NG12, any pigmented lesion with features of melanoma (ABCDE: Asymmetry, irregular Border, multiple Colours, Diameter >6mm, Evolving/changing) warrants urgent 2-week wait (2WW) referral for suspected melanoma. This lesion is 12mm, irregular, multicoloured and changing — high-risk features. Dermoscopy in primary care or punch biopsy must not replace or delay 2WW referral.",
+      "A": "Incorrect — Monitoring a suspected melanoma is dangerous. Urgent 2WW referral is required per NICE NG12.",
+      "B": "Incorrect — Biopsy of suspected melanoma should be performed by specialists, not in primary care, to ensure adequate excision margins.",
+      "C": "CORRECT — Changing, multicoloured, >6mm, irregular pigmented lesion = urgent 2WW melanoma referral per NICE NG12.",
+      "D": "Incorrect — Seborrhoeic keratosis has a stuck-on waxy appearance with regular borders. Changing multicoloured lesion must never be dismissed.",
+      "E": "Incorrect — Imiquimod is used for superficial BCC and actinic keratoses — not for suspected melanoma."
+    },
+    "reference": "NICE NG12 — Suspected cancer: recognition and referral. https://www.nice.org.uk/guidance/ng12",
+    "tags": ["melanoma", "pigmented lesion", "ABCDE", "2WW", "urgent referral", "NICE NG12"]
+  },
+  {
+    "id": "AKT-DERM-004",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Dermatology",
+    "difficulty": "Medium",
+    "question": "A 25-year-old woman presents with a 2-year history of moderate acne vulgaris with comedones, papules and pustules on her face and chest. She has already tried topical benzoyl peroxide alone for 3 months with poor response. What is the most appropriate next treatment?",
+    "options": {
+      "A": "Oral doxycycline alone for 3 months",
+      "B": "Topical retinoid (adapalene) alone",
+      "C": "Combined oral contraceptive pill",
+      "D": "Topical antibiotic (clindamycin) + topical retinoid + benzoyl peroxide",
+      "E": "Oral isotretinoin"
+    },
+    "correct_answer": "D",
+    "explanation": {
+      "correct": "Per NICE NG198 (Acne vulgaris: management), for moderate acne that has not responded to first-line treatment, combination therapy is recommended: topical antibiotic (clindamycin) + topical retinoid (adapalene) + benzoyl peroxide. Benzoyl peroxide is included to reduce antibiotic resistance. Topical antibiotics should never be used as monotherapy. Oral antibiotics are alternatives but combination topical is preferred first.",
+      "A": "Incorrect — Oral antibiotic monotherapy is not recommended due to antibiotic resistance. Must be combined with benzoyl peroxide.",
+      "B": "Incorrect — Topical retinoid alone is first-line for comedonal acne but not for mixed moderate acne unresponsive to benzoyl peroxide.",
+      "C": "Incorrect — Combined OCP can help in females but is not the primary acne treatment. It is an adjunct.",
+      "D": "CORRECT — Topical antibiotic + retinoid + benzoyl peroxide is recommended combination for moderate acne per NICE NG198.",
+      "E": "Incorrect — Oral isotretinoin is reserved for severe/scarring acne or treatment-resistant acne, initiated by specialists."
+    },
+    "reference": "NICE NG198 — Acne vulgaris: management. https://www.nice.org.uk/guidance/ng198",
+    "tags": ["acne vulgaris", "topical antibiotic", "retinoid", "benzoyl peroxide", "moderate acne", "NICE NG198"]
+  },
+  {
+    "id": "AKT-DERM-005",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Dermatology",
+    "difficulty": "Medium",
+    "question": "A 45-year-old man presents with intense itching, worse at night, affecting his wrists, finger web spaces and genitals. His partner has similar symptoms. What is the diagnosis and most appropriate treatment?",
+    "options": {
+      "A": "Atopic eczema — topical hydrocortisone 1%",
+      "B": "Scabies — permethrin 5% cream applied to whole body from neck down, repeated after 7 days",
+      "C": "Contact dermatitis — identify and avoid allergen",
+      "D": "Tinea manuum — oral terbinafine",
+      "E": "Scabies — malathion 0.5% applied once only"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Scabies presents with: intense itch (worse at night), burrows in web spaces/wrists/genitals, household contacts affected. Per NICE CKS and BASHH guidelines, permethrin 5% cream is first-line treatment: apply to whole body from neck down (including under nails, between toes, genitals), leave for 8-12 hours, wash off. Repeat after 7 days (second application). All household and close contacts must be treated simultaneously to prevent reinfestation.",
+      "A": "Incorrect — Eczema is not contagious and does not cause burrows in web spaces.",
+      "B": "CORRECT — Scabies: permethrin 5% whole body application x2 (7 days apart) + treat all contacts per NICE CKS.",
+      "C": "Incorrect — Contact dermatitis is not contagious and does not affect genital area and finger webs simultaneously.",
+      "D": "Incorrect — Tinea manuum causes scaling of palms, not intense nocturnal itch with genital involvement.",
+      "E": "Incorrect — Malathion is second-line when permethrin fails. A single application is insufficient — two applications 7 days apart are required."
+    },
+    "reference": "NICE CKS — Scabies. BASHH Guidelines — Scabies 2016.",
+    "tags": ["scabies", "permethrin", "pruritus", "nocturnal itch", "burrows", "NICE CKS"]
+  },
+  {
+    "id": "AKT-DERM-006",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Dermatology",
+    "difficulty": "Easy",
+    "question": "A 6-month-old baby presents with dry, itchy, erythematous patches on the cheeks and extensor surfaces of the arms and legs. The mother has asthma and hay fever. What is the diagnosis and most appropriate first-line management?",
+    "options": {
+      "A": "Seborrhoeic dermatitis — antifungal shampoo and mild steroid",
+      "B": "Atopic eczema — regular emollients and mild topical corticosteroid (hydrocortisone 1%) for flares",
+      "C": "Psoriasis — topical calcipotriol and betamethasone",
+      "D": "Contact dermatitis — identify and remove allergen",
+      "E": "Nappy rash — barrier cream and antifungal"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Atopic eczema (atopic dermatitis) in infants presents with: dry itchy skin, erythematous patches on cheeks and extensor surfaces, family history of atopy (asthma, eczema, hay fever). Per NICE NG190, management involves: regular emollients (first-line, applied liberally several times daily), mild topical corticosteroids (hydrocortisone 1%) for acute flares, avoiding triggers, and step-up therapy as needed. Emollients are the cornerstone of eczema management.",
+      "A": "Incorrect — Seborrhoeic dermatitis in infants (cradle cap) affects scalp, face and nappy area with greasy yellowish scales — not itchy.",
+      "B": "CORRECT — Atopic eczema: regular emollients + mild TCS (hydrocortisone 1%) for flares per NICE NG190.",
+      "C": "Incorrect — Calcipotriol/betamethasone combination is for psoriasis, not eczema, and not used in infants.",
+      "D": "Incorrect — Contact dermatitis is less likely at 6 months without a clear allergen history.",
+      "E": "Incorrect — Nappy rash is localised to the nappy area; this distribution (cheeks and extensor arms/legs) is classic for atopic eczema."
+    },
+    "reference": "NICE NG190 — Atopic eczema in under 12s: diagnosis and management. https://www.nice.org.uk/guidance/ng190",
+    "tags": ["atopic eczema", "emollients", "topical corticosteroid", "infant", "NICE NG190", "atopy"]
+  },
+  {
+    "id": "AKT-DERM-007",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Dermatology",
+    "difficulty": "Hard",
+    "question": "A 75-year-old woman presents with tense blisters on the abdomen and thighs. The blisters are on normal and erythematous skin. She also has urticated plaques. Skin biopsy shows subepidermal blistering with eosinophilic infiltrate. Direct immunofluorescence shows linear IgG and C3 at the dermal-epidermal junction. What is the diagnosis?",
+    "options": {
+      "A": "Dermatitis herpetiformis",
+      "B": "Pemphigus vulgaris",
+      "C": "Bullous pemphigoid",
+      "D": "Epidermolysis bullosa",
+      "E": "Stevens-Johnson syndrome"
+    },
+    "correct_answer": "C",
+    "explanation": {
+      "correct": "Bullous pemphigoid (BP) is an autoimmune subepidermal blistering disorder predominantly affecting elderly patients. Features: tense (not flaccid) blisters on urticarial plaques, abdomen and thighs, mucous membranes rarely affected. Biopsy: subepidermal split with eosinophils. DIF: linear IgG and C3 at basement membrane zone. Autoantibodies against BP180 and BP230. Treatment: potent topical corticosteroids (clobetasol) or systemic prednisolone.",
+      "A": "Incorrect — Dermatitis herpetiformis causes pruritic grouped vesicles on extensor surfaces, associated with coeliac disease. DIF shows granular IgA at tips of dermal papillae.",
+      "B": "Incorrect — Pemphigus vulgaris causes FLACCID blisters (intraepidermal), Nikolsky sign positive, mucous membrane involvement, DIF shows IgG intercellular 'fishnet' pattern.",
+      "C": "CORRECT — Bullous pemphigoid: elderly, tense blisters, subepidermal split, linear IgG/C3 at BMZ on DIF.",
+      "D": "Incorrect — Epidermolysis bullosa is a genetic condition causing skin fragility from birth/childhood, not acquired in elderly.",
+      "E": "Incorrect — SJS/TEN is drug-induced with epidermal detachment, mucosal involvement and systemic illness — acute onset."
+    },
+    "reference": "BAD Guidelines — Bullous Pemphigoid 2012. NICE CKS — Bullous pemphigoid.",
+    "tags": ["bullous pemphigoid", "tense blisters", "DIF", "subepidermal", "elderly", "autoimmune"]
+  },
+  {
+    "id": "AKT-DERM-008",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Dermatology",
+    "difficulty": "Medium",
+    "question": "A 55-year-old man presents with a pearly, rolled-edge nodule with telangiectasia on his nose that occasionally bleeds. He has a history of significant sun exposure. What is the most likely diagnosis and management?",
+    "options": {
+      "A": "Melanoma — urgent 2WW referral",
+      "B": "Squamous cell carcinoma — urgent 2WW referral",
+      "C": "Basal cell carcinoma — routine referral to dermatology within 2 weeks",
+      "D": "Basal cell carcinoma — urgent 2WW referral",
+      "E": "Sebaceous cyst — reassure and no treatment needed"
+    },
+    "correct_answer": "D",
+    "explanation": {
+      "correct": "Basal cell carcinoma (BCC) presents as a pearly, rolled-edge nodule with telangiectasia, typically on sun-exposed areas (face, nose). It is the most common skin cancer. Per NICE NG12, a lesion that has the appearance of a BCC should be referred urgently via the 2WW pathway for suspected skin cancer. BCCs rarely metastasise but cause local tissue destruction. Treatment: surgical excision, Mohs surgery, or photodynamic therapy.",
+      "A": "Incorrect — Melanoma is pigmented with ABCDE features. This is a pearly nodule with telangiectasia — classic BCC.",
+      "B": "Incorrect — SCC presents as a firm, indurated, ulcerated or crusted lesion, often on sun-damaged skin. Pearly rolled edge is BCC.",
+      "C": "Incorrect — BCC requires urgent 2WW referral per NICE NG12, not routine referral.",
+      "D": "CORRECT — BCC (pearly rolled edge + telangiectasia on sun-exposed skin) = urgent 2WW referral per NICE NG12.",
+      "E": "Incorrect — Sebaceous cyst is a dome-shaped mobile lump with a central punctum — not telangiectatic or pearly."
+    },
+    "reference": "NICE NG12 — Suspected cancer: recognition and referral. https://www.nice.org.uk/guidance/ng12",
+    "tags": ["basal cell carcinoma", "BCC", "pearly nodule", "telangiectasia", "2WW", "NICE NG12"]
+  },
+  {
+    "id": "AKT-DERM-009",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Dermatology",
+    "difficulty": "Medium",
+    "question": "A 30-year-old woman presents with a unilateral band of painful vesicles on an erythematous base along her right thoracic dermatome. She has burning and tingling pain in the same area. What is the diagnosis and most appropriate treatment?",
+    "options": {
+      "A": "Chickenpox — calamine lotion and antihistamine",
+      "B": "Herpes zoster (shingles) — aciclovir 800mg five times daily for 7 days",
+      "C": "Contact dermatitis — topical corticosteroid",
+      "D": "Herpes simplex — aciclovir 200mg five times daily for 5 days",
+      "E": "Impetigo — oral flucloxacillin"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Herpes zoster (shingles) presents with: prodromal burning/tingling pain followed by unilateral vesicular rash in a dermatomal distribution. Caused by reactivation of varicella zoster virus (VZV) in dorsal root ganglia. Per NICE CKS, antiviral treatment (aciclovir 800mg 5x/day for 7 days, or valaciclovir 1g TDS for 7 days) is most beneficial when started within 72 hours of rash onset. Antivirals reduce duration, severity and risk of post-herpetic neuralgia.",
+      "A": "Incorrect — Chickenpox causes widespread bilateral multi-stage vesicular rash, not a unilateral dermatomal distribution.",
+      "B": "CORRECT — Herpes zoster: dermatomal vesicular rash. Aciclovir 800mg 5x/day for 7 days within 72 hours of onset.",
+      "C": "Incorrect — Contact dermatitis is not vesicular and dermatomal in distribution.",
+      "D": "Incorrect — Herpes simplex causes labial or genital lesions. Lower dose aciclovir (200mg 5x/day) is for HSV, not shingles.",
+      "E": "Incorrect — Impetigo causes honey-crusted superficial lesions, not unilateral dermatomal vesicles."
+    },
+    "reference": "NICE CKS — Shingles (herpes zoster). https://cks.nice.org.uk/topics/shingles/",
+    "tags": ["shingles", "herpes zoster", "aciclovir", "dermatomal", "postherpetic neuralgia", "NICE CKS"]
+  },
+  {
+    "id": "AKT-DERM-010",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Dermatology",
+    "difficulty": "Easy",
+    "question": "A 22-year-old woman presents with a 3-week history of itchy, erythematous patches on her inner elbows and behind her knees. The skin is dry and excoriated. She has a childhood history of asthma. Her mother has eczema. What is the most appropriate first-line treatment?",
+    "options": {
+      "A": "Potent topical corticosteroid (betamethasone 0.1%) continuously",
+      "B": "Regular emollients liberally applied + mild-moderate topical corticosteroid (clobetasone 0.05%) for flares",
+      "C": "Oral prednisolone 30mg for 5 days",
+      "D": "Topical tacrolimus 0.1% as sole treatment",
+      "E": "Oral antihistamine cetirizine 10mg daily"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Atopic eczema management per NICE NG190: regular emollients (cornerstone of treatment — applied liberally throughout the day) plus topical corticosteroids for flares (mild-moderate potency for adults on body, avoid potent steroids on face/flexures without specialist advice). Clobetasone 0.05% (moderate) is appropriate for flexural eczema. Continuous potent TCS is avoided due to skin atrophy risk.",
+      "A": "Incorrect — Continuous potent corticosteroid (betamethasone) risks skin atrophy, especially in flexural areas. TCS should be used for flares only.",
+      "B": "CORRECT — Regular emollients + moderate TCS for flares is standard eczema management per NICE NG190.",
+      "C": "Incorrect — Oral prednisolone is reserved for severe eczema flares unresponsive to topical treatment, not first-line.",
+      "D": "Incorrect — Topical tacrolimus (calcineurin inhibitor) is second-line for moderate-severe eczema on sensitive areas (face) when TCS are inappropriate.",
+      "E": "Incorrect — Oral antihistamines do not treat eczema. Sedating antihistamines (chlorphenamine) may help nocturnal itch but are not treatment."
+    },
+    "reference": "NICE NG190 — Atopic eczema in under 12s. NICE CKS — Eczema atopic.",
+    "tags": ["atopic eczema", "emollients", "topical corticosteroid", "flexural", "NICE NG190", "flares"]
+  },
+  {
+    "id": "AKT-DERM-011",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Dermatology",
+    "difficulty": "Hard",
+    "question": "A 60-year-old woman presents with a non-healing ulcerated lesion on her lower lip that has been present for 3 months. She is a heavy smoker and drinks alcohol daily. On examination there is an indurated, firm lesion with raised edges. What is the most likely diagnosis and management?",
+    "options": {
+      "A": "Aphthous ulcer — topical corticosteroid and review in 2 weeks",
+      "B": "Squamous cell carcinoma — urgent 2WW referral",
+      "C": "Basal cell carcinoma — urgent 2WW referral",
+      "D": "Herpes labialis — oral aciclovir",
+      "E": "Angular cheilitis — topical miconazole and hydrocortisone"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Non-healing indurated ulcerated lesion on the lip in a heavy smoker and alcohol drinker is highly suspicious for squamous cell carcinoma (SCC) of the lip. SCC is the most common oral/lip malignancy and is strongly associated with tobacco and alcohol. Per NICE NG12, unexplained ulceration of the oral mucosa lasting >3 weeks warrants urgent 2WW referral for suspected head and neck cancer.",
+      "A": "Incorrect — Aphthous ulcers are painful, self-limiting, recurrent small round ulcers — not indurated, not 3 months duration.",
+      "B": "CORRECT — Non-healing indurated lip ulcer >3 weeks + smoking/alcohol = urgent 2WW referral for suspected SCC per NICE NG12.",
+      "C": "Incorrect — BCC rarely occurs on the lip (mucosal surface) and appears as a pearly nodule, not an ulcerated indurated lesion.",
+      "D": "Incorrect — Herpes labialis causes grouped vesicles on the vermilion border, self-limiting, episodic — not 3-month non-healing ulcer.",
+      "E": "Incorrect — Angular cheilitis causes fissures/maceration at the corners of the mouth — not a 3-month non-healing ulcer."
+    },
+    "reference": "NICE NG12 — Suspected cancer: recognition and referral. https://www.nice.org.uk/guidance/ng12",
+    "tags": ["squamous cell carcinoma", "lip ulcer", "non-healing", "2WW", "smoking", "NICE NG12"]
+  },
+  {
+    "id": "AKT-DERM-012",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Dermatology",
+    "difficulty": "Medium",
+    "question": "A 10-year-old boy presents with golden-yellow crusted lesions around his nose and mouth. The lesions began as small vesicles that ruptured. He is afebrile. What is the diagnosis and most appropriate treatment for a localised, mild case?",
+    "options": {
+      "A": "Herpes labialis — oral aciclovir 200mg five times daily",
+      "B": "Impetigo — topical hydrogen peroxide 1% cream",
+      "C": "Eczema — topical corticosteroid",
+      "D": "Tinea faciei — topical clotrimazole",
+      "E": "Chickenpox — calamine lotion and chlorphenamine"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Impetigo presents with golden/honey-coloured crusted lesions, typically around the mouth and nose in children, caused by Staphylococcus aureus or Streptococcus pyogenes. Per NICE NG153, for localised mild impetigo, topical hydrogen peroxide 1% cream (Crystacide) is first-line. If hydrogen peroxide is inappropriate or ineffective, topical fusidic acid or topical retapamulin may be used. Oral antibiotics (flucloxacillin or co-amoxiclav) are reserved for extensive or severe cases.",
+      "A": "Incorrect — Herpes labialis causes grouped vesicles on erythematous base at vermilion border, not honey-crusted widespread facial lesions.",
+      "B": "CORRECT — Impetigo: honey-crusted lesions. Topical hydrogen peroxide 1% is first-line for localised mild impetigo per NICE NG153.",
+      "C": "Incorrect — Eczema does not cause honey-crusted lesions around the mouth.",
+      "D": "Incorrect — Tinea faciei (facial ringworm) causes annular scaly lesions with central clearing.",
+      "E": "Incorrect — Chickenpox causes multi-stage vesicular rash all over the body, not localised facial crusted lesions."
+    },
+    "reference": "NICE NG153 — Impetigo: antimicrobial prescribing. https://www.nice.org.uk/guidance/ng153",
+    "tags": ["impetigo", "honey-crusted", "hydrogen peroxide", "topical antibiotic", "NICE NG153", "children"]
+  },
+  {
+    "id": "AKT-DERM-013",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Dermatology",
+    "difficulty": "Medium",
+    "question": "A 40-year-old woman presents with chronic facial redness, flushing triggered by hot drinks, alcohol and sun, telangiectasia and papulopustular lesions on her cheeks and nose. What is the most likely diagnosis and first-line treatment for the papulopustular component?",
+    "options": {
+      "A": "Acne vulgaris — topical benzoyl peroxide",
+      "B": "Rosacea — topical metronidazole 0.75% or azelaic acid 15%",
+      "C": "Seborrhoeic dermatitis — topical ketoconazole",
+      "D": "Perioral dermatitis — stop any topical corticosteroids and use topical metronidazole",
+      "E": "Lupus erythematosus — refer to rheumatology"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Rosacea presents with: flushing and persistent facial erythema, telangiectasia, papulopustular lesions on central face (cheeks, nose, chin, forehead) in middle-aged adults, triggered by heat, alcohol, sunlight, spicy food. Per NICE CKS and BAD guidelines, first-line treatment for papulopustular rosacea is topical metronidazole 0.75% gel/cream or topical azelaic acid 15% gel. Oral doxycycline is used for moderate-severe papulopustular rosacea.",
+      "A": "Incorrect — Acne vulgaris affects younger patients with comedones (blackheads/whiteheads) — rosacea does not have comedones.",
+      "B": "CORRECT — Rosacea papulopustular component: topical metronidazole 0.75% or azelaic acid 15% is first-line per NICE CKS.",
+      "C": "Incorrect — Seborrhoeic dermatitis causes greasy scaly patches in sebaceous areas (scalp, nasolabial folds) — not papulopustular telangiectatic rosacea.",
+      "D": "Incorrect — Perioral dermatitis causes papules around the mouth (sparing the vermilion border), often following steroid use — not described here.",
+      "E": "Incorrect — Lupus causes a butterfly rash (malar rash) without papules or telangiectasia — different morphology."
+    },
+    "reference": "NICE CKS — Rosacea. BAD Guidelines — Rosacea 2021.",
+    "tags": ["rosacea", "metronidazole", "azelaic acid", "papulopustular", "facial redness", "telangiectasia"]
+  },
+  {
+    "id": "AKT-DERM-014",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Dermatology",
+    "difficulty": "Easy",
+    "question": "A 35-year-old man presents with itchy, scaly patches on his feet, particularly between the 4th and 5th toes with maceration. He plays football regularly and uses communal showers. What is the diagnosis and most appropriate treatment?",
+    "options": {
+      "A": "Eczema — topical hydrocortisone 1%",
+      "B": "Tinea pedis (athlete's foot) — topical clotrimazole 1% twice daily for 4 weeks",
+      "C": "Scabies — permethrin 5% whole body",
+      "D": "Contact dermatitis — identify and remove allergen",
+      "E": "Psoriasis — topical betamethasone and calcipotriol"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Tinea pedis (athlete's foot) is a dermatophyte fungal infection presenting with: itching, scaling and maceration between toes (especially 4th/5th toe web space), vesicles on soles, erythema. Risk factors: communal showers, occlusive footwear. Treatment per NICE CKS: topical antifungal (clotrimazole 1%, terbinafine 1% or miconazole) applied twice daily for 4 weeks. Oral antifungals (terbinafine) for extensive or resistant infection.",
+      "A": "Incorrect — Topical corticosteroid alone worsens fungal infection by suppressing immune response.",
+      "B": "CORRECT — Tinea pedis: topical clotrimazole 1% BD for 4 weeks is first-line per NICE CKS.",
+      "C": "Incorrect — Scabies causes burrows in web spaces of hands/wrists/genitals with intense nocturnal itch — not scaling maceration between toes.",
+      "D": "Incorrect — Contact dermatitis between toes would require specific allergen exposure history.",
+      "E": "Incorrect — Psoriasis on feet (palmoplantar) causes well-defined hyperkeratotic plaques — not maceration between toes."
+    },
+    "reference": "NICE CKS — Fungal skin infections: body and groin. https://cks.nice.org.uk/",
+    "tags": ["tinea pedis", "athlete's foot", "clotrimazole", "fungal infection", "topical antifungal", "NICE CKS"]
+  },
+  {
+    "id": "AKT-DERM-015",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Dermatology",
+    "difficulty": "Hard",
+    "question": "A 65-year-old man with psoriasis has severe widespread disease (PASI >10) that has not responded to two topical treatments and phototherapy. He has psoriatic arthritis. What is the most appropriate next treatment per NICE guidance?",
+    "options": {
+      "A": "Oral methotrexate",
+      "B": "Ciclosporin for long-term maintenance",
+      "C": "Biologic therapy (e.g. adalimumab or secukinumab)",
+      "D": "Acitretin (oral retinoid)",
+      "E": "Increase potency of topical corticosteroid to very potent"
+    },
+    "correct_answer": "C",
+    "explanation": {
+      "correct": "Per NICE TA UCN (Psoriasis biologics) and NICE NG10, for adults with severe plaque psoriasis (PASI >10 and DLQI >10) who have failed systemic non-biologic treatments (methotrexate, ciclosporin) or have psoriatic arthritis, biologic therapies (TNF inhibitors: adalimumab, etanercept; IL-17 inhibitors: secukinumab, ixekizumab; IL-23 inhibitors: risankizumab) are indicated. These are initiated and monitored by dermatology specialists.",
+      "A": "Incorrect — Methotrexate is first-line systemic (non-biologic) therapy. This patient has already failed non-biologic systemics and has psoriatic arthritis — biologics are next.",
+      "B": "Incorrect — Ciclosporin is used short-term for severe psoriasis but is not suitable for long-term maintenance due to nephrotoxicity and hypertension.",
+      "C": "CORRECT — Biologic therapy is indicated for severe psoriasis with psoriatic arthritis failing non-biologic systemics per NICE NG10.",
+      "D": "Incorrect — Acitretin is used for pustular and erythrodermic psoriasis but is not the priority when biologics are indicated for severe plaque + PsA.",
+      "E": "Incorrect — Very potent topical steroids are inappropriate for widespread severe psoriasis — systemic therapy is required."
+    },
+    "reference": "NICE NG10 — Psoriasis. NICE technology appraisals for biologic therapies in psoriasis.",
+    "tags": ["psoriasis", "biologic therapy", "adalimumab", "secukinumab", "PASI", "psoriatic arthritis", "NICE NG10"]
+  },
+  {
+    "id": "AKT-DERM-016",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Dermatology",
+    "difficulty": "Medium",
+    "question": "A 50-year-old man presents with multiple rough, scaly, flat lesions on his bald head and the back of his hands. He has pale skin and a history of high sun exposure. What are these lesions called and what is the most appropriate management?",
+    "options": {
+      "A": "Seborrhoeic keratoses — reassure, no treatment needed",
+      "B": "Actinic keratoses — topical fluorouracil (5-FU) cream or diclofenac gel",
+      "C": "Bowen's disease — urgent 2WW referral",
+      "D": "Squamous cell carcinoma — urgent 2WW referral",
+      "E": "Viral warts — cryotherapy or salicylic acid"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Actinic keratoses (solar keratoses) are rough, scaly, erythematous lesions on chronically sun-exposed skin (scalp, face, hands, forearms). They are pre-malignant lesions with 1-5% risk of progression to squamous cell carcinoma. Per NICE and BAD guidelines, treatment options include: topical 5-fluorouracil (Efudix) cream, topical diclofenac 3% gel, imiquimod 5% cream, photodynamic therapy, or cryotherapy. Multiple lesions are best treated with field-directed therapy (5-FU).",
+      "A": "Incorrect — Seborrhoeic keratoses are benign 'stuck-on' waxy lesions — actinic keratoses are rough, scaly and pre-malignant.",
+      "B": "CORRECT — Actinic keratoses: pre-malignant, sun-exposed skin. Topical 5-FU or diclofenac gel per BAD/NICE guidance.",
+      "C": "Incorrect — Bowen's disease (SCC in situ) presents as a single well-defined erythematous scaly patch — not multiple rough patches.",
+      "D": "Incorrect — SCC is a firm indurated ulcerated lesion — actinic keratoses are flat/rough pre-malignant lesions.",
+      "E": "Incorrect — Viral warts are smooth/rough flesh-coloured papules, not flat scaly lesions on sun-exposed skin."
+    },
+    "reference": "BAD Guidelines — Actinic keratosis 2017. NICE CKS — Actinic keratosis.",
+    "tags": ["actinic keratosis", "solar keratosis", "5-fluorouracil", "pre-malignant", "sun damage", "diclofenac"]
+  },
+  {
+    "id": "AKT-DERM-017",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Dermatology",
+    "difficulty": "Medium",
+    "question": "A 28-year-old woman presents with widespread urticaria and facial swelling after eating shellfish. She is speaking normally, has no stridor, and her BP is 120/78 mmHg. What is the most appropriate management?",
+    "options": {
+      "A": "Adrenaline 0.5mg IM (1:1000) immediately",
+      "B": "Oral cetirizine 10mg and oral prednisolone 40mg",
+      "C": "IV chlorphenamine and IV hydrocortisone",
+      "D": "Call 999, give adrenaline 0.5mg IM, oral antihistamine, oral prednisolone",
+      "E": "Reassure — urticaria alone is not serious"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "This patient has an allergic reaction with urticaria and angioedema (facial swelling) but NO features of anaphylaxis (no stridor, no wheeze, BP normal, speaking normally). This is allergic urticaria/angioedema, not anaphylaxis. Per NICE CKS, management of non-anaphylactic allergic reactions: oral non-sedating antihistamine (cetirizine/loratadine) + short course oral prednisolone 40mg for 3-5 days. Adrenaline is only for anaphylaxis.",
+      "A": "Incorrect — Adrenaline is for anaphylaxis (hypotension, stridor, respiratory distress, loss of consciousness). This patient has none of these features.",
+      "B": "CORRECT — Allergic urticaria/angioedema without anaphylaxis: oral antihistamine + oral prednisolone per NICE CKS.",
+      "C": "Incorrect — IV chlorphenamine and hydrocortisone are part of anaphylaxis management in hospital — not indicated here.",
+      "D": "Incorrect — 999 and adrenaline are for anaphylaxis. This patient is stable with no airway compromise.",
+      "E": "Incorrect — Angioedema requires treatment and observation. Facial swelling can progress to involve the airway."
+    },
+    "reference": "NICE CKS — Urticaria and angioedema. Resuscitation Council UK — Anaphylaxis guidelines 2021.",
+    "tags": ["urticaria", "angioedema", "allergic reaction", "antihistamine", "prednisolone", "not anaphylaxis"]
+  },
+  {
+    "id": "AKT-DERM-018",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Dermatology",
+    "difficulty": "Hard",
+    "question": "A 45-year-old woman presents with Raynaud's phenomenon, thickening and tightening of the skin on her fingers and face, telangiectasia, and difficulty swallowing. Her anti-Scl-70 (topoisomerase I) antibodies are positive. What is the most likely diagnosis?",
+    "options": {
+      "A": "Systemic lupus erythematosus",
+      "B": "Diffuse cutaneous systemic sclerosis (scleroderma)",
+      "C": "Mixed connective tissue disease",
+      "D": "Dermatomyositis",
+      "E": "Sjögren's syndrome"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Systemic sclerosis (scleroderma) presents with: Raynaud's phenomenon (often first sign), skin thickening/fibrosis, telangiectasia, oesophageal dysmotility (dysphagia, reflux), pulmonary fibrosis, renal crisis. Anti-Scl-70 (anti-topoisomerase I) antibodies are associated with diffuse cutaneous systemic sclerosis with higher risk of lung fibrosis. Anti-centromere antibodies are associated with limited cutaneous (CREST syndrome).",
+      "A": "Incorrect — SLE presents with malar rash, photosensitivity, serositis, nephritis, arthritis. Anti-dsDNA and anti-Smith antibodies are specific. No skin thickening.",
+      "B": "CORRECT — Diffuse systemic sclerosis: Raynaud's + skin thickening + dysphagia + anti-Scl-70.",
+      "C": "Incorrect — MCTD has overlapping features of SLE, myositis and systemic sclerosis with positive anti-U1-RNP antibodies.",
+      "D": "Incorrect — Dermatomyositis causes proximal muscle weakness + heliotrope rash + Gottron's papules — not skin thickening.",
+      "E": "Incorrect — Sjögren's syndrome causes dry eyes/mouth (sicca symptoms) with anti-Ro and anti-La antibodies — no skin fibrosis."
+    },
+    "reference": "BSR/BHPR Guidelines — Systemic Sclerosis 2016. ACR/EULAR 2013 Classification criteria.",
+    "tags": ["systemic sclerosis", "scleroderma", "Raynaud's", "anti-Scl-70", "dysphagia", "skin thickening"]
+  },
+  {
+    "id": "AKT-DERM-019",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Dermatology",
+    "difficulty": "Easy",
+    "question": "A 3-year-old girl presents with a 5mm circular raised flesh-coloured papule with a central dimple on her trunk. There are 8 similar lesions. Her mother reports they have been spreading. What is the diagnosis and most appropriate management?",
+    "options": {
+      "A": "Viral warts — cryotherapy",
+      "B": "Molluscum contagiosum — reassure parents, lesions self-resolve within 12-18 months",
+      "C": "Chickenpox — calamine lotion",
+      "D": "Impetigo — topical hydrogen peroxide",
+      "E": "Dermatofibromas — biopsy and reassure"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Molluscum contagiosum is caused by a poxvirus, presenting with: flesh-coloured, dome-shaped papules with central umbilication (dimple), spreading by autoinoculation or direct contact, typically in children. Per NICE CKS, in children molluscum contagiosum is self-limiting and resolves within 12-18 months without treatment. Active treatment (cryotherapy, curettage) is generally not recommended in primary care for children as the condition resolves spontaneously and treatments can be painful.",
+      "A": "Incorrect — Viral warts are rough hyperkeratotic papules without central umbilication.",
+      "B": "CORRECT — Molluscum contagiosum: umbilicated papules in children. Reassure — self-resolves in 12-18 months per NICE CKS.",
+      "C": "Incorrect — Chickenpox causes multi-stage vesicular rash with fever — not flesh-coloured umbilicated papules.",
+      "D": "Incorrect — Impetigo causes honey-crusted lesions, not umbilicated papules.",
+      "E": "Incorrect — Dermatofibromas are firm brown papules in adults on limbs — not umbilicated papules in toddlers."
+    },
+    "reference": "NICE CKS — Molluscum contagiosum. https://cks.nice.org.uk/topics/molluscum-contagiosum/",
+    "tags": ["molluscum contagiosum", "umbilicated", "children", "self-limiting", "poxvirus", "NICE CKS"]
+  },
+  {
+    "id": "AKT-DERM-020",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Dermatology",
+    "difficulty": "Medium",
+    "question": "A 55-year-old woman presents with erythema, scaling and thickening of both palms lasting 4 months. She has no history of eczema. The nails show onycholysis and subungual hyperkeratosis. She has lower back pain. What is the most likely diagnosis?",
+    "options": {
+      "A": "Tinea manuum — oral terbinafine",
+      "B": "Palmoplantar psoriasis — topical potent corticosteroid and refer to dermatology",
+      "C": "Pompholyx eczema — topical potent corticosteroid",
+      "D": "Hyperkeratotic hand eczema — emollients and topical corticosteroid",
+      "E": "Reactive arthritis — NSAIDs"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Palmoplantar psoriasis presents with: well-demarcated erythematous hyperkeratotic plaques on palms/soles, nail changes (onycholysis, subungual hyperkeratosis, nail pitting), and associated psoriatic arthritis (lower back pain = axial psoriatic arthritis). Management: potent topical corticosteroid (clobetasol propionate), coal tar, keratolytics. Refer to dermatology for resistant cases. Nail psoriasis and joint involvement suggest systemic/biologic therapy may be needed.",
+      "A": "Incorrect — Tinea manuum causes unilateral scaly palm (two feet, one hand — bilateral tinea pedis with unilateral manuum is classic) without nail psoriasis pattern.",
+      "B": "CORRECT — Palmoplantar psoriasis + nail changes + back pain (PsA). Potent TCS and dermatology referral.",
+      "C": "Incorrect — Pompholyx eczema causes vesicular blisters on lateral fingers/palms without nail changes or joint involvement.",
+      "D": "Incorrect — Hyperkeratotic hand eczema lacks nail psoriasis features and joint involvement.",
+      "E": "Incorrect — Reactive arthritis (Reiter's syndrome) can cause keratoderma blennorrhagica (similar to pustular psoriasis) but follows infection and causes urethritis/conjunctivitis."
+    },
+    "reference": "NICE NG10 — Psoriasis. BAD Guidelines — Palmoplantar psoriasis.",
+    "tags": ["palmoplantar psoriasis", "nail psoriasis", "onycholysis", "psoriatic arthritis", "potent TCS", "NICE NG10"]
+  }
+]

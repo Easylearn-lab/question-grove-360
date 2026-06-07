@@ -1,0 +1,1529 @@
+[
+  {
+    "id": "QG-DERM-002-001",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Dermatology",
+    "difficulty": "Easy",
+    "question": "A 24-year-old man presents with multiple soft, painless, flesh-coloured papules around the penile shaft and perianal area. He has been sexually active with multiple partners. On examination the lesions have a cauliflower-like surface. He is otherwise well. What is the diagnosis and what is the most appropriate first-line treatment for external anogenital warts?",
+    "options": {
+      "A": "Molluscum contagiosum — reassure, self-limiting",
+      "B": "Anogenital warts (condylomata acuminata) — podophyllotoxin 0.15% cream or imiquimod 5% cream",
+      "C": "Anogenital warts — cryotherapy as only effective treatment",
+      "D": "Secondary syphilis — refer to GUM urgently",
+      "E": "Condylomata lata — IV benzylpenicillin"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Anogenital warts are caused by human papillomavirus (HPV), typically types 6 and 11. Per BASHH and NICE CKS guidelines, first-line treatment options for external anogenital warts include: podophyllotoxin 0.15% cream (self-applied), imiquimod 5% cream (immunomodulator, self-applied), or cryotherapy. Imiquimod is preferred for keratinised non-mucosal warts. Podophyllotoxin is preferred for soft, non-keratinised warts. All patients should be referred to GUM for STI screening and partner notification.",
+      "A": "Incorrect — Molluscum contagiosum presents as umbilicated papules. Cauliflower-like lesions are anogenital warts.",
+      "B": "CORRECT — Anogenital warts: podophyllotoxin 0.15% or imiquimod 5% as first-line per BASHH/NICE CKS.",
+      "C": "Incorrect — Cryotherapy is effective but self-applied treatments (podophyllotoxin, imiquimod) are equally first-line and more convenient.",
+      "D": "Incorrect — Secondary syphilis causes a maculopapular rash and condylomata lata (flat, moist plaques) — not cauliflower lesions.",
+      "E": "Incorrect — Condylomata lata are a feature of secondary syphilis treated with penicillin, not the same as anogenital warts."
+    },
+    "reference": "BASHH Guidelines — Anogenital warts 2015. NICE CKS — Anogenital warts.",
+    "tags": [
+      "anogenital warts",
+      "HPV",
+      "imiquimod",
+      "podophyllotoxin",
+      "BASHH",
+      "NICE CKS"
+    ],
+    "source": "Question Grove 360"
+  },
+  {
+    "id": "QG-DERM-002-002",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Dermatology",
+    "difficulty": "Medium",
+    "question": "A 28-year-old woman is started on imiquimod 5% cream for external anogenital warts. She returns 3 weeks later reporting significant local redness, erosion and discomfort at the application site. What is the most appropriate advice?",
+    "options": {
+      "A": "Stop imiquimod permanently — she has developed an allergic reaction",
+      "B": "Local inflammatory reaction is expected and indicates immune activation — take a treatment break of 1-2 weeks then restart at reduced frequency",
+      "C": "Switch to cryotherapy immediately",
+      "D": "Add topical hydrocortisone 1% to the affected area while continuing imiquimod",
+      "E": "Prescribe oral aciclovir — this reaction indicates HSV superinfection"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Imiquimod works by stimulating the innate and adaptive immune response (Toll-like receptor 7 agonist). Local inflammatory reactions (erythema, erosion, oedema, burning) are expected side effects confirming immune activation and often predict treatment efficacy. Per NICE CKS and BASHH, if local reactions are severe, patients should take a treatment break of 1-2 weeks to allow healing, then restart at reduced frequency (e.g. twice weekly instead of three times weekly) before building back up.",
+      "A": "Incorrect — Local inflammatory reaction is an expected pharmacological effect, not an allergic reaction. Permanent discontinuation is premature.",
+      "B": "CORRECT — Local inflammatory reaction with imiquimod indicates immune activation. Treatment break then restart at reduced frequency.",
+      "C": "Incorrect — Switching to cryotherapy immediately is not necessary. The inflammatory reaction is expected and treatment should be restarted after the break.",
+      "D": "Incorrect — Adding topical corticosteroid counteracts imiquimod's immunostimulatory mechanism and is contraindicated.",
+      "E": "Incorrect — This clinical picture is consistent with imiquimod's known inflammatory side effect, not HSV."
+    },
+    "reference": "NICE CKS — Anogenital warts. BASHH Guidelines — Anogenital warts 2015.",
+    "tags": [
+      "imiquimod",
+      "side effects",
+      "anogenital warts",
+      "inflammatory reaction",
+      "BASHH",
+      "NICE CKS"
+    ],
+    "source": "Question Grove 360"
+  },
+  {
+    "id": "QG-DERM-002-003",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Dermatology",
+    "difficulty": "Medium",
+    "question": "A 26-year-old pregnant woman (16 weeks gestation) is found to have external anogenital warts. She is concerned about treatment options. Which treatment is most appropriate during pregnancy?",
+    "options": {
+      "A": "Imiquimod 5% — safe in all trimesters",
+      "B": "Podophyllotoxin — safe in pregnancy",
+      "C": "Cryotherapy — safest treatment option in pregnancy",
+      "D": "Trichloroacetic acid (TCA) — first-line in pregnancy",
+      "E": "Watchful waiting — warts usually resolve spontaneously during pregnancy"
+    },
+    "correct_answer": "C",
+    "explanation": {
+      "correct": "Per BASHH and NICE CKS, during pregnancy: imiquimod and podophyllotoxin are CONTRAINDICATED (insufficient safety data; podophyllotoxin is teratogenic in animal studies). The safest treatment options in pregnancy are cryotherapy and trichloroacetic acid (TCA), both of which are locally destructive without systemic absorption. Cryotherapy is preferred and most widely used. Warts often enlarge during pregnancy and treatment is recommended to reduce transmission risk at delivery.",
+      "A": "Incorrect — Imiquimod is contraindicated in pregnancy due to insufficient safety data.",
+      "B": "Incorrect — Podophyllotoxin is contraindicated in pregnancy — teratogenic in animal models.",
+      "C": "CORRECT — Cryotherapy is the safest treatment for anogenital warts in pregnancy per BASHH/NICE CKS.",
+      "D": "Incorrect — TCA is used in pregnancy but cryotherapy is preferred first-line.",
+      "E": "Incorrect — Warts often grow during pregnancy and may cause complications. Treatment is recommended."
+    },
+    "reference": "BASHH Guidelines — Anogenital warts 2015. NICE CKS — Anogenital warts in pregnancy.",
+    "tags": [
+      "anogenital warts",
+      "pregnancy",
+      "cryotherapy",
+      "imiquimod contraindicated",
+      "BASHH"
+    ],
+    "source": "Question Grove 360"
+  },
+  {
+    "id": "QG-DERM-002-004",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Dermatology",
+    "difficulty": "Hard",
+    "question": "A 30-year-old immunocompromised man (HIV-positive, CD4 count 180 cells/mm³) presents with extensive, treatment-resistant external anogenital warts despite three courses of podophyllotoxin and two courses of cryotherapy. What is the most appropriate next management step?",
+    "options": {
+      "A": "Start a further course of imiquimod 5% for 16 weeks",
+      "B": "Refer to GUM or dermatology specialist for surgical treatment (electrosurgery, laser or surgical excision) and optimise HIV therapy",
+      "C": "Oral aciclovir 400mg three times daily for 6 months",
+      "D": "Intralesional interferon injection",
+      "E": "Reassure — warts will resolve when CD4 count improves"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Anogenital warts in immunocompromised patients (HIV, transplant recipients) are frequently more extensive, recurrent and treatment-resistant. Per BASHH guidelines, after failure of multiple first-line therapies, specialist referral for surgical treatment (electrosurgery, laser ablation, or surgical excision under anaesthetic) is appropriate. Optimising antiretroviral therapy to improve immune function is also essential — higher CD4 counts improve treatment response. Intralesional interferon has evidence but is delivered by specialists.",
+      "A": "Incorrect — Further imiquimod courses are unlikely to succeed after multiple treatment failures in severe immunocompromise.",
+      "B": "CORRECT — Specialist referral for surgical treatment + optimise HIV therapy per BASHH guidelines for treatment-resistant warts in immunocompromise.",
+      "C": "Incorrect — Aciclovir treats herpes simplex/zoster — has no role in HPV wart treatment.",
+      "D": "Incorrect — Intralesional interferon is a specialist option but not the first step after failure of topical/cryotherapy.",
+      "E": "Incorrect — Watchful waiting with CD4 180 and extensive warts is inappropriate."
+    },
+    "reference": "BASHH Guidelines — Anogenital warts 2015. BHIVA — HIV and HPV management.",
+    "tags": [
+      "anogenital warts",
+      "HIV",
+      "immunocompromised",
+      "treatment-resistant",
+      "specialist referral",
+      "BASHH"
+    ],
+    "source": "Question Grove 360"
+  },
+  {
+    "id": "QG-DERM-002-005",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Dermatology",
+    "difficulty": "Easy",
+    "question": "A 22-year-old woman is diagnosed with external anogenital warts. She asks whether she needs an HPV test or cervical smear. What is the most appropriate advice regarding cervical screening in relation to her warts diagnosis?",
+    "options": {
+      "A": "She needs an urgent colposcopy as HPV 6/11 causes cervical cancer",
+      "B": "Her warts do not increase her cervical cancer risk — HPV 6/11 are low-risk strains. Continue NHS cervical screening at normal intervals",
+      "C": "She should have an HPV test immediately — if positive for HPV 16/18, refer to colposcopy",
+      "D": "Annual cervical smears are required for life due to HPV diagnosis",
+      "E": "Treat the warts — once treated, HPV is eliminated and no further cervical screening is needed"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Anogenital warts are caused by HPV types 6 and 11 — low-risk oncogenic strains that do NOT cause cervical cancer. High-risk oncogenic strains (HPV 16, 18, 31, 33) cause cervical, anal and oropharyngeal cancer. Having anogenital warts does not change her cervical screening requirements — she continues NHS cervical screening at normal intervals (25 years: first smear; 25-49: 3-yearly; 50-64: 5-yearly). HPV primary screening now tests for high-risk HPV strains, not low-risk HPV 6/11.",
+      "A": "Incorrect — HPV 6 and 11 are low-risk non-oncogenic strains. They do not cause cervical cancer.",
+      "B": "CORRECT — HPV 6/11 (warts) are low-risk, non-oncogenic. Continue normal cervical screening per NHS programme.",
+      "C": "Incorrect — Specific HPV genotyping is not performed in routine NHS cervical screening. Warts diagnosis does not trigger colposcopy referral.",
+      "D": "Incorrect — Annual smears are not required. Normal screening intervals apply.",
+      "E": "Incorrect — HPV can persist even after wart treatment. Cervical screening must continue regardless."
+    },
+    "reference": "NHS Cervical Screening Programme. BASHH — Anogenital warts 2015. NICE CKS — Anogenital warts.",
+    "tags": [
+      "anogenital warts",
+      "HPV",
+      "cervical screening",
+      "low-risk HPV",
+      "HPV 6 11",
+      "BASHH"
+    ],
+    "source": "Question Grove 360"
+  },
+  {
+    "id": "QG-DERM-003-001",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Dermatology",
+    "difficulty": "Medium",
+    "question": "A 38-year-old woman presents 6 weeks after a minor ankle sprain. She has persistent burning pain in her foot far exceeding what would be expected from the original injury. The foot is warm, erythematous, swollen and purplish-red in colour. She has allodynia (pain from light touch) and vasomotor changes. X-ray shows patchy bone demineralisation. What is the most likely diagnosis?",
+    "options": {
+      "A": "Deep vein thrombosis — arrange Doppler ultrasound",
+      "B": "Complex regional pain syndrome Type 1 (CRPS) — refer to pain specialist",
+      "C": "Cellulitis — IV flucloxacillin",
+      "D": "Erythromelalgia — aspirin and cooling",
+      "E": "Reflex sympathetic dystrophy — physiotherapy only"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Complex regional pain syndrome (CRPS) Type 1 (formerly reflex sympathetic dystrophy) presents with disproportionate pain following injury or immobilisation, with autonomic features: skin colour changes (red/purple/mottled), temperature asymmetry, oedema, allodynia/hyperalgesia. Budapest diagnostic criteria require: continuing pain disproportionate to inciting event; symptoms in ≥3 of 4 categories (sensory, vasomotor, sudomotor/oedema, motor/trophic); patchy osteoporosis on X-ray. Urgent referral to pain specialist for multidisciplinary management.",
+      "A": "Incorrect — DVT causes unilateral swelling but not burning allodynia, colour changes or patchy osteoporosis.",
+      "B": "CORRECT — CRPS Type 1: disproportionate pain + autonomic features + allodynia + patchy osteoporosis after minor injury. Refer to pain specialist.",
+      "C": "Incorrect — Cellulitis has systemic signs (fever), well-defined spreading erythema — no allodynia or bone changes.",
+      "D": "Incorrect — Erythromelalgia causes episodic burning erythema of extremities triggered by heat — no bone changes or post-traumatic onset.",
+      "E": "Incorrect — CRPS (formerly RSD) is the same condition. Physiotherapy alone is insufficient — pain specialist-led MDT required."
+    },
+    "reference": "NICE CKS — Complex regional pain syndrome. RCGP — CRPS management.",
+    "tags": [
+      "CRPS",
+      "complex regional pain syndrome",
+      "allodynia",
+      "burning pain",
+      "post-traumatic",
+      "NICE CKS"
+    ],
+    "source": "Question Grove 360"
+  },
+  {
+    "id": "QG-DERM-003-002",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Dermatology",
+    "difficulty": "Medium",
+    "question": "A 45-year-old man with established CRPS Type 1 of the right hand is reviewed in primary care. His pain is poorly controlled on paracetamol and ibuprofen. He has allodynia and significant functional impairment. Per NICE guidance, which pharmacological agent is most appropriate as next-line treatment for neuropathic pain in CRPS?",
+    "options": {
+      "A": "Codeine 30mg four times daily",
+      "B": "Amitriptyline 10mg at night or pregabalin 75mg twice daily",
+      "C": "Tramadol 50mg four times daily",
+      "D": "Morphine modified release 10mg twice daily",
+      "E": "Naproxen 500mg twice daily — increase NSAID dose first"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per NICE NG173 (Neuropathic pain in adults), first-line pharmacological treatment for neuropathic pain (including CRPS) is: amitriptyline, duloxetine, gabapentin or pregabalin. These are recommended before opioids. Amitriptyline 10mg at night (titrated) or pregabalin 75mg BD are appropriate first steps in primary care. Opioids have limited evidence in CRPS neuropathic pain and carry addiction risk.",
+      "A": "Incorrect — Weak opioids are not first-line for neuropathic pain per NICE NG173.",
+      "B": "CORRECT — Amitriptyline or pregabalin are first-line for neuropathic pain per NICE NG173.",
+      "C": "Incorrect — Tramadol is not recommended in NICE NG173 as first-line for neuropathic pain.",
+      "D": "Incorrect — Strong opioids are not first-line for neuropathic pain. Reserve for refractory cases with specialist input.",
+      "E": "Incorrect — NSAIDs are not first-line for neuropathic pain; they target inflammatory rather than neuropathic mechanisms."
+    },
+    "reference": "NICE NG173 — Neuropathic pain in adults: pharmacological management. https://www.nice.org.uk/guidance/ng173",
+    "tags": [
+      "CRPS",
+      "neuropathic pain",
+      "amitriptyline",
+      "pregabalin",
+      "NICE NG173",
+      "complex regional pain syndrome"
+    ],
+    "source": "Question Grove 360"
+  },
+  {
+    "id": "QG-DERM-003-003",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Dermatology",
+    "difficulty": "Hard",
+    "question": "A 32-year-old woman develops CRPS in her left foot 3 months after a Colles' fracture. She is referred to a multidisciplinary pain clinic. Which combination of treatments has the best evidence for CRPS management?",
+    "options": {
+      "A": "Physiotherapy alone — passive mobilisation only to avoid pain exacerbation",
+      "B": "Graded motor imagery (GMI), mirror therapy, and functional rehabilitation alongside pain medication",
+      "C": "Spinal cord stimulation as first-line intervention",
+      "D": "IV bisphosphonate infusions as primary treatment",
+      "E": "Psychological support only — CRPS is predominantly psychosomatic"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per NICE CKS and specialist CRPS guidelines (Goebel et al.), evidence-based treatment includes: graded motor imagery (GMI — includes mirror box therapy and mental imagery of movement), desensitisation, graded exposure and functional rehabilitation. These neurorehabilitation techniques reduce central sensitisation. A pain specialist-led MDT including physiotherapy, psychology and pharmacological management provides optimal outcomes. Spinal cord stimulation is reserved for refractory cases.",
+      "A": "Incorrect — Passive mobilisation alone is insufficient. Active participation in graded rehabilitation is essential.",
+      "B": "CORRECT — GMI, mirror therapy and functional rehabilitation are evidence-based for CRPS per specialist guidelines.",
+      "C": "Incorrect — Spinal cord stimulation is for severe refractory CRPS unresponsive to conservative management.",
+      "D": "Incorrect — IV bisphosphonates (e.g. pamidronate) have some evidence for bone pain in CRPS but are not primary treatment.",
+      "E": "Incorrect — CRPS has organic pathophysiology. Psychological support is an important component but not the sole treatment."
+    },
+    "reference": "NICE CKS — CRPS. Goebel A et al. Complex regional pain syndrome in adults: UK guidelines 2018.",
+    "tags": [
+      "CRPS",
+      "mirror therapy",
+      "graded motor imagery",
+      "rehabilitation",
+      "multidisciplinary",
+      "NICE CKS"
+    ],
+    "source": "Question Grove 360"
+  },
+  {
+    "id": "QG-DERM-003-004",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Dermatology",
+    "difficulty": "Easy",
+    "question": "A 40-year-old man presents with a red, hot, swollen right foot with streaking erythema up the calf, fever of 38.8°C, and WBC of 16.5 × 10⁹/L, 4 days after sustaining a foot injury. He is haemodynamically stable. What is the diagnosis and most appropriate management?",
+    "options": {
+      "A": "CRPS — refer to pain specialist and start pregabalin",
+      "B": "Cellulitis — oral flucloxacillin 500mg four times daily for 5 days if Eron Class I",
+      "C": "DVT — Wells score and Doppler ultrasound",
+      "D": "Necrotising fasciitis — call 999 and surgical referral",
+      "E": "Gout — colchicine 500 mcg twice to four times daily"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Cellulitis: spreading erythema with well-defined borders, fever, raised WBC after skin injury. Per NICE NG141 (Cellulitis and erysipelas), Eron Class I (no systemic upset, not immunocompromised) can be treated with oral flucloxacillin 500mg QDS for 5-7 days. Clarithromycin or doxycycline for penicillin allergy. CRPS would not cause fever, raised WBC or streaking lymphangitis.",
+      "A": "Incorrect — CRPS does not cause fever, elevated WBC or lymphangitis. This is acute infection.",
+      "B": "CORRECT — Cellulitis with streaking lymphangitis and fever: oral flucloxacillin for Eron Class I per NICE NG141.",
+      "C": "Incorrect — DVT may coexist but systemic fever and streaking point to cellulitis as primary diagnosis.",
+      "D": "Incorrect — Necrotising fasciitis presents with severe disproportionate pain, skin necrosis, crepitus and rapid deterioration — not described here.",
+      "E": "Incorrect — Gout typically affects the first MTP joint with hyperuricaemia history and no fever this high."
+    },
+    "reference": "NICE NG141 — Cellulitis and erysipelas: antimicrobial prescribing. https://www.nice.org.uk/guidance/ng141",
+    "tags": [
+      "cellulitis",
+      "flucloxacillin",
+      "Eron classification",
+      "fever",
+      "NICE NG141",
+      "lymphangitis"
+    ],
+    "source": "Question Grove 360"
+  },
+  {
+    "id": "QG-DERM-003-005",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Dermatology",
+    "difficulty": "Hard",
+    "question": "A 50-year-old diabetic man presents with severe right foot pain, swelling and erythema after a minor nail injury. After 12 hours he develops skin blistering, a greyish discolouration and the pain seems to have dramatically reduced despite worsening appearance. His BP is 88/60 mmHg and HR is 125 bpm. What is the diagnosis and immediate management?",
+    "options": {
+      "A": "Severe cellulitis — IV flucloxacillin and admission",
+      "B": "Necrotising fasciitis — immediate 999 call, surgical emergency, broad-spectrum IV antibiotics and emergency surgical debridement",
+      "C": "CRPS — urgent pain clinic referral",
+      "D": "Diabetic foot osteomyelitis — MRI foot and oral co-amoxiclav",
+      "E": "Gas gangrene — IV penicillin G and hyperbaric oxygen"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Necrotising fasciitis (NF) — surgical emergency with >30% mortality without urgent intervention. Classic features: disproportionate early severe pain → paradoxical pain reduction (nerve destruction), skin changes (erythema → grey/dusky discolouration → blistering → necrosis), haemodynamic compromise, rapid progression. Risk factors: diabetes, immunocompromise. Laboratory Risk Indicator for NF (LRINEC) score helps diagnosis. Immediate: 999/emergency admission, IV broad-spectrum antibiotics (piperacillin/tazobactam + clindamycin), and EMERGENCY surgical debridement (within hours) — the definitive treatment.",
+      "A": "Incorrect — The combination of skin necrosis, pain paradox, haemodynamic compromise and rapid progression indicates NF, not simple cellulitis.",
+      "B": "CORRECT — Necrotising fasciitis: surgical emergency. 999 + IV antibiotics + emergency debridement.",
+      "C": "Incorrect — CRPS does not cause haemodynamic compromise, skin necrosis or blistering.",
+      "D": "Incorrect — Osteomyelitis presents subacutely with bone pain and localised tenderness — not the acute shock picture described.",
+      "E": "Incorrect — Gas gangrene (Clostridium) causes crepitus and gas on imaging. NF is polymicrobial. Management overlap exists but NF is the primary diagnosis."
+    },
+    "reference": "NICE CKS — Necrotising fasciitis. BSI/BAPRAS guidelines — NF management.",
+    "tags": [
+      "necrotising fasciitis",
+      "surgical emergency",
+      "diabetes",
+      "skin necrosis",
+      "debridement",
+      "NICE CKS"
+    ],
+    "source": "Question Grove 360"
+  },
+  {
+    "id": "QG-DERM-028-001",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Dermatology",
+    "difficulty": "Easy",
+    "question": "A 6-year-old girl presents with a bright red rash on both cheeks that appeared 2 days after a mild flu-like illness with low-grade fever and runny nose. The rash has a 'slapped cheek' appearance and a lacy reticular rash is now developing on her trunk and limbs. She is now well with no fever. What is the diagnosis and management?",
+    "options": {
+      "A": "Scarlet fever — oral phenoxymethylpenicillin for 10 days",
+      "B": "Slapped cheek disease (parvovirus B19/fifth disease) — reassure, self-limiting, no specific treatment",
+      "C": "Measles — notify public health and supportive care",
+      "D": "Roseola infantum (HHV-6) — reassure, self-limiting",
+      "E": "Rubella — notify public health, isolate from pregnant contacts"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Slapped cheek disease (erythema infectiosum, fifth disease) is caused by parvovirus B19. Classic presentation: prodromal URTI then bright red bilateral cheek rash ('slapped cheeks') followed by lacy reticular rash on limbs/trunk. By the time the rash appears, the child is no longer infectious and no longer febrile. Per NICE CKS, management is reassurance and symptomatic treatment — the condition is self-limiting. Key concern: risk to pregnant contacts and immunocompromised individuals (aplastic crisis).",
+      "A": "Incorrect — Scarlet fever causes a sandpaper-texture rash with strawberry tongue, sore throat and Pastia's lines in the flexures — different from slapped cheeks.",
+      "B": "CORRECT — Parvovirus B19 (slapped cheek): self-limiting, reassure parents, child no longer infectious once rash appears.",
+      "C": "Incorrect — Measles causes cough, coryza, conjunctivitis, Koplik's spots and morbilliform rash — not bilateral slapped cheek pattern.",
+      "D": "Incorrect — Roseola (HHV-6) causes high fever then rose-pink truncal rash as fever settles — no slapped cheek pattern.",
+      "E": "Incorrect — Rubella causes mild lymphadenopathy and a spreading maculopapular rash — not the bilateral slapped cheek appearance."
+    },
+    "reference": "NICE CKS — Parvovirus B19 infection. PHE — Slapped cheek guidance.",
+    "tags": [
+      "slapped cheek disease",
+      "parvovirus B19",
+      "erythema infectiosum",
+      "self-limiting",
+      "NICE CKS",
+      "fifth disease"
+    ],
+    "source": "Question Grove 360"
+  },
+  {
+    "id": "QG-DERM-028-002",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Dermatology",
+    "difficulty": "Medium",
+    "question": "A 5-year-old boy presents with a 2-day history of sore throat, fever, headache and a rough sandpaper-texture rash on his trunk that blanches on pressure. On examination he has a strawberry tongue, flushed face with perioral pallor and linear petechiae in the antecubital fossae (Pastia's lines). What is the diagnosis and most appropriate treatment?",
+    "options": {
+      "A": "Slapped cheek disease — no treatment needed",
+      "B": "Scarlet fever — oral phenoxymethylpenicillin 125-250mg four times daily for 10 days",
+      "C": "Kawasaki disease — aspirin and IVIG",
+      "D": "Viral exanthem — paracetamol and reassurance",
+      "E": "Meningococcal septicaemia — call 999, IM benzylpenicillin"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Scarlet fever is caused by group A Streptococcus (GAS) pyogenes exotoxin. Classic features: sore throat, fever, sandpaper rash (fine papular rash blanching on pressure), strawberry tongue, circumoral pallor, Pastia's lines (petechiae in skin folds). Per NICE NG84 and UKHSA, treatment is phenoxymethylpenicillin (penicillin V) for 10 days (125mg QDS <5 years, 250mg QDS 5-18 years). Azithromycin or co-amoxiclav for penicillin allergy. Notify UKHSA — scarlet fever is a notifiable disease.",
+      "A": "Incorrect — This is scarlet fever, not parvovirus B19. Antibiotics are required.",
+      "B": "CORRECT — Scarlet fever: phenoxymethylpenicillin for 10 days per NICE NG84/UKHSA guidance.",
+      "C": "Incorrect — Kawasaki disease causes fever >5 days with conjunctival injection, rash, red lips, lymphadenopathy — no sore throat or Pastia's lines.",
+      "D": "Incorrect — Viral exanthems do not cause strawberry tongue or Pastia's lines. Antibiotics are required for scarlet fever.",
+      "E": "Incorrect — Meningococcal disease causes non-blanching petechial/purpuric rash with rapid deterioration — different from blanching sandpaper rash."
+    },
+    "reference": "NICE NG84 — Sore throat. UKHSA — Scarlet fever guidelines. https://www.nice.org.uk/guidance/ng84",
+    "tags": [
+      "scarlet fever",
+      "phenoxymethylpenicillin",
+      "strawberry tongue",
+      "Pastia's lines",
+      "NICE NG84",
+      "notifiable disease"
+    ],
+    "source": "Question Grove 360"
+  },
+  {
+    "id": "QG-DERM-028-003",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Dermatology",
+    "difficulty": "Medium",
+    "question": "A nursery contacts a GP because a 4-year-old child has been diagnosed with slapped cheek disease (parvovirus B19). The nursery is asking when the child can return and whether other children are at risk. What is the most appropriate advice?",
+    "options": {
+      "A": "Child must be excluded for 5 days from onset of rash",
+      "B": "Child can return immediately — by the time the rash appears the child is no longer infectious",
+      "C": "Child must be excluded until 48 hours after the rash has completely faded",
+      "D": "All children in the nursery should receive prophylactic aciclovir",
+      "E": "Close the nursery for 2 weeks — parvovirus B19 is highly contagious"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "A key feature of parvovirus B19 is that the infectious period occurs BEFORE the rash appears (during the prodromal phase of fever and URTI). Once the characteristic slapped cheek rash develops, the child is no longer infectious and can return to school or nursery immediately. Per UKHSA/PHE guidance, exclusion from school is not necessary once the rash appears. The main concern is for pregnant contacts and immunocompromised individuals who should be informed and seek advice.",
+      "A": "Incorrect — Exclusion is not required once the rash appears — the child is no longer infectious.",
+      "B": "CORRECT — Child is no longer infectious once rash appears. Can return to nursery immediately per UKHSA/PHE.",
+      "C": "Incorrect — There is no requirement to wait for the rash to fade.",
+      "D": "Incorrect — Aciclovir has no activity against parvovirus B19 (a DNA virus treated supportively).",
+      "E": "Incorrect — Closing the nursery is not recommended for slapped cheek disease."
+    },
+    "reference": "PHE — Guidance on infection control in schools. UKHSA — Parvovirus B19.",
+    "tags": [
+      "parvovirus B19",
+      "slapped cheek",
+      "infectivity",
+      "school exclusion",
+      "PHE",
+      "nursery"
+    ],
+    "source": "Question Grove 360"
+  },
+  {
+    "id": "QG-DERM-028-004",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Dermatology",
+    "difficulty": "Hard",
+    "question": "A 28-year-old pregnant woman (22 weeks gestation) contacts her GP after her child was diagnosed with slapped cheek disease (parvovirus B19) 1 week ago. She does not know if she is immune. She feels well with no rash. What is the most appropriate management?",
+    "options": {
+      "A": "Reassure — parvovirus B19 does not affect the unborn baby",
+      "B": "Check parvovirus B19 IgG and IgM antibodies — if seronegative (no immunity), monitor with serial ultrasounds for fetal hydrops; if IgM positive (acute infection), refer to fetal medicine",
+      "C": "Administer parvovirus B19 vaccine prophylactically",
+      "D": "Start prophylactic aciclovir and refer to obstetrics",
+      "E": "Terminate the pregnancy as parvovirus B19 causes severe fetal abnormalities"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Parvovirus B19 in pregnancy can cause fetal hydrops (due to aplastic crisis in fetal red cell precursors) particularly before 20 weeks, but also up to 28 weeks. The risk of hydrops is approximately 3% overall. Management: check IgG (immunity) and IgM (acute infection). If seronegative — increased surveillance. If IgM positive — refer to fetal medicine for serial ultrasounds (4-weekly) to detect fetal anaemia/hydrops. Fetal blood transfusion can treat severe fetal anaemia. There is no vaccine for parvovirus B19.",
+      "A": "Incorrect — Parvovirus B19 can cause fetal hydrops and intrauterine death — requires active management.",
+      "B": "CORRECT — Check IgG/IgM; if recent infection (IgM positive), refer to fetal medicine for ultrasound surveillance per RCOG guidance.",
+      "C": "Incorrect — There is no licensed parvovirus B19 vaccine available.",
+      "D": "Incorrect — Aciclovir is not active against parvovirus B19.",
+      "E": "Incorrect — Termination is not indicated. Fetal hydrops is treatable with in-utero transfusion and many pregnancies progress normally."
+    },
+    "reference": "RCOG Green-top Guideline 33 — Chickenpox (parvovirus B19 section). PHE — Parvovirus B19 in pregnancy.",
+    "tags": [
+      "parvovirus B19",
+      "pregnancy",
+      "fetal hydrops",
+      "IgM IgG",
+      "fetal medicine",
+      "RCOG"
+    ],
+    "source": "Question Grove 360"
+  },
+  {
+    "id": "QG-DERM-028-005",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Dermatology",
+    "difficulty": "Medium",
+    "question": "A 7-year-old boy is diagnosed with scarlet fever. His mother mentions he also has a 14-year-old sibling and a 6-month-old sibling at home. What advice should be given regarding the other children and household contacts?",
+    "options": {
+      "A": "No action needed — scarlet fever is not contagious once antibiotics started",
+      "B": "The 14-year-old should also receive prophylactic penicillin. The 6-month-old should be seen urgently. Notify UKHSA",
+      "C": "Exclude the infected child from school for 24 hours after starting antibiotics. No action for siblings unless symptomatic. Notify UKHSA",
+      "D": "Exclude for 24 hours from starting antibiotics. Monitor siblings for symptoms. Notify UKHSA as scarlet fever is notifiable",
+      "E": "Notify UKHSA only — no exclusion required as antibiotics eliminate infectivity"
+    },
+    "correct_answer": "D",
+    "explanation": {
+      "correct": "Per UKHSA and NICE NG84 guidance on scarlet fever: (1) Scarlet fever IS a notifiable disease — must be reported to UKHSA/local health protection team; (2) The infected child should be excluded from school until at least 24 hours after starting antibiotics and fever-free; (3) Household contacts should be monitored for symptoms — prophylactic antibiotics for contacts are NOT routinely recommended unless there are specific high-risk situations (e.g. outbreak setting); (4) The 6-month-old should be observed for symptoms; urgent review if unwell.",
+      "A": "Incorrect — Scarlet fever is highly contagious. Notification and exclusion are required.",
+      "B": "Incorrect — Prophylactic penicillin for all household contacts is not routinely recommended per UKHSA.",
+      "C": "Incorrect — 24 hours is correct for exclusion, monitoring siblings is correct, but 'no action unless symptomatic' understates surveillance needs for the infant.",
+      "D": "CORRECT — 24-hour exclusion from starting antibiotics + monitor siblings + notify UKHSA per NICE NG84/UKHSA.",
+      "E": "Incorrect — Exclusion IS required for 24 hours after starting antibiotics."
+    },
+    "reference": "UKHSA — Scarlet fever guidelines. NICE NG84 — Sore throat. Notifiable diseases list.",
+    "tags": [
+      "scarlet fever",
+      "notifiable disease",
+      "UKHSA",
+      "school exclusion",
+      "household contacts",
+      "NICE NG84"
+    ],
+    "source": "Question Grove 360"
+  },
+  {
+    "id": "QG-DERM-038-001",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Dermatology",
+    "difficulty": "Easy",
+    "question": "A 17-year-old girl presents with mild to moderate acne vulgaris affecting her face and neck with papules, pustules and comedones. She has not tried any treatment previously. What is the most appropriate first-line treatment per NICE NG198?",
+    "options": {
+      "A": "Oral doxycycline 100mg once daily for 3 months",
+      "B": "Topical adapalene 0.1% alone",
+      "C": "Topical combination of a retinoid + benzoyl peroxide, OR topical antibiotic + benzoyl peroxide (with or without retinoid)",
+      "D": "Oral isotretinoin — refer to dermatology",
+      "E": "Combined oral contraceptive pill alone"
+    },
+    "correct_answer": "C",
+    "explanation": {
+      "correct": "Per NICE NG198 (Acne vulgaris: management, 2021), for mild to moderate acne, first-line treatment is a topical combination. Options include: (1) fixed-dose combination of topical retinoid + benzoyl peroxide; (2) topical antibiotic + benzoyl peroxide ± retinoid. Benzoyl peroxide is included in all regimens to reduce antibiotic resistance. Topical antibiotics must NOT be used as monotherapy due to resistance. Oral antibiotics are second-line when topical treatment fails.",
+      "A": "Incorrect — Oral antibiotics are second-line for moderate-severe acne or when topical treatment fails. Not first-line for mild-moderate.",
+      "B": "Incorrect — Topical retinoid alone is appropriate only for comedonal (non-inflammatory) acne. Mixed papulopustular acne requires combination.",
+      "C": "CORRECT — Topical combination (retinoid + BPO or antibiotic + BPO ± retinoid) is first-line for mild-moderate acne per NICE NG198.",
+      "D": "Incorrect — Isotretinoin is for severe or scarring acne, or acne resistant to systemic antibiotics — specialist-initiated only.",
+      "E": "Incorrect — COCP is an adjunct treatment for female patients, not a standalone first-line therapy."
+    },
+    "reference": "NICE NG198 — Acne vulgaris: management. https://www.nice.org.uk/guidance/ng198",
+    "tags": [
+      "acne vulgaris",
+      "topical combination",
+      "benzoyl peroxide",
+      "retinoid",
+      "NICE NG198",
+      "first-line"
+    ],
+    "source": "Question Grove 360"
+  },
+  {
+    "id": "QG-DERM-038-002",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Dermatology",
+    "difficulty": "Medium",
+    "question": "A 19-year-old man is started on topical clindamycin 1% + benzoyl peroxide 3% gel for moderate acne. He returns after 8 weeks with minimal improvement. His acne is now affecting his face, chest and back with multiple papules and pustules. What is the most appropriate next step per NICE NG198?",
+    "options": {
+      "A": "Continue topical treatment for a further 12 weeks before changing",
+      "B": "Add oral lymecycline 408mg once daily (tetracycline antibiotic) + continue topical benzoyl peroxide",
+      "C": "Switch to oral isotretinoin immediately",
+      "D": "Add oral erythromycin 500mg twice daily",
+      "E": "Refer urgently to dermatology for biologic therapy"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per NICE NG198, if topical treatment is insufficient after 12 weeks (or 8 weeks if clearly inadequate), step up to oral antibiotic. First-line oral antibiotics: lymecycline 408mg once daily or doxycycline 100mg once daily. Oral antibiotics should always be combined with topical benzoyl peroxide (to reduce antibiotic resistance) and NOT combined with topical antibiotics. Oral antibiotics should be prescribed for a maximum of 3 months with review.",
+      "A": "Incorrect — 8 weeks with minimal improvement on combination topical therapy is sufficient to step up. Waiting further delays effective treatment.",
+      "B": "CORRECT — Oral lymecycline or doxycycline + topical BPO is the correct step-up per NICE NG198.",
+      "C": "Incorrect — Isotretinoin is for severe/scarring/refractory acne unresponsive to systemic antibiotics. Premature referral.",
+      "D": "Incorrect — Oral erythromycin has high resistance rates and is not recommended as first-line oral antibiotic per NICE NG198.",
+      "E": "Incorrect — Biologic therapy has no role in acne management."
+    },
+    "reference": "NICE NG198 — Acne vulgaris: management. https://www.nice.org.uk/guidance/ng198",
+    "tags": [
+      "acne",
+      "lymecycline",
+      "oral antibiotic",
+      "step-up",
+      "benzoyl peroxide",
+      "NICE NG198"
+    ],
+    "source": "Question Grove 360"
+  },
+  {
+    "id": "QG-DERM-038-003",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Dermatology",
+    "difficulty": "Medium",
+    "question": "A 20-year-old woman with moderate acne is prescribed topical clindamycin. She asks why benzoyl peroxide needs to be used alongside the topical antibiotic. What is the most important reason?",
+    "options": {
+      "A": "Benzoyl peroxide reduces the irritation caused by topical antibiotics",
+      "B": "Benzoyl peroxide prevents antibiotic resistance developing in Cutibacterium acnes (C. acnes)",
+      "C": "Benzoyl peroxide improves skin hydration and reduces topical antibiotic absorption",
+      "D": "Benzoyl peroxide is a comedolytic and treats the blackhead component of acne",
+      "E": "Benzoyl peroxide extends the shelf life of topical clindamycin"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per NICE NG198 and BAD guidelines, the primary reason benzoyl peroxide must be co-prescribed with any topical or oral antibiotic in acne is to prevent the development of antibiotic-resistant Cutibacterium acnes (formerly Propionibacterium acnes). Antibiotic resistance is a major issue in acne management. Benzoyl peroxide is bactericidal through oxidative mechanisms — C. acnes cannot develop resistance to benzoyl peroxide. This is why topical antibiotics must never be used as monotherapy.",
+      "A": "Incorrect — Benzoyl peroxide itself causes irritation/dryness and does not reduce antibiotic-related irritation.",
+      "B": "CORRECT — Benzoyl peroxide prevents antibiotic resistance in C. acnes — the primary rationale for combination use per NICE NG198.",
+      "C": "Incorrect — Benzoyl peroxide does not significantly affect antibiotic absorption.",
+      "D": "Incorrect — While benzoyl peroxide has some comedolytic properties, the antibiotic resistance rationale is the primary reason for co-prescription.",
+      "E": "Incorrect — Pharmaceutical stability is not the clinical rationale for co-prescription."
+    },
+    "reference": "NICE NG198 — Acne vulgaris: management. BAD — Acne guidelines.",
+    "tags": [
+      "acne",
+      "benzoyl peroxide",
+      "antibiotic resistance",
+      "C. acnes",
+      "topical antibiotic",
+      "NICE NG198"
+    ],
+    "source": "Question Grove 360"
+  },
+  {
+    "id": "QG-DERM-038-004",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Dermatology",
+    "difficulty": "Hard",
+    "question": "A 21-year-old woman with moderate-severe acne is referred to dermatology and started on oral isotretinoin 0.5mg/kg/day. Which monitoring and safety measures are mandatory during treatment per MHRA and NICE guidance?",
+    "options": {
+      "A": "Monthly FBC and LFTs; no additional precautions",
+      "B": "Pregnancy prevention programme (PPP) — two forms of contraception and monthly pregnancy tests; monthly LFTs and fasting lipids; baseline and monitoring for depression",
+      "C": "Urine dipstick monthly and annual DEXA scan",
+      "D": "Liver biopsy at 3 months to assess hepatotoxicity",
+      "E": "Stop all other acne treatments and provide no additional monitoring"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Oral isotretinoin is a potent teratogen (Category X). Per MHRA and NICE NG198, mandatory requirements include: Pregnancy Prevention Programme (PPP) — highly reliable contraception (2 methods) from 1 month before, during and 1 month after treatment; monthly urine/serum pregnancy tests; signed patient agreement form. Monitoring: baseline and monthly fasting lipids (hypertriglyceridaemia risk), LFTs (hepatotoxicity), full blood count. Psychiatric monitoring for depression/suicidal ideation. Patients counselled on night blindness, dry skin, teratogenicity.",
+      "A": "Incorrect — FBC and LFTs alone without the full PPP is dangerously inadequate for isotretinoin.",
+      "B": "CORRECT — Full PPP + monthly pregnancy tests + lipids + LFTs + psychiatric monitoring per MHRA/NICE NG198.",
+      "C": "Incorrect — DEXA scan is not part of isotretinoin monitoring. Monthly urine dipstick is not a requirement.",
+      "D": "Incorrect — Liver biopsy is not required. LFTs are monitored but invasive testing is not standard.",
+      "E": "Incorrect — Comprehensive monitoring is mandatory. Stopping all other treatments without monitoring is inadequate care."
+    },
+    "reference": "MHRA — Isotretinoin: Pregnancy Prevention Programme. NICE NG198.",
+    "tags": [
+      "isotretinoin",
+      "pregnancy prevention",
+      "teratogen",
+      "MHRA",
+      "PPP",
+      "acne monitoring"
+    ],
+    "source": "Question Grove 360"
+  },
+  {
+    "id": "QG-DERM-038-005",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Dermatology",
+    "difficulty": "Easy",
+    "question": "A 16-year-old boy presents with mild acne consisting predominantly of open and closed comedones (blackheads and whiteheads) on his forehead, with very few papules. There are no pustules and no scarring. What is the most appropriate first-line treatment for predominantly comedonal acne?",
+    "options": {
+      "A": "Oral doxycycline 100mg daily — comedonal acne requires antibiotic treatment",
+      "B": "Topical retinoid (adapalene 0.1%) alone — comedonal acne does not require benzoyl peroxide",
+      "C": "Topical combination (retinoid + benzoyl peroxide) even for comedonal-only acne",
+      "D": "Salicylic acid wash only — no prescription treatment needed",
+      "E": "Referral to dermatology for oral isotretinoin"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per NICE NG198, for predominantly comedonal (non-inflammatory) acne, topical retinoid alone (adapalene 0.1% or tretinoin) is the most appropriate first-line treatment. Retinoids are comedolytic (prevent and dissolve comedones by normalising follicular desquamation). Benzoyl peroxide and antibiotics are primarily for inflammatory acne (papules, pustules). Combination therapy is not mandated for purely comedonal acne without inflammatory lesions.",
+      "A": "Incorrect — Oral antibiotics are not indicated for non-inflammatory comedonal acne.",
+      "B": "CORRECT — Topical retinoid alone is first-line for comedonal acne per NICE NG198.",
+      "C": "Incorrect — Combination with BPO is required for inflammatory acne; for purely comedonal acne, retinoid monotherapy is appropriate.",
+      "D": "Incorrect — OTC salicylic acid wash may supplement but is not the evidence-based first-line prescription treatment.",
+      "E": "Incorrect — Isotretinoin is for severe/scarring acne — not mild comedonal acne."
+    },
+    "reference": "NICE NG198 — Acne vulgaris: management. https://www.nice.org.uk/guidance/ng198",
+    "tags": [
+      "comedonal acne",
+      "retinoid",
+      "adapalene",
+      "non-inflammatory",
+      "NICE NG198",
+      "topical"
+    ],
+    "source": "Question Grove 360"
+  },
+  {
+    "id": "QG-DERM-042-001",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Dermatology",
+    "difficulty": "Easy",
+    "question": "A 32-year-old woman presents with symmetrical, non-itchy brown hyperpigmented patches on her upper lip, cheeks and forehead. She is on the combined oral contraceptive pill and has recently been pregnant. The patches worsen in summer. What is the most likely diagnosis and first-line management?",
+    "options": {
+      "A": "Basal cell carcinoma — urgent 2WW referral",
+      "B": "Melasma (chloasma) — sun protection (high SPF broad-spectrum sunscreen) and consider topical hydroquinone or azelaic acid",
+      "C": "Post-inflammatory hyperpigmentation — topical steroid",
+      "D": "Addison's disease — short Synacthen test",
+      "E": "Tinea versicolor — topical ketoconazole shampoo"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Melasma (chloasma) is a common acquired symmetrical hyperpigmentation of sun-exposed areas (upper lip, cheeks, forehead). Triggers: pregnancy (mask of pregnancy), combined OCP, sun exposure, and hormonal changes. It is non-itchy and benign. Per NICE CKS and BAD guidelines, management: broad-spectrum high-SPF sunscreen (daily, year-round — essential), topical depigmenting agents (hydroquinone 2-4%, azelaic acid 15-20%, topical retinoids), and discontinue OCP if possible. Chemical peels and laser are second-line specialist options.",
+      "A": "Incorrect — BCC presents as a pearly nodule with telangiectasia — not symmetrical brown patches.",
+      "B": "CORRECT — Melasma: symmetrical non-itchy hyperpigmentation + OCP/pregnancy + sun worsening. SPF + topical depigmenting agents.",
+      "C": "Incorrect — Post-inflammatory hyperpigmentation follows skin injury/inflammation — no hormonal trigger.",
+      "D": "Incorrect — Addison's disease causes generalised hyperpigmentation (mucosal, skin creases, pressure areas) with systemic symptoms — not focal facial patches.",
+      "E": "Incorrect — Tinea versicolor causes fine-scaling hypopigmented or hyperpigmented patches on trunk — not symmetrical facial macules."
+    },
+    "reference": "NICE CKS — Melasma. BAD Guidelines — Melasma management.",
+    "tags": [
+      "melasma",
+      "chloasma",
+      "hyperpigmentation",
+      "sunscreen",
+      "OCP",
+      "NICE CKS"
+    ],
+    "source": "Question Grove 360"
+  },
+  {
+    "id": "QG-DERM-042-002",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Dermatology",
+    "difficulty": "Medium",
+    "question": "A 35-year-old woman has melasma on her cheeks and upper lip that has not responded to 3 months of high-SPF sunscreen alone. She is no longer on the COCP. What is the most appropriate topical treatment to add?",
+    "options": {
+      "A": "Topical betamethasone 0.1% (potent corticosteroid)",
+      "B": "Topical hydroquinone 4% or azelaic acid 15-20%",
+      "C": "Topical tacrolimus 0.1%",
+      "D": "Topical clindamycin 1%",
+      "E": "Topical ketoconazole 2%"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per NICE CKS and BAD guidelines, after sun protection fails to adequately control melasma, topical depigmenting agents are added: hydroquinone 2-4% (tyrosinase inhibitor — reduces melanin production) or azelaic acid 15-20% (inhibits tyrosinase and is safe in pregnancy). These are applied to hyperpigmented areas. Topical retinoids (tretinoin 0.05%) and combination preparations (Kligman's formula: hydroquinone + tretinoin + mild corticosteroid) are also used. Sunscreen must be continued alongside.",
+      "A": "Incorrect — Potent topical corticosteroids are not first-line for melasma and risk skin atrophy, telangiectasia and paradoxical hyperpigmentation with prolonged use.",
+      "B": "CORRECT — Topical hydroquinone or azelaic acid are recommended depigmenting agents for melasma per NICE CKS/BAD.",
+      "C": "Incorrect — Tacrolimus is used for atopic eczema on sensitive skin areas — not a primary treatment for melasma.",
+      "D": "Incorrect — Topical clindamycin is for acne — no role in melasma management.",
+      "E": "Incorrect — Topical ketoconazole is antifungal — no role in melasma management."
+    },
+    "reference": "NICE CKS — Melasma. BAD — Melasma management guideline.",
+    "tags": [
+      "melasma",
+      "hydroquinone",
+      "azelaic acid",
+      "depigmenting",
+      "topical treatment",
+      "NICE CKS"
+    ],
+    "source": "Question Grove 360"
+  },
+  {
+    "id": "QG-DERM-042-003",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Dermatology",
+    "difficulty": "Medium",
+    "question": "A 40-year-old Fitzpatrick skin type V woman asks about laser treatment for her persistent melasma. Her dermatologist has advised caution. Why should laser treatment be used with particular caution in darker skin types?",
+    "options": {
+      "A": "Laser is contraindicated in darker skin types due to risk of permanent scarring",
+      "B": "Laser treatment can paradoxically worsen melasma by causing post-inflammatory hyperpigmentation, particularly in Fitzpatrick types IV-VI",
+      "C": "Laser treatment is only effective for Fitzpatrick types I-II",
+      "D": "Laser treatment causes vitamin D deficiency in darker skin types",
+      "E": "Darker skin types are resistant to any form of laser treatment"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Laser treatment (Q-switched Nd:YAG, fractional lasers) for melasma carries a significant risk of post-inflammatory hyperpigmentation (PIH) in darker skin types (Fitzpatrick IV-VI) because melanocytes in darker skin are more reactive and susceptible to inflammation-triggered hyperpigmentation. This can paradoxically worsen the very condition being treated. Per BAD and specialist melasma guidelines, topical depigmenting agents and chemical peels (with caution) are preferred first-line for darker skin types, with laser reserved for refractory cases and used with extreme caution.",
+      "A": "Incorrect — Scarring is a risk but PIH is the more common and clinically relevant concern.",
+      "B": "CORRECT — Laser risks worsening melasma via PIH in Fitzpatrick types IV-VI.",
+      "C": "Incorrect — Laser can be effective in lighter skin types but risk-benefit is less favourable in darker types.",
+      "D": "Incorrect — Laser treatment does not cause vitamin D deficiency.",
+      "E": "Incorrect — Laser is not universally ineffective in darker skin but carries higher PIH risk."
+    },
+    "reference": "BAD — Melasma. Dermatology — Fitzpatrick skin typing and laser treatment.",
+    "tags": [
+      "melasma",
+      "laser",
+      "post-inflammatory hyperpigmentation",
+      "Fitzpatrick",
+      "darker skin",
+      "BAD"
+    ],
+    "source": "Question Grove 360"
+  },
+  {
+    "id": "QG-DERM-042-004",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Dermatology",
+    "difficulty": "Easy",
+    "question": "A 29-year-old woman asks whether she can use her current topical hydroquinone preparation for melasma throughout her pregnancy. She is 8 weeks pregnant. What is the most appropriate advice?",
+    "options": {
+      "A": "Hydroquinone is safe throughout pregnancy — continue treatment",
+      "B": "Hydroquinone should be discontinued in pregnancy — use high-SPF sunscreen and azelaic acid instead",
+      "C": "Switch to topical tretinoin which is safer in pregnancy",
+      "D": "Topical treatments are all contraindicated in pregnancy — no treatment until delivery",
+      "E": "Use hydroquinone only in the third trimester when organogenesis is complete"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Hydroquinone is not recommended during pregnancy due to significant systemic absorption through the skin and insufficient safety data in human pregnancy. Per NICE CKS and BAD, pregnant women with melasma should: discontinue hydroquinone, use high-SPF broad-spectrum sunscreen (safe in pregnancy), and topical azelaic acid 15-20% is the safest alternative depigmenting agent in pregnancy. Topical retinoids (tretinoin) are also contraindicated in pregnancy due to teratogenicity risk.",
+      "A": "Incorrect — Hydroquinone has significant systemic absorption and is not recommended in pregnancy.",
+      "B": "CORRECT — Discontinue hydroquinone; use sunscreen + azelaic acid (safe in pregnancy) per NICE CKS/BAD.",
+      "C": "Incorrect — Topical retinoids (tretinoin) are contraindicated in pregnancy — teratogenic risk.",
+      "D": "Incorrect — Azelaic acid and sunscreen are safe options in pregnancy.",
+      "E": "Incorrect — Hydroquinone is not recommended at any stage of pregnancy."
+    },
+    "reference": "NICE CKS — Melasma. BAD — Melasma in pregnancy.",
+    "tags": [
+      "melasma",
+      "pregnancy",
+      "hydroquinone",
+      "azelaic acid",
+      "sunscreen",
+      "contraindicated"
+    ],
+    "source": "Question Grove 360"
+  },
+  {
+    "id": "QG-DERM-042-005",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Dermatology",
+    "difficulty": "Hard",
+    "question": "A 38-year-old woman presents with dark brownish symmetrical patches on her forehead and cheeks that she has had for 2 years. She uses SPF 30 sunscreen daily. On Wood's lamp examination the pigmentation is enhanced (appears darker). What does Wood's lamp enhancement indicate and how does this affect prognosis?",
+    "options": {
+      "A": "Wood's lamp enhancement indicates dermal melanin deposition — poorer treatment response",
+      "B": "Wood's lamp enhancement indicates epidermal melanin deposition — better treatment response to depigmenting agents",
+      "C": "Wood's lamp enhancement excludes melasma — suggests malignant transformation",
+      "D": "Wood's lamp examination is unreliable in darker skin types and should not be used",
+      "E": "Wood's lamp enhancement indicates mixed epidermal-dermal melasma — intermediate prognosis"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Wood's lamp (UV-A light) examination differentiates epidermal from dermal melasma: epidermal melasma — pigmentation is ENHANCED (appears more pronounced) under Wood's lamp → melanin is in the epidermis → better response to topical depigmenting agents (hydroquinone, azelaic acid, retinoids) which target epidermal melanocytes. Dermal melasma — pigmentation NOT enhanced under Wood's lamp → melanin in dermis → poorer response to topical agents → may require specialist treatment (laser, chemical peels).",
+      "A": "Incorrect — Dermal melanin is NOT enhanced under Wood's lamp. Enhancement indicates epidermal, not dermal pigmentation.",
+      "B": "CORRECT — Wood's lamp enhancement = epidermal melasma = better response to topical depigmenting agents.",
+      "C": "Incorrect — Wood's lamp enhancement is a diagnostic tool for melasma classification, not malignancy detection.",
+      "D": "Incorrect — Wood's lamp is less reliable in very dark skin types but remains useful for melasma classification.",
+      "E": "Incorrect — Mixed melasma typically shows partial enhancement under Wood's lamp, but B is the most precise answer for the enhanced pattern described."
+    },
+    "reference": "BAD — Melasma guidelines. Dermatology textbook — Wood's lamp examination.",
+    "tags": [
+      "melasma",
+      "Wood's lamp",
+      "epidermal melanin",
+      "dermal melanin",
+      "prognosis",
+      "BAD"
+    ],
+    "source": "Question Grove 360"
+  },
+  {
+    "id": "QG-DERM-048-001",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Dermatology",
+    "difficulty": "Medium",
+    "question": "A 65-year-old woman presents 3 days after being scratched by her cat. The scratch site has developed tense blisters, surrounding erythema and marked swelling. She has a fever of 38.2°C and feels systemically unwell. The wound is painful and warm. Her WBC is 18 × 10⁹/L. What is the most likely diagnosis?",
+    "options": {
+      "A": "Bullous pemphigoid — topical clobetasol",
+      "B": "Bullous cellulitis / Pasteurella multocida infection — IV co-amoxiclav and hospital admission",
+      "C": "Cat scratch disease (Bartonella henselae) — reassure, self-limiting",
+      "D": "Herpes zoster — oral aciclovir 800mg five times daily",
+      "E": "Contact dermatitis from cat fur — topical hydrocortisone"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Cat bites and scratches commonly cause Pasteurella multocida infection — an aerobic gram-negative bacillus found in cat oral flora. Bullous cellulitis (blistering, tense bullae) with fever and systemic upset after a cat scratch indicates serious soft tissue infection. Per NICE NG141 and BNF, treatment for cat bite/scratch infections: co-amoxiclav 625mg TDS is first-line (covers Pasteurella, staphylococci, anaerobes). With systemic upset, hospital admission for IV co-amoxiclav is required. If penicillin allergic: doxycycline or co-trimoxazole.",
+      "A": "Incorrect — Bullous pemphigoid is an autoimmune blistering disorder in elderly patients with tense blisters on urticarial plaques — not post-traumatic after a cat scratch with fever.",
+      "B": "CORRECT — Bullous cellulitis after cat scratch = Pasteurella multocida. IV co-amoxiclav + admission per NICE NG141.",
+      "C": "Incorrect — Cat scratch disease causes lymphadenopathy 1-3 weeks after scratch — not acute blistering cellulitis.",
+      "D": "Incorrect — Herpes zoster causes dermatomal vesicular rash — not post-cat-scratch with cellulitis.",
+      "E": "Incorrect — Contact dermatitis does not cause tense blisters with systemic fever and raised WBC."
+    },
+    "reference": "NICE NG141 — Cellulitis and erysipelas: antimicrobial prescribing. BNF — Animal bite management.",
+    "tags": [
+      "cat scratch",
+      "Pasteurella",
+      "bullous cellulitis",
+      "co-amoxiclav",
+      "NICE NG141",
+      "animal bite"
+    ],
+    "source": "Question Grove 360"
+  },
+  {
+    "id": "QG-DERM-048-002",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Dermatology",
+    "difficulty": "Hard",
+    "question": "A 72-year-old immunosuppressed man (on prednisolone for COPD) develops rapidly spreading blistering and skin necrosis over his forearm 12 hours after a cat scratch. The surrounding skin has a grey-dusky hue and he has disproportionate severe pain. HR is 115 bpm and BP is 95/65 mmHg. What is the priority diagnosis and management?",
+    "options": {
+      "A": "Bullous cellulitis — IV co-amoxiclav and monitor",
+      "B": "Necrotising fasciitis — 999 call, emergency surgical referral, broad-spectrum IV antibiotics (piperacillin/tazobactam + clindamycin)",
+      "C": "Bullous pemphigoid — IV methylprednisolone",
+      "D": "Allergic contact dermatitis — IM adrenaline and antihistamine",
+      "E": "Cutaneous anthrax — IV ciprofloxacin"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Necrotising fasciitis (NF) after cat scratch in an immunosuppressed patient: rapid progression, skin necrosis, grey discolouration, haemodynamic compromise and disproportionate pain (or paradoxical pain reduction as nerves are destroyed) are hallmarks of NF. This is a surgical emergency with high mortality without urgent debridement. Polymicrobial NF can be triggered by seemingly minor injuries. Immediate 999 call, broad-spectrum IV antibiotics and emergency surgical debridement are essential.",
+      "A": "Incorrect — Haemodynamic compromise, skin necrosis and rapid progression far exceed simple bullous cellulitis. NF must be suspected.",
+      "B": "CORRECT — Necrotising fasciitis: 999 + emergency surgical debridement + IV piperacillin/tazobactam + clindamycin.",
+      "C": "Incorrect — IV methylprednisolone would worsen NF by further immunosuppression.",
+      "D": "Incorrect — No features of anaphylaxis. This is NF.",
+      "E": "Incorrect — Cutaneous anthrax (Bacillus anthracis) is from animal hides/spores — not cat scratches."
+    },
+    "reference": "NICE CKS — Necrotising fasciitis. BSI/BAPRAS — NF management guidelines.",
+    "tags": [
+      "necrotising fasciitis",
+      "cat scratch",
+      "immunosuppressed",
+      "surgical emergency",
+      "piperacillin",
+      "NICE CKS"
+    ],
+    "source": "Question Grove 360"
+  },
+  {
+    "id": "QG-DERM-048-003",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Dermatology",
+    "difficulty": "Medium",
+    "question": "A 75-year-old man presents with tense blisters on normal and erythematous skin on his thighs and abdomen, unrelated to trauma. The blisters are large (up to 3cm), do not rupture easily and are not painful. He has a history of being scratched by his cat 6 months ago which healed uneventfully. Nikolsky sign is negative. DIF shows linear IgG at the BMZ. What is the diagnosis?",
+    "options": {
+      "A": "Bullous cellulitis from previous cat scratch — delayed presentation",
+      "B": "Bullous pemphigoid — topical super-potent corticosteroid (clobetasol propionate 0.05%)",
+      "C": "Pemphigus vulgaris — oral prednisolone",
+      "D": "Epidermolysis bullosa — genetic counselling",
+      "E": "Dermatitis herpetiformis — gluten-free diet and dapsone"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Bullous pemphigoid (BP): tense (not flaccid) blisters on normal/urticarial skin, elderly patients, negative Nikolsky sign (skin does not shear), linear IgG ± C3 at basement membrane zone on DIF, anti-BP180/BP230 antibodies. Per NICE CKS, first-line treatment is topical super-potent corticosteroid (clobetasol propionate 0.05%) applied to blisters and surrounding skin. Oral prednisolone for widespread disease. BP180 and BP230 antibody levels can guide treatment response.",
+      "A": "Incorrect — Cat scratch from 6 months ago healed — unrelated. BP is an autoimmune condition.",
+      "B": "CORRECT — Bullous pemphigoid: tense blisters + elderly + linear IgG at BMZ + negative Nikolsky. Topical clobetasol per NICE CKS.",
+      "C": "Incorrect — Pemphigus vulgaris causes FLACCID blisters, positive Nikolsky sign, mucosal involvement, IgG 'fishnet' intercellular pattern on DIF.",
+      "D": "Incorrect — Epidermolysis bullosa is congenital — presents from birth/childhood.",
+      "E": "Incorrect — Dermatitis herpetiformis causes grouped pruritic vesicles on extensor surfaces, granular IgA at DPP on DIF, associated with coeliac disease."
+    },
+    "reference": "NICE CKS — Bullous pemphigoid. BAD Guidelines — Bullous pemphigoid 2012.",
+    "tags": [
+      "bullous pemphigoid",
+      "tense blisters",
+      "DIF",
+      "clobetasol",
+      "elderly",
+      "NICE CKS"
+    ],
+    "source": "Question Grove 360"
+  },
+  {
+    "id": "QG-DERM-048-004",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Dermatology",
+    "difficulty": "Easy",
+    "question": "A 35-year-old man presents to a GP after being bitten by a stray cat on his right hand 2 hours ago. The wound is a puncture bite, currently not infected. He has no known allergies. He is not immunocompromised. What is the most appropriate immediate management?",
+    "options": {
+      "A": "Irrigate wound, prescribe co-amoxiclav 625mg TDS for 5 days prophylactically, check tetanus status",
+      "B": "Wound irrigation only — antibiotics only if infection develops",
+      "C": "Debride wound in primary care and discharge without antibiotics",
+      "D": "Refer to A&E for surgical debridement of all cat bites",
+      "E": "IV benzylpenicillin for Pasteurella prophylaxis"
+    },
+    "correct_answer": "A",
+    "explanation": {
+      "correct": "Cat bites have a high infection risk (up to 80%) due to deep puncture wounds and Pasteurella multocida (rapid onset 24-48 hours), Staphylococcus aureus and anaerobes. Per NICE NG184 (Bites) and BNF, all cat bites should receive: thorough wound irrigation, prophylactic antibiotic — co-amoxiclav 625mg TDS for 5 days (covers Pasteurella, staph, anaerobes), tetanus status check and booster if needed, rabies consideration if abroad. Prophylaxis reduces infection risk significantly for cat bites, unlike dog bites where antibiotics are selective.",
+      "A": "CORRECT — Co-amoxiclav prophylaxis + wound irrigation + tetanus check for ALL cat bites per NICE NG184/BNF.",
+      "B": "Incorrect — Cat bites have very high infection risk. Prophylactic antibiotics are recommended regardless of current infection signs.",
+      "C": "Incorrect — Co-amoxiclav prophylaxis is mandated. Cat bites should not be left without antibiotic cover.",
+      "D": "Incorrect — Not all cat bites require A&E. Primary care management with antibiotics is appropriate.",
+      "E": "Incorrect — Oral co-amoxiclav is first-line. IV benzylpenicillin is for severe established infection."
+    },
+    "reference": "NICE NG184 — Bites: antimicrobial prescribing. BNF — Animal bite prophylaxis.",
+    "tags": [
+      "cat bite",
+      "co-amoxiclav",
+      "Pasteurella",
+      "prophylaxis",
+      "tetanus",
+      "NICE NG184"
+    ],
+    "source": "Question Grove 360"
+  },
+  {
+    "id": "QG-DERM-048-005",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Dermatology",
+    "difficulty": "Medium",
+    "question": "A 45-year-old man with HIV (CD4 count 90 cells/mm³) is scratched by a cat. Two days later he develops a small papule at the scratch site. Over the following week, he develops painful regional lymphadenopathy (axillary), fever and malaise. What is the most likely diagnosis and treatment?",
+    "options": {
+      "A": "Pasteurella cellulitis — co-amoxiclav 625mg TDS",
+      "B": "Cat scratch disease (Bartonella henselae) — azithromycin 500mg daily for 5 days",
+      "C": "Meningococcal lymphadenitis — IV ceftriaxone",
+      "D": "Cat scratch disease — no treatment needed, self-limiting in immunocompetent patients",
+      "E": "Toxoplasma lymphadenitis — pyrimethamine and sulfadiazine"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Cat scratch disease is caused by Bartonella henselae transmitted through cat scratches (especially kittens). Presentation: papule at scratch site → regional lymphadenopathy (tender, suppurative) 1-3 weeks later, fever, malaise. In immunocompetent patients it is usually self-limiting. However, in immunocompromised patients (HIV, CD4 <100) there is risk of disseminated disease (bacillary angiomatosis, peliosis hepatis). Per NICE CKS and ID guidelines, treat with azithromycin 500mg day 1 then 250mg days 2-5 (immunocompetent) or doxycycline/erythromycin for prolonged courses in immunocompromised patients.",
+      "A": "Incorrect — Co-amoxiclav does not cover Bartonella. This is CSD not Pasteurella cellulitis.",
+      "B": "CORRECT — Cat scratch disease (Bartonella henselae): azithromycin 5-day course; longer treatment in immunocompromised.",
+      "C": "Incorrect — Meningococcal disease causes rapid septicaemia with purpuric rash — not regional lymphadenopathy after cat scratch.",
+      "D": "Incorrect — Immunocompromised patients with CSD require antibiotic treatment to prevent dissemination.",
+      "E": "Incorrect — Toxoplasma lymphadenitis is typically in HIV with CD4 <200 from reactivation — presents with CNS disease usually."
+    },
+    "reference": "NICE CKS — Cat scratch disease. BHIVA — Bartonella in HIV.",
+    "tags": [
+      "cat scratch disease",
+      "Bartonella henselae",
+      "azithromycin",
+      "HIV",
+      "lymphadenopathy",
+      "NICE CKS"
+    ],
+    "source": "Question Grove 360"
+  },
+  {
+    "id": "QG-DERM-051-001",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Dermatology",
+    "difficulty": "Easy",
+    "question": "A 40-year-old man presents with scaling, erythema and itching of the scalp. He also has well-defined plaques on his elbows with silvery scales. He has tried coal tar shampoo with limited benefit. What is the most appropriate treatment for scalp psoriasis per NICE NG10?",
+    "options": {
+      "A": "Topical coal tar shampoo — continue and review in 3 months",
+      "B": "Potent topical corticosteroid (betamethasone valerate 0.1%) scalp application ± vitamin D analogue",
+      "C": "Topical ketoconazole shampoo — likely seborrhoeic dermatitis",
+      "D": "Oral prednisolone 30mg for acute scalp psoriasis flare",
+      "E": "Refer directly for biologic therapy"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per NICE NG10 (Psoriasis), for scalp psoriasis, first-line treatment is a potent topical corticosteroid applied once daily to the scalp (betamethasone valerate 0.1% scalp application). If inadequate response, add a vitamin D analogue (calcipotriol scalp solution). Combination products (betamethasone + calcipotriol foam/shampoo — Enstilar, Xamiol) are available. Coal tar preparations are second-line for mild disease. Ketoconazole is for seborrhoeic dermatitis (not psoriasis). Systemic treatments are for extensive or refractory disease.",
+      "A": "Incorrect — Coal tar has limited evidence and is less effective than topical corticosteroids for scalp psoriasis per NICE NG10.",
+      "B": "CORRECT — Potent topical corticosteroid scalp application ± vitamin D analogue is first-line for scalp psoriasis per NICE NG10.",
+      "C": "Incorrect — Ketoconazole treats seborrhoeic dermatitis (Malassezia-related). This patient has confirmed psoriasis (elbow plaques).",
+      "D": "Incorrect — Systemic prednisolone is contraindicated in psoriasis — risks severe rebound flare on withdrawal.",
+      "E": "Incorrect — Biologic therapy is for severe psoriasis (PASI >10, DLQI >10) failing systemic treatments — not first-line for scalp psoriasis."
+    },
+    "reference": "NICE NG10 — Psoriasis: assessment and management. https://www.nice.org.uk/guidance/ng10",
+    "tags": [
+      "scalp psoriasis",
+      "betamethasone",
+      "topical corticosteroid",
+      "vitamin D analogue",
+      "NICE NG10"
+    ],
+    "source": "Question Grove 360"
+  },
+  {
+    "id": "QG-DERM-051-002",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Dermatology",
+    "difficulty": "Medium",
+    "question": "A 35-year-old woman with known psoriasis has thick adherent scale on her scalp that is preventing topical corticosteroids from penetrating effectively. What should be applied first to improve treatment efficacy?",
+    "options": {
+      "A": "Increase frequency of betamethasone application to twice daily",
+      "B": "Apply a keratolytic agent (e.g. salicylic acid 3-6% in a suitable vehicle) to remove scale before corticosteroid treatment",
+      "C": "Switch to oral methotrexate immediately",
+      "D": "Apply emollient to the scale and wash out with coal tar shampoo",
+      "E": "Use occlusion with a plastic shower cap after applying betamethasone"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per NICE NG10 and BAD guidelines, when thick scale prevents penetration of topical agents, a keratolytic agent should be used first to remove the scale and facilitate penetration of active treatments. Salicylic acid (2-10% in coconut oil, white soft paraffin or a suitable shampoo vehicle) is applied to the scalp, left overnight or for several hours (under occlusion with a shower cap) and washed out with a tar or medicated shampoo. The potent topical corticosteroid is then applied to the cleaner scalp.",
+      "A": "Incorrect — Twice-daily application does not improve penetration through thick adherent scale.",
+      "B": "CORRECT — Keratolytic (salicylic acid) removes scale and facilitates topical treatment penetration per NICE NG10/BAD.",
+      "C": "Incorrect — Systemic methotrexate is a significant step-up requiring systemic risk assessment — not indicated for inadequate scalp penetration.",
+      "D": "Incorrect — Emollients and coal tar shampoo may soften scale but salicylic acid is the specific keratolytic agent recommended.",
+      "E": "Incorrect — Occlusion without first removing scale does not significantly improve penetration."
+    },
+    "reference": "NICE NG10 — Psoriasis. BAD Guidelines — Scalp psoriasis management.",
+    "tags": [
+      "scalp psoriasis",
+      "keratolytic",
+      "salicylic acid",
+      "scale removal",
+      "topical penetration",
+      "NICE NG10"
+    ],
+    "source": "Question Grove 360"
+  },
+  {
+    "id": "QG-DERM-051-003",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Dermatology",
+    "difficulty": "Medium",
+    "question": "A 50-year-old man presents with greasy, yellowish scales on his scalp, sides of his nose and eyebrows. He has dandruff. He has no plaques on his elbows or body. The rash is mildly itchy. What is the diagnosis and most appropriate treatment?",
+    "options": {
+      "A": "Scalp psoriasis — betamethasone valerate scalp solution",
+      "B": "Seborrhoeic dermatitis — ketoconazole 2% shampoo used twice weekly",
+      "C": "Tinea capitis — oral terbinafine",
+      "D": "Atopic eczema — topical hydrocortisone 1%",
+      "E": "Scalp ringworm — oral griseofulvin"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Seborrhoeic dermatitis: greasy yellowish scales on sebaceous gland-rich areas (scalp, nasolabial folds, eyebrows, ears, chest), associated with Malassezia (Pityrosporum) yeast. Distinguishing from psoriasis: seborrhoeic dermatitis has greasy yellowish scales (not silvery), affects sebaceous areas and nasolabial folds, no extensor plaques or nail changes. Per NICE CKS, first-line: ketoconazole 2% shampoo (or selenium sulphide, zinc pyrithione) used twice weekly for active treatment, then once weekly for maintenance.",
+      "A": "Incorrect — Betamethasone valerate is for scalp psoriasis. The clinical picture (greasy yellowish scales, sebaceous distribution) is seborrhoeic dermatitis.",
+      "B": "CORRECT — Seborrhoeic dermatitis: ketoconazole 2% shampoo twice weekly per NICE CKS.",
+      "C": "Incorrect — Tinea capitis causes patchy alopecia with broken hairs in children — not greasy yellowish scale in adults.",
+      "D": "Incorrect — Atopic eczema affects flexures in atopic individuals — not sebaceous areas.",
+      "E": "Incorrect — Griseofulvin (oral antifungal) is for tinea capitis — not seborrhoeic dermatitis."
+    },
+    "reference": "NICE CKS — Seborrhoeic dermatitis. https://cks.nice.org.uk/topics/seborrhoeic-dermatitis/",
+    "tags": [
+      "seborrhoeic dermatitis",
+      "ketoconazole",
+      "dandruff",
+      "Malassezia",
+      "greasy scales",
+      "NICE CKS"
+    ],
+    "source": "Question Grove 360"
+  },
+  {
+    "id": "QG-DERM-051-004",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Dermatology",
+    "difficulty": "Hard",
+    "question": "A 45-year-old woman with scalp psoriasis uses betamethasone valerate scalp solution 0.1% daily for 4 weeks with good response. She asks how long she can continue this treatment. Which statement is most accurate per NICE guidance?",
+    "options": {
+      "A": "Potent topical corticosteroids can be used indefinitely on the scalp without side effects",
+      "B": "Potent TCS should be used for the shortest effective time; if continuous treatment required, use on alternate days or consider adding a vitamin D analogue to reduce TCS frequency",
+      "C": "Switch to mild corticosteroid (hydrocortisone 1%) after 4 weeks",
+      "D": "Stop after 4 weeks and restart only if psoriasis flares again — no maintenance permitted",
+      "E": "The scalp is not at risk of corticosteroid atrophy and potent TCS can be used continuously"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per NICE NG10, potent and very potent topical corticosteroids should be used for the shortest effective period. For scalp psoriasis: if a patient responds well, step down treatment by reducing frequency or using alternate-day applications. Combining a vitamin D analogue with a lower-frequency TCS reduces the overall steroid burden. While the scalp is more resistant to TCS atrophy than facial skin, prolonged continuous use can still cause: folliculitis, skin atrophy, HPA axis suppression (extensive use), tachyphylaxis.",
+      "A": "Incorrect — Indefinite continuous potent TCS use carries risks of atrophy, folliculitis and tachyphylaxis.",
+      "B": "CORRECT — Use for shortest effective time, reduce frequency when possible, consider adding vitamin D analogue per NICE NG10.",
+      "C": "Incorrect — Mild corticosteroids are generally inadequate for scalp psoriasis maintenance.",
+      "D": "Incorrect — Intermittent maintenance therapy is permissible and often needed for chronic psoriasis.",
+      "E": "Incorrect — The scalp is more resistant to TCS side effects than facial skin, but prolonged continuous use is still discouraged."
+    },
+    "reference": "NICE NG10 — Psoriasis: assessment and management. https://www.nice.org.uk/guidance/ng10",
+    "tags": [
+      "scalp psoriasis",
+      "TCS duration",
+      "corticosteroid side effects",
+      "maintenance",
+      "NICE NG10",
+      "topical corticosteroid"
+    ],
+    "source": "Question Grove 360"
+  },
+  {
+    "id": "QG-DERM-051-005",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Dermatology",
+    "difficulty": "Easy",
+    "question": "A 30-year-old man with scalp psoriasis is prescribed a combination betamethasone dipropionate 0.05% + calcipotriol 50mcg/g foam (Enstilar). He asks how to use it correctly. Which instruction is most important?",
+    "options": {
+      "A": "Apply daily to the scalp and face as needed — safe on all skin areas",
+      "B": "Apply once daily to affected scalp areas for up to 4 weeks; avoid the face; wash hands after application; do not apply under occlusion",
+      "C": "Apply twice daily for maximum effect with no time limit",
+      "D": "Apply only at night under a shower cap for maximum penetration",
+      "E": "Can be used as a shampoo — lather, leave for 5 minutes and rinse"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Enstilar (betamethasone + calcipotriol) foam: per SPC and NICE NG10, apply once daily to affected scalp areas for up to 4 consecutive weeks. Should NOT be applied to the face (risk of facial skin atrophy and periocular absorption affecting intraocular pressure). Wash hands after application. Occlusion is not recommended. If further treatment needed after 4 weeks, assessment by prescriber is required before continuing. Maximum dose is 15g/day.",
+      "A": "Incorrect — Must not be applied to the face due to risk of skin atrophy and glaucoma from periocular absorption.",
+      "B": "CORRECT — Once daily to scalp only, up to 4 weeks, avoid face, wash hands per Enstilar SPC/NICE NG10.",
+      "C": "Incorrect — Twice daily application exceeds recommended dosing and increases side effect risk.",
+      "D": "Incorrect — Overnight occlusion is not recommended in the SPC and may increase systemic absorption.",
+      "E": "Incorrect — Enstilar is a foam applied to the scalp and left in — not used as a rinse-off shampoo."
+    },
+    "reference": "NICE NG10 — Psoriasis. Enstilar foam Summary of Product Characteristics.",
+    "tags": [
+      "scalp psoriasis",
+      "Enstilar",
+      "betamethasone calcipotriol",
+      "application instructions",
+      "NICE NG10"
+    ],
+    "source": "Question Grove 360"
+  },
+  {
+    "id": "QG-DERM-087-001",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Dermatology",
+    "difficulty": "Medium",
+    "question": "A 58-year-old diabetic man presents 24 hours after a cat bite on his right forearm. He has marked swelling, redness and severe pain extending beyond the wound edges, despite being on oral amoxicillin started by an out-of-hours GP. He has fever of 39.1°C, HR 118 bpm, and BP 100/65 mmHg. What is the most appropriate management?",
+    "options": {
+      "A": "Switch to co-amoxiclav 625mg TDS orally and review in 24 hours",
+      "B": "999 call — suspected necrotising fasciitis / severe soft tissue infection; hospital admission for IV antibiotics and urgent surgical assessment",
+      "C": "Add oral metronidazole to cover anaerobes and review in 48 hours",
+      "D": "Incise and drain at the wound site in primary care",
+      "E": "Continue amoxicillin and add oral clindamycin 300mg four times daily"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Failure to respond to oral antibiotics with systemic compromise (fever, tachycardia, hypotension) after a cat bite in a diabetic is a red flag for severe soft tissue infection/necrotising fasciitis. NF following cat bites in diabetic/immunocompromised patients is a recognised scenario. Per NICE NG141, any severe/complicated soft tissue infection with systemic compromise warrants hospital admission. The LRINEC score, CT/MRI and urgent surgical assessment are essential. IV broad-spectrum antibiotics (piperacillin/tazobactam + clindamycin) and emergency debridement may be life-saving.",
+      "A": "Incorrect — Oral antibiotics are inadequate for haemodynamic compromise and progressive infection. Hospital admission required.",
+      "B": "CORRECT — Systemic compromise + progression despite antibiotics = 999 + urgent hospital assessment for possible NF per NICE NG141.",
+      "C": "Incorrect — Adding oral metronidazole does not address the need for IV antibiotics and surgical review.",
+      "D": "Incorrect — Incision and drainage is contraindicated in suspected NF — can spread infection.",
+      "E": "Incorrect — Oral antibiotics are insufficient for systemic sepsis. IV treatment and hospital admission are required."
+    },
+    "reference": "NICE NG141 — Cellulitis and erysipelas. NICE NG184 — Animal bites.",
+    "tags": [
+      "cat bite",
+      "necrotising fasciitis",
+      "sepsis",
+      "diabetes",
+      "IV antibiotics",
+      "NICE NG141"
+    ],
+    "source": "Question Grove 360"
+  },
+  {
+    "id": "QG-DERM-087-002",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Dermatology",
+    "difficulty": "Easy",
+    "question": "A 45-year-old healthy man presents 6 hours after a deep cat bite to his left hand, with puncture wounds between the index and middle fingers. The wound is clean and not currently infected. He has no allergies. What is the correct prophylactic antibiotic per NICE guidance?",
+    "options": {
+      "A": "Flucloxacillin 500mg four times daily for 5 days",
+      "B": "Co-amoxiclav 625mg three times daily for 5 days",
+      "C": "Doxycycline 100mg twice daily for 7 days",
+      "D": "Metronidazole 400mg three times daily for 5 days",
+      "E": "No antibiotics — clean the wound and review only if infection develops"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per NICE NG184 (Bites: antimicrobial prescribing), all cat bites should receive antibiotic prophylaxis regardless of current infection signs, due to high infection risk from Pasteurella multocida, Staphylococcus aureus, Streptococcus spp. and anaerobes. First-line: co-amoxiclav 625mg TDS for 5 days. For penicillin allergy: doxycycline 100mg BD for 7 days (adults, not in pregnancy/children under 12) or co-trimoxazole. Flucloxacillin alone does not cover Pasteurella multocida — key pathogen in cat bites.",
+      "A": "Incorrect — Flucloxacillin does not cover Pasteurella multocida — the most important pathogen in cat bites.",
+      "B": "CORRECT — Co-amoxiclav 625mg TDS for 5 days is first-line prophylaxis for cat bites per NICE NG184.",
+      "C": "Incorrect — Doxycycline is for penicillin-allergic patients — not first-line in non-allergic patients.",
+      "D": "Incorrect — Metronidazole alone does not cover Pasteurella or Staphylococcus.",
+      "E": "Incorrect — Prophylactic antibiotics are recommended for all cat bites per NICE NG184 due to high infection risk."
+    },
+    "reference": "NICE NG184 — Bites: antimicrobial prescribing. https://www.nice.org.uk/guidance/ng184",
+    "tags": [
+      "cat bite",
+      "co-amoxiclav",
+      "prophylaxis",
+      "Pasteurella",
+      "NICE NG184",
+      "animal bite"
+    ],
+    "source": "Question Grove 360"
+  },
+  {
+    "id": "QG-DERM-087-003",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Dermatology",
+    "difficulty": "Medium",
+    "question": "A 55-year-old woman presents with a cat bite on her ankle 48 hours ago. She is febrile (38.4°C), has spreading erythema and marked oedema. She is haemodynamically stable. She has no penicillin allergy. What is the most appropriate management per NICE NG141?",
+    "options": {
+      "A": "Oral co-amoxiclav 625mg TDS + review in 48 hours if stable",
+      "B": "Admit to hospital — Eron Class II or III cellulitis requires IV antibiotics",
+      "C": "Oral flucloxacillin 1g QDS for 7 days",
+      "D": "Refer to dermatology for wound assessment",
+      "E": "Oral doxycycline 200mg stat then 100mg daily for 7 days"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per NICE NG141, the Eron classification guides cellulitis management. Eron Class II: significant systemic features (fever, tachycardia) with or without local complications — typically requires IV antibiotics. Fever + significant spreading cellulitis from a cat bite (high-risk wound) in a patient not responding to or requiring step-up from oral antibiotics warrants hospital admission for IV co-amoxiclav or IV flucloxacillin + benzylpenicillin. Eron Class I (no systemic upset) can be treated with oral co-amoxiclav.",
+      "A": "Incorrect — Systemic features (fever) and significant spreading infection with cat bite (high-risk) indicates Eron Class II — IV antibiotics preferred.",
+      "B": "CORRECT — Eron Class II (systemic features): hospital admission for IV antibiotics per NICE NG141.",
+      "C": "Incorrect — Flucloxacillin does not cover Pasteurella multocida — essential coverage for cat bites.",
+      "D": "Incorrect — Dermatology referral is not the priority. Infection management takes precedence.",
+      "E": "Incorrect — Doxycycline is for penicillin-allergic patients; Eron Class II warrants IV therapy."
+    },
+    "reference": "NICE NG141 — Cellulitis and erysipelas: antimicrobial prescribing. https://www.nice.org.uk/guidance/ng141",
+    "tags": [
+      "cellulitis",
+      "cat bite",
+      "Eron classification",
+      "IV antibiotics",
+      "co-amoxiclav",
+      "NICE NG141"
+    ],
+    "source": "Question Grove 360"
+  },
+  {
+    "id": "QG-DERM-087-004",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Dermatology",
+    "difficulty": "Hard",
+    "question": "A 60-year-old man is brought to A&E 36 hours after a cat bite to his right hand. He is confused, febrile (40°C), BP 85/55 mmHg, HR 130 bpm. His hand shows dusky skin discolouration with blistering and crepitus on palpation. Plain X-ray shows subcutaneous gas. What is the diagnosis and immediate management?",
+    "options": {
+      "A": "Severe cellulitis — IV co-amoxiclav and fluids",
+      "B": "Gas gangrene (Clostridial myonecrosis) or polymicrobial necrotising fasciitis — 999, IV broad-spectrum antibiotics (pip/taz + clindamycin), immediate surgical debridement",
+      "C": "Bullous pemphigoid — IV methylprednisolone",
+      "D": "Osteomyelitis — IV flucloxacillin and orthopaedic review",
+      "E": "Septic arthritis — joint aspiration and IV cefuroxime"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Crepitus + subcutaneous gas on X-ray + rapid progression + haemodynamic shock = gas-forming necrotising soft tissue infection (gas gangrene or polymicrobial NF). After cat bites, Pasteurella, anaerobes and mixed organisms can cause gas-forming infections. This is a life-threatening surgical emergency — immediate broad-spectrum IV antibiotics (piperacillin/tazobactam + clindamycin for toxin suppression) AND emergency surgical debridement are life-saving. Hyperbaric oxygen may be adjunctive. 30-day mortality without surgery approaches 100%.",
+      "A": "Incorrect — Haemodynamic shock + subcutaneous gas indicates NF/gas gangrene — far beyond simple cellulitis.",
+      "B": "CORRECT — Gas-forming NF/gas gangrene: surgical emergency — pip/taz + clindamycin + emergency debridement.",
+      "C": "Incorrect — IV steroids are contraindicated in NF.",
+      "D": "Incorrect — Osteomyelitis presents subacutely without gas on X-ray or haemodynamic compromise.",
+      "E": "Incorrect — Septic arthritis is focal, does not produce subcutaneous gas."
+    },
+    "reference": "BSI/BAPRAS — NF guidelines. NICE CKS — Necrotising fasciitis.",
+    "tags": [
+      "gas gangrene",
+      "necrotising fasciitis",
+      "subcutaneous gas",
+      "surgical emergency",
+      "clindamycin",
+      "cat bite"
+    ],
+    "source": "Question Grove 360"
+  },
+  {
+    "id": "QG-DERM-087-005",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Dermatology",
+    "difficulty": "Medium",
+    "question": "A 70-year-old woman presents 3 days after a minor cat scratch with tense blisters on her forearm (not just at the scratch site but extending across her whole forearm and trunk). She has a history of being on furosemide for heart failure. Nikolsky sign is negative. She is afebrile. DIF shows linear IgG at the BMZ. What is the most likely diagnosis and its relationship to her medications?",
+    "options": {
+      "A": "Bullous pemphigoid — the cat scratch may have been a coincidental trigger; furosemide can induce BP",
+      "B": "Cellulitis extending from cat scratch — IV co-amoxiclav",
+      "C": "Pemphigus vulgaris — discontinue furosemide",
+      "D": "Drug-induced linear IgA bullous dermatosis from furosemide",
+      "E": "Herpes zoster with widespread dissemination"
+    },
+    "correct_answer": "A",
+    "explanation": {
+      "correct": "Bullous pemphigoid (BP): tense blisters + elderly + linear IgG at BMZ on DIF + negative Nikolsky = BP. The cat scratch may have Koebnerised (triggered blistering at injury site which then generalised). Importantly, furosemide (and other diuretics, ACE inhibitors, NSAIDs) are known to be associated with drug-induced BP — particularly in elderly patients. Per BAD guidelines, a drug history review is essential in new BP. Furosemide should be reviewed/substituted if possible. Treatment: topical clobetasol or oral prednisolone.",
+      "A": "CORRECT — Bullous pemphigoid with possible drug trigger (furosemide). Cat scratch may have Koebnerised. Linear IgG at BMZ confirms BP.",
+      "B": "Incorrect — Cellulitis does not cause widespread tense blisters with linear IgG at BMZ.",
+      "C": "Incorrect — Pemphigus vulgaris causes flaccid blisters with intraepidermal split and positive Nikolsky.",
+      "D": "Incorrect — Drug-induced linear IgA bullous dermatosis (from vancomycin, lithium) shows LINEAR IgA at BMZ — not IgG.",
+      "E": "Incorrect — Disseminated zoster causes dermatomal-pattern vesicles with characteristic clinical features."
+    },
+    "reference": "BAD Guidelines — Bullous Pemphigoid 2012. NICE CKS — Bullous pemphigoid. Drug-induced BP literature.",
+    "tags": [
+      "bullous pemphigoid",
+      "drug-induced",
+      "furosemide",
+      "linear IgG",
+      "DIF",
+      "Koebner phenomenon"
+    ],
+    "source": "Question Grove 360"
+  },
+  {
+    "id": "QG-DERM-117-001",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Dermatology",
+    "difficulty": "Medium",
+    "question": "A 22-year-old man presents with severe nodular acne on his back, shoulders and chest. He attends the gym daily and has significantly increased his muscle mass over the past 6 months. He is reluctant to disclose full history. On examination he has acne over the trunk with few facial lesions, testicular atrophy and gynaecomastia. What is the most likely cause of his acne?",
+    "options": {
+      "A": "Idiopathic severe acne — refer to dermatology for isotretinoin",
+      "B": "Anabolic androgenic steroid (AAS) misuse — acne is a direct consequence of androgenic stimulation",
+      "C": "Cushing's syndrome — 24-hour urinary cortisol",
+      "D": "Congenital adrenal hyperplasia — 17-hydroxyprogesterone",
+      "E": "Polycystic ovarian syndrome — testosterone and SHBG levels"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Acne from anabolic androgenic steroid (AAS) misuse is characterised by: predominantly truncal distribution (back, shoulders, chest), severe nodular/cystic lesions, rapid onset with gym/bodybuilding history. Associated features of AAS use: testicular atrophy (exogenous testosterone suppresses LH/FSH → testicular atrophy), gynaecomastia (aromatisation of testosterone to oestrogen), aggressive behaviour, elevated LFTs, dyslipidaemia. Per NICE NG198 and substance misuse guidance, addressing the underlying AAS use is essential alongside dermatological management.",
+      "A": "Incorrect — While dermatology referral may be appropriate, identifying and addressing AAS misuse is the priority.",
+      "B": "CORRECT — AAS misuse: truncal acne + testicular atrophy + gynaecomastia + gym history = anabolic steroid-induced acne.",
+      "C": "Incorrect — Cushing's syndrome causes central obesity, moon face, purple striae, proximal weakness — not truncal acne with testicular atrophy.",
+      "D": "Incorrect — Congenital adrenal hyperplasia presents in childhood/adolescence and causes early virilisation — not acquired gym-related presentation.",
+      "E": "Incorrect — PCOS is a female condition."
+    },
+    "reference": "NICE NG198 — Acne vulgaris. BAD — Drug-induced acne. NICE — Anabolic steroid misuse guidance.",
+    "tags": [
+      "anabolic steroids",
+      "drug-induced acne",
+      "truncal acne",
+      "AAS",
+      "gymnasium",
+      "testicular atrophy"
+    ],
+    "source": "Question Grove 360"
+  },
+  {
+    "id": "QG-DERM-117-002",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Dermatology",
+    "difficulty": "Easy",
+    "question": "A 20-year-old man presents with acne that started when he was commenced on lithium for bipolar disorder 3 months ago. His acne is monomorphic (follicular papules without comedones) and is distributed on his trunk. What type of acne is this and what is the most appropriate management?",
+    "options": {
+      "A": "Drug-induced acne (acneiform eruption) — review lithium with psychiatrist; topical treatment for acne symptoms",
+      "B": "Idiopathic acne — start oral doxycycline immediately",
+      "C": "Lithium toxicity — check lithium levels urgently",
+      "D": "Steroid acne from prednisolone — review steroid dose",
+      "E": "Refer urgently to dermatology — lithium is absolutely contraindicated with acne"
+    },
+    "correct_answer": "A",
+    "explanation": {
+      "correct": "Drug-induced acneiform eruptions are caused by multiple medications including: lithium, corticosteroids, anabolic steroids, phenytoin, isoniazid, halogenated compounds. Characteristics: monomorphic follicular papules/pustules (unlike typical acne which has mixed lesions including comedones), predominant truncal distribution, onset after starting causative drug. Management: review medication with prescribing doctor (lithium cessation requires careful psychiatric management), symptomatic topical treatment for acne. Per NICE NG198, drug-induced acne management involves identifying and managing the causative drug.",
+      "A": "CORRECT — Drug-induced acneiform eruption from lithium. Review with psychiatrist + topical management per NICE NG198.",
+      "B": "Incorrect — While doxycycline may help symptomatically, identifying and managing the drug cause is the priority.",
+      "C": "Incorrect — Drug-induced acne is not a sign of lithium toxicity. Lithium toxicity causes tremor, confusion, GI symptoms.",
+      "D": "Incorrect — This patient is on lithium, not prednisolone.",
+      "E": "Incorrect — Lithium can continue if psychiatrically essential. Acne is a manageable side effect, not an absolute contraindication."
+    },
+    "reference": "NICE NG198 — Acne vulgaris. BNF — Lithium side effects. BAD — Drug-induced acne.",
+    "tags": [
+      "drug-induced acne",
+      "lithium",
+      "acneiform eruption",
+      "monomorphic",
+      "NICE NG198",
+      "BNF"
+    ],
+    "source": "Question Grove 360"
+  },
+  {
+    "id": "QG-DERM-117-003",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Dermatology",
+    "difficulty": "Medium",
+    "question": "A 19-year-old male competitive swimmer presents with acne that started 3 weeks after he was prescribed topical corticosteroids for eczema. He uses betamethasone 0.1% cream on his chest and back. He now has monomorphic follicular pustules at the sites of steroid application. What is the diagnosis?",
+    "options": {
+      "A": "Worsening eczema — increase betamethasone frequency",
+      "B": "Steroid acne (corticosteroid-induced acneiform eruption) — stop or reduce topical corticosteroid and treat with topical benzoyl peroxide",
+      "C": "Bacterial folliculitis — oral flucloxacillin",
+      "D": "Malassezia folliculitis (pityrosporum folliculitis) — topical ketoconazole",
+      "E": "Contact dermatitis from topical steroid vehicle — patch testing"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Corticosteroid-induced acneiform eruption (steroid acne): occurs at sites of topical or oral corticosteroid application/use. Features: monomorphic follicular papules and pustules without comedones, onset within weeks of starting corticosteroids. Management per NICE CKS and BAD: stop or reduce the offending corticosteroid (if clinically possible), treat acne with topical benzoyl peroxide ± topical retinoid. If oral steroids cannot be stopped, minocycline or topical agents can reduce severity.",
+      "A": "Incorrect — Increasing betamethasone will worsen steroid acne.",
+      "B": "CORRECT — Steroid acneiform eruption: reduce/stop topical corticosteroid + topical BPO per NICE CKS/BAD.",
+      "C": "Incorrect — Bacterial folliculitis typically causes painful purulent follicular lesions — not monomorphic distribution matching steroid application sites.",
+      "D": "Incorrect — Malassezia folliculitis is pruritic, small monomorphic follicular papules on back/chest, more common in humid conditions. Possible but steroid context makes steroid acne more likely.",
+      "E": "Incorrect — Contact dermatitis presents with eczematous changes (vesicles, weeping), not monomorphic follicular pustules."
+    },
+    "reference": "NICE CKS — Acne. BAD — Drug-induced acne.",
+    "tags": [
+      "steroid acne",
+      "corticosteroid",
+      "acneiform eruption",
+      "monomorphic",
+      "benzoyl peroxide",
+      "NICE CKS"
+    ],
+    "source": "Question Grove 360"
+  },
+  {
+    "id": "QG-DERM-117-004",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Dermatology",
+    "difficulty": "Hard",
+    "question": "A 23-year-old male bodybuilder is referred for severe acne. He has nodular cystic acne on his back leaving scarring. Blood tests show: testosterone 45 nmol/L (normal 8-29 nmol/L), LH <0.1 IU/L, FSH <0.1 IU/L, haematocrit 58%, elevated LFTs. He denies anabolic steroid use. What do these blood results suggest and what should the dermatologist address before treating the acne?",
+    "options": {
+      "A": "Primary testicular failure — testosterone replacement required",
+      "B": "Exogenous anabolic androgenic steroid use — elevated testosterone + suppressed gonadotrophins + polycythaemia + liver toxicity are classic features",
+      "C": "Congenital adrenal hyperplasia — 17-OHP measurement",
+      "D": "Leydig cell tumour — testicular ultrasound urgently",
+      "E": "Normal results for a competitive athlete — acne is idiopathic"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "The pattern is classic for exogenous AAS use: elevated testosterone (exogenous source), profoundly suppressed LH and FSH (HPG axis suppression by exogenous androgens — distinguishes from Leydig cell tumour where LH would be elevated/normal), polycythaemia (erythropoietic effect of androgens), elevated LFTs (hepatotoxicity of oral 17-alpha alkylated steroids). The dermatologist should address AAS misuse first — drug counselling, harm reduction, GP/addiction service referral. The acne will not resolve while AAS use continues.",
+      "A": "Incorrect — Primary testicular failure causes LOW testosterone + elevated LH/FSH (hypergonadotrophic hypogonadism).",
+      "B": "CORRECT — Elevated testosterone + suppressed LH/FSH + polycythaemia + abnormal LFTs = exogenous AAS use.",
+      "C": "Incorrect — CAH presents with congenital onset, not acquired in a 23-year-old without prior history.",
+      "D": "Incorrect — Leydig cell tumour causes elevated testosterone with ELEVATED/normal LH — not profoundly suppressed LH.",
+      "E": "Incorrect — These are abnormal results. Normal male testosterone is 8-29 nmol/L. LH <0.1 is profoundly suppressed."
+    },
+    "reference": "NICE NG198 — Acne. BAD — Drug-induced acne. Endocrine Society — AAS use.",
+    "tags": [
+      "anabolic steroids",
+      "AAS",
+      "suppressed LH",
+      "elevated testosterone",
+      "polycythaemia",
+      "acne bodybuilder"
+    ],
+    "source": "Question Grove 360"
+  },
+  {
+    "id": "QG-DERM-117-005",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Dermatology",
+    "difficulty": "Easy",
+    "question": "A GP suspects anabolic androgenic steroid (AAS) misuse in a 21-year-old male presenting with severe acne. The patient initially denies steroid use but the clinical picture is strongly suggestive. What is the most appropriate approach in the consultation?",
+    "options": {
+      "A": "Refer immediately to the police — AAS possession is illegal",
+      "B": "Use motivational interviewing and harm reduction approach; provide information about health risks; arrange blood tests (LFTs, testosterone, LH, FSH, haematocrit, lipids, BP)",
+      "C": "Refuse to treat the acne until the patient admits to steroid use",
+      "D": "Prescribe isotretinoin immediately to control acne regardless of AAS use",
+      "E": "Only discuss AAS use if the patient discloses it — do not raise it unprompted"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per NICE PH24 (Needle and syringe programmes) and NICE substance misuse guidance, AAS misuse should be managed using a non-judgmental, harm reduction approach. This includes: motivational interviewing, information about health risks (cardiovascular, hepatic, endocrine, psychiatric), blood tests to assess health impact (LFTs, lipids, BP, testosterone, LH/FSH, haematocrit), and referral to specialist services if needed. AAS possession for personal use is not a criminal offence in the UK (though supply is). Withholding treatment is inappropriate and unethical.",
+      "A": "Incorrect — Personal possession of AAS (Class C controlled drugs) is legal in the UK. Supply is illegal.",
+      "B": "CORRECT — Motivational interviewing + harm reduction + blood tests per NICE substance misuse guidance.",
+      "C": "Incorrect — Withholding treatment for acne is unethical and contrary to good medical practice.",
+      "D": "Incorrect — Isotretinoin during active AAS use requires careful consideration — elevated LFTs from AAS may exacerbate isotretinoin hepatotoxicity.",
+      "E": "Incorrect — GPs have a responsibility to raise concerns about suspected harmful practices — patient-centred but proactive approach is appropriate."
+    },
+    "reference": "NICE PH24 — Needle and syringe programmes. NICE substance misuse guidance. GMC — Good Medical Practice.",
+    "tags": [
+      "anabolic steroids",
+      "harm reduction",
+      "motivational interviewing",
+      "AAS misuse",
+      "NICE PH24",
+      "non-judgmental"
+    ],
+    "source": "Question Grove 360"
+  }
+]

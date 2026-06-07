@@ -136,6 +136,44 @@ export const appRouter = router({
     }),
   }),
 
+  // Progress Dashboard Router
+  progress: router({
+    getMockExamTrends: protectedProcedure
+      .input(
+        z.object({
+          days: z.number().default(30),
+        })
+      )
+      .query(async ({ ctx, input }) => {
+        const { getMockExamScoreTrends } = await import("./db");
+        return await getMockExamScoreTrends(ctx.user.id, input.days);
+      }),
+    getFlashcardStats: protectedProcedure.query(async ({ ctx }) => {
+      const { getFlashcardMasteryStats } = await import("./db");
+      return await getFlashcardMasteryStats(ctx.user.id);
+    }),
+    getFlashcardTrend: protectedProcedure
+      .input(
+        z.object({
+          days: z.number().default(30),
+        })
+      )
+      .query(async ({ ctx, input }) => {
+        const { getFlashcardProgressTrend } = await import("./db");
+        return await getFlashcardProgressTrend(ctx.user.id, input.days);
+      }),
+    getSpecialtyBreakdown: protectedProcedure
+      .input(
+        z.object({
+          days: z.number().default(30),
+        })
+      )
+      .query(async ({ ctx, input }) => {
+        const { getSpecialtyBreakdown } = await import("./db");
+        return await getSpecialtyBreakdown(ctx.user.id, input.days);
+      }),
+  }),
+
   // Stripe Router
   stripe: stripeRouter,
 

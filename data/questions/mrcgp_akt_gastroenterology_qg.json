@@ -1,0 +1,1361 @@
+[
+  {
+    "id": "QG-GI-016-001",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Gastroenterology",
+    "difficulty": "Medium",
+    "question": "A 58-year-old man presents with a 3-month history of recurrent epigastric discomfort and reflux symptoms. He is not on NSAIDs and has no weight loss, dysphagia, haematemesis or melaena. His routine bloods show a raised platelet count of 520 × 10⁹/L. He is H. pylori positive. Per NICE NG12, does a raised platelet count alone warrant urgent upper GI endoscopy?",
+    "options": {
+      "A": "Yes — raised platelets alone is an alarm feature requiring urgent 2WW endoscopy",
+      "B": "No — raised platelets is not an alarm feature per NICE NG12; manage H. pylori with test and treat; only refer if alarm features develop",
+      "C": "Yes — any blood test abnormality in over 55s requires urgent endoscopy",
+      "D": "No — but raised platelets combined with recurrent dyspepsia in a patient over 55 warrants urgent 2WW endoscopy",
+      "E": "Raised platelets are not clinically relevant in dyspepsia management"
+    },
+    "correct_answer": "D",
+    "explanation": {
+      "correct": "Per NICE NG12 (Suspected cancer), unexplained dyspepsia in adults aged ≥55 with raised platelets warrants urgent 2WW referral for upper GI endoscopy for suspected upper GI cancer. This is a specific combination — age ≥55 AND dyspepsia AND raised platelets. Raised platelets alone in a younger patient would not trigger 2WW. This patient is 58 with recurrent dyspepsia and raised platelets — he meets the criteria for urgent endoscopy referral regardless of weight stability or absence of other alarm features.",
+      "A": "Incorrect — Raised platelets alone is not an alarm feature. The age + dyspepsia + platelets combination is the trigger per NICE NG12.",
+      "B": "Incorrect — While H. pylori test and treat is appropriate for simple dyspepsia, this patient at 58 with raised platelets and recurrent dyspepsia meets 2WW criteria.",
+      "C": "Incorrect — Not any blood test abnormality — the specific combination of age ≥55 + dyspepsia + raised platelets triggers 2WW.",
+      "D": "CORRECT — Age ≥55 + dyspepsia + raised platelets = urgent 2WW endoscopy per NICE NG12.",
+      "E": "Incorrect — Raised platelets is specifically listed in NICE NG12 as a factor triggering 2WW in the context of age ≥55 and dyspepsia."
+    },
+    "reference": "NICE NG12 — Suspected cancer: recognition and referral. https://www.nice.org.uk/guidance/ng12",
+    "tags": [
+      "dyspepsia",
+      "raised platelets",
+      "2WW",
+      "upper GI cancer",
+      "NICE NG12",
+      "endoscopy"
+    ],
+    "source": "Question Grove 360"
+  },
+  {
+    "id": "QG-GI-016-002",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Gastroenterology",
+    "difficulty": "Easy",
+    "question": "A 60-year-old woman presents with a 6-week history of progressive dysphagia to solids, unintentional weight loss of 5kg and epigastric pain. She smokes 15 cigarettes per day. Her bloods show a raised platelet count. Per NICE NG12, what is the most appropriate management?",
+    "options": {
+      "A": "H. pylori test and treat — await results before referring",
+      "B": "Urgent 2WW referral for suspected upper GI (oesophageal/gastric) cancer",
+      "C": "Barium swallow as first-line investigation",
+      "D": "PPI trial for 4 weeks and review",
+      "E": "Reassure — weight loss is minimal and likely related to smoking"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per NICE NG12, dysphagia at any age requires urgent 2WW referral for suspected upper GI cancer — no other criteria needed. Additionally, this patient has multiple alarm features: progressive dysphagia, weight loss (5kg), raised platelets, smoking history, age ≥55 with dyspepsia. These are all independent 2WW triggers. A PPI trial or H. pylori testing must not delay urgent referral when alarm features are present.",
+      "A": "Incorrect — H. pylori testing must not delay 2WW referral when alarm features (dysphagia, weight loss) are present.",
+      "B": "CORRECT — Multiple alarm features (dysphagia, weight loss, raised platelets, age ≥55) = urgent 2WW per NICE NG12.",
+      "C": "Incorrect — Barium swallow has lower sensitivity than endoscopy. 2WW referral for OGD is the correct pathway.",
+      "D": "Incorrect — PPI trial must never delay investigation of dysphagia with weight loss.",
+      "E": "Incorrect — 5kg unintentional weight loss with dysphagia is a significant alarm feature requiring urgent investigation."
+    },
+    "reference": "NICE NG12 — Suspected cancer: recognition and referral. https://www.nice.org.uk/guidance/ng12",
+    "tags": [
+      "dysphagia",
+      "weight loss",
+      "oesophageal cancer",
+      "2WW",
+      "alarm features",
+      "NICE NG12"
+    ],
+    "source": "Question Grove 360"
+  },
+  {
+    "id": "QG-GI-016-003",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Gastroenterology",
+    "difficulty": "Medium",
+    "question": "A 52-year-old man has persistent dyspepsia despite H. pylori eradication and 8-week PPI therapy. He is weight-stable with no dysphagia or bleeding. His platelet count is normal. He is aged 52. Per NICE CG184, is upper GI endoscopy warranted?",
+    "options": {
+      "A": "Yes — refer for endoscopy as symptoms persist despite treatment",
+      "B": "No — endoscopy is only indicated for patients aged ≥55 with unexplained dyspepsia; manage with double-dose PPI",
+      "C": "No — switch to H2 receptor antagonist and review in 4 weeks",
+      "D": "Yes — any patient with H. pylori positive dyspepsia requires endoscopy after eradication",
+      "E": "Refer for 24-hour oesophageal pH monitoring"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per NICE CG184 (Dyspepsia and GORD), routine endoscopy for uninvestigated dyspepsia in patients under 55 without alarm features is NOT recommended. For patients under 55 with persistent dyspepsia after H. pylori eradication and PPI therapy, the next step is: step-up PPI to double dose, or consider switching to H2RA, with ongoing review. Endoscopy is reserved for: age ≥55 with unexplained dyspepsia, or any age with alarm features. This patient (52, no alarm features, normal platelets) does not meet endoscopy criteria at this stage.",
+      "A": "Incorrect — Symptom persistence alone in a <55 patient without alarm features does not warrant endoscopy per NICE CG184.",
+      "B": "CORRECT — Endoscopy indicated for ≥55 with unexplained dyspepsia or alarm features; <55 without alarm features → step-up PPI per NICE CG184.",
+      "C": "Incorrect — H2RA is less effective than double-dose PPI. Switching rather than optimising is not the recommended step.",
+      "D": "Incorrect — Post-eradication endoscopy is not routinely recommended unless symptoms persist beyond treatment thresholds with alarm features.",
+      "E": "Incorrect — pH monitoring is for atypical/refractory GORD where surgical intervention is being considered — not routine dyspepsia management."
+    },
+    "reference": "NICE CG184 — Dyspepsia and gastro-oesophageal reflux disease. https://www.nice.org.uk/guidance/cg184",
+    "tags": [
+      "dyspepsia",
+      "endoscopy",
+      "age threshold",
+      "H. pylori",
+      "NICE CG184",
+      "PPI"
+    ],
+    "source": "Question Grove 360"
+  },
+  {
+    "id": "QG-GI-016-004",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Gastroenterology",
+    "difficulty": "Hard",
+    "question": "A 55-year-old man is referred for upper GI endoscopy on the 2WW pathway. Endoscopy shows Barrett's oesophagus (3cm of columnar metaplasia, no dysplasia). What is the recommended surveillance interval per BSG guidelines?",
+    "options": {
+      "A": "Annual endoscopy indefinitely",
+      "B": "Barrett's oesophagus <3cm without dysplasia: discharge — no surveillance needed",
+      "C": "Barrett's oesophagus <3cm: 5-yearly surveillance; 3-6cm: 3-yearly; >6cm: 2-yearly",
+      "D": "Immediate surgical resection — Barrett's oesophagus requires surgery",
+      "E": "6-monthly surveillance until two consecutive normal biopsies"
+    },
+    "correct_answer": "C",
+    "explanation": {
+      "correct": "Per BSG guidelines on Barrett's oesophagus (2014, updated), surveillance intervals depend on Barrett's segment length (Prague classification): <1cm (ultra-short): no surveillance; 1-3cm: 5-yearly surveillance; 3-6cm: 3-yearly; >6cm: 2-yearly. Low-grade dysplasia: 6-monthly then annually. High-grade dysplasia/early cancer: endoscopic resection or surgery. This patient has 3cm Barrett's without dysplasia — surveillance every 3 years is appropriate.",
+      "A": "Incorrect — Annual surveillance is for high-grade dysplasia or post-treatment — not for non-dysplastic Barrett's.",
+      "B": "Incorrect — Barrett's oesophagus ≥1cm warrants surveillance; 3cm is not <3cm — per Prague criteria this is longer segment.",
+      "C": "CORRECT — 3cm Barrett's: 3-yearly surveillance per BSG guidelines.",
+      "D": "Incorrect — Surgery is for high-grade dysplasia or cancer. Non-dysplastic Barrett's is managed with surveillance and PPIs.",
+      "E": "Incorrect — 6-monthly surveillance is for low-grade dysplasia, not non-dysplastic Barrett's."
+    },
+    "reference": "BSG Guidelines — Barrett's Oesophagus 2014. https://www.bsg.org.uk/",
+    "tags": [
+      "Barrett's oesophagus",
+      "surveillance",
+      "endoscopy",
+      "BSG",
+      "dysplasia",
+      "Prague criteria"
+    ],
+    "source": "Question Grove 360"
+  },
+  {
+    "id": "QG-GI-016-005",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Gastroenterology",
+    "difficulty": "Medium",
+    "question": "A 57-year-old woman with persistent dyspepsia and raised platelet count of 480 × 10⁹/L attends for an urgent upper GI endoscopy. The endoscopy shows gastric antral erythema and a CLO test (Campylobacter-like organism) positive for H. pylori. Biopsies show chronic gastritis with no dysplasia or malignancy. What is the next management step?",
+    "options": {
+      "A": "Repeat endoscopy in 6 months regardless",
+      "B": "H. pylori eradication therapy (PPI + amoxicillin + clarithromycin for 7 days) and confirm eradication with urea breath test 4 weeks after completing antibiotics",
+      "C": "Prescribe long-term PPI — H. pylori treatment not required after endoscopy",
+      "D": "Refer to gastroenterology for MALT lymphoma assessment",
+      "E": "No further action — normal biopsy result means the raised platelets were incidental"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per NICE CG184 and BNF, H. pylori eradication is recommended for all patients with confirmed H. pylori infection and peptic/gastric symptoms. First-line eradication: triple therapy (PPI + amoxicillin + clarithromycin, all for 7 days). Eradication must be confirmed with urea breath test (UBT) 4 weeks after completing antibiotics AND after stopping PPI for 2 weeks (PPI suppresses H. pylori and causes false-negative UBT). Raised platelets often normalise after H. pylori eradication.",
+      "A": "Incorrect — Routine 6-month repeat endoscopy is not required after benign histology; eradication confirmation is the priority.",
+      "B": "CORRECT — H. pylori eradication + UBT confirmation 4 weeks post-antibiotics (PPI stopped 2 weeks before UBT) per NICE CG184.",
+      "C": "Incorrect — H. pylori eradication is strongly indicated after confirmed infection — PPI alone is insufficient.",
+      "D": "Incorrect — MALT lymphoma assessment is warranted when H. pylori is found with MALT lymphoma histology — not routine chronic gastritis.",
+      "E": "Incorrect — H. pylori treatment is required. Raised platelets can be a reactive thrombocytosis related to H. pylori infection and often resolve post-eradication."
+    },
+    "reference": "NICE CG184 — Dyspepsia and GORD. BNF — H. pylori eradication.",
+    "tags": [
+      "H. pylori",
+      "eradication",
+      "urea breath test",
+      "gastritis",
+      "NICE CG184",
+      "raised platelets"
+    ],
+    "source": "Question Grove 360"
+  },
+  {
+    "id": "QG-GI-029-001",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Gastroenterology",
+    "difficulty": "Medium",
+    "question": "A 48-year-old woman is found to have: ALP 420 U/L (elevated), GGT 310 U/L, bilirubin 28 umol/L (mildly elevated), ALT 65 U/L (mildly elevated). She reports fatigue and pruritus but no jaundice. She drinks 4 units of alcohol per week. Abdominal ultrasound is normal with no biliary dilation. What is the most likely diagnosis and most important diagnostic test?",
+    "options": {
+      "A": "Alcoholic liver disease — AST:ALT ratio",
+      "B": "Primary biliary cholangitis (PBC) — anti-mitochondrial antibodies (AMA-M2)",
+      "C": "Primary sclerosing cholangitis — MRCP",
+      "D": "NAFLD — liver biopsy",
+      "E": "Autoimmune hepatitis — ANA and anti-smooth muscle antibody"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Primary biliary cholangitis (PBC) — predominantly affects middle-aged women, presents with: fatigue, pruritus, cholestatic liver biochemistry (elevated ALP and GGT predominantly, with mild elevation of bilirubin and transaminases), normal biliary tree on ultrasound (no obstruction). The diagnostic test is anti-mitochondrial antibodies (AMA-M2) — positive in 95% of PBC cases. AMA-negative PBC can be diagnosed with anti-sp100 or anti-gp210. BSG/NICE recommend referral to hepatology for confirmation and treatment with ursodeoxycholic acid (UDCA).",
+      "A": "Incorrect — Alcoholic liver disease (4 units/week is minimal). AST:ALT >2 is for ALD but this patient has predominantly cholestatic pattern with low alcohol intake.",
+      "B": "CORRECT — PBC: middle-aged woman + pruritus + cholestatic LFTs + normal ultrasound. AMA-M2 is diagnostic.",
+      "C": "Incorrect — PSC predominantly affects young men with IBD (especially UC), causes biliary stricturing seen on MRCP.",
+      "D": "Incorrect — NAFLD is associated with metabolic risk factors and elevated transaminases, not predominantly ALP elevation.",
+      "E": "Incorrect — Autoimmune hepatitis causes elevated transaminases (ALT/AST predominantly) with positive ANA/ASMA — not the cholestatic pattern here."
+    },
+    "reference": "BSG Guidelines — Primary biliary cholangitis 2018. NICE CKS — Primary biliary cholangitis.",
+    "tags": [
+      "primary biliary cholangitis",
+      "PBC",
+      "AMA",
+      "cholestatic",
+      "ALP",
+      "BSG"
+    ],
+    "source": "Question Grove 360"
+  },
+  {
+    "id": "QG-GI-029-002",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Gastroenterology",
+    "difficulty": "Easy",
+    "question": "A 52-year-old woman is diagnosed with primary biliary cholangitis (PBC) confirmed by positive AMA-M2 (titre 1:640) and liver biopsy showing bile duct damage. What is the first-line treatment for PBC?",
+    "options": {
+      "A": "Prednisolone 40mg daily — autoimmune aetiology requires immunosuppression",
+      "B": "Ursodeoxycholic acid (UDCA) 13-15mg/kg/day — improves liver biochemistry and delays disease progression",
+      "C": "Cholestyramine 4g three times daily — primary treatment for PBC",
+      "D": "Azathioprine and prednisolone combination — as for autoimmune hepatitis",
+      "E": "Liver transplantation — only effective treatment for PBC"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per BSG guidelines and NICE, ursodeoxycholic acid (UDCA) 13-15mg/kg/day is the established first-line treatment for PBC. UDCA improves liver biochemistry (reduces ALP, bilirubin), delays histological progression and improves transplant-free survival in patients who respond. Response is assessed by ALP at 12 months — inadequate responders (ALP >1.67x ULN or bilirubin >ULN) can be offered obeticholic acid (OCA) as second-line. Cholestyramine can treat pruritus but is not a disease-modifying treatment. Steroids are not effective for PBC.",
+      "A": "Incorrect — Steroids are not effective in PBC and worsen osteoporosis risk. They are used in autoimmune hepatitis.",
+      "B": "CORRECT — UDCA 13-15mg/kg/day is first-line disease-modifying treatment for PBC per BSG/NICE.",
+      "C": "Incorrect — Cholestyramine (bile acid sequestrant) treats pruritus in PBC but is not disease-modifying — not primary treatment.",
+      "D": "Incorrect — Azathioprine + prednisolone is for autoimmune hepatitis, not PBC.",
+      "E": "Incorrect — Liver transplantation is reserved for end-stage PBC (advanced cirrhosis, intractable pruritus) — not first-line."
+    },
+    "reference": "BSG Guidelines — Primary biliary cholangitis 2018. NICE — Obeticholic acid for PBC.",
+    "tags": [
+      "PBC",
+      "primary biliary cholangitis",
+      "UDCA",
+      "ursodeoxycholic acid",
+      "treatment",
+      "BSG"
+    ],
+    "source": "Question Grove 360"
+  },
+  {
+    "id": "QG-GI-029-003",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Gastroenterology",
+    "difficulty": "Medium",
+    "question": "A 50-year-old woman with known PBC on UDCA complains of severe pruritus that is disrupting her sleep. Her ALP has improved on UDCA but itching persists. What is the most appropriate treatment for cholestatic pruritus in PBC?",
+    "options": {
+      "A": "Oral antihistamine — chlorphenamine 4mg at night",
+      "B": "Cholestyramine 4g before meals — first-line for cholestatic pruritus",
+      "C": "Naltrexone 50mg daily — opioid antagonist for pruritus",
+      "D": "Rifampicin 150-300mg daily — second-line after cholestyramine",
+      "E": "Topical menthol cream — adequate for mild pruritus"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per BSG guidelines, cholestatic pruritus in PBC management: (1) First-line: cholestyramine 4g (bile acid sequestrant) — must be taken 2-4 hours before/after UDCA to avoid reducing UDCA absorption; (2) Second-line: rifampicin 150-300mg daily; (3) Third-line: naltrexone (opioid antagonist); (4) Fourth-line: sertraline or experimental therapies. Conventional antihistamines are ineffective for cholestatic pruritus (histamine is not the primary mediator). For refractory pruritus — plasmapheresis or liver transplantation consideration.",
+      "A": "Incorrect — Conventional antihistamines are ineffective for cholestatic pruritus — the mediators are bile acids and endogenous opioids, not histamine.",
+      "B": "CORRECT — Cholestyramine is first-line for cholestatic pruritus in PBC per BSG guidelines.",
+      "C": "Incorrect — Naltrexone is third-line after cholestyramine and rifampicin fail.",
+      "D": "Incorrect — Rifampicin is second-line (after cholestyramine). The question asks about first-line.",
+      "E": "Incorrect — Menthol cream may provide temporary symptomatic relief but is not an evidence-based treatment for cholestatic pruritus."
+    },
+    "reference": "BSG Guidelines — Primary biliary cholangitis 2018. EASL Clinical Practice Guidelines.",
+    "tags": [
+      "PBC",
+      "pruritus",
+      "cholestyramine",
+      "cholestatic pruritus",
+      "rifampicin",
+      "BSG"
+    ],
+    "source": "Question Grove 360"
+  },
+  {
+    "id": "QG-GI-029-004",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Gastroenterology",
+    "difficulty": "Hard",
+    "question": "A 55-year-old woman has PBC on UDCA for 2 years. Her 12-month biochemistry review shows: ALP 2.8x ULN, bilirubin 1.5x ULN. She is an inadequate responder to UDCA. Per NICE TA443, what is the most appropriate second-line treatment?",
+    "options": {
+      "A": "Increase UDCA dose to 20mg/kg/day",
+      "B": "Obeticholic acid (OCA) 5-10mg daily — NICE-approved for inadequate UDCA responders",
+      "C": "Switch to azathioprine and prednisolone",
+      "D": "Liver transplantation assessment",
+      "E": "Add rifampicin as immunomodulator"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per NICE TA443, obeticholic acid (OCA — Ocaliva) 5mg daily (titrated to 10mg) is approved for PBC in adults with inadequate response to UDCA (ALP ≥1.67x ULN and/or bilirubin >ULN but <10x ULN) or who cannot tolerate UDCA. OCA is a farnesoid X receptor (FXR) agonist that reduces bile acid synthesis. It is used in combination with UDCA. Key side effect: pruritus (can worsen). Not for decompensated cirrhosis.",
+      "A": "Incorrect — Increasing UDCA beyond 15mg/kg is not evidence-based and does not improve outcomes in inadequate responders.",
+      "B": "CORRECT — OCA is NICE-approved second-line for inadequate UDCA responders per NICE TA443.",
+      "C": "Incorrect — Steroids are not effective in PBC.",
+      "D": "Incorrect — Liver transplant assessment is for end-stage disease — ALP 2.8x ULN is not end-stage.",
+      "E": "Incorrect — Rifampicin is for pruritus management — not a disease-modifying treatment for PBC progression."
+    },
+    "reference": "NICE TA443 — Obeticholic acid for treating primary biliary cholangitis. https://www.nice.org.uk/guidance/ta443",
+    "tags": [
+      "PBC",
+      "obeticholic acid",
+      "OCA",
+      "inadequate responder",
+      "UDCA",
+      "NICE TA443"
+    ],
+    "source": "Question Grove 360"
+  },
+  {
+    "id": "QG-GI-029-005",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Gastroenterology",
+    "difficulty": "Medium",
+    "question": "A 55-year-old woman with PBC is found to have osteoporosis on DEXA scanning (T-score -2.7). She is on UDCA. What additional treatment is most appropriate for PBC-associated bone disease?",
+    "options": {
+      "A": "Increase UDCA dose — UDCA improves bone density",
+      "B": "Alendronate 70mg weekly + calcium and vitamin D supplementation",
+      "C": "HRT for bone protection — safe in PBC",
+      "D": "Vitamin D 800 IU daily alone — sufficient for PBC-related bone disease",
+      "E": "Denosumab — only agent effective in cholestatic bone disease"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "PBC is associated with metabolic bone disease (osteoporosis and osteomalacia) due to malabsorption of fat-soluble vitamins (D, K) and cholestasis. Per NICE NG146 and BSG PBC guidelines, management: calcium and vitamin D supplementation (corrects deficiency), bisphosphonate (alendronate 70mg weekly) for confirmed osteoporosis (T-score ≤-2.5 or fragility fracture). DEXA scanning is recommended in PBC at diagnosis and every 2-3 years. HRT is an option in postmenopausal women with PBC if no contraindications.",
+      "A": "Incorrect — UDCA does not directly improve bone density.",
+      "B": "CORRECT — Alendronate + calcium and vitamin D is first-line for PBC-associated osteoporosis per NICE NG146/BSG.",
+      "C": "Incorrect — HRT can be considered but is not first-line bone protection. Bisphosphonate is preferred.",
+      "D": "Incorrect — Vitamin D alone is insufficient for established osteoporosis (T-score -2.7).",
+      "E": "Incorrect — Denosumab is second-line for patients who cannot tolerate or have contraindications to bisphosphonates."
+    },
+    "reference": "BSG Guidelines — PBC 2018. NICE NG146 — Osteoporosis.",
+    "tags": [
+      "PBC",
+      "osteoporosis",
+      "alendronate",
+      "bone disease",
+      "vitamin D",
+      "NICE NG146"
+    ],
+    "source": "Question Grove 360"
+  },
+  {
+    "id": "QG-GI-030-001",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Gastroenterology",
+    "difficulty": "Hard",
+    "question": "A 22-year-old man presents with abnormal liver function tests (ALT 180, ALP 95, bilirubin 35), neurological symptoms (intention tremor, dysarthria, behavioural change) and excoriation marks from pruritus. His paternal uncle developed liver disease in his 20s. Slit-lamp examination shows Kayser-Fleischer rings. What is the most likely diagnosis and first-line investigation?",
+    "options": {
+      "A": "Haemochromatosis — serum ferritin and transferrin saturation",
+      "B": "Wilson's disease — serum ceruloplasmin (low), 24-hour urine copper (elevated), liver biopsy for hepatic copper quantification",
+      "C": "Primary sclerosing cholangitis — MRCP",
+      "D": "Alpha-1 antitrypsin deficiency — A1AT phenotyping",
+      "E": "Autoimmune hepatitis — ANA, ASMA, LKM antibodies"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Wilson's disease (autosomal recessive, ATP7B mutation): copper accumulation in liver, brain, eyes (Kayser-Fleischer rings), kidneys. Presents in young adults with: liver disease + neuropsychiatric symptoms + Kayser-Fleischer rings. KF rings are pathognomonic. Investigations: low serum ceruloplasmin (<0.2 g/L), elevated 24-hour urine copper (>100 mcg/day), elevated free serum copper, liver biopsy with hepatic copper quantification (>250 mcg/g dry weight). Treatment: D-penicillamine or trientine (copper chelation), zinc (prevents absorption), liver transplant for fulminant failure.",
+      "A": "Incorrect — Haemochromatosis causes iron overload (elevated ferritin/transferrin saturation) in middle-aged men; no neurological features or KF rings.",
+      "B": "CORRECT — Wilson's disease: young adult + liver disease + neurology + KF rings + family history. Ceruloplasmin and 24-hour urine copper.",
+      "C": "Incorrect — PSC causes cholestatic LFTs in IBD patients — no neurological features or KF rings.",
+      "D": "Incorrect — A1AT deficiency causes liver disease and emphysema — no KF rings or copper-related neurology.",
+      "E": "Incorrect — AIH can cause hepatitis but not neuropsychiatric symptoms or KF rings."
+    },
+    "reference": "EASL Clinical Practice Guidelines — Wilson's disease 2012. NICE CKS — Wilson's disease.",
+    "tags": [
+      "Wilson's disease",
+      "ceruloplasmin",
+      "Kayser-Fleischer rings",
+      "copper",
+      "liver disease",
+      "neuropsychiatric"
+    ],
+    "source": "Question Grove 360"
+  },
+  {
+    "id": "QG-GI-030-002",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Gastroenterology",
+    "difficulty": "Medium",
+    "question": "A 45-year-old man is found to have: serum ferritin 1850 mcg/L (elevated), transferrin saturation 72%, ALT mildly elevated, normal bilirubin. He reports fatigue, arthralgia affecting the MCP joints and bronze skin discolouration. His father has diabetes. His HFE gene test shows C282Y homozygosity. What is the diagnosis and first-line treatment?",
+    "options": {
+      "A": "Wilson's disease — D-penicillamine",
+      "B": "Hereditary haemochromatosis — regular venesection (phlebotomy) to reduce iron stores",
+      "C": "NAFLD — weight loss and exercise",
+      "D": "Alcoholic liver disease — abstinence",
+      "E": "Autoimmune hepatitis — prednisolone and azathioprine"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Hereditary haemochromatosis (HH): autosomal recessive, HFE gene C282Y homozygosity is the most common mutation. Features: elevated ferritin and transferrin saturation, hepatomegaly/cirrhosis, diabetes mellitus (bronze diabetes), arthropathy (MCP joints classic), hypogonadism, cardiomyopathy, bronze skin. Diagnosis confirmed by HFE gene testing. Treatment: regular venesection (phlebotomy) — 450-500ml blood weekly until ferritin <50 mcg/L, then 3-4 monthly maintenance. First-degree relatives should be screened.",
+      "A": "Incorrect — D-penicillamine is for Wilson's disease (copper overload) — not iron overload.",
+      "B": "CORRECT — Hereditary haemochromatosis (C282Y homozygous): regular venesection to normalise iron stores.",
+      "C": "Incorrect — NAFLD is associated with metabolic syndrome and does not cause transferrin saturation 72% or C282Y mutation.",
+      "D": "Incorrect — ALD causes elevated AST/ALT ratio with alcoholic hepatitis features — not this specific biochemical and clinical pattern.",
+      "E": "Incorrect — AIH requires immunosuppression — not indicated for iron overload disease."
+    },
+    "reference": "BSG Guidelines — Hereditary Haemochromatosis 2018. NICE CKS — Haemochromatosis.",
+    "tags": [
+      "haemochromatosis",
+      "HFE gene",
+      "venesection",
+      "ferritin",
+      "transferrin saturation",
+      "BSG"
+    ],
+    "source": "Question Grove 360"
+  },
+  {
+    "id": "QG-GI-030-003",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Gastroenterology",
+    "difficulty": "Medium",
+    "question": "A 35-year-old man with confirmed hereditary haemochromatosis (C282Y homozygous) has a serum ferritin of 2400 mcg/L. His liver biopsy shows stage 3 fibrosis. Per NICE and BSG guidance, which investigation is most important for long-term surveillance?",
+    "options": {
+      "A": "Annual DEXA scan for osteoporosis",
+      "B": "6-monthly liver ultrasound and AFP for hepatocellular carcinoma surveillance",
+      "C": "Annual echocardiogram",
+      "D": "Annual upper GI endoscopy for varices",
+      "E": "Annual MRI liver for iron quantification only"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per BSG guidelines on hereditary haemochromatosis, patients with cirrhosis (stage 3-4 fibrosis) are at significantly increased risk of hepatocellular carcinoma (HCC). 6-monthly liver ultrasound ± AFP is recommended for HCC surveillance in patients with cirrhosis — regardless of aetiology. This is consistent with NICE NG12 surveillance for HCC. Cirrhosis in HH increases HCC risk even after iron depletion by venesection.",
+      "A": "Incorrect — Osteoporosis screening is relevant in HH but 6-monthly HCC surveillance in cirrhosis is the higher priority.",
+      "B": "CORRECT — Stage 3 fibrosis (approaching cirrhosis) warrants 6-monthly ultrasound + AFP for HCC surveillance per BSG/NICE.",
+      "C": "Incorrect — Cardiomyopathy screening in HH is relevant but echocardiogram annually is not the first surveillance priority with advanced fibrosis.",
+      "D": "Incorrect — Variceal surveillance (OGD) is for confirmed cirrhosis with portal hypertension — not the most important step here specifically.",
+      "E": "Incorrect — MRI liver for iron quantification monitors treatment response but HCC surveillance is the more critical long-term need."
+    },
+    "reference": "BSG Guidelines — Haemochromatosis 2018. NICE — HCC surveillance in cirrhosis.",
+    "tags": [
+      "haemochromatosis",
+      "cirrhosis",
+      "HCC surveillance",
+      "ultrasound",
+      "AFP",
+      "BSG"
+    ],
+    "source": "Question Grove 360"
+  },
+  {
+    "id": "QG-GI-030-004",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Gastroenterology",
+    "difficulty": "Hard",
+    "question": "A 19-year-old woman presents with acute liver failure: jaundice, coagulopathy (INR 3.2), encephalopathy and haemolytic anaemia (Hb 72g/L, raised LDH, low haptoglobin). Serum ceruloplasmin is very low at 0.05 g/L. Kayser-Fleischer rings are absent on slit-lamp. What is the most likely diagnosis and what is the urgency of management?",
+    "options": {
+      "A": "Autoimmune haemolytic anaemia with autoimmune hepatitis — steroids and azathioprine",
+      "B": "Wilson's disease presenting as acute liver failure with Coombs-negative haemolytic anaemia — urgent liver transplant evaluation",
+      "C": "Paracetamol overdose — N-acetylcysteine",
+      "D": "Hereditary haemochromatosis with haemolytic crisis — venesection",
+      "E": "G6PD deficiency — supportive management"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Wilson's disease can present as fulminant acute liver failure with Coombs-negative haemolytic anaemia (copper released from necrotic hepatocytes causes RBC destruction). KF rings may be ABSENT in acute presentation (rings take years to accumulate). Low ceruloplasmin + acute liver failure + haemolytic anaemia in a young patient = Wilson's disease until proven otherwise. This is a medical emergency — urgent referral to a liver transplant centre. Medical chelation (D-penicillamine) is insufficient for fulminant Wilson's — liver transplantation is life-saving.",
+      "A": "Incorrect — AIH/AIHA would show positive autoantibodies and Coombs-positive haemolysis. Ceruloplasmin would be normal or elevated (acute phase reactant).",
+      "B": "CORRECT — Fulminant Wilson's: acute liver failure + Coombs-negative haemolysis + low ceruloplasmin in young patient. Urgent transplant evaluation.",
+      "C": "Incorrect — Paracetamol OD causes liver failure but not haemolytic anaemia or low ceruloplasmin.",
+      "D": "Incorrect — Haemochromatosis does not cause haemolytic anaemia or low ceruloplasmin.",
+      "E": "Incorrect — G6PD deficiency causes episodic haemolysis with triggers but not acute liver failure with low ceruloplasmin."
+    },
+    "reference": "EASL — Wilson's disease guidelines 2012. AASLD — Wilson's disease practice guidance 2008.",
+    "tags": [
+      "Wilson's disease",
+      "acute liver failure",
+      "haemolytic anaemia",
+      "ceruloplasmin",
+      "liver transplant",
+      "fulminant"
+    ],
+    "source": "Question Grove 360"
+  },
+  {
+    "id": "QG-GI-030-005",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Gastroenterology",
+    "difficulty": "Easy",
+    "question": "A GP is investigating a 25-year-old man with unexplained liver disease and a family history of early liver problems. He has mild neuropsychiatric symptoms including mood changes and poor concentration. Blood tests show: ALP relatively normal, elevated ALT 145 U/L. He has low serum copper and ceruloplasmin. What further test confirms Wilson's disease?",
+    "options": {
+      "A": "Serum ferritin and transferrin saturation",
+      "B": "24-hour urine copper collection (elevated >100 mcg/day confirms Wilson's disease)",
+      "C": "Liver biopsy for fibrosis staging only",
+      "D": "Anti-mitochondrial antibodies",
+      "E": "HFE gene test (C282Y and H63D)"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per Leipzig scoring system and EASL guidelines, Wilson's disease diagnosis is confirmed by a combination of: low serum ceruloplasmin, elevated 24-hour urine copper (>100 mcg/day, or >200 mcg/day after D-penicillamine challenge), liver biopsy showing hepatic copper >250 mcg/g dry weight, Kayser-Fleischer rings, neuropsychiatric features, and ATP7B gene mutation. The 24-hour urine copper collection is a key confirmatory test that is non-invasive. Ferritin/transferrin is for haemochromatosis; AMA is for PBC; HFE gene is for haemochromatosis.",
+      "A": "Incorrect — Serum ferritin and transferrin saturation diagnose haemochromatosis — not Wilson's disease.",
+      "B": "CORRECT — 24-hour urine copper >100 mcg/day is a key confirmatory test for Wilson's disease per EASL guidelines.",
+      "C": "Incorrect — Liver biopsy stages fibrosis and quantifies hepatic copper but 24-hour urine copper is the less invasive first-line confirmatory test.",
+      "D": "Incorrect — AMA-M2 diagnoses primary biliary cholangitis — not Wilson's disease.",
+      "E": "Incorrect — HFE gene test diagnoses hereditary haemochromatosis — not Wilson's disease (ATP7B gene mutation is Wilson's)."
+    },
+    "reference": "EASL Clinical Practice Guidelines — Wilson's disease 2012. Leipzig scoring criteria.",
+    "tags": [
+      "Wilson's disease",
+      "24-hour urine copper",
+      "ceruloplasmin",
+      "diagnosis",
+      "EASL",
+      "ATP7B"
+    ],
+    "source": "Question Grove 360"
+  },
+  {
+    "id": "QG-GI-055-001",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Gastroenterology",
+    "difficulty": "Medium",
+    "question": "A 45-year-old man with type 1 diabetes drinks 21 units of alcohol per week. His liver tests show: ALT 85 U/L, AST 140 U/L, ALP 95 U/L, GGT 380 U/L, bilirubin 22 umol/L. His BMI is 26 kg/m². What pattern of abnormality is most consistent with alcoholic liver disease (ALD) rather than NAFLD?",
+    "options": {
+      "A": "ALT >AST with elevated GGT and normal ALP",
+      "B": "AST:ALT ratio >2:1 with markedly elevated GGT",
+      "C": "Elevated ALP with mildly elevated ALT and bilirubin",
+      "D": "Elevated ALT alone with normal AST and GGT",
+      "E": "All LFT abnormalities are equally likely in ALD and NAFLD"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "AST:ALT ratio >2:1 (classically >2) is characteristic of alcoholic liver disease. In this patient: AST 140/ALT 85 = ratio 1.65 (approaching 2). GGT is markedly elevated (380 U/L) — GGT is the most sensitive marker for alcohol use disorder and is elevated in 75% of heavy drinkers. NAFLD typically shows ALT >AST (ratio <1.5) with mildly elevated GGT. The combination of AST:ALT >2 + significantly elevated GGT + significant alcohol intake strongly suggests ALD. However, with T1DM and alcohol use, NASH cannot be excluded without imaging/biopsy.",
+      "A": "Incorrect — ALT > AST is the NAFLD pattern, not ALD.",
+      "B": "CORRECT — AST:ALT ratio >2 + markedly elevated GGT = ALD pattern per BSG/EASL.",
+      "C": "Incorrect — Elevated ALP with mildly elevated ALT suggests cholestatic disease (PBC, PSC, biliary obstruction).",
+      "D": "Incorrect — Isolated elevated ALT with normal AST and GGT suggests NAFLD or viral hepatitis.",
+      "E": "Incorrect — There are recognised biochemical patterns distinguishing ALD from NAFLD."
+    },
+    "reference": "BSG — Alcohol-related liver disease guidelines. EASL — NAFLD/NASH guidelines 2016.",
+    "tags": [
+      "ALD",
+      "NAFLD",
+      "AST ALT ratio",
+      "GGT",
+      "alcoholic liver disease",
+      "BSG"
+    ],
+    "source": "Question Grove 360"
+  },
+  {
+    "id": "QG-GI-055-002",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Gastroenterology",
+    "difficulty": "Easy",
+    "question": "A 50-year-old man with type 2 diabetes (BMI 34 kg/m², hypertension, hypercholesterolaemia) is found to have persistently elevated ALT (110 U/L) and ALT > AST (ratio 0.8). His alcohol intake is 6 units per week. Hepatitis B and C serology is negative. Abdominal ultrasound shows a bright hyperechoic liver (fatty change). What is the most likely diagnosis?",
+    "options": {
+      "A": "Alcoholic liver disease — refer to alcohol services",
+      "B": "Non-alcoholic fatty liver disease (NAFLD) / non-alcoholic steatohepatitis (NASH)",
+      "C": "Hepatitis B — start antiviral therapy",
+      "D": "Primary biliary cholangitis — check AMA",
+      "E": "Haemochromatosis — check ferritin and transferrin saturation"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "NAFLD criteria: fatty liver on imaging (bright hyperechoic liver on ultrasound) + metabolic risk factors (T2DM, obesity, hypertension, dyslipidaemia) + low alcohol intake (<21 units/week men, <14 units/week women) + exclusion of other causes. ALT >AST ratio is typical. NAFLD is the most common cause of chronic liver disease in the UK and is closely linked to metabolic syndrome. NASH (non-alcoholic steatohepatitis) is the progressive form with inflammation and fibrosis risk.",
+      "A": "Incorrect — 6 units/week is below the threshold for ALD. Metabolic risk factors strongly point to NAFLD.",
+      "B": "CORRECT — NAFLD/NASH: metabolic risk factors + fatty liver on ultrasound + low alcohol + ALT >AST.",
+      "C": "Incorrect — Hepatitis B serology is negative.",
+      "D": "Incorrect — PBC shows predominantly elevated ALP with fatigue and pruritus in middle-aged women — not this metabolic picture.",
+      "E": "Incorrect — Haemochromatosis is possible as an additional investigation but NAFLD is the most likely given the full clinical picture."
+    },
+    "reference": "EASL-EASD-EASO Clinical Practice Guidelines — NAFLD 2016. NICE — NAFLD overview.",
+    "tags": [
+      "NAFLD",
+      "NASH",
+      "fatty liver",
+      "metabolic syndrome",
+      "ALT",
+      "EASL"
+    ],
+    "source": "Question Grove 360"
+  },
+  {
+    "id": "QG-GI-055-003",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Gastroenterology",
+    "difficulty": "Medium",
+    "question": "A 48-year-old man with confirmed NAFLD (FIB-4 score 1.8 — intermediate risk) is reviewed in primary care. He has type 2 diabetes and BMI 36 kg/m². What is the most evidence-based management for NAFLD in primary care?",
+    "options": {
+      "A": "Prescribe pioglitazone 30mg daily — reduces hepatic steatosis",
+      "B": "Lifestyle modification: sustained weight loss of ≥7-10% of body weight through diet and exercise is the most effective intervention for reducing liver fat and inflammation",
+      "C": "Refer for bariatric surgery immediately as BMI >35",
+      "D": "Prescribe vitamin E 800 IU daily — antioxidant treatment for NASH",
+      "E": "Annual liver biopsy to monitor progression"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per EASL-EASD-EASO guidelines and NICE, the cornerstone of NAFLD management is lifestyle modification — specifically sustained weight loss of ≥7-10% of body weight through caloric restriction and aerobic exercise. This achieves: reduced hepatic steatosis, improvement in liver enzyme levels, and histological improvement in NASH. In T2DM with NAFLD, semaglutide and pioglitazone have secondary evidence for liver benefit but lifestyle is first-line. FIB-4 score 1.8 (intermediate) warrants referral to hepatology for further assessment (FibroScan, enhanced liver fibrosis test).",
+      "A": "Incorrect — Pioglitazone has evidence for NASH in T2DM but is second-line after lifestyle modification.",
+      "B": "CORRECT — ≥7-10% weight loss through lifestyle modification is the most effective evidence-based NAFLD treatment per EASL.",
+      "C": "Incorrect — Bariatric surgery is considered after failure of conservative management and with appropriate assessment — not immediately.",
+      "D": "Incorrect — Vitamin E is only for non-diabetic NASH without cirrhosis — limited evidence in T2DM.",
+      "E": "Incorrect — Annual liver biopsy is not routine for monitoring NAFLD — non-invasive markers (FIB-4, FibroScan) are used."
+    },
+    "reference": "EASL-EASD-EASO Guidelines — NAFLD 2016. NICE — NAFLD overview.",
+    "tags": [
+      "NAFLD",
+      "weight loss",
+      "lifestyle",
+      "FIB-4",
+      "NASH",
+      "EASL"
+    ],
+    "source": "Question Grove 360"
+  },
+  {
+    "id": "QG-GI-055-004",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Gastroenterology",
+    "difficulty": "Hard",
+    "question": "A patient with type 1 diabetes and 21 units/week alcohol use has elevated LFTs. The GP wants to calculate the FIB-4 score to stratify liver fibrosis risk non-invasively. Which variables are needed to calculate FIB-4?",
+    "options": {
+      "A": "ALT, AST, bilirubin and albumin",
+      "B": "Age, AST, platelet count and ALT",
+      "C": "BMI, AST, ALT and GGT",
+      "D": "Age, ALT, ALP and platelet count",
+      "E": "Ferritin, AST, ALT and age"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "FIB-4 score = (Age × AST) / (Platelet count × √ALT). The four variables needed are: Age (years), AST (U/L), platelet count (10⁹/L) and ALT (U/L). FIB-4 interpretation: <1.3 = low risk (no significant fibrosis, 74% PPV); 1.3-2.67 = intermediate (reassess with FibroScan); >2.67 = high risk of advanced fibrosis (refer to hepatology). FIB-4 is recommended by NICE for initial NAFLD fibrosis assessment in primary care.",
+      "A": "Incorrect — Bilirubin and albumin are not part of the FIB-4 formula.",
+      "B": "CORRECT — FIB-4 = (Age × AST) / (Platelets × √ALT) — requires age, AST, platelets and ALT.",
+      "C": "Incorrect — BMI and GGT are not part of the FIB-4 formula.",
+      "D": "Incorrect — ALP is not part of the FIB-4 formula — AST is required.",
+      "E": "Incorrect — Ferritin is not part of the FIB-4 formula."
+    },
+    "reference": "NICE — NAFLD overview. FIB-4 score validation (Sterling et al.).",
+    "tags": [
+      "FIB-4",
+      "liver fibrosis",
+      "NAFLD",
+      "AST",
+      "platelet count",
+      "NICE"
+    ],
+    "source": "Question Grove 360"
+  },
+  {
+    "id": "QG-GI-055-005",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Gastroenterology",
+    "difficulty": "Medium",
+    "question": "A 45-year-old man with T1DM is found to have NAFLD with elevated LFTs. He drinks 21 units of alcohol per week. The GP advises reducing alcohol intake. Per the Chief Medical Officers' UK low-risk guidelines, what is the recommended maximum alcohol intake to reduce health risks?",
+    "options": {
+      "A": "21 units per week for men — current intake is within guidelines",
+      "B": "No more than 14 units per week spread over 3 or more days, with 2-3 alcohol-free days per week",
+      "C": "28 units per week for men — safe maximum",
+      "D": "21 units per week for men, 14 units for women",
+      "E": "Alcohol has no safe level — total abstinence recommended for everyone"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per the UK Chief Medical Officers' Low Risk Drinking Guidelines (2016), both men and women are advised to drink no more than 14 units per week to keep health risks low. Units should be spread over 3 or more days (not saved for binge drinking), and at least 2-3 alcohol-free days per week are recommended. At 21 units per week, this patient is drinking above the recommended limit (50% above). Previous guidelines had different limits for men (21 units) and women (14 units) but the 2016 guidelines equalised both at 14 units.",
+      "A": "Incorrect — Previous old guidelines stated 21 units for men. The 2016 updated CMO guidelines set 14 units for both men and women.",
+      "B": "CORRECT — Maximum 14 units/week for both men and women per CMO 2016 guidelines.",
+      "C": "Incorrect — 28 units per week is not a recognised safe limit.",
+      "D": "Incorrect — Previous guidelines (pre-2016). Current CMO guidelines state 14 units for both sexes.",
+      "E": "Incorrect — While any alcohol increases some risks, the CMO guideline provides a 'low risk' threshold rather than advocating universal abstinence."
+    },
+    "reference": "UK Chief Medical Officers' Low Risk Drinking Guidelines 2016. https://www.gov.uk/government/publications/alcohol-consumption-advice-on-low-risk-drinking",
+    "tags": [
+      "alcohol guidelines",
+      "14 units",
+      "CMO",
+      "NAFLD",
+      "low risk drinking",
+      "UK guidelines"
+    ],
+    "source": "Question Grove 360"
+  },
+  {
+    "id": "QG-GI-101-001",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Gastroenterology",
+    "difficulty": "Medium",
+    "question": "A 4-week-old baby remains jaundiced since birth. The jaundice appeared at 48 hours. The baby's urine is dark and stools are pale/acholic. Examination shows hepatomegaly. Total bilirubin is 180 umol/L with conjugated (direct) bilirubin of 110 umol/L (60%). What is the most likely diagnosis and most appropriate management?",
+    "options": {
+      "A": "Physiological jaundice — reassure and monitor",
+      "B": "Biliary atresia — urgent referral to paediatric hepatology/surgery for Kasai portoenterostomy",
+      "C": "Breast milk jaundice — advise formula feeding for 48 hours",
+      "D": "Gilbert's syndrome — reassure, autosomal dominant condition",
+      "E": "Neonatal hepatitis syndrome — await resolution"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Conjugated (direct) hyperbilirubinaemia in a neonate (conjugated bilirubin >20% of total, or >25 umol/L) is ALWAYS pathological and a medical emergency requiring urgent investigation. Biliary atresia: progressive obliterative cholangiopathy causing dark urine, pale/acholic stools, hepatomegaly, persistent jaundice — fatal without surgical intervention. The Kasai portoenterostomy (hepatoportoenterostomy) must be performed before 60-70 days of age for best outcome — urgent referral to paediatric surgery/hepatology is essential. Physiological and breast milk jaundice are UNCONJUGATED hyperbilirubinaemia.",
+      "A": "Incorrect — Conjugated jaundice is never physiological. This is a surgical emergency.",
+      "B": "CORRECT — Biliary atresia: conjugated jaundice + dark urine + pale stools + hepatomegaly = urgent Kasai portoenterostomy referral.",
+      "C": "Incorrect — Breast milk jaundice causes unconjugated hyperbilirubinaemia without pale stools or dark urine.",
+      "D": "Incorrect — Gilbert's syndrome presents with unconjugated hyperbilirubinaemia in teenagers/adults — not neonates with pale stools.",
+      "E": "Incorrect — Neonatal hepatitis may be in the differential but biliary atresia must be urgently excluded due to the time-critical surgical window."
+    },
+    "reference": "NICE CKS — Neonatal jaundice. BSPghan — Biliary atresia guidelines.",
+    "tags": [
+      "biliary atresia",
+      "conjugated jaundice",
+      "neonatal jaundice",
+      "Kasai",
+      "pale stools",
+      "NICE CKS"
+    ],
+    "source": "Question Grove 360"
+  },
+  {
+    "id": "QG-GI-101-002",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Gastroenterology",
+    "difficulty": "Easy",
+    "question": "A 3-day-old term neonate develops jaundice (total bilirubin 185 umol/L). The jaundice appeared at 48 hours. The baby is feeding well, has normal urine and yellow stools. Conjugated bilirubin is 8 umol/L (4%). What is the most likely diagnosis and management?",
+    "options": {
+      "A": "Biliary atresia — urgent referral",
+      "B": "Physiological jaundice — monitor bilirubin, phototherapy if above treatment threshold per NICE NG98",
+      "C": "ABO incompatibility — direct Coombs test and exchange transfusion",
+      "D": "Sepsis-related jaundice — blood cultures and IV antibiotics",
+      "E": "Glucose-6-phosphate dehydrogenase deficiency — genetic testing"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Physiological jaundice: appears after 24 hours (not before), peaks day 3-5, involves unconjugated bilirubin (conjugated fraction <20%), normal stools, normal urine, baby feeding well. Per NICE NG98 (Jaundice in newborn babies under 28 days), management is based on plotting bilirubin against the treatment threshold nomogram for gestational age — phototherapy when bilirubin reaches the treatment line, exchange transfusion for very high levels. This presentation with unconjugated jaundice appearing at 48 hours in a well feeding baby is physiological.",
+      "A": "Incorrect — Conjugated bilirubin is only 4% (not >20%). Stool colour is normal. This is not biliary atresia.",
+      "B": "CORRECT — Physiological jaundice (unconjugated, well baby, appears 48 hours) — monitor with NICE NG98 nomogram.",
+      "C": "Incorrect — ABO incompatibility causes haemolytic jaundice (early onset, <24 hours) with anaemia and positive DAT.",
+      "D": "Incorrect — Sepsis jaundice is mixed (both conjugated and unconjugated) and occurs with systemic signs of infection.",
+      "E": "Incorrect — G6PD deficiency causes haemolytic jaundice often triggered by oxidative stress — no specific trigger identified here."
+    },
+    "reference": "NICE NG98 — Jaundice in newborn babies under 28 days. https://www.nice.org.uk/guidance/ng98",
+    "tags": [
+      "physiological jaundice",
+      "neonatal jaundice",
+      "phototherapy",
+      "NICE NG98",
+      "unconjugated",
+      "bilirubin"
+    ],
+    "source": "Question Grove 360"
+  },
+  {
+    "id": "QG-GI-101-003",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Gastroenterology",
+    "difficulty": "Hard",
+    "question": "A health visitor assesses a 4-week-old baby still jaundiced since birth. The GP is called. Per NICE NG98, what is the mandatory threshold that requires URGENT investigation of prolonged neonatal jaundice?",
+    "options": {
+      "A": "Any jaundice persisting beyond 14 days in term babies or 21 days in preterm babies requires investigation including split bilirubin and urine for reducing substances",
+      "B": "Jaundice beyond 28 days requires investigation",
+      "C": "Jaundice is normal up to 6 weeks — no investigation needed before then",
+      "D": "Jaundice beyond 10 days requires investigation in all neonates",
+      "E": "Investigation only if the baby is symptomatic"
+    },
+    "correct_answer": "A",
+    "explanation": {
+      "correct": "Per NICE NG98, prolonged jaundice is defined as: jaundice persisting beyond 14 days in term babies, or beyond 21 days in preterm babies. All babies with prolonged jaundice must be urgently investigated with: split bilirubin (total and direct/conjugated), full blood count, blood group, Coombs test, urine for reducing substances (galactosaemia), TFTs (hypothyroidism), infection screen. Conjugated hyperbilirubinaemia must be excluded as biliary atresia is time-critical. This baby is 4 weeks old — well beyond the 14-day threshold.",
+      "A": "CORRECT — Prolonged jaundice: >14 days (term) or >21 days (preterm) requires urgent investigation per NICE NG98.",
+      "B": "Incorrect — 28 days is too late. NICE NG98 states 14 days for term babies.",
+      "C": "Incorrect — 6 weeks without investigation risks missing biliary atresia — Kasai must be before 60-70 days.",
+      "D": "Incorrect — 10 days is too early and not the NICE threshold. 14 days is the threshold for term infants.",
+      "E": "Incorrect — Jaundice beyond 14 days requires investigation regardless of symptoms — biliary atresia can present without obvious systemic upset initially."
+    },
+    "reference": "NICE NG98 — Jaundice in newborn babies under 28 days. https://www.nice.org.uk/guidance/ng98",
+    "tags": [
+      "prolonged neonatal jaundice",
+      "NICE NG98",
+      "14 days",
+      "split bilirubin",
+      "biliary atresia",
+      "investigation"
+    ],
+    "source": "Question Grove 360"
+  },
+  {
+    "id": "QG-GI-101-004",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Gastroenterology",
+    "difficulty": "Medium",
+    "question": "Parents of a 6-week-old baby with confirmed biliary atresia are counselled about the Kasai portoenterostomy. What is the most important prognostic factor for a successful outcome after Kasai surgery?",
+    "options": {
+      "A": "Sex of the infant",
+      "B": "Age at surgery — surgery before 60-70 days of age gives the best outcomes",
+      "C": "Birth weight of the infant",
+      "D": "Whether the baby was born prematurely",
+      "E": "The surgeon's experience with paediatric hepatology"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "The most critical prognostic factor for Kasai portoenterostomy in biliary atresia is AGE at surgery. Surgery before 60-70 days of age results in bile flow restoration in 50-80% of cases and long-term survival with native liver. After 90 days, success rates fall significantly. Even with successful Kasai, many children develop progressive liver disease and require liver transplantation. Early diagnosis — hence the urgency of investigating prolonged neonatal jaundice — is essential.",
+      "A": "Incorrect — Sex of the infant is not the primary prognostic factor.",
+      "B": "CORRECT — Age at Kasai surgery (<60-70 days) is the most important prognostic factor per BSPghan guidelines.",
+      "C": "Incorrect — Birth weight does not directly determine Kasai outcome.",
+      "D": "Incorrect — Prematurity is not a primary determinant of Kasai success.",
+      "E": "Incorrect — Surgeon experience is important but age at surgery is the primary prognostic factor."
+    },
+    "reference": "BSPghan — Biliary atresia guidelines. Kasai surgery outcomes literature.",
+    "tags": [
+      "biliary atresia",
+      "Kasai",
+      "age at surgery",
+      "prognosis",
+      "portoenterostomy",
+      "BSPghan"
+    ],
+    "source": "Question Grove 360"
+  },
+  {
+    "id": "QG-GI-101-005",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Gastroenterology",
+    "difficulty": "Easy",
+    "question": "A 2-day-old neonate develops jaundice within 24 hours of birth. Direct Coombs test is positive, blood group O negative (mother) and A positive (baby), haemoglobin 130g/L. What is the most likely diagnosis?",
+    "options": {
+      "A": "Physiological jaundice",
+      "B": "Breast milk jaundice",
+      "C": "Haemolytic disease of the newborn — ABO/Rhesus incompatibility",
+      "D": "Biliary atresia",
+      "E": "G6PD deficiency"
+    },
+    "correct_answer": "C",
+    "explanation": {
+      "correct": "Jaundice appearing in the first 24 hours of life is ALWAYS pathological — most commonly due to haemolytic disease of the newborn (HDN). ABO incompatibility (mother O, baby A/B) or Rhesus incompatibility (mother Rh negative, baby Rh positive) causes maternal antibody-mediated haemolysis. Positive Coombs test (DAT) confirms maternal antibodies on baby's RBCs. Management per NICE NG98: urgent phototherapy, monitor bilirubin 4-6 hourly, exchange transfusion if bilirubin rises rapidly despite phototherapy.",
+      "A": "Incorrect — Physiological jaundice does not appear in the first 24 hours.",
+      "B": "Incorrect — Breast milk jaundice presents after day 4-5, not within 24 hours.",
+      "C": "CORRECT — Jaundice <24 hours + positive Coombs + maternal/fetal blood group incompatibility = haemolytic disease of newborn.",
+      "D": "Incorrect — Biliary atresia causes conjugated jaundice appearing after 24-48 hours with pale stools.",
+      "E": "Incorrect — G6PD deficiency can cause early haemolytic jaundice but Coombs test would be negative."
+    },
+    "reference": "NICE NG98 — Jaundice in newborn babies under 28 days. https://www.nice.org.uk/guidance/ng98",
+    "tags": [
+      "haemolytic disease newborn",
+      "ABO incompatibility",
+      "Coombs test",
+      "jaundice <24 hours",
+      "NICE NG98"
+    ],
+    "source": "Question Grove 360"
+  },
+  {
+    "id": "QG-GI-109-001",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Gastroenterology",
+    "difficulty": "Hard",
+    "question": "A 75-year-old man presents with sudden onset severe abdominal distension, absolute constipation (no flatus or stool for 24 hours) and mild colicky pain. He has a history of chronic constipation. On examination his abdomen is grossly distended and tympanic. An erect abdominal X-ray shows a massively dilated loop of bowel in the left iliac fossa forming an 'omega' or 'coffee bean' sign. What is the most likely diagnosis and management?",
+    "options": {
+      "A": "Large bowel obstruction from colorectal cancer — CT abdomen/pelvis and surgical referral",
+      "B": "Sigmoid volvulus — urgent hospital admission, rigid sigmoidoscopy and rectal tube for decompression",
+      "C": "Ileus — nasogastric tube and IV fluids",
+      "D": "IBS with severe bloating — mebeverine and reassurance",
+      "E": "Acute diverticulitis — IV antibiotics and CT abdomen"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Sigmoid volvulus: classic presentation in elderly men with chronic constipation — massive abdominal distension, absolute constipation, colicky pain, 'omega sign'/'coffee bean sign' on AXR (bent inner tube/kidney bean-shaped loop pointing toward the right hypochondrium). Management: urgent hospital admission, haemodynamic resuscitation, endoscopic decompression (rigid sigmoidoscopy + rectal tube insertion) as first-line if no peritonitis/perforation. Elective sigmoid colectomy after decompression to prevent recurrence. If perforation/ischaemia: emergency surgery.",
+      "A": "Incorrect — Colorectal cancer typically causes gradual obstruction without the acute omega sign on AXR.",
+      "B": "CORRECT — Sigmoid volvulus: omega sign + elderly + constipation history. Urgent admission + endoscopic decompression.",
+      "C": "Incorrect — Ileus shows diffuse bowel dilatation without a specific twisted loop pattern.",
+      "D": "Incorrect — IBS does not cause absolute constipation with grossly distended abdomen and omega sign.",
+      "E": "Incorrect — Diverticulitis presents with LIF pain and fever but not the omega sign or gross distension with absolute constipation."
+    },
+    "reference": "NICE CKS — Large bowel obstruction. BSG — Colonic volvulus management.",
+    "tags": [
+      "sigmoid volvulus",
+      "omega sign",
+      "abdominal distension",
+      "absolute constipation",
+      "decompression",
+      "BSG"
+    ],
+    "source": "Question Grove 360"
+  },
+  {
+    "id": "QG-GI-109-002",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Gastroenterology",
+    "difficulty": "Medium",
+    "question": "A 40-year-old man presents with a 4-month history of alternating diarrhoea and constipation, bloating and abdominal cramps relieved by defecation. He has no rectal bleeding, no weight loss, CRP normal, FBC normal, and faecal calprotectin is 45 mcg/g. What is the most likely diagnosis and most appropriate first-line management?",
+    "options": {
+      "A": "Inflammatory bowel disease — refer for colonoscopy",
+      "B": "Irritable bowel syndrome — lifestyle advice, dietary modification (low-FODMAP diet), antispasmodics",
+      "C": "Colorectal cancer — urgent 2WW colonoscopy",
+      "D": "Coeliac disease — anti-TTG IgA testing",
+      "E": "Microscopic colitis — refer for colonoscopy with biopsies"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "IBS diagnostic criteria (Rome IV): recurrent abdominal pain ≥1 day/week for ≥3 months associated with ≥2 of: related to defecation, change in stool frequency, change in stool form. No alarm features. Faecal calprotectin <50 mcg/g (normal, effectively excludes IBD). Per NICE CG61, first-line management: regular meals, adequate hydration, reduced insoluble fibre, low-FODMAP diet (trial), antispasmodics (mebeverine, hyoscine) for pain/bloating, loperamide for diarrhoea-predominant. NICE advises against unnecessary investigations in typical IBS without alarm features.",
+      "A": "Incorrect — Faecal calprotectin 45 mcg/g effectively excludes IBD. Colonoscopy not indicated.",
+      "B": "CORRECT — IBS (Rome IV criteria, normal calprotectin): lifestyle + dietary + antispasmodics per NICE CG61.",
+      "C": "Incorrect — No alarm features (no rectal bleeding, no weight loss, age 40 without change in bowel habit in older patient with rectal bleeding).",
+      "D": "Incorrect — Coeliac testing is appropriate in diarrhoea-predominant IBS and should be considered, but IBS management can begin alongside.",
+      "E": "Incorrect — Microscopic colitis causes watery diarrhoea predominantly — not alternating bowel habit. Normal calprotectin makes it less likely."
+    },
+    "reference": "NICE CG61 — Irritable bowel syndrome in adults. https://www.nice.org.uk/guidance/cg61",
+    "tags": [
+      "IBS",
+      "irritable bowel syndrome",
+      "faecal calprotectin",
+      "low-FODMAP",
+      "NICE CG61",
+      "antispasmodics"
+    ],
+    "source": "Question Grove 360"
+  },
+  {
+    "id": "QG-GI-109-003",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Gastroenterology",
+    "difficulty": "Medium",
+    "question": "An 80-year-old nursing home resident develops sudden abdominal distension, constipation and vomiting. AXR shows a massively dilated caecum with a 'coffee bean' sign pointing toward the left upper quadrant. He is haemodynamically stable. What is the diagnosis and treatment?",
+    "options": {
+      "A": "Sigmoid volvulus — rectal tube decompression",
+      "B": "Caecal volvulus — surgical emergency requiring urgent right hemicolectomy or caecal detorsion",
+      "C": "Ogilvie's syndrome (acute colonic pseudo-obstruction) — neostigmine IV",
+      "D": "Adhesional small bowel obstruction — nasogastric tube and IV fluids",
+      "E": "Large bowel cancer — CT abdomen"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Caecal volvulus: axial twist of caecum and ascending colon — the massively dilated caecum pointing toward the left upper quadrant (vs sigmoid volvulus pointing right) on AXR. Unlike sigmoid volvulus (which can often be decompressed endoscopically), caecal volvulus requires urgent surgical intervention — right hemicolectomy or caecostomy, as endoscopic decompression is rarely successful and carries perforation risk. Earlier detection and surgery prevent ischaemia and perforation.",
+      "A": "Incorrect — Rectal tube decompression is for sigmoid volvulus — not effective for caecal volvulus.",
+      "B": "CORRECT — Caecal volvulus pointing left upper quadrant: surgical emergency — right hemicolectomy.",
+      "C": "Incorrect — Ogilvie's syndrome (pseudo-obstruction) shows diffuse colonic dilation without a specific twisted loop pattern.",
+      "D": "Incorrect — Small bowel obstruction causes central/periumbilical distension with multiple air-fluid levels on AXR.",
+      "E": "Incorrect — Colorectal cancer rarely presents acutely with a visible volvulus pattern on AXR."
+    },
+    "reference": "BSG/ACPGBI — Large bowel obstruction. Emergency Surgery guidelines.",
+    "tags": [
+      "caecal volvulus",
+      "surgical emergency",
+      "right hemicolectomy",
+      "abdominal distension",
+      "AXR",
+      "BSG"
+    ],
+    "source": "Question Grove 360"
+  },
+  {
+    "id": "QG-GI-109-004",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Gastroenterology",
+    "difficulty": "Easy",
+    "question": "A 45-year-old woman presents with new-onset diarrhoea (4-5 loose stools daily), urgency and occasional mucus for 6 weeks. She has no rectal bleeding and no weight loss. Faecal calprotectin is 320 mcg/g. What is the most appropriate next step?",
+    "options": {
+      "A": "Treat as IBS — mebeverine and dietary advice",
+      "B": "Refer for colonoscopy to investigate suspected inflammatory bowel disease",
+      "C": "Prescribe oral metronidazole for presumed C. difficile",
+      "D": "Stool culture only and review",
+      "E": "CT abdomen/pelvis as first-line investigation"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per NICE DG11 (Faecal calprotectin diagnostic tests for inflammatory bowel disease), faecal calprotectin >250 mcg/g in a patient with diarrhoea and urgency suggests organic bowel disease (IBD) rather than IBS. The positive predictive value for IBD is high at this level. The appropriate next step is colonoscopy with biopsies for definitive diagnosis (Crohn's vs ulcerative colitis). Treating as IBS with a calprotectin of 320 would risk delaying IBD diagnosis.",
+      "A": "Incorrect — Faecal calprotectin 320 mcg/g is significantly elevated — IBD must be excluded before treating as IBS.",
+      "B": "CORRECT — Calprotectin 320 + diarrhoea + urgency = colonoscopy to investigate IBD per NICE DG11.",
+      "C": "Incorrect — C. difficile typically occurs post-antibiotics with watery diarrhoea — no antibiotic history given.",
+      "D": "Incorrect — Stool culture is useful for infective diarrhoea but elevated calprotectin requires colonoscopy.",
+      "E": "Incorrect — CT is not the investigation of choice for suspected IBD — colonoscopy with biopsies gives tissue diagnosis."
+    },
+    "reference": "NICE DG11 — Faecal calprotectin diagnostic tests for IBD. https://www.nice.org.uk/guidance/dg11",
+    "tags": [
+      "faecal calprotectin",
+      "IBD",
+      "colonoscopy",
+      "diarrhoea",
+      "NICE DG11",
+      "inflammatory bowel disease"
+    ],
+    "source": "Question Grove 360"
+  },
+  {
+    "id": "QG-GI-109-005",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Gastroenterology",
+    "difficulty": "Hard",
+    "question": "A 70-year-old man with known Parkinson's disease develops progressive abdominal distension and constipation. AXR shows massive dilatation of the entire colon without a clear transition point or volvulus pattern. He is haemodynamically stable and has no signs of peritonism. What is the diagnosis and most appropriate management?",
+    "options": {
+      "A": "Sigmoid volvulus — endoscopic decompression",
+      "B": "Acute colonic pseudo-obstruction (Ogilvie's syndrome) — neostigmine 2.5mg IV with cardiac monitoring if conservative measures fail",
+      "C": "Mechanical large bowel obstruction — emergency laparotomy",
+      "D": "Colonic ileus — nasogastric tube and IV fluids only",
+      "E": "Toxic megacolon — IV prednisolone and cyclosporin"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Acute colonic pseudo-obstruction (Ogilvie's syndrome): functional colonic obstruction (no mechanical cause) causing massive colonic dilatation — common in elderly patients, post-surgical, neurological conditions (Parkinson's), severe illness. Features: progressive distension, constipation, absent/sparse bowel sounds, AXR shows diffuse colonic dilatation without volvulus twist or transition point. Management: treat underlying cause, conservative (IV fluids, nil by mouth, nasogastric tube, mobilisation, stop opiates/anticholinergics) → if caecum >12cm or no improvement in 24-48 hours, IV neostigmine 2.5mg under cardiac monitoring (bradycardia risk). Colonoscopic decompression if neostigmine fails.",
+      "A": "Incorrect — No volvulus pattern described. Pseudo-obstruction has diffuse dilation without a twisted loop.",
+      "B": "CORRECT — Ogilvie's syndrome: Parkinson's + diffuse colonic dilation + no transition point. Neostigmine if conservative fails.",
+      "C": "Incorrect — No mechanical obstruction evidence. Surgery is for perforation or ischaemia.",
+      "D": "Incorrect — IV fluids and NG tube are conservative measures but neostigmine is the key pharmacological intervention.",
+      "E": "Incorrect — Toxic megacolon occurs in severe IBD/C. difficile with systemic toxicity and colitis — not pure functional obstruction."
+    },
+    "reference": "BSG — Acute colonic pseudo-obstruction guidelines. NICE CKS — Large bowel obstruction.",
+    "tags": [
+      "Ogilvie's syndrome",
+      "pseudo-obstruction",
+      "neostigmine",
+      "Parkinson's",
+      "colonic dilation",
+      "BSG"
+    ],
+    "source": "Question Grove 360"
+  },
+  {
+    "id": "QG-GI-128-001",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Gastroenterology",
+    "difficulty": "Easy",
+    "question": "A 50-year-old woman presents with a 6-month history of progressive generalised pruritus and fatigue. She now has mild jaundice. Blood tests show: ALP 520 U/L, GGT 410 U/L, bilirubin 48 umol/L, ALT 78 U/L. She drinks minimal alcohol. Ultrasound shows no biliary dilation. She has a dry mouth and dry eyes. What is the most likely diagnosis?",
+    "options": {
+      "A": "Primary sclerosing cholangitis — MRCP",
+      "B": "Primary biliary cholangitis — anti-mitochondrial antibody (AMA-M2)",
+      "C": "Autoimmune hepatitis — ANA and anti-smooth muscle antibody",
+      "D": "Carcinoma of the head of pancreas — CT abdomen",
+      "E": "Drug-induced cholestasis — full drug history"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "PBC: predominantly middle-aged women, cholestatic jaundice (elevated ALP and GGT > ALT), pruritus (often preceding jaundice), fatigue, sicca syndrome (dry eyes/mouth from associated Sjögren's), normal biliary tree on ultrasound. AMA-M2 positive in 95%. Associated with other autoimmune conditions (thyroid disease, Sjögren's, Raynaud's). Per BSG/NICE, diagnosis confirmed with AMA-M2 ± liver biopsy. Treatment: UDCA 13-15mg/kg/day.",
+      "A": "Incorrect — PSC predominantly affects young men with IBD, shows biliary stricturing on MRCP.",
+      "B": "CORRECT — PBC: middle-aged woman + cholestatic LFTs + pruritus + dry eyes/mouth + normal biliary ultrasound. AMA-M2 diagnostic.",
+      "C": "Incorrect — AIH causes predominantly hepatocellular pattern (elevated ALT/AST > ALP), younger patients, positive ANA/ASMA.",
+      "D": "Incorrect — Pancreatic head cancer causes painless obstructive jaundice with DILATED biliary tree on ultrasound (Courvoisier's sign).",
+      "E": "Incorrect — Drug-induced cholestasis is possible but the sicca syndrome and typical PBC profile make PBC the primary diagnosis."
+    },
+    "reference": "BSG Guidelines — PBC 2018. NICE CKS — Primary biliary cholangitis.",
+    "tags": [
+      "PBC",
+      "pruritus",
+      "jaundice",
+      "AMA",
+      "cholestatic",
+      "Sjögren's"
+    ],
+    "source": "Question Grove 360"
+  },
+  {
+    "id": "QG-GI-128-002",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Gastroenterology",
+    "difficulty": "Medium",
+    "question": "A 55-year-old woman with PBC develops intractable pruritus despite cholestyramine 4g three times daily. She says the itching is preventing her from sleeping and she is unable to tolerate higher doses of cholestyramine due to GI side effects. What is the most appropriate second-line treatment for her pruritus?",
+    "options": {
+      "A": "Topical menthol lotion and antihistamine",
+      "B": "Rifampicin 150-300mg daily — second-line for cholestatic pruritus",
+      "C": "Naltrexone 50mg daily — more effective than rifampicin",
+      "D": "Sertraline 75mg — fourth-line option",
+      "E": "Hydroxyzine — effective antihistamine for cholestatic pruritus"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per BSG and EASL guidelines, the stepwise management of cholestatic pruritus in PBC: (1) Cholestyramine (bile acid sequestrant) — first-line; (2) Rifampicin 150mg BD — second-line, acts by inducing hepatic enzymes and reducing bile acid synthesis/gut reabsorption; (3) Naltrexone 50mg (opioid antagonist) — third-line; (4) Sertraline — fourth-line. Monitor LFTs with rifampicin as it can cause hepatotoxicity. Antihistamines (hydroxyzine) are sedating but not effective for cholestatic pruritus due to different mediator pathways.",
+      "A": "Incorrect — Antihistamines are ineffective for cholestatic pruritus. Topical menthol is symptom-only.",
+      "B": "CORRECT — Rifampicin 150-300mg daily is second-line for cholestatic pruritus after cholestyramine per BSG/EASL.",
+      "C": "Incorrect — Naltrexone is third-line (after rifampicin), not second-line.",
+      "D": "Incorrect — Sertraline is fourth-line — not appropriate as next step after first-line failure.",
+      "E": "Incorrect — Antihistamines are ineffective for cholestatic pruritus (histamine is not the primary mediator)."
+    },
+    "reference": "BSG Guidelines — PBC 2018. EASL Clinical Practice Guidelines — PBC.",
+    "tags": [
+      "PBC",
+      "pruritus",
+      "rifampicin",
+      "cholestyramine",
+      "second-line",
+      "BSG"
+    ],
+    "source": "Question Grove 360"
+  },
+  {
+    "id": "QG-GI-128-003",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Gastroenterology",
+    "difficulty": "Hard",
+    "question": "A 58-year-old woman with advanced PBC (bilirubin 120 umol/L, INR 1.8, albumin 28g/L, ascites) is reviewed. Her UDCA response has been inadequate. She has refractory pruritus. What is the most appropriate management at this stage?",
+    "options": {
+      "A": "Increase UDCA to 20mg/kg/day",
+      "B": "Add obeticholic acid — NICE TA443 approved for all PBC stages",
+      "C": "Assess for liver transplantation — PBC with decompensated cirrhosis is a primary indication",
+      "D": "Add azathioprine for immune suppression",
+      "E": "Prescribe high-dose rifampicin 600mg daily"
+    },
+    "correct_answer": "C",
+    "explanation": {
+      "correct": "Per NICE TA443, obeticholic acid is contraindicated in decompensated cirrhosis (Child-Pugh B or C). This patient has evidence of decompensated cirrhosis: bilirubin 120 umol/L, coagulopathy (INR 1.8), hypoalbuminaemia (28g/L) and ascites. Liver transplantation is the definitive treatment for end-stage PBC and is highly effective — PBC has one of the best post-transplant outcomes. Refractory pruritus is also an indication for transplantation when quality of life is severely impaired.",
+      "A": "Incorrect — Increasing UDCA beyond 15mg/kg is not evidence-based.",
+      "B": "Incorrect — OCA is contraindicated in decompensated cirrhosis per NICE TA443.",
+      "C": "CORRECT — Decompensated PBC cirrhosis is a primary indication for liver transplant assessment per BSG/NICE.",
+      "D": "Incorrect — Azathioprine has no role in PBC management.",
+      "E": "Incorrect — High-dose rifampicin (>300mg) increases hepatotoxicity risk significantly."
+    },
+    "reference": "BSG — PBC Guidelines 2018. NICE TA443 — Obeticholic acid. EASL — Liver transplant indications.",
+    "tags": [
+      "PBC",
+      "liver transplant",
+      "decompensated cirrhosis",
+      "OCA contraindication",
+      "NICE TA443",
+      "BSG"
+    ],
+    "source": "Question Grove 360"
+  },
+  {
+    "id": "QG-GI-128-004",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Gastroenterology",
+    "difficulty": "Medium",
+    "question": "A 45-year-old woman is newly diagnosed with PBC (AMA-M2 positive, ALP 320 U/L). She is started on UDCA. She asks about associated conditions she should be screened for. Which comorbidities are most closely associated with PBC?",
+    "options": {
+      "A": "Ulcerative colitis and colorectal cancer",
+      "B": "Autoimmune thyroid disease, Sjögren's syndrome, systemic sclerosis, rheumatoid arthritis",
+      "C": "Coeliac disease and type 1 diabetes only",
+      "D": "Inflammatory bowel disease (predominantly Crohn's disease)",
+      "E": "Psoriasis and psoriatic arthritis"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "PBC is an autoimmune condition associated with a cluster of other autoimmune diseases: autoimmune thyroid disease (Hashimoto's thyroiditis — up to 20%), Sjögren's syndrome (dry eyes and mouth — up to 75% of PBC patients), systemic sclerosis (particularly limited cutaneous — CREST syndrome), rheumatoid arthritis, coeliac disease and Raynaud's phenomenon. Per BSG guidelines, newly diagnosed PBC patients should have TFTs, anti-TTG (coeliac), and Sjögren's antibodies (anti-Ro, anti-La) checked at baseline.",
+      "A": "Incorrect — UC/PSC association is with PSC, not PBC.",
+      "B": "CORRECT — PBC is associated with autoimmune thyroid disease, Sjögren's, systemic sclerosis, RA per BSG/EASL.",
+      "C": "Incorrect — Coeliac and T1DM are possible associations but the fuller list includes thyroid disease and Sjögren's prominently.",
+      "D": "Incorrect — IBD (UC) is associated with PSC, not PBC.",
+      "E": "Incorrect — Psoriasis/PsA association is not characteristic of PBC."
+    },
+    "reference": "BSG Guidelines — PBC 2018. EASL Clinical Practice Guidelines — PBC.",
+    "tags": [
+      "PBC",
+      "associated autoimmune",
+      "Sjögren's",
+      "thyroid disease",
+      "systemic sclerosis",
+      "BSG"
+    ],
+    "source": "Question Grove 360"
+  },
+  {
+    "id": "QG-GI-128-005",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Gastroenterology",
+    "difficulty": "Easy",
+    "question": "A 52-year-old woman with PBC on UDCA is reviewed at 12 months. Her ALP has improved from 420 to 285 U/L (still 1.4x ULN), bilirubin 18 umol/L (normal), albumin 40g/L (normal). Per BSG response criteria, is she an adequate UDCA responder?",
+    "options": {
+      "A": "Yes — any reduction in ALP indicates adequate response",
+      "B": "No — ALP must normalise completely for adequate response",
+      "C": "Yes — ALP <1.67x ULN AND normal bilirubin at 12 months indicates adequate UDCA response (Paris II criteria)",
+      "D": "No — ALP must be <1.5x ULN for adequate response",
+      "E": "Response cannot be assessed at 12 months — assessment requires 2 years"
+    },
+    "correct_answer": "C",
+    "explanation": {
+      "correct": "Per BSG/EASL and Paris II criteria for UDCA response in PBC at 12 months: adequate response = ALP <1.67x ULN AND bilirubin ≤ULN at 12 months. This patient has ALP 1.4x ULN and normal bilirubin — meeting the Paris II criteria for adequate response. Adequate responders have good long-term prognosis. Inadequate responders (ALP ≥1.67x ULN or elevated bilirubin) are candidates for obeticholic acid (NICE TA443) as second-line treatment.",
+      "A": "Incorrect — Any reduction alone is not sufficient. Specific thresholds (Paris II criteria) define adequate response.",
+      "B": "Incorrect — ALP normalisation is not required. The threshold is <1.67x ULN.",
+      "C": "CORRECT — ALP <1.67x ULN + normal bilirubin at 12 months = adequate UDCA response per Paris II criteria/BSG.",
+      "D": "Incorrect — The established threshold is 1.67x ULN, not 1.5x ULN.",
+      "E": "Incorrect — Response assessment is at 12 months per Paris II criteria — not 2 years."
+    },
+    "reference": "BSG Guidelines — PBC 2018. Paris II criteria for UDCA response assessment.",
+    "tags": [
+      "PBC",
+      "UDCA response",
+      "Paris II criteria",
+      "ALP",
+      "BSG",
+      "adequate responder"
+    ],
+    "source": "Question Grove 360"
+  },
+  {
+    "id": "QG-GI-133-001",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Gastroenterology",
+    "difficulty": "Medium",
+    "question": "A 32-year-old man with Crohn's disease has achieved remission after a course of oral prednisolone. He asks what medication should be started to maintain remission and prevent relapse. Per NICE NG129, what is the recommended first-line maintenance therapy?",
+    "options": {
+      "A": "Continue prednisolone 10mg daily indefinitely for maintenance",
+      "B": "Azathioprine or mercaptopurine (thiopurine) as first-line maintenance therapy",
+      "C": "Mesalazine 2.4g daily — same as UC maintenance",
+      "D": "Infliximab (biologic) as first-line maintenance",
+      "E": "No maintenance required — Crohn's remission is usually sustained"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per NICE NG129 (Crohn's disease: management), corticosteroids (prednisolone) are NOT appropriate for maintenance therapy in Crohn's disease due to side effects (osteoporosis, adrenal suppression, metabolic effects) and they do not prevent relapse. First-line maintenance therapy is a thiopurine immunomodulator: azathioprine (2-2.5mg/kg/day) or mercaptopurine (1-1.5mg/kg/day). Methotrexate is an alternative for thiopurine-intolerant patients. Biologic therapies (anti-TNF) are for steroid-refractory or steroid-dependent disease.",
+      "A": "Incorrect — Long-term prednisolone is NOT recommended for Crohn's maintenance — causes significant side effects and does not prevent relapse.",
+      "B": "CORRECT — Azathioprine or mercaptopurine is first-line maintenance therapy for Crohn's remission per NICE NG129.",
+      "C": "Incorrect — Mesalazine (5-ASA) is for ulcerative colitis maintenance — minimal evidence of benefit in Crohn's disease.",
+      "D": "Incorrect — Biologic therapy (infliximab/adalimumab) is for steroid-refractory, steroid-dependent or complex disease — not first-line maintenance.",
+      "E": "Incorrect — Crohn's disease has a high relapse rate without maintenance therapy — maintenance immunomodulator is required."
+    },
+    "reference": "NICE NG129 — Crohn's disease: management. https://www.nice.org.uk/guidance/ng129",
+    "tags": [
+      "Crohn's disease",
+      "maintenance therapy",
+      "azathioprine",
+      "thiopurine",
+      "remission",
+      "NICE NG129"
+    ],
+    "source": "Question Grove 360"
+  },
+  {
+    "id": "QG-GI-133-002",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Gastroenterology",
+    "difficulty": "Hard",
+    "question": "A 28-year-old woman with Crohn's disease is started on azathioprine 2mg/kg/day for maintenance. Before starting azathioprine, which test is essential to assess for life-threatening drug toxicity?",
+    "options": {
+      "A": "Full blood count — anaemia is the main risk",
+      "B": "Thiopurine methyltransferase (TPMT) genotype or enzyme activity — low TPMT activity causes severe bone marrow toxicity",
+      "C": "Renal function — azathioprine is nephrotoxic",
+      "D": "Liver function tests — azathioprine causes hepatotoxicity as primary risk",
+      "E": "G6PD activity — azathioprine causes haemolysis in G6PD deficiency"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per NICE NG129 and BNF, before starting azathioprine or mercaptopurine, TPMT (thiopurine methyltransferase) genotype or enzyme activity MUST be measured. TPMT metabolises thiopurines — low or absent TPMT activity (homozygous or heterozygous deficiency in 0.3% and 11% of population respectively) leads to accumulation of toxic metabolites (6-thioguanine nucleotides) causing severe myelosuppression (bone marrow failure, pancytopenia). Patients with very low/absent TPMT should not receive thiopurines. Intermediate TPMT activity requires dose reduction.",
+      "A": "Incorrect — FBC is monitored during treatment but TPMT testing is the pre-treatment essential test.",
+      "B": "CORRECT — TPMT testing is mandatory before azathioprine to prevent life-threatening myelosuppression per NICE NG129/BNF.",
+      "C": "Incorrect — Azathioprine is not primarily nephrotoxic. Renal function is not the critical pre-treatment test.",
+      "D": "Incorrect — LFTs are monitored during treatment but hepatotoxicity is not the primary life-threatening concern compared to bone marrow failure.",
+      "E": "Incorrect — G6PD testing is not required before azathioprine."
+    },
+    "reference": "NICE NG129 — Crohn's disease. BNF — Azathioprine: TPMT testing.",
+    "tags": [
+      "azathioprine",
+      "TPMT",
+      "thiopurine",
+      "myelosuppression",
+      "Crohn's",
+      "NICE NG129"
+    ],
+    "source": "Question Grove 360"
+  },
+  {
+    "id": "QG-GI-133-003",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Gastroenterology",
+    "difficulty": "Medium",
+    "question": "A 35-year-old man with Crohn's disease on azathioprine 150mg daily for 18 months develops a moderate flare (5 loose stools/day, CRP 48, no systemic compromise). He is currently in maintenance therapy. What is the most appropriate management of this flare?",
+    "options": {
+      "A": "Increase azathioprine dose — insufficient dose causing the flare",
+      "B": "Oral prednisolone 40mg daily with tapering over 8 weeks + continue azathioprine",
+      "C": "Stop azathioprine — it has failed",
+      "D": "Start infliximab immediately — biologic therapy for any Crohn's flare",
+      "E": "IV hydrocortisone and hospital admission for moderate flare"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per NICE NG129, for a moderate Crohn's flare, induction of remission is achieved with oral prednisolone 40mg/day tapering over 8 weeks. The existing maintenance azathioprine should be continued — it is not a failure if a flare occurs (disease activity can break through despite adequate maintenance). If the patient becomes steroid-dependent (requiring prednisolone to maintain remission) or steroid-refractory, then escalation to biologic therapy (anti-TNF or vedolizumab) is considered. IV steroids are for severe flares (>8 stools/day, systemic compromise).",
+      "A": "Incorrect — Increasing azathioprine during an acute flare will not control active inflammation — azathioprine takes months to work.",
+      "B": "CORRECT — Oral prednisolone 40mg with tapering + continue azathioprine for moderate Crohn's flare per NICE NG129.",
+      "C": "Incorrect — A flare on azathioprine does not mean failure — it is still the appropriate maintenance agent.",
+      "D": "Incorrect — Biologic therapy is not first-line for moderate flares. Oral steroids should be used first.",
+      "E": "Incorrect — IV hydrocortisone and hospital admission are for severe flares (systemic compromise, >8 stools/day)."
+    },
+    "reference": "NICE NG129 — Crohn's disease: management. https://www.nice.org.uk/guidance/ng129",
+    "tags": [
+      "Crohn's flare",
+      "prednisolone",
+      "azathioprine",
+      "moderate flare",
+      "NICE NG129",
+      "IBD"
+    ],
+    "source": "Question Grove 360"
+  },
+  {
+    "id": "QG-GI-133-004",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Gastroenterology",
+    "difficulty": "Hard",
+    "question": "A 30-year-old woman with Crohn's disease has had three courses of oral steroids in 12 months (steroid-dependent). She is on azathioprine 2mg/kg. Her gastroenterologist is considering escalating therapy. Per NICE guidance, what is the most appropriate next step?",
+    "options": {
+      "A": "Increase prednisolone to 60mg and continue indefinitely",
+      "B": "Switch azathioprine to methotrexate",
+      "C": "Add adalimumab or infliximab (anti-TNF biologic) — NICE-approved for steroid-dependent Crohn's on thiopurine",
+      "D": "Add mesalazine 2.4g daily",
+      "E": "Refer for surgical bowel resection as first option"
+    },
+    "correct_answer": "C",
+    "explanation": {
+      "correct": "Per NICE TA187 and TA352 (adalimumab/infliximab for Crohn's disease), anti-TNF biologic therapy is indicated for moderate-severe active Crohn's disease that has not responded to conventional therapy (corticosteroids + thiopurine immunomodulator). Steroid-dependence (requiring ≥3 courses per year or unable to taper below prednisolone 10mg without relapse) while on thiopurine maintenance meets the criteria for biologic escalation. Options include adalimumab (SC) or infliximab (IV), or ustekinumab/vedolizumab as alternatives.",
+      "A": "Incorrect — Long-term high-dose prednisolone is not appropriate maintenance — causes severe side effects.",
+      "B": "Incorrect — Switching thiopurine to methotrexate is an option if thiopurine intolerant but does not address steroid dependence requiring escalation.",
+      "C": "CORRECT — Anti-TNF biologic (adalimumab/infliximab) is NICE-approved for steroid-dependent Crohn's on thiopurine per NICE TA187/TA352.",
+      "D": "Incorrect — Mesalazine has no role in Crohn's disease maintenance.",
+      "E": "Incorrect — Surgery is an option for specific complications (strictures, fistulae, failure of medical therapy) — not first step for steroid-dependent luminal disease."
+    },
+    "reference": "NICE TA187 — Infliximab for Crohn's disease. NICE TA352 — Adalimumab for Crohn's disease.",
+    "tags": [
+      "Crohn's disease",
+      "biologic therapy",
+      "adalimumab",
+      "steroid dependent",
+      "anti-TNF",
+      "NICE TA187"
+    ],
+    "source": "Question Grove 360"
+  },
+  {
+    "id": "QG-GI-133-005",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Gastroenterology",
+    "difficulty": "Easy",
+    "question": "A 25-year-old woman with newly diagnosed Crohn's disease asks about the role of smoking in her condition. What is the most accurate and important advice regarding smoking and Crohn's disease?",
+    "options": {
+      "A": "Smoking reduces Crohn's disease activity — she should not be advised to stop",
+      "B": "Smoking has no effect on Crohn's disease — only ulcerative colitis is affected",
+      "C": "Smoking significantly worsens Crohn's disease — it increases relapse rates, medication requirements and surgical risk; smoking cessation should be strongly advised",
+      "D": "Smoking reduces IBD risk — it protects against both Crohn's and UC",
+      "E": "Passive smoking affects UC but active smoking protects against Crohn's"
+    },
+    "correct_answer": "C",
+    "explanation": {
+      "correct": "Smoking has opposing effects on IBD: it WORSENS Crohn's disease (increases disease activity, relapse rates, corticosteroid and immunosuppressant requirements, and post-operative recurrence) but paradoxically has a protective effect on ulcerative colitis (UC flares often worse after stopping smoking). Per NICE NG129, smoking cessation must be strongly advised for all Crohn's patients — it is one of the most important modifiable risk factors. The mechanism involves effects on mucosal immunity, gut microbiome and intestinal permeability.",
+      "A": "Incorrect — Smoking worsens Crohn's disease. This advice would be dangerous.",
+      "B": "Incorrect — Smoking affects both conditions but in OPPOSITE directions — worsens Crohn's, (paradoxically) may protect UC.",
+      "C": "CORRECT — Smoking worsens Crohn's disease significantly. Smoking cessation is strongly recommended per NICE NG129.",
+      "D": "Incorrect — Smoking worsens Crohn's disease. It does not protect against it.",
+      "E": "Incorrect — Active smoking worsens Crohn's disease — there is no protective effect."
+    },
+    "reference": "NICE NG129 — Crohn's disease: management. https://www.nice.org.uk/guidance/ng129",
+    "tags": [
+      "Crohn's disease",
+      "smoking",
+      "smoking cessation",
+      "relapse",
+      "NICE NG129",
+      "modifiable risk factor"
+    ],
+    "source": "Question Grove 360"
+  }
+]

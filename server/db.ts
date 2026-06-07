@@ -1,4 +1,4 @@
-import { eq, and, lte } from "drizzle-orm";
+import { eq, and, lte, gte, asc } from "drizzle-orm";
 import { drizzle } from "drizzle-orm/mysql2";
 import { InsertUser, users } from "../drizzle/schema";
 import { ENV } from './_core/env';
@@ -443,5 +443,158 @@ export async function updateProfileByStripeSubscriptionId(
   } catch (error) {
     console.error("[Database] Failed to update profile by stripe subscription ID:", error);
     return false;
+  }
+}
+
+
+// Progress Dashboard queries
+export async function getMockExamScoreTrends(userId: number, days: number = 30) {
+  const db = await getDb();
+  if (!db) return [];
+
+  try {
+    const { mockResults } = await import("../drizzle/schema");
+    const cutoffDate = new Date();
+    cutoffDate.setDate(cutoffDate.getDate() - days);
+
+    const results = await db
+      .select()
+      .from(mockResults)
+      .where(and(
+        eq(mockResults.userId, userId),
+        gte(mockResults.completedAt, cutoffDate)
+      ))
+      .orderBy(asc(mockResults.completedAt));
+
+    return results.map((r) => ({
+      date: r.completedAt,
+      score: r.score || 0,
+      percentage: parseFloat(r.percentage || "0"),
+      totalQuestions: r.totalQuestions || 0,
+      timeTaken: r.timeTaken || 0,
+      passed: r.passed || false,
+    }));
+  } catch (error) {
+    console.error("[Database] Failed to get mock exam score trends:", error);
+    return [];
+  }
+}
+
+export async function getFlashcardMasteryStats(userId: number) {
+  const db = await getDb();
+  if (!db) return { total: 0, mastered: 0, reviewing: 0, learning: 0, masteryPercentage: 0 };
+
+  try {
+    const { userSrsProgress } = await import("../drizzle/schema");
+    
+    const allCards = await db
+      .select()
+      .from(userSrsProgress)
+      .where(eq(userSrsProgress.userId, userId));
+
+    const mastered = allCards.filter(c => (c.repetitions || 0) >= 20).length;
+    const reviewing = allCards.filter(c => (c.repetitions || 0) >= 5 && (c.repetitions || 0) < 20).length;
+    const learning = allCards.filter(c => (c.repetitions || 0) < 5).length;
+
+    return {
+      total: allCards.length,
+      mastered,
+      reviewing,
+      learning,
+      masteryPercentage: allCards.length > 0 ? Math.round((mastered / allCards.length) * 100) : 0,
+    };
+  } catch (error) {
+    console.error("[Database] Failed to get flashcard mastery stats:", error);
+    return { total: 0, mastered: 0, reviewing: 0, learning: 0, masteryPercentage: 0 };
+  }
+}
+
+export async function getFlashcardProgressTrend(userId: number, days: number = 30) {
+  const db = await getDb();
+  if (!db) return [];
+
+  try {
+    const { userSrsProgress } = await import("../drizzle/schema");
+    const cutoffDate = new Date();
+    cutoffDate.setDate(cutoffDate.getDate() - days);
+
+    const results = await db
+      .select()
+      .from(userSrsProgress)
+      .where(and(
+        eq(userSrsProgress.userId, userId),
+        gte(userSrsProgress.lastReviewed, cutoffDate)
+      ))
+      .orderBy(asc(userSrsProgress.lastReviewed));
+
+    // Group by date and calculate daily mastery
+    const dailyStats: Record<string, { reviewed: number; mastered: number }> = {};
+    
+    results.forEach((r) => {
+      const dateStr = r.lastReviewed?.toISOString().split('T')[0] || '';
+      if (!dailyStats[dateStr]) {
+        dailyStats[dateStr] = { reviewed: 0, mastered: 0 };
+      }
+      dailyStats[dateStr].reviewed += 1;
+      if ((r.repetitions || 0) >= 20) {
+        dailyStats[dateStr].mastered += 1;
+      }
+    });
+
+    return Object.entries(dailyStats).map(([date, stats]) => ({
+      date: new Date(date),
+      cardsReviewed: stats.reviewed,
+      cardsMastered: stats.mastered,
+      masteryPercentage: stats.reviewed > 0 ? Math.round((stats.mastered / stats.reviewed) * 100) : 0,
+    }));
+  } catch (error) {
+    console.error("[Database] Failed to get flashcard progress trend:", error);
+    return [];
+  }
+}
+
+export async function getSpecialtyBreakdown(userId: number, days: number = 30) {
+  const db = await getDb();
+  if (!db) return [];
+
+  try {
+    const { userAttempts, questions } = await import("../drizzle/schema");
+    const cutoffDate = new Date();
+    cutoffDate.setDate(cutoffDate.getDate() - days);
+
+    const attempts = await db
+      .select({
+        specialty: questions.specialty,
+        correct: userAttempts.isCorrect,
+      })
+      .from(userAttempts)
+      .innerJoin(questions, eq(userAttempts.questionId, questions.id))
+      .where(and(
+        eq(userAttempts.userId, userId),
+        gte(userAttempts.createdAt, cutoffDate)
+      ));
+
+    const specialtyStats: Record<string, { total: number; correct: number }> = {};
+    
+    attempts.forEach((a) => {
+      const specialty = a.specialty || 'Unknown';
+      if (!specialtyStats[specialty]) {
+        specialtyStats[specialty] = { total: 0, correct: 0 };
+      }
+      specialtyStats[specialty].total += 1;
+      if (a.correct) {
+        specialtyStats[specialty].correct += 1;
+      }
+    });
+
+    return Object.entries(specialtyStats).map(([specialty, stats]) => ({
+      specialty,
+      total: stats.total,
+      correct: stats.correct,
+      accuracy: stats.total > 0 ? Math.round((stats.correct / stats.total) * 100) : 0,
+    }));
+  } catch (error) {
+    console.error("[Database] Failed to get specialty breakdown:", error);
+    return [];
   }
 }

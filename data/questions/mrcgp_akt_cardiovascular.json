@@ -1,0 +1,522 @@
+[
+  {
+    "id": "AKT-CV-001",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Cardiovascular",
+    "difficulty": "Medium",
+    "question": "A 68-year-old man with hypertension and type 2 diabetes presents with a blood pressure of 158/92 mmHg despite being on amlodipine 10mg. His eGFR is 52 ml/min/1.73m² and urine ACR is 45 mg/mmol. What is the most appropriate next step in management?",
+    "options": {
+      "A": "Add ramipril 2.5mg once daily",
+      "B": "Add losartan 50mg once daily",
+      "C": "Add bendroflumethiazide 2.5mg once daily",
+      "D": "Increase amlodipine to 15mg once daily",
+      "E": "Add doxazosin 1mg once daily"
+    },
+    "correct_answer": "A",
+    "explanation": {
+      "correct": "Ramipril (an ACE inhibitor) is the correct choice. In a patient with type 2 diabetes and an elevated urine ACR (>3 mg/mmol indicating diabetic nephropathy), NICE guidelines recommend an ACE inhibitor as the preferred add-on antihypertensive as it provides renoprotective benefits by reducing intraglomerular pressure. The eGFR of 52 is above the threshold where ACE inhibitors are contraindicated.",
+      "A": "CORRECT — ACE inhibitor is first-line add-on in diabetes with nephropathy per NICE NG28.",
+      "B": "Incorrect — ARBs (losartan) are used if ACE inhibitors are not tolerated due to cough, not as first choice.",
+      "C": "Incorrect — Thiazide diuretics are step 3 in NICE hypertension guidelines and have less renoprotective benefit. Also worsen glycaemic control.",
+      "D": "Incorrect — Maximum licensed dose of amlodipine is 10mg. Cannot increase further.",
+      "E": "Incorrect — Doxazosin (alpha blocker) is step 4 in NICE hypertension guidelines and not indicated here."
+    },
+    "reference": "NICE NG28 — Type 2 diabetes in adults: management. https://www.nice.org.uk/guidance/ng28",
+    "tags": ["hypertension", "diabetes", "nephropathy", "ACE inhibitor", "NICE NG28"]
+  },
+  {
+    "id": "AKT-CV-002",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Cardiovascular",
+    "difficulty": "Medium",
+    "question": "A 72-year-old woman is started on atorvastatin 20mg for primary prevention of cardiovascular disease. She returns 8 weeks later complaining of muscle aches in her thighs and calves. Her CK level is 520 U/L (normal <200 U/L). What is the most appropriate management?",
+    "options": {
+      "A": "Stop atorvastatin and do not rechallenge",
+      "B": "Reduce atorvastatin to 10mg and recheck CK in 4 weeks",
+      "C": "Stop atorvastatin, recheck CK in 6 weeks, consider rechallenge with lower dose when CK normalises",
+      "D": "Switch to rosuvastatin 10mg immediately",
+      "E": "Continue atorvastatin and add CoQ10 supplementation"
+    },
+    "correct_answer": "C",
+    "explanation": {
+      "correct": "Per NICE guidelines, if a patient develops myopathy symptoms with a CK >5x upper limit of normal (>1000 U/L), the statin should be stopped. However, at 520 U/L (approximately 2.5x ULN), NICE recommends stopping the statin, allowing symptoms to resolve and CK to normalise, then considering rechallenge with a lower dose or alternative statin.",
+      "A": "Incorrect — Permanent discontinuation without rechallenge is premature at this CK level. NICE recommends considering rechallenge after normalisation.",
+      "B": "Incorrect — Reducing the dose while symptoms persist risks ongoing muscle damage. The statin should be stopped first.",
+      "C": "CORRECT — Stop statin, recheck CK after 6 weeks, rechallenge when normalised per NICE CG181.",
+      "D": "Incorrect — Switching to another statin immediately while CK is elevated is inappropriate. Allow washout first.",
+      "E": "Incorrect — CoQ10 supplementation has no evidence base in NICE guidelines for statin myopathy management."
+    },
+    "reference": "NICE CG181 — Cardiovascular disease: risk assessment and reduction. https://www.nice.org.uk/guidance/cg181",
+    "tags": ["statin", "myopathy", "CK", "atorvastatin", "primary prevention"]
+  },
+  {
+    "id": "AKT-CV-003",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Cardiovascular",
+    "difficulty": "Hard",
+    "question": "A 55-year-old man with known atrial fibrillation is on warfarin with a target INR of 2-3. His last four INR readings over 12 weeks were: 1.6, 1.8, 2.1, 1.7. His GP calculates his Time in Therapeutic Range (TTR). What is the most appropriate next step?",
+    "options": {
+      "A": "Continue warfarin and recheck INR in 4 weeks",
+      "B": "Switch to a direct oral anticoagulant (DOAC)",
+      "C": "Increase warfarin dose by 10% and recheck in 2 weeks",
+      "D": "Refer to anticoagulation clinic for dose adjustment",
+      "E": "Add aspirin 75mg to improve stroke prevention"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "The TTR here is poor — only 1 of 4 readings is in range (25% TTR). NICE NG196 recommends that if TTR is consistently below 65-70%, switching to a DOAC (such as apixaban, rivaroxaban, or edoxaban) should be considered, as DOACs offer more predictable anticoagulation without routine monitoring.",
+      "A": "Incorrect — Simply rechecking without action is inappropriate given the consistently subtherapeutic INR and poor TTR.",
+      "B": "CORRECT — Poor TTR (<65%) is an indication to switch to a DOAC per NICE NG196.",
+      "C": "Incorrect — Dose adjustment alone without addressing the pattern of poor control is insufficient.",
+      "D": "Incorrect — Referral to anticoagulation clinic may help but does not address the fundamental issue of poor warfarin control. DOAC switch is the recommended action.",
+      "E": "Incorrect — Adding aspirin to warfarin significantly increases bleeding risk without additional stroke prevention benefit in AF."
+    },
+    "reference": "NICE NG196 — Atrial fibrillation: diagnosis and management. https://www.nice.org.uk/guidance/ng196",
+    "tags": ["atrial fibrillation", "warfarin", "TTR", "DOAC", "anticoagulation", "NICE NG196"]
+  },
+  {
+    "id": "AKT-CV-004",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Cardiovascular",
+    "difficulty": "Easy",
+    "question": "A 62-year-old woman presents with a 3-month history of central chest tightness on exertion, relieved by rest within 5 minutes. She has no chest pain at rest. ECG is normal. What is the most appropriate initial investigation?",
+    "options": {
+      "A": "Exercise tolerance test",
+      "B": "CT coronary angiography",
+      "C": "Coronary angiography",
+      "D": "24-hour Holter monitor",
+      "E": "Echocardiogram"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "NICE NG185 (Chest pain of recent onset) recommends CT coronary angiography (CTCA) as the first-line investigation for patients with suspected stable angina. It has replaced exercise tolerance testing as the initial investigation of choice due to its high sensitivity and specificity for coronary artery disease.",
+      "A": "Incorrect — Exercise tolerance test is no longer the first-line investigation for stable chest pain per NICE NG185 updated guidelines.",
+      "B": "CORRECT — CTCA is recommended as first-line investigation for stable chest pain per NICE NG185.",
+      "C": "Incorrect — Invasive coronary angiography is reserved for cases where revascularisation is being considered, not as initial investigation.",
+      "D": "Incorrect — 24-hour Holter is used for suspected arrhythmias, not angina.",
+      "E": "Incorrect — Echocardiogram assesses cardiac structure and function but does not diagnose coronary artery disease directly."
+    },
+    "reference": "NICE NG185 — Chest pain of recent onset. https://www.nice.org.uk/guidance/ng185",
+    "tags": ["angina", "chest pain", "CTCA", "investigation", "NICE NG185"]
+  },
+  {
+    "id": "AKT-CV-005",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Cardiovascular",
+    "difficulty": "Medium",
+    "question": "A 78-year-old man with heart failure with reduced ejection fraction (HFrEF, EF 32%) is already on bisoprolol 5mg and ramipril 5mg. His recent BNP is 650 pg/mL. He is not on an aldosterone antagonist. Which additional treatment has the strongest evidence for reducing mortality in this patient?",
+    "options": {
+      "A": "Add spironolactone 25mg",
+      "B": "Add furosemide 40mg",
+      "C": "Add digoxin 125 micrograms",
+      "D": "Add dapagliflozin 10mg",
+      "E": "Add ivabradine 5mg"
+    },
+    "correct_answer": "A",
+    "explanation": {
+      "correct": "Spironolactone (an aldosterone antagonist/MRA) has strong mortality benefit in HFrEF and is part of the NICE-recommended triple therapy alongside ACE inhibitor and beta blocker. The RALES trial demonstrated 30% reduction in mortality. It is the most appropriate next step in this patient who is not yet on an MRA.",
+      "A": "CORRECT — Aldosterone antagonist (spironolactone) is indicated in HFrEF already on ACE inhibitor and beta blocker per NICE NG106.",
+      "B": "Incorrect — Furosemide improves symptoms but has no proven mortality benefit in heart failure.",
+      "C": "Incorrect — Digoxin reduces hospitalisations but has not shown mortality benefit and is used only for rate control in AF or refractory symptoms.",
+      "D": "Incorrect — Dapagliflozin (SGLT2 inhibitor) has emerging evidence in HFrEF but current NICE guidelines prioritise MRA first in this scenario.",
+      "E": "Incorrect — Ivabradine is used in HFrEF with resting HR >75 bpm in sinus rhythm, but only after optimising ACE inhibitor, beta blocker and MRA."
+    },
+    "reference": "NICE NG106 — Chronic heart failure in adults: diagnosis and management. https://www.nice.org.uk/guidance/ng106",
+    "tags": ["heart failure", "HFrEF", "spironolactone", "MRA", "mortality", "NICE NG106"]
+  },
+  {
+    "id": "AKT-CV-006",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Cardiovascular",
+    "difficulty": "Medium",
+    "question": "A 45-year-old woman with no significant past medical history has a new diagnosis of hypertension with a clinic BP of 148/94 mmHg confirmed on ABPM. Her 10-year QRISK3 score is 8%. What is the most appropriate first-line antihypertensive?",
+    "options": {
+      "A": "Amlodipine 5mg once daily",
+      "B": "Ramipril 2.5mg once daily",
+      "C": "Losartan 50mg once daily",
+      "D": "Bendroflumethiazide 2.5mg once daily",
+      "E": "Bisoprolol 2.5mg once daily"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per NICE NG136 (Hypertension in adults), for patients under 55 years old, an ACE inhibitor (ramipril) is the recommended first-line antihypertensive. This is because younger patients tend to have higher renin states and respond better to ACE inhibitors or ARBs.",
+      "A": "Incorrect — Amlodipine (calcium channel blocker) is first-line for patients aged 55 and over, or of Black African/Caribbean heritage at any age.",
+      "B": "CORRECT — ACE inhibitor is first-line for patients under 55 years old per NICE NG136.",
+      "C": "Incorrect — ARB (losartan) is used if ACE inhibitor is not tolerated, not as first choice.",
+      "D": "Incorrect — Thiazide diuretics are step 3 in NICE hypertension treatment algorithm.",
+      "E": "Incorrect — Beta blockers are not recommended as routine antihypertensives in NICE guidelines unless there is a specific indication."
+    },
+    "reference": "NICE NG136 — Hypertension in adults: diagnosis and management. https://www.nice.org.uk/guidance/ng136",
+    "tags": ["hypertension", "ACE inhibitor", "first-line", "NICE NG136", "under 55"]
+  },
+  {
+    "id": "AKT-CV-007",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Cardiovascular",
+    "difficulty": "Hard",
+    "question": "A 70-year-old man presents with sudden onset severe tearing chest pain radiating to his back. His BP is 180/100 mmHg in the right arm and 155/90 mmHg in the left arm. ECG shows left ventricular hypertrophy. What is the most appropriate immediate action in primary care?",
+    "options": {
+      "A": "Give aspirin 300mg and arrange urgent cardiology review",
+      "B": "Call 999 for emergency ambulance immediately",
+      "C": "Arrange urgent CT aorta within 4 hours",
+      "D": "Give GTN spray and monitor response",
+      "E": "Give IV labetalol to reduce blood pressure"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "This presentation is classic for aortic dissection — sudden onset tearing chest pain radiating to the back, BP differential between arms >20 mmHg, and hypertension with LVH. This is a life-threatening emergency requiring immediate 999 call for blue-light transfer to hospital. No investigations or treatments should delay transfer.",
+      "A": "Incorrect — Aspirin is contraindicated in aortic dissection as it increases bleeding risk. This presentation is not ACS.",
+      "B": "CORRECT — Immediate 999 call is the only appropriate action. Aortic dissection is a surgical emergency.",
+      "C": "Incorrect — CT aorta should be done in hospital, not arranged from primary care. Delay would be dangerous.",
+      "D": "Incorrect — GTN is used for ACS/angina. It may worsen haemodynamic instability in aortic dissection.",
+      "E": "Incorrect — IV labetalol may be used in hospital management but is not appropriate in a primary care setting. Transfer must not be delayed."
+    },
+    "reference": "ESC Guidelines on Aortic Diseases 2014. NICE — Chest pain guidance NG185.",
+    "tags": ["aortic dissection", "emergency", "chest pain", "BP differential", "999"]
+  },
+  {
+    "id": "AKT-CV-008",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Cardiovascular",
+    "difficulty": "Medium",
+    "question": "A 66-year-old man with hypertension is started on lisinopril 5mg. Two weeks later his blood results show: creatinine 138 umol/L (was 112 umol/L), potassium 5.2 mmol/L, eGFR 48 (was 58). He feels well. What is the most appropriate action?",
+    "options": {
+      "A": "Stop lisinopril immediately and refer to nephrology",
+      "B": "Continue lisinopril — a rise in creatinine up to 30% and mild hyperkalaemia is acceptable",
+      "C": "Reduce lisinopril to 2.5mg and recheck bloods in 2 weeks",
+      "D": "Stop lisinopril and switch to amlodipine",
+      "E": "Add furosemide to protect the kidneys"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "NICE and SIGN guidelines accept a rise in creatinine of up to 30% from baseline and/or a fall in eGFR of up to 25% after starting an ACE inhibitor or ARB. This patient's creatinine rose from 112 to 138 — a rise of 23%, which is within acceptable limits. Potassium of 5.2 is mildly elevated but acceptable. These changes are expected due to reduced angiotensin II-mediated vasoconstriction of efferent arterioles.",
+      "A": "Incorrect — The rise in creatinine is within the acceptable 30% threshold. Stopping lisinopril is unnecessary.",
+      "B": "CORRECT — Up to 30% rise in creatinine is acceptable with ACE inhibitor initiation per NICE guidance.",
+      "C": "Incorrect — Dose reduction is not indicated as the changes are within acceptable parameters.",
+      "D": "Incorrect — Switching is unnecessary and would deprive the patient of the renoprotective benefits of ACE inhibitor.",
+      "E": "Incorrect — Adding furosemide may worsen renal function by reducing renal perfusion."
+    },
+    "reference": "NICE NG136. SIGN 149 — Risk estimation and the prevention of cardiovascular disease.",
+    "tags": ["ACE inhibitor", "creatinine rise", "lisinopril", "renal monitoring", "hyperkalaemia"]
+  },
+  {
+    "id": "AKT-CV-009",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Cardiovascular",
+    "difficulty": "Easy",
+    "question": "A 58-year-old man is diagnosed with atrial fibrillation. His CHA2DS2-VASc score is calculated as 3. He has no contraindications to anticoagulation. What is the most appropriate management?",
+    "options": {
+      "A": "Aspirin 75mg daily",
+      "B": "Clopidogrel 75mg daily",
+      "C": "Apixaban 5mg twice daily",
+      "D": "Warfarin with target INR 2-3",
+      "E": "No anticoagulation required at this score"
+    },
+    "correct_answer": "C",
+    "explanation": {
+      "correct": "A CHA2DS2-VASc score of 2 or more in men (or 3 or more in women) indicates anticoagulation is recommended per NICE NG196. DOACs (apixaban, rivaroxaban, edoxaban, dabigatran) are preferred over warfarin due to more predictable pharmacokinetics, fewer interactions, and no requirement for routine INR monitoring. Apixaban is commonly chosen due to its favourable bleeding profile.",
+      "A": "Incorrect — Aspirin is not recommended for stroke prevention in AF per NICE NG196. It carries bleeding risk without adequate stroke prevention.",
+      "B": "Incorrect — Clopidogrel has no role in AF stroke prevention.",
+      "C": "CORRECT — DOAC (apixaban) is the preferred anticoagulant for AF with CHA2DS2-VASc ≥2 (men) per NICE NG196.",
+      "D": "Incorrect — Warfarin is second-line to DOACs unless there is a specific reason (e.g. valvular AF, renal failure).",
+      "E": "Incorrect — A score of 3 clearly warrants anticoagulation."
+    },
+    "reference": "NICE NG196 — Atrial fibrillation: diagnosis and management. https://www.nice.org.uk/guidance/ng196",
+    "tags": ["atrial fibrillation", "CHA2DS2-VASc", "anticoagulation", "apixaban", "DOAC", "NICE NG196"]
+  },
+  {
+    "id": "AKT-CV-010",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Cardiovascular",
+    "difficulty": "Medium",
+    "question": "A 52-year-old man is found to have a BP of 162/98 mmHg at a routine check. He is asked to perform home blood pressure monitoring. His average home BP readings over 7 days are 148/94 mmHg. He has no target organ damage. What stage of hypertension does he have and what is the recommended management?",
+    "options": {
+      "A": "Stage 1 hypertension — lifestyle advice only, no medication",
+      "B": "Stage 1 hypertension — lifestyle advice and offer antihypertensive drug treatment",
+      "C": "Stage 2 hypertension — lifestyle advice and offer antihypertensive drug treatment",
+      "D": "Stage 3 hypertension — same-day specialist referral",
+      "E": "White coat hypertension — no treatment required"
+    },
+    "correct_answer": "C",
+    "explanation": {
+      "correct": "Per NICE NG136, Stage 2 hypertension is defined as clinic BP ≥160/100 mmHg OR home/ABPM daytime average ≥150/95 mmHg. This patient has home BP of 148/94 which with clinic BP of 162/98 confirms Stage 2. NICE recommends lifestyle advice AND antihypertensive drug treatment for Stage 2 regardless of cardiovascular risk.",
+      "A": "Incorrect — This is Stage 2, not Stage 1. Stage 1 would be clinic BP 140-159/90-99 with home BP 135-149/85-94.",
+      "B": "Incorrect — Stage 1 classification is incorrect here.",
+      "C": "CORRECT — Stage 2 hypertension (home BP ≥150/95) requires lifestyle advice and drug treatment per NICE NG136.",
+      "D": "Incorrect — Stage 3 (severe) is clinic BP ≥180/120 mmHg requiring same-day assessment.",
+      "E": "Incorrect — Home BP confirms true hypertension, ruling out white coat hypertension."
+    },
+    "reference": "NICE NG136 — Hypertension in adults: diagnosis and management. https://www.nice.org.uk/guidance/ng136",
+    "tags": ["hypertension", "staging", "ABPM", "home BP", "NICE NG136", "stage 2"]
+  },
+  {
+    "id": "AKT-CV-011",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Cardiovascular",
+    "difficulty": "Hard",
+    "question": "A 74-year-old woman with heart failure (EF 38%) and AF is on bisoprolol 2.5mg, ramipril 5mg, spironolactone 25mg and apixaban. Her resting heart rate is 88 bpm. She is in sinus rhythm on ECG today. Her symptoms are NYHA class II. Which addition would be most appropriate to consider?",
+    "options": {
+      "A": "Increase bisoprolol to 5mg",
+      "B": "Add ivabradine 5mg twice daily",
+      "C": "Add digoxin 125 micrograms daily",
+      "D": "Add dapagliflozin 10mg daily",
+      "E": "Add amlodipine 5mg daily"
+    },
+    "correct_answer": "A",
+    "explanation": {
+      "correct": "Before considering ivabradine, beta blockers should be uptitrated to the maximum tolerated dose. Bisoprolol 2.5mg is a low dose with room to increase. NICE NG106 recommends uptitrating beta blockers before adding ivabradine. The target heart rate in HFrEF is <75 bpm. Increasing bisoprolol is the most appropriate next step.",
+      "A": "CORRECT — Uptitrate beta blocker to maximum tolerated dose before adding ivabradine per NICE NG106.",
+      "B": "Incorrect — Ivabradine is indicated when HR remains >75 bpm despite maximum tolerated beta blocker dose in sinus rhythm. Beta blocker should be optimised first.",
+      "C": "Incorrect — Digoxin may be considered for rate control in AF, but this patient is in sinus rhythm. Not the priority here.",
+      "D": "Incorrect — Dapagliflozin (SGLT2i) has evidence in HFrEF (DAPA-HF trial) but current NICE guidelines prioritise optimising existing therapy first.",
+      "E": "Incorrect — Amlodipine has no mortality benefit in HFrEF and may worsen fluid retention."
+    },
+    "reference": "NICE NG106 — Chronic heart failure in adults. https://www.nice.org.uk/guidance/ng106",
+    "tags": ["heart failure", "HFrEF", "ivabradine", "bisoprolol", "uptitration", "NICE NG106"]
+  },
+  {
+    "id": "AKT-CV-012",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Cardiovascular",
+    "difficulty": "Medium",
+    "question": "A 60-year-old man had a myocardial infarction 6 weeks ago. He was discharged on aspirin, ticagrelor, atorvastatin, ramipril and bisoprolol. He now presents asking when he can return to driving his private car. What is the correct advice?",
+    "options": {
+      "A": "He can drive immediately as he is now on treatment",
+      "B": "He must not drive for 4 weeks after MI",
+      "C": "He must not drive for 6 weeks after MI",
+      "D": "He must not drive for 3 months after MI",
+      "E": "He must inform the DVLA and cannot drive until cleared"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "DVLA guidance states that after a myocardial infarction, patients holding a standard (Group 1) driving licence for a private car must not drive for at least 4 weeks. They can resume driving after 4 weeks if they do not have any other disqualifying conditions, without needing to notify the DVLA. This applies to Group 1 (car/motorcycle) licence holders.",
+      "A": "Incorrect — Treatment status does not override the mandatory 4-week driving restriction.",
+      "B": "CORRECT — 4 weeks off driving for Group 1 licence holders after MI per DVLA guidance.",
+      "C": "Incorrect — 6 weeks applies to certain cardiac procedures, not uncomplicated MI for Group 1.",
+      "D": "Incorrect — 3 months applies to Group 2 (HGV/bus) licence holders, not Group 1.",
+      "E": "Incorrect — Group 1 holders do not need to inform DVLA after uncomplicated MI as long as they observe the 4-week restriction."
+    },
+    "reference": "DVLA — Assessing fitness to drive: a guide for medical professionals. https://www.gov.uk/guidance/assessing-fitness-to-drive-a-guide-for-medical-professionals",
+    "tags": ["MI", "driving", "DVLA", "Group 1 licence", "return to driving"]
+  },
+  {
+    "id": "AKT-CV-013",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Cardiovascular",
+    "difficulty": "Easy",
+    "question": "A 48-year-old man presents with palpitations. An ECG shows an irregularly irregular rhythm with no discernible P waves and a ventricular rate of 110 bpm. He is haemodynamically stable. This is his first presentation. What is the most appropriate immediate management in primary care?",
+    "options": {
+      "A": "DC cardioversion immediately",
+      "B": "Start bisoprolol for rate control and refer to cardiology",
+      "C": "Call 999 for emergency admission",
+      "D": "Start anticoagulation and refer for rhythm control",
+      "E": "Prescribe flecainide for chemical cardioversion"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "This ECG is diagnostic of atrial fibrillation. The patient is haemodynamically stable (no hypotension, no chest pain, no pulmonary oedema) so emergency admission is not required. First-line management in primary care is rate control with a beta blocker (bisoprolol) or rate-limiting calcium channel blocker, followed by referral to cardiology for further assessment including rhythm control options and anticoagulation planning per NICE NG196.",
+      "A": "Incorrect — DC cardioversion is performed in hospital for haemodynamically unstable AF or as elective rhythm control after anticoagulation.",
+      "B": "CORRECT — Rate control with bisoprolol and cardiology referral is appropriate for stable new AF in primary care per NICE NG196.",
+      "C": "Incorrect — Emergency admission is required only if haemodynamically unstable. This patient is stable.",
+      "D": "Incorrect — Anticoagulation decision requires CHA2DS2-VASc scoring and should not be started without assessment. Rhythm control is a secondary consideration.",
+      "E": "Incorrect — Flecainide is a specialist-initiated antiarrhythmic and should not be prescribed in primary care without specialist input."
+    },
+    "reference": "NICE NG196 — Atrial fibrillation: diagnosis and management. https://www.nice.org.uk/guidance/ng196",
+    "tags": ["atrial fibrillation", "new diagnosis", "rate control", "bisoprolol", "NICE NG196"]
+  },
+  {
+    "id": "AKT-CV-014",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Cardiovascular",
+    "difficulty": "Hard",
+    "question": "A 65-year-old woman with type 2 diabetes, hypertension and a 10-year QRISK3 score of 22% is not on a statin. Her total cholesterol is 5.4 mmol/L, LDL 3.1 mmol/L, HDL 1.2 mmol/L. She has no contraindications. What is the most appropriate statin to offer?",
+    "options": {
+      "A": "Simvastatin 40mg at night",
+      "B": "Pravastatin 40mg at night",
+      "C": "Atorvastatin 20mg at night",
+      "D": "Atorvastatin 80mg at night",
+      "E": "Rosuvastatin 40mg at night"
+    },
+    "correct_answer": "D",
+    "explanation": {
+      "correct": "Per NICE NG238 (Cardiovascular disease: risk assessment and reduction), for primary prevention in patients with a QRISK3 score ≥10%, atorvastatin 20mg is recommended. However, this patient also has type 2 diabetes with a very high QRISK3 of 22%, making her high-risk. For high-intensity statin therapy, atorvastatin 80mg is recommended for primary prevention in high-risk patients and for ALL patients with type 2 diabetes with additional risk factors.",
+      "A": "Incorrect — Simvastatin 40mg is a moderate-intensity statin and is no longer recommended as first-line per NICE NG238.",
+      "B": "Incorrect — Pravastatin is low-to-moderate intensity and not recommended as first-line.",
+      "C": "Incorrect — Atorvastatin 20mg is used for primary prevention with QRISK3 ≥10% but this patient's high risk and diabetes warrant high-intensity therapy.",
+      "D": "CORRECT — Atorvastatin 80mg (high-intensity) is recommended for high-risk primary prevention and type 2 diabetes with additional risk factors per NICE NG238.",
+      "E": "Incorrect — Rosuvastatin 40mg is high-intensity but atorvastatin 80mg is the NICE-preferred agent."
+    },
+    "reference": "NICE NG238 — Cardiovascular disease: risk assessment and reduction. https://www.nice.org.uk/guidance/ng238",
+    "tags": ["statin", "primary prevention", "QRISK3", "atorvastatin", "diabetes", "NICE NG238"]
+  },
+  {
+    "id": "AKT-CV-015",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Cardiovascular",
+    "difficulty": "Medium",
+    "question": "A 55-year-old man with stable angina is on aspirin 75mg, bisoprolol 5mg and sublingual GTN. He continues to have angina on minimal exertion. What is the most appropriate next step in his medical management?",
+    "options": {
+      "A": "Add long-acting nitrate (isosorbide mononitrate)",
+      "B": "Add amlodipine 5mg",
+      "C": "Add ivabradine 5mg twice daily",
+      "D": "Add nicorandil 10mg twice daily",
+      "E": "Increase bisoprolol to 10mg"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per NICE NG185, if a patient with stable angina remains symptomatic on a beta blocker alone, a calcium channel blocker (amlodipine) should be added as second-line treatment. Adding a CCB to a beta blocker is the recommended combination for symptom control in stable angina.",
+      "A": "Incorrect — Long-acting nitrates are third-line in stable angina management per NICE NG185.",
+      "B": "CORRECT — Adding a calcium channel blocker (amlodipine) is recommended second-line alongside beta blocker per NICE NG185.",
+      "C": "Incorrect — Ivabradine is used in angina when beta blockers are contraindicated or not tolerated, not as add-on therapy.",
+      "D": "Incorrect — Nicorandil is third-line in stable angina per NICE NG185.",
+      "E": "Incorrect — Bisoprolol 5mg is already at a reasonable dose. Adding a CCB is preferable to further uptitration alone."
+    },
+    "reference": "NICE NG185 — Stable angina: management. https://www.nice.org.uk/guidance/cg126",
+    "tags": ["stable angina", "amlodipine", "CCB", "beta blocker", "second-line", "NICE NG185"]
+  },
+  {
+    "id": "AKT-CV-016",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Cardiovascular",
+    "difficulty": "Medium",
+    "question": "A 30-year-old woman who is 20 weeks pregnant presents with a BP of 152/96 mmHg. She has no proteinuria. This is her first elevated reading. Which antihypertensive is most appropriate?",
+    "options": {
+      "A": "Ramipril 2.5mg once daily",
+      "B": "Amlodipine 5mg once daily",
+      "C": "Labetalol 100mg twice daily",
+      "D": "Bendroflumethiazide 2.5mg once daily",
+      "E": "Losartan 50mg once daily"
+    },
+    "correct_answer": "C",
+    "explanation": {
+      "correct": "Labetalol (a combined alpha and beta blocker) is the first-line antihypertensive in pregnancy per NICE NG133 (Hypertension in pregnancy). It is safe in pregnancy and has a well-established evidence base. ACE inhibitors and ARBs are absolutely contraindicated in pregnancy due to teratogenicity.",
+      "A": "Incorrect — ACE inhibitors (ramipril) are absolutely contraindicated in pregnancy — associated with renal dysgenesis and oligohydramnios.",
+      "B": "Incorrect — Amlodipine can be used as second-line in pregnancy but is not first-line.",
+      "C": "CORRECT — Labetalol is first-line antihypertensive in pregnancy per NICE NG133.",
+      "D": "Incorrect — Thiazide diuretics are avoided in pregnancy as they reduce plasma volume which is already physiologically expanded.",
+      "E": "Incorrect — ARBs (losartan) are absolutely contraindicated in pregnancy — same teratogenic risks as ACE inhibitors."
+    },
+    "reference": "NICE NG133 — Hypertension in pregnancy: diagnosis and management. https://www.nice.org.uk/guidance/ng133",
+    "tags": ["hypertension in pregnancy", "labetalol", "antihypertensive", "NICE NG133", "contraindicated in pregnancy"]
+  },
+  {
+    "id": "AKT-CV-017",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Cardiovascular",
+    "difficulty": "Easy",
+    "question": "A 67-year-old man presents with sudden onset severe central chest pain radiating to his left arm. He is sweating and pale. ECG shows ST elevation in leads II, III and aVF. What territory is affected and what is the most appropriate immediate action?",
+    "options": {
+      "A": "Anterior MI — give aspirin and arrange urgent echocardiogram",
+      "B": "Inferior MI — call 999 immediately and give aspirin 300mg",
+      "C": "Lateral MI — give GTN spray and reassess in 15 minutes",
+      "D": "Posterior MI — arrange urgent cardiology outpatient referral",
+      "E": "Inferior MI — give aspirin and arrange same-day hospital admission"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "ST elevation in leads II, III and aVF indicates an inferior STEMI, typically due to right coronary artery occlusion. This is a time-critical emergency requiring immediate 999 call for primary PCI (pPCI). Aspirin 300mg should be given immediately while awaiting ambulance. Every minute of delay increases myocardial damage — 'time is muscle'.",
+      "A": "Incorrect — The territory is inferior not anterior (anterior would show changes in V1-V4). Echocardiogram is not the priority.",
+      "B": "CORRECT — Inferior STEMI. Call 999 immediately and give aspirin 300mg loading dose.",
+      "C": "Incorrect — GTN may be given for symptom relief but must not delay 999 call. This is not lateral MI.",
+      "D": "Incorrect — Outpatient referral is completely inappropriate for acute STEMI.",
+      "E": "Incorrect — Arranging same-day admission is far too slow. STEMI requires immediate 999 for pPCI within 90 minutes of first medical contact."
+    },
+    "reference": "NICE NG185. ESC STEMI Guidelines 2017. Resuscitation Council UK.",
+    "tags": ["STEMI", "inferior MI", "ST elevation", "999", "aspirin", "emergency"]
+  },
+  {
+    "id": "AKT-CV-018",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Cardiovascular",
+    "difficulty": "Hard",
+    "question": "A 63-year-old man with peripheral arterial disease has an ankle-brachial pressure index (ABPI) of 0.55. He complains of calf pain after walking 200 metres, relieved by rest. What is the most appropriate management?",
+    "options": {
+      "A": "Refer for urgent vascular surgery",
+      "B": "Supervised exercise programme, antiplatelet therapy, statin and cardiovascular risk factor modification",
+      "C": "Start anticoagulation with rivaroxaban",
+      "D": "Prescribe naftidrofuryl oxalate and review in 3 months",
+      "E": "Arrange urgent MR angiography"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "This patient has intermittent claudication with an ABPI of 0.55 (moderate PAD, 0.5-0.9). Per NICE NG237, first-line management includes: supervised exercise programme (minimum 2 hours per week for 3 months), antiplatelet therapy (clopidogrel preferred over aspirin per NICE NG237), high-intensity statin, and cardiovascular risk factor modification (BP, diabetes, smoking cessation).",
+      "A": "Incorrect — Urgent vascular referral is for critical limb ischaemia (ABPI <0.5, rest pain, tissue loss). This patient has stable claudication.",
+      "B": "CORRECT — Supervised exercise, antiplatelet, statin and risk factor modification is first-line for intermittent claudication per NICE NG237.",
+      "C": "Incorrect — Anticoagulation is not indicated for stable claudication.",
+      "D": "Incorrect — Naftidrofuryl oxalate may be considered if supervised exercise fails but is not first-line.",
+      "E": "Incorrect — MR angiography is arranged when considering revascularisation after conservative measures fail, not as first step."
+    },
+    "reference": "NICE NG237 — Peripheral arterial disease: diagnosis and management. https://www.nice.org.uk/guidance/ng237",
+    "tags": ["peripheral arterial disease", "ABPI", "claudication", "supervised exercise", "NICE NG237"]
+  },
+  {
+    "id": "AKT-CV-019",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Cardiovascular",
+    "difficulty": "Medium",
+    "question": "A 58-year-old woman is found to have an asymptomatic abdominal aortic aneurysm (AAA) with a diameter of 4.8 cm on ultrasound screening. What is the most appropriate management?",
+    "options": {
+      "A": "Urgent referral for surgical repair within 2 weeks",
+      "B": "Surveillance ultrasound every 3 months",
+      "C": "Surveillance ultrasound every 12 months",
+      "D": "Refer to vascular surgery for elective repair",
+      "E": "Reassure — no follow-up needed below 5 cm"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per NHS AAA screening programme and NICE guidelines: AAA <3cm — no follow-up needed; 3-4.4cm — annual surveillance; 4.5-5.4cm — 3-monthly surveillance; ≥5.5cm — refer to vascular surgery for consideration of repair. At 4.8cm, this patient falls in the 4.5-5.4cm category requiring 3-monthly surveillance ultrasound.",
+      "A": "Incorrect — Urgent surgical referral is for symptomatic or rapidly expanding AAA, or diameter ≥5.5cm.",
+      "B": "CORRECT — 3-monthly surveillance for AAA 4.5-5.4cm per NHS AAA screening programme.",
+      "C": "Incorrect — Annual surveillance is for AAA 3-4.4cm.",
+      "D": "Incorrect — Vascular surgery referral is for AAA ≥5.5cm.",
+      "E": "Incorrect — No follow-up is only for AAA <3cm."
+    },
+    "reference": "NHS AAA Screening Programme. NICE — Abdominal aortic aneurysm guidance.",
+    "tags": ["AAA", "abdominal aortic aneurysm", "screening", "surveillance", "ultrasound"]
+  },
+  {
+    "id": "AKT-CV-020",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Cardiovascular",
+    "difficulty": "Medium",
+    "question": "A 70-year-old man with known heart failure (EF 30%) presents for medication review. He is on ramipril 10mg, bisoprolol 10mg and spironolactone 50mg. His latest blood results: Na 136, K 5.8 mmol/L, creatinine 156 umol/L, eGFR 38. What is the most appropriate action regarding his spironolactone?",
+    "options": {
+      "A": "Continue spironolactone at same dose",
+      "B": "Reduce spironolactone to 25mg and recheck bloods in 1 week",
+      "C": "Stop spironolactone immediately",
+      "D": "Add sodium polystyrene to manage hyperkalaemia",
+      "E": "Switch spironolactone to eplerenone"
+    },
+    "correct_answer": "C",
+    "explanation": {
+      "correct": "Spironolactone should be stopped when potassium rises above 5.5 mmol/L or when eGFR falls below 30 ml/min in heart failure patients per NICE NG106 and BNF guidance. This patient has K+ of 5.8 mmol/L (dangerous hyperkalaemia) and eGFR of 38. The immediate action is to stop spironolactone. Potassium should be rechecked and the patient reviewed urgently.",
+      "A": "Incorrect — Continuing at the same dose with K+ 5.8 risks life-threatening hyperkalaemia and cardiac arrhythmia.",
+      "B": "Incorrect — Dose reduction is insufficient with K+ 5.8. The drug must be stopped.",
+      "C": "CORRECT — Stop spironolactone with K+ >5.5 mmol/L per NICE NG106 and BNF.",
+      "D": "Incorrect — Managing hyperkalaemia with ion exchange resins while continuing the causative agent is inappropriate.",
+      "E": "Incorrect — Switching to eplerenone does not solve the hyperkalaemia — it is also a MRA with similar potassium-raising effects."
+    },
+    "reference": "NICE NG106 — Chronic heart failure in adults. BNF — Spironolactone monitoring.",
+    "tags": ["heart failure", "spironolactone", "hyperkalaemia", "stop", "monitoring", "NICE NG106"]
+  }
+]

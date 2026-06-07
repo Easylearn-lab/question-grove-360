@@ -268,14 +268,24 @@
 - [x] Add date range filter for accuracy trend chart (1W, 2W, 1M, 3M, All)
 
 ## Priority Fixes (June 4, 2026)
-- [ ] Fix 1: Stripe — full checkout, webhook handler, subscription logic (bypass Manus sandbox UI)
-- [ ] Fix 2: Logout button — nav bar, dashboard, mobile menu, user dropdown, settings page
-- [ ] Fix 3: Database tables — create all missing tables with proper schema
-- [ ] Fix 4: Admin panel — question management, user management, coupon management, analytics, admin-only route protection
-- [ ] Fix 5: Question Bank — filters, answer submission, explanations, meaningful empty states
-- [ ] Fix 6: Mock Exams — timer, question palette, scoring, email reports
-- [ ] Fix 7: Flashcards/Pattern Recognition — 3D flip card interface, mastery tracking
-- [ ] Fix 8: Note360 — specialty grid with content loading
-- [ ] Fix 9: Remove "AI" language — full find-and-replace across entire app (keep "AI Coach360" as-is)
-- [ ] Fix 10: Auth persistence — fix page-refresh logout bug
-- [ ] Fix 11: Subscription gating — locked content with subscribe CTA for non-paying users
+- [x] Fix 1: Stripe — full checkout, webhook handler, subscription logic (bypass Manus sandbox UI)
+- [x] Fix 2: Logout button — nav bar, dashboard, mobile menu, user dropdown, settings page
+- [x] Fix 3: Database tables — create all missing tables with proper schema
+- [x] Fix 4: Admin panel — question management, user management, coupon management, analytics, admin-only route protection
+- [x] Fix 5: Question Bank — filters, answer submission, explanations, meaningful empty states
+- [x] Fix 6: Mock Exams — timer, question palette, scoring, email reports
+- [x] Fix 7: Flashcards/Pattern Recognition — 3D flip card interface, mastery tracking
+- [x] Fix 8: Note360 — specialty grid with content loading
+- [x] Fix 9: Remove "AI" language — full find-and-replace across entire app (keep "AI Coach360" as-is)
+- [x] Fix 10: Auth persistence — fix page-refresh logout bug
+- [x] Fix 11: Subscription gating — locked content with subscribe CTA for non-paying users
+- [x] Import 500 MRCGP AKT questions from 18 JSON files into database (10 specialties)
+
+
+## User Progress Dashboard (June 6, 2026)
+- [ ] Create backend queries for mock exam scores and flashcard mastery trends
+- [ ] Build Progress Dashboard page with score trends visualization
+- [ ] Add flashcard mastery breakdown and statistics
+- [ ] Implement date range filtering (1W, 2W, 1M, 3M, All)
+- [ ] Add export to CSV functionality for progress data
+- [ ] Write tests for progress dashboard queries and components

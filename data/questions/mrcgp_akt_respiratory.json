@@ -1,0 +1,522 @@
+[
+  {
+    "id": "AKT-RESP-001",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Respiratory",
+    "difficulty": "Medium",
+    "question": "A 45-year-old man with newly diagnosed asthma is started on a short-acting beta-2 agonist (SABA). He returns 8 weeks later using his reliever inhaler more than 3 times a week. What is the most appropriate next step in management?",
+    "options": {
+      "A": "Add a long-acting beta-2 agonist (LABA)",
+      "B": "Start a low-dose inhaled corticosteroid (ICS)",
+      "C": "Start a leukotriene receptor antagonist (LTRA)",
+      "D": "Refer to respiratory specialist",
+      "E": "Increase SABA dose and review in 4 weeks"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per NICE NG80 (Asthma: diagnosis, monitoring and chronic asthma management), if a patient is using a SABA more than 3 times per week, this indicates uncontrolled asthma requiring step-up. Step 2 in the NICE asthma stepwise approach is to add a low-dose inhaled corticosteroid (ICS) as regular preventer therapy. ICS is the cornerstone of asthma maintenance treatment.",
+      "A": "Incorrect — LABA should never be used without ICS in asthma. Adding a LABA alone (without ICS) increases risk of asthma-related death.",
+      "B": "CORRECT — Low-dose ICS is step 2 in NICE NG80 asthma management when SABA is used >3 times/week.",
+      "C": "Incorrect — LTRA (montelukast) can be considered as an alternative to ICS at step 2 but ICS is preferred first-line.",
+      "D": "Incorrect — Specialist referral is not needed at this stage. Step-up therapy should be tried first.",
+      "E": "Incorrect — Increasing SABA without adding preventer therapy does not address the underlying airway inflammation."
+    },
+    "reference": "NICE NG80 — Asthma: diagnosis, monitoring and chronic asthma management. https://www.nice.org.uk/guidance/ng80",
+    "tags": ["asthma", "ICS", "SABA", "step-up", "NICE NG80", "preventer"]
+  },
+  {
+    "id": "AKT-RESP-002",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Respiratory",
+    "difficulty": "Medium",
+    "question": "A 65-year-old man with a 40 pack-year smoking history presents with progressive breathlessness and a chronic productive cough for the past 3 years. Spirometry shows FEV1/FVC ratio of 0.62 (post-bronchodilator), FEV1 58% predicted. What is the diagnosis and GOLD classification?",
+    "options": {
+      "A": "Asthma — not classified by GOLD",
+      "B": "COPD — GOLD Grade 1 (mild)",
+      "C": "COPD — GOLD Grade 2 (moderate)",
+      "D": "COPD — GOLD Grade 3 (severe)",
+      "E": "Restrictive lung disease — refer for CT chest"
+    },
+    "correct_answer": "C",
+    "explanation": {
+      "correct": "The post-bronchodilator FEV1/FVC <0.70 confirms airflow obstruction consistent with COPD. GOLD classification by FEV1% predicted: Grade 1 (mild) ≥80%, Grade 2 (moderate) 50-79%, Grade 3 (severe) 30-49%, Grade 4 (very severe) <30%. FEV1 of 58% predicted = GOLD Grade 2 (moderate).",
+      "A": "Incorrect — Fixed post-bronchodilator obstruction with smoking history is COPD not asthma. Asthma typically shows reversibility.",
+      "B": "Incorrect — GOLD Grade 1 requires FEV1 ≥80% predicted. This patient has FEV1 58%.",
+      "C": "CORRECT — FEV1/FVC <0.70 confirms COPD. FEV1 58% predicted = GOLD Grade 2 (moderate).",
+      "D": "Incorrect — GOLD Grade 3 requires FEV1 30-49% predicted.",
+      "E": "Incorrect — FEV1/FVC <0.70 indicates obstructive not restrictive pattern (restrictive shows normal or high FEV1/FVC)."
+    },
+    "reference": "GOLD Report 2024 — Global Strategy for Prevention, Diagnosis and Management of COPD. NICE NG115.",
+    "tags": ["COPD", "GOLD", "spirometry", "FEV1", "FVC", "classification"]
+  },
+  {
+    "id": "AKT-RESP-003",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Respiratory",
+    "difficulty": "Easy",
+    "question": "A 70-year-old male ex-smoker with GOLD Grade 2 COPD is on salbutamol PRN only. He has had 2 exacerbations in the past year requiring oral steroids. He has an MRC dyspnoea scale of 3. What is the most appropriate regular inhaler to add?",
+    "options": {
+      "A": "Low-dose ICS alone",
+      "B": "LABA alone (salmeterol)",
+      "C": "LAMA alone (tiotropium)",
+      "D": "LABA + ICS combination inhaler",
+      "E": "LABA + LAMA combination inhaler"
+    },
+    "correct_answer": "C",
+    "explanation": {
+      "correct": "Per NICE NG115 (COPD in over 16s), for patients with COPD who are breathless or have exercise limitation, a long-acting bronchodilator (LABA or LAMA) should be offered. LAMA (tiotropium) is preferred first-line in COPD as it reduces exacerbations more effectively than LABA alone. ICS is not first-line in COPD unless there are frequent exacerbations AND eosinophil count >300.",
+      "A": "Incorrect — ICS alone is not recommended in COPD. It has no bronchodilator effect and minimal benefit without LABA.",
+      "B": "Incorrect — LABA alone is an option but LAMA has stronger evidence for exacerbation reduction.",
+      "C": "CORRECT — LAMA (tiotropium) is recommended as first-line regular bronchodilator in symptomatic COPD per NICE NG115.",
+      "D": "Incorrect — ICS/LABA combination is considered when FEV1 <50% with frequent exacerbations AND eosinophilia, not as first step.",
+      "E": "Incorrect — LABA/LAMA combination may be considered if LAMA alone is insufficient, not as initial therapy."
+    },
+    "reference": "NICE NG115 — Chronic obstructive pulmonary disease in over 16s. https://www.nice.org.uk/guidance/ng115",
+    "tags": ["COPD", "LAMA", "tiotropium", "bronchodilator", "NICE NG115", "exacerbations"]
+  },
+  {
+    "id": "AKT-RESP-004",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Respiratory",
+    "difficulty": "Hard",
+    "question": "A 55-year-old woman presents with a 3-week history of haemoptysis. She is a current smoker with a 30 pack-year history. CXR is normal. What is the most appropriate next step?",
+    "options": {
+      "A": "Reassure and review in 6 weeks",
+      "B": "Arrange urgent CT chest within 2 weeks",
+      "C": "Refer urgently (2-week wait) for suspected lung cancer",
+      "D": "Arrange sputum cytology and review results",
+      "E": "Start empirical antibiotics and reassess"
+    },
+    "correct_answer": "C",
+    "explanation": {
+      "correct": "Per NICE NG12 (Suspected cancer: recognition and referral), unexplained haemoptysis in a patient aged ≥40 who is a current or ex-smoker warrants an urgent 2-week wait (2WW) referral for suspected lung cancer, even with a normal CXR. A normal CXR does not exclude lung cancer — central tumours may not be visible on plain film.",
+      "A": "Incorrect — Reassurance is dangerous here. Haemoptysis in a smoker aged ≥40 must be investigated urgently.",
+      "B": "Incorrect — CT chest should be arranged, but the pathway is via urgent 2WW referral, not self-arranged CT.",
+      "C": "CORRECT — Urgent 2WW referral for haemoptysis in smoker ≥40 per NICE NG12, regardless of CXR result.",
+      "D": "Incorrect — Sputum cytology has low sensitivity and must not delay urgent referral.",
+      "E": "Incorrect — Empirical antibiotics are inappropriate without evidence of infection and delay cancer investigation."
+    },
+    "reference": "NICE NG12 — Suspected cancer: recognition and referral. https://www.nice.org.uk/guidance/ng12",
+    "tags": ["haemoptysis", "lung cancer", "2-week wait", "urgent referral", "NICE NG12", "smoker"]
+  },
+  {
+    "id": "AKT-RESP-005",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Respiratory",
+    "difficulty": "Medium",
+    "question": "A 32-year-old woman presents with sudden onset right-sided pleuritic chest pain and breathlessness. She takes the combined oral contraceptive pill. Her oxygen saturation is 95% on air. ECG shows sinus tachycardia. CXR is normal. What is the most appropriate next step?",
+    "options": {
+      "A": "Reassure and prescribe NSAIDs for pleuritic chest pain",
+      "B": "Arrange D-dimer blood test",
+      "C": "Apply Wells PE score and manage accordingly",
+      "D": "Start therapeutic anticoagulation immediately",
+      "E": "Admit for V/Q scan"
+    },
+    "correct_answer": "C",
+    "explanation": {
+      "correct": "The clinical presentation is suspicious for pulmonary embolism (PE) — pleuritic chest pain, breathlessness, tachycardia, COCP use (risk factor), normal CXR. Per NICE NG158, the Wells PE score should be applied. If Wells score >4 (PE likely), proceed to CTPA. If Wells score ≤4 (PE unlikely), perform D-dimer — if negative, PE excluded; if positive, proceed to CTPA. The structured approach avoids both under and over-investigation.",
+      "A": "Incorrect — Reassurance without investigation is dangerous given the high clinical suspicion of PE.",
+      "B": "Incorrect — D-dimer alone without risk stratification is incorrect. Wells score must be applied first as D-dimer has low specificity.",
+      "C": "CORRECT — Apply Wells PE score as first step per NICE NG158 PE pathway.",
+      "D": "Incorrect — Immediate anticoagulation without imaging confirmation is inappropriate unless the patient is haemodynamically unstable.",
+      "E": "Incorrect — V/Q scan is used when CTPA is contraindicated (e.g. contrast allergy, renal impairment). CTPA is first-line imaging."
+    },
+    "reference": "NICE NG158 — Venous thromboembolic diseases: diagnosis, management and thrombophilia testing. https://www.nice.org.uk/guidance/ng158",
+    "tags": ["pulmonary embolism", "Wells score", "CTPA", "COCP", "NICE NG158", "DVT/PE"]
+  },
+  {
+    "id": "AKT-RESP-006",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Respiratory",
+    "difficulty": "Medium",
+    "question": "A 28-year-old man with known asthma presents with worsening breathlessness, wheeze and inability to complete sentences. His peak flow is 45% of his best. Salbutamol nebs give partial improvement. What severity is this and what is the most appropriate management?",
+    "options": {
+      "A": "Mild acute asthma — discharge with increased SABA",
+      "B": "Moderate acute asthma — prednisolone 40mg and review in 48 hours",
+      "C": "Acute severe asthma — call 999 and give oxygen, salbutamol nebs and prednisolone",
+      "D": "Life-threatening asthma — call 999 immediately and give IV magnesium",
+      "E": "Moderate acute asthma — give salbutamol inhaler 10 puffs via spacer and discharge"
+    },
+    "correct_answer": "C",
+    "explanation": {
+      "correct": "Acute severe asthma criteria (any one of): PEF 33-50% best/predicted, RR ≥25/min, HR ≥110 bpm, inability to complete sentences. This patient has PEF 45% and cannot complete sentences — acute severe asthma. Management: call 999, high-flow oxygen (target SpO2 94-98%), back-to-back salbutamol nebs, oral prednisolone 40-50mg (or IV hydrocortisone). Hospital admission required.",
+      "A": "Incorrect — PEF 45% with inability to complete sentences is acute severe, not mild.",
+      "B": "Incorrect — This is acute severe not moderate. Sending home after prednisolone alone is dangerous.",
+      "C": "CORRECT — Acute severe asthma (PEF 33-50%, can't complete sentences). Call 999, oxygen, nebs, prednisolone per BTS/SIGN guidelines.",
+      "D": "Incorrect — Life-threatening criteria: PEF <33%, SpO2 <92%, silent chest, cyanosis, exhaustion. IV magnesium is hospital-administered.",
+      "E": "Incorrect — Discharge is inappropriate for acute severe asthma. Hospital admission is required."
+    },
+    "reference": "BTS/SIGN British Guideline on Management of Asthma 2019 (updated 2023).",
+    "tags": ["acute severe asthma", "PEF", "emergency", "prednisolone", "999", "BTS/SIGN"]
+  },
+  {
+    "id": "AKT-RESP-007",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Respiratory",
+    "difficulty": "Easy",
+    "question": "A 68-year-old man with COPD presents with increased breathlessness, increased sputum volume and purulent green sputum for 3 days. He has no fever and oxygen saturation is 93% on air. What is the most appropriate management?",
+    "options": {
+      "A": "Increase his LAMA dose and review in 1 week",
+      "B": "Prescribe oral amoxicillin 500mg TDS for 5 days and oral prednisolone 30mg for 5 days",
+      "C": "Prescribe oral prednisolone only and review in 48 hours",
+      "D": "Admit to hospital immediately",
+      "E": "Arrange urgent CXR before prescribing treatment"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "This is an acute exacerbation of COPD (AECOPD) with purulent sputum indicating likely bacterial infection. Per NICE NG115, management of AECOPD in the community includes: antibiotic therapy (amoxicillin, doxycycline or clarithromycin) for purulent exacerbations, and oral prednisolone 30mg for 5 days to reduce inflammation and recovery time. The patient is managing at home with acceptable O2 saturations.",
+      "A": "Incorrect — Adjusting maintenance inhaler alone does not treat an acute infective exacerbation.",
+      "B": "CORRECT — Antibiotics + oral prednisolone for AECOPD with purulent sputum per NICE NG115.",
+      "C": "Incorrect — Steroids alone without antibiotics is insufficient when purulent sputum indicates bacterial infection.",
+      "D": "Incorrect — Hospital admission criteria include: severe breathlessness, cyanosis, SpO2 <90%, acute confusion, unable to cope at home. This patient does not meet these criteria.",
+      "E": "Incorrect — CXR is not routinely required before treating community AECOPD unless pneumonia or other complication is suspected."
+    },
+    "reference": "NICE NG115 — COPD in over 16s. https://www.nice.org.uk/guidance/ng115",
+    "tags": ["COPD", "exacerbation", "AECOPD", "prednisolone", "antibiotics", "NICE NG115"]
+  },
+  {
+    "id": "AKT-RESP-008",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Respiratory",
+    "difficulty": "Hard",
+    "question": "A 40-year-old non-smoker woman presents with progressive dyspnoea over 6 months, dry cough and fatigue. She works in a bakery. Spirometry shows FVC 68% predicted, FEV1 72% predicted, FEV1/FVC ratio 0.84. CXR shows bilateral lower zone reticular shadowing. What is the most likely diagnosis?",
+    "options": {
+      "A": "COPD",
+      "B": "Asthma",
+      "C": "Occupational asthma",
+      "D": "Interstitial lung disease (pulmonary fibrosis)",
+      "E": "Extrinsic allergic alveolitis (hypersensitivity pneumonitis)"
+    },
+    "correct_answer": "D",
+    "explanation": {
+      "correct": "The combination of: progressive dyspnoea, dry cough, restrictive spirometry pattern (reduced FVC, normal/high FEV1/FVC ratio), and bilateral lower zone reticular shadowing on CXR is classic for interstitial lung disease (ILD)/pulmonary fibrosis. The restrictive pattern (FEV1/FVC >0.70 with reduced FVC) distinguishes this from obstructive diseases like COPD and asthma.",
+      "A": "Incorrect — COPD shows obstructive pattern (FEV1/FVC <0.70) and is associated with smoking.",
+      "B": "Incorrect — Asthma shows variable airflow obstruction and typically normal CXR.",
+      "C": "Incorrect — Occupational asthma causes obstructive pattern with work-related symptoms that improve on days off.",
+      "D": "CORRECT — Restrictive spirometry + bilateral lower zone reticular shadowing = ILD/pulmonary fibrosis.",
+      "E": "Incorrect — Hypersensitivity pneumonitis (baker's lung) can cause restriction but typically shows upper/mid zone changes and relates to antigen exposure. However ILD is the better answer given the overall picture."
+    },
+    "reference": "NICE NG122 — Idiopathic pulmonary fibrosis in adults: diagnosis and management. https://www.nice.org.uk/guidance/ng122",
+    "tags": ["ILD", "pulmonary fibrosis", "restrictive", "spirometry", "CXR", "NICE NG122"]
+  },
+  {
+    "id": "AKT-RESP-009",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Respiratory",
+    "difficulty": "Medium",
+    "question": "A 22-year-old woman is newly diagnosed with asthma. She is started on a low-dose ICS. At review 8 weeks later she reports good symptom control and is using her SABA less than once a week. Her inhaler technique is good. What is the most appropriate management?",
+    "options": {
+      "A": "Step up to ICS + LABA combination inhaler",
+      "B": "Add montelukast as additional controller therapy",
+      "C": "Continue current treatment — asthma is well controlled",
+      "D": "Step down to SABA only as she is well controlled",
+      "E": "Switch to MART therapy (Maintenance And Reliever Therapy)"
+    },
+    "correct_answer": "C",
+    "explanation": {
+      "correct": "This patient has well-controlled asthma on low-dose ICS — using SABA <once per week with good symptom control. Per NICE NG80, well-controlled asthma should be maintained on current therapy. Stepping down should only be considered after at least 3 months of good control, and stepping up is not indicated. The goal is to maintain the lowest effective dose.",
+      "A": "Incorrect — Step-up is not indicated when asthma is well controlled.",
+      "B": "Incorrect — Adding montelukast is a step-up option, not needed for well-controlled asthma.",
+      "C": "CORRECT — Continue current treatment when asthma is well controlled per NICE NG80.",
+      "D": "Incorrect — Stepping down to SABA only after only 8 weeks of ICS is premature. NICE recommends at least 3 months of control before considering step-down.",
+      "E": "Incorrect — MART therapy is a step-up option for uncontrolled asthma, not appropriate here."
+    },
+    "reference": "NICE NG80 — Asthma: diagnosis, monitoring and chronic asthma management. https://www.nice.org.uk/guidance/ng80",
+    "tags": ["asthma", "well controlled", "ICS", "step-up", "step-down", "NICE NG80"]
+  },
+  {
+    "id": "AKT-RESP-010",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Respiratory",
+    "difficulty": "Medium",
+    "question": "A 50-year-old man presents with a 4-week history of productive cough, fever, right-sided pleuritic chest pain and breathlessness. CXR shows right lower lobe consolidation. His CRB-65 score is 1. What is the most appropriate management?",
+    "options": {
+      "A": "Admit to hospital for IV antibiotics",
+      "B": "Prescribe amoxicillin 500mg TDS for 5 days and review if not improving",
+      "C": "Prescribe co-amoxiclav 625mg TDS for 7 days",
+      "D": "Prescribe doxycycline 200mg stat then 100mg daily for 5 days",
+      "E": "Arrange urgent CT chest before prescribing"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "CRB-65 score 1 (one point for age ≥65, confusion, RR ≥30, BP <90 systolic or ≤60 diastolic) indicates low-to-moderate severity community-acquired pneumonia (CAP) manageable in the community. Per NICE NG138 and BTS CAP guidelines, amoxicillin 500mg TDS for 5 days is first-line for community-treated CAP. Review if not improving in 48-72 hours.",
+      "A": "Incorrect — Hospital admission is indicated for CRB-65 ≥2 or clinical concern. CRB-65 of 1 can be managed in community with close review.",
+      "B": "CORRECT — Amoxicillin 500mg TDS for 5 days is first-line for low-moderate severity CAP per NICE NG138.",
+      "C": "Incorrect — Co-amoxiclav is not recommended as first-line for community CAP. It is broader spectrum than necessary.",
+      "D": "Incorrect — Doxycycline is an alternative if penicillin allergic, not first-line.",
+      "E": "Incorrect — CT chest is not routinely required for CAP diagnosis and management. CXR is sufficient."
+    },
+    "reference": "NICE NG138 — Pneumonia (community-acquired): antimicrobial prescribing. https://www.nice.org.uk/guidance/ng138",
+    "tags": ["pneumonia", "CAP", "CRB-65", "amoxicillin", "community treatment", "NICE NG138"]
+  },
+  {
+    "id": "AKT-RESP-011",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Respiratory",
+    "difficulty": "Hard",
+    "question": "A 58-year-old man is referred for investigation of a 3cm solitary pulmonary nodule found incidentally on CXR. He is a 35 pack-year smoker. CT chest confirms a 3cm spiculated nodule in the right upper lobe with no mediastinal lymphadenopathy. What is the most appropriate next step?",
+    "options": {
+      "A": "Repeat CT chest in 3 months",
+      "B": "PET-CT scan",
+      "C": "Urgent 2WW lung cancer referral",
+      "D": "CT-guided biopsy",
+      "E": "Bronchoscopy and BAL"
+    },
+    "correct_answer": "C",
+    "explanation": {
+      "correct": "A 3cm spiculated pulmonary nodule in a heavy smoker is highly suspicious for lung cancer. Per NICE NG12, a pulmonary nodule with high-risk features (spiculated morphology, size >1cm, smoking history) warrants urgent 2-week wait referral for suspected lung cancer. The lung cancer MDT will then decide on further investigations including PET-CT, biopsy or surgical resection.",
+      "A": "Incorrect — Surveillance CT may be appropriate for small low-risk nodules (<8mm). A 3cm spiculated nodule requires urgent referral, not watchful waiting.",
+      "B": "Incorrect — PET-CT may be part of the lung cancer staging workup but is arranged by the specialist team, not in primary care.",
+      "C": "CORRECT — Urgent 2WW referral for high-risk pulmonary nodule per NICE NG12.",
+      "D": "Incorrect — CT-guided biopsy is arranged by the specialist team after MDT discussion.",
+      "E": "Incorrect — Bronchoscopy is useful for central lesions. This is a peripheral nodule better assessed via CT-guided biopsy, but both are specialist decisions."
+    },
+    "reference": "NICE NG12 — Suspected cancer: recognition and referral. https://www.nice.org.uk/guidance/ng12",
+    "tags": ["pulmonary nodule", "lung cancer", "2WW", "urgent referral", "NICE NG12", "spiculated"]
+  },
+  {
+    "id": "AKT-RESP-012",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Respiratory",
+    "difficulty": "Medium",
+    "question": "A 35-year-old woman presents with episodic wheeze, cough and breathlessness. Spirometry is normal between episodes. FeNO is 52 ppb. Peak flow diary shows >20% variability over 2 weeks. What is the most appropriate interpretation and management?",
+    "options": {
+      "A": "Normal results — reassure and discharge",
+      "B": "COPD — start LAMA",
+      "C": "Asthma confirmed — start low-dose ICS",
+      "D": "Vocal cord dysfunction — refer to ENT",
+      "E": "Hyperventilation syndrome — refer to physiotherapy"
+    },
+    "correct_answer": "C",
+    "explanation": {
+      "correct": "Per NICE NG80, asthma diagnosis is supported by: FeNO ≥40 ppb (high — strongly supports asthma), peak flow variability >20% (positive bronchodilator variability). Together these confirm asthma. Normal spirometry between episodes is common in asthma. Management: start low-dose ICS as step 2 preventer therapy.",
+      "A": "Incorrect — FeNO 52 ppb and >20% PEF variability are both positive objective tests for asthma.",
+      "B": "Incorrect — COPD requires post-bronchodilator FEV1/FVC <0.70 and is rare at age 35 without smoking history.",
+      "C": "CORRECT — FeNO ≥40 ppb + PEF variability >20% confirms asthma. Start low-dose ICS per NICE NG80.",
+      "D": "Incorrect — Vocal cord dysfunction causes inspiratory stridor, not wheeze, and FeNO would be normal.",
+      "E": "Incorrect — Hyperventilation syndrome would not cause elevated FeNO or significant PEF variability."
+    },
+    "reference": "NICE NG80 — Asthma: diagnosis, monitoring and chronic asthma management. https://www.nice.org.uk/guidance/ng80",
+    "tags": ["asthma", "FeNO", "peak flow variability", "diagnosis", "ICS", "NICE NG80"]
+  },
+  {
+    "id": "AKT-RESP-013",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Respiratory",
+    "difficulty": "Medium",
+    "question": "A 72-year-old man with severe COPD (FEV1 28% predicted) is assessed at home. He appears cyanosed, is using accessory muscles and his oxygen saturation is 86% on air. He lives alone and normally manages independently. What is the most appropriate action?",
+    "options": {
+      "A": "Start home oxygen therapy and review in 24 hours",
+      "B": "Give controlled oxygen via Venturi mask at 28% and call 999",
+      "C": "Give high-flow oxygen at 15L/min and call 999",
+      "D": "Prescribe rescue antibiotics and prednisolone and review tomorrow",
+      "E": "Arrange urgent same-day respiratory clinic review"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "This patient is in respiratory failure (SpO2 86%) with signs of severe distress — cyanosis, accessory muscle use. He needs emergency hospital admission. In COPD patients, controlled low-flow oxygen (24-28% via Venturi mask) is crucial to avoid hypercapnic respiratory failure (type 2 RF) — high-flow oxygen can suppress hypoxic drive. Target SpO2 88-92% in COPD. Call 999 immediately.",
+      "A": "Incorrect — SpO2 86% with respiratory distress requires emergency hospital care, not home oxygen.",
+      "B": "CORRECT — Controlled oxygen 28% Venturi mask (target SpO2 88-92%) + 999 call for COPD in respiratory failure.",
+      "C": "Incorrect — High-flow oxygen (15L) can cause hypercapnic respiratory failure in COPD by suppressing hypoxic drive. Dangerous.",
+      "D": "Incorrect — Community treatment is inappropriate for SpO2 86% with respiratory distress.",
+      "E": "Incorrect — Respiratory clinic cannot manage acute respiratory failure. Emergency admission required."
+    },
+    "reference": "BTS Guideline for Emergency Oxygen Use in Adult Patients 2017. NICE NG115.",
+    "tags": ["COPD", "respiratory failure", "oxygen therapy", "Venturi mask", "hypoxic drive", "emergency"]
+  },
+  {
+    "id": "AKT-RESP-014",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Respiratory",
+    "difficulty": "Easy",
+    "question": "A 45-year-old woman with asthma is currently on low-dose ICS. She reports waking at night with wheeze 3 times in the past month and using her reliever 4 times per week. What is the most appropriate next step?",
+    "options": {
+      "A": "Continue current treatment and review in 3 months",
+      "B": "Add a LABA to the ICS (ICS/LABA combination inhaler)",
+      "C": "Stop ICS and trial LABA monotherapy",
+      "D": "Add montelukast and review in 4 weeks",
+      "E": "Refer to secondary care respiratory clinic"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "This patient has uncontrolled asthma on low-dose ICS — nighttime symptoms and SABA use >3 times/week indicate inadequate control. Per NICE NG80, the next step is to add a LABA to the ICS (as a combination inhaler). LABA must always be prescribed with ICS in asthma. ICS/LABA combination inhalers (e.g. fluticasone/salmeterol, budesonide/formoterol) are step 3 in NICE asthma stepwise management.",
+      "A": "Incorrect — The patient has uncontrolled asthma requiring step-up, not continuation.",
+      "B": "CORRECT — Add LABA to ICS (combination inhaler) as step 3 for uncontrolled asthma on ICS per NICE NG80.",
+      "C": "Incorrect — LABA monotherapy without ICS is absolutely contraindicated in asthma — increases risk of asthma death.",
+      "D": "Incorrect — Montelukast may be tried before LABA as a trial (step 2 add-on) but ICS/LABA is the preferred step 3 per NICE NG80.",
+      "E": "Incorrect — Specialist referral is not needed at this stage. Step-up in primary care should be tried first."
+    },
+    "reference": "NICE NG80 — Asthma: diagnosis, monitoring and chronic asthma management. https://www.nice.org.uk/guidance/ng80",
+    "tags": ["asthma", "step-up", "ICS/LABA", "uncontrolled", "NICE NG80", "step 3"]
+  },
+  {
+    "id": "AKT-RESP-015",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Respiratory",
+    "difficulty": "Hard",
+    "question": "A 48-year-old woman is diagnosed with idiopathic pulmonary fibrosis (IPF) confirmed on HRCT. Her FVC is 72% predicted. She has no other comorbidities. Which treatment has the strongest evidence for slowing disease progression?",
+    "options": {
+      "A": "Oral prednisolone 20mg daily",
+      "B": "Pirfenidone or nintedanib",
+      "C": "N-acetylcysteine",
+      "D": "Azathioprine and prednisolone combination",
+      "E": "Pulmonary rehabilitation only"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per NICE NG122, pirfenidone and nintedanib are antifibrotic agents with evidence for slowing the decline in FVC in IPF. Both are NICE-approved for patients with FVC 50-80% predicted. They do not reverse fibrosis but reduce the rate of progression. They are the only disease-modifying treatments with proven efficacy in IPF.",
+      "A": "Incorrect — Corticosteroids are not beneficial in IPF and may cause harm. IPF does not respond to steroids (unlike other ILDs).",
+      "B": "CORRECT — Pirfenidone or nintedanib are NICE-recommended antifibrotics for IPF with FVC 50-80% per NICE NG122.",
+      "C": "Incorrect — N-acetylcysteine was previously used but the PANTHER trial showed no benefit and potential harm.",
+      "D": "Incorrect — The PANTHER trial showed azathioprine + prednisolone combination increased mortality in IPF.",
+      "E": "Incorrect — Pulmonary rehabilitation improves symptoms and quality of life but does not slow disease progression."
+    },
+    "reference": "NICE NG122 — Idiopathic pulmonary fibrosis in adults. https://www.nice.org.uk/guidance/ng122",
+    "tags": ["IPF", "pulmonary fibrosis", "pirfenidone", "nintedanib", "antifibrotic", "NICE NG122"]
+  },
+  {
+    "id": "AKT-RESP-016",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Respiratory",
+    "difficulty": "Medium",
+    "question": "A 30-year-old man presents with sudden onset unilateral left-sided pleuritic chest pain and breathlessness. He is tall and thin. CXR shows a 25% left-sided pneumothorax with no mediastinal shift. He is haemodynamically stable. This is his first episode. What is the most appropriate management?",
+    "options": {
+      "A": "Emergency needle decompression",
+      "B": "Chest drain insertion",
+      "C": "Aspiration of pneumothorax",
+      "D": "High-flow oxygen and discharge if improving after 4 hours",
+      "E": "Admit for observation only — no intervention needed"
+    },
+    "correct_answer": "C",
+    "explanation": {
+      "correct": "Per BTS Pleural Disease Guidelines, for a primary spontaneous pneumothorax (PSP) — young, otherwise healthy patient with no underlying lung disease — with rim >2cm (≥25%) and breathlessness, aspiration is the first-line treatment. This is less invasive than chest drain insertion and has equivalent success rates for PSP. If aspiration fails, chest drain is the next step.",
+      "A": "Incorrect — Needle decompression is for tension pneumothorax with haemodynamic compromise and mediastinal shift.",
+      "B": "Incorrect — Chest drain is second-line after failed aspiration for PSP, or first-line for secondary spontaneous pneumothorax.",
+      "C": "CORRECT — Aspiration is first-line for PSP >2cm rim with breathlessness per BTS Pleural Disease Guidelines.",
+      "D": "Incorrect — High-flow oxygen and observation is appropriate for small PSP (<2cm, no breathlessness). This patient has 25% pneumothorax with symptoms.",
+      "E": "Incorrect — Observation alone is for small asymptomatic PSP <2cm."
+    },
+    "reference": "BTS Pleural Disease Guideline 2023. https://www.brit-thoracic.org.uk/",
+    "tags": ["pneumothorax", "primary spontaneous", "aspiration", "PSP", "BTS guidelines"]
+  },
+  {
+    "id": "AKT-RESP-017",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Respiratory",
+    "difficulty": "Easy",
+    "question": "A 55-year-old male smoker with COPD is reviewed annually. He has an MRC dyspnoea scale score of 4 (stops for breath after walking 100 metres on level ground). He has had 1 exacerbation in the past year. His FEV1 is 45% predicted. He is on tiotropium and salbutamol PRN. What should be added to his treatment?",
+    "options": {
+      "A": "Add ICS/LABA combination inhaler",
+      "B": "Add LABA alone",
+      "C": "Add oral theophylline",
+      "D": "Add roflumilast",
+      "E": "Refer for lung volume reduction surgery"
+    },
+    "correct_answer": "A",
+    "explanation": {
+      "correct": "Per NICE NG115, in COPD patients with FEV1 <50% and frequent exacerbations or persistent breathlessness despite LAMA, an ICS/LABA combination inhaler should be considered. This patient has FEV1 45% (severe), high symptom burden (MRC 4) and exacerbations. ICS/LABA combination is appropriate to add to existing LAMA (triple therapy).",
+      "A": "CORRECT — ICS/LABA combination is recommended when FEV1 <50% with persistent symptoms/exacerbations despite LAMA per NICE NG115.",
+      "B": "Incorrect — LABA alone without ICS offers less benefit than ICS/LABA combination in severe symptomatic COPD.",
+      "C": "Incorrect — Theophylline is a last resort due to narrow therapeutic index and significant drug interactions.",
+      "D": "Incorrect — Roflumilast (PDE4 inhibitor) is used for severe COPD with chronic bronchitis and frequent exacerbations, typically initiated by specialists.",
+      "E": "Incorrect — Lung volume reduction surgery is for specific emphysema patterns and is a specialist decision."
+    },
+    "reference": "NICE NG115 — COPD in over 16s. https://www.nice.org.uk/guidance/ng115",
+    "tags": ["COPD", "ICS/LABA", "triple therapy", "MRC score", "NICE NG115", "severe COPD"]
+  },
+  {
+    "id": "AKT-RESP-018",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Respiratory",
+    "difficulty": "Hard",
+    "question": "A 50-year-old woman presents with a 6-month history of dry cough, breathlessness and bilateral hilar lymphadenopathy on CXR. She has erythema nodosum on her shins and elevated serum ACE level. What is the most likely diagnosis and initial management?",
+    "options": {
+      "A": "Tuberculosis — start 4-drug anti-TB therapy",
+      "B": "Lymphoma — urgent 2WW haematology referral",
+      "C": "Sarcoidosis — observe and monitor, most cases resolve spontaneously",
+      "D": "Sarcoidosis — start oral prednisolone immediately",
+      "E": "Hypersensitivity pneumonitis — identify and remove antigen"
+    },
+    "correct_answer": "C",
+    "explanation": {
+      "correct": "Bilateral hilar lymphadenopathy + erythema nodosum + elevated serum ACE is the classic triad of sarcoidosis (Löfgren syndrome when combined with acute onset, fever and polyarthralgia). Stage I sarcoidosis (BHL alone without parenchymal infiltrates) has an excellent prognosis with >80% spontaneous resolution. Initial management is observation and monitoring. Prednisolone is reserved for significant organ involvement, hypercalcaemia or deteriorating pulmonary function.",
+      "A": "Incorrect — TB can cause BHL but would not typically cause erythema nodosum with elevated ACE without constitutional symptoms. Sarcoidosis is the more likely diagnosis.",
+      "B": "Incorrect — Lymphoma can cause BHL but the combination with erythema nodosum and elevated ACE is specific to sarcoidosis.",
+      "C": "CORRECT — Stage I sarcoidosis with Löfgren syndrome typically resolves spontaneously. Observe and monitor.",
+      "D": "Incorrect — Oral prednisolone is not indicated for asymptomatic Stage I sarcoidosis with no organ involvement.",
+      "E": "Incorrect — No antigen exposure history is given and the clinical picture is classic for sarcoidosis."
+    },
+    "reference": "BTS Guidelines for the Management of Sarcoidosis 2008. ERS/ATS/WASOG Statement on Sarcoidosis.",
+    "tags": ["sarcoidosis", "bilateral hilar lymphadenopathy", "erythema nodosum", "ACE", "Lofgren syndrome"]
+  },
+  {
+    "id": "AKT-RESP-019",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Respiratory",
+    "difficulty": "Medium",
+    "question": "A 62-year-old woman is being considered for long-term oxygen therapy (LTOT) for COPD. Which set of criteria most accurately represents the NICE threshold for LTOT?",
+    "options": {
+      "A": "PaO2 <8.0 kPa on two occasions 3 weeks apart when stable",
+      "B": "SpO2 <92% on pulse oximetry on one occasion",
+      "C": "PaO2 <7.3 kPa on two occasions 3 weeks apart when stable, or PaO2 7.3-8.0 kPa with secondary polycythaemia or pulmonary hypertension",
+      "D": "FEV1 <30% predicted with persistent hypoxia",
+      "E": "SpO2 <88% on two measurements 4 weeks apart"
+    },
+    "correct_answer": "C",
+    "explanation": {
+      "correct": "Per NICE NG115, LTOT is indicated when: PaO2 <7.3 kPa on two measurements at least 3 weeks apart when clinically stable, OR PaO2 7.3-8.0 kPa with secondary polycythaemia, nocturnal hypoxia, peripheral oedema or pulmonary hypertension. LTOT must be used for ≥15 hours/day and requires arterial blood gas measurement, not just pulse oximetry.",
+      "A": "Incorrect — The threshold is PaO2 <7.3 kPa (not 8.0 kPa) for uncomplicated hypoxia.",
+      "B": "Incorrect — SpO2 alone is not sufficient for LTOT assessment. ABG measurement is required.",
+      "C": "CORRECT — PaO2 <7.3 kPa (or 7.3-8.0 with complications) on two occasions 3 weeks apart per NICE NG115.",
+      "D": "Incorrect — FEV1 alone is not a criterion for LTOT.",
+      "E": "Incorrect — SpO2 <88% triggers consideration but ABG is required to confirm. Timing is 3 weeks apart, not 4."
+    },
+    "reference": "NICE NG115 — COPD in over 16s. https://www.nice.org.uk/guidance/ng115",
+    "tags": ["LTOT", "COPD", "oxygen therapy", "PaO2", "NICE NG115", "criteria"]
+  },
+  {
+    "id": "AKT-RESP-020",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Respiratory",
+    "difficulty": "Medium",
+    "question": "A 38-year-old woman who is 28 weeks pregnant develops a DVT confirmed on Doppler ultrasound. What is the most appropriate anticoagulation treatment?",
+    "options": {
+      "A": "Warfarin — target INR 2-3",
+      "B": "Apixaban 10mg twice daily for 7 days then 5mg twice daily",
+      "C": "Low molecular weight heparin (LMWH) at therapeutic dose throughout pregnancy and for 6 weeks postpartum",
+      "D": "Fondaparinux at therapeutic dose",
+      "E": "Aspirin 75mg daily until delivery"
+    },
+    "correct_answer": "C",
+    "explanation": {
+      "correct": "Per NICE NG158, low molecular weight heparin (LMWH e.g. dalteparin, enoxaparin) is the treatment of choice for VTE in pregnancy. It does not cross the placenta and is safe for the fetus. Treatment continues throughout pregnancy and for at least 6 weeks postpartum (minimum total treatment 3 months). Warfarin is teratogenic in the first trimester and associated with fetal haemorrhage. DOACs are contraindicated in pregnancy.",
+      "A": "Incorrect — Warfarin crosses the placenta and is teratogenic (warfarin embryopathy in first trimester) and causes fetal bleeding. Contraindicated.",
+      "B": "Incorrect — DOACs (apixaban, rivaroxaban) are contraindicated in pregnancy due to placental transfer and unknown fetal safety.",
+      "C": "CORRECT — LMWH is the treatment of choice for VTE in pregnancy per NICE NG158.",
+      "D": "Incorrect — Fondaparinux is not licensed for use in pregnancy.",
+      "E": "Incorrect — Aspirin is antiplatelet, not anticoagulant, and has no role in treating established DVT."
+    },
+    "reference": "NICE NG158 — Venous thromboembolic diseases. https://www.nice.org.uk/guidance/ng158. RCOG Green-top Guideline 37b.",
+    "tags": ["DVT", "pregnancy", "LMWH", "anticoagulation", "VTE", "NICE NG158"]
+  }
+]

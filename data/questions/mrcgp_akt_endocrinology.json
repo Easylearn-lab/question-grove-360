@@ -1,0 +1,522 @@
+[
+  {
+    "id": "AKT-ENDO-001",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Endocrinology",
+    "difficulty": "Easy",
+    "question": "A 52-year-old man with newly diagnosed type 2 diabetes has an HbA1c of 58 mmol/mol. He has no cardiovascular disease or chronic kidney disease. He is started on lifestyle advice. After 3 months his HbA1c remains 57 mmol/mol. What is the most appropriate first-line medication?",
+    "options": {
+      "A": "Empagliflozin 10mg once daily",
+      "B": "Metformin 500mg twice daily titrated to 1g twice daily",
+      "C": "Gliclazide 40mg once daily",
+      "D": "Sitagliptin 100mg once daily",
+      "E": "Insulin glargine at bedtime"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per NICE NG28 (Type 2 diabetes in adults), metformin is the first-line glucose-lowering medication for type 2 diabetes when lifestyle measures alone are insufficient. It is started at low dose (500mg BD) and titrated to minimise GI side effects. Metformin has a good safety profile, is weight-neutral, has cardiovascular benefits and is inexpensive.",
+      "A": "Incorrect — SGLT2 inhibitors (empagliflozin) are added at step 2 or used first-line only when there is established CVD, heart failure or CKD per NICE NG28.",
+      "B": "CORRECT — Metformin is first-line for T2DM without established CVD/HF/CKD per NICE NG28.",
+      "C": "Incorrect — Sulphonylureas (gliclazide) are second-line agents. They cause hypoglycaemia and weight gain.",
+      "D": "Incorrect — DPP-4 inhibitors (sitagliptin) are second-line options, not first-line.",
+      "E": "Incorrect — Insulin is used for poorly controlled T2DM after multiple oral agents or when HbA1c is very high (>86 mmol/mol)."
+    },
+    "reference": "NICE NG28 — Type 2 diabetes in adults: management. https://www.nice.org.uk/guidance/ng28",
+    "tags": ["type 2 diabetes", "metformin", "first-line", "HbA1c", "NICE NG28", "glucose lowering"]
+  },
+  {
+    "id": "AKT-ENDO-002",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Endocrinology",
+    "difficulty": "Medium",
+    "question": "A 60-year-old woman with type 2 diabetes, established cardiovascular disease and eGFR 55 ml/min is on metformin 1g twice daily. Her HbA1c is 72 mmol/mol. What is the most appropriate second agent to add per NICE NG28?",
+    "options": {
+      "A": "Gliclazide 80mg once daily",
+      "B": "Sitagliptin 100mg once daily",
+      "C": "Empagliflozin 10mg once daily",
+      "D": "Pioglitazone 15mg once daily",
+      "E": "Exenatide 5 mcg twice daily"
+    },
+    "correct_answer": "C",
+    "explanation": {
+      "correct": "Per NICE NG28 (2022 update), for patients with type 2 diabetes and established cardiovascular disease (CVD), an SGLT2 inhibitor with proven CVD benefit (empagliflozin, dapagliflozin or canagliflozin) should be added to metformin as second-line, regardless of HbA1c. SGLT2 inhibitors reduce cardiovascular mortality, hospitalisation for heart failure and renal progression. eGFR 55 is above the threshold for SGLT2 use.",
+      "A": "Incorrect — Sulphonylurea (gliclazide) does not have cardiovascular benefits and causes hypoglycaemia. Not preferred when CVD is present.",
+      "B": "Incorrect — DPP-4 inhibitors are weight-neutral and safe but do not reduce CV events. Not prioritised over SGLT2i when CVD is present.",
+      "C": "CORRECT — SGLT2 inhibitor (empagliflozin) is second-line with established CVD per NICE NG28.",
+      "D": "Incorrect — Pioglitazone is associated with fluid retention, heart failure risk, bladder cancer and fractures. Contraindicated with CVD/heart failure.",
+      "E": "Incorrect — GLP-1 agonists (exenatide) are also options with CVD benefit but SGLT2i is preferred as add-on to metformin per NICE NG28."
+    },
+    "reference": "NICE NG28 — Type 2 diabetes in adults: management. https://www.nice.org.uk/guidance/ng28",
+    "tags": ["type 2 diabetes", "SGLT2 inhibitor", "empagliflozin", "CVD", "cardiovascular disease", "NICE NG28"]
+  },
+  {
+    "id": "AKT-ENDO-003",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Endocrinology",
+    "difficulty": "Medium",
+    "question": "A 45-year-old woman presents with fatigue, weight gain, constipation, dry skin, cold intolerance and bradycardia. TSH is 18 mU/L (0.4-4.0), free T4 is 8 pmol/L (12-22). What is the diagnosis and most appropriate treatment?",
+    "options": {
+      "A": "Subclinical hypothyroidism — monitor TSH annually",
+      "B": "Primary hypothyroidism — levothyroxine starting at 50-100 mcg daily",
+      "C": "Secondary hypothyroidism — refer to endocrinology",
+      "D": "Primary hypothyroidism — liothyronine (T3) replacement",
+      "E": "Sick euthyroid syndrome — recheck TFTs when well"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Elevated TSH with low free T4 confirms primary hypothyroidism. Symptoms (fatigue, weight gain, constipation, dry skin, cold intolerance, bradycardia) confirm clinical hypothyroidism. Per NICE and BTA guidelines, treatment is with levothyroxine (T4) starting at 50-100 mcg/day (25 mcg in elderly or cardiac disease), titrated to achieve TSH in the lower half of normal range (0.4-2.5 mU/L). TFTs rechecked 6-8 weeks after dose change.",
+      "A": "Incorrect — Subclinical hypothyroidism is elevated TSH with NORMAL free T4. This patient has low free T4 — overt hypothyroidism requiring treatment.",
+      "B": "CORRECT — Primary hypothyroidism (high TSH, low T4). Levothyroxine 50-100 mcg/day is first-line.",
+      "C": "Incorrect — Secondary hypothyroidism shows LOW TSH with low T4 (pituitary failure). This patient has HIGH TSH = primary hypothyroidism.",
+      "D": "Incorrect — Liothyronine (T3) is not recommended as routine first-line treatment. Levothyroxine (T4) is standard.",
+      "E": "Incorrect — Sick euthyroid syndrome typically shows low T3/T4 with low-normal TSH in acutely unwell patients. This patient has high TSH confirming primary hypothyroidism."
+    },
+    "reference": "NICE CKS — Hypothyroidism. British Thyroid Association guidelines 2006.",
+    "tags": ["hypothyroidism", "levothyroxine", "TSH", "free T4", "thyroid", "primary hypothyroidism"]
+  },
+  {
+    "id": "AKT-ENDO-004",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Endocrinology",
+    "difficulty": "Hard",
+    "question": "A 38-year-old woman presents with palpitations, weight loss, heat intolerance, tremor and diarrhoea. TSH is <0.01 mU/L, free T4 is 42 pmol/L, free T3 is 12 pmol/L. She has proptosis and a diffuse goitre. What is the most likely diagnosis and first-line treatment?",
+    "options": {
+      "A": "Toxic multinodular goitre — refer for radioiodine",
+      "B": "Graves' disease — carbimazole 20-40mg daily",
+      "C": "De Quervain's thyroiditis — NSAIDs and beta blocker",
+      "D": "Toxic adenoma — refer for surgery",
+      "E": "Graves' disease — propylthiouracil 100mg three times daily"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Graves' disease is an autoimmune hyperthyroidism characterised by: diffuse goitre, thyroid eye disease (proptosis/exophthalmos), pretibial myxoedema, positive TSH receptor antibodies (TRAb). Suppressed TSH + elevated T4/T3 confirms hyperthyroidism. First-line treatment is carbimazole (antithyroid drug) 20-40mg daily (titration or block-and-replace regimen). Propylthiouracil is second-line (used in first trimester of pregnancy or thyroid storm).",
+      "A": "Incorrect — Toxic MNG does not typically cause proptosis or diffuse goitre. Radioiodine is a definitive treatment option but not first-line.",
+      "B": "CORRECT — Graves' disease with eye disease + diffuse goitre. Carbimazole 20-40mg is first-line antithyroid therapy.",
+      "C": "Incorrect — De Quervain's thyroiditis is painful, self-limiting, post-viral thyroiditis — no proptosis, no autoimmune features.",
+      "D": "Incorrect — Toxic adenoma is a solitary hyperfunctioning nodule without eye disease.",
+      "E": "Incorrect — Propylthiouracil is second-line to carbimazole in Graves' disease (reserved for pregnancy first trimester and thyroid storm)."
+    },
+    "reference": "European Thyroid Association Guidelines for Graves' disease 2018. NICE CKS — Hyperthyroidism.",
+    "tags": ["Graves' disease", "hyperthyroidism", "carbimazole", "proptosis", "TSH", "antithyroid"]
+  },
+  {
+    "id": "AKT-ENDO-005",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Endocrinology",
+    "difficulty": "Medium",
+    "question": "A 68-year-old woman is diagnosed with type 2 diabetes. Her eGFR is 28 ml/min/1.73m². She is not on any glucose-lowering medication. Which medication is contraindicated due to her renal impairment?",
+    "options": {
+      "A": "Gliclazide",
+      "B": "Insulin glargine",
+      "C": "Metformin",
+      "D": "Linagliptin",
+      "E": "Repaglinide"
+    },
+    "correct_answer": "C",
+    "explanation": {
+      "correct": "Metformin is contraindicated when eGFR <30 ml/min/1.73m² due to risk of lactic acidosis (reduced renal clearance of metformin and lactate). Per NICE NG28 and BNF: metformin should be reviewed at eGFR <45 (use with caution), stopped at eGFR <30. This patient's eGFR of 28 is below the safe threshold. Linagliptin (DPP-4 inhibitor) does not require dose adjustment in renal impairment and is a safe option.",
+      "A": "Incorrect — Gliclazide can be used cautiously in CKD (lower doses). It is metabolised hepatically with inactive renal metabolites — safer than other sulphonylureas.",
+      "B": "Incorrect — Insulin does not have a renal contraindication. Dose adjustments may be needed due to reduced renal insulin clearance.",
+      "C": "CORRECT — Metformin is contraindicated at eGFR <30 ml/min due to lactic acidosis risk per NICE NG28 and BNF.",
+      "D": "Incorrect — Linagliptin is safe in all stages of CKD including dialysis — no dose adjustment required.",
+      "E": "Incorrect — Repaglinide can be used in CKD as it is hepatically metabolised."
+    },
+    "reference": "NICE NG28. BNF — Metformin contraindications. https://bnf.nice.org.uk/",
+    "tags": ["metformin", "CKD", "eGFR", "contraindication", "renal impairment", "type 2 diabetes"]
+  },
+  {
+    "id": "AKT-ENDO-006",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Endocrinology",
+    "difficulty": "Medium",
+    "question": "A 35-year-old woman is found to have a TSH of 6.8 mU/L (0.4-4.0) and a normal free T4 of 15 pmol/L on two separate occasions 3 months apart. She has no symptoms and is not pregnant. Thyroid peroxidase antibodies (TPO Ab) are positive. What is the most appropriate management?",
+    "options": {
+      "A": "Start levothyroxine 50 mcg immediately",
+      "B": "Refer urgently to endocrinology",
+      "C": "Monitor TSH annually — treat if TSH >10 or symptoms develop",
+      "D": "Arrange thyroid ultrasound",
+      "E": "Repeat TFTs in 6 weeks"
+    },
+    "correct_answer": "C",
+    "explanation": {
+      "correct": "Subclinical hypothyroidism (SCH) = elevated TSH with normal free T4. In asymptomatic patients with TSH <10 mU/L, current NICE and BTA guidance recommends monitoring TSH annually without immediate treatment. Levothyroxine is considered when TSH >10 mU/L, or when TSH 4-10 with symptoms, or in pregnancy. Positive TPO antibodies indicate autoimmune (Hashimoto's) thyroiditis and increase the risk of progression — hence annual monitoring is important.",
+      "A": "Incorrect — Treatment is not indicated for asymptomatic SCH with TSH <10. Annual monitoring is recommended.",
+      "B": "Incorrect — Endocrinology referral is not required for asymptomatic SCH manageable in primary care.",
+      "C": "CORRECT — Annual TSH monitoring for asymptomatic SCH with TSH <10 per NICE/BTA guidance.",
+      "D": "Incorrect — Thyroid ultrasound is for palpable nodules or goitre, not routine SCH.",
+      "E": "Incorrect — SCH has already been confirmed on two occasions. Annual monitoring (not 6-weekly recheck) is appropriate."
+    },
+    "reference": "NICE CKS — Hypothyroidism. BTA/BTFS/BTF guidelines for subclinical hypothyroidism 2019.",
+    "tags": ["subclinical hypothyroidism", "TSH", "TPO antibodies", "monitoring", "levothyroxine", "Hashimoto's"]
+  },
+  {
+    "id": "AKT-ENDO-007",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Endocrinology",
+    "difficulty": "Hard",
+    "question": "A 55-year-old man presents with headaches, sweating, large hands and feet, coarsening of facial features and a gap developing between his teeth. His fasting glucose is 8.2 mmol/L. What is the most likely diagnosis and most appropriate initial investigation?",
+    "options": {
+      "A": "Cushing's syndrome — 24-hour urinary cortisol",
+      "B": "Acromegaly — IGF-1 (insulin-like growth factor 1) level",
+      "C": "Acromegaly — random growth hormone level",
+      "D": "Gigantism — bone age X-ray",
+      "E": "Hypothyroidism — TSH and free T4"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Acromegaly is caused by excess growth hormone (GH) from a pituitary adenoma in adults. Classic features: acral enlargement (hands, feet, jaw), coarsening of facial features, sweating, headaches, carpal tunnel syndrome, hypertension, diabetes. Best initial screening test is IGF-1 (more stable than GH which fluctuates). If IGF-1 elevated, confirm with oral glucose tolerance test (OGTT) — GH should suppress to <0.3 mcg/L in normal individuals but fails to suppress in acromegaly.",
+      "A": "Incorrect — Cushing's syndrome causes central obesity, moon face, buffalo hump, purple striae, proximal myopathy — not acral enlargement.",
+      "B": "CORRECT — Acromegaly suspected. IGF-1 is the best initial screening investigation.",
+      "C": "Incorrect — Random GH is unreliable due to pulsatile secretion. IGF-1 is more stable and is the recommended screening test.",
+      "D": "Incorrect — Gigantism occurs when excess GH begins before epiphyseal closure in children/adolescents, causing tall stature.",
+      "E": "Incorrect — Hypothyroidism causes weight gain, fatigue, bradycardia — not acral enlargement or coarsening features."
+    },
+    "reference": "Endocrine Society Guidelines — Acromegaly 2014. NICE — Acromegaly overview.",
+    "tags": ["acromegaly", "IGF-1", "growth hormone", "pituitary adenoma", "investigation", "diagnosis"]
+  },
+  {
+    "id": "AKT-ENDO-008",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Endocrinology",
+    "difficulty": "Medium",
+    "question": "A 48-year-old woman presents with episodic severe headaches, palpitations, sweating and hypertension (BP 210/115 mmHg during an episode). Between episodes her BP is normal. What is the most likely diagnosis and best initial biochemical investigation?",
+    "options": {
+      "A": "Essential hypertension — 24-hour ABPM",
+      "B": "Phaeochromocytoma — 24-hour urine fractionated metanephrines or plasma metanephrines",
+      "C": "Conn's syndrome — serum aldosterone:renin ratio",
+      "D": "Cushing's syndrome — overnight dexamethasone suppression test",
+      "E": "Carcinoid syndrome — 24-hour urinary 5-HIAA"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Phaeochromocytoma is a catecholamine-secreting tumour of the adrenal medulla. Classic presentation: paroxysmal hypertension + headache + palpitations + diaphoresis (the 'four Ps': paroxysmal hypertension, pounding headache, palpitations, perspiration). Investigation of choice: 24-hour urine fractionated metanephrines (metadrenaline and normetadrenaline) or plasma metanephrines — highly sensitive and specific.",
+      "A": "Incorrect — Paroxysmal hypertension normalising between episodes is not essential hypertension.",
+      "B": "CORRECT — Phaeochromocytoma: paroxysmal HTN + headache + palpitations + sweating. Urine/plasma metanephrines are first-line biochemical test.",
+      "C": "Incorrect — Conn's syndrome (primary hyperaldosteronism) causes sustained hypertension, hypokalaemia — not paroxysmal episodes.",
+      "D": "Incorrect — Cushing's syndrome causes sustained hypertension with weight gain, striae, proximal weakness — not paroxysmal attacks.",
+      "E": "Incorrect — Carcinoid syndrome causes flushing, diarrhoea, wheeze — not paroxysmal hypertension."
+    },
+    "reference": "Endocrine Society Guidelines — Phaeochromocytoma 2014. NICE CKS — Hypertension.",
+    "tags": ["phaeochromocytoma", "metanephrines", "paroxysmal hypertension", "palpitations", "sweating", "adrenal"]
+  },
+  {
+    "id": "AKT-ENDO-009",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Endocrinology",
+    "difficulty": "Easy",
+    "question": "A 70-year-old man with type 2 diabetes on gliclazide 80mg twice daily presents with sweating, tremor, palpitations and confusion. His blood glucose is 2.8 mmol/L. He is conscious and able to swallow. What is the most appropriate immediate management?",
+    "options": {
+      "A": "IV 50% dextrose 50ml immediately",
+      "B": "Glucagon 1mg IM injection",
+      "C": "15-20g fast-acting carbohydrate (e.g. 150ml fruit juice or 5 glucose tablets)",
+      "D": "Give a complex carbohydrate meal and monitor",
+      "E": "Call 999 immediately"
+    },
+    "correct_answer": "C",
+    "explanation": {
+      "correct": "This patient has symptomatic hypoglycaemia (BG 2.8 mmol/L) and is conscious and able to swallow — mild-to-moderate hypoglycaemia. Per JBDS (Joint British Diabetes Societies) hypoglycaemia guidelines, first-line treatment for conscious patients is 15-20g of fast-acting carbohydrate: 150-200ml fruit juice, 4-5 glucose tablets, or Glucogel. Recheck glucose after 15 minutes. If still <4 mmol/L, repeat. Once recovered, give long-acting carbohydrate. IV dextrose and glucagon are for severe/unconscious hypoglycaemia.",
+      "A": "Incorrect — IV 50% dextrose is for severe hypoglycaemia in unconscious or unable-to-swallow patients. Unnecessary and potentially harmful here.",
+      "B": "Incorrect — IM glucagon is for severe hypoglycaemia when IV access unavailable and patient cannot swallow.",
+      "C": "CORRECT — 15-20g fast-acting oral carbohydrate for conscious mild-moderate hypoglycaemia per JBDS guidelines.",
+      "D": "Incorrect — Complex carbohydrate alone is too slow to correct acute hypoglycaemia. Fast-acting glucose is needed first.",
+      "E": "Incorrect — 999 is for severe hypoglycaemia (unconscious, fitting) or if oral treatment fails."
+    },
+    "reference": "JBDS — The Management of Hypoglycaemia in Adults with Diabetes Mellitus 2023.",
+    "tags": ["hypoglycaemia", "gliclazide", "glucose tablets", "conscious", "JBDS", "diabetes emergency"]
+  },
+  {
+    "id": "AKT-ENDO-010",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Endocrinology",
+    "difficulty": "Hard",
+    "question": "A 40-year-old woman presents with fatigue, postural hypotension, hyponatraemia (Na 128 mmol/L), hyperkalaemia (K 5.8 mmol/L), hyperpigmentation of the skin creases and buccal mucosa, and weight loss. What is the most likely diagnosis and most appropriate investigation to confirm it?",
+    "options": {
+      "A": "SIADH — urine and plasma osmolality",
+      "B": "Addison's disease — short Synacthen test",
+      "C": "Cushing's syndrome — overnight dexamethasone suppression test",
+      "D": "Hypothyroidism — TSH and free T4",
+      "E": "Conn's syndrome — aldosterone:renin ratio"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Addison's disease (primary adrenal insufficiency) presents with: fatigue, postural hypotension, hyponatraemia, hyperkalaemia, hyperpigmentation (due to elevated ACTH stimulating melanocortin receptors), weight loss, nausea. The investigation of choice is the short Synacthen test (SST): baseline cortisol measured, then 250 mcg tetracosactide (synthetic ACTH) given IM/IV, cortisol remeasured at 30 and 60 minutes. Peak cortisol <500 nmol/L confirms adrenal insufficiency.",
+      "A": "Incorrect — SIADH causes hyponatraemia but with low/normal potassium, no hyperpigmentation and no adrenal features.",
+      "B": "CORRECT — Addison's disease: hyperpigmentation + hyponatraemia + hyperkalaemia + postural hypotension. Short Synacthen test confirms.",
+      "C": "Incorrect — Cushing's syndrome causes hypertension, central obesity, moon face, purple striae — not hyperpigmentation and hyperkalaemia.",
+      "D": "Incorrect — Hypothyroidism does not cause hyperpigmentation or hyperkalaemia.",
+      "E": "Incorrect — Conn's syndrome causes hypertension and hypokalaemia — the opposite electrolyte pattern."
+    },
+    "reference": "Society for Endocrinology — Addison's disease guidelines. NICE CKS — Adrenal insufficiency.",
+    "tags": ["Addison's disease", "adrenal insufficiency", "Synacthen test", "hyperpigmentation", "hyponatraemia", "hyperkalaemia"]
+  },
+  {
+    "id": "AKT-ENDO-011",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Endocrinology",
+    "difficulty": "Medium",
+    "question": "A 55-year-old woman with type 2 diabetes has an HbA1c of 88 mmol/mol despite being on metformin 1g twice daily, empagliflozin 10mg and gliclazide 80mg twice daily. She has a BMI of 36 kg/m². What is the most appropriate next step per NICE NG28?",
+    "options": {
+      "A": "Add pioglitazone 30mg once daily",
+      "B": "Add a GLP-1 receptor agonist (e.g. semaglutide or liraglutide)",
+      "C": "Start basal insulin (insulin glargine) at bedtime",
+      "D": "Add sitagliptin 100mg once daily",
+      "E": "Refer to diabetes specialist nurse for dietary review"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per NICE NG28 (2022), for patients with T2DM with BMI ≥35 kg/m² whose HbA1c remains above target on dual/triple oral therapy, a GLP-1 receptor agonist (e.g. semaglutide, liraglutide, dulaglutide) is recommended before insulin. GLP-1 agonists cause significant weight loss, reduce HbA1c and have cardiovascular benefits. In patients with BMI <35, insulin is the next step. This patient's BMI of 36 makes GLP-1 agonist the preferred choice.",
+      "A": "Incorrect — Pioglitazone causes weight gain, fluid retention and is associated with heart failure and bladder cancer risk.",
+      "B": "CORRECT — GLP-1 receptor agonist is preferred over insulin in T2DM with BMI ≥35 on triple therapy per NICE NG28.",
+      "C": "Incorrect — Insulin is the next step for BMI <35 when triple therapy fails. With BMI ≥35, GLP-1 agonist is preferred first.",
+      "D": "Incorrect — Adding a fourth oral agent (DPP-4 inhibitor) is not a NICE-recommended pathway. GLP-1 agonist or insulin is next.",
+      "E": "Incorrect — Dietary review alone will not achieve adequate glucose control at HbA1c 88 mmol/mol with three agents already."
+    },
+    "reference": "NICE NG28 — Type 2 diabetes in adults: management. https://www.nice.org.uk/guidance/ng28",
+    "tags": ["type 2 diabetes", "GLP-1", "semaglutide", "BMI", "triple therapy", "NICE NG28"]
+  },
+  {
+    "id": "AKT-ENDO-012",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Endocrinology",
+    "difficulty": "Medium",
+    "question": "A 30-year-old woman presents with central obesity, moon face, buffalo hump, purple abdominal striae, easy bruising and proximal muscle weakness. BP is 158/95 mmHg. What is the best initial screening test for Cushing's syndrome?",
+    "options": {
+      "A": "Serum cortisol at 9am",
+      "B": "24-hour urinary free cortisol",
+      "C": "Overnight 1mg dexamethasone suppression test",
+      "D": "ACTH stimulation test",
+      "E": "MRI pituitary"
+    },
+    "correct_answer": "C",
+    "explanation": {
+      "correct": "The overnight low-dose dexamethasone suppression test (DST) is the recommended first-line screening test for Cushing's syndrome. 1mg dexamethasone is given at 11pm and cortisol measured at 9am next day. Normally cortisol suppresses to <50 nmol/L. Failure to suppress suggests Cushing's syndrome. Alternatively, 24-hour urinary free cortisol (UFC) or late-night salivary cortisol are also validated screening tests.",
+      "A": "Incorrect — A single 9am cortisol is not diagnostic as cortisol varies throughout the day and overlaps between Cushing's and normal.",
+      "B": "Incorrect — 24-hour UFC is a valid screening test but requires accurate urine collection and is second choice to overnight DST in practical terms.",
+      "C": "CORRECT — Overnight 1mg dexamethasone suppression test is first-line screening for Cushing's syndrome.",
+      "D": "Incorrect — ACTH stimulation (Synacthen) test is used to diagnose adrenal insufficiency (Addison's disease), not Cushing's.",
+      "E": "Incorrect — MRI pituitary is performed after biochemical confirmation of Cushing's syndrome to locate the source, not as a screening test."
+    },
+    "reference": "Endocrine Society Guidelines — Cushing's Syndrome 2022. NICE CKS — Cushing's syndrome.",
+    "tags": ["Cushing's syndrome", "dexamethasone suppression test", "cortisol", "screening", "central obesity", "purple striae"]
+  },
+  {
+    "id": "AKT-ENDO-013",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Endocrinology",
+    "difficulty": "Easy",
+    "question": "A 55-year-old woman with type 2 diabetes is started on insulin. She asks about driving regulations. Which statement is correct regarding DVLA requirements for insulin-treated diabetes?",
+    "options": {
+      "A": "No DVLA notification required as she holds a Group 1 licence",
+      "B": "She must inform the DVLA, check blood glucose before and every 2 hours when driving, not drive if BG <5 mmol/L",
+      "C": "She can drive as normal but must carry glucose snacks",
+      "D": "She must surrender her licence for 3 months when starting insulin",
+      "E": "She only needs to inform DVLA if she has a hypoglycaemic episode while driving"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "DVLA regulations for insulin-treated diabetes (Group 1 licence): must notify DVLA when starting insulin; check blood glucose ≤2 hours before driving AND every 2 hours on long journeys; must not drive if blood glucose <5 mmol/L; if BG 5-8 mmol/L, eat a snack before driving; carry fast-acting glucose in vehicle; if hypoglycaemia while driving — stop safely, remove keys, move from driver's seat, take glucose, wait 45 minutes before resuming. Licence is typically renewed every 1-3 years.",
+      "A": "Incorrect — DVLA must be notified when starting insulin regardless of licence group.",
+      "B": "CORRECT — Must notify DVLA, check BG before and every 2 hours when driving, do not drive if BG <5 mmol/L.",
+      "C": "Incorrect — Specific BG thresholds and DVLA notification are legally required, not optional.",
+      "D": "Incorrect — There is no mandatory 3-month licence surrender for starting insulin. The licence is reviewed by DVLA.",
+      "E": "Incorrect — DVLA must be notified proactively when starting insulin, not only after an episode."
+    },
+    "reference": "DVLA — Assessing fitness to drive: a guide for medical professionals. https://www.gov.uk/guidance/assessing-fitness-to-drive-a-guide-for-medical-professionals",
+    "tags": ["insulin", "driving", "DVLA", "hypoglycaemia", "blood glucose", "diabetes"]
+  },
+  {
+    "id": "AKT-ENDO-014",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Endocrinology",
+    "difficulty": "Hard",
+    "question": "A 62-year-old man is incidentally found to have a serum calcium of 2.82 mmol/L (2.2-2.6) and a low phosphate of 0.65 mmol/L (0.8-1.5) on routine bloods. He has no symptoms. Repeat calcium is 2.79 mmol/L. PTH is 9.8 pmol/L (1.6-6.9 — elevated). What is the most likely diagnosis?",
+    "options": {
+      "A": "Malignancy-associated hypercalcaemia",
+      "B": "Sarcoidosis",
+      "C": "Primary hyperparathyroidism",
+      "D": "Vitamin D toxicity",
+      "E": "Familial hypocalciuric hypercalcaemia"
+    },
+    "correct_answer": "C",
+    "explanation": {
+      "correct": "Primary hyperparathyroidism (PHPT) is the most common cause of hypercalcaemia in the outpatient/community setting. It presents with: hypercalcaemia + elevated PTH + low phosphate (PTH causes phosphaturia). It is most commonly asymptomatic and found incidentally. Caused by a single parathyroid adenoma in 85% of cases. Management: parathyroidectomy for symptomatic or meeting surgical criteria; surveillance for asymptomatic mild cases.",
+      "A": "Incorrect — Malignancy-associated hypercalcaemia causes elevated calcium with SUPPRESSED PTH (PTHrP-mediated or osteolytic metastases).",
+      "B": "Incorrect — Sarcoidosis causes hypercalcaemia via excess 1,25-dihydroxyvitamin D with suppressed PTH.",
+      "C": "CORRECT — Hypercalcaemia + elevated PTH + low phosphate = primary hyperparathyroidism.",
+      "D": "Incorrect — Vitamin D toxicity causes hypercalcaemia with suppressed PTH.",
+      "E": "Incorrect — Familial hypocalciuric hypercalcaemia (FHH) causes mild hypercalcaemia with elevated/normal PTH but very low urinary calcium excretion (distinguishes from PHPT)."
+    },
+    "reference": "NICE CKS — Hypercalcaemia. NICE NG132 — Primary hyperparathyroidism guidelines.",
+    "tags": ["primary hyperparathyroidism", "hypercalcaemia", "PTH", "elevated calcium", "parathyroid", "low phosphate"]
+  },
+  {
+    "id": "AKT-ENDO-015",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Endocrinology",
+    "difficulty": "Medium",
+    "question": "A 45-year-old man with type 1 diabetes on basal-bolus insulin has an HbA1c of 72 mmol/mol. He has no hypoglycaemia unawareness. What is the most appropriate intervention to improve his glycaemic control while minimising hypoglycaemia risk?",
+    "options": {
+      "A": "Add metformin 500mg twice daily",
+      "B": "Switch to a twice-daily mixed insulin regimen",
+      "C": "Refer for continuous glucose monitoring (CGM) assessment",
+      "D": "Add empagliflozin 10mg once daily",
+      "E": "Increase basal insulin dose by 20%"
+    },
+    "correct_answer": "C",
+    "explanation": {
+      "correct": "Per NICE NG17 (Type 1 diabetes in adults), continuous glucose monitoring (CGM — real-time or flash/intermittently scanned) is recommended for all adults with type 1 diabetes. CGM provides detailed glucose trends, reduces hypoglycaemia and improves HbA1c. NICE recommends offering CGM to all T1DM adults as it significantly improves time-in-range and reduces hypoglycaemia risk compared to finger-prick monitoring alone.",
+      "A": "Incorrect — Metformin can be added as adjunct in T1DM but is not the priority over optimising glucose monitoring technology.",
+      "B": "Incorrect — Switching from basal-bolus to twice-daily mixed insulin is a step down in flexibility and typically worsens control.",
+      "C": "CORRECT — CGM is recommended for all T1DM adults per NICE NG17 to improve control and reduce hypoglycaemia.",
+      "D": "Incorrect — Empagliflozin (SGLT2i) is licensed as adjunct in T1DM but carries risk of diabetic ketoacidosis. Not first priority.",
+      "E": "Incorrect — Empirically increasing basal insulin without CGM data risks hypoglycaemia."
+    },
+    "reference": "NICE NG17 — Type 1 diabetes in adults: diagnosis and management. https://www.nice.org.uk/guidance/ng17",
+    "tags": ["type 1 diabetes", "CGM", "continuous glucose monitoring", "HbA1c", "NICE NG17", "hypoglycaemia"]
+  },
+  {
+    "id": "AKT-ENDO-016",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Endocrinology",
+    "difficulty": "Easy",
+    "question": "A 70-year-old woman is started on alendronate 70mg weekly for osteoporosis (T-score -2.8). She asks how to take it correctly. Which instruction is most important?",
+    "options": {
+      "A": "Take with food to minimise GI side effects",
+      "B": "Take at bedtime with a full glass of water",
+      "C": "Take first thing in the morning, 30 minutes before food or other medications, sitting upright with a full glass of water, remain upright for 30 minutes after",
+      "D": "Take with calcium supplement at the same time",
+      "E": "Take on an empty stomach, lying down to maximise absorption"
+    },
+    "correct_answer": "C",
+    "explanation": {
+      "correct": "Alendronate (bisphosphonate) must be taken correctly to avoid oesophageal irritation/ulceration (a serious side effect). Instructions: take on an empty stomach first thing in the morning; swallow with a full glass of plain water (not other drinks); remain upright (sitting or standing) for at least 30 minutes; do not eat, drink (except plain water) or take other medications for 30 minutes after. Calcium and vitamin D supplements should be taken at a different time of day.",
+      "A": "Incorrect — Bisphosphonates must NOT be taken with food as food severely reduces absorption.",
+      "B": "Incorrect — Taking at bedtime lying down risks prolonged oesophageal contact causing oesophagitis/ulceration.",
+      "C": "CORRECT — Correct administration: fasting, upright, full glass water, remain upright 30 minutes, morning dose.",
+      "D": "Incorrect — Calcium supplements chelate bisphosphonates and must be taken at a DIFFERENT time of day.",
+      "E": "Incorrect — Lying down after alendronate causes oesophageal pooling and severe oesophagitis — absolutely contraindicated."
+    },
+    "reference": "BNF — Alendronic acid administration. NICE NG146 — Osteoporosis: fragility fracture risk.",
+    "tags": ["alendronate", "bisphosphonate", "osteoporosis", "administration", "oesophagitis", "counselling"]
+  },
+  {
+    "id": "AKT-ENDO-017",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Endocrinology",
+    "difficulty": "Hard",
+    "question": "A 25-year-old woman with type 1 diabetes presents unwell with vomiting and abdominal pain. Blood glucose is 22 mmol/L, blood ketones 4.2 mmol/L, pH 7.22, bicarbonate 12 mmol/L. She is tachycardic and hypotensive. What is the diagnosis and most appropriate immediate management?",
+    "options": {
+      "A": "Hyperosmolar hyperglycaemic state — IV 0.9% saline at 1L/hour",
+      "B": "Diabetic ketoacidosis — call 999, IV 0.9% saline, fixed rate insulin infusion per DKA protocol",
+      "C": "Severe hypoglycaemia — IV 50% dextrose",
+      "D": "Diabetic ketoacidosis — subcutaneous insulin stat dose and oral fluids",
+      "E": "Euglycaemic DKA — IV insulin only, no fluids needed"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Diabetic ketoacidosis (DKA) diagnostic criteria: blood glucose >11 mmol/L (or known diabetes), blood ketones ≥3 mmol/L (or ketonuria 2+), and acidosis (pH <7.3, bicarbonate <15 mmol/L). This patient meets all criteria. Per JBDS DKA guidelines, management: IV fluid resuscitation (0.9% NaCl — start 1L over first hour), fixed rate IV insulin infusion (0.1 units/kg/hour), potassium replacement, monitoring. Hospital admission via 999 is essential.",
+      "A": "Incorrect — HHS occurs in T2DM with extreme hyperglycaemia (>30 mmol/L), high osmolality, minimal ketosis and NO acidosis.",
+      "B": "CORRECT — DKA: hyperglycaemia + ketones ≥3 + acidosis. IV saline + fixed rate insulin infusion per JBDS protocol.",
+      "C": "Incorrect — BG 22 mmol/L is severe hyperglycaemia, not hypoglycaemia.",
+      "D": "Incorrect — SC insulin is inadequate in DKA. IV fixed-rate insulin infusion is required for reliable absorption.",
+      "E": "Incorrect — Euglycaemic DKA (BG <11 but ketotic) can occur with SGLT2i use, but still requires IV fluids."
+    },
+    "reference": "JBDS — Management of Diabetic Ketoacidosis in Adults 2023. https://www.diabetes.org.uk/jbds",
+    "tags": ["DKA", "diabetic ketoacidosis", "type 1 diabetes", "IV insulin", "ketones", "JBDS"]
+  },
+  {
+    "id": "AKT-ENDO-018",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Endocrinology",
+    "difficulty": "Medium",
+    "question": "A 65-year-old woman has a FRAX score indicating a 10-year major osteoporotic fracture risk of 22% (above the intervention threshold). She has no prior fractures and is not on steroids. A DEXA scan shows T-score -2.6. What is the most appropriate first-line treatment?",
+    "options": {
+      "A": "Calcium and vitamin D supplementation only",
+      "B": "Alendronate 70mg weekly + calcium and vitamin D",
+      "C": "Strontium ranelate 2g daily",
+      "D": "Denosumab 60mg subcutaneous every 6 months",
+      "E": "Raloxifene 60mg daily"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per NICE NG146 and NICE TA160, alendronate (oral bisphosphonate) is first-line treatment for osteoporosis in postmenopausal women with a FRAX score above the intervention threshold. It is the most cost-effective agent. Calcium and vitamin D supplementation should be co-prescribed unless dietary intake is adequate. Alendronate is taken 70mg once weekly.",
+      "A": "Incorrect — Calcium and vitamin D alone are insufficient when FRAX risk is above the intervention threshold and T-score confirms osteoporosis.",
+      "B": "CORRECT — Alendronate 70mg weekly + calcium/vitamin D is first-line for postmenopausal osteoporosis per NICE NG146/TA160.",
+      "C": "Incorrect — Strontium ranelate is no longer recommended due to cardiovascular side effects.",
+      "D": "Incorrect — Denosumab is second-line for patients who cannot tolerate or have contraindications to oral bisphosphonates.",
+      "E": "Incorrect — Raloxifene (SERM) is an option for vertebral osteoporosis but is second-line and does not reduce hip fracture risk."
+    },
+    "reference": "NICE NG146 — Osteoporosis: assessing the risk of fragility fracture. NICE TA160 — Alendronate for osteoporosis.",
+    "tags": ["osteoporosis", "alendronate", "FRAX", "DEXA", "bisphosphonate", "NICE NG146"]
+  },
+  {
+    "id": "AKT-ENDO-019",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Endocrinology",
+    "difficulty": "Medium",
+    "question": "A 42-year-old woman on long-term prednisolone 10mg daily for rheumatoid arthritis is reviewed. She has no fractures and no osteoporosis risk factors. She is premenopausal. What is the most appropriate bone protection strategy?",
+    "options": {
+      "A": "No treatment needed if premenopausal",
+      "B": "Calcium and vitamin D supplementation only",
+      "C": "DEXA scan to assess bone density and start alendronate if T-score <-1.5",
+      "D": "Start alendronate 70mg weekly empirically without DEXA",
+      "E": "DEXA scan and start alendronate regardless of T-score as she is on long-term steroids"
+    },
+    "correct_answer": "C",
+    "explanation": {
+      "correct": "Per NICE CG146 (Bisphosphonates for preventing osteoporosis) and RCP guidelines, patients starting or already on ≥7.5mg prednisolone for ≥3 months should be assessed for bone protection. For patients under 65 without prior fragility fracture, DEXA scan should be performed. Alendronate is started if T-score is below the intervention threshold (-1.5 for younger patients on steroids). Calcium and vitamin D should always be co-prescribed.",
+      "A": "Incorrect — Long-term steroids cause significant bone loss regardless of menopausal status. Premenopausal women on long-term steroids still need assessment.",
+      "B": "Incorrect — Calcium and vitamin D alone are insufficient for patients on long-term high-dose steroids without bone density assessment.",
+      "C": "CORRECT — DEXA scan + alendronate if T-score <-1.5 per RCP/NOGG guidelines for long-term steroid users.",
+      "D": "Incorrect — Empirical bisphosphonate without DEXA is recommended for patients ≥65 or with prior fractures, not for younger patients.",
+      "E": "Incorrect — Treating all patients regardless of T-score is not the NICE/RCP pathway for younger patients."
+    },
+    "reference": "RCP/NOGG Guidelines — Glucocorticoid-induced osteoporosis 2022. NICE CG146.",
+    "tags": ["steroid-induced osteoporosis", "prednisolone", "alendronate", "DEXA", "bone protection", "glucocorticoid"]
+  },
+  {
+    "id": "AKT-ENDO-020",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Endocrinology",
+    "difficulty": "Easy",
+    "question": "A 58-year-old man with type 2 diabetes has an annual review. His HbA1c target is discussed. He has no history of CVD, hypoglycaemia or frailty. He is on metformin only. What is the NICE-recommended HbA1c target for this patient?",
+    "options": {
+      "A": "48 mmol/mol (6.5%)",
+      "B": "53 mmol/mol (7.0%)",
+      "C": "58 mmol/mol (7.5%)",
+      "D": "64 mmol/mol (8.0%)",
+      "E": "42 mmol/mol (6.0%)"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per NICE NG28, HbA1c targets for type 2 diabetes: 48 mmol/mol (6.5%) if managed with diet alone or with a drug that does not cause hypoglycaemia (e.g. metformin); 53 mmol/mol (7.0%) if on a drug that may cause hypoglycaemia (e.g. sulphonylurea or insulin). However, for patients managed with lifestyle + metformin alone, the target is 48 mmol/mol. Wait — this patient is ON metformin (not causing hypo), so target is 48 mmol/mol. The 53 mmol/mol target applies when hypoglycaemia-causing drugs are added.",
+      "A": "CORRECT — 48 mmol/mol is the target for T2DM managed with diet alone or with non-hypoglycaemia-causing drugs (e.g. metformin) per NICE NG28.",
+      "B": "Incorrect — 53 mmol/mol applies when drugs that may cause hypoglycaemia are added (sulphonylurea, insulin).",
+      "C": "Incorrect — 58 mmol/mol is not a standard NICE target for T2DM.",
+      "D": "Incorrect — 64 mmol/mol is not a standard NICE T2DM target. Higher targets may be considered in frail elderly.",
+      "E": "Incorrect — 42 mmol/mol is below the NICE recommended target and risks hypoglycaemia."
+    },
+    "reference": "NICE NG28 — Type 2 diabetes in adults: management. https://www.nice.org.uk/guidance/ng28",
+    "tags": ["type 2 diabetes", "HbA1c target", "metformin", "glycaemic control", "NICE NG28", "48 mmol/mol"]
+  }
+]

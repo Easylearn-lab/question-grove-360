@@ -1,0 +1,522 @@
+[
+  {
+    "id": "AKT-MSK-001",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Musculoskeletal",
+    "difficulty": "Easy",
+    "question": "A 55-year-old woman presents with a 6-month history of bilateral knee pain worse on walking downstairs and after prolonged sitting. X-ray shows joint space narrowing and osteophytes. BMI is 31 kg/m². What is the most appropriate first-line management?",
+    "options": {
+      "A": "Refer for total knee replacement",
+      "B": "Prescribe co-codamol 30/500 regularly",
+      "C": "Exercise therapy, weight loss advice and paracetamol for pain relief",
+      "D": "Intra-articular corticosteroid injection",
+      "E": "Prescribe naproxen 500mg twice daily with PPI cover"
+    },
+    "correct_answer": "C",
+    "explanation": {
+      "correct": "Per NICE NG226 (Osteoarthritis in over 16s), first-line management of knee osteoarthritis includes: exercise therapy (strengthening and aerobic), weight loss advice (BMI 31 — significant modifiable risk factor), and paracetamol as first-line analgesia. These core treatments should be offered to all patients before pharmacological or interventional options.",
+      "A": "Incorrect — Surgical referral is considered only after adequate trial of conservative management including exercise and analgesia.",
+      "B": "Incorrect — Opioid analgesia (co-codamol) is not first-line for osteoarthritis and should be used only when simpler analgesia fails.",
+      "C": "CORRECT — Exercise + weight loss + paracetamol is first-line for knee OA per NICE NG226.",
+      "D": "Incorrect — Intra-articular corticosteroid is useful for flares and as adjunct, not first-line treatment.",
+      "E": "Incorrect — NSAIDs are second-line after paracetamol and topical NSAIDs, with GI risk especially in older patients."
+    },
+    "reference": "NICE NG226 — Osteoarthritis in over 16s: diagnosis and management. https://www.nice.org.uk/guidance/ng226",
+    "tags": ["osteoarthritis", "knee", "exercise", "weight loss", "paracetamol", "NICE NG226"]
+  },
+  {
+    "id": "AKT-MSK-002",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Musculoskeletal",
+    "difficulty": "Medium",
+    "question": "A 40-year-old woman presents with a 3-month history of symmetrical small joint polyarthritis affecting her MCP and PIP joints bilaterally, morning stiffness lasting 2 hours, fatigue and raised CRP (42 mg/L). RF is positive and anti-CCP antibodies are positive. What is the most appropriate management?",
+    "options": {
+      "A": "Prescribe NSAIDs and review in 3 months",
+      "B": "Urgent referral to rheumatology — start DMARDs within 3 months of symptom onset",
+      "C": "Physiotherapy referral and analgesia",
+      "D": "Start prednisolone 30mg and review in 6 weeks",
+      "E": "Request X-rays and MRI before any treatment"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per NICE NG100 (Rheumatoid arthritis in adults), any patient with suspected RA should be referred urgently to rheumatology. DMARD therapy (methotrexate as anchor drug) should be started within 3 months of persistent synovitis to prevent irreversible joint damage. Positive RF and anti-CCP antibodies with symmetrical small joint involvement strongly suggests RA. Early DMARD initiation significantly improves long-term outcomes.",
+      "A": "Incorrect — NSAIDs treat symptoms but do not modify disease. Delay to DMARD increases joint damage risk.",
+      "B": "CORRECT — Urgent rheumatology referral and DMARD initiation within 3 months per NICE NG100.",
+      "C": "Incorrect — Physiotherapy alone is insufficient for active inflammatory RA with positive serology.",
+      "D": "Incorrect — Steroids are used as bridging therapy in RA but should not replace DMARD referral.",
+      "E": "Incorrect — Imaging should not delay referral. Clinical and serological features warrant immediate rheumatology referral."
+    },
+    "reference": "NICE NG100 — Rheumatoid arthritis in adults: management. https://www.nice.org.uk/guidance/ng100",
+    "tags": ["rheumatoid arthritis", "DMARDs", "anti-CCP", "rheumatology referral", "NICE NG100", "methotrexate"]
+  },
+  {
+    "id": "AKT-MSK-003",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Musculoskeletal",
+    "difficulty": "Medium",
+    "question": "A 65-year-old man presents with sudden onset severe pain, swelling and erythema of the right first metatarsophalangeal (MTP) joint. He drinks 25 units of alcohol per week. Serum urate is 560 umol/L. What is the most appropriate treatment for the acute attack?",
+    "options": {
+      "A": "Start allopurinol 100mg immediately",
+      "B": "NSAIDs (naproxen 500mg twice daily) or colchicine 500 mcg 2-4 times daily",
+      "C": "Antibiotics for presumed septic arthritis",
+      "D": "Joint aspiration and intra-articular corticosteroid",
+      "E": "Paracetamol 1g four times daily and elevation"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per NICE CG56 and NG219 (Gout), acute gout is treated with anti-inflammatory analgesia: NSAIDs (naproxen 500mg BD or indomethacin) or colchicine (500 mcg 2-4x/day). Both are equally effective. Choice depends on comorbidities (eGFR, CVD, GI history). Colchicine is preferred when NSAIDs are contraindicated. Allopurinol (urate-lowering therapy) must NOT be started during an acute attack as it can prolong or worsen it. ULT is started 4-6 weeks after acute attack resolution.",
+      "A": "Incorrect — Starting allopurinol during an acute attack can prolong or worsen the episode. ULT is started after the acute attack settles.",
+      "B": "CORRECT — NSAIDs or colchicine are first-line for acute gout attack per NICE NG219.",
+      "C": "Incorrect — Septic arthritis should be excluded (especially if fever or immunocompromised) but clinical picture is classic gout.",
+      "D": "Incorrect — Joint aspiration may be needed to exclude septic arthritis but intra-articular steroid is not first-line for acute gout.",
+      "E": "Incorrect — Paracetamol alone has insufficient anti-inflammatory effect for acute gout."
+    },
+    "reference": "NICE NG219 — Gout: diagnosis and management. https://www.nice.org.uk/guidance/ng219",
+    "tags": ["gout", "acute gout", "colchicine", "NSAIDs", "allopurinol", "NICE NG219"]
+  },
+  {
+    "id": "AKT-MSK-004",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Musculoskeletal",
+    "difficulty": "Hard",
+    "question": "A 70-year-old woman presents with a 3-month history of severe bilateral shoulder girdle aching and stiffness, worse in the mornings. She also has headache and jaw claudication. ESR is 95 mm/hr, CRP 68 mg/L. She has no visual symptoms. What is the most important immediate management?",
+    "options": {
+      "A": "Start prednisolone 15mg for polymyalgia rheumatica and review in 4 weeks",
+      "B": "Start prednisolone 40-60mg immediately for giant cell arteritis and refer urgently to rheumatology/ophthalmology",
+      "C": "Refer to neurology for headache investigation",
+      "D": "Arrange temporal artery biopsy before starting any treatment",
+      "E": "Start NSAIDs and physiotherapy"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Jaw claudication + headache + shoulder girdle symptoms + very elevated inflammatory markers = Giant Cell Arteritis (GCA) until proven otherwise. GCA is a medical emergency — visual loss (ischaemic optic neuropathy causing permanent blindness) can occur rapidly. Per BSR/BHPR guidelines and NICE, high-dose prednisolone (40-60mg daily) must be started immediately WITHOUT waiting for temporal artery biopsy. Biopsy can be performed within 2 weeks without significantly affecting histological changes. Urgent ophthalmology review if any visual symptoms.",
+      "A": "Incorrect — 15mg prednisolone is for PMR alone (without GCA features). Jaw claudication = GCA = 40-60mg required.",
+      "B": "CORRECT — GCA with jaw claudication: start prednisolone 40-60mg immediately. Do not delay for biopsy. Urgent referral.",
+      "C": "Incorrect — Neurology referral for headache is inappropriate when GCA is suspected — visual loss risk demands immediate steroid treatment.",
+      "D": "Incorrect — Treatment must not be delayed for biopsy. Start steroids immediately; biopsy within 2 weeks.",
+      "E": "Incorrect — NSAIDs are wholly inadequate for GCA and will not prevent blindness."
+    },
+    "reference": "BSR/BHPR Guidelines — Giant cell arteritis 2020. NICE CKS — Giant cell arteritis.",
+    "tags": ["giant cell arteritis", "GCA", "jaw claudication", "prednisolone", "temporal arteritis", "visual loss"]
+  },
+  {
+    "id": "AKT-MSK-005",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Musculoskeletal",
+    "difficulty": "Medium",
+    "question": "A 35-year-old man presents with a 3-week history of low back pain radiating down his left leg to the foot, with tingling in the lateral calf and dorsum of the foot. On examination there is weakness of great toe extension and reduced sensation over the dorsum of the foot. Straight leg raise is positive at 40°. What nerve root is most likely affected?",
+    "options": {
+      "A": "L3",
+      "B": "L4",
+      "C": "L5",
+      "D": "S1",
+      "E": "S2"
+    },
+    "correct_answer": "C",
+    "explanation": {
+      "correct": "L5 nerve root compression causes: pain/paraesthesia radiating to lateral calf and dorsum of foot, weakness of great toe extension (extensor hallucis longus — L5), weakness of ankle dorsiflexion, and sensory loss over dorsum of foot and first web space. Ankle reflex is typically preserved (unlike S1). Positive SLR at 40° confirms nerve root irritation.",
+      "A": "Incorrect — L3 nerve root causes pain in anterior thigh, weakness of knee extension, reduced knee reflex.",
+      "B": "Incorrect — L4 nerve root causes pain to medial lower leg, weakness of ankle dorsiflexion, reduced knee jerk.",
+      "C": "CORRECT — L5 root: lateral calf + dorsum foot paraesthesia, EHL weakness (great toe extension), intact ankle reflex.",
+      "D": "Incorrect — S1 root causes pain/paraesthesia to posterior calf and lateral foot, weakness of plantarflexion/eversion, reduced ankle reflex.",
+      "E": "Incorrect — S2 root causes posterior thigh/calf pain, bladder/bowel dysfunction in severe compression."
+    },
+    "reference": "NICE NG59 — Low back pain and sciatica in over 16s. Neurological examination of nerve roots.",
+    "tags": ["sciatica", "L5 nerve root", "nerve root compression", "radiculopathy", "great toe extension", "NICE NG59"]
+  },
+  {
+    "id": "AKT-MSK-006",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Musculoskeletal",
+    "difficulty": "Easy",
+    "question": "A 45-year-old man presents with acute low back pain for 5 days following lifting at work. There are no red flags. He has no leg pain. What is the most appropriate management?",
+    "options": {
+      "A": "Bed rest for 2 weeks",
+      "B": "MRI lumbar spine urgently",
+      "C": "Stay active, analgesia (paracetamol ± NSAID), and reassure that most cases resolve within 4-6 weeks",
+      "D": "Refer urgently to orthopaedic surgery",
+      "E": "Prescribe opioid analgesia (codeine) and review in 2 weeks"
+    },
+    "correct_answer": "C",
+    "explanation": {
+      "correct": "Per NICE NG59 (Low back pain and sciatica), for non-specific acute low back pain without red flags: advise staying active (bed rest worsens outcomes), provide analgesia (paracetamol first-line, NSAIDs if needed with PPI cover), reassure that 90% of acute back pain resolves within 4-6 weeks. Exercise and physiotherapy are beneficial for persistent symptoms. Imaging (MRI) is not indicated for non-specific back pain without red flags.",
+      "A": "Incorrect — Bed rest is actively harmful in acute back pain — staying active promotes faster recovery per NICE NG59.",
+      "B": "Incorrect — MRI is indicated for suspected cauda equina syndrome, red flags or persistent pain >6 weeks. Not for acute non-specific LBP.",
+      "C": "CORRECT — Stay active + analgesia + reassurance for acute non-specific LBP per NICE NG59.",
+      "D": "Incorrect — Surgical referral without red flags or neurological deficit is not indicated.",
+      "E": "Incorrect — Opioids are not recommended for first-line acute back pain management. Paracetamol and NSAIDs are preferred."
+    },
+    "reference": "NICE NG59 — Low back pain and sciatica in over 16s. https://www.nice.org.uk/guidance/ng59",
+    "tags": ["low back pain", "acute", "stay active", "no bed rest", "NICE NG59", "non-specific"]
+  },
+  {
+    "id": "AKT-MSK-007",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Musculoskeletal",
+    "difficulty": "Hard",
+    "question": "A 30-year-old man presents with a 6-month history of lower back pain and morning stiffness lasting over 1 hour, improving with exercise but not with rest. He has a history of uveitis. HLA-B27 is positive. MRI shows sacroiliitis. What is the most likely diagnosis and first-line treatment?",
+    "options": {
+      "A": "Psoriatic arthritis — methotrexate",
+      "B": "Ankylosing spondylitis (axial spondyloarthropathy) — NSAIDs and physiotherapy",
+      "C": "Mechanical back pain — physiotherapy and analgesia",
+      "D": "Reactive arthritis — antibiotics",
+      "E": "Lumbar disc herniation — MRI and surgical referral"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Ankylosing spondylitis (AS) / axial spondyloarthropathy presents with: inflammatory back pain (worse at rest, improves with exercise, morning stiffness >1 hour), sacroiliitis on MRI, HLA-B27 positivity, associated uveitis, enthesitis. Per NICE NG65 (Spondyloarthritis), first-line treatment: NSAIDs (continuous or on-demand) + structured physiotherapy. If NSAIDs fail, biologic therapy (TNF inhibitors: adalimumab, etanercept, or IL-17 inhibitors: secukinumab) is indicated — initiated by rheumatology.",
+      "A": "Incorrect — Psoriatic arthritis involves peripheral joints, dactylitis and psoriasis — treated with DMARDs (methotrexate).",
+      "B": "CORRECT — Ankylosing spondylitis: inflammatory back pain + sacroiliitis + HLA-B27 + uveitis. NSAIDs + physiotherapy per NICE NG65.",
+      "C": "Incorrect — Mechanical back pain is worse with activity, better with rest — the opposite pattern. No sacroiliitis or HLA-B27.",
+      "D": "Incorrect — Reactive arthritis follows genitourinary or GI infection (Reiter's syndrome: urethritis, conjunctivitis, arthritis).",
+      "E": "Incorrect — Disc herniation causes radicular symptoms (leg pain), not bilateral sacroiliitis or uveitis."
+    },
+    "reference": "NICE NG65 — Spondyloarthritis in over 16s: diagnosis and management. https://www.nice.org.uk/guidance/ng65",
+    "tags": ["ankylosing spondylitis", "axial spondyloarthropathy", "HLA-B27", "sacroiliitis", "NSAIDs", "NICE NG65"]
+  },
+  {
+    "id": "AKT-MSK-008",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Musculoskeletal",
+    "difficulty": "Medium",
+    "question": "A 60-year-old woman with a history of breast cancer presents with sudden onset severe mid-thoracic back pain after minimal trauma (picking up a shopping bag). She has bilateral leg weakness and difficulty urinating. What is the most appropriate immediate management?",
+    "options": {
+      "A": "Prescribe strong opioids and arrange physiotherapy",
+      "B": "Call 999 — suspected metastatic spinal cord compression, urgent MRI whole spine",
+      "C": "Arrange routine MRI spine within 2 weeks",
+      "D": "Start high-dose steroids in primary care and discharge",
+      "E": "Refer to pain clinic for vertebral compression fracture management"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Metastatic spinal cord compression (MSCC) is an oncological emergency. Red flags: cancer history + back pain + bilateral lower limb weakness + bladder dysfunction = MSCC until proven otherwise. Per NICE NG234 (MSCC), urgent same-day MRI of whole spine is required. Dexamethasone 16mg should be given immediately (if no contraindication). Urgent oncology/neurosurgical referral for radiotherapy or surgery. Delay risks permanent paralysis.",
+      "A": "Incorrect — Opioids and physiotherapy do not address cord compression. Dangerous delay.",
+      "B": "CORRECT — MSCC: cancer + back pain + neurology (leg weakness + bladder). Emergency admission, urgent whole spine MRI, dexamethasone per NICE NG234.",
+      "C": "Incorrect — Routine 2-week MRI is catastrophically slow for suspected MSCC. Permanent paralysis can occur within hours.",
+      "D": "Incorrect — Steroids should be given but discharge is inappropriate. Hospital admission and imaging are required.",
+      "E": "Incorrect — Pain clinic referral is wholly inadequate for suspected cord compression."
+    },
+    "reference": "NICE NG234 — Metastatic spinal cord compression in adults. https://www.nice.org.uk/guidance/ng234",
+    "tags": ["metastatic spinal cord compression", "MSCC", "cancer", "emergency", "MRI spine", "NICE NG234"]
+  },
+  {
+    "id": "AKT-MSK-009",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Musculoskeletal",
+    "difficulty": "Medium",
+    "question": "A 50-year-old man presents with pain and swelling of the right knee. Joint aspiration reveals cloudy yellow fluid. Microscopy shows gram-positive cocci and WBC 85,000/mm³ (predominantly neutrophils). What is the diagnosis and most appropriate management?",
+    "options": {
+      "A": "Gout — colchicine and NSAIDs",
+      "B": "Reactive arthritis — NSAIDs and treat underlying infection",
+      "C": "Septic arthritis — urgent hospital admission for IV antibiotics and joint washout",
+      "D": "Osteoarthritis flare — intra-articular corticosteroid",
+      "E": "Pseudogout — NSAIDs and reassurance"
+    },
+    "correct_answer": "C",
+    "explanation": {
+      "correct": "Septic arthritis: hot, swollen joint + cloudy/purulent fluid + WBC >50,000/mm³ (predominantly neutrophils) + gram-positive cocci (most commonly Staphylococcus aureus) = septic arthritis until proven otherwise. This is a joint emergency — delay causes permanent cartilage destruction. Management: urgent hospital admission for IV antibiotics (flucloxacillin for gram-positive; adjust based on culture) + joint washout (arthroscopic or surgical). Blood cultures before antibiotics.",
+      "A": "Incorrect — Gout shows negatively birefringent urate crystals on polarised microscopy, not gram-positive cocci or WBC >50,000.",
+      "B": "Incorrect — Reactive arthritis is sterile (culture negative) and follows infection elsewhere — does not show gram-positive cocci in joint fluid.",
+      "C": "CORRECT — Septic arthritis: urgent admission + IV antibiotics + joint washout per BSR/BOA guidelines.",
+      "D": "Incorrect — Intra-articular corticosteroid in septic arthritis is absolutely contraindicated — worsens infection.",
+      "E": "Incorrect — Pseudogout shows rhomboid weakly positively birefringent calcium pyrophosphate crystals, not gram-positive cocci."
+    },
+    "reference": "BSR/BOA Guidelines — Septic arthritis. NICE CKS — Septic arthritis.",
+    "tags": ["septic arthritis", "joint infection", "IV antibiotics", "joint washout", "Staphylococcus", "emergency"]
+  },
+  {
+    "id": "AKT-MSK-010",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Musculoskeletal",
+    "difficulty": "Medium",
+    "question": "A 45-year-old woman presents with pain and numbness in her thumb, index and middle fingers, worse at night and relieved by shaking her hand. Tinel's sign is positive at the wrist. What is the diagnosis and initial management?",
+    "options": {
+      "A": "Ulnar nerve entrapment — elbow splint",
+      "B": "Carpal tunnel syndrome — wrist splint (neutral position) at night",
+      "C": "Cervical radiculopathy — cervical collar",
+      "D": "De Quervain's tenosynovitis — thumb spica splint",
+      "E": "Raynaud's phenomenon — calcium channel blocker"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Carpal tunnel syndrome (CTS) presents with: pain, numbness and tingling in the median nerve distribution (thumb, index, middle and lateral half of ring finger), worse at night, relieved by shaking/hanging the hand (flick sign). Positive Tinel's sign (tingling on percussion of carpal tunnel) and Phalen's test (wrist flexion for 60 seconds reproduces symptoms). First-line management per NICE CKS: wrist splint in neutral position worn at night. Corticosteroid injection or surgical decompression if splinting fails.",
+      "A": "Incorrect — Ulnar nerve entrapment causes numbness of little finger and medial ring finger with weakness of intrinsic hand muscles.",
+      "B": "CORRECT — Carpal tunnel syndrome: median nerve distribution + nocturnal symptoms + positive Tinel's. Night wrist splint is first-line.",
+      "C": "Incorrect — Cervical radiculopathy causes arm pain with neck movement — different distribution and mechanism.",
+      "D": "Incorrect — De Quervain's tenosynovitis causes pain at the radial styloid (base of thumb) with positive Finkelstein's test — not finger numbness.",
+      "E": "Incorrect — Raynaud's causes colour changes (white-blue-red) in fingers in response to cold — not nocturnal numbness relieved by shaking."
+    },
+    "reference": "NICE CKS — Carpal tunnel syndrome. BSH Guidelines — CTS management.",
+    "tags": ["carpal tunnel syndrome", "CTS", "median nerve", "wrist splint", "Tinel's sign", "nocturnal pain"]
+  },
+  {
+    "id": "AKT-MSK-011",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Musculoskeletal",
+    "difficulty": "Hard",
+    "question": "A 68-year-old man with long-standing gout has had 3 attacks in the past year. His serum urate is 520 umol/L. He has had no recent acute attack for 6 weeks. His eGFR is 55 ml/min. What is the most appropriate urate-lowering therapy and target serum urate?",
+    "options": {
+      "A": "Start allopurinol 300mg immediately and aim for urate <300 umol/L",
+      "B": "Start allopurinol at low dose (50-100mg), titrate slowly, aim for serum urate <360 umol/L, cover with colchicine prophylaxis for 6 months",
+      "C": "Start febuxostat 80mg and aim for urate <420 umol/L",
+      "D": "Dietary advice only — reduce purine intake and alcohol",
+      "E": "Start benzbromarone as first-line uricosuric agent"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per NICE NG219, urate-lowering therapy (ULT) should be offered after 2+ attacks/year (or tophi, renal stones, CKD). Allopurinol is first-line — start at LOW dose (50-100mg — lower in CKD) and titrate every 4 weeks to achieve target. Target serum urate: <360 umol/L (or <300 umol/L for tophaceous gout). Colchicine prophylaxis 500mcg BD for 6 months (or NSAIDs) during ULT initiation to prevent mobilisation flares. Starting allopurinol too quickly precipitates acute attacks.",
+      "A": "Incorrect — Starting at 300mg without titration and without prophylactic colchicine risks severe acute gout flares.",
+      "B": "CORRECT — Low-dose allopurinol, slow titration, target <360 umol/L, 6-month colchicine prophylaxis per NICE NG219.",
+      "C": "Incorrect — Febuxostat is second-line (when allopurinol not tolerated). Target <360 umol/L, not <420.",
+      "D": "Incorrect — Dietary changes alone rarely achieve adequate urate lowering with 3 attacks/year. ULT is indicated.",
+      "E": "Incorrect — Benzbromarone is a specialist uricosuric agent — not first-line in UK practice."
+    },
+    "reference": "NICE NG219 — Gout: diagnosis and management. https://www.nice.org.uk/guidance/ng219",
+    "tags": ["gout", "allopurinol", "urate lowering", "colchicine prophylaxis", "serum urate target", "NICE NG219"]
+  },
+  {
+    "id": "AKT-MSK-012",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Musculoskeletal",
+    "difficulty": "Medium",
+    "question": "A 55-year-old woman presents with pain over the lateral aspect of her right elbow, worse when gripping and lifting objects. There is tenderness over the lateral epicondyle. Resisted wrist extension reproduces the pain. What is the diagnosis and most appropriate management?",
+    "options": {
+      "A": "Olecranon bursitis — aspiration and corticosteroid injection",
+      "B": "Lateral epicondylitis (tennis elbow) — advice on activity modification, analgesia, physiotherapy",
+      "C": "Medial epicondylitis — corticosteroid injection",
+      "D": "Radial tunnel syndrome — surgical decompression",
+      "E": "Rheumatoid arthritis — urgent rheumatology referral"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Lateral epicondylitis (tennis elbow) presents with: lateral elbow pain, tenderness over lateral epicondyle, pain reproduced by resisted wrist extension or grip. Caused by overuse/degeneration of common extensor origin (extensor carpi radialis brevis). Per NICE CKS, management: activity modification, analgesia (paracetamol/NSAIDs), physiotherapy (eccentric exercises), and watchful waiting — most cases resolve in 12-18 months. Corticosteroid injection provides short-term relief but worse long-term outcomes.",
+      "A": "Incorrect — Olecranon bursitis causes swelling over the olecranon (posterior elbow), not lateral epicondyle pain on gripping.",
+      "B": "CORRECT — Lateral epicondylitis: activity modification + analgesia + physiotherapy per NICE CKS.",
+      "C": "Incorrect — Medial epicondylitis (golfer's elbow) causes medial elbow pain, reproduced by resisted wrist flexion.",
+      "D": "Incorrect — Radial tunnel syndrome is rare and involves PIN compression — surgical decompression is not first-line.",
+      "E": "Incorrect — RA causes symmetrical polyarthritis of small joints — not localised lateral epicondyle tenderness."
+    },
+    "reference": "NICE CKS — Tennis elbow (lateral epicondylitis). https://cks.nice.org.uk/",
+    "tags": ["tennis elbow", "lateral epicondylitis", "activity modification", "physiotherapy", "elbow pain", "NICE CKS"]
+  },
+  {
+    "id": "AKT-MSK-013",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Musculoskeletal",
+    "difficulty": "Easy",
+    "question": "A 75-year-old woman falls and cannot weight bear on her right hip. On examination the right leg is shortened and externally rotated. What is the most likely diagnosis and most appropriate management?",
+    "options": {
+      "A": "Soft tissue injury — analgesia and physiotherapy",
+      "B": "Hip fracture — call 999, IV access, analgesia, urgent orthopaedic admission",
+      "C": "Hip dislocation — Entonox and hip reduction in primary care",
+      "D": "Trochanteric bursitis — corticosteroid injection",
+      "E": "Osteoarthritis flare — NSAIDs and walking aid"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Shortened and externally rotated lower limb after a fall in an elderly patient is a hip fracture until proven otherwise. This is a surgical emergency with high mortality if inadequately managed. Per NICE NG111 (Hip fracture in adults), management: urgent hospital admission via 999, IV access, adequate analgesia (nerve block/opioid), nil by mouth, urgent X-ray (AP pelvis + lateral hip), and surgery (within 36 hours for most patients). Nerve block (femoral or fascia iliaca) provides excellent analgesia.",
+      "A": "Incorrect — Soft tissue injury does not cause shortening and external rotation. Hip fracture must be excluded.",
+      "B": "CORRECT — Hip fracture: call 999 + IV access + analgesia + urgent orthopaedic admission per NICE NG111.",
+      "C": "Incorrect — Hip dislocation causes internal rotation and shortening (posterior dislocation). Primary care reduction is inappropriate.",
+      "D": "Incorrect — Trochanteric bursitis causes lateral hip tenderness — not shortening or inability to weight bear after fall.",
+      "E": "Incorrect — OA flare does not cause acute shortening and external rotation."
+    },
+    "reference": "NICE NG111 — Hip fracture: management. https://www.nice.org.uk/guidance/ng111",
+    "tags": ["hip fracture", "shortened leg", "external rotation", "emergency", "NICE NG111", "elderly falls"]
+  },
+  {
+    "id": "AKT-MSK-014",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Musculoskeletal",
+    "difficulty": "Medium",
+    "question": "A 40-year-old woman presents with a 6-month history of widespread musculoskeletal pain, fatigue, poor sleep, headaches and cognitive difficulties ('fibro fog'). Examination reveals multiple tender points. All blood tests including inflammatory markers, TFTs and FBC are normal. What is the most likely diagnosis and management?",
+    "options": {
+      "A": "Systemic lupus erythematosus — refer to rheumatology",
+      "B": "Fibromyalgia — patient education, exercise programme, sleep hygiene, cognitive behavioural therapy",
+      "C": "Polymyalgia rheumatica — prednisolone 15mg",
+      "D": "Hypothyroidism — levothyroxine",
+      "E": "Depression — SSRI and CBT"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Fibromyalgia presents with: widespread musculoskeletal pain (>3 months), fatigue, non-restorative sleep, cognitive symptoms, multiple tender points on palpation, normal inflammatory markers and normal investigation results. Per NICE and BSR guidelines, management: patient education (validate symptoms, explain mechanism), aerobic and strengthening exercise (most evidence-based treatment), sleep hygiene, CBT for pain management. Low-dose amitriptyline or pregabalin may help sleep and pain. No single pharmacological agent is curative.",
+      "A": "Incorrect — SLE causes systemic inflammation with raised ESR/CRP, positive ANA, and organ involvement — not normal bloods.",
+      "B": "CORRECT — Fibromyalgia: normal bloods, widespread pain, fatigue, cognitive symptoms. Education + exercise + CBT per NICE/BSR.",
+      "C": "Incorrect — PMR affects patients >50, causes proximal girdle stiffness, elevated ESR/CRP — responds dramatically to steroids.",
+      "D": "Incorrect — TFTs are normal — hypothyroidism is excluded.",
+      "E": "Incorrect — Depression may coexist with fibromyalgia but fibromyalgia-specific management is the primary approach here."
+    },
+    "reference": "NICE CKS — Fibromyalgia. BSR Guidelines — Fibromyalgia 2020.",
+    "tags": ["fibromyalgia", "widespread pain", "exercise", "CBT", "tender points", "normal bloods"]
+  },
+  {
+    "id": "AKT-MSK-015",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Musculoskeletal",
+    "difficulty": "Hard",
+    "question": "A 65-year-old man on methotrexate 15mg weekly for rheumatoid arthritis presents with a 5-day history of productive cough, breathlessness and fever. CXR shows bilateral interstitial infiltrates. His methotrexate was recently increased. What should be considered as a priority alongside treating his respiratory illness?",
+    "options": {
+      "A": "Increase methotrexate dose to suppress the inflammatory response",
+      "B": "Suspect methotrexate-induced pneumonitis — stop methotrexate immediately and seek urgent specialist advice",
+      "C": "Continue methotrexate — this is community-acquired pneumonia, treat with antibiotics",
+      "D": "Switch to leflunomide which has no pulmonary side effects",
+      "E": "Arrange sputum culture and wait for results before making any changes"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Methotrexate-induced pneumonitis is a potentially fatal idiosyncratic reaction that can occur at any dose/duration. Features: acute/subacute breathlessness, cough, fever, bilateral interstitial infiltrates on CXR, after recent dose increase. Per BNF and BSR guidelines, if methotrexate pneumonitis is suspected, the drug must be stopped immediately and urgent respiratory/rheumatology advice sought. Pneumocystis jirovecii pneumonia (PCP) must also be excluded in immunocompromised patients.",
+      "A": "Incorrect — Increasing methotrexate in suspected methotrexate pneumonitis could be fatal.",
+      "B": "CORRECT — Suspected methotrexate pneumonitis: stop methotrexate immediately + urgent specialist advice per BNF/BSR guidelines.",
+      "C": "Incorrect — While CAP is possible, methotrexate pneumonitis must be actively considered and methotrexate stopped pending investigation.",
+      "D": "Incorrect — Leflunomide can also cause pulmonary toxicity. Switching without specialist input is inappropriate.",
+      "E": "Incorrect — Waiting for culture results before stopping a potentially fatal drug interaction is inappropriate."
+    },
+    "reference": "BNF — Methotrexate adverse effects. BSR Guidelines — Methotrexate in rheumatoid arthritis.",
+    "tags": ["methotrexate", "pneumonitis", "rheumatoid arthritis", "interstitial lung disease", "stop methotrexate", "BSR"]
+  },
+  {
+    "id": "AKT-MSK-016",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Musculoskeletal",
+    "difficulty": "Medium",
+    "question": "A 28-year-old male rugby player presents with acute right knee swelling after a tackle. He heard a 'pop' and his knee gave way. Anterior drawer test is positive. Lachman's test is positive. What is the most likely diagnosis?",
+    "options": {
+      "A": "Medial collateral ligament tear — RICE and physiotherapy",
+      "B": "Anterior cruciate ligament rupture — refer to orthopaedic surgery",
+      "C": "Posterior cruciate ligament injury — posterior drawer test positive",
+      "D": "Meniscal tear — McMurray's test positive",
+      "E": "Patella dislocation — reduction and immobilisation"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Anterior cruciate ligament (ACL) rupture: acute knee injury with 'pop', haemarthrosis (rapid swelling), instability/giving way, positive anterior drawer test (tibia slides forward on femur >5mm) and positive Lachman's test (most sensitive for ACL — performed at 20-30° flexion). Management: RICE acutely, refer to orthopaedic surgery for consideration of ACL reconstruction, especially in young active patients. Physiotherapy is required whether or not surgery is performed.",
+      "A": "Incorrect — MCL tear causes medial joint line pain and valgus instability — not anterior drawer/Lachman positive.",
+      "B": "CORRECT — ACL rupture: pop + haemarthrosis + positive anterior drawer + Lachman = ACL rupture. Orthopaedic referral.",
+      "C": "Incorrect — PCL injury causes posterior drawer positive (tibia slides backward) — not described here.",
+      "D": "Incorrect — Meniscal tear causes joint line tenderness and positive McMurray's test — can coexist but ACL injury is the primary diagnosis here.",
+      "E": "Incorrect — Patella dislocation causes lateral displacement of patella with apprehension test positive."
+    },
+    "reference": "NICE CKS — Knee pain assessment. BOA/BASK Guidelines — ACL injuries.",
+    "tags": ["ACL rupture", "anterior cruciate ligament", "Lachman test", "anterior drawer", "knee injury", "haemarthrosis"]
+  },
+  {
+    "id": "AKT-MSK-017",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Musculoskeletal",
+    "difficulty": "Easy",
+    "question": "A 70-year-old woman with osteoporosis on alendronate asks about calcium and vitamin D supplementation. Which statement is correct per NICE guidance?",
+    "options": {
+      "A": "Calcium and vitamin D supplements are not needed if she eats a balanced diet",
+      "B": "Calcium and vitamin D should be co-prescribed with bisphosphonates unless adequate dietary intake is confirmed",
+      "C": "Vitamin D alone is sufficient — no calcium supplement needed",
+      "D": "Calcium supplements should be avoided in osteoporosis as they increase fracture risk",
+      "E": "Supplements are only needed in the winter months"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per NICE NG146 and TA160, calcium and vitamin D supplementation should be co-prescribed with bisphosphonates for osteoporosis treatment unless there is confirmed adequate dietary calcium intake AND adequate vitamin D status. Most elderly patients have insufficient dietary calcium and are vitamin D deficient (especially in the UK). Recommended: calcium 1000-1200mg/day (combined diet + supplement), vitamin D 800-1000 IU/day.",
+      "A": "Incorrect — Dietary intake is often insufficient in elderly patients, especially for vitamin D. Assessment is needed, not assumption.",
+      "B": "CORRECT — Calcium and vitamin D co-prescribed with bisphosphonates unless dietary intake confirmed adequate per NICE NG146.",
+      "C": "Incorrect — Vitamin D alone without adequate calcium is insufficient for bone protection.",
+      "D": "Incorrect — Calcium supplements are appropriate in osteoporosis when dietary intake is inadequate. The evidence linking calcium supplements to cardiovascular risk is controversial and outweighed by fracture prevention benefit in osteoporosis.",
+      "E": "Incorrect — Vitamin D deficiency persists year-round in many elderly patients and supplementation should be continuous."
+    },
+    "reference": "NICE NG146 — Osteoporosis: assessing the risk of fragility fracture. NICE TA160.",
+    "tags": ["osteoporosis", "calcium", "vitamin D", "bisphosphonate", "alendronate", "NICE NG146"]
+  },
+  {
+    "id": "AKT-MSK-018",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Musculoskeletal",
+    "difficulty": "Medium",
+    "question": "A 35-year-old woman presents with pain at the base of her thumb, worse when pinching or gripping. There is tenderness over the radial styloid and pain on ulnar deviation of the wrist with the thumb clasped in the palm. What is the diagnosis and first-line treatment?",
+    "options": {
+      "A": "Carpal tunnel syndrome — wrist splint in neutral position",
+      "B": "De Quervain's tenosynovitis — thumb spica splint and NSAIDs",
+      "C": "First carpometacarpal joint osteoarthritis — analgesia and splint",
+      "D": "Trigger thumb — steroid injection into flexor tendon sheath",
+      "E": "Scaphoid fracture — MRI scaphoid"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "De Quervain's tenosynovitis is inflammation of the abductor pollicis longus and extensor pollicis brevis tendons at the radial styloid. Positive Finkelstein's test: pain on ulnar deviation of wrist with thumb clasped in palm (pathognomonic). More common in women, postpartum and with repetitive thumb use. First-line: thumb spica splint (immobilises thumb and wrist), NSAIDs/analgesia. Corticosteroid injection is second-line if splinting fails.",
+      "A": "Incorrect — CTS causes thumb and finger numbness in median nerve distribution — not tenderness at radial styloid with positive Finkelstein's.",
+      "B": "CORRECT — De Quervain's tenosynovitis: positive Finkelstein's + radial styloid tenderness. Thumb spica splint + NSAIDs first-line.",
+      "C": "Incorrect — CMC joint OA causes pain at the base of thumb with grinding but Finkelstein's test is negative.",
+      "D": "Incorrect — Trigger thumb causes locking/clicking of the thumb IP joint during flexion/extension.",
+      "E": "Incorrect — Scaphoid fracture causes anatomical snuffbox tenderness after trauma — not reproduced by Finkelstein's test."
+    },
+    "reference": "NICE CKS — De Quervain's tenosynovitis. BSH Guidelines.",
+    "tags": ["De Quervain's", "tenosynovitis", "Finkelstein's test", "thumb spica", "radial styloid", "NSAIDs"]
+  },
+  {
+    "id": "AKT-MSK-019",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Musculoskeletal",
+    "difficulty": "Hard",
+    "question": "A 50-year-old man presents with back pain, bilateral leg weakness, saddle anaesthesia and urinary incontinence developing over 24 hours. What is the diagnosis and most appropriate management?",
+    "options": {
+      "A": "Multiple sclerosis — IV methylprednisolone",
+      "B": "Cauda equina syndrome — immediate emergency admission for urgent MRI and surgical decompression",
+      "C": "Non-specific low back pain — stay active and NSAIDs",
+      "D": "Lumbar disc prolapse — physiotherapy and analgesics for 6 weeks",
+      "E": "Spinal stenosis — epidural steroid injection"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Cauda equina syndrome (CES) is a surgical emergency. Classic features: back pain + bilateral leg weakness/sciatica + saddle anaesthesia (perianal, perineal, inner thigh numbness) + bladder/bowel dysfunction (retention or incontinence). Per NICE NG59, suspected CES requires immediate emergency admission (999) for urgent MRI lumbar spine and emergency surgical decompression within 24-48 hours. Delay causes permanent paralysis and incontinence.",
+      "A": "Incorrect — MS does not cause acute cauda equina pattern with saddle anaesthesia. Cord compression pathology is different.",
+      "B": "CORRECT — Cauda equina syndrome: bilateral leg weakness + saddle anaesthesia + bladder dysfunction = surgical emergency. Immediate admission + urgent MRI + surgery per NICE NG59.",
+      "C": "Incorrect — Active management for non-specific LBP is wholly inappropriate when CES red flags are present.",
+      "D": "Incorrect — CES is a surgical emergency. Waiting 6 weeks causes permanent neurological damage.",
+      "E": "Incorrect — Epidural steroid is for radicular pain — not for CES which requires decompression."
+    },
+    "reference": "NICE NG59 — Low back pain and sciatica in over 16s. https://www.nice.org.uk/guidance/ng59",
+    "tags": ["cauda equina syndrome", "saddle anaesthesia", "surgical emergency", "MRI", "urinary incontinence", "NICE NG59"]
+  },
+  {
+    "id": "AKT-MSK-020",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Musculoskeletal",
+    "difficulty": "Medium",
+    "question": "A 60-year-old woman presents with pain in her right shoulder radiating to the lateral arm, worse when lifting her arm above shoulder height. She has a painful arc between 60-120° abduction. Neer's and Hawkins' impingement signs are positive. What is the most likely diagnosis and management?",
+    "options": {
+      "A": "Frozen shoulder (adhesive capsulitis) — physiotherapy and corticosteroid injection",
+      "B": "Rotator cuff impingement syndrome — activity modification, physiotherapy, subacromial corticosteroid injection",
+      "C": "Acromioclavicular joint arthritis — NSAIDs and physiotherapy",
+      "D": "Glenohumeral osteoarthritis — analgesia and physiotherapy",
+      "E": "Cervical radiculopathy — cervical collar and physiotherapy"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Rotator cuff impingement syndrome presents with: anterolateral shoulder pain radiating to lateral arm, painful arc (60-120°), positive Neer's sign (pain on passive shoulder flexion) and Hawkins' sign (pain on internal rotation with shoulder flexed at 90°). The supraspinatus tendon is compressed under the acromion. Management: physiotherapy (rotator cuff strengthening, posture), activity modification, NSAIDs, subacromial corticosteroid injection for persistent pain. Surgery (subacromial decompression) if conservative management fails.",
+      "A": "Incorrect — Frozen shoulder causes global restriction of shoulder movement (especially external rotation) — not a painful arc. No impingement signs.",
+      "B": "CORRECT — Rotator cuff impingement: painful arc + positive Neer's/Hawkins'. Physiotherapy + subacromial injection.",
+      "C": "Incorrect — ACJ arthritis causes pain at the top of the shoulder (AC joint), positive cross-body adduction test.",
+      "D": "Incorrect — GHJ OA causes global pain and stiffness with X-ray changes — not a painful arc.",
+      "E": "Incorrect — Cervical radiculopathy causes arm/hand symptoms with neck movement — not a painful shoulder arc."
+    },
+    "reference": "NICE CKS — Shoulder pain. BSH Guidelines — Rotator cuff disorders.",
+    "tags": ["rotator cuff impingement", "painful arc", "subacromial injection", "Neer sign", "Hawkins sign", "shoulder pain"]
+  }
+]

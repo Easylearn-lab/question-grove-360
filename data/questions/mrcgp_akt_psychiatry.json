@@ -1,0 +1,522 @@
+[
+  {
+    "id": "AKT-PSYCH-001",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Psychiatry",
+    "difficulty": "Easy",
+    "question": "A 32-year-old woman presents with a 6-week history of low mood, anhedonia, poor sleep, fatigue, poor concentration and feelings of worthlessness. She scores 18 on the PHQ-9. She has no suicidal ideation. She has not had treatment before. What is the most appropriate management?",
+    "options": {
+      "A": "Watchful waiting and review in 2 weeks",
+      "B": "Refer urgently to psychiatry",
+      "C": "Start sertraline 50mg daily and offer cognitive behavioural therapy (CBT)",
+      "D": "Start amitriptyline 75mg at night",
+      "E": "Prescribe diazepam 2mg TDS for anxiety component"
+    },
+    "correct_answer": "C",
+    "explanation": {
+      "correct": "PHQ-9 score of 18 indicates moderately severe depression. Per NICE NG222 (Depression in adults), for moderate-severe depression, the recommended treatment is a combination of antidepressant medication and high-intensity psychological therapy (CBT or other). SSRIs are first-line antidepressants — sertraline is preferred due to its favourable side effect profile and evidence base. Amitriptyline (TCA) is second-line due to toxicity in overdose.",
+      "A": "Incorrect — Watchful waiting is only appropriate for subthreshold or mild depression (PHQ-9 <10). PHQ-9 18 = moderately severe requiring active treatment.",
+      "B": "Incorrect — Urgent psychiatry referral is for severe depression with psychotic features, high suicide risk or when primary care treatment fails.",
+      "C": "CORRECT — Moderately severe depression: SSRI (sertraline) + high-intensity psychological therapy (CBT) per NICE NG222.",
+      "D": "Incorrect — Amitriptyline (TCA) is dangerous in overdose and is second/third-line. Not recommended as first-line per NICE NG222.",
+      "E": "Incorrect — Benzodiazepines are not recommended for depression and cause dependence. Contraindicated as ongoing treatment."
+    },
+    "reference": "NICE NG222 — Depression in adults: treatment and management. https://www.nice.org.uk/guidance/ng222",
+    "tags": ["depression", "PHQ-9", "sertraline", "CBT", "SSRI", "NICE NG222"]
+  },
+  {
+    "id": "AKT-PSYCH-002",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Psychiatry",
+    "difficulty": "Medium",
+    "question": "A 28-year-old woman is started on sertraline 50mg for moderate depression. She returns after 3 weeks saying she has not noticed any improvement. She is tolerating the medication well. What is the most appropriate advice?",
+    "options": {
+      "A": "Stop sertraline and switch to fluoxetine immediately",
+      "B": "Add mirtazapine to augment the sertraline",
+      "C": "Continue sertraline at 50mg — antidepressants take 4-6 weeks to show full effect",
+      "D": "Increase sertraline to 100mg as there is no response at 3 weeks",
+      "E": "Refer to psychiatry as treatment has failed"
+    },
+    "correct_answer": "C",
+    "explanation": {
+      "correct": "SSRIs typically take 4-6 weeks to show full therapeutic effect. At 3 weeks, partial or no response is expected and does not indicate treatment failure. Per NICE NG222, patients should be advised of this delay and encouraged to continue medication. Review should be arranged at 4-6 weeks. If there is no improvement after 4-6 weeks at an adequate dose, dose increase or switching can be considered.",
+      "A": "Incorrect — Switching antidepressants after only 3 weeks is premature. Adequate trial is 4-6 weeks at therapeutic dose.",
+      "B": "Incorrect — Augmentation is considered after an adequate trial of monotherapy has failed, not at 3 weeks.",
+      "C": "CORRECT — Continue sertraline — antidepressants take 4-6 weeks for full effect per NICE NG222.",
+      "D": "Incorrect — Dose increase before adequate trial (4-6 weeks) at starting dose is not indicated.",
+      "E": "Incorrect — 3 weeks is too early to declare treatment failure. Psychiatry referral criteria are not met."
+    },
+    "reference": "NICE NG222 — Depression in adults. https://www.nice.org.uk/guidance/ng222",
+    "tags": ["depression", "sertraline", "antidepressant", "4-6 weeks", "SSRI", "NICE NG222"]
+  },
+  {
+    "id": "AKT-PSYCH-003",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Psychiatry",
+    "difficulty": "Hard",
+    "question": "A 35-year-old man presents with a 1-week history of decreased need for sleep, racing thoughts, grandiosity, increased goal-directed activity and excessive spending. He has been staying up until 4am writing a business plan. His wife is concerned. He has a previous episode of depression 2 years ago. What is the most likely diagnosis and most appropriate management?",
+    "options": {
+      "A": "Severe depression with psychotic features — start SSRI",
+      "B": "Manic episode — urgent psychiatric referral, consider mood stabiliser",
+      "C": "ADHD — refer for ADHD assessment",
+      "D": "Generalised anxiety disorder — SSRI and CBT",
+      "E": "Substance misuse — urine drug screen and counselling"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "This presentation is a classic manic episode: decreased sleep need (not insomnia — feels rested on 3-4 hours), grandiosity, racing thoughts, increased goal-directed activity, impulsive behaviour (excessive spending). Previous depressive episode = bipolar disorder. Per NICE NG185 (Bipolar disorder), manic episodes require urgent psychiatric assessment. Treatment: mood stabiliser (lithium, valproate) or antipsychotic (olanzapine, quetiapine). SSRIs must be avoided as they can precipitate mania or cycle acceleration in bipolar disorder.",
+      "A": "Incorrect — These are manic features, not depressive. Starting SSRI in bipolar mania is dangerous — can worsen mania or induce rapid cycling.",
+      "B": "CORRECT — Manic episode in context of prior depression = bipolar disorder. Urgent psychiatric referral + mood stabiliser per NICE NG185.",
+      "C": "Incorrect — ADHD does not cause acute onset grandiosity, decreased sleep need and excessive spending in adults without prior history.",
+      "D": "Incorrect — GAD does not cause grandiosity, decreased sleep need or elevated mood/energy.",
+      "E": "Incorrect — Substance misuse should be excluded but the clinical picture is manic episode requiring urgent psychiatric review."
+    },
+    "reference": "NICE NG185 — Bipolar disorder: assessment and management. https://www.nice.org.uk/guidance/ng185",
+    "tags": ["bipolar disorder", "mania", "manic episode", "mood stabiliser", "NICE NG185", "urgent referral"]
+  },
+  {
+    "id": "AKT-PSYCH-004",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Psychiatry",
+    "difficulty": "Medium",
+    "question": "A 24-year-old woman presents with recurrent episodes of intense anxiety, palpitations, chest tightness, dizziness, trembling and fear of dying, lasting 10-20 minutes, occurring unpredictably. She has been avoiding going out alone. Physical examination and ECG are normal. What is the most likely diagnosis and recommended treatment?",
+    "options": {
+      "A": "Generalised anxiety disorder — sertraline and CBT",
+      "B": "Panic disorder — CBT and/or SSRI (sertraline)",
+      "C": "Cardiac arrhythmia — Holter monitor",
+      "D": "Hyperthyroidism — TFTs and refer to endocrinology",
+      "E": "Social anxiety disorder — beta blocker PRN"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Panic disorder is characterised by recurrent unexpected panic attacks (intense fear with physical symptoms: palpitations, chest tightness, dizziness, trembling, fear of dying) plus persistent concern about future attacks and/or agoraphobic avoidance. Per NICE CG113, first-line treatments are: CBT (high-intensity psychological therapy) and/or SSRI (sertraline or paroxetine). CBT is preferred but SSRI is used when CBT unavailable or declined.",
+      "A": "Incorrect — GAD is characterised by persistent generalised worry across multiple topics — not episodic panic attacks with avoidance.",
+      "B": "CORRECT — Panic disorder: recurrent panic attacks + avoidance. CBT and/or SSRI per NICE CG113.",
+      "C": "Incorrect — Physical examination and ECG are normal. Holter monitoring should be considered if arrhythmia suspected, but the clinical picture is panic disorder.",
+      "D": "Incorrect — TFTs are reasonable to exclude hyperthyroidism, but normal examination makes this less likely. Not the primary diagnosis.",
+      "E": "Incorrect — Beta blockers are not recommended for panic disorder in NICE guidelines. They treat physical symptoms but not the underlying condition."
+    },
+    "reference": "NICE CG113 — Generalised anxiety disorder and panic disorder in adults. https://www.nice.org.uk/guidance/cg113",
+    "tags": ["panic disorder", "panic attacks", "CBT", "sertraline", "agoraphobia", "NICE CG113"]
+  },
+  {
+    "id": "AKT-PSYCH-005",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Psychiatry",
+    "difficulty": "Easy",
+    "question": "A 45-year-old man presents with his wife who is concerned about his behaviour over the past 6 months. He has been hearing voices telling him he is special, believes he is being watched by MI5, has social withdrawal and significant functional decline. He has no drug or alcohol history and medical causes have been excluded. What is the most appropriate management?",
+    "options": {
+      "A": "Start haloperidol 5mg immediately in primary care",
+      "B": "Refer urgently to the Early Intervention in Psychosis (EIP) or community mental health team",
+      "C": "Prescribe an SSRI for the social withdrawal",
+      "D": "Arrange MRI brain and refer to neurology",
+      "E": "Refer to counselling for stress management"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "This presentation is consistent with first-episode psychosis: auditory hallucinations, delusions (grandiose + persecutory), social withdrawal and functional decline for 6 months with medical causes excluded. Per NICE NG185 and NICE CG178 (Psychosis and schizophrenia), urgent referral to Early Intervention in Psychosis (EIP) service is recommended for first-episode psychosis. EIP provides rapid access to antipsychotic medication, CBT for psychosis, family intervention and supported employment.",
+      "A": "Incorrect — Antipsychotic medication in psychosis should be initiated by specialist psychiatric teams, not primary care, for first-episode psychosis.",
+      "B": "CORRECT — First-episode psychosis: urgent referral to EIP or CMHT per NICE CG178/NG185.",
+      "C": "Incorrect — SSRI is not appropriate for psychosis. SSRIs do not treat hallucinations or delusions.",
+      "D": "Incorrect — Medical causes should be excluded but this presentation is not primarily neurological. MRI is part of the specialist workup.",
+      "E": "Incorrect — Counselling is wholly insufficient for first-episode psychosis with hallucinations and delusions."
+    },
+    "reference": "NICE CG178 — Psychosis and schizophrenia in adults. https://www.nice.org.uk/guidance/cg178",
+    "tags": ["psychosis", "first episode psychosis", "EIP", "schizophrenia", "hallucinations", "NICE CG178"]
+  },
+  {
+    "id": "AKT-PSYCH-006",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Psychiatry",
+    "difficulty": "Medium",
+    "question": "A 70-year-old man with Alzheimer's disease becomes agitated and aggressive in the evenings. His daughter is struggling to cope. Non-pharmacological strategies have been tried. What is the most appropriate pharmacological treatment for behavioural and psychological symptoms of dementia (BPSD)?",
+    "options": {
+      "A": "Diazepam 2mg TDS",
+      "B": "Haloperidol 1mg at night",
+      "C": "Risperidone 0.25-0.5mg twice daily if severe distress or risk of harm",
+      "D": "Lorazepam 1mg PRN",
+      "E": "Zopiclone 7.5mg at night"
+    },
+    "correct_answer": "C",
+    "explanation": {
+      "correct": "Per NICE NG97, antipsychotics should only be offered for BPSD (agitation, aggression, psychosis in dementia) when: non-pharmacological strategies have failed AND the person is at risk of harming themselves or others, or experiencing severe distress. If used, risperidone at lowest effective dose (0.25-0.5mg BD) is NICE-recommended for short-term use (maximum 6 weeks) with regular review. Antipsychotics increase risk of stroke and death in dementia — informed consent/best interests decision required.",
+      "A": "Incorrect — Benzodiazepines (diazepam) cause excessive sedation, falls, cognitive worsening and dependence in elderly with dementia. Not recommended.",
+      "B": "Incorrect — Haloperidol (typical antipsychotic) has higher rates of extrapyramidal side effects in dementia. Risperidone is preferred per NICE NG97.",
+      "C": "CORRECT — Risperidone at lowest dose for severe BPSD after non-pharmacological measures fail per NICE NG97.",
+      "D": "Incorrect — Lorazepam has similar problems to diazepam — respiratory depression, falls, dependence in elderly.",
+      "E": "Incorrect — Zopiclone is for insomnia, not agitation/aggression in dementia."
+    },
+    "reference": "NICE NG97 — Dementia: assessment, management and support. https://www.nice.org.uk/guidance/ng97",
+    "tags": ["dementia", "BPSD", "risperidone", "agitation", "antipsychotic", "NICE NG97"]
+  },
+  {
+    "id": "AKT-PSYCH-007",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Psychiatry",
+    "difficulty": "Hard",
+    "question": "A 55-year-old man on lithium for bipolar disorder presents for his annual review. Which set of monitoring parameters is most appropriate for long-term lithium therapy?",
+    "options": {
+      "A": "Annual lithium level, TFTs, renal function (U&E, eGFR), calcium",
+      "B": "Lithium level every 6 months, annual FBC only",
+      "C": "6-monthly lithium level, annual TFTs and LFTs",
+      "D": "Annual lithium level and BMI only",
+      "E": "Lithium level only when symptomatic"
+    },
+    "correct_answer": "A",
+    "explanation": {
+      "correct": "Lithium has a narrow therapeutic index and requires regular monitoring. Per NICE NG185 and BNF, monitoring for stable patients on lithium: lithium plasma level every 6 months (or 3-6 monthly — annually if stable and in specialist care), renal function (U&E, eGFR, creatinine) every 6 months, thyroid function tests (TFTs) every 6 months (lithium causes hypothyroidism in 20-40%), calcium annually (lithium causes hypercalcaemia/hyperparathyroidism). Weight/BMI and ECG also monitored.",
+      "A": "CORRECT — Lithium level + TFTs + renal function (U&E/eGFR) + calcium annually/6-monthly per NICE NG185 and BNF.",
+      "B": "Incorrect — FBC alone is insufficient. Renal and thyroid monitoring are essential for lithium toxicity and side effect detection.",
+      "C": "Incorrect — LFTs are not a routine lithium monitoring parameter. Renal function and calcium are missing.",
+      "D": "Incorrect — Annual lithium level and BMI only is dangerously insufficient — misses renal impairment and thyroid dysfunction.",
+      "E": "Incorrect — Lithium toxicity can develop insidiously without obvious symptoms. Regular proactive monitoring is essential."
+    },
+    "reference": "NICE NG185 — Bipolar disorder. BNF — Lithium monitoring requirements.",
+    "tags": ["lithium", "monitoring", "TFTs", "renal function", "bipolar disorder", "NICE NG185"]
+  },
+  {
+    "id": "AKT-PSYCH-008",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Psychiatry",
+    "difficulty": "Medium",
+    "question": "A 22-year-old woman presents with a 6-month history of recurrent intrusive thoughts about contamination, compulsive hand washing for 3-4 hours a day and inability to leave the house without checking locks repeatedly. Her GAD-7 score is 8. What is the most likely diagnosis and recommended treatment?",
+    "options": {
+      "A": "Generalised anxiety disorder — sertraline and CBT",
+      "B": "OCD — exposure and response prevention (ERP) therapy and/or SSRI (sertraline or fluoxetine)",
+      "C": "Specific phobia — systematic desensitisation",
+      "D": "Health anxiety — CBT for health anxiety",
+      "E": "PTSD — trauma-focused CBT"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Obsessive-compulsive disorder (OCD) is characterised by: obsessions (recurrent intrusive unwanted thoughts — contamination) and compulsions (repetitive behaviours performed to reduce anxiety — hand washing, checking). Causes significant functional impairment (3-4 hours/day). Per NICE CG31 (OCD), treatment: for mild-moderate OCD, low-intensity CBT with ERP (exposure and response prevention); for moderate-severe OCD or where CBT insufficient, SSRI (sertraline, fluoxetine, fluvoxamine, paroxetine or clomipramine) + high-intensity ERP.",
+      "A": "Incorrect — GAD involves persistent generalised worry, not specific obsessions and ritualised compulsions.",
+      "B": "CORRECT — OCD: obsessions + compulsions causing significant distress. ERP therapy ± SSRI per NICE CG31.",
+      "C": "Incorrect — Specific phobia involves avoidance of a specific feared object/situation — not intrusive contamination thoughts with compulsive rituals.",
+      "D": "Incorrect — Health anxiety (illness anxiety disorder) involves fear of having a serious illness — not contamination obsessions.",
+      "E": "Incorrect — PTSD requires a preceding traumatic event and involves re-experiencing, hyperarousal and avoidance."
+    },
+    "reference": "NICE CG31 — Obsessive-compulsive disorder and body dysmorphic disorder. https://www.nice.org.uk/guidance/cg31",
+    "tags": ["OCD", "obsessive compulsive disorder", "ERP", "SSRI", "sertraline", "NICE CG31"]
+  },
+  {
+    "id": "AKT-PSYCH-009",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Psychiatry",
+    "difficulty": "Easy",
+    "question": "A 40-year-old woman presents with persistent low mood for most of the day, nearly every day for 8 weeks, with anhedonia, early morning wakening, poor concentration and passive suicidal ideation ('I wish I was dead'). She denies active suicidal plans. PHQ-9 score is 22. What is the most appropriate immediate action?",
+    "options": {
+      "A": "Prescribe sertraline and arrange telephone review in 4 weeks",
+      "B": "Call 999 immediately",
+      "C": "Conduct a full suicide risk assessment, start sertraline, arrange urgent follow-up within 1 week and provide safety plan",
+      "D": "Refer to IAPT for counselling",
+      "E": "Admit to psychiatric inpatient unit"
+    },
+    "correct_answer": "C",
+    "explanation": {
+      "correct": "This patient has severe depression (PHQ-9 22) with passive suicidal ideation. Per NICE NG222, active suicidal ideation requires thorough risk assessment covering intent, plans, access to means, protective factors, and support network. Management: start antidepressant (sertraline), provide a safety plan (crisis contacts, Samaritans, A&E), arrange urgent follow-up within 1 week, consider involving crisis team if risk escalates. Passive ideation without active plan does not mandate immediate admission.",
+      "A": "Incorrect — 4-week telephone review is insufficient for severe depression with suicidal ideation. Urgent 1-week follow-up is required.",
+      "B": "Incorrect — 999 is for immediate life-threatening situations. Passive ideation without active plan/intent does not require emergency services.",
+      "C": "CORRECT — Risk assessment + sertraline + safety plan + urgent 1-week follow-up per NICE NG222.",
+      "D": "Incorrect — IAPT referral is for mild-moderate depression/anxiety. Severe depression with suicidal ideation needs more urgent management.",
+      "E": "Incorrect — Inpatient admission is for high immediate risk (active suicidal plan, intent, means). Passive ideation with no plan does not meet this threshold."
+    },
+    "reference": "NICE NG222 — Depression in adults. NICE NG225 — Self-harm: assessment, management and preventing recurrence.",
+    "tags": ["depression", "suicidal ideation", "risk assessment", "safety plan", "PHQ-9", "NICE NG222"]
+  },
+  {
+    "id": "AKT-PSYCH-010",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Psychiatry",
+    "difficulty": "Hard",
+    "question": "A 30-year-old woman with a known eating disorder presents with BMI 14.5 kg/m², serum potassium 2.8 mmol/L, prolonged QTc on ECG, and she is amenorrhoeic. She is engaging with outpatient therapy. At what point does the severity of her condition mandate urgent medical admission?",
+    "options": {
+      "A": "BMI <17.5 kg/m² alone",
+      "B": "BMI <13 kg/m², or BMI <15 with rapid weight loss, severe electrolyte disturbance, syncope or cardiac arrhythmia",
+      "C": "Amenorrhoea for more than 3 months",
+      "D": "Potassium <3.0 mmol/L alone",
+      "E": "Patient refusal to eat for 48 hours"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per NICE NG69 (Eating disorders) and MARSIPAN guidelines, medical admission criteria for anorexia nervosa include: BMI <13 kg/m² (or BMI <15 with rapid weight loss), severe electrolyte disturbances (K+ <2.5 mmol/L, phosphate <0.5 mmol/L), cardiac arrhythmia or prolonged QTc, syncope, severe hypoglycaemia, or severe muscle weakness. This patient has BMI 14.5 with K+ 2.8 and prolonged QTc — the QTc abnormality indicates cardiac risk and warrants urgent medical review and likely admission.",
+      "A": "Incorrect — BMI <17.5 alone (diagnostic threshold for AN) does not mandate admission. Clinical features and rate of deterioration determine this.",
+      "B": "CORRECT — BMI <13 or <15 with rapid loss, severe electrolytes or arrhythmia = urgent medical admission per MARSIPAN/NICE NG69.",
+      "C": "Incorrect — Amenorrhoea is a consequence of AN but alone does not mandate acute medical admission.",
+      "D": "Incorrect — K+ <3.0 mmol/L is concerning but the threshold for emergency admission is K+ <2.5 mmol/L. However QTc prolongation here raises the urgency.",
+      "E": "Incorrect — 48-hour food refusal alone is not a MARSIPAN medical admission criterion, though concerning."
+    },
+    "reference": "NICE NG69 — Eating disorders: recognition and treatment. MARSIPAN Guidelines 2014.",
+    "tags": ["anorexia nervosa", "eating disorder", "MARSIPAN", "medical admission", "BMI", "NICE NG69"]
+  },
+  {
+    "id": "AKT-PSYCH-011",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Psychiatry",
+    "difficulty": "Medium",
+    "question": "A 55-year-old man with depression has been on sertraline 100mg for 6 months and has achieved remission. He asks how long he should continue the antidepressant. What is the most appropriate advice per NICE guidelines?",
+    "options": {
+      "A": "Stop immediately now that he is feeling better",
+      "B": "Continue for at least 6 months after achieving remission",
+      "C": "Continue for at least 2 years after achieving remission",
+      "D": "Lifelong antidepressant therapy is required after first episode",
+      "E": "Taper off over 2 weeks now symptoms have resolved"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per NICE NG222, antidepressants should be continued for at least 6 months after achieving remission from a first episode of depression to reduce risk of relapse. Stopping too early significantly increases relapse risk. For patients with recurrent depression (2+ previous episodes), continuation for at least 2 years is recommended. When stopping, the dose should be tapered gradually over at least 4 weeks to minimise discontinuation symptoms.",
+      "A": "Incorrect — Stopping antidepressants when feeling better without completing the recommended duration leads to high relapse rates.",
+      "B": "CORRECT — Continue antidepressant for at least 6 months after remission for first-episode depression per NICE NG222.",
+      "C": "Incorrect — 2 years is recommended for recurrent depression (≥2 episodes), not first episode.",
+      "D": "Incorrect — Lifelong therapy is not routinely required after a first episode.",
+      "E": "Incorrect — Abrupt 2-week taper is too fast — discontinuation syndrome risk is high. Gradual taper over at least 4 weeks is required."
+    },
+    "reference": "NICE NG222 — Depression in adults: treatment and management. https://www.nice.org.uk/guidance/ng222",
+    "tags": ["depression", "antidepressant duration", "relapse prevention", "sertraline", "remission", "NICE NG222"]
+  },
+  {
+    "id": "AKT-PSYCH-012",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Psychiatry",
+    "difficulty": "Medium",
+    "question": "A 19-year-old woman presents after an overdose of 20 paracetamol tablets 2 hours ago. She is alert and has no current suicidal intent. What is the most appropriate immediate management?",
+    "options": {
+      "A": "Refer to IAPT for counselling and discharge with safety plan",
+      "B": "Activated charcoal and discharge if well",
+      "C": "Call 999 for emergency admission — measure paracetamol level at 4 hours post-ingestion and treat with N-acetylcysteine if indicated",
+      "D": "Induce vomiting and monitor in primary care for 4 hours",
+      "E": "Gastric lavage in primary care"
+    },
+    "correct_answer": "C",
+    "explanation": {
+      "correct": "Paracetamol overdose is a medical emergency regardless of current clinical status. Per NICE NG225 and MHRA guidance: call 999 for immediate transfer to A&E. Paracetamol plasma level should be measured at 4 hours post-ingestion and plotted against the treatment nomogram. N-acetylcysteine (NAC) is the antidote and should be given if level is above the treatment line. 20 tablets = approximately 10g, which significantly exceeds the toxic dose (>150mg/kg or >75mg/kg in at-risk patients).",
+      "A": "Incorrect — IAPT counselling is completely inappropriate for acute paracetamol overdose — this is a medical emergency.",
+      "B": "Incorrect — Activated charcoal may be given within 1 hour of ingestion but does not replace hospital assessment. Discharge is inappropriate.",
+      "C": "CORRECT — Emergency transfer to A&E, paracetamol level at 4 hours, NAC if above treatment line per MHRA/NICE NG225.",
+      "D": "Incorrect — Induced vomiting is contraindicated (aspiration risk). Primary care monitoring is inadequate for paracetamol OD.",
+      "E": "Incorrect — Gastric lavage is not performed in primary care and is no longer routinely recommended."
+    },
+    "reference": "NICE NG225 — Self-harm: assessment, management and preventing recurrence. MHRA — Paracetamol overdose treatment.",
+    "tags": ["paracetamol overdose", "self-harm", "N-acetylcysteine", "emergency", "NICE NG225", "nomogram"]
+  },
+  {
+    "id": "AKT-PSYCH-013",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Psychiatry",
+    "difficulty": "Hard",
+    "question": "A 28-year-old man presents with a 12-week history of flashbacks, nightmares and intrusive memories following a serious road traffic accident. He has hypervigilance, sleep disturbance and emotional numbing. He avoids driving and talking about the accident. What is the diagnosis and recommended first-line treatment?",
+    "options": {
+      "A": "Acute stress reaction — watchful waiting for 4 weeks",
+      "B": "PTSD — trauma-focused CBT (TF-CBT) or EMDR",
+      "C": "Adjustment disorder — supportive counselling",
+      "D": "PTSD — sertraline as first-line",
+      "E": "Depression — antidepressant and CBT"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Post-traumatic stress disorder (PTSD) presents with: re-experiencing (flashbacks, nightmares, intrusive memories), avoidance (of trauma reminders), hyperarousal (hypervigilance, sleep disturbance, startle), and emotional numbing — occurring >1 month after a traumatic event. Per NICE NG116 (PTSD), first-line treatment is trauma-focused psychological therapy: trauma-focused CBT (TF-CBT) or Eye Movement Desensitisation and Reprocessing (EMDR). These are superior to medication. SSRIs (sertraline, paroxetine) are second-line when psychological therapy is declined or unavailable.",
+      "A": "Incorrect — Acute stress reaction occurs within 4 weeks of trauma. This has persisted 12 weeks = PTSD, not acute stress reaction.",
+      "B": "CORRECT — PTSD (>1 month post-trauma, re-experiencing + avoidance + hyperarousal). TF-CBT or EMDR is first-line per NICE NG116.",
+      "C": "Incorrect — Adjustment disorder is a milder, less specific response to stressors without the full PTSD symptom cluster.",
+      "D": "Incorrect — Sertraline is second-line in PTSD. Psychological therapy (TF-CBT/EMDR) is first-line per NICE NG116.",
+      "E": "Incorrect — This is PTSD, not depression. PTSD-specific therapy (TF-CBT/EMDR) should be offered, not generic depression treatment."
+    },
+    "reference": "NICE NG116 — Post-traumatic stress disorder. https://www.nice.org.uk/guidance/ng116",
+    "tags": ["PTSD", "trauma", "TF-CBT", "EMDR", "flashbacks", "NICE NG116"]
+  },
+  {
+    "id": "AKT-PSYCH-014",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Psychiatry",
+    "difficulty": "Medium",
+    "question": "A 60-year-old man is on clozapine for treatment-resistant schizophrenia. He presents with a sore throat and fever. His full blood count shows a neutrophil count of 0.4 x10⁹/L. What is the most appropriate immediate action?",
+    "options": {
+      "A": "Prescribe antibiotics and continue clozapine at reduced dose",
+      "B": "Stop clozapine immediately and seek urgent haematological/psychiatric advice",
+      "C": "Increase clozapine dose as low neutrophils suggest underdosing",
+      "D": "Check clozapine plasma level and adjust dose accordingly",
+      "E": "Monitor FBC weekly and review in 2 weeks"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Clozapine causes agranulocytosis in approximately 1-2% of patients — a potentially fatal complication. Per the Clozapine Monitoring Service (CPMS) and BNF, if neutrophils fall below 1.5 x10⁹/L (amber alert) or below 0.5 x10⁹/L (red alert — agranulocytosis), clozapine must be STOPPED IMMEDIATELY. This patient has neutrophils of 0.4 x10⁹/L = agranulocytosis = red alert. Stop clozapine immediately and seek urgent haematology and psychiatry advice. Clozapine must NEVER be restarted after agranulocytosis.",
+      "A": "Incorrect — Continuing clozapine with agranulocytosis can be fatal. It must be stopped immediately.",
+      "B": "CORRECT — Neutrophils 0.4 x10⁹/L = agranulocytosis (red alert). Stop clozapine immediately per CPMS/BNF guidelines.",
+      "C": "Incorrect — Neutropenia is a side effect of clozapine, not a sign of underdosing.",
+      "D": "Incorrect — Plasma level is irrelevant. The haematological emergency requires stopping the drug.",
+      "E": "Incorrect — Weekly FBC monitoring is routine clozapine monitoring. This acute crisis requires immediate action, not routine monitoring."
+    },
+    "reference": "BNF — Clozapine monitoring. CPMS (Clozapine Patient Monitoring Service) guidelines.",
+    "tags": ["clozapine", "agranulocytosis", "neutropenia", "schizophrenia", "stop clozapine", "CPMS"]
+  },
+  {
+    "id": "AKT-PSYCH-015",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Psychiatry",
+    "difficulty": "Easy",
+    "question": "A 38-year-old woman presents with excessive worry about multiple everyday matters (finances, health, family) for over 6 months, which she finds difficult to control. She also has restlessness, fatigue, difficulty concentrating, muscle tension and sleep difficulties. GAD-7 score is 16. What is the most appropriate management?",
+    "options": {
+      "A": "Diazepam 2mg TDS for 4 weeks",
+      "B": "Low-intensity CBT (guided self-help) as first step",
+      "C": "SSRI (sertraline) + high-intensity CBT",
+      "D": "Propranolol 40mg PRN for anxiety symptoms",
+      "E": "Refer to psychiatry"
+    },
+    "correct_answer": "C",
+    "explanation": {
+      "correct": "GAD-7 score of 16 indicates severe generalised anxiety disorder. Per NICE CG113, management follows a stepped care model: Step 1 (mild GAD) = psychoeducation; Step 2 = low-intensity CBT/guided self-help; Step 3 (moderate-severe, GAD-7 ≥11) = high-intensity CBT or SSRI (sertraline first-line). GAD-7 16 = severe — high-intensity CBT and/or SSRI is appropriate. Benzodiazepines should NOT be used for GAD beyond short-term (2-4 weeks maximum).",
+      "A": "Incorrect — Benzodiazepines are not recommended for GAD beyond 2-4 weeks due to dependence. Not appropriate as ongoing treatment per NICE CG113.",
+      "B": "Incorrect — Low-intensity CBT is step 2 and appropriate for mild-moderate GAD. GAD-7 16 = severe, warranting step 3.",
+      "C": "CORRECT — Severe GAD (GAD-7 ≥15): high-intensity CBT and/or SSRI (sertraline) is step 3 per NICE CG113.",
+      "D": "Incorrect — Propranolol treats peripheral anxiety symptoms (tremor, palpitations) but is not recommended in NICE CG113 for GAD.",
+      "E": "Incorrect — Psychiatry referral is step 4 (treatment-resistant GAD). This patient has not yet received first-line treatment."
+    },
+    "reference": "NICE CG113 — Generalised anxiety disorder and panic disorder in adults. https://www.nice.org.uk/guidance/cg113",
+    "tags": ["GAD", "generalised anxiety disorder", "sertraline", "CBT", "GAD-7", "NICE CG113"]
+  },
+  {
+    "id": "AKT-PSYCH-016",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Psychiatry",
+    "difficulty": "Hard",
+    "question": "A 25-year-old woman is started on an SSRI for depression. Two weeks later she presents to A&E agitated, confused and tremulous with a temperature of 38.8°C, sweating, hyperreflexia and myoclonus. She recently started St John's Wort for additional mood support. What is the most likely diagnosis?",
+    "options": {
+      "A": "Neuroleptic malignant syndrome",
+      "B": "Serotonin syndrome",
+      "C": "Anticholinergic toxidrome",
+      "D": "Thyroid storm",
+      "E": "Benzodiazepine withdrawal"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Serotonin syndrome is caused by excess serotonergic activity, typically from drug combinations. SSRI + St John's Wort (also serotonergic) = serotonin syndrome. Classic triad (Hunter criteria): (1) Neuromuscular abnormalities — myoclonus, hyperreflexia, tremor, clonus; (2) Autonomic instability — hyperthermia, diaphoresis, tachycardia, hypertension; (3) Altered mental status — agitation, confusion. Treatment: stop serotonergic drugs, supportive care, cyproheptadine (5-HT2A antagonist) in severe cases.",
+      "A": "Incorrect — NMS is caused by antipsychotics (dopamine antagonists), presents with lead-pipe rigidity, hyperthermia, autonomic instability, elevated CK. Onset is over days-weeks, not acute as here.",
+      "B": "CORRECT — SSRI + St John's Wort → serotonin syndrome: agitation, hyperthermia, hyperreflexia, myoclonus, sweating.",
+      "C": "Incorrect — Anticholinergic toxidrome causes dry flushed skin, urinary retention, dilated pupils, dry mouth — not myoclonus or hyperreflexia.",
+      "D": "Incorrect — Thyroid storm presents with extreme hyperthyroidism features (extreme tachycardia, AF, thyroid enlargement) — no myoclonus.",
+      "E": "Incorrect — Benzodiazepine withdrawal causes anxiety, seizures, autonomic instability — no myoclonus/hyperreflexia as dominant feature."
+    },
+    "reference": "Boyer EW, Shannon M. Serotonin Syndrome. NEJM 2005. BNF — Drug interactions: SSRIs.",
+    "tags": ["serotonin syndrome", "SSRI", "St John's Wort", "drug interaction", "hyperthermia", "myoclonus"]
+  },
+  {
+    "id": "AKT-PSYCH-017",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Psychiatry",
+    "difficulty": "Medium",
+    "question": "A 16-year-old girl presents with her mother with low mood, fatigue and loss of interest lasting 10 weeks. PHQ-A score is 14. She has no suicidal ideation. What is the most appropriate first-line treatment per NICE guidance for adolescent depression?",
+    "options": {
+      "A": "Sertraline 50mg immediately",
+      "B": "Fluoxetine 10mg — the only SSRI licensed for depression in under-18s",
+      "C": "CBT alone for at least 3 months before considering medication",
+      "D": "Refer to CAMHS for assessment and psychological therapy — fluoxetine only if therapy insufficient",
+      "E": "Watchful waiting for 4 weeks then reassess"
+    },
+    "correct_answer": "D",
+    "explanation": {
+      "correct": "Per NICE NG134 (Depression in children and young people), for moderate-severe depression in adolescents: refer to CAMHS (Child and Adolescent Mental Health Services) for specialist assessment. First-line treatment is psychological therapy (CBT, interpersonal therapy or family therapy). Fluoxetine is the only SSRI licensed for depression in under-18s in the UK and should only be prescribed by CAMHS specialists, not in primary care, and only when psychological therapy alone is insufficient.",
+      "A": "Incorrect — Sertraline is not licensed for depression in under-18s. Primary care prescription of antidepressants in adolescents is not recommended.",
+      "B": "Incorrect — While fluoxetine is the only licensed SSRI in under-18s, it should be prescribed by CAMHS specialists, not initiated in primary care.",
+      "C": "Incorrect — CBT alone for 3 months before any specialist assessment delays appropriate care for a 16-year-old with moderate-severe depression.",
+      "D": "CORRECT — Refer to CAMHS for specialist assessment + psychological therapy; fluoxetine only if therapy insufficient per NICE NG134.",
+      "E": "Incorrect — Watchful waiting is for mild depression of <2 weeks duration. This patient has moderate depression for 10 weeks."
+    },
+    "reference": "NICE NG134 — Depression in children and young people: identification and management. https://www.nice.org.uk/guidance/ng134",
+    "tags": ["adolescent depression", "CAMHS", "fluoxetine", "under 18", "CBT", "NICE NG134"]
+  },
+  {
+    "id": "AKT-PSYCH-018",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Psychiatry",
+    "difficulty": "Medium",
+    "question": "A 45-year-old man presents requesting help with alcohol dependence. He drinks 60 units per week and has been drinking heavily for 10 years. He has no liver disease. He wants to achieve abstinence. Which medication is most appropriate for relapse prevention after detoxification?",
+    "options": {
+      "A": "Diazepam 10mg TDS",
+      "B": "Acamprosate or naltrexone",
+      "C": "Disulfiram as sole treatment without psychosocial support",
+      "D": "Baclofen 10mg TDS",
+      "E": "Chlordiazepoxide reducing regime"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per NICE CG115 (Alcohol-use disorders: diagnosis, assessment and management), for relapse prevention after detoxification: acamprosate (reduces craving by modulating glutamate) or oral naltrexone (opioid receptor antagonist, reduces reward from alcohol) are first-line medications, used alongside psychosocial interventions (CBT, motivational interviewing). Disulfiram is third-line and requires informed consent, regular supervision and psychosocial support.",
+      "A": "Incorrect — Diazepam (benzodiazepine) is used for alcohol detoxification (preventing withdrawal seizures), not long-term relapse prevention.",
+      "B": "CORRECT — Acamprosate or naltrexone for relapse prevention post-detox per NICE CG115.",
+      "C": "Incorrect — Disulfiram without psychosocial support is dangerous and not recommended. It causes severe reaction if alcohol consumed.",
+      "D": "Incorrect — Baclofen is not a NICE-recommended first-line agent for alcohol relapse prevention.",
+      "E": "Incorrect — Chlordiazepoxide reducing regime is for acute alcohol detoxification, not relapse prevention."
+    },
+    "reference": "NICE CG115 — Alcohol-use disorders: diagnosis, assessment and management. https://www.nice.org.uk/guidance/cg115",
+    "tags": ["alcohol dependence", "acamprosate", "naltrexone", "relapse prevention", "detoxification", "NICE CG115"]
+  },
+  {
+    "id": "AKT-PSYCH-019",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Psychiatry",
+    "difficulty": "Easy",
+    "question": "A 35-year-old woman with schizophrenia on risperidone 4mg daily presents with amenorrhoea, galactorrhoea and reduced libido. Blood tests show prolactin of 1850 mU/L (normal <500 mU/L). What is the most likely cause and most appropriate management?",
+    "options": {
+      "A": "Prolactinoma — MRI pituitary and refer to endocrinology",
+      "B": "Risperidone-induced hyperprolactinaemia — discuss with psychiatrist, consider switching to prolactin-sparing antipsychotic",
+      "C": "Pregnancy — urine pregnancy test",
+      "D": "Hypothyroidism — TFTs and levothyroxine if confirmed",
+      "E": "Stop risperidone immediately without psychiatric input"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Risperidone (and other D2 receptor antagonist antipsychotics) causes hyperprolactinaemia by blocking dopamine inhibition of prolactin release from the pituitary. Risperidone causes among the highest rates of hyperprolactinaemia of any antipsychotic. Symptoms: amenorrhoea, galactorrhoea, sexual dysfunction, osteoporosis risk. Management: discuss with prescribing psychiatrist; consider switching to a prolactin-sparing antipsychotic (aripiprazole, quetiapine, clozapine). Do not stop antipsychotic without psychiatric review — risk of psychosis relapse.",
+      "A": "Incorrect — While prolactinoma must be excluded if prolactin remains elevated after drug review, risperidone is the most likely cause here given the clinical context.",
+      "B": "CORRECT — Risperidone-induced hyperprolactinaemia. Discuss with psychiatrist, consider switch to prolactin-sparing antipsychotic.",
+      "C": "Incorrect — Pregnancy causes raised hCG but not prolactin of 1850 mU/L. Pregnancy test is reasonable but not the primary explanation.",
+      "D": "Incorrect — Hypothyroidism can mildly raise prolactin but not to this level. TFTs are reasonable but not the primary cause.",
+      "E": "Incorrect — Stopping antipsychotic without psychiatric input risks schizophrenia relapse. Always liaise with psychiatry."
+    },
+    "reference": "BNF — Risperidone side effects. NICE CG178 — Psychosis and schizophrenia.",
+    "tags": ["risperidone", "hyperprolactinaemia", "amenorrhoea", "galactorrhoea", "antipsychotic", "prolactin"]
+  },
+  {
+    "id": "AKT-PSYCH-020",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Psychiatry",
+    "difficulty": "Hard",
+    "question": "A 42-year-old man with no psychiatric history presents with 3 weeks of low mood, sleep disturbance and anxiety following redundancy. He is functioning adequately, attending to self-care and has no suicidal ideation. PHQ-9 score is 8. What is the most appropriate management?",
+    "options": {
+      "A": "Start sertraline 50mg immediately",
+      "B": "Watchful waiting with review in 2 weeks, provide psychoeducation and signpost to self-help resources",
+      "C": "Refer urgently to psychiatry",
+      "D": "Prescribe diazepam 2mg TDS for 2 weeks",
+      "E": "Refer to IAPT for high-intensity CBT"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "This patient has mild depression (PHQ-9 8 = mild, 5-9) that is clearly reactive to a life event (redundancy), of short duration (3 weeks) with no risk factors or functional impairment beyond symptoms. Per NICE NG222, for mild depression of short duration, watchful waiting (active monitoring) with review within 2 weeks is appropriate. Psychoeducation, self-help resources (IAPT self-referral, apps, bibliotherapy) and support should be provided. Starting antidepressants for mild short-duration reactive depression is not recommended.",
+      "A": "Incorrect — Antidepressants are not recommended for mild, short-duration, reactive depression per NICE NG222.",
+      "B": "CORRECT — Watchful waiting + psychoeducation + self-help + 2-week review for mild reactive depression per NICE NG222.",
+      "C": "Incorrect — Urgent psychiatry referral is not indicated for mild depression with no risk.",
+      "D": "Incorrect — Benzodiazepines are not recommended for depression or anxiety beyond 2-4 weeks and cause dependence.",
+      "E": "Incorrect — High-intensity CBT is for moderate-severe depression. Low-intensity interventions (guided self-help) are appropriate at this step."
+    },
+    "reference": "NICE NG222 — Depression in adults: treatment and management. https://www.nice.org.uk/guidance/ng222",
+    "tags": ["mild depression", "watchful waiting", "PHQ-9", "reactive depression", "psychoeducation", "NICE NG222"]
+  }
+]

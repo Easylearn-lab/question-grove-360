@@ -1,0 +1,851 @@
+[
+  {
+    "id": "QG-NEURO-025-001",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Neurology",
+    "difficulty": "Medium",
+    "question": "A 68-year-old man presents with sudden onset severe central chest pain radiating to his jaw. An ECG shows ST elevation in leads II, III and aVF with reciprocal ST depression in leads I and aVL. Which territory is infarcted and what is the most likely culprit vessel?",
+    "options": {
+      "A": "Anterior wall — left anterior descending artery",
+      "B": "Inferior wall — right coronary artery (RCA) in 80% of cases",
+      "C": "Lateral wall — left circumflex artery",
+      "D": "Posterior wall — right coronary artery",
+      "E": "Septal wall — first diagonal branch of LAD"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "ST elevation in leads II, III and aVF indicates inferior STEMI. The inferior wall is supplied by the right coronary artery (RCA) in approximately 80% of cases (right-dominant circulation) and by the left circumflex artery in left-dominant individuals. Reciprocal ST depression in I and aVL is characteristic of inferior STEMI confirming the diagnosis.",
+      "A": "Incorrect — Anterior STEMI (LAD) causes ST elevation in V1-V4, not inferior leads II, III, aVF.",
+      "B": "CORRECT — Inferior STEMI: ST elevation II, III, aVF with reciprocal changes in I and aVL. RCA is culprit in ~80%.",
+      "C": "Incorrect — Lateral STEMI (LCx) causes ST elevation in I, aVL, V5, V6.",
+      "D": "Incorrect — Posterior MI causes dominant R waves and ST depression in V1-V3 (mirror image), not ST elevation in inferior leads.",
+      "E": "Incorrect — Septal involvement affects V1-V2 and is part of anterior STEMI territory."
+    },
+    "reference": "ESC Guidelines on STEMI 2017. NICE NG185 — Chest pain.",
+    "tags": [
+      "inferior STEMI",
+      "ECG",
+      "right coronary artery",
+      "ST elevation",
+      "AKT ECG interpretation"
+    ],
+    "source": "Question Grove 360"
+  },
+  {
+    "id": "QG-NEURO-025-002",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Neurology",
+    "difficulty": "Medium",
+    "question": "A 45-year-old man presents with sharp chest pain worse on lying flat and relieved by leaning forward, following a viral upper respiratory tract infection 5 days ago. His ECG shows widespread saddle-shaped ST elevation in all leads except aVR and V1, with PR depression in lead II. What is the diagnosis and most appropriate immediate management?",
+    "options": {
+      "A": "STEMI — call 999, aspirin 300mg, urgent PCI",
+      "B": "Acute pericarditis — ibuprofen 600mg three times daily + colchicine 500 mcg twice daily, restrict physical activity",
+      "C": "Pulmonary embolism — CT pulmonary angiography",
+      "D": "Aortic dissection — urgent CT aortogram",
+      "E": "Unstable angina — dual antiplatelet therapy and heparin"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Acute pericarditis: sharp pleuritic chest pain worse lying flat, relieved sitting forward, post-viral onset. ECG: widespread concave ('saddle-shaped') ST elevation in almost all leads + PR depression (highly specific for pericarditis) — these distinguish it from STEMI (which has convex ST elevation in a coronary territory with reciprocal changes). Per ESC guidelines, treatment: NSAIDs (ibuprofen 600mg TDS or aspirin 750-1000mg TDS) + colchicine 500mcg BD for 3 months (reduces recurrence by 50%). Restrict strenuous physical activity until symptom-free.",
+      "A": "Incorrect — STEMI has territory-specific convex ST elevation with reciprocal changes. Widespread saddle-shaped ST elevation with PR depression = pericarditis.",
+      "B": "CORRECT — Acute pericarditis: saddle-shaped ST elevation + PR depression + pleuritic pain. NSAIDs + colchicine per ESC.",
+      "C": "Incorrect — PE causes sinus tachycardia ± S1Q3T3 pattern — not widespread ST elevation with PR depression.",
+      "D": "Incorrect — Aortic dissection causes tearing pain with BP differential between arms — not this ECG pattern.",
+      "E": "Incorrect — Unstable angina causes ST depression/T wave changes — not widespread ST elevation."
+    },
+    "reference": "ESC Guidelines on Pericardial Diseases 2015. NICE CKS — Pericarditis.",
+    "tags": [
+      "pericarditis",
+      "ECG",
+      "saddle-shaped ST elevation",
+      "PR depression",
+      "colchicine",
+      "NSAIDs"
+    ],
+    "source": "Question Grove 360"
+  },
+  {
+    "id": "QG-NEURO-025-003",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Neurology",
+    "difficulty": "Hard",
+    "question": "A 55-year-old man is brought to surgery in cardiac arrest. His ECG prior to arrest showed ST elevation in leads V1-V4 with new left bundle branch block (LBBB). His wife states the chest pain started 90 minutes ago. Which ECG criterion specifically identifies LBBB that is likely due to acute STEMI (Sgarbossa criteria — most specific)?",
+    "options": {
+      "A": "New LBBB alone always indicates acute STEMI and mandates PCI",
+      "B": "Concordant ST elevation ≥1mm in a lead with a positive QRS complex — most specific Sgarbossa criterion",
+      "C": "ST depression in leads V1-V3 in the presence of LBBB",
+      "D": "QRS duration >120ms in the presence of chest pain",
+      "E": "LBBB with left axis deviation"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Sgarbossa criteria identify STEMI in the presence of LBBB: (1) Concordant ST elevation ≥1mm in a lead with a positive QRS — most specific (score 5); (2) Concordant ST depression ≥1mm in V1-V3 (score 3); (3) Discordant ST elevation ≥5mm (score 2 — less specific). Per 2017 ESC STEMI guidelines, new LBBB with acute symptoms should be treated as STEMI equivalent and urgent reperfusion considered — but modified Sgarbossa criteria (using proportional ST/S wave ratio) improve specificity.",
+      "A": "Incorrect — Not all new LBBB is STEMI. Sgarbossa criteria are needed to distinguish ischaemic LBBB from non-ischaemic.",
+      "B": "CORRECT — Concordant ST elevation ≥1mm with positive QRS = most specific Sgarbossa criterion for STEMI in LBBB.",
+      "C": "Incorrect — ST depression V1-V3 in LBBB is actually part of normal LBBB pattern (discordant) and less specific.",
+      "D": "Incorrect — QRS duration >120ms is diagnostic of LBBB itself, not STEMI within LBBB.",
+      "E": "Incorrect — Left axis deviation is a feature of LBBB but does not diagnose acute STEMI."
+    },
+    "reference": "ESC STEMI Guidelines 2017. Sgarbossa EB et al. NEJM 1996. Modified Sgarbossa criteria.",
+    "tags": [
+      "Sgarbossa criteria",
+      "LBBB",
+      "STEMI",
+      "ECG",
+      "concordant ST elevation",
+      "AKT ECG"
+    ],
+    "source": "Question Grove 360"
+  },
+  {
+    "id": "QG-NEURO-025-004",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Neurology",
+    "difficulty": "Easy",
+    "question": "A 60-year-old woman presents with 2 hours of crushing chest pain. Her ECG shows ST elevation in leads V1-V4 with Q waves in V2 and V3, and reciprocal ST depression in the inferior leads. What territory is infarcted and what is the single most time-critical intervention?",
+    "options": {
+      "A": "Inferior STEMI — aspirin and admit to coronary care unit",
+      "B": "Anterior STEMI — call 999 immediately for primary PCI (door-to-balloon time target <90 minutes)",
+      "C": "Posterior STEMI — IV thrombolysis in primary care",
+      "D": "Lateral STEMI — dual antiplatelet and monitoring",
+      "E": "Anterior STEMI — IV thrombolysis if PCI not available within 120 minutes"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "ST elevation in V1-V4 = anterior STEMI (LAD territory). Reciprocal ST depression in inferior leads confirms anterior STEMI. This is the highest-mortality STEMI territory due to large myocardial mass at risk. Per ESC guidelines, primary PCI (pPCI) is the preferred reperfusion strategy with a target first medical contact to balloon time of <90 minutes (or <120 minutes if transfer required). Call 999 immediately — do not delay for any investigations.",
+      "A": "Incorrect — ST elevation in V1-V4 is anterior not inferior territory.",
+      "B": "CORRECT — Anterior STEMI (V1-V4). 999 immediately for pPCI — door-to-balloon target <90 minutes.",
+      "C": "Incorrect — Posterior STEMI shows dominant R and ST depression in V1-V3. IV thrombolysis in primary care is dangerous without appropriate monitoring.",
+      "D": "Incorrect — Dual antiplatelet and monitoring without reperfusion is inadequate for acute STEMI.",
+      "E": "Partially correct — thrombolysis is used only when pPCI is not available within 120 minutes of first medical contact. Always try pPCI first."
+    },
+    "reference": "ESC STEMI Guidelines 2017. NICE NG185. Resuscitation Council UK — ACS management.",
+    "tags": [
+      "anterior STEMI",
+      "V1-V4",
+      "LAD",
+      "primary PCI",
+      "door-to-balloon",
+      "emergency"
+    ],
+    "source": "Question Grove 360"
+  },
+  {
+    "id": "QG-NEURO-025-005",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Neurology",
+    "difficulty": "Medium",
+    "question": "A GP performs an ECG on a 52-year-old man presenting with vague chest tightness. The ECG shows deep T-wave inversions in leads V1-V4 with normal ST segments and no Q waves. Troponin I is elevated at 320 ng/L (normal <34 ng/L). He is haemodynamically stable. What is the most appropriate immediate management?",
+    "options": {
+      "A": "Repeat ECG in 4 hours — likely benign early repolarisation",
+      "B": "Call 999 — this is NSTEMI requiring urgent hospital admission for dual antiplatelet, anticoagulation and cardiology review",
+      "C": "Prescribe aspirin 75mg and arrange outpatient cardiology in 2 weeks",
+      "D": "Start beta blocker and arrange exercise tolerance test",
+      "E": "Reassure — T-wave inversions in V1-V4 are a normal variant"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Deep T-wave inversions in V1-V4 with elevated troponin (>99th percentile) = NSTEMI (Non-ST elevation myocardial infarction). Wellens syndrome (deep T-wave inversions in V2-V3 specifically) indicates critical proximal LAD stenosis. Per NICE NG185 and ESC NSTE-ACS guidelines, NSTEMI requires emergency hospital admission for: aspirin 300mg loading dose, P2Y12 inhibitor (ticagrelor or clopidogrel), anticoagulation (fondaparinux or LMWH), risk stratification (GRACE score) and urgent cardiology review for coronary angiography.",
+      "A": "Incorrect — Elevated troponin with T-wave inversions = NSTEMI. Not benign — requires emergency treatment.",
+      "B": "CORRECT — NSTEMI (troponin rise + T-wave inversions): 999 for emergency admission, dual antiplatelet + anticoagulation per ESC/NICE.",
+      "C": "Incorrect — Aspirin 75mg alone is maintenance dose, not loading. Outpatient review in 2 weeks is dangerously delayed for NSTEMI.",
+      "D": "Incorrect — Exercise testing is absolutely contraindicated in acute NSTEMI.",
+      "E": "Incorrect — T-wave inversions in V1-V4 with elevated troponin are never a normal variant."
+    },
+    "reference": "ESC Guidelines on NSTE-ACS 2020. NICE NG185 — Chest pain. Wellens syndrome.",
+    "tags": [
+      "NSTEMI",
+      "T-wave inversions",
+      "troponin",
+      "Wellens syndrome",
+      "NICE NG185",
+      "emergency"
+    ],
+    "source": "Question Grove 360"
+  },
+  {
+    "id": "QG-NEURO-072-001",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Neurology",
+    "difficulty": "Easy",
+    "question": "A 45-year-old woman presents with a 2-week history of progressive unsteadiness, slurred speech and involuntary oscillation of the eyes on lateral gaze. On examination she has intention tremor, dysdiadochokinesis and wide-based gait. Which mnemonic best summarises the features of cerebellar disease?",
+    "options": {
+      "A": "MUDPILES",
+      "B": "DANISH (Dysdiadochokinesia, Ataxia, Nystagmus, Intention tremor, Slurred speech/Scanning dysarthria, Hypotonia)",
+      "C": "AEIOU TIPS",
+      "D": "SOCRATES",
+      "E": "FAST (Face, Arms, Speech, Time)"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Cerebellar disease features remembered by DANISH: Dysdiadochokinesia (inability to perform rapid alternating movements), Ataxia (wide-based unsteady gait), Nystagmus (involuntary oscillating eye movements — fast phase towards the side of the lesion), Intention tremor (tremor worsening on approaching a target — finger-nose test), Slurred/scanning dysarthria (staccato speech), Hypotonia (reduced muscle tone). Cerebellar signs are ipsilateral to the lesion.",
+      "A": "Incorrect — MUDPILES is a mnemonic for causes of metabolic acidosis (Methanol, Uraemia, DKA, Propylene glycol, Isoniazid, Lactic acidosis, Ethylene glycol, Salicylates).",
+      "B": "CORRECT — DANISH is the standard mnemonic for cerebellar disease features including nystagmus.",
+      "C": "Incorrect — AEIOU TIPS is used for causes of altered consciousness.",
+      "D": "Incorrect — SOCRATES is used for pain history taking.",
+      "E": "Incorrect — FAST is the stroke recognition tool (Face drooping, Arm weakness, Speech difficulty, Time to call 999)."
+    },
+    "reference": "Oxford Handbook of Clinical Medicine. Neurology examination — cerebellar signs.",
+    "tags": [
+      "cerebellar disease",
+      "nystagmus",
+      "DANISH",
+      "ataxia",
+      "intention tremor",
+      "dysdiadochokinesia"
+    ],
+    "source": "Question Grove 360"
+  },
+  {
+    "id": "QG-NEURO-072-002",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Neurology",
+    "difficulty": "Medium",
+    "question": "A 58-year-old man with a history of heavy alcohol use presents with cerebellar ataxia, nystagmus and ophthalmoplegia. He is confused. What is the most likely diagnosis and most important immediate treatment?",
+    "options": {
+      "A": "Multiple sclerosis — IV methylprednisolone",
+      "B": "Wernicke's encephalopathy — IV thiamine (Pabrinex) immediately before any glucose",
+      "C": "Cerebellar stroke — aspirin 300mg and urgent CT head",
+      "D": "Alcohol intoxication — supportive care and observation",
+      "E": "Benzodiazepine overdose — IV flumazenil"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Wernicke's encephalopathy (thiamine/B1 deficiency) classic triad: confusion/encephalopathy, cerebellar ataxia, ophthalmoplegia (including nystagmus, lateral rectus palsy, conjugate gaze palsies). Common in alcoholism, malnutrition, hyperemesis. CRITICAL: IV thiamine (Pabrinex — two pairs of ampoules IV TDS) must be given BEFORE any glucose — glucose metabolism depletes residual thiamine and can precipitate acute Wernicke's or worsen existing disease. If untreated, progresses to irreversible Korsakoff syndrome.",
+      "A": "Incorrect — MS does not cause this acute triad in the context of alcoholism.",
+      "B": "CORRECT — Wernicke's encephalopathy: classic triad + alcoholism. IV Pabrinex immediately, before glucose.",
+      "C": "Incorrect — CT head is important to exclude haemorrhage but IV thiamine takes priority in this clinical picture.",
+      "D": "Incorrect — Alcohol intoxication alone does not cause ophthalmoplegia. Wernicke's must be treated.",
+      "E": "Incorrect — Flumazenil reverses benzodiazepine — not indicated here."
+    },
+    "reference": "NICE CG100 — Alcohol-use disorders: physical complications. Royal College of Physicians — Alcohol guidelines.",
+    "tags": [
+      "Wernicke's encephalopathy",
+      "thiamine",
+      "Pabrinex",
+      "cerebellar ataxia",
+      "nystagmus",
+      "ophthalmoplegia"
+    ],
+    "source": "Question Grove 360"
+  },
+  {
+    "id": "QG-NEURO-072-003",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Neurology",
+    "difficulty": "Medium",
+    "question": "A 30-year-old woman presents with a 3-month history of progressive ataxia, intention tremor and nystagmus. MRI shows cerebellar atrophy and periventricular white matter lesions. She reports an episode of visual loss 2 years ago that resolved spontaneously. What is the most likely diagnosis?",
+    "options": {
+      "A": "Cerebellar haemangioblastoma — MRI with contrast",
+      "B": "Multiple sclerosis with cerebellar involvement",
+      "C": "Spinocerebellar ataxia — genetic testing",
+      "D": "Friedreich's ataxia — ECG and echocardiogram",
+      "E": "Alcoholic cerebellar degeneration — abstinence and thiamine"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Multiple sclerosis: episodes disseminated in time (previous optic neuritis 2 years ago resolving spontaneously) and space (now cerebellar involvement). Cerebellar MS presents with nystagmus, intention tremor, ataxia, scanning dysarthria. Periventricular white matter lesions on MRI are characteristic. Internuclear ophthalmoplegia is pathognomonic for MS. Refer to neurology for formal diagnosis (McDonald criteria 2017) and disease-modifying therapy.",
+      "A": "Incorrect — Haemangioblastoma is a benign vascular tumour causing focal cerebellar symptoms — no previous optic neuritis or periventricular lesions.",
+      "B": "CORRECT — MS: relapsing episodes + cerebellar + optic neuritis history + periventricular lesions on MRI.",
+      "C": "Incorrect — Spinocerebellar ataxia is progressive without relapsing-remitting episodes or optic neuritis.",
+      "D": "Incorrect — Friedreich's ataxia presents in childhood/adolescence with absent reflexes, cardiomyopathy, diabetes — no optic neuritis.",
+      "E": "Incorrect — Alcoholic cerebellar degeneration primarily affects midline (gait > limb ataxia) — no optic neuritis."
+    },
+    "reference": "NICE NG220 — Multiple sclerosis in adults: management. McDonald Criteria 2017.",
+    "tags": [
+      "multiple sclerosis",
+      "cerebellar MS",
+      "nystagmus",
+      "optic neuritis",
+      "NICE NG220",
+      "relapsing remitting"
+    ],
+    "source": "Question Grove 360"
+  },
+  {
+    "id": "QG-NEURO-072-004",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Neurology",
+    "difficulty": "Hard",
+    "question": "A GP examines a 35-year-old patient and finds nystagmus. Which feature of nystagmus most reliably distinguishes peripheral (vestibular) from central (cerebellar/brainstem) nystagmus?",
+    "options": {
+      "A": "Peripheral nystagmus is always horizontal; central nystagmus is always vertical",
+      "B": "Peripheral nystagmus: direction-fixed, suppressed by fixation, associated with vertigo; Central nystagmus: direction-changing or vertical, NOT suppressed by fixation, less severe vertigo",
+      "C": "Central nystagmus is always associated with deafness",
+      "D": "Peripheral nystagmus does not fatigue; central nystagmus fatigues with repeated testing",
+      "E": "Peripheral and central nystagmus are clinically indistinguishable — MRI is always required"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Key distinguishing features — Peripheral (BPPV, labyrinthitis, Ménière's): direction-FIXED nystagmus (fast phase always same direction), SUPPRESSED by visual fixation, associated with severe incapacitating vertigo, FATIGUES with repeated Dix-Hallpike. Central (cerebellar, brainstem): direction-CHANGING (changes with gaze direction), NOT suppressed by fixation, vertical/torsional nystagmus, less severe vertigo, does NOT fatigue, associated with other cerebellar/brainstem signs. Central nystagmus demands urgent neuroimaging.",
+      "A": "Incorrect — Both peripheral and central nystagmus can be horizontal. Vertical nystagmus is almost always central.",
+      "B": "CORRECT — Direction-fixed + suppressed by fixation + severe vertigo = peripheral. Direction-changing + not suppressed + less vertigo = central.",
+      "C": "Incorrect — Deafness is associated with peripheral conditions (Ménière's, labyrinthitis) — not central nystagmus.",
+      "D": "Incorrect — This is reversed. PERIPHERAL nystagmus fatigues (BPPV). CENTRAL nystagmus does NOT fatigue.",
+      "E": "Incorrect — Clinical examination reliably distinguishes peripheral from central in most cases."
+    },
+    "reference": "NICE CKS — Nystagmus. Barany Society — BPPV guidelines. Neurology examination.",
+    "tags": [
+      "nystagmus",
+      "peripheral vs central",
+      "cerebellar",
+      "BPPV",
+      "vertigo",
+      "direction-changing"
+    ],
+    "source": "Question Grove 360"
+  },
+  {
+    "id": "QG-NEURO-072-005",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Neurology",
+    "difficulty": "Easy",
+    "question": "A 50-year-old man presents with sudden onset vertigo, nausea, vomiting and nystagmus. He is unable to walk without support. On examination he has direction-changing nystagmus, dysarthria and dysphagia. His gait is severely ataxic. What is the most likely diagnosis and appropriate management?",
+    "options": {
+      "A": "BPPV — Epley manoeuvre",
+      "B": "Posterior circulation stroke (cerebellar or brainstem) — call 999, urgent CT/MRI head, thrombolysis assessment",
+      "C": "Labyrinthitis — prochlorperazine and vestibular rehabilitation",
+      "D": "Ménière's disease — betahistine 16mg three times daily",
+      "E": "Vestibular migraine — sumatriptan"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Sudden onset severe vertigo + direction-changing nystagmus + dysarthria + dysphagia + severe ataxia = posterior circulation stroke (lateral medullary syndrome/Wallenberg syndrome or cerebellar stroke) until proven otherwise. HINTS examination (Head Impulse, Nystagmus type, Test of Skew) differentiates: direction-changing nystagmus + normal head impulse test + skew deviation = CENTRAL cause (stroke). This is a neurological emergency. Per NICE NG128, urgent CT head (then MRI if CT negative) and thrombolysis assessment if within 4.5 hours.",
+      "A": "Incorrect — BPPV causes positional vertigo (triggered by head movement), not spontaneous severe ataxia with dysarthria.",
+      "B": "CORRECT — Posterior circulation stroke: sudden onset + direction-changing nystagmus + dysarthria + dysphagia + ataxia. 999 + CT/MRI + thrombolysis per NICE NG128.",
+      "C": "Incorrect — Labyrinthitis is peripheral — causes direction-FIXED nystagmus without dysarthria or dysphagia.",
+      "D": "Incorrect — Ménière's causes episodic vertigo + tinnitus + hearing loss — not dysarthria or dysphagia.",
+      "E": "Incorrect — Vestibular migraine does not cause dysarthria or dysphagia."
+    },
+    "reference": "NICE NG128 — Stroke and TIA. HINTS examination criteria. Posterior circulation stroke.",
+    "tags": [
+      "posterior circulation stroke",
+      "cerebellar stroke",
+      "HINTS",
+      "direction-changing nystagmus",
+      "NICE NG128",
+      "emergency"
+    ],
+    "source": "Question Grove 360"
+  },
+  {
+    "id": "QG-NEURO-073-001",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Neurology",
+    "difficulty": "Medium",
+    "question": "A health visitor refers a 12-month-old boy for assessment. He is not yet pulling to stand, has persistent primitive reflexes and his mother reports his legs seem stiff. On examination he has increased tone in both lower limbs, brisk knee and ankle reflexes, and upgoing plantar responses. What type of cerebral palsy is most likely and what is the most common underlying cause?",
+    "options": {
+      "A": "Dyskinetic CP — basal ganglia damage from kernicterus",
+      "B": "Spastic diplegia CP — periventricular leukomalacia from prematurity (most common cause overall)",
+      "C": "Ataxic CP — cerebellar hypoplasia",
+      "D": "Spastic hemiplegia — unilateral cortical injury",
+      "E": "Hypotonic CP — chromosomal abnormality"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Cerebral palsy (CP) types: Spastic (most common, 85%) — upper motor neurone signs (hypertonia, hyperreflexia, upgoing plantars, scissor gait); Dyskinetic — involuntary movements from basal ganglia damage; Ataxic — cerebellar features. Spastic DIPLEGIA (legs > arms) = periventricular leukomalacia from prematurity (most common cause of CP overall). Spastic HEMIPLEGIA = unilateral cortical injury. This boy has bilateral lower limb UMN signs with legs > arms = spastic diplegia. Refer to paediatric neurology for confirmation and MDT management.",
+      "A": "Incorrect — Dyskinetic CP from kernicterus causes involuntary movements (choreoathetosis), not hypertonia with UMN signs.",
+      "B": "CORRECT — Spastic diplegia (lower limb UMN signs): most likely cause = periventricular leukomalacia from prematurity.",
+      "C": "Incorrect — Ataxic CP causes hypotonia, ataxia and intention tremor — not hypertonia with UMN signs.",
+      "D": "Incorrect — Spastic hemiplegia causes unilateral (one-sided) UMN signs — this boy has bilateral lower limb signs.",
+      "E": "Incorrect — Hypotonic CP causes low tone, not hypertonia and brisk reflexes."
+    },
+    "reference": "NICE NG62 — Cerebral palsy. BPNA — Cerebral palsy guidelines.",
+    "tags": [
+      "cerebral palsy",
+      "spastic diplegia",
+      "hypertonia",
+      "periventricular leukomalacia",
+      "prematurity",
+      "NICE"
+    ],
+    "source": "Question Grove 360"
+  },
+  {
+    "id": "QG-NEURO-073-002",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Neurology",
+    "difficulty": "Medium",
+    "question": "A 3-year-old girl with diagnosed cerebral palsy attends for her annual review. She has spastic quadriplegia and is non-ambulatory. She is developing contractures at the hips and knees. Her parents ask about management of spasticity. Per NICE guidance, what is the first-line pharmacological treatment for focal spasticity in cerebral palsy?",
+    "options": {
+      "A": "Oral baclofen 5mg three times daily",
+      "B": "Intrathecal baclofen pump",
+      "C": "Botulinum toxin type A (Botox) injections into spastic muscle groups",
+      "D": "Oral diazepam 1mg twice daily",
+      "E": "Surgical tendon lengthening as first intervention"
+    },
+    "correct_answer": "C",
+    "explanation": {
+      "correct": "Per NICE NG62 (Cerebral palsy in under 25s), for focal spasticity (affecting specific muscle groups) in CP, botulinum toxin type A (BoNT-A) injections are recommended as first-line pharmacological treatment. BoNT-A temporarily weakens specific overactive muscles, reduces contracture formation and improves range of motion. It is combined with physiotherapy and splinting for maximum benefit. Effects last 3-6 months and are repeated as needed. Oral baclofen is for generalised spasticity. Intrathecal baclofen is for severe refractory generalised spasticity.",
+      "A": "Incorrect — Oral baclofen treats generalised (not focal) spasticity. Side effects: sedation, hypotonia.",
+      "B": "Incorrect — Intrathecal baclofen pump is for severe generalised spasticity unresponsive to other treatments — not first-line for focal spasticity.",
+      "C": "CORRECT — Botulinum toxin A is first-line for focal spasticity in CP per NICE NG62.",
+      "D": "Incorrect — Oral diazepam is not recommended routinely for CP spasticity due to sedation and tolerance.",
+      "E": "Incorrect — Surgery (tendon lengthening, selective dorsal rhizotomy) is considered when pharmacological management is insufficient — not first-line."
+    },
+    "reference": "NICE NG62 — Cerebral palsy in under 25s: assessment and management. https://www.nice.org.uk/guidance/ng62",
+    "tags": [
+      "cerebral palsy",
+      "spasticity",
+      "botulinum toxin",
+      "focal spasticity",
+      "NICE NG62",
+      "management"
+    ],
+    "source": "Question Grove 360"
+  },
+  {
+    "id": "QG-NEURO-073-003",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Neurology",
+    "difficulty": "Easy",
+    "question": "A 2-year-old child is reviewed. The GP is concerned about possible cerebral palsy. Which developmental red flag at age 2 years is most concerning and should prompt urgent referral?",
+    "options": {
+      "A": "Not yet riding a tricycle",
+      "B": "Cannot walk independently, persistent toe-walking, hand preference before 18 months, or loss of previously acquired skills at any age",
+      "C": "Not yet using sentences of 3 words",
+      "D": "Mild delay in fine motor skills with otherwise normal gross motor",
+      "E": "Not yet able to climb stairs"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per NICE NG62, urgent referral for suspected CP is indicated when: child cannot walk independently by 18 months (or 24 months for late walkers), persistent toe-walking beyond 2 years, hand preference before 12-18 months (suggests hemiplegia — normal hand preference develops after 18 months), asymmetric crawling, or any REGRESSION (loss of skills) at any age — this is the most alarming red flag requiring immediate investigation to exclude progressive neurological disease.",
+      "A": "Incorrect — Tricycle riding is a later milestone (expected ~3 years) — not a red flag at age 2.",
+      "B": "CORRECT — Not walking by 18 months, persistent toe-walking, early hand preference, or regression = urgent CP referral per NICE NG62.",
+      "C": "Incorrect — 3-word sentences are expected by 2-3 years. Speech delay alone is a concern but not the most urgent CP indicator.",
+      "D": "Incorrect — Mild isolated fine motor delay requires monitoring but not urgent CP referral.",
+      "E": "Incorrect — Stair climbing (with support) is expected around 2 years — alone not a major CP red flag at age 2."
+    },
+    "reference": "NICE NG62 — Cerebral palsy. NICE CG190 — Postnatal care. Developmental milestone tables.",
+    "tags": [
+      "cerebral palsy",
+      "developmental red flags",
+      "regression",
+      "toe-walking",
+      "hand preference",
+      "NICE NG62"
+    ],
+    "source": "Question Grove 360"
+  },
+  {
+    "id": "QG-NEURO-073-004",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Neurology",
+    "difficulty": "Hard",
+    "question": "A 5-year-old boy with spastic cerebral palsy attends with his parents who are concerned about his progressive hip displacement on X-ray (migration percentage 40%). He is GMFCS level III. Which intervention is most important at this stage to prevent hip dislocation?",
+    "options": {
+      "A": "Botulinum toxin to hip adductors only — sufficient at this stage",
+      "B": "Hip surveillance X-rays every 6-12 months + consider orthopaedic surgical referral for soft tissue release or osteotomy",
+      "C": "Physiotherapy alone — hip exercises will correct displacement",
+      "D": "Hip spica casting",
+      "E": "Reassure — hip displacement in CP always corrects with growth"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per NICE NG62 and CPUP (Cerebral Palsy Follow-Up Programme) guidelines, hip surveillance is mandatory in CP. Migration percentage (MP) >30% requires urgent orthopaedic review. At MP 40% in a GMFCS III child, orthopaedic surgical intervention (soft tissue release — adductor tenotomy, psoas lengthening) or bony surgery (femoral/pelvic osteotomy) should be considered to prevent complete hip dislocation (MP >80%) which causes severe pain and affects sitting/care. Regular X-ray surveillance every 6-12 months depending on risk.",
+      "A": "Incorrect — Botulinum toxin alone is insufficient for MP 40% — orthopaedic surgery likely needed.",
+      "B": "CORRECT — Hip surveillance + orthopaedic surgical referral for MP 40% per NICE NG62/CPUP.",
+      "C": "Incorrect — Physiotherapy alone cannot correct established hip displacement at MP 40%.",
+      "D": "Incorrect — Hip spica casting is not standard management for CP hip displacement.",
+      "E": "Incorrect — CP hip displacement does NOT self-correct — it is progressive without intervention."
+    },
+    "reference": "NICE NG62 — Cerebral palsy. CPUP — Hip surveillance guidelines. BSCOS.",
+    "tags": [
+      "cerebral palsy",
+      "hip surveillance",
+      "hip dislocation",
+      "migration percentage",
+      "NICE NG62",
+      "orthopaedic"
+    ],
+    "source": "Question Grove 360"
+  },
+  {
+    "id": "QG-NEURO-073-005",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Neurology",
+    "difficulty": "Medium",
+    "question": "A parent brings a 6-month-old baby to the GP after noticing he always uses his right hand preferentially and the left arm seems held in a flexed position. He was born at term by normal vaginal delivery but had a difficult labour. What does early hand preference at 6 months suggest and what is the most appropriate action?",
+    "options": {
+      "A": "Normal variant — hand preference can develop from 6 months",
+      "B": "Suspected spastic hemiplegia CP — urgent referral to community paediatrics or paediatric neurology",
+      "C": "Erb's palsy — physiotherapy referral",
+      "D": "Developmental coordination disorder — reassure and review at 12 months",
+      "E": "Autism spectrum disorder — refer to child development team"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Hand preference normally develops AFTER 18 months. Hand preference at 6 months is always abnormal and strongly suggests contralateral hemisphere lesion — typically unilateral CP (spastic hemiplegia) from perinatal cerebral infarction or periventricular haemorrhage. The flexed held arm position is a further UMN sign. Per NICE NG62, this requires urgent referral to community paediatrics or paediatric neurology for brain imaging (MRI preferred) and early intervention (physiotherapy, botulinum toxin planning).",
+      "A": "Incorrect — Hand preference at 6 months is NEVER normal. Normal hand dominance develops after 18 months.",
+      "B": "CORRECT — Early hand preference (6 months) = suspected hemiplegia CP. Urgent paediatric neurology referral per NICE NG62.",
+      "C": "Incorrect — Erb's palsy (brachial plexus injury) affects the shoulder/elbow in extension with internal rotation — not a cortical hand preference.",
+      "D": "Incorrect — DCD causes motor coordination difficulties — not unilateral flexed arm posture.",
+      "E": "Incorrect — ASD does not cause unilateral flexed limb posture — this is a motor/UMN finding."
+    },
+    "reference": "NICE NG62 — Cerebral palsy. Developmental neurology — hand preference as CP indicator.",
+    "tags": [
+      "cerebral palsy",
+      "hemiplegia",
+      "early hand preference",
+      "6 months",
+      "NICE NG62",
+      "urgent referral"
+    ],
+    "source": "Question Grove 360"
+  },
+  {
+    "id": "QG-NEURO-075-001",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Neurology",
+    "difficulty": "Medium",
+    "question": "A 55-year-old man presents with progressive difficulty walking — he has to lift his feet unusually high to avoid catching his toes on the ground. On examination he has bilateral foot drop, absent ankle reflexes and reduced sensation in a glove-and-stocking distribution. His HbA1c is 75 mmol/mol. What is the most likely cause of his high-stepping (steppage) gait?",
+    "options": {
+      "A": "Upper motor neurone lesion — spastic paraparesis",
+      "B": "Peripheral neuropathy with bilateral common peroneal nerve involvement — causing foot drop secondary to diabetic polyneuropathy",
+      "C": "L4/L5 disc prolapse — bilateral nerve root compression",
+      "D": "Myopathy — proximal muscle weakness",
+      "E": "Parkinson's disease — shuffling gait"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Steppage gait (high-stepping gait) is caused by bilateral foot drop — the patient lifts the foot high to clear the toes (inability to dorsiflex the foot). Peripheral neuropathy is the most common cause, specifically affecting the common peroneal nerve (L4, L5) and long fibular nerves. In this patient, HbA1c 75 mmol/mol confirms poorly controlled T2DM. Diabetic peripheral polyneuropathy is the most common cause of bilateral foot drop + glove-and-stocking sensory loss + absent ankle reflexes. Nerve conduction studies confirm.",
+      "A": "Incorrect — UMN lesion causes spastic gait (circumduction/scissoring) not steppage gait. Reflexes would be brisk, not absent.",
+      "B": "CORRECT — Bilateral foot drop + glove-and-stocking neuropathy + poorly controlled diabetes = diabetic peripheral polyneuropathy causing steppage gait.",
+      "C": "Incorrect — Bilateral L4/L5 disc prolapse is unusual and would typically cause radicular pain, not pure sensorimotor peripheral neuropathy pattern.",
+      "D": "Incorrect — Proximal myopathy causes waddling gait (Trendelenburg), not steppage gait.",
+      "E": "Incorrect — Parkinson's causes shuffling, small-stepping gait with reduced arm swing — not high steppage or absent reflexes."
+    },
+    "reference": "NICE NG19 — Diabetic foot problems. Diabetic polyneuropathy pathophysiology.",
+    "tags": [
+      "steppage gait",
+      "foot drop",
+      "peripheral neuropathy",
+      "diabetic neuropathy",
+      "common peroneal",
+      "high-stepping"
+    ],
+    "source": "Question Grove 360"
+  },
+  {
+    "id": "QG-NEURO-075-002",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Neurology",
+    "difficulty": "Hard",
+    "question": "A 42-year-old woman presents with bilateral foot drop, high-stepping gait, distal muscle wasting and reduced reflexes. These symptoms started in her 20s and her father has similar problems. On examination she has pes cavus (high-arched feet) and hammer toes. What is the most likely diagnosis?",
+    "options": {
+      "A": "Diabetic polyneuropathy",
+      "B": "Guillain-Barré syndrome",
+      "C": "Charcot-Marie-Tooth disease (hereditary motor and sensory neuropathy)",
+      "D": "Chronic inflammatory demyelinating polyneuropathy (CIDP)",
+      "E": "Vitamin B12 deficiency neuropathy"
+    },
+    "correct_answer": "C",
+    "explanation": {
+      "correct": "Charcot-Marie-Tooth (CMT) disease is the most common hereditary peripheral neuropathy. Features: onset in first/second decade, autosomal dominant (family history), bilateral distal wasting and weakness (peroneal > other muscles), pes cavus and hammer toes from intrinsic foot muscle wasting, absent/reduced reflexes, high-stepping gait from foot drop. Nerve conduction studies show markedly reduced conduction velocity (demyelinating) or reduced amplitude (axonal). Genetic testing confirms. No disease-modifying treatment — physiotherapy, ankle-foot orthoses, genetic counselling.",
+      "A": "Incorrect — Diabetic neuropathy does not cause pes cavus or family history pattern of hereditary neuropathy.",
+      "B": "Incorrect — GBS is acute-onset (days-weeks), not decades-long hereditary progression.",
+      "C": "CORRECT — CMT: onset in 20s, family history, pes cavus, hammer toes, bilateral foot drop + distal wasting = hereditary neuropathy.",
+      "D": "Incorrect — CIDP is acquired, not hereditary; it responds to immunotherapy (steroids, IVIG) and does not cause pes cavus.",
+      "E": "Incorrect — B12 deficiency causes subacute combined degeneration (dorsal column + corticospinal) — not pes cavus or family history."
+    },
+    "reference": "NICE CKS — Charcot-Marie-Tooth disease. Orphanet — CMT guidelines.",
+    "tags": [
+      "Charcot-Marie-Tooth",
+      "CMT",
+      "hereditary neuropathy",
+      "pes cavus",
+      "foot drop",
+      "high-stepping gait"
+    ],
+    "source": "Question Grove 360"
+  },
+  {
+    "id": "QG-NEURO-075-003",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Neurology",
+    "difficulty": "Easy",
+    "question": "A 65-year-old man with a 10-year history of type 2 diabetes on metformin presents with tingling and burning pain in both feet and reduced sensation to 10g monofilament. He has absent ankle reflexes. His HbA1c is 68 mmol/mol. Per NICE NG19, what is the first-line treatment for painful diabetic peripheral neuropathy?",
+    "options": {
+      "A": "Gabapentin 300mg three times daily",
+      "B": "Amitriptyline 10mg at night or duloxetine 60mg daily — both are first-line per NICE NG19",
+      "C": "Pregabalin 75mg twice daily",
+      "D": "Tramadol 50mg four times daily",
+      "E": "Topical capsaicin 0.075% cream"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per NICE NG19 (Diabetic foot problems) and NICE NG59/CG173 (neuropathic pain), first-line treatment for painful diabetic peripheral neuropathy: amitriptyline (10-75mg at night) OR duloxetine 60mg daily. Both are first-line and equally recommended. Pregabalin and gabapentin are second-line alternatives. Tramadol is not recommended as first-line. Optimising glycaemic control remains essential. Topical capsaicin 0.075% is used for localised neuropathic pain not suitable for systemic treatment.",
+      "A": "Incorrect — Gabapentin is second-line after amitriptyline/duloxetine per NICE NG19.",
+      "B": "CORRECT — Amitriptyline 10mg at night or duloxetine 60mg daily are both first-line for painful diabetic neuropathy per NICE NG19.",
+      "C": "Incorrect — Pregabalin is second-line per NICE NG19.",
+      "D": "Incorrect — Tramadol is not recommended first-line for diabetic neuropathic pain.",
+      "E": "Incorrect — Topical capsaicin 0.075% is for localised neuropathic pain — not first-line for bilateral peripheral neuropathy."
+    },
+    "reference": "NICE NG19 — Diabetic foot problems. NICE NG173 — Neuropathic pain. https://www.nice.org.uk/guidance/ng19",
+    "tags": [
+      "diabetic neuropathy",
+      "amitriptyline",
+      "duloxetine",
+      "painful neuropathy",
+      "NICE NG19",
+      "first-line"
+    ],
+    "source": "Question Grove 360"
+  },
+  {
+    "id": "QG-NEURO-075-004",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Neurology",
+    "difficulty": "Medium",
+    "question": "A 48-year-old woman presents with weakness and sensory loss below the knees bilaterally, worse distally. Nerve conduction studies show markedly reduced motor and sensory conduction velocities. Blood tests show: B12 450 pg/mL (normal), glucose normal, TFTs normal. She drinks 35 units of alcohol per week. What is the most likely diagnosis?",
+    "options": {
+      "A": "Diabetic polyneuropathy — optimise glycaemic control",
+      "B": "Alcoholic peripheral neuropathy — alcohol cessation, thiamine replacement, balanced diet",
+      "C": "Hereditary motor and sensory neuropathy — genetic testing",
+      "D": "Chronic inflammatory demyelinating polyneuropathy — IVIG",
+      "E": "Vitamin B12 deficiency — IM hydroxocobalamin"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Alcoholic peripheral neuropathy: chronic alcohol excess (35 units/week) causes length-dependent sensorimotor neuropathy primarily due to direct toxic effect of alcohol on peripheral nerves AND thiamine deficiency. Features: distal > proximal, legs > arms, burning dysaesthesia, reduced/absent ankle reflexes. Management: alcohol cessation (most important), thiamine replacement (oral thiamine 100mg daily or IV Pabrinex if severe), nutritional rehabilitation (B vitamins, balanced diet). Reduced conduction velocity suggests demyelinating component from thiamine deficiency.",
+      "A": "Incorrect — Glucose is normal. Diabetic neuropathy is excluded.",
+      "B": "CORRECT — Alcoholic peripheral neuropathy: 35 units/week + symmetrical distal neuropathy. Alcohol cessation + thiamine replacement.",
+      "C": "Incorrect — HMSN/CMT is hereditary (family history, pes cavus, childhood onset) — not acquired in alcohol misuse.",
+      "D": "Incorrect — CIDP is acquired demyelinating neuropathy with subacute progression — responds to IVIG/steroids. No alcohol association specifically.",
+      "E": "Incorrect — B12 is normal. B12 deficiency causes subacute combined degeneration with dorsal column + pyramidal signs."
+    },
+    "reference": "NICE CG100 — Alcohol-use disorders. Alcoholic neuropathy — clinical features and management.",
+    "tags": [
+      "alcoholic neuropathy",
+      "peripheral neuropathy",
+      "alcohol cessation",
+      "thiamine",
+      "NICE CG100",
+      "high-stepping gait"
+    ],
+    "source": "Question Grove 360"
+  },
+  {
+    "id": "QG-NEURO-075-005",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Neurology",
+    "difficulty": "Hard",
+    "question": "A 60-year-old man presents with foot drop and wrist drop on the right side. He is a farmer. His blood test shows eosinophilia. He gives a history of cutaneous lesions on his forearm. Nerve conduction studies show multifocal asymmetric neuropathy. What is the diagnosis?",
+    "options": {
+      "A": "Diabetic amyotrophy — optimise diabetes control",
+      "B": "Mononeuritis multiplex — likely vasculitic cause; urgent rheumatology referral and investigation for systemic vasculitis or leprosy",
+      "C": "Carpal tunnel syndrome — wrist splint",
+      "D": "Stroke — CT head",
+      "E": "Multiple sclerosis — MRI brain"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Mononeuritis multiplex: simultaneous or sequential involvement of multiple individual peripheral nerves (not length-dependent) — causing wrist drop (radial nerve) + foot drop (common peroneal nerve) in an asymmetric, multifocal pattern. Causes include: vasculitis (polyarteritis nodosa, Wegener's, rheumatoid vasculitis), diabetes, leprosy (consider in farmers/endemic area exposure — cutaneous lesions + eosinophilia), sarcoidosis, Lyme disease, amyloidosis. Requires urgent investigation for systemic vasculitis and neurologist referral. Leprosy must be considered given occupational exposure, cutaneous lesions and eosinophilia.",
+      "A": "Incorrect — Diabetic amyotrophy causes acute proximal thigh pain and weakness — not multifocal asymmetric neuropathy.",
+      "B": "CORRECT — Mononeuritis multiplex: asymmetric multifocal nerve involvement. Investigate for vasculitis/leprosy given history.",
+      "C": "Incorrect — CTS causes median nerve symptoms in the hand — not foot drop.",
+      "D": "Incorrect — Stroke causes UMN signs (brisk reflexes, spasticity) — not peripheral nerve-pattern multifocal weakness.",
+      "E": "Incorrect — MS causes central demyelinating lesions — not peripheral nerve-pattern mononeuritis multiplex."
+    },
+    "reference": "Oxford Textbook of Medicine — Mononeuritis multiplex. Leprosy — peripheral neuropathy.",
+    "tags": [
+      "mononeuritis multiplex",
+      "foot drop",
+      "wrist drop",
+      "vasculitis",
+      "leprosy",
+      "asymmetric neuropathy"
+    ],
+    "source": "Question Grove 360"
+  },
+  {
+    "id": "QG-NEURO-116-001",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Neurology",
+    "difficulty": "Easy",
+    "question": "A 35-year-old woman undergoes a dental nerve block. Twenty minutes later she briefly loses consciousness, becomes pale, sweaty and bradycardic. She recovers fully within 1 minute on being laid flat with her legs elevated. Her ECG and blood glucose are normal. What is the most likely diagnosis?",
+    "options": {
+      "A": "Anaphylaxis to local anaesthetic — IM adrenaline",
+      "B": "Vasovagal syncope (simple faint) — reassure, lying flat, legs elevated",
+      "C": "Local anaesthetic systemic toxicity (LAST) — lipid emulsion IV",
+      "D": "Epileptic seizure — refer to neurology",
+      "E": "Transient ischaemic attack — urgent specialist assessment"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Vasovagal syncope (neurocardiogenic syncope): the most common cause of transient loss of consciousness (TLOC) in young adults. Triggered by: pain, anxiety, prolonged standing, blood/needles. Features: prodrome (pallor, sweating, nausea, visual greying), brief LOC, rapid and complete recovery on lying down (seconds-minutes). Bradycardia and hypotension from vagal activation. Management: lay flat, elevate legs, monitor, reassure. Complete recovery within seconds-minutes distinguishes from other causes. No investigation needed for classic first presentation with clear trigger.",
+      "A": "Incorrect — Anaphylaxis causes urticaria, angioedema, bronchospasm, persistent hypotension — not rapid recovery with legs elevation.",
+      "B": "CORRECT — Vasovagal syncope: classic features (pain trigger + pallor + bradycardia + rapid recovery lying flat).",
+      "C": "Incorrect — LAST causes cardiac arrhythmia, seizures, cardiovascular collapse — requires 20% lipid emulsion IV. Does not typically resolve with positioning.",
+      "D": "Incorrect — Epileptic seizure has tonic-clonic movements, post-ictal confusion, may cause injury. Recovery takes minutes-hours not seconds.",
+      "E": "Incorrect — TIA causes focal neurological deficit without LOC — not brief generalised syncope with rapid complete recovery."
+    },
+    "reference": "NICE CG109 — Transient loss of consciousness. ESC Guidelines on Syncope 2018.",
+    "tags": [
+      "vasovagal syncope",
+      "TLOC",
+      "transient loss of consciousness",
+      "nerve block",
+      "faint",
+      "NICE CG109"
+    ],
+    "source": "Question Grove 360"
+  },
+  {
+    "id": "QG-NEURO-116-002",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Neurology",
+    "difficulty": "Medium",
+    "question": "A 25-year-old man has his third episode of transient loss of consciousness. Each episode occurs when standing in queues or when he sees blood. He has a prodrome of feeling warm, nauseous and 'tunnel vision'. He recovers immediately on lying down with no confusion. ECG is normal. What is the most appropriate investigation and management?",
+    "options": {
+      "A": "EEG — exclude epilepsy as first step",
+      "B": "Tilt-table test for confirmation if diagnosis is uncertain; reassure, educate about triggers, teach physical counterpressure manoeuvres (leg crossing, tensing muscles)",
+      "C": "Implantable loop recorder — long-term cardiac monitoring",
+      "D": "MRI brain — exclude structural cause",
+      "E": "Start fludrocortisone — first-line pharmacotherapy for all vasovagal syncope"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per NICE CG109 and ESC Syncope Guidelines, recurrent vasovagal syncope with clear trigger, typical prodrome and rapid recovery can be managed with: (1) Patient education — triggers, recognition of prodrome; (2) Physical counterpressure manoeuvres (PCMs) — leg crossing, muscle tensing when prodrome begins — shown to abort episodes in 50-80%; (3) Increased fluid and salt intake; (4) Avoid prolonged standing and known triggers. Tilt-table test can confirm diagnosis if uncertain. Fludrocortisone is second/third-line when conservative measures fail. No cardiac or neurological investigation needed for classic recurrent vasovagal syncope.",
+      "A": "Incorrect — EEG is not first-line for classic vasovagal syncope without features suggesting epilepsy.",
+      "B": "CORRECT — Classic recurrent vasovagal: tilt-table if uncertain + PCMs + education + lifestyle per NICE CG109.",
+      "C": "Incorrect — Implantable loop recorder is for unexplained recurrent syncope suspected to be arrhythmic — not classic vasovagal.",
+      "D": "Incorrect — MRI is not indicated for classic vasovagal syncope without focal neurological signs.",
+      "E": "Incorrect — Fludrocortisone is second-line pharmacotherapy — conservative measures are first."
+    },
+    "reference": "NICE CG109 — Transient loss of consciousness. ESC Syncope Guidelines 2018.",
+    "tags": [
+      "vasovagal syncope",
+      "physical counterpressure",
+      "tilt-table test",
+      "recurrent syncope",
+      "NICE CG109",
+      "triggers"
+    ],
+    "source": "Question Grove 360"
+  },
+  {
+    "id": "QG-NEURO-116-003",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Neurology",
+    "difficulty": "Hard",
+    "question": "A 55-year-old man had a TLOC episode during a dental nerve block 20 minutes after injection. He describes brief loss of consciousness lasting 30 seconds, no prodrome of pallor/sweating, and was slow to recover (confused for 5 minutes after). His ECG shows QTc 510ms. What is this most likely NOT vasovagal and what is the more serious concern?",
+    "options": {
+      "A": "Orthostatic hypotension — sit upright and rehydrate",
+      "B": "Ventricular arrhythmia (Torsades de Pointes) from prolonged QTc — urgent cardiology review, stop QT-prolonging drugs",
+      "C": "Epileptic seizure — start levetiracetam",
+      "D": "Hypoglycaemia — check blood glucose",
+      "E": "Anxiety hyperventilation — reassure and paper bag breathing"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Features suggesting this is NOT vasovagal: no prodrome (vasovagal has pallor/sweat/nausea prodrome), slow recovery with confusion (vasovagal recovers in seconds with lying flat), prolonged QTc 510ms (normal <440ms men, <460ms women). QTc >500ms carries significant risk of Torsades de Pointes (polymorphic VT) causing cardiac syncope. Dental local anaesthetics (particularly with adrenaline/epinephrine) and anxiety can trigger arrhythmia in susceptible individuals. Requires urgent cardiology review, ECG monitoring, review of QT-prolonging medications and specialist input.",
+      "A": "Incorrect — Orthostatic hypotension causes syncope on standing — not during a dental procedure.",
+      "B": "CORRECT — Non-vasovagal features + QTc 510ms = suspected arrhythmic syncope (Torsades). Urgent cardiology per ESC/NICE CG109.",
+      "C": "Incorrect — Epileptic seizure is possible but the prolonged QTc is the critical finding requiring immediate cardiac investigation.",
+      "D": "Incorrect — Hypoglycaemia is possible but QTc 510ms is the dominant red flag here.",
+      "E": "Incorrect — Hyperventilation does not cause prolonged QTc or post-ictal confusion."
+    },
+    "reference": "NICE CG109 — Transient loss of consciousness. ESC Syncope Guidelines — arrhythmic syncope. QTc prolongation.",
+    "tags": [
+      "QTc prolongation",
+      "Torsades de Pointes",
+      "arrhythmic syncope",
+      "TLOC",
+      "NICE CG109",
+      "cardiac syncope"
+    ],
+    "source": "Question Grove 360"
+  },
+  {
+    "id": "QG-NEURO-116-004",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Neurology",
+    "difficulty": "Medium",
+    "question": "A 30-year-old woman presents having witnessed her partner have a TLOC episode. She describes him shaking his arms and legs for 2 minutes, biting his tongue, and being confused and sleepy for 20 minutes after. He had no warning before the episode. What is the diagnosis and most appropriate immediate action?",
+    "options": {
+      "A": "Vasovagal syncope — reassure, no investigation needed",
+      "B": "Generalised tonic-clonic seizure — advise not to drive, refer to first seizure clinic/neurology, check blood glucose",
+      "C": "Cardiac syncope — 12-lead ECG and 24-hour Holter monitor urgently",
+      "D": "Hypoglycaemic collapse — give oral glucose and review diabetes management",
+      "E": "Psychogenic non-epileptic seizure — refer to psychiatry"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Generalised tonic-clonic seizure: rhythmic jerking of all four limbs, tongue biting (specific to epileptic seizure — not vasovagal), prolonged post-ictal confusion/drowsiness (20+ minutes — highly specific for epilepsy). Vasovagal syncope: brief LOC, rapid full recovery, pallor/sweating, no post-ictal phase, no tongue biting. Management: blood glucose (exclude hypoglycaemia), do not drive (DVLA regulations — 6-month ban for Group 1 licence after first seizure), refer to neurology/first seizure clinic for EEG, MRI brain, blood tests.",
+      "A": "Incorrect — Tongue biting + 20-minute post-ictal confusion = epileptic seizure, not vasovagal.",
+      "B": "CORRECT — Generalised tonic-clonic seizure: tongue bite + post-ictal confusion. No driving + neurology referral per NICE CG137.",
+      "C": "Incorrect — Cardiac syncope has no tonic-clonic movements, no tongue biting and rapid recovery without confusion.",
+      "D": "Incorrect — Hypoglycaemia can cause seizure-like activity but blood glucose must be checked. Without diabetes history, epilepsy is primary diagnosis.",
+      "E": "Incorrect — PNES (pseudoseizures) is a diagnosis of exclusion — organic causes must be investigated first."
+    },
+    "reference": "NICE CG137 — Epilepsies: diagnosis and management. DVLA — fitness to drive and seizures.",
+    "tags": [
+      "generalised tonic-clonic seizure",
+      "tongue biting",
+      "post-ictal",
+      "TLOC",
+      "NICE CG137",
+      "DVLA driving"
+    ],
+    "source": "Question Grove 360"
+  },
+  {
+    "id": "QG-NEURO-116-005",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Neurology",
+    "difficulty": "Easy",
+    "question": "A 70-year-old woman with hypertension on amlodipine and lisinopril has an episode of LOC when she stands up from sitting. She had no prodrome and recovered in seconds. Her lying BP is 145/88 mmHg and standing BP (after 3 minutes) is 110/68 mmHg. Heart rate increased from 75 to 95 bpm on standing. What is the diagnosis and management?",
+    "options": {
+      "A": "Vasovagal syncope — physical counterpressure manoeuvres",
+      "B": "Orthostatic hypotension — review antihypertensives (consider dose reduction), increase fluid and salt intake, compression stockings, advice on standing slowly",
+      "C": "Cardiac arrhythmia — 24-hour Holter monitor",
+      "D": "Carotid sinus hypersensitivity — carotid sinus massage",
+      "E": "POTS (Postural Orthostatic Tachycardia Syndrome) — fludrocortisone"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Orthostatic hypotension (OH): systolic BP fall ≥20 mmHg or diastolic fall ≥10 mmHg within 3 minutes of standing. Here SBP falls from 145 to 110 = 35mmHg fall. Common in elderly on antihypertensives (amlodipine/ACE inhibitor). Management: review/reduce antihypertensive doses, increase fluid and salt intake, compression stockings, rise slowly from lying/sitting, avoid prolonged standing. POTS is diagnosed when HR rises ≥30bpm without significant BP drop — here HR rises 20bpm with BP drop = orthostatic hypotension, not POTS.",
+      "A": "Incorrect — OH has no prodrome and is triggered by standing specifically. Vasovagal has a different trigger pattern.",
+      "B": "CORRECT — Orthostatic hypotension (SBP falls 35mmHg on standing). Review antihypertensives + lifestyle advice per ESC/NICE CG109.",
+      "C": "Incorrect — Arrhythmic syncope is not position-triggered and does not resolve with lying down.",
+      "D": "Incorrect — Carotid sinus hypersensitivity causes syncope on neck movement/pressure — not specific posture change.",
+      "E": "Incorrect — POTS requires HR rise ≥30bpm without significant BP drop. This patient has BP drop + modest HR rise = orthostatic hypotension."
+    },
+    "reference": "NICE CG109 — Transient loss of consciousness. ESC Syncope Guidelines 2018 — orthostatic hypotension.",
+    "tags": [
+      "orthostatic hypotension",
+      "postural hypotension",
+      "syncope",
+      "antihypertensives",
+      "NICE CG109",
+      "elderly"
+    ],
+    "source": "Question Grove 360"
+  }
+]

@@ -1,0 +1,522 @@
+[
+  {
+    "id": "AKT-GI-001",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Gastroenterology",
+    "difficulty": "Medium",
+    "question": "A 52-year-old man presents with a 6-week history of dysphagia to solids and 4kg weight loss. He smokes 20 cigarettes per day and drinks 30 units of alcohol per week. What is the most appropriate management?",
+    "options": {
+      "A": "Trial of proton pump inhibitor for 4 weeks and review",
+      "B": "Urgent 2-week wait referral for suspected upper GI cancer",
+      "C": "Arrange barium swallow within 4 weeks",
+      "D": "Refer to speech and language therapy",
+      "E": "H. pylori testing and eradication if positive"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per NICE NG12, dysphagia at any age warrants urgent 2-week wait (2WW) referral for suspected upper GI cancer. Dysphagia combined with weight loss and risk factors (smoking, alcohol) significantly raises concern for oesophageal cancer. A PPI trial must not delay urgent referral.",
+      "A": "Incorrect — PPI trial is inappropriate when dysphagia is present — this must not delay cancer investigation.",
+      "B": "CORRECT — Dysphagia at any age = urgent 2WW referral for suspected upper GI cancer per NICE NG12.",
+      "C": "Incorrect — Barium swallow has lower sensitivity than endoscopy and must not replace urgent 2WW referral.",
+      "D": "Incorrect — SLT referral is for neurological dysphagia (e.g. post-stroke), not suspected oesophageal malignancy.",
+      "E": "Incorrect — H. pylori testing is relevant for dyspepsia, not mechanical dysphagia with alarm features."
+    },
+    "reference": "NICE NG12 — Suspected cancer: recognition and referral. https://www.nice.org.uk/guidance/ng12",
+    "tags": ["dysphagia", "oesophageal cancer", "2WW", "urgent referral", "NICE NG12", "alarm features"]
+  },
+  {
+    "id": "AKT-GI-002",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Gastroenterology",
+    "difficulty": "Easy",
+    "question": "A 42-year-old woman presents with a 3-month history of epigastric pain, bloating and nausea. She is not on NSAIDs and has no alarm features. What is the most appropriate first-line investigation?",
+    "options": {
+      "A": "Upper GI endoscopy",
+      "B": "Urea breath test for H. pylori",
+      "C": "Abdominal ultrasound",
+      "D": "Serum gastrin level",
+      "E": "CT abdomen"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per NICE CG184 (Dyspepsia and gastro-oesophageal reflux disease), for uninvestigated dyspepsia under 55 years with no alarm features, first-line management is H. pylori 'test and treat' using urea breath test or stool antigen test. Endoscopy is reserved for patients ≥55 with unexplained dyspepsia, or those with alarm features.",
+      "A": "Incorrect — Endoscopy is not first-line for dyspepsia in patients under 55 without alarm features per NICE CG184.",
+      "B": "CORRECT — H. pylori test and treat (urea breath test) is first-line for dyspepsia under 55 without alarm features.",
+      "C": "Incorrect — Abdominal ultrasound may be useful for suspected gallstones but is not first-line for dyspepsia.",
+      "D": "Incorrect — Serum gastrin is for suspected Zollinger-Ellison syndrome — rare and not first-line.",
+      "E": "Incorrect — CT abdomen has no role in routine dyspepsia investigation."
+    },
+    "reference": "NICE CG184 — Dyspepsia and gastro-oesophageal reflux disease. https://www.nice.org.uk/guidance/cg184",
+    "tags": ["dyspepsia", "H. pylori", "urea breath test", "test and treat", "NICE CG184"]
+  },
+  {
+    "id": "AKT-GI-003",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Gastroenterology",
+    "difficulty": "Medium",
+    "question": "A 38-year-old woman with confirmed H. pylori infection is prescribed first-line eradication therapy. She has no penicillin allergy. Which regimen is most appropriate?",
+    "options": {
+      "A": "Omeprazole + metronidazole + clarithromycin for 7 days",
+      "B": "Omeprazole + amoxicillin + clarithromycin for 7 days",
+      "C": "Omeprazole + amoxicillin + metronidazole for 7 days",
+      "D": "Omeprazole + bismuth + tetracycline + metronidazole for 14 days",
+      "E": "Lansoprazole + amoxicillin for 14 days"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per NICE CG184 and BNF, first-line H. pylori eradication therapy (triple therapy) for patients without penicillin allergy is: PPI (e.g. omeprazole) + amoxicillin + clarithromycin for 7 days. This achieves approximately 80-85% eradication rates. Compliance with the full course is essential.",
+      "A": "Incorrect — Omeprazole + metronidazole + clarithromycin is used when penicillin allergy is present.",
+      "B": "CORRECT — PPI + amoxicillin + clarithromycin for 7 days is first-line H. pylori eradication per NICE CG184.",
+      "C": "Incorrect — Omeprazole + amoxicillin + metronidazole is an alternative regimen but clarithromycin-based is preferred first-line.",
+      "D": "Incorrect — Quadruple therapy is second-line for failed first-line eradication.",
+      "E": "Incorrect — Dual therapy (PPI + amoxicillin alone) is inadequate for H. pylori eradication."
+    },
+    "reference": "NICE CG184. BNF — H. pylori eradication regimens.",
+    "tags": ["H. pylori", "eradication", "triple therapy", "amoxicillin", "clarithromycin", "NICE CG184"]
+  },
+  {
+    "id": "AKT-GI-004",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Gastroenterology",
+    "difficulty": "Hard",
+    "question": "A 35-year-old man with a 5-year history of Crohn's disease presents with a 3-week flare of abdominal pain, diarrhoea (6 stools/day) and CRP of 45 mg/L. He is on azathioprine maintenance. He is haemodynamically stable. What is the most appropriate management of this moderate flare?",
+    "options": {
+      "A": "Increase azathioprine dose",
+      "B": "Oral prednisolone 40mg daily for 4 weeks with tapering",
+      "C": "IV hydrocortisone immediately",
+      "D": "Start infliximab",
+      "E": "Arrange colonoscopy before treating"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per NICE NG129 (Crohn's disease: management), for a moderate flare of Crohn's disease (>4 stools/day, elevated CRP, no systemic compromise), first-line treatment is oral prednisolone 40mg daily with a tapering course over 4-8 weeks. IV steroids are reserved for severe or hospital-requiring flares. Biologics are used for steroid-refractory or steroid-dependent disease.",
+      "A": "Incorrect — Azathioprine is a maintenance immunomodulator and takes 3-6 months to work. Increasing dose does not treat an acute flare.",
+      "B": "CORRECT — Oral prednisolone 40mg with tapering is first-line for moderate Crohn's flare per NICE NG129.",
+      "C": "Incorrect — IV hydrocortisone is for severe flare with systemic compromise (tachycardia, fever, >8 stools/day). This is a moderate flare.",
+      "D": "Incorrect — Infliximab (anti-TNF biologic) is for steroid-refractory or steroid-dependent Crohn's, not as first-line for moderate flare.",
+      "E": "Incorrect — Colonoscopy is not required before treating an established Crohn's flare in a known patient."
+    },
+    "reference": "NICE NG129 — Crohn's disease: management. https://www.nice.org.uk/guidance/ng129",
+    "tags": ["Crohn's disease", "flare", "prednisolone", "moderate", "NICE NG129", "IBD"]
+  },
+  {
+    "id": "AKT-GI-005",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Gastroenterology",
+    "difficulty": "Medium",
+    "question": "A 45-year-old woman presents with a 6-month history of alternating diarrhoea and constipation, bloating and abdominal cramps relieved by defecation. She has no rectal bleeding, no weight loss and normal bloods. What is the most likely diagnosis and first-line management?",
+    "options": {
+      "A": "Inflammatory bowel disease — refer for colonoscopy",
+      "B": "Irritable bowel syndrome — lifestyle advice, diet modification and reassurance",
+      "C": "Colorectal cancer — urgent 2WW referral",
+      "D": "Coeliac disease — anti-TTG antibody testing",
+      "E": "Microscopic colitis — refer for colonoscopy with biopsies"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "This presentation fulfils the Rome IV criteria for IBS: recurrent abdominal pain ≥1 day/week for 3 months, associated with ≥2 of: related to defecation, change in stool frequency, change in stool form. No alarm features are present. Per NICE CG61, first-line management is lifestyle and dietary advice (regular meals, adequate fluid, reduced insoluble fibre), reassurance and education. Antispasmodics (mebeverine) may be added for pain.",
+      "A": "Incorrect — No alarm features are present to warrant IBD investigation. Colonoscopy is not first-line for IBS.",
+      "B": "CORRECT — IBS diagnosis meets Rome IV criteria. First-line = lifestyle advice, dietary modification, reassurance per NICE CG61.",
+      "C": "Incorrect — No alarm features (rectal bleeding, weight loss, age <50, change in bowel habit >6 weeks in older patients). 2WW not indicated.",
+      "D": "Incorrect — Coeliac testing is appropriate (diarrhoea-predominant IBS), but IBS management should begin alongside.",
+      "E": "Incorrect — Microscopic colitis presents with chronic watery diarrhoea predominantly, not alternating bowel habit."
+    },
+    "reference": "NICE CG61 — Irritable bowel syndrome in adults: diagnosis and management. https://www.nice.org.uk/guidance/cg61",
+    "tags": ["IBS", "irritable bowel syndrome", "Rome IV", "lifestyle", "NICE CG61", "diagnosis"]
+  },
+  {
+    "id": "AKT-GI-006",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Gastroenterology",
+    "difficulty": "Medium",
+    "question": "A 60-year-old man presents with a 6-week history of change in bowel habit (looser stools), rectal bleeding and a sensation of incomplete evacuation. He has no significant past medical history. What is the most appropriate management?",
+    "options": {
+      "A": "Trial of bulk-forming laxatives and review in 4 weeks",
+      "B": "Flexible sigmoidoscopy in outpatients within 6 weeks",
+      "C": "Urgent 2-week wait referral for suspected colorectal cancer",
+      "D": "Digital rectal examination and stool culture",
+      "E": "Faecal calprotectin and review results"
+    },
+    "correct_answer": "C",
+    "explanation": {
+      "correct": "Per NICE NG12, adults aged ≥40 with unexplained rectal bleeding AND change in bowel habit (looser/more frequent stools) for ≥6 weeks warrant urgent 2WW referral for suspected colorectal cancer. In patients ≥50, rectal bleeding alone or change in bowel habit alone also warrants 2WW referral. This patient meets multiple criteria.",
+      "A": "Incorrect — Alarm features (rectal bleeding + change in bowel habit) must not be managed with laxatives without urgent investigation.",
+      "B": "Incorrect — Routine sigmoidoscopy is too slow. Urgent 2WW referral is required per NICE NG12.",
+      "C": "CORRECT — Rectal bleeding + change in bowel habit aged ≥40 = urgent 2WW referral per NICE NG12.",
+      "D": "Incorrect — DRE and stool culture may support assessment but must not replace or delay 2WW referral.",
+      "E": "Incorrect — Faecal calprotectin differentiates IBD from IBS but is not the correct pathway for suspected colorectal cancer."
+    },
+    "reference": "NICE NG12 — Suspected cancer: recognition and referral. https://www.nice.org.uk/guidance/ng12",
+    "tags": ["colorectal cancer", "rectal bleeding", "change in bowel habit", "2WW", "NICE NG12", "alarm features"]
+  },
+  {
+    "id": "AKT-GI-007",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Gastroenterology",
+    "difficulty": "Hard",
+    "question": "A 30-year-old woman is diagnosed with coeliac disease confirmed on duodenal biopsy (Marsh grade 3). She is started on a gluten-free diet. Which blood test is most useful for monitoring her dietary compliance at 6-month review?",
+    "options": {
+      "A": "Haemoglobin and MCV",
+      "B": "Anti-tissue transglutaminase IgA (anti-TTG IgA)",
+      "C": "Serum ferritin",
+      "D": "Total IgA level",
+      "E": "Endomysial antibody (EMA)"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Anti-TTG IgA is the most sensitive and specific serological marker for coeliac disease and is used to monitor dietary compliance with a gluten-free diet. Levels fall with strict gluten avoidance and rise if gluten is reintroduced. NICE NG20 recommends anti-TTG IgA as the primary monitoring test at annual review.",
+      "A": "Incorrect — Haemoglobin and MCV may improve with gluten-free diet but are indirect markers and not specific to coeliac monitoring.",
+      "B": "CORRECT — Anti-TTG IgA is the recommended serological test for monitoring gluten-free diet compliance per NICE NG20.",
+      "C": "Incorrect — Ferritin assesses iron status (often deficient in coeliac disease) but is not specific for monitoring dietary compliance.",
+      "D": "Incorrect — Total IgA is measured at diagnosis to exclude IgA deficiency (which can cause false-negative TTG). Not a monitoring test.",
+      "E": "Incorrect — EMA is highly specific but less practical than anti-TTG for routine monitoring due to cost and operator dependence."
+    },
+    "reference": "NICE NG20 — Coeliac disease: recognition, assessment and management. https://www.nice.org.uk/guidance/ng20",
+    "tags": ["coeliac disease", "anti-TTG", "monitoring", "gluten-free diet", "NICE NG20", "compliance"]
+  },
+  {
+    "id": "AKT-GI-008",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Gastroenterology",
+    "difficulty": "Medium",
+    "question": "A 55-year-old man with a history of alcohol excess presents with jaundice, right upper quadrant pain and fever. Blood tests show: bilirubin 85 umol/L, ALP 420 U/L, ALT 95 U/L, GGT 380 U/L, WBC 14.5 x10⁹/L. Ultrasound shows gallstones and a dilated common bile duct of 10mm. What is the most likely diagnosis and appropriate management?",
+    "options": {
+      "A": "Alcoholic hepatitis — liver biopsy and prednisolone",
+      "B": "Acute cholangitis — urgent hospital admission for IV antibiotics and ERCP",
+      "C": "Acute cholecystitis — laparoscopic cholecystectomy within 1 week",
+      "D": "Primary sclerosing cholangitis — refer to hepatology",
+      "E": "Gilbert's syndrome — reassure and no treatment needed"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Charcot's triad of acute cholangitis: fever, jaundice, right upper quadrant pain. Combined with dilated CBD (10mm) and gallstones, this confirms acute cholangitis. This is a serious infection requiring urgent hospital admission for IV antibiotics (e.g. co-amoxiclav or piperacillin/tazobactam) and ERCP (endoscopic retrograde cholangiopancreatography) to relieve biliary obstruction.",
+      "A": "Incorrect — Alcoholic hepatitis causes elevated transaminases predominantly (ALT/AST), not an obstructive pattern with dilated CBD.",
+      "B": "CORRECT — Charcot's triad + dilated CBD = acute cholangitis. Urgent admission for IV antibiotics and ERCP.",
+      "C": "Incorrect — Acute cholecystitis presents with RUQ pain/fever but without jaundice or dilated CBD.",
+      "D": "Incorrect — PSC causes chronic biliary strictures and is associated with IBD, not acute presentation with gallstones.",
+      "E": "Incorrect — Gilbert's syndrome causes unconjugated hyperbilirubinaemia with no other abnormalities."
+    },
+    "reference": "BSG Guidelines on the management of acute cholangitis. Tokyo Guidelines 2018.",
+    "tags": ["cholangitis", "Charcot's triad", "ERCP", "dilated CBD", "gallstones", "jaundice"]
+  },
+  {
+    "id": "AKT-GI-009",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Gastroenterology",
+    "difficulty": "Easy",
+    "question": "A 28-year-old woman with ulcerative colitis (UC) is in remission on mesalazine 2.4g daily. She asks about monitoring requirements. Which investigation is most important for long-term surveillance?",
+    "options": {
+      "A": "Annual colonoscopy from diagnosis",
+      "B": "Colonoscopy surveillance starting 10 years after diagnosis of extensive UC",
+      "C": "Annual flexible sigmoidoscopy",
+      "D": "Annual faecal calprotectin",
+      "E": "No surveillance required if in remission"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per NICE NG130, colonoscopy surveillance for colorectal cancer in UC should begin 10 years after the onset of symptoms for extensive colitis. The frequency then depends on risk stratification: low risk — every 5 years; intermediate risk — every 3 years; high risk — every year. Patients with primary sclerosing cholangitis (PSC) start surveillance at diagnosis.",
+      "A": "Incorrect — Annual colonoscopy from diagnosis is excessive and not recommended. Surveillance starts at 10 years for extensive UC.",
+      "B": "CORRECT — Colonoscopy surveillance starts 10 years after onset of extensive UC per NICE NG130.",
+      "C": "Incorrect — Flexible sigmoidoscopy is insufficient for surveillance of extensive colitis as it only examines the left colon.",
+      "D": "Incorrect — Faecal calprotectin monitors disease activity/flare, not cancer surveillance.",
+      "E": "Incorrect — Remission does not negate cancer surveillance requirements in long-standing UC."
+    },
+    "reference": "NICE NG130 — Ulcerative colitis: management. https://www.nice.org.uk/guidance/ng130",
+    "tags": ["ulcerative colitis", "surveillance", "colonoscopy", "colorectal cancer", "NICE NG130", "IBD"]
+  },
+  {
+    "id": "AKT-GI-010",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Gastroenterology",
+    "difficulty": "Medium",
+    "question": "A 48-year-old man presents with heartburn and regurgitation for 6 months. He takes omeprazole 20mg daily with partial relief. He has no alarm features and is under 55 years old. What is the most appropriate next step?",
+    "options": {
+      "A": "Double the omeprazole dose to 40mg daily",
+      "B": "Switch to H2 receptor antagonist (ranitidine)",
+      "C": "Urgent endoscopy within 2 weeks",
+      "D": "Add alginate (Gaviscon) after meals and at bedtime",
+      "E": "Refer for anti-reflux surgery (fundoplication)"
+    },
+    "correct_answer": "A",
+    "explanation": {
+      "correct": "Per NICE CG184, for GORD with partial response to standard-dose PPI, the next step is to increase to double-dose PPI (omeprazole 40mg daily) or switch to an alternative PPI at full dose. This should be tried before other interventions. Lifestyle advice (weight loss, elevating head of bed, avoiding triggers) should also be reinforced.",
+      "A": "CORRECT — Double-dose PPI (omeprazole 40mg) is recommended for partial response to standard-dose PPI per NICE CG184.",
+      "B": "Incorrect — H2 antagonists are less effective than PPIs for GORD and switching rather than optimising PPI is not recommended.",
+      "C": "Incorrect — Urgent endoscopy is for alarm features (dysphagia, weight loss, anaemia) or patients ≥55 with unexplained dyspepsia.",
+      "D": "Incorrect — Alginates may be added as adjunct but do not address inadequate PPI dosing.",
+      "E": "Incorrect — Surgical referral is reserved for proven GORD refractory to maximal medical therapy, not partial PPI response."
+    },
+    "reference": "NICE CG184 — Dyspepsia and gastro-oesophageal reflux disease. https://www.nice.org.uk/guidance/cg184",
+    "tags": ["GORD", "PPI", "omeprazole", "dose escalation", "NICE CG184", "reflux"]
+  },
+  {
+    "id": "AKT-GI-011",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Gastroenterology",
+    "difficulty": "Hard",
+    "question": "A 65-year-old man with liver cirrhosis presents with increasing abdominal distension. Ascites is confirmed on ultrasound. His serum albumin is 22g/L and ascitic fluid albumin is 8g/L. What does the serum-ascites albumin gradient (SAAG) indicate and what is the most likely cause?",
+    "options": {
+      "A": "SAAG 14g/L — exudate — likely peritoneal malignancy",
+      "B": "SAAG 14g/L — transudate — likely portal hypertension from cirrhosis",
+      "C": "SAAG 14g/L — exudate — likely spontaneous bacterial peritonitis",
+      "D": "SAAG 8g/L — transudate — likely cardiac failure",
+      "E": "SAAG 30g/L — exudate — likely tuberculosis"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "SAAG = serum albumin minus ascitic fluid albumin = 22 - 8 = 14g/L. SAAG ≥11g/L indicates portal hypertension (transudate). SAAG <11g/L indicates exudate (malignancy, infection, TB). In a patient with liver cirrhosis, a SAAG of 14g/L confirms portal hypertension as the cause of ascites. This is the most common cause of ascites in cirrhosis.",
+      "A": "Incorrect — SAAG 14g/L (≥11) indicates transudate/portal hypertension, NOT exudate/malignancy.",
+      "B": "CORRECT — SAAG = 22-8 = 14g/L (≥11) = portal hypertension = transudate. Consistent with cirrhosis.",
+      "C": "Incorrect — SBP is a complication of cirrhotic ascites but does not change the SAAG classification.",
+      "D": "Incorrect — SAAG calculation is 14, not 8. Cardiac failure also gives SAAG ≥11 but cirrhosis is more likely here.",
+      "E": "Incorrect — SAAG 30 is arithmetically impossible in this question. TB ascites gives SAAG <11."
+    },
+    "reference": "BSG Guidelines on management of ascites in cirrhosis. EASL Clinical Practice Guidelines 2018.",
+    "tags": ["ascites", "SAAG", "cirrhosis", "portal hypertension", "transudate", "exudate"]
+  },
+  {
+    "id": "AKT-GI-012",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Gastroenterology",
+    "difficulty": "Medium",
+    "question": "A 70-year-old woman is on long-term low-dose aspirin for secondary cardiovascular prevention. She is started on ibuprofen for osteoarthritis. What is the most appropriate gastroprotection?",
+    "options": {
+      "A": "No gastroprotection needed at low aspirin dose",
+      "B": "Add omeprazole 20mg daily",
+      "C": "Switch aspirin to clopidogrel",
+      "D": "Switch ibuprofen to paracetamol and add omeprazole",
+      "E": "Add misoprostol for gastroprotection"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per NICE guidelines, any patient on long-term NSAIDs should be co-prescribed a PPI (omeprazole 20mg or equivalent) for gastroprotection. Patients on aspirin + NSAID combination have significantly increased GI bleeding risk. A PPI must be added. Ideally, NSAID use should be minimised and paracetamol used preferentially, but if NSAID is required, PPI co-prescription is mandatory.",
+      "A": "Incorrect — All patients on NSAIDs (especially combined with aspirin) require PPI gastroprotection regardless of aspirin dose.",
+      "B": "CORRECT — Add PPI (omeprazole 20mg) for gastroprotection with NSAID + aspirin combination per NICE guidance.",
+      "C": "Incorrect — Switching aspirin to clopidogrel changes the antiplatelet regimen without addressing GI risk.",
+      "D": "Incorrect — Switching to paracetamol is the safer analgesic choice but if NSAID is required, PPI must be added — not instead of the NSAID change.",
+      "E": "Incorrect — Misoprostol can be used for gastroprotection but causes significant GI side effects (diarrhoea, cramping) and is less well-tolerated than PPIs."
+    },
+    "reference": "NICE — Osteoarthritis: care and management NG226. BNF — NSAID gastroprotection guidance.",
+    "tags": ["NSAID", "aspirin", "gastroprotection", "PPI", "omeprazole", "GI bleeding risk"]
+  },
+  {
+    "id": "AKT-GI-013",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Gastroenterology",
+    "difficulty": "Hard",
+    "question": "A 40-year-old man presents with painless obstructive jaundice, pale stools, dark urine and a 5kg weight loss over 6 weeks. On examination there is a palpable, non-tender gallbladder. What eponymous sign is present and what is the most likely diagnosis?",
+    "options": {
+      "A": "Murphy's sign — acute cholecystitis",
+      "B": "Courvoisier's sign — pancreatic head cancer",
+      "C": "Cullen's sign — acute pancreatitis",
+      "D": "Grey Turner's sign — haemorrhagic pancreatitis",
+      "E": "Rovsing's sign — appendicitis"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Courvoisier's law/sign states that in the presence of painless obstructive jaundice, a palpable non-tender gallbladder is unlikely to be due to gallstones (as chronic inflammation from gallstones causes a fibrosed, non-distensible gallbladder). Instead, it suggests malignant obstruction — most commonly pancreatic head cancer or cholangiocarcinoma. This requires urgent 2WW referral.",
+      "A": "Incorrect — Murphy's sign is inspiratory arrest on palpation of RUQ during deep inspiration — a sign of acute cholecystitis.",
+      "B": "CORRECT — Courvoisier's sign: painless jaundice + palpable non-tender gallbladder = likely malignant biliary obstruction (pancreatic head cancer).",
+      "C": "Incorrect — Cullen's sign is periumbilical bruising seen in haemorrhagic pancreatitis.",
+      "D": "Incorrect — Grey Turner's sign is flank bruising in haemorrhagic pancreatitis.",
+      "E": "Incorrect — Rovsing's sign (palpation of LIF causes pain in RIF) is a sign of appendicitis."
+    },
+    "reference": "NICE NG85 — Pancreatic cancer in adults: diagnosis and management. NICE NG12.",
+    "tags": ["Courvoisier's sign", "pancreatic cancer", "obstructive jaundice", "painless jaundice", "NICE NG12", "2WW"]
+  },
+  {
+    "id": "AKT-GI-014",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Gastroenterology",
+    "difficulty": "Medium",
+    "question": "A 50-year-old man presents with sudden onset severe epigastric pain radiating to his back, nausea and vomiting. He drinks 40 units of alcohol per week. Blood tests show: amylase 1200 U/L (normal <100), WBC 18, CRP 210. What is the diagnosis and what scoring system is used to assess severity?",
+    "options": {
+      "A": "Perforated peptic ulcer — Rockall score",
+      "B": "Acute pancreatitis — Glasgow/Imrie score or Ranson criteria",
+      "C": "Acute cholecystitis — Charcot's triad",
+      "D": "Mesenteric ischaemia — BISAP score",
+      "E": "Aortic dissection — DeBakey classification"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Amylase >3x upper limit of normal (>300 U/L) in the context of acute epigastric pain is diagnostic of acute pancreatitis. The Glasgow/Imrie score (modified Glasgow criteria) is used within 48 hours to assess severity: PaO2 <8 kPa, age >55, WBC >15, calcium <2 mmol/L, urea >16 mmol/L, LDH >600, albumin <32, glucose >10 (mnemonic: PANCREAS). Score ≥3 = severe pancreatitis requiring ITU/HDU care.",
+      "A": "Incorrect — Rockall score is used to risk-stratify upper GI bleeding, not pancreatitis.",
+      "B": "CORRECT — Acute pancreatitis (amylase >3x ULN). Glasgow/Imrie score or Ranson criteria assess severity.",
+      "C": "Incorrect — Charcot's triad (fever, jaundice, RUQ pain) is for acute cholangitis.",
+      "D": "Incorrect — BISAP score is also a pancreatitis severity score but Glasgow/Imrie is more commonly used in UK practice.",
+      "E": "Incorrect — DeBakey/Stanford classification is for aortic dissection."
+    },
+    "reference": "BSG Guidelines on the management of acute pancreatitis 2023. UK Working Party.",
+    "tags": ["acute pancreatitis", "amylase", "Glasgow score", "severity", "alcohol", "Imrie"]
+  },
+  {
+    "id": "AKT-GI-015",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Gastroenterology",
+    "difficulty": "Easy",
+    "question": "A 72-year-old woman is found to have elevated liver enzymes on routine blood tests: ALT 85 U/L, ALP 210 U/L, GGT 195 U/L, bilirubin 22 umol/L. She drinks 8 units of alcohol per week and takes atorvastatin 40mg. She has no symptoms. What is the most appropriate initial investigation?",
+    "options": {
+      "A": "Liver biopsy",
+      "B": "MRCP",
+      "C": "Abdominal ultrasound",
+      "D": "Serum caeruloplasmin and alpha-1 antitrypsin",
+      "E": "Stop atorvastatin and recheck LFTs in 6 weeks"
+    },
+    "correct_answer": "C",
+    "explanation": {
+      "correct": "Per BSG guidelines and NICE, the first-line investigation for abnormal liver function tests is abdominal ultrasound. This assesses for structural causes: fatty liver (NAFLD), gallstones, biliary dilation, focal liver lesions and hepatic texture. It is non-invasive, widely available and guides further investigation. The mixed hepatocellular/cholestatic pattern here (raised ALT and ALP/GGT) warrants structural assessment.",
+      "A": "Incorrect — Liver biopsy is an invasive procedure reserved for specific indications after non-invasive investigations.",
+      "B": "Incorrect — MRCP is for suspected biliary pathology/obstruction after ultrasound, not first-line.",
+      "C": "CORRECT — Abdominal ultrasound is first-line for abnormal LFTs per BSG guidance.",
+      "D": "Incorrect — Caeruloplasmin (Wilson's disease) and alpha-1 antitrypsin are specific tests considered after ultrasound in younger patients or specific clinical context.",
+      "E": "Incorrect — While statin-induced hepatotoxicity is possible, stopping the statin before basic investigation is premature unless LFTs are >3x ULN."
+    },
+    "reference": "BSG Guidelines — Investigation of abnormal liver blood tests 2017. https://www.bsg.org.uk/",
+    "tags": ["abnormal LFTs", "liver enzymes", "abdominal ultrasound", "investigation", "BSG guidelines"]
+  },
+  {
+    "id": "AKT-GI-016",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Gastroenterology",
+    "difficulty": "Hard",
+    "question": "A 55-year-old man with known oesophageal varices secondary to cirrhosis presents with haematemesis. He is pale, BP 90/60 mmHg, HR 118 bpm. What is the most important immediate management step in primary care before transfer?",
+    "options": {
+      "A": "Oral propranolol to reduce portal pressure",
+      "B": "Call 999, obtain IV access, give IV fluid resuscitation",
+      "C": "Give oral tranexamic acid 1g",
+      "D": "Insert Sengstaken-Blakemore tube",
+      "E": "Give omeprazole IV 80mg bolus"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "This patient is in haemorrhagic shock (hypotension + tachycardia) from a variceal bleed — a life-threatening emergency with high mortality. In primary care, the immediate priorities are: call 999 for emergency transfer, obtain IV access (2 large-bore cannulae), and begin cautious IV fluid resuscitation to maintain systolic BP ~90-100 mmHg (avoid over-resuscitation which increases portal pressure). Do not delay transfer.",
+      "A": "Incorrect — Propranolol is for primary/secondary prevention of variceal bleeding, not acute management.",
+      "B": "CORRECT — Emergency: 999 call + IV access + cautious fluid resuscitation. Immediate transfer to hospital.",
+      "C": "Incorrect — Tranexamic acid has no proven benefit in variceal haemorrhage (HALT-IT trial showed no benefit).",
+      "D": "Incorrect — Sengstaken-Blakemore tube is a salvage procedure done in hospital by specialists when endoscopy fails.",
+      "E": "Incorrect — IV PPI is for peptic ulcer bleeding, not variceal bleeding. Terlipressin (vasopressin analogue) is used in variceal bleeding but is a hospital treatment."
+    },
+    "reference": "BSG Guidelines on the management of acute upper and lower GI bleeding 2023.",
+    "tags": ["variceal bleed", "haematemesis", "cirrhosis", "emergency", "haemorrhagic shock", "resuscitation"]
+  },
+  {
+    "id": "AKT-GI-017",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Gastroenterology",
+    "difficulty": "Medium",
+    "question": "A 32-year-old woman presents with a 4-month history of loose stools (4-5/day), urgency, mucus and occasional rectal bleeding. CRP is 28, haemoglobin 110g/L. Faecal calprotectin is 480 mcg/g. What is the most appropriate next step?",
+    "options": {
+      "A": "Treat as IBS and prescribe mebeverine",
+      "B": "Stool culture and await results",
+      "C": "Refer for colonoscopy to investigate suspected IBD",
+      "D": "Prescribe mesalazine empirically",
+      "E": "Arrange CT abdomen and pelvis"
+    },
+    "correct_answer": "C",
+    "explanation": {
+      "correct": "Faecal calprotectin >250 mcg/g (significantly elevated here at 480) in the context of diarrhoea, rectal bleeding and raised CRP suggests organic bowel disease (IBD) rather than IBS. Per NICE DG11, faecal calprotectin is a useful marker to distinguish IBS from IBD. These findings warrant colonoscopy to confirm the diagnosis and obtain biopsies.",
+      "A": "Incorrect — Faecal calprotectin 480 with rectal bleeding and raised CRP makes IBS unlikely. Empirical IBS treatment would delay diagnosis.",
+      "B": "Incorrect — Stool culture is useful to exclude infective cause but alone insufficient — colonoscopy is still required.",
+      "C": "CORRECT — Elevated faecal calprotectin + rectal bleeding + raised CRP = refer for colonoscopy to investigate IBD.",
+      "D": "Incorrect — Mesalazine is used to treat confirmed UC, not empirically before diagnosis.",
+      "E": "Incorrect — CT is not the investigation of choice for suspected IBD — colonoscopy with biopsies gives tissue diagnosis."
+    },
+    "reference": "NICE DG11 — Faecal calprotectin diagnostic tests. NICE NG130 — Ulcerative colitis.",
+    "tags": ["faecal calprotectin", "IBD", "colonoscopy", "ulcerative colitis", "rectal bleeding", "NICE DG11"]
+  },
+  {
+    "id": "AKT-GI-018",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Gastroenterology",
+    "difficulty": "Medium",
+    "question": "A 60-year-old man is invited for NHS bowel cancer screening. His faecal immunochemical test (FIT) result is 150 mcg Hb/g faeces (threshold >10 mcg/g triggers further investigation). What is the most appropriate next step?",
+    "options": {
+      "A": "Repeat FIT test in 2 years",
+      "B": "Reassure — likely haemorrhoids causing the positive result",
+      "C": "Refer for colonoscopy via bowel cancer screening programme",
+      "D": "Arrange CT colonography",
+      "E": "Urgent 2WW referral to colorectal surgery"
+    },
+    "correct_answer": "C",
+    "explanation": {
+      "correct": "A positive FIT result (>10 mcg Hb/g) in the NHS Bowel Cancer Screening Programme triggers referral for colonoscopy via the bowel cancer screening pathway. This is regardless of the specific level — any positive result warrants endoscopic investigation. The screening colonoscopy is performed by specialist screening colonoscopists.",
+      "A": "Incorrect — Repeating FIT is not appropriate after a positive result. Colonoscopy is required.",
+      "B": "Incorrect — Assuming haemorrhoids without investigation is dangerous. Positive FIT must be investigated.",
+      "C": "CORRECT — Positive FIT = colonoscopy via NHS Bowel Cancer Screening Programme.",
+      "D": "Incorrect — CT colonography is an alternative when colonoscopy is contraindicated, not first-line after positive FIT.",
+      "E": "Incorrect — 2WW referral is for symptomatic patients. Asymptomatic positive FIT goes through the screening pathway."
+    },
+    "reference": "NHS Bowel Cancer Screening Programme. PHE guidance on FIT testing.",
+    "tags": ["bowel cancer screening", "FIT", "colonoscopy", "colorectal cancer", "NHS screening"]
+  },
+  {
+    "id": "AKT-GI-019",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Gastroenterology",
+    "difficulty": "Easy",
+    "question": "A 25-year-old woman presents with bloating, fatigue and iron deficiency anaemia. She reports the symptoms worsen after eating bread and pasta. Her anti-TTG IgA is 45 U/mL (positive >10 U/mL) and total IgA is normal. What is the most appropriate next step?",
+    "options": {
+      "A": "Start a gluten-free diet immediately",
+      "B": "Refer for duodenal biopsy while still eating gluten",
+      "C": "Repeat anti-TTG in 3 months to confirm",
+      "D": "HLA-DQ2/DQ8 testing",
+      "E": "Anti-endomysial antibody testing"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per NICE NG20, a positive anti-TTG IgA with normal total IgA is strongly suggestive of coeliac disease, but confirmatory duodenal biopsy is required before starting a gluten-free diet. The biopsy must be done while the patient is still eating gluten-containing food (at least one portion/day for 6 weeks) — otherwise the mucosa may appear normal, giving a false-negative result.",
+      "A": "Incorrect — Starting gluten-free diet before biopsy will cause villous recovery and may produce a false-negative biopsy result.",
+      "B": "CORRECT — Referral for duodenal biopsy while continuing gluten intake is required to confirm coeliac disease per NICE NG20.",
+      "C": "Incorrect — Repeating antibodies is not necessary — the positive result with symptoms warrants biopsy.",
+      "D": "Incorrect — HLA-DQ2/DQ8 is used to exclude coeliac disease in uncertain cases (high negative predictive value) not to confirm it.",
+      "E": "Incorrect — EMA is not needed as anti-TTG is already positive and biopsy is the next step."
+    },
+    "reference": "NICE NG20 — Coeliac disease: recognition, assessment and management. https://www.nice.org.uk/guidance/ng20",
+    "tags": ["coeliac disease", "anti-TTG", "duodenal biopsy", "gluten", "NICE NG20", "diagnosis"]
+  },
+  {
+    "id": "AKT-GI-020",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Gastroenterology",
+    "difficulty": "Hard",
+    "question": "A 58-year-old man with alcoholic liver cirrhosis (Child-Pugh B) presents with confusion, asterixis and drowsiness. His blood tests show Na 132, K 3.2, ammonia 95 umol/L (elevated), creatinine 110. He has been constipated for 5 days. What is the most appropriate management of his hepatic encephalopathy?",
+    "options": {
+      "A": "IV thiamine and glucose, admit to hospital",
+      "B": "Lactulose 30-50ml TDS titrated to produce 2-3 soft stools/day and admit",
+      "C": "Restrict dietary protein to <20g/day",
+      "D": "Start oral rifaximin and discharge with community review",
+      "E": "Start oral neomycin and lactulose combination"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "This patient has acute hepatic encephalopathy (HE) precipitated by constipation (increased gut transit time increases ammonia absorption). First-line treatment is lactulose to produce 2-3 soft stools/day — this acidifies the gut, traps ammonia as ammonium and reduces absorption. Hospital admission is required for monitoring, IV fluids, identifying and treating precipitants and IV thiamine. Rifaximin is added for secondary prevention after a second episode.",
+      "A": "Incorrect — IV thiamine is important in alcoholic patients but lactulose to treat the HE is the primary intervention here.",
+      "B": "CORRECT — Lactulose (2-3 soft stools/day) is first-line for acute HE + hospital admission per BSG/EASL guidelines.",
+      "C": "Incorrect — Protein restriction was previously recommended but is now discouraged as it worsens malnutrition. Adequate protein intake is maintained.",
+      "D": "Incorrect — Rifaximin is used for secondary prevention of recurrent HE (after ≥2 episodes) not acute first-line treatment.",
+      "E": "Incorrect — Neomycin is no longer recommended due to nephrotoxicity and ototoxicity."
+    },
+    "reference": "EASL Clinical Practice Guidelines on hepatic encephalopathy 2014. BSG cirrhosis guidelines.",
+    "tags": ["hepatic encephalopathy", "lactulose", "cirrhosis", "ammonia", "rifaximin", "BSG"]
+  }
+]

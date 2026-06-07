@@ -1,0 +1,1192 @@
+[
+  {
+    "id": "QG-PAED-031-001",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Paediatrics",
+    "difficulty": "Easy",
+    "question": "A 9-year-old boy (weight approximately 32kg) develops anaphylaxis after eating a peanut-containing biscuit at school. He has urticaria, angioedema, stridor and hypotension. The school nurse calls 999 and uses an adrenaline auto-injector. Per RCUK/NICE guidelines, what is the correct adrenaline dose and route for a child of this age and weight?",
+    "options": {
+      "A": "0.15mg (150 mcg) adrenaline IM — junior EpiPen dose for children under 15kg",
+      "B": "0.3mg (300 mcg) adrenaline IM — standard dose for children 15-30kg or aged 6-12 years",
+      "C": "0.5mg (500 mcg) adrenaline IM — adult EpiPen dose for all children over 5 years",
+      "D": "0.1mg IV adrenaline — intravenous route is more effective",
+      "E": "1mg (1:1000) adrenaline IM — same as adult cardiac arrest dose"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per Resuscitation Council UK (RCUK) and NICE CG134 (Anaphylaxis), intramuscular adrenaline is the first-line treatment for anaphylaxis at all ages. Dose by weight/age: Under 6 years (or <15kg): 0.15mg IM (junior EpiPen); 6-12 years (or 15-30kg): 0.3mg IM (standard EpiPen); Over 12 years (or >30kg): 0.5mg IM (adult EpiPen). This 9-year-old weighing ~32kg falls into the 6-12 years category = 0.3mg IM. Route: anterolateral mid-thigh is preferred. Repeat every 5 minutes if no improvement. IV adrenaline is only for specialists in resuscitation settings.",
+      "A": "Incorrect — 0.15mg is the junior EpiPen dose for children under 6 years or <15kg. This 9-year-old requires 0.3mg.",
+      "B": "CORRECT — 0.3mg IM adrenaline for children 6-12 years per RCUK/NICE CG134.",
+      "C": "Incorrect — 0.5mg is the adult dose for children over 12 years or >30kg. Some guidelines allow 0.5mg for children >30kg.",
+      "D": "Incorrect — IV adrenaline is not used outside specialist resuscitation settings. IM is the appropriate route.",
+      "E": "Incorrect — 1mg is the cardiac arrest dose — never used for anaphylaxis in any age group."
+    },
+    "reference": "Resuscitation Council UK — Anaphylaxis guidelines 2021. NICE CG134 — Anaphylaxis assessment and referral.",
+    "tags": [
+      "anaphylaxis",
+      "adrenaline",
+      "0.3mg",
+      "paediatric",
+      "EpiPen",
+      "RCUK"
+    ],
+    "source": "Question Grove 360"
+  },
+  {
+    "id": "QG-PAED-031-002",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Paediatrics",
+    "difficulty": "Medium",
+    "question": "A 9-year-old girl is diagnosed with anaphylaxis in hospital and treated successfully. Per NICE CG134, what must be arranged before discharge?",
+    "options": {
+      "A": "Discharge with antihistamines only — antihistamines prevent recurrence",
+      "B": "Prescribe two adrenaline auto-injectors (AAIs), provide written anaphylaxis action plan, refer to specialist allergy service, advise on allergen avoidance and train patient/family in AAI use",
+      "C": "Prescribe one EpiPen and review in 6 weeks",
+      "D": "Discharge without any prescription — anaphylaxis is self-limiting after treatment",
+      "E": "Start oral prednisolone course to prevent biphasic reaction"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per NICE CG134, after treatment of anaphylaxis, before discharge ALL patients must receive: (1) Two prescribed adrenaline auto-injectors (one at home, one at school/work) — TWO because one may malfunction or be unavailable; (2) Written personalised anaphylaxis emergency action plan; (3) Referral to specialist allergy service for allergy testing and identification of trigger; (4) Allergen avoidance advice; (5) Training in AAI use for patient and carers/parents. Additionally, observe for biphasic reaction (1-12 hours after initial reaction — occurs in 1-20% of anaphylaxis). Antihistamines do NOT prevent anaphylaxis recurrence and must not replace adrenaline.",
+      "A": "Incorrect — Antihistamines treat urticaria but do NOT prevent or treat anaphylaxis — they must not replace adrenaline prescription.",
+      "B": "CORRECT — TWO AAIs + written action plan + allergy referral + training before discharge per NICE CG134.",
+      "C": "Incorrect — Two (not one) AAIs are prescribed. Routine 6-week review is insufficient — allergy referral is mandatory.",
+      "D": "Incorrect — Discharge without AAIs after anaphylaxis is contrary to NICE CG134 and risks death from recurrence.",
+      "E": "Incorrect — Oral prednisolone for biphasic reaction prevention is no longer recommended in standard NICE guidelines. AAIs are the priority."
+    },
+    "reference": "NICE CG134 — Anaphylaxis: assessment and referral after emergency treatment. https://www.nice.org.uk/guidance/cg134",
+    "tags": [
+      "anaphylaxis",
+      "discharge",
+      "two AAIs",
+      "EpiPen",
+      "allergy referral",
+      "NICE CG134"
+    ],
+    "source": "Question Grove 360"
+  },
+  {
+    "id": "QG-PAED-031-003",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Paediatrics",
+    "difficulty": "Medium",
+    "question": "The parents of a 9-year-old boy with a peanut allergy ask about the biphasic reaction after anaphylaxis. What is the correct information per RCUK and NICE CG134?",
+    "options": {
+      "A": "Biphasic reactions never occur after adrenaline treatment",
+      "B": "Biphasic anaphylaxis can occur 1-72 hours after the initial reaction in up to 20% of cases — patients should be observed for at least 6-12 hours after severe anaphylaxis and given written instructions to return immediately if symptoms recur",
+      "C": "Biphasic reactions only occur with food allergies — not insect stings",
+      "D": "Biphasic reactions are always more severe than the initial reaction",
+      "E": "Taking antihistamines at home prevents biphasic reactions"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Biphasic anaphylaxis: recurrence of anaphylactic symptoms without further allergen exposure, occurring 1-72 hours (typically 1-12 hours) after the initial reaction. Incidence: approximately 1-20% of anaphylaxis cases. Risk factors for biphasic reaction: initial severe symptoms, delayed adrenaline administration, cutaneous symptoms predominating. Per RCUK and NICE CG134, patients with severe anaphylaxis should be monitored for at least 6-12 hours in a clinical setting. Written discharge instructions must include: seek emergency care immediately if symptoms recur. Biphasic reactions can be severe and potentially fatal — require the same adrenaline treatment as initial reaction.",
+      "A": "Incorrect — Biphasic reactions occur despite adequate initial adrenaline treatment.",
+      "B": "CORRECT — Biphasic anaphylaxis in up to 20%, 1-72 hours after initial reaction. Observe 6-12 hours + written instructions per RCUK/NICE CG134.",
+      "C": "Incorrect — Biphasic reactions occur with any anaphylaxis trigger including food and insect stings.",
+      "D": "Incorrect — Biphasic reactions are not always more severe. They can be mild or severe.",
+      "E": "Incorrect — Antihistamines do NOT prevent biphasic reactions. Adrenaline remains the only effective emergency treatment."
+    },
+    "reference": "RCUK — Anaphylaxis guidelines 2021. NICE CG134.",
+    "tags": [
+      "biphasic anaphylaxis",
+      "1-72 hours",
+      "observation",
+      "NICE CG134",
+      "RCUK",
+      "recurrence"
+    ],
+    "source": "Question Grove 360"
+  },
+  {
+    "id": "QG-PAED-031-004",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Paediatrics",
+    "difficulty": "Hard",
+    "question": "A 9-year-old boy with a known bee sting allergy is reviewed in primary care. His parents want to know if he should be offered venom immunotherapy (VIT). Per NICE TA246, what are the criteria for referral for VIT?",
+    "options": {
+      "A": "VIT is not available on the NHS — only available privately",
+      "B": "Children with bee or wasp venom anaphylaxis confirmed by allergy testing should be referred for consideration of venom immunotherapy (VIT), which reduces risk of future systemic reactions by >90%",
+      "C": "VIT is only for adults — not children under 12",
+      "D": "VIT is only indicated if the child has had more than 3 anaphylactic reactions",
+      "E": "VIT has no proven efficacy in children"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per NICE TA246 (Bee and wasp venom immunotherapy), venom immunotherapy is recommended for adults and children who have: (1) Confirmed diagnosis of bee or wasp venom allergy by specialist allergy testing (skin prick test or specific IgE); AND (2) Had a systemic allergic reaction (anaphylaxis) to bee or wasp venom. VIT involves subcutaneous injections of increasing doses of venom extract over 3-5 years. Efficacy: reduces risk of systemic reaction to subsequent sting from >60% to <5% — highly effective. Available on NHS through specialist allergy centres. Children are eligible.",
+      "A": "Incorrect — NICE TA246 recommends VIT on the NHS for eligible patients.",
+      "B": "CORRECT — Bee/wasp venom anaphylaxis + confirmed allergy testing = refer for VIT consideration per NICE TA246.",
+      "C": "Incorrect — NICE TA246 recommends VIT for adults AND children with venom anaphylaxis.",
+      "D": "Incorrect — One confirmed anaphylactic reaction with positive allergy testing is sufficient — not 3 reactions.",
+      "E": "Incorrect — VIT has robust efficacy in children, comparable to adults."
+    },
+    "reference": "NICE TA246 — Bee and wasp venom immunotherapy. https://www.nice.org.uk/guidance/ta246",
+    "tags": [
+      "venom immunotherapy",
+      "VIT",
+      "bee sting",
+      "anaphylaxis child",
+      "NICE TA246",
+      "allergy"
+    ],
+    "source": "Question Grove 360"
+  },
+  {
+    "id": "QG-PAED-031-005",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Paediatrics",
+    "difficulty": "Medium",
+    "question": "A teacher calls the GP surgery having witnessed a 9-year-old child develop what appears to be anaphylaxis at school. The child is conscious but has widespread urticaria, facial swelling and is wheezing. The teacher has not yet used the EpiPen. What is the correct immediate advice?",
+    "options": {
+      "A": "Give antihistamine first — use EpiPen only if antihistamine does not work within 15 minutes",
+      "B": "Use the EpiPen immediately — administer adrenaline 0.3mg IM to the anterolateral thigh, call 999, lay the child flat with legs raised (not sitting up), and stay with the child until ambulance arrives",
+      "C": "Drive the child to hospital — this is faster than waiting for an ambulance",
+      "D": "Give oral prednisolone — this will control the reaction",
+      "E": "Wait to see if the reaction worsens before using the EpiPen"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per RCUK anaphylaxis guidelines and NICE CG134: adrenaline is the FIRST-LINE treatment for anaphylaxis — it must be given IMMEDIATELY when anaphylaxis is suspected. Do not delay for antihistamines or steroids. Correct technique: remove EpiPen cap, press firmly against outer mid-thigh (through clothing if necessary), hold for 3 seconds, remove and massage the area. Call 999 immediately. Position: lay flat with legs elevated (NOT sitting up or standing — prevents fatal cardiovascular collapse from 'empty heart syndrome'). If on phone to a GP, give clear instructions to use EpiPen NOW. Antihistamines and steroids are adjuncts given AFTER adrenaline — never first-line.",
+      "A": "Incorrect — Antihistamines must never delay adrenaline. They do not treat the life-threatening cardiovascular and respiratory components of anaphylaxis.",
+      "B": "CORRECT — Use EpiPen immediately + 999 + lay flat with legs raised per RCUK/NICE CG134.",
+      "C": "Incorrect — Driving risks cardiovascular collapse en route without monitoring or equipment. 999 is the correct action.",
+      "D": "Incorrect — Oral prednisolone does not act quickly enough (takes hours) and is not first-line for acute anaphylaxis.",
+      "E": "Incorrect — Anaphylaxis can deteriorate rapidly — waiting is dangerous. Give adrenaline when anaphylaxis is suspected."
+    },
+    "reference": "RCUK — Anaphylaxis algorithm 2021. NICE CG134.",
+    "tags": [
+      "anaphylaxis",
+      "EpiPen",
+      "immediate treatment",
+      "adrenaline first",
+      "RCUK",
+      "NICE CG134"
+    ],
+    "source": "Question Grove 360"
+  },
+  {
+    "id": "QG-PAED-036-001",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Paediatrics",
+    "difficulty": "Medium",
+    "question": "A 6-month-old boy is found to have an undescended right testis that was not noted at birth. His left testis is in the scrotum. Per NICE and NICE Quality Standards, when should he be referred for surgical intervention (orchidopexy)?",
+    "options": {
+      "A": "Refer immediately at 6 months — orchidopexy at 6 months gives best outcomes",
+      "B": "Await spontaneous descent until 6 months of age; if still undescended at 6 months, refer to paediatric urology/surgery for orchidopexy to be performed between 6-18 months of age",
+      "C": "Observe until age 2 — spontaneous descent commonly occurs until age 2",
+      "D": "No referral needed — undescended testes are a normal variant",
+      "E": "Refer only if the boy develops orchitis or testicular pain"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per NICE (Pathway for congenital abnormalities/PHE Newborn screening) and NICE CKS, the current UK guidance for undescended testis (cryptorchidism): spontaneous descent occurs most commonly in the first 3-6 months of life. If still undescended at 3-6 months of age, the chance of further spontaneous descent is very low. Current recommendation: refer to paediatric urology/surgery by 6 months of age for orchidopexy to be performed between 6-18 months. Earlier surgery (6-12 months) is now recommended as it optimises: spermatogenesis preservation (germ cells deteriorate after 1 year if undescended), reduces testicular cancer risk (RR still elevated but reduced vs late surgery), prevents torsion and psychological benefit of normal scrotal appearance.",
+      "A": "Incorrect — Referring at 6 months for surgery at 6 months is appropriate. However, the surgical window is 6-18 months — referral at 6 months for early surgery is correct.",
+      "B": "CORRECT — Refer at 6 months for orchidopexy between 6-18 months per NICE/UK guidance.",
+      "C": "Incorrect — Waiting until age 2 is outdated. Spontaneous descent rarely occurs after 6 months. Earlier surgery preserves fertility.",
+      "D": "Incorrect — Undescended testes require treatment — they are associated with infertility and increased testicular cancer risk.",
+      "E": "Incorrect — Waiting for complications (orchitis/torsion) before treating defeats the purpose of elective orchidopexy."
+    },
+    "reference": "NICE CKS — Undescended testes. BAUS/BAPU — Orchidopexy guidelines. Newborn physical examination programme.",
+    "tags": [
+      "undescended testis",
+      "cryptorchidism",
+      "orchidopexy",
+      "6-18 months",
+      "referral",
+      "NICE CKS"
+    ],
+    "source": "Question Grove 360"
+  },
+  {
+    "id": "QG-PAED-036-002",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Paediatrics",
+    "difficulty": "Easy",
+    "question": "At a routine 6-8 week infant check, a GP examines a 7-week-old boy and cannot palpate the left testis in the scrotum. The right testis is palpable and normal. The left testis cannot be felt in the inguinal canal either. What is the most appropriate immediate action?",
+    "options": {
+      "A": "Normal variant — testes frequently retract at this age. Review at 1 year",
+      "B": "Arrange urgent USS of the inguinal region and abdomen to locate the testis, and refer to paediatric surgery",
+      "C": "Prescribe hCG hormonal therapy — first-line treatment to stimulate descent",
+      "D": "Reassure — testes are commonly impalpable at 7 weeks and will descend by 3 months",
+      "E": "Refer urgently with suspicion of testicular malignancy"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "At 7 weeks, a testis that is neither palpable in the scrotum nor the inguinal canal may represent: (1) Intra-abdominal testis (anorchidism, ectopic or high undescended testis); (2) Retractile testis (will come down in a warm environment); (3) Very rarely, absent testis. Per NICE and BAPS guidelines, impalpable testis requires ultrasound (to locate the testis) and referral to paediatric surgery. Retractile testes can be distinguished by examination in a warm room — they return to the scrotum when warm. hCG/GnRH therapy has poor evidence and is not first-line in UK practice.",
+      "A": "Incorrect — Impalpable testis at 7 weeks requires referral, not just review at 1 year.",
+      "B": "CORRECT — Impalpable testis: USS to locate + referral to paediatric surgery per NICE/BAPS guidelines.",
+      "C": "Incorrect — hCG hormonal therapy is not standard first-line UK management for undescended testes.",
+      "D": "Incorrect — Impalpable (not just undescended) testis requires active investigation — spontaneous descent of an impalpable testis is uncommon.",
+      "E": "Incorrect — Testicular malignancy in a 7-week-old is extremely rare. Urgent cancer referral is not indicated."
+    },
+    "reference": "NICE CKS — Undescended testes. BAPS — Cryptorchidism guidelines.",
+    "tags": [
+      "undescended testis",
+      "impalpable",
+      "ultrasound",
+      "paediatric surgery",
+      "NICE CKS",
+      "6-8 week check"
+    ],
+    "source": "Question Grove 360"
+  },
+  {
+    "id": "QG-PAED-036-003",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Paediatrics",
+    "difficulty": "Hard",
+    "question": "A GP is counselling parents of a 4-year-old boy who had an orchidopexy at 18 months for undescended right testis. The parents ask about long-term complications despite successful surgery. What are the key long-term risks associated with history of cryptorchidism even after treatment?",
+    "options": {
+      "A": "No long-term risks — orchidopexy fully normalises the testis",
+      "B": "Increased risk of testicular germ cell cancer (relative risk ~2-8x higher, predominantly seminoma) and reduced fertility on the affected side, even after successful orchidopexy. Regular self-examination from puberty is advised",
+      "C": "Orchidopexy increases risk of inguinal hernia only",
+      "D": "Undescended testis increases risk of prostate cancer in adult life",
+      "E": "Hormonal (testosterone) deficiency is inevitable in adult life"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Despite successful orchidopexy, long-term risks of cryptorchidism include: (1) Testicular germ cell cancer — relative risk 2-8x higher than general population (RR reduced but not eliminated by early orchidopexy, particularly if performed after 1 year); seminoma is most common; lifetime risk ~0.5-1% (vs ~0.2% general population); (2) Impaired fertility — reduced sperm count on affected side, particularly if bilateral or late surgery; IVF may be required; (3) Psychological impact of scrotal asymmetry. Advise: monthly testicular self-examination from puberty, prompt medical attention for any testicular lump. Partner's fertility potential is not affected.",
+      "A": "Incorrect — Early orchidopexy reduces but does not eliminate cancer and fertility risks.",
+      "B": "CORRECT — Increased testicular cancer risk (2-8x) + reduced fertility on affected side persist after orchidopexy. Self-examination from puberty advised.",
+      "C": "Incorrect — Inguinal hernia risk is elevated in untreated cryptorchidism (processus vaginalis often patent) but is not the primary long-term concern post-orchidopexy.",
+      "D": "Incorrect — Prostate cancer risk is not specifically associated with cryptorchidism.",
+      "E": "Incorrect — Testosterone production is usually preserved with unilateral cryptorchidism and successful orchidopexy."
+    },
+    "reference": "NICE CKS — Undescended testes. BAUS — Testicular cancer and cryptorchidism.",
+    "tags": [
+      "cryptorchidism",
+      "testicular cancer risk",
+      "orchidopexy",
+      "fertility",
+      "self-examination",
+      "long-term"
+    ],
+    "source": "Question Grove 360"
+  },
+  {
+    "id": "QG-PAED-036-004",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Paediatrics",
+    "difficulty": "Medium",
+    "question": "A 5-year-old boy is seen because his father noticed that his son's testis is sometimes not in the scrotum. On examination in a warm room, the testis can be gently manipulated into the scrotum and stays there. When the child stands, it retracts again into the inguinal region. What is the diagnosis and management?",
+    "options": {
+      "A": "Undescended testis — urgent surgical referral for orchidopexy",
+      "B": "Retractile testis — an overactive cremasteric reflex; reassure parents, no surgery required if it remains retractile; annual review until puberty to check it does not become truly undescended (ascending testis)",
+      "C": "Testicular torsion — emergency surgical referral",
+      "D": "Retractile testis — prescribe GnRH nasal spray to prevent ascent",
+      "E": "Normal development — testes retract in all boys under 10 years"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Retractile testis: testis that can be manually manipulated into the scrotum and stays there without tension (true undescended testis cannot be brought to the bottom of the scrotum without tension). Cause: exaggerated cremasteric reflex (normal reflex, hyperactive in prepubertal boys). Management: reassure parents — retractile testes usually descend permanently at puberty without intervention. However: annual examination is recommended as approximately 30-40% of retractile testes will ascend and become truly undescended ('ascending testis') — these require orchidopexy. If testis cannot be manipulated into scrotum without tension at any review = refer.",
+      "A": "Incorrect — Retractile testis that can be brought to the scrotum without tension is NOT undescended. Surgery not required.",
+      "B": "CORRECT — Retractile testis: reassure + annual review for ascending testis per NICE CKS.",
+      "C": "Incorrect — Testicular torsion causes acute severe testicular pain — not an incidental retractile testis.",
+      "D": "Incorrect — GnRH therapy is not recommended for retractile testes in UK practice.",
+      "E": "Incorrect — Not all testes retract. Retractile testis is a specific clinical finding requiring monitoring."
+    },
+    "reference": "NICE CKS — Undescended testes (retractile testis section).",
+    "tags": [
+      "retractile testis",
+      "cremasteric reflex",
+      "ascending testis",
+      "annual review",
+      "NICE CKS",
+      "paediatrics"
+    ],
+    "source": "Question Grove 360"
+  },
+  {
+    "id": "QG-PAED-036-005",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Paediatrics",
+    "difficulty": "Hard",
+    "question": "A newborn screening examination (day 0) identifies that both testes cannot be palpated in the scrotum. The baby is otherwise well and examination is otherwise normal. What is the appropriate early management?",
+    "options": {
+      "A": "Refer immediately for emergency surgery — bilateral absence of testes may indicate female genital intersex condition",
+      "B": "Document, repeat examination at 6-8 week check; if both testes remain undescended/impalpable at 6-8 weeks, refer to paediatric endocrinology/surgery urgently — bilateral impalpable testes may represent bilateral anorchia or disorder of sex development (DSD) requiring karyotype and hormone testing",
+      "C": "Normal finding — both testes commonly ascend in the first weeks",
+      "D": "Prescribe testosterone injections immediately",
+      "E": "Reassure — bilateral undescended testes always descend by 3 months"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Bilateral impalpable testes at birth requires careful assessment. While bilateral undescended testes can occur with normal testosterone and karyotype (46XY), bilateral absence of palpable testes raises important considerations: (1) bilateral intra-abdominal testes (most common); (2) bilateral anorchia (vanishing testis syndrome — 46XY with absent testes); (3) Disorder of sex development (DSD) — 46XX congenital adrenal hyperplasia virilising a female (critical — life-threatening salt-wasting CAH). At day 0: document carefully, repeat at 6-8 week check. If still bilateral impalpable at 6-8 weeks: urgent referral to paediatric endocrinology for karyotype, AMH, inhibin B, LH, FSH and urgent investigation. Bilateral impalpable testes in a newborn MUST NOT be ignored.",
+      "A": "Incorrect — Day 0 emergency surgery is not indicated. Assessment with follow-up is appropriate.",
+      "B": "CORRECT — Document + 6-8 week review; if bilateral impalpable at 6-8 weeks → urgent paediatric endocrinology for DSD investigation.",
+      "C": "Incorrect — Bilateral impalpable testes are not a normal variant requiring no action.",
+      "D": "Incorrect — Testosterone injections are not indicated at this stage before diagnosis.",
+      "E": "Incorrect — Bilateral completely impalpable testes do not always descend — and critical diagnoses (DSD, anorchia) must be excluded."
+    },
+    "reference": "NICE CKS — Undescended testes. BAPS/BSPED — Bilateral impalpable testes and DSD.",
+    "tags": [
+      "bilateral undescended testes",
+      "DSD",
+      "CAH",
+      "anorchia",
+      "paediatric endocrinology",
+      "newborn"
+    ],
+    "source": "Question Grove 360"
+  },
+  {
+    "id": "QG-PAED-040-001",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Paediatrics",
+    "difficulty": "Easy",
+    "question": "A parent asks when their child should receive the MMR (measles, mumps, rubella) vaccine. Per the UK childhood immunisation schedule 2024, when is the MMR vaccine given and how many doses are required?",
+    "options": {
+      "A": "Single dose at 12 months — one dose provides lifelong immunity",
+      "B": "Two doses: first at 12-13 months (as part of MMR/Hib/MenC booster), second at 3 years 4 months (preschool booster) — two doses for full protection",
+      "C": "Three doses: 8 weeks, 12 weeks and 16 weeks",
+      "D": "Single dose at 5 years — school entry vaccination",
+      "E": "First dose at 2 months, second at 4 months, booster at 12 months"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per the UK childhood immunisation schedule (PHE/UKHSA): MMR vaccine is given at: (1) 12-13 months: MMR combined with Men B booster, Hib/Men C (as part of the 1-year vaccines); (2) 3 years 4 months: MMR second dose as part of the preschool booster (combined with 4-in-1 dTaP/IPV). Two doses are required for complete protection — seroconversion rates: one dose achieves ~93% measles protection, two doses achieves ~97%. Both doses are needed to achieve herd immunity. The MMR is a live attenuated vaccine — cannot be given to severely immunocompromised children.",
+      "A": "Incorrect — A single dose provides ~93% protection. Two doses are required for full protection and herd immunity.",
+      "B": "CORRECT — MMR at 12-13 months and 3 years 4 months per UK immunisation schedule.",
+      "C": "Incorrect — The 8/12/16-week schedule is for DTaP/IPV/Hib/HepB. MMR is not given in infancy.",
+      "D": "Incorrect — MMR preschool booster is at 3 years 4 months, not 5 years.",
+      "E": "Incorrect — Inactivated infant vaccines are at 2/3/4 months. MMR is a live vaccine given from 12 months."
+    },
+    "reference": "PHE/UKHSA — UK Childhood Immunisation Schedule 2024.",
+    "tags": [
+      "MMR vaccine",
+      "immunisation schedule",
+      "12 months",
+      "preschool booster",
+      "two doses",
+      "UK schedule"
+    ],
+    "source": "Question Grove 360"
+  },
+  {
+    "id": "QG-PAED-040-002",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Paediatrics",
+    "difficulty": "Medium",
+    "question": "A parent refuses MMR vaccination for their 13-month-old son, citing concerns about autism linked to the MMR vaccine. How should the GP respond?",
+    "options": {
+      "A": "Accept the refusal immediately — parental choice is absolute",
+      "B": "Acknowledge concerns, provide evidence-based information: the original Wakefield study (1998) claiming MMR-autism link has been thoroughly debunked, retracted and Wakefield struck off. Multiple large-scale studies (millions of children) consistently show no link. Recommend vaccination",
+      "C": "Report the parents to social services — vaccine refusal is child abuse",
+      "D": "Offer single antigen vaccines instead — safer alternative to MMR",
+      "E": "Agree with the parents — the MMR-autism evidence is inconclusive"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "The Wakefield study (1998, Lancet) claiming MMR caused autism was based on fraudulent data from 12 children — it has been fully retracted (2010), Wakefield was struck off the medical register, and co-authors withdrew. Subsequent studies in millions of children across multiple countries consistently show NO link between MMR and autism. The GP should: acknowledge parental concern respectfully (non-judgmentally), provide accurate evidence-based information, correct the misinformation, recommend vaccination. Under-vaccination causes outbreaks — multiple measles outbreaks have occurred in unvaccinated populations. GPs should not offer single-antigen vaccines as an alternative as these are not licensed or recommended in the UK.",
+      "A": "Incorrect — While parents ultimately can refuse, GPs have a professional duty to provide accurate information and advocate for vaccination.",
+      "B": "CORRECT — Address concerns, debunk the retracted Wakefield fraud with evidence from large studies, recommend MMR.",
+      "C": "Incorrect — Vaccine refusal alone does not constitute child abuse requiring social services referral.",
+      "D": "Incorrect — Single antigen vaccines are not licensed in the UK and JCVI does not recommend them as an alternative.",
+      "E": "Incorrect — The evidence is NOT inconclusive — the MMR-autism claim is thoroughly disproven."
+    },
+    "reference": "PHE — MMR and autism evidence. Wakefield retraction — Lancet 2010. JCVI — MMR vaccination.",
+    "tags": [
+      "MMR",
+      "autism myth",
+      "Wakefield",
+      "vaccine hesitancy",
+      "evidence-based",
+      "JCVI"
+    ],
+    "source": "Question Grove 360"
+  },
+  {
+    "id": "QG-PAED-040-003",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Paediatrics",
+    "difficulty": "Medium",
+    "question": "A 14-month-old girl with an egg allergy is brought for her 12-month immunisations (delayed). The mother is concerned about giving MMR as she has heard it is grown in egg. Per JCVI and PHE guidance, should egg allergy influence the decision to give MMR?",
+    "options": {
+      "A": "MMR must not be given to any child with egg allergy — refer to specialist",
+      "B": "MMR can be given safely in primary care to children with egg allergy including severe anaphylaxis to egg — MMR is not grown in hen's egg (it uses chick embryo fibroblasts containing negligible egg protein). Anaphylaxis history to egg is NOT a contraindication to MMR",
+      "C": "Give MMR only after negative skin prick test to MMR",
+      "D": "Use influenza vaccine instead — safer in egg allergy",
+      "E": "Only give MMR in hospital with anaphylaxis kit available"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per JCVI and PHE Green Book (Chapter 22), MMR vaccine is manufactured using chick embryo fibroblast cell cultures — it contains negligible amounts of egg protein (not grown in hen's egg). The risk of anaphylaxis from MMR to egg-allergic individuals is not clinically significant. JCVI guidance: MMR can be safely given in primary care settings to children with egg allergy including those with previous anaphylaxis to egg. Routine allergy testing before MMR is not required. Observe for 15 minutes post-vaccination (standard practice). The influenza vaccine (grown in hen's egg) has different recommendations for egg allergy.",
+      "A": "Incorrect — JCVI specifically states MMR can be given safely regardless of egg allergy.",
+      "B": "CORRECT — MMR safe in egg allergy (including anaphylaxis to egg) — negligible egg protein. Give in primary care per JCVI Green Book.",
+      "C": "Incorrect — Skin prick testing before MMR in egg allergy is not recommended by JCVI.",
+      "D": "Incorrect — Influenza vaccine IS the vaccine with egg allergy considerations — not MMR.",
+      "E": "Incorrect — MMR in egg-allergic children can be given in primary care, not hospital-only per JCVI."
+    },
+    "reference": "JCVI — Immunisation against infectious disease (Green Book) Chapter 22. PHE — MMR and egg allergy.",
+    "tags": [
+      "MMR",
+      "egg allergy",
+      "JCVI",
+      "safe",
+      "primary care",
+      "Green Book"
+    ],
+    "source": "Question Grove 360"
+  },
+  {
+    "id": "QG-PAED-040-004",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Paediatrics",
+    "difficulty": "Hard",
+    "question": "A 3-year-old boy is on high-dose oral prednisolone (2mg/kg/day) for severe nephrotic syndrome. He is due for his preschool MMR booster. Per JCVI Green Book, what is the correct advice regarding live vaccines in children on systemic corticosteroids?",
+    "options": {
+      "A": "Give MMR immediately — no contraindication with oral steroids",
+      "B": "Withhold live vaccines (including MMR) while on high-dose systemic corticosteroids (≥2mg/kg/day prednisolone or ≥40mg/day in adults) or within 3 months of stopping. Vaccinate when off high-dose steroids",
+      "C": "Give MMR only in hospital with IVIG cover",
+      "D": "Halve the prednisolone dose and give MMR immediately",
+      "E": "Give killed vaccines only and never give MMR to a child on any steroid"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per JCVI Green Book and BNF, live attenuated vaccines (MMR, varicella, BCG, yellow fever, oral typhoid, nasal flu vaccine) are CONTRAINDICATED in significantly immunocompromised patients. Corticosteroid threshold for contraindication: ≥2mg/kg/day prednisolone (or ≥40mg/day in children >10kg) for ≥1 week. This child is on 2mg/kg/day = meets the threshold. Withhold live vaccines while on high-dose steroids AND for 3 months after stopping. When nephrotic syndrome is in remission and steroids are weaned, MMR can be given safely. Note: low-dose topical/inhaled steroids do NOT contraindicate live vaccines.",
+      "A": "Incorrect — High-dose systemic corticosteroids (≥2mg/kg) contraindicate live vaccines per JCVI Green Book.",
+      "B": "CORRECT — Withhold MMR (live vaccine) while on ≥2mg/kg prednisolone. Vaccinate 3 months after stopping per JCVI Green Book.",
+      "C": "Incorrect — IVIG is not used to cover MMR vaccination. Live vaccine contraindication must be addressed by waiting.",
+      "D": "Incorrect — Halving the dose to give vaccine immediately is not recommended — must be off high-dose steroids before vaccination.",
+      "E": "Incorrect — Low-dose/topical/inhaled steroids do NOT contraindicate live vaccines — only high-dose systemic steroids."
+    },
+    "reference": "JCVI Green Book — Contraindications to live vaccines. BNF — Immunosuppression and vaccination.",
+    "tags": [
+      "MMR",
+      "immunocompromised",
+      "corticosteroids",
+      "live vaccine contraindication",
+      "JCVI Green Book",
+      "nephrotic syndrome"
+    ],
+    "source": "Question Grove 360"
+  },
+  {
+    "id": "QG-PAED-040-005",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Paediatrics",
+    "difficulty": "Easy",
+    "question": "A GP reviews a 10-year-old girl who has never received any vaccinations due to moving from another country. She has no medical history. Which vaccines should she receive to catch up with the UK childhood schedule, and what is the key advice about live vaccines?",
+    "options": {
+      "A": "She needs no vaccines as she is over 5 years",
+      "B": "Full catch-up programme per PHE guidance: complete DTaP/IPV/Hib/HepB (primary + booster doses), MMR × 2 doses (if not received), Men ACWY, HPV (age-appropriate), Hep B. Live vaccines (MMR, varicella) can be given on same day or ≥4 weeks apart",
+      "C": "Only MMR is needed for children over 5",
+      "D": "All vaccines must be given at 4-week intervals — live vaccines can never be given simultaneously",
+      "E": "She cannot have catch-up vaccines — the schedule is only for children under 5"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per PHE/UKHSA Immunisation of individuals with uncertain or incomplete immunisation status guidance, children with incomplete vaccination history should receive a full catch-up programme including: DTaP/IPV/Hib/HepB (primary series if none received), MMR × 2 doses (4 weeks minimum between doses), MenACWY, HPV (girls and boys 12-13 years, or catch-up to 25 years for MSM). Key rules for live vaccines (MMR, varicella): can be given simultaneously (same day, different sites) OR if not given on same day, must be separated by ≥4 weeks (otherwise immune response to second may be impaired). Inactivated vaccines can be given at any interval.",
+      "A": "Incorrect — Unvaccinated children of any age should receive full catch-up vaccination.",
+      "B": "CORRECT — Full catch-up per PHE; live vaccines same day or ≥4 weeks apart; complete DTaP/MMR/HPV/MenACWY.",
+      "C": "Incorrect — Multiple vaccines are required for catch-up, not just MMR.",
+      "D": "Incorrect — Live vaccines CAN be given simultaneously. The 4-week interval applies ONLY if not given on the same day.",
+      "E": "Incorrect — Catch-up vaccination applies to children and adults of any age."
+    },
+    "reference": "PHE/UKHSA — Vaccination of individuals with uncertain or incomplete status. JCVI Green Book.",
+    "tags": [
+      "catch-up vaccination",
+      "live vaccine timing",
+      "MMR",
+      "4 weeks",
+      "JCVI",
+      "PHE catch-up"
+    ],
+    "source": "Question Grove 360"
+  },
+  {
+    "id": "QG-PAED-089-001",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Paediatrics",
+    "difficulty": "Medium",
+    "question": "A 10-year-old girl presents with a 6-month history of recurrent central abdominal pain (3+ episodes per week), normal stools and no weight loss. Thorough investigation including bloods, USS, coeliac antibodies and urine has been normal. The pain is worse on school days and better at weekends. She appears anxious. Her parents are concerned there is a 'missed diagnosis'. Per NICE CG152, what is the most likely diagnosis and management?",
+    "options": {
+      "A": "Continue investigating — persistent pain always has an organic cause",
+      "B": "Functional abdominal pain / abdominal pain related to functional gastrointestinal disorder (FGID) — refer to CAMHS for psychological intervention (CBT), reassure parents, normalise the diagnosis",
+      "C": "Crohn's disease — refer for colonoscopy",
+      "D": "Urinary tract infection — prophylactic trimethoprim",
+      "E": "Appendicitis — urgent surgical referral"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Functional abdominal pain (FAP)/FGID: recurrent abdominal pain (≥3 episodes over ≥3 months) that interferes with function in a child aged 4-18, without evidence of an organic cause after appropriate investigation. Features suggesting functional: worse at school/stressful times, better at weekends, central/periumbilical location, anxiety co-morbidity, normal thorough investigations. Per NICE CG152 and RCPCH, management: explain and normalise the diagnosis to parents and child (validated reassurance), psychological intervention (CBT or hypnotherapy have evidence in paediatric FAP), CAMHS referral for significant psychological distress, school liaison. Ongoing investigation after negative work-up is harmful (reinforces illness behaviour).",
+      "A": "Incorrect — Persistent pain without alarm features after negative investigation = functional cause. Further investigation is counterproductive.",
+      "B": "CORRECT — Functional abdominal pain: CAMHS/psychological referral + reassurance + normalise diagnosis per NICE CG152.",
+      "C": "Incorrect — No alarm features (rectal bleeding, weight loss, night symptoms, family history IBD). Colonoscopy not indicated.",
+      "D": "Incorrect — Normal urine excludes UTI. Prophylactic trimethoprim is not appropriate.",
+      "E": "Incorrect — Appendicitis presents acutely with right iliac fossa pain, fever and raised inflammatory markers."
+    },
+    "reference": "NICE CG152 — Irritable bowel syndrome in adults (paediatric principles). RCPCH — Functional abdominal pain.",
+    "tags": [
+      "functional abdominal pain",
+      "CAMHS",
+      "paediatric",
+      "CBT",
+      "FGID",
+      "school refusal"
+    ],
+    "source": "Question Grove 360"
+  },
+  {
+    "id": "QG-PAED-089-002",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Paediatrics",
+    "difficulty": "Easy",
+    "question": "A 12-year-old boy is referred to CAMHS for functional abdominal pain. His parents ask what CAMHS will do. Per NICE evidence for paediatric functional abdominal pain, which intervention has the best evidence?",
+    "options": {
+      "A": "Antidepressants alone — SSRIs are first-line in children",
+      "B": "Cognitive behavioural therapy (CBT) — the best-evidenced psychological intervention for paediatric functional abdominal pain",
+      "C": "Hypnotherapy only — no evidence for CBT",
+      "D": "Prolonged inpatient admission for observation",
+      "E": "Dietary manipulation (gluten-free diet) as primary treatment"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per NICE and paediatric gastroenterology evidence, cognitive behavioural therapy (CBT) has the strongest evidence base for paediatric functional abdominal pain and IBS. CBT addresses: thought patterns contributing to pain catastrophising, anxiety reduction, improving coping strategies, school reintegration. Gut-directed hypnotherapy also has good evidence. SSRIs are not first-line in paediatric functional pain without co-morbid depression/anxiety diagnosis. Dietary interventions (low-FODMAP) have growing evidence but are second-line. Inpatient admission is not indicated and may reinforce illness behaviour.",
+      "A": "Incorrect — SSRIs are not first-line for isolated functional abdominal pain without psychiatric diagnosis.",
+      "B": "CORRECT — CBT is the best-evidenced psychological intervention for paediatric functional abdominal pain.",
+      "C": "Incorrect — Both CBT and hypnotherapy have evidence. CBT has stronger systematic review evidence.",
+      "D": "Incorrect — Prolonged inpatient admission is not indicated and may worsen outcomes by reinforcing sick role.",
+      "E": "Incorrect — Gluten-free diet is for coeliac disease (excluded by negative TTG) — not primary treatment for functional pain."
+    },
+    "reference": "NICE — Functional abdominal pain. Cochrane review on CBT for paediatric functional pain.",
+    "tags": [
+      "functional abdominal pain",
+      "CBT",
+      "CAMHS",
+      "paediatric",
+      "psychological intervention",
+      "evidence-based"
+    ],
+    "source": "Question Grove 360"
+  },
+  {
+    "id": "QG-PAED-089-003",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Paediatrics",
+    "difficulty": "Medium",
+    "question": "An 8-year-old girl with recurrent abdominal pain is being assessed. Which features would indicate an organic rather than functional cause, prompting further investigation or urgent referral?",
+    "options": {
+      "A": "Pain worse on school days with associated headaches",
+      "B": "Weight loss, rectal bleeding, nocturnal pain, fever, perianal disease, family history of IBD, elevated CRP/ESR, or faltering growth — these are red flags for organic disease",
+      "C": "Pain lasting more than 6 months",
+      "D": "Anxiety in the child",
+      "E": "All abdominal pain in children is organic until proven otherwise"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Red flag features suggesting organic disease requiring investigation per NICE and BSPGHAN: (1) Involuntary weight loss; (2) Unexplained fever; (3) Rectal bleeding or bloody diarrhoea; (4) Nocturnal pain waking child from sleep; (5) Persistent vomiting; (6) Dysphagia; (7) Perianal disease (fistulae, skin tags, abscesses); (8) Faltering growth; (9) Family history of IBD, coeliac or peptic ulcer; (10) Jaundice; (11) Elevated inflammatory markers (CRP, ESR, raised platelet count, low albumin). Presence of any red flag warrants thorough investigation for organic disease (IBD, coeliac, H. pylori, malrotation, Meckel's).",
+      "A": "Incorrect — School-related pain with headaches is characteristic of functional/psychological aetiology.",
+      "B": "CORRECT — Red flags: weight loss, rectal bleeding, nocturnal pain, fever, perianal disease, family history IBD, raised inflammatory markers.",
+      "C": "Incorrect — Duration alone does not distinguish organic from functional — functional pain is defined by duration ≥3 months.",
+      "D": "Incorrect — Anxiety is a feature of functional abdominal pain — not an organic red flag.",
+      "E": "Incorrect — Functional abdominal pain is very common. All children need appropriate history/exam/basic tests, not extensive investigation without red flags."
+    },
+    "reference": "BSPGHAN — Paediatric functional abdominal pain guidelines. NICE — Red flags in paediatric abdominal pain.",
+    "tags": [
+      "functional abdominal pain",
+      "red flags",
+      "organic disease",
+      "IBD",
+      "weight loss",
+      "rectal bleeding"
+    ],
+    "source": "Question Grove 360"
+  },
+  {
+    "id": "QG-PAED-089-004",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Paediatrics",
+    "difficulty": "Hard",
+    "question": "A 9-year-old child with recurrent abdominal pain and a parent who also has chronic pain is brought in. The parent persistently requests further investigation despite negative work-up and a functional diagnosis. The child appears well but plays up symptoms when the parent is present. What safeguarding consideration should the GP be alert to?",
+    "options": {
+      "A": "No safeguarding concern — parental anxiety is normal",
+      "B": "Factitious or induced illness (FII/MSBP) — when a parent persistently fabricates or induces illness symptoms in a child, leading to unnecessary medical interventions. Document concerns, discuss with named safeguarding lead, consider safeguarding referral if evidence accumulates",
+      "C": "Child abuse by neglect — refer to A&E",
+      "D": "The child is malingering — no medical or psychological input needed",
+      "E": "The child has Munchausen's syndrome — refer to adult psychiatry"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Factitious or Induced Illness (FII), formerly Munchausen's syndrome by proxy (MSBP): a form of child abuse where a parent/carer fabricates or induces physical or psychological illness in a child. Red flags: symptoms only present when parent is present, multiple medical consultations with no diagnosis, child appears well when separated from parent, parent insists on further investigation despite normal results, child's symptoms align suspiciously with parent's health knowledge. Per NICE CG89 (Child maltreatment) and RCPCH FII guidance: document concerns, do not challenge parent directly, discuss with named safeguarding lead, consider child safeguarding referral. This is a spectrum — from health anxiety to deliberate harm.",
+      "A": "Incorrect — The specific pattern (symptoms worse with parent present, repeated unnecessary investigations, negative results) warrants consideration of FII.",
+      "B": "CORRECT — Consider FII: child well without parent + parent insists on investigation + negative results. Safeguarding discussion per RCPCH/NICE CG89.",
+      "C": "Incorrect — Neglect is failure to meet basic needs. FII is a different safeguarding concern.",
+      "D": "Incorrect — Malingering implies conscious deception by the patient (child). FII involves the carer, not the child.",
+      "E": "Incorrect — Munchausen's (factitious disorder) in adults is the person fabricating their own illness. FII involves fabrication on behalf of a child — child safeguarding applies."
+    },
+    "reference": "NICE CG89 — Child maltreatment. RCPCH — Fabricated or Induced Illness guidance 2021.",
+    "tags": [
+      "FII",
+      "factitious induced illness",
+      "MSBP",
+      "safeguarding",
+      "NICE CG89",
+      "RCPCH"
+    ],
+    "source": "Question Grove 360"
+  },
+  {
+    "id": "QG-PAED-089-005",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Paediatrics",
+    "difficulty": "Medium",
+    "question": "A 11-year-old child with confirmed functional abdominal pain and school refusal is reviewed. Despite CAMHS input for 3 months, he continues to miss school 3-4 days per week due to abdominal pain. Per NICE and school attendance guidance, what multidisciplinary approach should be taken?",
+    "options": {
+      "A": "Sign child off school permanently — chronic pain is a valid medical reason for non-attendance",
+      "B": "Coordinated multidisciplinary approach: CAMHS psychological input, GP provides fit note only if medically necessary, school liaison/SENCO involvement for re-integration plan, CAMHS/paediatrician communication with school, family therapy — avoid medically endorsing long-term absence as this reinforces pain behaviour",
+      "C": "Prescribe opioid analgesia to manage pain and enable school attendance",
+      "D": "Refer to hospital for gastrostomy feeding — nutritional support for school-age child with pain",
+      "E": "Legal action against parents for school non-attendance"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Paediatric functional abdominal pain with school refusal requires a coordinated approach. Medically signing the child off school long-term is counterproductive — it reinforces the pain behaviour and sick role, increases anxiety about return, and may constitute educational neglect. Best practice: CAMHS psychological therapy (CBT), school SENCO/pastoral team involvement for graduated re-integration, paediatrician/CAMHS communication with school to confirm there is no organic disease, family therapy to address parental anxiety and pain modelling, GP should avoid excessive medicalisation. Per NICE and school attendance guidance, graded return with support — not prolonged absence.",
+      "A": "Incorrect — Permanent school absence for functional pain is harmful and educationally detrimental.",
+      "B": "CORRECT — MDT approach: CAMHS + school SENCO + family therapy + graduated return to school. Avoid medicalising absence.",
+      "C": "Incorrect — Opioid analgesia is contraindicated in paediatric functional pain — reinforces illness behaviour and has significant addiction risk.",
+      "D": "Incorrect — Gastrostomy has no role in functional abdominal pain without nutritional compromise.",
+      "E": "Incorrect — Legal action is a last resort and requires local authority involvement — not the immediate clinical response."
+    },
+    "reference": "RCPCH — Functional abdominal pain. DfE — School attendance and medical needs guidance.",
+    "tags": [
+      "functional abdominal pain",
+      "school refusal",
+      "MDT",
+      "CAMHS",
+      "SENCO",
+      "graduated return"
+    ],
+    "source": "Question Grove 360"
+  },
+  {
+    "id": "QG-PAED-098-001",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Paediatrics",
+    "difficulty": "Medium",
+    "question": "A 3-year-old girl has had fever (39.1°C) for 6 days. On examination: bilateral non-purulent conjunctival injection, erythematous cracked lips, a strawberry tongue, polymorphic erythematous rash on the trunk, and swollen erythematous hands and feet. There is a single tender cervical lymph node (1.5cm). What is the diagnosis and most important complication to screen for?",
+    "options": {
+      "A": "Scarlet fever — phenoxymethylpenicillin for 10 days",
+      "B": "Kawasaki disease — urgent referral to paediatric cardiology for echocardiogram (coronary artery aneurysms are the feared complication)",
+      "C": "Stevens-Johnson syndrome — dermatology referral",
+      "D": "Viral exanthem — reassurance and antipyretics",
+      "E": "Measles — notify public health and supportive care"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Kawasaki disease (KD): vasculitis of medium-sized arteries predominantly affecting children under 5. Classic criteria (4 of 5 required + fever >5 days): (1) Bilateral non-purulent conjunctivitis; (2) Changes in lips/oral mucosa (strawberry tongue, cracked lips); (3) Polymorphic rash; (4) Changes in extremities (erythema/oedema of hands/feet, later periungual peeling); (5) Cervical lymphadenopathy ≥1.5cm. This girl meets all 5 criteria + fever >5 days = classic KD. Most feared complication: coronary artery aneurysms (in 25% of untreated cases). Treatment: high-dose aspirin + IV immunoglobulin (IVIG) reduce aneurysm risk to <5%.",
+      "A": "Incorrect — Scarlet fever causes sandpaper rash with Pastia's lines and strawberry tongue — but lacks conjunctivitis, lip changes and limb oedema.",
+      "B": "CORRECT — Classic Kawasaki disease: urgent paediatric cardiology referral for echo. Treat with IVIG + aspirin.",
+      "C": "Incorrect — Stevens-Johnson syndrome causes target lesions and mucosal blistering/necrosis — different picture.",
+      "D": "Incorrect — Viral exanthem does not cause fever >5 days with all 5 Kawasaki criteria.",
+      "E": "Incorrect — Measles causes Koplik spots, coryza, photophobia and maculopapular rash — no conjunctival injection without discharge."
+    },
+    "reference": "NICE CKS — Kawasaki disease. AHA — Kawasaki disease guidelines. RCPCH — Kawasaki disease.",
+    "tags": [
+      "Kawasaki disease",
+      "coronary artery aneurysm",
+      "IVIG",
+      "aspirin",
+      "fever 5 days",
+      "NICE CKS"
+    ],
+    "source": "Question Grove 360"
+  },
+  {
+    "id": "QG-PAED-098-002",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Paediatrics",
+    "difficulty": "Easy",
+    "question": "A 2-year-old boy has a 3-day history of fever (39.5°C). This morning the fever broke and he developed a rose-pink maculopapular rash on his trunk spreading to limbs. He is otherwise well, feeding normally and had a febrile seizure during the fever (now resolved). What is the diagnosis?",
+    "options": {
+      "A": "Measles — notify public health",
+      "B": "Roseola infantum (exanthem subitum, HHV-6) — viral exanthem appearing as fever resolves; self-limiting; explain febrile seizure risk and management to parents",
+      "C": "Meningococcal disease — non-blanching rash requiring emergency treatment",
+      "D": "Kawasaki disease — refer to paediatrics",
+      "E": "Rubella — isolate from pregnant contacts"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Roseola infantum (sixth disease): caused by human herpesvirus 6 (HHV-6). Classic pattern: HIGH fever for 3-5 days (child relatively well despite high temperature) → fever resolves → characteristic rose-pink maculopapular rash appears on trunk (as fever breaks). Age: 6 months to 2 years typically. Febrile seizures occur in ~15% of cases during the fever phase — NOT a sign of CNS involvement. Management: reassurance and antipyretics — completely self-limiting. Explain febrile seizure management (stay with child, safe position, call 999 if >5 minutes). No notification required.",
+      "A": "Incorrect — Measles: cough, coryza, conjunctivitis, Koplik's spots preceding the rash. Does not appear as fever resolves.",
+      "B": "CORRECT — Roseola infantum (HHV-6): rash appears as fever resolves, most common cause of febrile seizures in under-2s.",
+      "C": "Incorrect — Meningococcal rash is non-blanching petechial/purpuric — not rose-pink maculopapular appearing as fever resolves.",
+      "D": "Incorrect — Kawasaki requires fever >5 days with specific diagnostic criteria. This is 3-day fever then well child with rash.",
+      "E": "Incorrect — Rubella causes mild fever with posterior auricular lymphadenopathy and spreading maculopapular rash — different timing and pattern."
+    },
+    "reference": "NICE CKS — Roseola infantum. PHE — Viral exanthems in children.",
+    "tags": [
+      "roseola infantum",
+      "HHV-6",
+      "exanthem subitum",
+      "febrile seizure",
+      "rash after fever",
+      "NICE CKS"
+    ],
+    "source": "Question Grove 360"
+  },
+  {
+    "id": "QG-PAED-098-003",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Paediatrics",
+    "difficulty": "Medium",
+    "question": "A 6-year-old child presents with fever, headache and a non-blanching petechial rash on the legs and buttocks. He looks unwell with HR 128 and feels cold and clammy. Per NICE NG51, what is the most appropriate immediate management?",
+    "options": {
+      "A": "Observe and repeat examination in 2 hours",
+      "B": "Call 999 — suspected meningococcal septicaemia. Administer IV/IM benzylpenicillin 600mg (6-9 years) immediately if meningococcal disease suspected and before transfer",
+      "C": "Take bloods and lumbar puncture before treating",
+      "D": "Start oral antibiotics and refer to paediatric outpatient clinic",
+      "E": "Reassure — petechiae are common in viral illness"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Non-blanching petechial/purpuric rash with fever and haemodynamic compromise (tachycardia, cold/clammy peripheries) = meningococcal septicaemia until proven otherwise. This is a LIFE-THREATENING emergency with up to 10-15% mortality and 15% morbidity even with treatment. Per NICE NG51 and BNF: administer IV/IM benzylpenicillin immediately (dose by age: <1 year: 300mg, 1-9 years: 600mg, ≥10 years: 1.2g) before or during transfer to hospital. Do NOT delay antibiotics for investigations — blood cultures taken en route. If penicillin allergy: cefotaxime 50mg/kg IV. Call 999 immediately.",
+      "A": "Incorrect — Observing a child with possible meningococcal septicaemia risks death. Act immediately.",
+      "B": "CORRECT — Call 999 + give benzylpenicillin 600mg IM immediately (for age 6) before transfer per NICE NG51/BNF.",
+      "C": "Incorrect — Lumbar puncture must NEVER be done before antibiotics in suspected meningococcal disease — delay risks herniation and death.",
+      "D": "Incorrect — Oral antibiotics are inadequate for meningococcal septicaemia. Outpatient referral would result in death.",
+      "E": "Incorrect — Non-blanching rash with fever and circulatory compromise is never a benign viral illness. Act as meningococcal disease."
+    },
+    "reference": "NICE NG51 — Meningitis (bacterial) and meningococcal septicaemia. BNF — Benzylpenicillin doses by age.",
+    "tags": [
+      "meningococcal septicaemia",
+      "benzylpenicillin",
+      "non-blanching rash",
+      "emergency",
+      "NICE NG51",
+      "BNF"
+    ],
+    "source": "Question Grove 360"
+  },
+  {
+    "id": "QG-PAED-098-004",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Paediatrics",
+    "difficulty": "Hard",
+    "question": "A 4-year-old child presents with fever, painful swollen right knee and a migratory arthritis affecting the ankles over the past 2 weeks. 3 weeks ago she had a sore throat. Blood tests show elevated CRP 68, ESR 80, elevated ASOT (anti-streptolysin O titre). ECG shows prolonged PR interval. What is the diagnosis and management?",
+    "options": {
+      "A": "Reactive arthritis — naproxen and physiotherapy",
+      "B": "Acute rheumatic fever — benzylpenicillin/phenoxymethylpenicillin, aspirin/naproxen for arthritis, echocardiogram, cardiac monitoring, secondary prophylaxis with penicillin V for 5-10 years",
+      "C": "Juvenile idiopathic arthritis — methotrexate",
+      "D": "Septic arthritis — urgent joint aspiration",
+      "E": "Viral arthritis — reassurance and NSAIDs"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Acute rheumatic fever (ARF): follows Group A Streptococcal (GAS) pharyngitis 2-4 weeks prior. Jones Criteria (2015 AHA): Major criteria — carditis (including subclinical on echo), polyarthritis, chorea, erythema marginatum, subcutaneous nodules. Minor criteria — fever, raised ESR/CRP, prolonged PR. This child has: migratory polyarthritis + carditis (prolonged PR interval) + elevated ASOT + preceding throat infection = ARF. Management: (1) eradicate GAS — benzylpenicillin IM or phenoxymethylpenicillin oral; (2) anti-inflammatory: aspirin/naproxen for arthritis; (3) echocardiogram (subclinical carditis); (4) long-term penicillin V secondary prophylaxis (5 years or until age 21, whichever longer — prevents recurrence and rheumatic heart disease).",
+      "A": "Incorrect — Reactive arthritis does not cause carditis or prolonged PR interval.",
+      "B": "CORRECT — Acute rheumatic fever: penicillin + NSAIDs + echo + secondary prophylaxis per Jones criteria/AHA.",
+      "C": "Incorrect — JIA does not present acutely post-streptococcal with elevated ASOT and PR prolongation.",
+      "D": "Incorrect — Septic arthritis is monoarticular with systemic sepsis — not migratory polyarthritis.",
+      "E": "Incorrect — Viral arthritis does not cause PR prolongation or elevated ASOT."
+    },
+    "reference": "AHA Jones Criteria 2015 — Acute rheumatic fever. NICE CKS — Rheumatic fever.",
+    "tags": [
+      "acute rheumatic fever",
+      "Jones criteria",
+      "penicillin prophylaxis",
+      "carditis",
+      "ASOT",
+      "streptococcal"
+    ],
+    "source": "Question Grove 360"
+  },
+  {
+    "id": "QG-PAED-098-005",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Paediatrics",
+    "difficulty": "Easy",
+    "question": "A 4-year-old boy presents with fever (38.5°C), cough, runny nose and watery eyes for 3 days. Today he has developed a blotchy red rash starting on the face and spreading to the neck and trunk. He has not been vaccinated. On examination there are small white spots on the buccal mucosa. What is the diagnosis and most important public health action?",
+    "options": {
+      "A": "Roseola infantum — self-limiting, no action",
+      "B": "Measles — notify public health/UKHSA immediately (measles is a notifiable disease); supportive care; isolate from vulnerable contacts",
+      "C": "Rubella — notify public health if pregnant contacts present",
+      "D": "Scarlet fever — phenoxymethylpenicillin and UKHSA notification",
+      "E": "Hand, foot and mouth disease — reassure and prevent spread"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Measles: prodrome of 3Cs (Cough, Coryza, Conjunctivitis) + fever → Koplik's spots (pathognomonic — white spots on buccal mucosa 'grains of salt on red background') → maculopapular rash starting on face and spreading downward. Unvaccinated child. Measles is a NOTIFIABLE disease — must be reported to UKHSA immediately. Management: supportive (antipyretics, fluids, vitamin A in malnourished/at-risk); isolate for 4 days after rash appears; post-exposure prophylaxis (MMR within 72 hours or IVIG within 6 days) for vulnerable contacts (immunocompromised, infants, unvaccinated pregnant women).",
+      "A": "Incorrect — Roseola appears as fever resolves, not with prodromal 3Cs and Koplik's spots.",
+      "B": "CORRECT — Measles (3Cs + Koplik spots + spreading rash + unvaccinated): notify UKHSA immediately.",
+      "C": "Incorrect — Rubella is notifiable but this presentation is classic measles (Koplik spots are pathognomonic).",
+      "D": "Incorrect — Scarlet fever has sandpaper rash without 3Cs or Koplik spots.",
+      "E": "Incorrect — HFMD causes small blisters on hands/feet/mouth — not the 3Cs + Koplik spots + widespread rash."
+    },
+    "reference": "PHE/UKHSA — Measles management. NICE CKS — Measles. Notifiable diseases list.",
+    "tags": [
+      "measles",
+      "Koplik spots",
+      "notifiable disease",
+      "UKHSA",
+      "unvaccinated",
+      "3Cs"
+    ],
+    "source": "Question Grove 360"
+  },
+  {
+    "id": "QG-PAED-121-001",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Paediatrics",
+    "difficulty": "Easy",
+    "question": "A 15-month-old girl is brought to the GP with a 2-day fever (38.8°C). She is feeding normally, alert and responsive, crying normally, has moist mucous membranes, normal skin colour and has a normal respiratory rate. Her parents are very anxious. Per NICE NG143 traffic light system, which risk category does she fall into?",
+    "options": {
+      "A": "Red (high risk) — all fevers in children under 2 are high risk",
+      "B": "Amber (medium risk) — the GP cannot identify a source of fever and the child should be safety-netted with specific return advice",
+      "C": "Green (low risk) — all features are reassuring; manage at home with safety-netting advice",
+      "D": "Green/amber uncertain — all febrile children under 2 must be admitted",
+      "E": "Red — requires immediate hospital admission"
+    },
+    "correct_answer": "C",
+    "explanation": {
+      "correct": "Per NICE NG143 (Fever in under 5s) traffic light system: Green features (reassuring) include: normal colour, responding normally, normal cry, content/smiles, awake/awakens quickly, normal activity, moist mucous membranes, no red/amber features. All features described are GREEN. Management: manage at home, fever management advice (paracetamol/ibuprofen), safety-netting (return if: develops rash, becomes less responsive, stops feeding, develops difficulty breathing, parents concerned). Reassure parents. Children with all green features do NOT need routine investigation or hospital attendance.",
+      "A": "Incorrect — Age alone does not place a child in red. Traffic light assessment is based on clinical features.",
+      "B": "Incorrect — This child has ALL green features. Amber includes e.g. pallor, not responding normally, bulging fontanelle.",
+      "C": "CORRECT — All green features: manage at home with safety-netting per NICE NG143 traffic light system.",
+      "D": "Incorrect — Children with all green features do not require hospital admission.",
+      "E": "Incorrect — Red features (e.g. non-blanching rash, mottled/pale/blue, not responding, grunting, bulging fontanelle) are absent here."
+    },
+    "reference": "NICE NG143 — Fever in under 5s: assessment and initial management. https://www.nice.org.uk/guidance/ng143",
+    "tags": [
+      "fever",
+      "NICE NG143",
+      "traffic light",
+      "green features",
+      "safety netting",
+      "under 5s"
+    ],
+    "source": "Question Grove 360"
+  },
+  {
+    "id": "QG-PAED-121-002",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Paediatrics",
+    "difficulty": "Medium",
+    "question": "A 9-month-old baby is brought with fever of 39.2°C. He is pale and wakes only briefly when his name is called. He has reduced fluid intake today. His respiratory rate is 50 breaths/min. Per NICE NG143 traffic light system, what features place him in the amber/red category and what is the appropriate management?",
+    "options": {
+      "A": "Green features — manage at home",
+      "B": "Multiple amber/red features (pallor, reduced response, tachypnoea, reduced intake) — refer to hospital paediatric assessment unit urgently; investigations: FBC, CRP, blood cultures, urine, chest X-ray if clinically indicated",
+      "C": "Amber — prescribe oral antibiotics and review in 48 hours",
+      "D": "Red — call 999 and give IV benzylpenicillin",
+      "E": "Amber — take throat swab and reassure"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per NICE NG143, amber features include: pallor reported by parent, not responding normally (wakes only briefly), nasal flaring, tachypnoea (RR >50 in <12 months = amber), reduced fluid intake (<50% normal), dry mucous membranes, no wet nappies for >8 hours. This baby has: pallor, reduced response, tachypnoea (RR 50 in 9-month-old = borderline amber/red), reduced intake = multiple amber features. Immediate action: urgent hospital referral for paediatric assessment, investigations (FBC, CRP, urine, blood cultures), consider empirical antibiotics if source not identified. Red features (non-blanching rash, poor peripheral perfusion, HR >200) are absent here, so 999 + benzylpenicillin not indicated unless red features develop.",
+      "A": "Incorrect — Multiple amber features preclude home management.",
+      "B": "CORRECT — Multiple amber features: urgent hospital paediatric assessment per NICE NG143.",
+      "C": "Incorrect — Amber features require hospital assessment, not empirical oral antibiotics from primary care.",
+      "D": "Incorrect — Benzylpenicillin is for red features (suspected meningococcal disease with non-blanching rash). This is amber.",
+      "E": "Incorrect — Throat swab and reassurance is wholly inadequate for a child with multiple amber features."
+    },
+    "reference": "NICE NG143 — Fever in under 5s. https://www.nice.org.uk/guidance/ng143",
+    "tags": [
+      "fever",
+      "NICE NG143",
+      "amber features",
+      "hospital referral",
+      "traffic light",
+      "under 5s"
+    ],
+    "source": "Question Grove 360"
+  },
+  {
+    "id": "QG-PAED-121-003",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Paediatrics",
+    "difficulty": "Hard",
+    "question": "A 2-year-old child has a temperature of 40.1°C and is brought in looking very unwell. He has a non-blanching purpuric rash on his legs and buttocks, mottled skin, glazed eyes and HR 180 bpm. He has oxygen saturations of 93% on air. Per NICE NG51, what are the immediate RED features and the priority management?",
+    "options": {
+      "A": "Amber features — urgent referral to hospital by GP car",
+      "B": "RED features (non-blanching rash, mottled skin, poor peripheral perfusion, altered consciousness, tachycardia, hypoxia) = suspected meningococcal disease/septicaemia. 999 immediately + IV/IM benzylpenicillin 600mg (age 1-9 years) before arrival of ambulance",
+      "C": "Start oral co-amoxiclav and transfer to hospital",
+      "D": "Give paracetamol and reassess in 30 minutes",
+      "E": "Give oxygen and await paramedics without antibiotics"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "NICE NG143 RED features: non-blanching rash, mottled/ashen/blue skin, no response to social cues, does not stay awake, has a weak/high-pitched cry, grunting, RR >60, moderate/severe chest indrawing, SpO2 <92% in air, cap refill >3 seconds, HR >200 (<12 months) or >180 (12 months-2 years). This child has multiple red features. Per NICE NG51 (Meningitis bacterial and meningococcal septicaemia): immediately call 999 AND give IM benzylpenicillin 600mg (age 1-9 years) before ambulance arrives — if IV access available, IV is preferred. Do not delay for any reason. This is a life-threatening emergency.",
+      "A": "Incorrect — GP car transfer risks arrest en route. 999 is mandatory. These are red not amber features.",
+      "B": "CORRECT — Multiple red features = 999 + benzylpenicillin 600mg IM immediately per NICE NG51/NICE NG143.",
+      "C": "Incorrect — Oral antibiotics are inadequate. Immediate IV/IM benzylpenicillin is required.",
+      "D": "Incorrect — Paracetamol and reassessment waste precious time in suspected meningococcal septicaemia.",
+      "E": "Incorrect — Benzylpenicillin must be given immediately — do not wait for paramedics."
+    },
+    "reference": "NICE NG51 — Meningitis and meningococcal septicaemia. NICE NG143 — Fever in under 5s.",
+    "tags": [
+      "meningococcal septicaemia",
+      "red features",
+      "benzylpenicillin",
+      "999",
+      "NICE NG51",
+      "NICE NG143"
+    ],
+    "source": "Question Grove 360"
+  },
+  {
+    "id": "QG-PAED-121-004",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Paediatrics",
+    "difficulty": "Medium",
+    "question": "Parents of a 2-year-old with a fever call the GP practice asking for advice on managing fever at home. Per NICE NG143, what is the evidence-based advice about antipyretics?",
+    "options": {
+      "A": "Paracetamol and ibuprofen should be alternated every 2 hours for maximum effect",
+      "B": "Either paracetamol OR ibuprofen can be used to treat distress/discomfort from fever. Do not alternate or combine routinely — use one, switch to the other only if the first does not reduce distress. Tepid sponging is not recommended",
+      "C": "Aspirin is appropriate for fever in children",
+      "D": "Fevers should not be treated with medication — the fever itself is beneficial",
+      "E": "Ibuprofen is contraindicated under 3 years of age"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per NICE NG143, antipyretic advice for children with fever at home: (1) Paracetamol OR ibuprofen (not aspirin — risk of Reye's syndrome); (2) Do not routinely alternate or combine paracetamol and ibuprofen — give one; if distress not controlled, switch to the other; (3) Treat to reduce distress from fever, not to normalise temperature per se; (4) Tepid sponging is NOT recommended (no evidence, causes discomfort); (5) Light clothing and appropriate room temperature; (6) Ensure adequate fluid intake. Ibuprofen is licensed from 3 months (not 3 years). Alternating antipyretics has limited evidence and risks dosing errors.",
+      "A": "Incorrect — Alternating every 2 hours is not NICE NG143 guidance and risks dosing errors.",
+      "B": "CORRECT — Use one antipyretic (not aspirin), switch if needed but don't alternate routinely. No tepid sponging per NICE NG143.",
+      "C": "Incorrect — Aspirin is CONTRAINDICATED in children under 16 due to risk of Reye's syndrome.",
+      "D": "Incorrect — Antipyretics should be used to reduce distress associated with fever — not to withhold relief from distressed children.",
+      "E": "Incorrect — Ibuprofen is licensed from 3 months of age (at least 5kg bodyweight) in the UK."
+    },
+    "reference": "NICE NG143 — Fever in under 5s. https://www.nice.org.uk/guidance/ng143",
+    "tags": [
+      "fever management",
+      "paracetamol",
+      "ibuprofen",
+      "antipyretics",
+      "NICE NG143",
+      "tepid sponging"
+    ],
+    "source": "Question Grove 360"
+  },
+  {
+    "id": "QG-PAED-121-005",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Paediatrics",
+    "difficulty": "Easy",
+    "question": "A 3-year-old child presents with a temperature of 39.8°C and no identifiable source. Her NICE NG143 assessment shows all green features. Per NICE NG143, does a fever without a source in a child under 5 require routine urine testing?",
+    "options": {
+      "A": "No — routine urine testing is not needed for children with green features and no urinary symptoms",
+      "B": "Yes — all febrile children under 5 must have a urine sample tested regardless of symptoms",
+      "C": "Only if the fever has lasted more than 5 days",
+      "D": "Urine testing is only for boys under 1 year",
+      "E": "NICE NG143 does not address urine testing"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per NICE NG143, urinary tract infection (UTI) should be actively excluded in all children under 5 with fever without an obvious source. UTI is the most common serious bacterial infection in young children and frequently presents with fever alone (no urinary symptoms). Recommendation: clean catch urine (or urine bag/pad if not possible) for dipstick ± culture in ALL febrile children under 5 without an obvious alternative diagnosis. This applies even with green features — UTI can present with no amber/red signs initially. A missed UTI risks ascending infection (pyelonephritis, urosepsis, renal scarring).",
+      "A": "Incorrect — NICE NG143 specifically recommends urine testing in febrile children under 5 to exclude UTI even without urinary symptoms.",
+      "B": "CORRECT — Urine testing is recommended for all febrile under-5s without an obvious source per NICE NG143.",
+      "C": "Incorrect — Duration does not determine UTI testing threshold — any fever without source requires urine testing.",
+      "D": "Incorrect — UTI testing applies to all children under 5 (both sexes) with fever without a source.",
+      "E": "Incorrect — NICE NG143 explicitly addresses urine testing for UTI in febrile children."
+    },
+    "reference": "NICE NG143 — Fever in under 5s. https://www.nice.org.uk/guidance/ng143",
+    "tags": [
+      "fever",
+      "UTI",
+      "urine testing",
+      "NICE NG143",
+      "under 5s",
+      "fever without source"
+    ],
+    "source": "Question Grove 360"
+  },
+  {
+    "id": "QG-PAED-134-001",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Paediatrics",
+    "difficulty": "Medium",
+    "question": "A 10-month-old baby has fallen from the 50th centile at birth to the 2nd centile for weight at her 9-month developmental check. She is breastfed and has been recently weaned onto solid foods. She appears interactive and developmentally appropriate. Her mother is also small (height 152cm). Per NICE CG32, what is the definition of faltering growth and the appropriate first step?",
+    "options": {
+      "A": "Faltering growth requires centile fall >3 centile spaces in any period — refer immediately to paediatrics",
+      "B": "Faltering growth: weight falling across ≥2 centile spaces on the UKWHO growth chart, or weight consistently below the 2nd centile. First step: thorough history, dietary assessment, exclude organic disease, support breastfeeding/weaning, review at 2-4 weeks",
+      "C": "This is normal variation — babies always lose centiles after 6 months",
+      "D": "Start supplementary formula feeds immediately — breastfeeding inadequate",
+      "E": "Refer urgently to social services — faltering growth suggests neglect"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per NICE CG32 (Faltering growth) and RCPCH growth charts, faltering growth (previously called 'failure to thrive') is defined as weight that: falls across ≥2 centile spaces on the UKWHO chart, OR is below the 2nd centile at any age. This baby has fallen from 50th to 2nd centile = significant centile crossing. First steps: thorough dietary history (weaning, milk intake, family patterns), assessment for organic causes (coeliac, UTI, cardiac disease, metabolic), anthropometric measurements (weight, height, head circumference), family height consideration (constitutional smallness). Mother's small stature suggests possible constitutional factor but centile drop still warrants assessment.",
+      "A": "Incorrect — The threshold is ≥2 centile spaces (not 3) on UKWHO chart. Immediate referral without assessment is premature.",
+      "B": "CORRECT — Faltering growth: centile drop ≥2 spaces or below 2nd centile. Thorough history + dietary assessment + organic cause exclusion per NICE CG32.",
+      "C": "Incorrect — While some physiological centile adjustment occurs in the first months, a fall from 50th to 2nd centile is not normal.",
+      "D": "Incorrect — Stopping breastfeeding is not the first step — dietary assessment and support comes first.",
+      "E": "Incorrect — Social services referral is not automatic — organic and nutritional causes must be assessed first."
+    },
+    "reference": "NICE CG32 — Faltering growth. https://www.nice.org.uk/guidance/cg32",
+    "tags": [
+      "faltering growth",
+      "failure to thrive",
+      "centile",
+      "NICE CG32",
+      "UKWHO chart",
+      "dietary assessment"
+    ],
+    "source": "Question Grove 360"
+  },
+  {
+    "id": "QG-PAED-134-002",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Paediatrics",
+    "difficulty": "Hard",
+    "question": "A 2-year-old boy with Down syndrome has been found to have a height and weight below the 2nd centile on standard UKWHO charts. His parents are concerned. What is the most appropriate growth assessment tool and monitoring approach for a child with Down syndrome?",
+    "options": {
+      "A": "UKWHO growth charts — same as all children",
+      "B": "Down syndrome-specific growth charts should be used (e.g. Down Syndrome Growth Foundation charts) as children with trisomy 21 have different growth expectations. Also exclude treatable causes of poor growth: hypothyroidism (annual TSH), coeliac disease (anti-TTG), and cardiac disease",
+      "C": "No monitoring needed — small stature is expected in Down syndrome",
+      "D": "Growth hormone therapy as first-line",
+      "E": "Refer to paediatric endocrinology immediately — all children with Down syndrome have growth hormone deficiency"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Children with Down syndrome have intrinsically lower growth parameters than chromosomally typical children. Using standard UKWHO charts will lead to almost all children with DS appearing to have 'faltering growth' when they are actually following their expected DS trajectory. Down syndrome-specific growth charts (UK charts available from the Down Syndrome Growth Foundation/DSMIG) should be used. Additionally, treatable causes of poor growth in DS must be excluded: hypothyroidism (annual TSH monitoring — high prevalence), coeliac disease (anti-TTG IgA), congenital heart disease review, nutritional assessment.",
+      "A": "Incorrect — Standard UKWHO charts are inappropriate for Down syndrome — DS-specific charts are required.",
+      "B": "CORRECT — DS-specific growth charts + exclude hypothyroidism, coeliac and cardiac disease per DSMIG guidelines.",
+      "C": "Incorrect — While some growth restriction is expected, treatable causes must be excluded and DS-specific monitoring is required.",
+      "D": "Incorrect — Growth hormone therapy is not routine first-line for Down syndrome short stature.",
+      "E": "Incorrect — GH deficiency is not universal in DS. DSMIG-guided monitoring is appropriate in primary/community care."
+    },
+    "reference": "DSMIG — Down Syndrome growth charts and guidelines. NICE CG32 — Faltering growth.",
+    "tags": [
+      "Down syndrome",
+      "growth charts",
+      "DS-specific charts",
+      "hypothyroidism",
+      "coeliac",
+      "DSMIG"
+    ],
+    "source": "Question Grove 360"
+  },
+  {
+    "id": "QG-PAED-134-003",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Paediatrics",
+    "difficulty": "Easy",
+    "question": "A GP is plotting a 3-year-old child's weight on a growth chart. The child's weight has been plotted on two occasions 6 months apart and has crossed two centile lines downward (from 75th to 25th centile). The child appears to be eating well and is developmentally normal. Per NICE CG32, what are the possible non-organic causes of faltering growth that should be considered?",
+    "options": {
+      "A": "Inadequate caloric intake, food refusal, feeding difficulties, poor feeding technique, psychosocial issues (poverty, neglect, maternal depression, parent-child interaction difficulties)",
+      "B": "Coeliac disease and hypothyroidism are the only causes",
+      "C": "Faltering growth only has organic causes — always investigate fully",
+      "D": "Non-organic causes are not relevant in children over 2 years",
+      "E": "Poor growth in a well child is always normal variation"
+    },
+    "correct_answer": "A",
+    "explanation": {
+      "correct": "Per NICE CG32, faltering growth has organic and non-organic causes. Non-organic causes are the most common: inadequate caloric intake (most common overall), food refusal/selective eating, feeding difficulties (oral motor issues), poor feeding technique or knowledge, food insecurity/poverty, psychosocial factors (maternal depression, neglect, disturbed parent-child attachment, adverse childhood experiences). Organic causes: coeliac disease, hypothyroidism, cardiac disease, chronic infection (UTI), inflammatory bowel disease, metabolic disorders, malabsorption syndromes. A thorough dietary and social history is as important as medical investigation.",
+      "A": "CORRECT — Non-organic causes: inadequate intake, food refusal, feeding difficulties, psychosocial factors per NICE CG32.",
+      "B": "Incorrect — Coeliac and hypothyroidism are organic causes. Non-organic (dietary/social) causes are more common.",
+      "C": "Incorrect — Non-organic causes are very common and should always be considered alongside organic investigation.",
+      "D": "Incorrect — Non-organic causes remain relevant at all ages.",
+      "E": "Incorrect — Crossing 2 centile lines is not normal variation — it requires assessment per NICE CG32."
+    },
+    "reference": "NICE CG32 — Faltering growth. https://www.nice.org.uk/guidance/cg32",
+    "tags": [
+      "faltering growth",
+      "non-organic",
+      "dietary",
+      "psychosocial",
+      "NICE CG32",
+      "feeding difficulties"
+    ],
+    "source": "Question Grove 360"
+  },
+  {
+    "id": "QG-PAED-134-004",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Paediatrics",
+    "difficulty": "Medium",
+    "question": "A 18-month-old child with confirmed faltering growth has been seen by a paediatric dietitian. Despite dietary optimisation over 6 weeks, weight gain remains inadequate. Blood tests show: positive anti-TTG IgA (20 U/mL — positive), normal IgA level. What is the most likely organic cause and next step?",
+    "options": {
+      "A": "Start gluten-free diet immediately — anti-TTG positive confirms coeliac disease",
+      "B": "Refer to paediatric gastroenterology for small bowel biopsy to confirm coeliac disease before starting a gluten-free diet",
+      "C": "Repeat anti-TTG in 6 months — may be transiently positive",
+      "D": "Start high-dose vitamin D and iron — malabsorption supplements",
+      "E": "Discharge — anti-TTG is not reliable in children under 2 years"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Coeliac disease is a common cause of faltering growth in children. Per NICE NG20 (Coeliac disease: recognition, assessment and management), a positive anti-TTG IgA test in a child should be followed by: paediatric gastroenterology referral for duodenal biopsy (confirming villous atrophy/Marsh classification) before starting a gluten-free diet. In children with very high anti-TTG (>10x ULN) with confirmatory HLA-DQ2/DQ8, recent European guidelines allow biopsy-free diagnosis — but this requires specialist review. Importantly: the child must CONTINUE EATING GLUTEN until the biopsy is performed, as a gluten-free diet normalises anti-TTG and histology, making diagnosis impossible.",
+      "A": "Incorrect — Starting GFD before biopsy invalidates the diagnostic process. Biopsy (or specialist evaluation for biopsy-free criteria) must occur first.",
+      "B": "CORRECT — Anti-TTG positive: refer to paediatric gastroenterology for biopsy per NICE NG20. Continue gluten until biopsy.",
+      "C": "Incorrect — Anti-TTG IgA positive in the context of faltering growth warrants immediate action — not a repeat in 6 months.",
+      "D": "Incorrect — Supplementing without diagnosing the cause of malabsorption is insufficient.",
+      "E": "Incorrect — Anti-TTG IgA is reliable in children over 2 years with normal IgA levels. This child is 18 months (slightly young) but positive result still warrants referral."
+    },
+    "reference": "NICE NG20 — Coeliac disease. https://www.nice.org.uk/guidance/ng20",
+    "tags": [
+      "coeliac disease",
+      "anti-TTG",
+      "faltering growth",
+      "small bowel biopsy",
+      "NICE NG20",
+      "gluten-free diet"
+    ],
+    "source": "Question Grove 360"
+  },
+  {
+    "id": "QG-PAED-134-005",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Paediatrics",
+    "difficulty": "Hard",
+    "question": "A health visitor is concerned about a 6-month-old baby whose weight has dropped from the 25th centile at birth to below the 0.4th centile. The mother is young (16 years old), lives alone and appears low in mood. The baby is dirty, has a nappy rash and the flat is cold. The GP is involved. Per NICE CG32 and safeguarding guidance, what must be considered alongside the medical management?",
+    "options": {
+      "A": "Only dietary intervention is needed — social circumstances do not affect weight",
+      "B": "Significant faltering growth in a young single mother with apparent neglect indicators (dirty baby, cold home, poor mood) requires a safeguarding referral under Section 47 (Children Act 1989) in addition to medical assessment — faltering growth may represent child neglect",
+      "C": "Refer to paediatric dietitian only and discharge the family",
+      "D": "Mother needs antidepressants — maternal depression is the only concern",
+      "E": "Only refer to social services if the GP witnesses abuse directly"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Faltering growth combined with neglect indicators (dirty baby, inadequate heating, maternal depression, social isolation, young mother) constitutes a safeguarding concern. Per NICE CG32, faltering growth may be a presenting sign of child neglect. Per NICE CG89 (Child maltreatment) and Working Together to Safeguard Children (2023), professionals must consider safeguarding when a child's health or development is impaired by a parent's failure to provide basic needs. The threshold for referral: 'reasonable cause to suspect' significant harm. Combined medical and social care assessment is required. Under Section 47 (Children Act 1989), a child protection investigation may be initiated. This does not mean automatic removal — it enables assessment and support.",
+      "A": "Incorrect — Social circumstances are directly relevant to faltering growth aetiology and safeguarding.",
+      "B": "CORRECT — Neglect indicators + severe faltering growth = safeguarding referral under Children Act 1989 alongside medical assessment.",
+      "C": "Incorrect — Dietitian referral is appropriate but safeguarding concern must also be addressed.",
+      "D": "Incorrect — Maternal depression is a risk factor but not the only or primary concern here.",
+      "E": "Incorrect — Safeguarding referral threshold is 'reasonable cause to suspect' harm — direct witnessing is not required."
+    },
+    "reference": "NICE CG32 — Faltering growth. NICE CG89 — Child maltreatment. Working Together 2023. Children Act 1989.",
+    "tags": [
+      "faltering growth",
+      "neglect",
+      "safeguarding",
+      "Children Act",
+      "NICE CG32",
+      "NICE CG89"
+    ],
+    "source": "Question Grove 360"
+  }
+]
