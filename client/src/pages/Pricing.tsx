@@ -31,7 +31,7 @@ export default function Pricing() {
             Simple, Transparent Pricing
           </h1>
           <p className="text-xl text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
-            Choose the plan that fits your exam preparation journey. All plans include a 7-day free trial.
+            Choose the plan that fits your exam preparation journey. Coupon codes available from admin on request.
           </p>
         </div>
 
@@ -48,7 +48,6 @@ export default function Pricing() {
               "Basic Study Notes",
               "Email support",
             ]}
-            trialDays={7}
           />
           <PricingCard
             name="Professional"
@@ -64,7 +63,6 @@ export default function Pricing() {
               "Priority email support",
               "Weekly progress reports",
             ]}
-            trialDays={7}
           />
           <PricingCard
             name="Elite"
@@ -80,7 +78,6 @@ export default function Pricing() {
               "Personalized study plans",
               "Phone support",
             ]}
-            trialDays={7}
           />
         </div>
 

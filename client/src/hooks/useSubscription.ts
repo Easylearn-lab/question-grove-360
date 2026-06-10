@@ -10,6 +10,7 @@ export function useSubscription() {
     retry: 1,
   });
 
+  // "trialing" status = admin-issued 3-day coupon access
   const isPremium =
     subscriptionQuery.data?.status === "active" ||
     subscriptionQuery.data?.status === "trialing";

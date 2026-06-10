@@ -17,7 +17,6 @@ export const stripeRouter = router({
   createCheckoutSession: protectedProcedure
     .input(z.object({
       planKey: z.enum(["STARTER", "PROFESSIONAL", "ELITE"]),
-      trialDays: z.number().optional(),
     }))
     .mutation(async ({ ctx, input }) => {
       const stripe = getStripe();
@@ -51,9 +50,6 @@ export const stripeRouter = router({
           plan_key: input.planKey,
         },
         allow_promotion_codes: true,
-        subscription_data: input.trialDays ? {
-          trial_period_days: input.trialDays,
-        } : undefined,
       });
 
       return {

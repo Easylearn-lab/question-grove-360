@@ -202,7 +202,7 @@ export default function Home() {
             ))}
           </div>
           
-          <p className="text-center text-gray-600 mt-8">Free trials assigned manually — contact us</p>
+          <p className="text-center text-gray-600 mt-8">3-day access coupons available from admin on request</p>
         </div>
       </section>
 

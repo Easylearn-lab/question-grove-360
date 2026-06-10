@@ -292,3 +292,8 @@
 - [x] Add SubscriptionGate to all premium pages (QuestionBank, MockExams, PatternRecognition, SCA, Note360)
 - [x] Create useSubscription hook for centralized premium status
 - [x] Add logout button to Profile/Settings page
+
+## Remove 7-day Trial & Update Coupon System (June 10, 2026)
+- [x] Remove all 7-day free trial references from pricing, landing page, and backend
+- [x] Update coupon system to only allow 3-day activation period
+- [x] Ensure coupons can only be created/distributed by admin

@@ -40,13 +40,28 @@ export const adminRouter = router({
       const db = await getDb();
       if (!db) throw new TRPCError({ code: "INTERNAL_SERVER_ERROR" });
 
+      // Enforce 3-day max coupon validity
+      const now = new Date();
+      const maxExpiry = new Date(now.getTime() + 3 * 24 * 60 * 60 * 1000);
+      let expiryDate = input.expiryDate;
+      if (expiryDate) {
+        const requested = new Date(expiryDate);
+        if (requested > maxExpiry) {
+          // Cap at 3 days from now
+          expiryDate = maxExpiry.toISOString().split("T")[0];
+        }
+      } else {
+        // Default to 3 days if no expiry specified
+        expiryDate = maxExpiry.toISOString().split("T")[0];
+      }
+
       const { coupons } = await import("../drizzle/schema");
       await db.insert(coupons).values({
         code: input.code.toUpperCase(),
         discountType: input.discountType,
         discountValue: input.discountValue.toString(),
         maxUsageCount: input.maxUsageCount,
-        expiryDate: input.expiryDate ? input.expiryDate : undefined,
+        expiryDate: expiryDate,
         isActive: true,
       } as any);
       return { success: true };
@@ -131,7 +146,7 @@ export const adminRouter = router({
     .input(
       z.object({
         userId: z.number(),
-        days: z.number().default(7),
+        days: z.number().max(3).default(3),
         examId: z.number().optional(),
       })
     )

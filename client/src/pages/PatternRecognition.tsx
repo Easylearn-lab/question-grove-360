@@ -252,7 +252,7 @@ export default function PatternRecognition() {
             >
               <CheckCircle2 className="w-5 h-5 text-green-500" />
               <span className="font-semibold text-green-600">Easy</span>
-              <span className="text-xs text-slate-500">Review in 7 days</span>
+              <span className="text-xs text-slate-500">Review in 3 days</span>
             </Button>
           </div>
         </div>

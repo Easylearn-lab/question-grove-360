@@ -166,7 +166,7 @@ The student has been using Question Grove 360 and has the following performance 
 - Average accuracy: 72%
 - Weak areas: Cardiology (65%), Pharmacology (68%)
 - Strong areas: Anatomy (85%), Pathology (80%)
-- Study streak: 7 days
+- Study streak: 12 days
 - Next exam: MRCGP AKT in 45 days
 
 Based on this data, provide 3-5 specific, actionable recommendations to improve their exam preparation.`;

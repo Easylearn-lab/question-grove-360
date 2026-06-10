@@ -13,7 +13,7 @@ interface PricingCardProps {
   features: string[];
   planKey: "STARTER" | "PROFESSIONAL" | "ELITE";
   popular?: boolean;
-  trialDays?: number;
+
 }
 
 export function PricingCard({
@@ -23,7 +23,6 @@ export function PricingCard({
   features,
   planKey,
   popular,
-  trialDays,
 }: PricingCardProps) {
   const { isAuthenticated } = useAuth();
   const [isLoading, setIsLoading] = useState(false);
@@ -39,7 +38,7 @@ export function PricingCard({
     try {
       const result = await createCheckout.mutateAsync({
         planKey,
-        trialDays,
+
       });
 
       if (result.url) {
@@ -80,11 +79,7 @@ export function PricingCard({
           £{price}
         </span>
         <span className="text-slate-600 dark:text-slate-400 ml-2">/month</span>
-        {trialDays && (
-          <p className="text-sm text-teal-600 dark:text-teal-400 mt-2">
-            {trialDays}-day free trial
-          </p>
-        )}
+
       </div>
 
       <Button

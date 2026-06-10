@@ -265,8 +265,9 @@ export default function AdminPanel() {
                   <Input defaultValue="200" type="number" />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-slate-700 mb-2">Free Trial Duration (days)</label>
-                  <Input defaultValue="7" type="number" />
+                  <label className="block text-sm font-medium text-slate-700 mb-2">Coupon Access Duration (days)</label>
+                  <Input defaultValue="3" type="number" disabled />
+                  <p className="text-xs text-slate-500 mt-1">Fixed at 3 days. Coupons are admin-only.</p>
                 </div>
                 <Button className="bg-teal-600 hover:bg-teal-700 text-white">Save Settings</Button>
               </div>
