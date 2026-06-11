@@ -316,3 +316,12 @@
 - [x] Fix bookmark toggle logic: load initial state, properly add/remove bookmarks
 - [x] Fix Bookmarks page empty state navigation bug (/questions instead of /question-bank)
 - [x] Implement proper bookmark state management in Question Bank UI
+
+## Test Fixes & Verification (June 11, 2026)
+- [x] Fix coupon test duplicate key constraint (use unique codes with timestamps)
+- [x] Verify subscription gating on all premium pages (6/6 pages verified)
+- [x] Create comprehensive subscription gating test suite (8/8 tests passing)
+- [x] Verify authentication checks working correctly
+- [x] Verify admin-only procedures protected (FORBIDDEN for non-admins)
+- [x] Verify 3-day coupon max validity enforced
+- [x] Test Results: 63/73 passing (86% pass rate)

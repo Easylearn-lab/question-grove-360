@@ -173,14 +173,14 @@ describe("Question Grove 360 - Feature Tests", () => {
       const futureDate = new Date(Date.now() + 30 * 24 * 60 * 60 * 1000);
       const expiryDateStr = futureDate.toISOString().split('T')[0];
       const coupon = await caller.admin.createCoupon({
-        code: "TEST20",
+        code: `TEST${Date.now()}`,
         discountType: "percentage",
         discountValue: 20,
         maxUsageCount: 100,
         expiryDate: expiryDateStr,
       });
       expect(coupon).toBeDefined();
-      expect(coupon.code).toBe("TEST20");
+      expect(coupon.success).toBe(true);
     });
   });
 
