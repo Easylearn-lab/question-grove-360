@@ -1,0 +1,600 @@
+[
+  {
+    "id": "QG-MSK-078-001",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Musculoskeletal",
+    "difficulty": "Medium",
+    "question": "A 62-year-old man presents with an acutely swollen, hot, exquisitely tender first metatarsophalangeal (MTP) joint. The attack started overnight and he rates the pain 10/10. He drinks approximately 30 units of alcohol per week and takes low-dose aspirin and a thiazide diuretic. Serum uric acid is 520 umol/L. Joint aspiration shows negatively birefringent needle-shaped crystals under polarised light. Per NICE CG56, what is the first-line treatment for this acute gout attack?",
+    "options": {
+      "A": "Start allopurinol immediately to lower uric acid",
+      "B": "NSAIDs (e.g. naproxen 500mg twice daily with PPI cover) or colchicine 500 mcg two to four times daily — both are first-line for acute gout per NICE CG56. Use the agent most appropriate to the patient's comorbidities",
+      "C": "Joint aspiration and intra-articular corticosteroid injection only",
+      "D": "Oral prednisolone 40mg daily for 5 days — first-line for all acute gout",
+      "E": "Increase aspirin dose — aspirin treats gout flares"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per NICE CG56 (Osteoarthritis), and NICE CKS on gout, first-line treatment for acute gout: NSAIDs (e.g. naproxen 500mg BD, diclofenac, or etoricoxib) with PPI gastroprotection, OR colchicine 500 mcg 2-4 times daily. Both are equally first-line — choice depends on patient factors (renal function, GI history, cardiovascular risk). Oral corticosteroids (prednisolone 30-35mg/day) are second-line if NSAIDs and colchicine are contraindicated. Allopurinol must NOT be started during an acute attack as it can prolong the attack. Low-dose aspirin paradoxically raises uric acid and can precipitate gout — though it should not be stopped if prescribed for cardiovascular indication.",
+      "A": "Incorrect — Allopurinol initiated during an acute attack prolongs and worsens the episode. Start 4-6 weeks after the acute attack resolves.",
+      "B": "CORRECT — NSAIDs or colchicine are equally first-line for acute gout per NICE CG56/NICE CKS. Choose based on patient comorbidities.",
+      "C": "Incorrect — Intra-articular corticosteroid is a useful option for monoarticular gout but not the primary first-line approach.",
+      "D": "Incorrect — Oral prednisolone is second-line when NSAIDs and colchicine are both contraindicated.",
+      "E": "Incorrect — Low-dose aspirin reduces uric acid excretion and raises serum uric acid — it can precipitate gout. It should not be increased for gout treatment."
+    },
+    "reference": "NICE CG56 — Gout. NICE CKS — Gout. https://cks.nice.org.uk/topics/gout/",
+    "tags": ["gout", "acute gout", "naproxen", "colchicine", "uric acid", "NICE CG56"]
+  },
+  {
+    "id": "QG-MSK-078-002",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Musculoskeletal",
+    "difficulty": "Medium",
+    "question": "A 58-year-old man has had three acute gout attacks in the past year. His serum uric acid is 540 umol/L. He is ready to start urate-lowering therapy (ULT). Per NICE CKS, when should allopurinol be started and what is the correct dose titration approach?",
+    "options": {
+      "A": "Start allopurinol 300mg immediately during the current acute attack",
+      "B": "Start allopurinol at least 2-4 weeks after the acute attack has fully resolved. Begin at 100mg daily and increase by 100mg every 4 weeks guided by uric acid levels, aiming for serum urate <360 umol/L (or <300 umol/L in tophaceous gout). Cover with colchicine or NSAID prophylaxis for the first 3-6 months of ULT",
+      "C": "Start allopurinol 300mg immediately — prophylactic colchicine is not needed",
+      "D": "Febuxostat 80mg is always preferred over allopurinol as first-line ULT",
+      "E": "Only start allopurinol after 5 or more attacks — 3 attacks is insufficient"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per NICE CKS on gout, urate-lowering therapy (ULT) indications: ≥2 attacks in 12 months, tophaceous gout, CKD stage 3+, urolithiasis, diuretic use with gout. Starting ULT: begin at least 2-4 weeks after acute attack resolves (starting during or immediately after an attack triggers further flares). Allopurinol is first-line ULT: start 100mg daily, increase by 100mg every 4 weeks to achieve target serum urate <360 umol/L. Prophylactic anti-inflammatory cover (colchicine 500 mcg once or twice daily, or low-dose NSAID) for first 3-6 months of ULT — ULT mobilises urate deposits which can trigger acute attacks. Maximum allopurinol dose: 900mg/day (adjust for renal impairment).",
+      "A": "Incorrect — Starting allopurinol during an acute attack worsens and prolongs the episode.",
+      "B": "CORRECT — Wait 2-4 weeks post-attack, start allopurinol 100mg with slow titration + prophylactic colchicine/NSAID for 3-6 months per NICE CKS.",
+      "C": "Incorrect — Without prophylactic cover, ULT initiation commonly triggers acute gout flares in the first months.",
+      "D": "Incorrect — Allopurinol is first-line ULT per NICE. Febuxostat is second-line (after allopurinol intolerance or failure), noting cardiovascular safety signals.",
+      "E": "Incorrect — NICE CKS recommends offering ULT after ≥2 attacks in 12 months — not 5."
+    },
+    "reference": "NICE CKS — Gout: management. https://cks.nice.org.uk/topics/gout/",
+    "tags": ["gout", "allopurinol", "urate-lowering therapy", "ULT", "colchicine prophylaxis", "NICE CKS"]
+  },
+  {
+    "id": "QG-MSK-078-003",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Musculoskeletal",
+    "difficulty": "Hard",
+    "question": "A 55-year-old man with gout and CKD Stage 3b (eGFR 35 ml/min) is being considered for allopurinol. His current serum urate is 560 umol/L. Per NICE CKS and the EULAR gout guidelines, how should allopurinol be used in CKD?",
+    "options": {
+      "A": "Allopurinol is absolutely contraindicated in CKD — use febuxostat only",
+      "B": "Allopurinol can be used in CKD but requires dose adjustment based on eGFR — start at lower dose (50-100mg daily), titrate slowly. Target serum urate <360 umol/L remains. Monitor for allopurinol hypersensitivity syndrome (AHS) — risk increased with HLA-B*58:01 allele (commoner in Han Chinese, Thai, Korean populations)",
+      "C": "Use standard allopurinol 300mg daily — CKD does not affect dosing",
+      "D": "No ULT needed in CKD — gout cannot be treated in renal impairment",
+      "E": "Colchicine is the preferred long-term ULT in CKD"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per NICE CKS and EULAR gout guidelines 2016, allopurinol CAN be used in CKD but requires dose adjustment. Allopurinol's active metabolite oxypurinol is renally excreted — accumulates in CKD causing risk of allopurinol hypersensitivity syndrome (AHS — severe cutaneous reaction including SJS/TEN, potentially fatal). Start at lower doses (50-100mg) and titrate slowly. EULAR now recommends starting low regardless of renal function and titrating to urate target. HLA-B*58:01 genetic testing should be considered in high-risk ethnic groups before starting allopurinol. Febuxostat is an alternative in allopurinol intolerance but has CV safety considerations.",
+      "A": "Incorrect — Allopurinol is not absolutely contraindicated in CKD — it requires careful dose adjustment.",
+      "B": "CORRECT — Allopurinol in CKD: start low dose, slow titration, monitor for AHS, consider HLA-B*58:01 screening per NICE CKS/EULAR.",
+      "C": "Incorrect — Standard 300mg dose in CKD risks oxypurinol accumulation and allopurinol hypersensitivity syndrome.",
+      "D": "Incorrect — ULT is important in CKD with gout — uncontrolled hyperuricaemia can worsen renal function.",
+      "E": "Incorrect — Colchicine is for acute gout and prophylaxis — it is not a urate-lowering therapy."
+    },
+    "reference": "NICE CKS — Gout. EULAR Gout Guidelines 2016. https://cks.nice.org.uk/topics/gout/",
+    "tags": ["gout", "CKD", "allopurinol", "dose adjustment", "HLA-B*58:01", "allopurinol hypersensitivity"]
+  },
+  {
+    "id": "QG-MSK-078-004",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Musculoskeletal",
+    "difficulty": "Easy",
+    "question": "A 45-year-old woman presents with sudden onset severe pain and swelling in her right knee. Joint aspirate shows positively birefringent rhomboid-shaped crystals under polarised light microscopy. Her calcium is 2.65 mmol/L (mildly elevated). What is the diagnosis?",
+    "options": {
+      "A": "Gout — negatively birefringent needle crystals confirm this",
+      "B": "Pseudogout (calcium pyrophosphate deposition disease — CPPD) — positively birefringent rhomboid crystals of calcium pyrophosphate. Associated with hypercalcaemia, haemochromatosis, hyperparathyroidism",
+      "C": "Septic arthritis — urgent joint washout",
+      "D": "Reactive arthritis — STI screening",
+      "E": "Rheumatoid arthritis — anti-CCP antibodies"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Pseudogout (calcium pyrophosphate deposition disease, CPPD): crystals are calcium pyrophosphate — positively birefringent and rhomboid shaped under polarised light microscopy. Gout crystals: urate — negatively birefringent, needle-shaped. CPPD commonly affects the knee (also wrist, shoulder). Associated conditions: hyperparathyroidism, haemochromatosis, hypomagnasaemia, hypophosphataemia, hypothyroidism, Wilson's disease — screen for these especially in younger patients. Chondrocalcinosis visible on X-ray. Treatment: same as acute gout — NSAIDs, colchicine, or intra-articular/oral corticosteroids. Per NICE CKS.",
+      "A": "Incorrect — Gout crystals are negatively birefringent and needle-shaped. These are positively birefringent rhomboid crystals = CPPD.",
+      "B": "CORRECT — Pseudogout (CPPD): positively birefringent rhomboid crystals. Associated with hypercalcaemia, hyperparathyroidism, haemochromatosis.",
+      "C": "Incorrect — Septic arthritis is possible but crystal identification confirms CPPD. Septic arthritis shows no crystals and markedly elevated WBC in aspirate.",
+      "D": "Incorrect — Reactive arthritis follows infection and shows sterile joint fluid without crystals.",
+      "E": "Incorrect — RA is chronic polyarthritis — not acute crystal arthritis."
+    },
+    "reference": "NICE CKS — Pseudogout. https://cks.nice.org.uk/topics/pseudogout/",
+    "tags": ["pseudogout", "CPPD", "calcium pyrophosphate", "crystals", "polarised light", "NICE CKS"]
+  },
+  {
+    "id": "QG-MSK-078-005",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Musculoskeletal",
+    "difficulty": "Medium",
+    "question": "A 66-year-old man with gout has a serum uric acid of 620 umol/L after 6 months on allopurinol 300mg/day. He has tolerated allopurinol well. He has had 2 further attacks while on treatment. Per NICE CKS, what is the most appropriate next step?",
+    "options": {
+      "A": "Stop allopurinol — treatment failure means it should be discontinued",
+      "B": "Increase allopurinol dose (titrate up by 100mg increments every 4 weeks) guided by serum urate — maximum dose 900mg/day or dose adjusted for renal function. Target serum urate <360 umol/L",
+      "C": "Add febuxostat to allopurinol — combination therapy",
+      "D": "Switch to rasburicase — more potent uricase",
+      "E": "Lifestyle advice only — dietary restriction will achieve target urate"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per NICE CKS, if the serum urate target (<360 umol/L) is not achieved on the current allopurinol dose, the dose should be increased in 100mg increments every 4 weeks, up to a maximum of 900mg/day (dose adjusted for eGFR). Many patients require doses above 300mg/day to reach target. Ongoing attacks while on inadequate ULT do not indicate treatment failure — they indicate undertitration. If maximum tolerated allopurinol dose still fails to achieve target urate: switch to or add febuxostat (second-line ULT). Continue prophylactic colchicine/NSAID during dose titration.",
+      "A": "Incorrect — Two attacks on undertitrated allopurinol does not constitute treatment failure — the dose should be increased.",
+      "B": "CORRECT — Increase allopurinol dose by 100mg increments every 4 weeks to achieve serum urate <360 umol/L per NICE CKS.",
+      "C": "Incorrect — Combination of two XO inhibitors (allopurinol + febuxostat) is not recommended — switch, don't add.",
+      "D": "Incorrect — Rasburicase is for tumour lysis syndrome — not chronic gout management.",
+      "E": "Incorrect — Dietary measures alone cannot achieve adequate urate lowering at serum urate 620 umol/L."
+    },
+    "reference": "NICE CKS — Gout: management. https://cks.nice.org.uk/topics/gout/",
+    "tags": ["gout", "allopurinol dose", "urate target", "titration", "serum urate 360", "NICE CKS"]
+  },
+  {
+    "id": "QG-MSK-086-001",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Musculoskeletal",
+    "difficulty": "Medium",
+    "question": "A 70-year-old woman presents with a 3-week history of bilateral shoulder and hip girdle aching and stiffness, worst in the mornings lasting over 60 minutes. She feels generally unwell with fatigue. ESR is 68 mm/hr, CRP 42 mg/L. She has no synovitis or weakness. Per NICE CKS, what is the most likely diagnosis and first-line treatment?",
+    "options": {
+      "A": "Fibromyalgia — amitriptyline and graded exercise",
+      "B": "Polymyalgia rheumatica (PMR) — oral prednisolone 15mg daily; expect dramatic improvement within 48-72 hours (a diagnostic feature). Taper slowly over 18-24 months",
+      "C": "Rheumatoid arthritis — anti-CCP and rheumatology referral",
+      "D": "Hypothyroidism — TFTs before treatment",
+      "E": "Giant cell arteritis — prednisolone 40-60mg daily immediately"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Polymyalgia rheumatica (PMR): classic presentation in patients over 50 (peak age 70-80), bilateral proximal girdle aching (shoulder, hip, neck), prolonged morning stiffness >45 minutes, elevated inflammatory markers (ESR >40 mm/hr, elevated CRP), no synovitis or weakness. Per NICE CKS and BSR PMR guidelines 2010: first-line treatment is oral prednisolone 15mg daily. A prompt, dramatic response within 48-72 hours is both therapeutic AND diagnostic — failure to respond should prompt re-evaluation of the diagnosis. Slowly taper over 18-24 months monitoring ESR/CRP and symptoms. Always screen for GCA symptoms (headache, jaw claudication, visual symptoms) — 15-20% of PMR patients have coexistent GCA.",
+      "A": "Incorrect — Fibromyalgia does not cause elevated inflammatory markers or the specific pattern of girdle stiffness.",
+      "B": "CORRECT — PMR: prednisolone 15mg/day with dramatic 48-72 hour response expected. Taper over 18-24 months per BSR/NICE CKS.",
+      "C": "Incorrect — RA causes symmetrical small joint synovitis predominantly — not proximal girdle aching with elevated CRP as the primary feature.",
+      "D": "Incorrect — Hypothyroidism can cause proximal myopathy but TFTs should not delay starting prednisolone in clear PMR.",
+      "E": "Incorrect — GCA requires 40-60mg prednisolone (risk of blindness). This patient has no GCA features — PMR alone is treated with 15mg."
+    },
+    "reference": "BSR and BHPR Guidelines for PMR 2010. NICE CKS — Polymyalgia rheumatica. https://cks.nice.org.uk/topics/polymyalgia-rheumatica/",
+    "tags": ["PMR", "polymyalgia rheumatica", "prednisolone 15mg", "morning stiffness", "ESR", "BSR guidelines"]
+  },
+  {
+    "id": "QG-MSK-086-002",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Musculoskeletal",
+    "difficulty": "Hard",
+    "question": "A 72-year-old woman with known PMR on prednisolone 10mg daily presents with a sudden onset of severe right-sided temporal headache, jaw pain when chewing and blurred vision in her right eye. Visual acuity is reduced. Per NICE CKS and BSR guidelines, what is the immediate management?",
+    "options": {
+      "A": "Increase prednisolone to 15mg — likely PMR flare",
+      "B": "Immediately increase prednisolone to 40-60mg (or IV methylprednisolone 500mg-1g if visual involvement already present), arrange same-day urgent referral to ophthalmology and rheumatology — suspected giant cell arteritis (GCA) with impending/actual visual loss",
+      "C": "Arrange temporal artery biopsy before starting high-dose steroids",
+      "D": "Arrange urgent CT head — likely stroke",
+      "E": "Refer to neurology for migraine assessment"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Giant cell arteritis (GCA) presenting with visual symptoms is an ophthalmic emergency. Once visual symptoms develop (amaurosis fugax, visual loss), permanent blindness can occur within hours if untreated. Per BSR GCA guidelines 2010 and NICE CKS: start high-dose prednisolone IMMEDIATELY without waiting for biopsy results — 40-60mg for GCA without visual symptoms; IV methylprednisolone 500mg-1g for established visual loss. Temporal artery biopsy should be arranged within 7-14 days (steroids do not affect biopsy results for at least 4-6 weeks). Same-day ophthalmology referral. Tocilizumab (IL-6 inhibitor) is now NICE-approved for relapsing/refractory GCA (NICE TA518).",
+      "A": "Incorrect — 15mg prednisolone is PMR dosing — grossly insufficient for GCA with visual symptoms.",
+      "B": "CORRECT — IV methylprednisolone + immediate ophthalmology referral for GCA with visual loss. Do not wait for biopsy per BSR/NICE CKS.",
+      "C": "Incorrect — Do NOT delay steroids for biopsy — permanent blindness can occur within hours. Biopsy can be arranged within 7-14 days.",
+      "D": "Incorrect — While ischaemic stroke is possible, the clinical picture (jaw claudication, temporal headache, visual loss in a known PMR patient) is classic GCA.",
+      "E": "Incorrect — This is not migraine. GCA with visual symptoms requires emergency treatment within hours."
+    },
+    "reference": "BSR and BHPR Guidelines for GCA 2010. NICE TA518 — Tocilizumab for GCA. NICE CKS — Giant cell arteritis. https://cks.nice.org.uk/topics/giant-cell-arteritis/",
+    "tags": ["giant cell arteritis", "GCA", "visual loss", "methylprednisolone", "ophthalmology emergency", "BSR"]
+  },
+  {
+    "id": "QG-MSK-086-003",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Musculoskeletal",
+    "difficulty": "Medium",
+    "question": "A 68-year-old woman with PMR has been on prednisolone for 12 months. She asks about bone protection. Per NICE NG187 and BSR guidelines, what bone protection should she be offered?",
+    "options": {
+      "A": "No bone protection needed — prednisolone 15mg is a low dose",
+      "B": "Calcium 1000-1200mg and vitamin D 800 IU daily plus a bisphosphonate (e.g. alendronate 70mg weekly) for all patients on prednisolone ≥7.5mg/day for ≥3 months per NICE NG187 (glucocorticoid-induced osteoporosis)",
+      "C": "Bisphosphonate alone without calcium and vitamin D",
+      "D": "DEXA scan first — only give bone protection if T-score below -2.5",
+      "E": "HRT — only effective bone protection in post-menopausal women on steroids"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per NICE NG187 (Menopause) — actually NICE NG245/Royal Osteoporosis Society guidance on glucocorticoid-induced osteoporosis (GIOP): all patients starting glucocorticoids at a dose of prednisolone ≥7.5mg/day for ≥3 months should be offered bone protection. This includes: calcium 1000-1200mg daily and vitamin D 800-1000 IU daily (correct deficiency), plus a bisphosphonate (alendronate 70mg weekly — first-line; or risedronate 35mg weekly). A DEXA scan is recommended but should not delay starting bone protection in those at high risk. PMR patients typically take prednisolone 15mg (reducing) for 18-24 months — all qualify for bone protection.",
+      "A": "Incorrect — Prednisolone 15mg for 12 months significantly increases fracture risk — bone protection is mandatory.",
+      "B": "CORRECT — Calcium + vitamin D + bisphosphonate for all patients on prednisolone ≥7.5mg for ≥3 months per NICE/ROS GIOP guidance.",
+      "C": "Incorrect — Calcium and vitamin D must accompany bisphosphonate — deficiency must be corrected for bisphosphonate to work effectively.",
+      "D": "Incorrect — DEXA is recommended but should not delay bone protection in those clearly qualifying (dose + duration threshold).",
+      "E": "Incorrect — HRT may help in post-menopausal women but is not the primary bone protection for GIOP — bisphosphonates are first-line."
+    },
+    "reference": "Royal Osteoporosis Society/NICE — Glucocorticoid-induced osteoporosis guidance. NICE NG187. https://www.nice.org.uk/guidance/ng187",
+    "tags": ["glucocorticoid induced osteoporosis", "GIOP", "bisphosphonate", "prednisolone", "bone protection", "NICE NG187"]
+  },
+  {
+    "id": "QG-MSK-102-001",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Musculoskeletal",
+    "difficulty": "Medium",
+    "question": "A 68-year-old woman has a DEXA scan showing a T-score of -2.8 at the femoral neck. She has no history of fragility fracture. She is post-menopausal, non-smoking and on no medications affecting bone. Her FRAX score (10-year probability of major osteoporotic fracture) is 24%. Per NICE NG187, what is the most appropriate treatment?",
+    "options": {
+      "A": "Calcium and vitamin D supplements alone — T-score -2.8 is osteopaenia not osteoporosis",
+      "B": "Oral alendronate 70mg once weekly as first-line treatment plus calcium and vitamin D supplementation if dietary intake is insufficient",
+      "C": "IV zoledronic acid — oral bisphosphonates are ineffective",
+      "D": "Denosumab — first-line for all post-menopausal women with osteoporosis",
+      "E": "HRT — sole treatment for post-menopausal osteoporosis"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per NICE NG187 (Menopause) and NICE technology appraisals on osteoporosis, a T-score of -2.5 or below at femoral neck or lumbar spine = osteoporosis (not osteopaenia). T-score -2.8 is osteoporosis. With a FRAX 10-year risk of 24% for major osteoporotic fracture, treatment is clearly indicated. First-line: oral alendronate 70mg once weekly (bisphosphonate, most established safety/efficacy data). If dietary calcium intake is <700mg/day or vitamin D deficient: supplement with calcium 1000mg and vitamin D 800 IU. Take alendronate with a full glass of water, sit upright for 30 minutes. Review after 3-5 years for treatment holiday consideration.",
+      "A": "Incorrect — T-score -2.8 meets diagnostic criteria for osteoporosis (threshold -2.5). Treatment is indicated.",
+      "B": "CORRECT — Alendronate 70mg weekly is first-line for osteoporosis with high fracture risk per NICE NG187.",
+      "C": "Incorrect — Oral alendronate is highly effective and is first-line. IV bisphosphonates are for those unable to tolerate oral.",
+      "D": "Incorrect — Denosumab is second-line after bisphosphonate failure/intolerance per NICE TA204.",
+      "E": "Incorrect — HRT reduces fracture risk in post-menopausal women but is not sole treatment for established osteoporosis."
+    },
+    "reference": "NICE NG187 — Menopause: diagnosis and management. NICE TA160/TA464 — Osteoporosis. https://www.nice.org.uk/guidance/ng187",
+    "tags": ["osteoporosis", "alendronate", "DEXA", "T-score", "FRAX", "NICE NG187"]
+  },
+  {
+    "id": "QG-MSK-102-002",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Musculoskeletal",
+    "difficulty": "Hard",
+    "question": "A 72-year-old man fractures his wrist after minimal trauma (falling from standing height). His T-score is -3.1. He is already on alendronate which he has been taking for 3 years. Per NICE guidance, should his alendronate be continued or reviewed?",
+    "options": {
+      "A": "Stop alendronate immediately — fracture on bisphosphonate means it has failed",
+      "B": "Review: if fracture occurred despite adequate adherence and calcium/vitamin D, consider adding teriparatide or switching to zoledronic acid/denosumab. Refer to a metabolic bone specialist. Continue alendronate while awaiting review",
+      "C": "Double the alendronate dose to 140mg weekly",
+      "D": "Switch to calcium and vitamin D only — no further bisphosphonate",
+      "E": "No change — one fracture on alendronate is acceptable and expected"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per NICE guidance on osteoporosis management, a fragility fracture occurring while on bisphosphonate treatment after 3 years raises the question of treatment failure (true failure requiring escalation), inadequate adherence, inadequate calcium/vitamin D, secondary osteoporosis cause missed, or atypical femoral fracture from bisphosphonate itself. Management: assess adherence and calcium/vitamin D status, consider bone turnover markers, DEXA reassessment. If genuinely treatment-refractory (confirmed adherence, adequate supplementation, ongoing fractures): escalate to teriparatide (anabolic agent — NICE TA161), zoledronic acid, or denosumab. Metabolic bone specialist referral. Continue alendronate while awaiting specialist review.",
+      "A": "Incorrect — Stopping alendronate without specialist review risks rapid bone loss. One fracture does not definitively confirm failure.",
+      "B": "CORRECT — Review adherence/supplementation + specialist referral + consider teriparatide/escalation if confirmed treatment failure per NICE.",
+      "C": "Incorrect — Doubling the dose of alendronate is not recommended and not licensed.",
+      "D": "Incorrect — Stepping down to supplements alone would be clinically inappropriate with T-score -3.1 and recent fracture.",
+      "E": "Incorrect — A fragility fracture on bisphosphonate therapy requires review — it may indicate treatment failure or secondary cause."
+    },
+    "reference": "NICE TA161 — Teriparatide for osteoporosis. NICE — Osteoporosis management pathway. https://www.nice.org.uk/guidance/ta161",
+    "tags": ["osteoporosis", "bisphosphonate failure", "teriparatide", "fragility fracture", "NICE TA161", "specialist referral"]
+  },
+  {
+    "id": "QG-MSK-102-003",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Musculoskeletal",
+    "difficulty": "Easy",
+    "question": "A 55-year-old post-menopausal woman is offered a DEXA scan. Her GP uses FRAX to calculate her 10-year fracture risk. Per NICE and the Royal Osteoporosis Society, which risk factors are incorporated into the FRAX tool?",
+    "options": {
+      "A": "BMD T-score only",
+      "B": "Age, sex, BMI, prior fragility fracture, parental hip fracture, current smoking, glucocorticoid use, rheumatoid arthritis, secondary osteoporosis, alcohol ≥3 units/day — with or without femoral neck BMD",
+      "C": "Blood tests only (calcium, vitamin D, PTH)",
+      "D": "Only age and BMD — other factors are irrelevant",
+      "E": "Dietary calcium intake is the most important FRAX variable"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "FRAX (Fracture Risk Assessment Tool) calculates 10-year probability of major osteoporotic fracture and hip fracture. Variables: age, sex, weight, height (BMI), prior fragility fracture (most powerful predictor), parental history of hip fracture, current smoking, glucocorticoid use (prednisolone ≥7.5mg/day for ≥3 months), rheumatoid arthritis, secondary causes of osteoporosis (type 1 diabetes, osteogenesis imperfecta, long-standing hypogonadism, premature menopause, malabsorption, chronic liver disease), alcohol ≥3 units/day. Can be calculated with or without femoral neck BMD — BMD inclusion improves accuracy significantly. Per Royal Osteoporosis Society guidelines.",
+      "A": "Incorrect — FRAX incorporates multiple clinical risk factors beyond BMD.",
+      "B": "CORRECT — FRAX variables: age, sex, BMI, prior fracture, parental hip fracture, smoking, steroids, RA, secondary osteoporosis, alcohol per ROS guidance.",
+      "C": "Incorrect — Blood tests are not inputs into the FRAX tool (though calcium/vitamin D should be measured separately).",
+      "D": "Incorrect — Age and BMD alone underestimate fracture risk without clinical risk factors.",
+      "E": "Incorrect — Dietary calcium is not a direct FRAX input variable."
+    },
+    "reference": "Royal Osteoporosis Society — FRAX guidance. NICE NG187. https://www.nice.org.uk/guidance/ng187",
+    "tags": ["FRAX", "fracture risk", "osteoporosis", "clinical risk factors", "ROS", "NICE NG187"]
+  },
+  {
+    "id": "QG-MSK-105-001",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Musculoskeletal",
+    "difficulty": "Medium",
+    "question": "A 45-year-old woman is diagnosed with rheumatoid arthritis (symmetrical small joint polyarthritis, positive RF and anti-CCP, erosive changes on X-ray). She is referred to rheumatology. Per NICE NG100, what is the first-line disease-modifying treatment?",
+    "options": {
+      "A": "Biologic therapy (etanercept or adalimumab) as first-line",
+      "B": "Methotrexate is the first-line DMARD for RA — typically 7.5-25mg weekly (oral or subcutaneous) with folic acid 5mg weekly to reduce side effects",
+      "C": "Hydroxychloroquine alone — safest DMARD",
+      "D": "Long-term prednisolone 10mg daily — controls RA indefinitely",
+      "E": "NSAIDs alone — sufficient for RA management"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per NICE NG100 (Rheumatoid arthritis in adults: management), methotrexate (MTX) is the anchor DMARD and first-line treatment for all patients with newly diagnosed RA. Dose: start 7.5-15mg weekly, increase to 20-25mg weekly as tolerated. Always co-prescribe folic acid 5mg once weekly (taken on a different day to MTX) to reduce GI and haematological side effects. Monitor: FBC, LFTs, creatinine at baseline then every 2-3 months when stable. Biologic therapies (anti-TNF, JAK inhibitors) are added or substituted when 2 conventional DMARDs have failed at adequate dose and duration (typically 6 months each).",
+      "A": "Incorrect — Biologic therapy is second/third-line after failure of two conventional DMARDs per NICE NG100.",
+      "B": "CORRECT — Methotrexate with folic acid is the anchor first-line DMARD for RA per NICE NG100.",
+      "C": "Incorrect — Hydroxychloroquine is a DMARD but has less efficacy than MTX for erosive seropositive RA. Not first-line alone.",
+      "D": "Incorrect — Long-term prednisolone is not appropriate DMARD therapy — it does not halt radiological progression and causes significant side effects.",
+      "E": "Incorrect — NSAIDs only manage symptoms — they do not halt joint damage or disease progression."
+    },
+    "reference": "NICE NG100 — Rheumatoid arthritis in adults: management. https://www.nice.org.uk/guidance/ng100",
+    "tags": ["rheumatoid arthritis", "methotrexate", "DMARD", "folic acid", "NICE NG100", "first-line"]
+  },
+  {
+    "id": "QG-MSK-105-002",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Musculoskeletal",
+    "difficulty": "Hard",
+    "question": "A 50-year-old woman with RA on methotrexate 20mg weekly and folic acid develops a dry cough and breathlessness. She has no fever or purulent sputum. CXR shows bilateral interstitial shadowing. Her FBC is normal. What must be considered and what is the immediate management?",
+    "options": {
+      "A": "Chest infection — prescribe oral amoxicillin",
+      "B": "Methotrexate-induced pneumonitis — stop methotrexate immediately, refer to respiratory/rheumatology urgently, consider oral prednisolone if severe. Do NOT restart methotrexate",
+      "C": "Continue methotrexate — cough is unrelated to treatment",
+      "D": "Reduce methotrexate dose to 10mg weekly and monitor",
+      "E": "Switch folic acid to folinic acid — prevents pneumonitis"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Methotrexate-induced pneumonitis (MTX lung) is a potentially life-threatening hypersensitivity reaction. Features: dry cough, progressive breathlessness, bilateral interstitial shadowing on CXR, normal WBC (no infection), low-grade fever (sometimes). Can occur at any dose and at any time during treatment. Management: STOP methotrexate immediately — this is a serious adverse effect requiring permanent discontinuation. Refer urgently to respiratory physician. Oral/IV corticosteroids may be needed for severe cases. MTX must NOT be restarted after pneumonitis. This is distinct from the more common GI side effects of MTX which don't require stopping. Per BSR/NICE guidance.",
+      "A": "Incorrect — Bilateral interstitial shadowing without fever/purulent sputum + MTX use = MTX pneumonitis until proven otherwise. Antibiotics alone inadequate.",
+      "B": "CORRECT — Stop methotrexate immediately + urgent respiratory/rheumatology referral + consider steroids per BSR/NICE NG100.",
+      "C": "Incorrect — Continuing MTX in suspected pneumonitis is dangerous — can be fatal.",
+      "D": "Incorrect — Dose reduction is not appropriate for suspected MTX pneumonitis — complete cessation is required.",
+      "E": "Incorrect — Folinic acid does not prevent MTX pneumonitis (which is a hypersensitivity reaction, not folate-mediated)."
+    },
+    "reference": "NICE NG100 — Rheumatoid arthritis. BSR — Methotrexate monitoring guidelines. https://www.nice.org.uk/guidance/ng100",
+    "tags": ["methotrexate pneumonitis", "MTX lung", "RA", "stop methotrexate", "interstitial shadowing", "NICE NG100"]
+  },
+  {
+    "id": "QG-MSK-105-003",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Musculoskeletal",
+    "difficulty": "Easy",
+    "question": "A GP is monitoring a 48-year-old woman on methotrexate 15mg weekly for rheumatoid arthritis. Per BSR/NICE NG100 monitoring guidelines, which blood tests must be checked regularly and at what frequency once established on a stable dose?",
+    "options": {
+      "A": "Annual FBC only",
+      "B": "FBC, LFTs, creatinine and eGFR — every 3 months when established on a stable dose (more frequently during dose escalation)",
+      "C": "Monthly LFTs only",
+      "D": "Annual renal function only",
+      "E": "No monitoring needed once the patient is stable on methotrexate"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per BSR methotrexate monitoring guidelines and NICE NG100: methotrexate requires regular blood monitoring due to risks of: bone marrow suppression (FBC — anaemia, leucopenia, thrombocytopenia), hepatotoxicity (LFTs — elevated ALT/AST, risk of fibrosis with long-term use), and nephrotoxicity (creatinine/eGFR — MTX is renally excreted; impaired renal function causes MTX accumulation and toxicity). Monitoring schedule: every 2-4 weeks during dose escalation, then every 3 months when stable on a consistent dose. Dose must be withheld if WBC <3.5 × 10⁹/L, neutrophils <2 × 10⁹/L, platelets <150 × 10⁹/L, or ALT >3x ULN.",
+      "A": "Incorrect — Annual FBC alone is insufficient — LFTs and renal function must also be monitored 3-monthly.",
+      "B": "CORRECT — FBC + LFTs + creatinine/eGFR every 3 months on stable methotrexate dose per BSR/NICE NG100.",
+      "C": "Incorrect — LFTs alone without FBC and renal function misses bone marrow and renal toxicity.",
+      "D": "Incorrect — Annual renal function is insufficient — 3-monthly monitoring of FBC, LFTs and renal function is required.",
+      "E": "Incorrect — Methotrexate requires lifelong regular monitoring — stability does not eliminate monitoring requirements."
+    },
+    "reference": "NICE NG100 — Rheumatoid arthritis. BSR — Methotrexate monitoring guidelines. https://www.nice.org.uk/guidance/ng100",
+    "tags": ["methotrexate monitoring", "FBC LFTs creatinine", "3 monthly", "RA", "BSR", "NICE NG100"]
+  },
+  {
+    "id": "QG-MSK-114-001",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Musculoskeletal",
+    "difficulty": "Easy",
+    "question": "A 45-year-old man presents with 6 weeks of lower back pain radiating down his left leg to the foot, with paraesthesia in the L5 distribution. Straight leg raise is positive at 40 degrees. He is otherwise well and has no red flag symptoms. Per NICE NG59, what is the most appropriate management?",
+    "options": {
+      "A": "Urgent MRI spine and neurosurgery referral",
+      "B": "Reassure that most sciatica resolves within 12 weeks. Offer: NSAIDs (lowest effective dose, shortest duration), physiotherapy (active exercises), consider weak opioids if NSAIDs inadequate. Review at 4-6 weeks. If no improvement by 12 weeks: consider MRI and specialist referral",
+      "C": "Bed rest for 2 weeks — immobilisation aids recovery",
+      "D": "Oral prednisolone 40mg for 5 days — reduces nerve root inflammation",
+      "E": "X-ray lumbar spine immediately"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per NICE NG59 (Low back pain and sciatica in over 16s), most sciatica (nerve root pain) resolves within 12 weeks without specific intervention. First-line management: reassurance (natural resolution expected), NSAIDs (low dose, short course, with PPI), active exercise and physiotherapy, psychological support if needed (avoid medicalising). Discourage bed rest — this worsens outcomes. Weak opioids (codeine) if NSAIDs insufficient. Imaging (MRI) is NOT recommended as a routine initial investigation — only if red flags present or considering intervention. If not improving at 12 weeks: consider MRI and specialist referral for consideration of nerve root injections or surgery.",
+      "A": "Incorrect — Urgent MRI and neurosurgery is indicated for cauda equina syndrome or persistent severe neurological deficit — not routine 6-week sciatica.",
+      "B": "CORRECT — NSAIDs + physiotherapy + reassurance for sciatica; MRI only if no improvement at 12 weeks per NICE NG59.",
+      "C": "Incorrect — Bed rest worsens outcomes for back pain and sciatica — active exercise is recommended.",
+      "D": "Incorrect — Oral prednisolone is not first-line for sciatica per NICE NG59 — limited evidence and significant side effects.",
+      "E": "Incorrect — Plain X-ray does not image nerve roots or disc pathology — MRI is the appropriate imaging if indicated."
+    },
+    "reference": "NICE NG59 — Low back pain and sciatica in over 16s: assessment and management. https://www.nice.org.uk/guidance/ng59",
+    "tags": ["sciatica", "low back pain", "NSAIDs", "physiotherapy", "MRI not routine", "NICE NG59"]
+  },
+  {
+    "id": "QG-MSK-114-002",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Musculoskeletal",
+    "difficulty": "Medium",
+    "question": "A 55-year-old man presents with acute severe lower back pain and bilateral leg weakness, reduced anal tone, saddle anaesthesia and urinary incontinence. He had onset of back pain yesterday and is now unable to void. Per NICE NG59, what is the immediate management?",
+    "options": {
+      "A": "Prescribe naproxen and review in 2 weeks",
+      "B": "999 call / immediate A&E transfer — suspected cauda equina syndrome (CES). Emergency MRI spine within 4 hours, urgent spinal surgery assessment. Any delay risks permanent paralysis and bowel/bladder dysfunction",
+      "C": "Arrange urgent outpatient MRI within 2 weeks",
+      "D": "Prescribe oral prednisolone 40mg and review in 48 hours",
+      "E": "Refer to physiotherapy urgently"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Cauda equina syndrome (CES) is a surgical emergency caused by compression of the cauda equina nerve roots. Red flag symptoms: bilateral leg weakness/sciatica, saddle anaesthesia (perianal/perineal numbness), bladder dysfunction (retention — most common, or incontinence), bowel dysfunction, reduced anal tone. Per NICE NG59 and BSC (British Scoliosis Society), suspected CES requires: immediate emergency hospital admission (999 if necessary), MRI spine within 4 hours of presentation (NOT elective), urgent spinal surgery assessment. Delay beyond 24-48 hours from onset of urinary symptoms significantly worsens prognosis for bladder recovery. This is the most critical red flag in back pain — must not be missed.",
+      "A": "Incorrect — Bilateral leg weakness + saddle anaesthesia + urinary incontinence = CES emergency. NSAIDs and 2-week review is dangerous.",
+      "B": "CORRECT — Suspected CES: 999/immediate A&E + emergency MRI within 4 hours + urgent spinal surgery per NICE NG59.",
+      "C": "Incorrect — Outpatient MRI in 2 weeks is grossly inadequate for cauda equina syndrome — permanent paralysis may result.",
+      "D": "Incorrect — Steroids will not decompress the cauda equina — surgery is the definitive treatment.",
+      "E": "Incorrect — Physiotherapy is contraindicated in acute CES — this is a surgical emergency."
+    },
+    "reference": "NICE NG59 — Low back pain and sciatica. https://www.nice.org.uk/guidance/ng59",
+    "tags": ["cauda equina syndrome", "CES", "saddle anaesthesia", "emergency", "MRI 4 hours", "NICE NG59"]
+  },
+  {
+    "id": "QG-MSK-114-003",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Musculoskeletal",
+    "difficulty": "Hard",
+    "question": "A 65-year-old man presents with progressive thoracic back pain over 3 months. He has lost 8kg unintentionally and has night pain waking him from sleep. He has a history of prostate cancer treated 5 years ago. Per NICE NG12, what is the most important concern and immediate action?",
+    "options": {
+      "A": "Mechanical back pain — physiotherapy and NSAIDs",
+      "B": "Suspected metastatic spinal cord compression (MSCC) or spinal metastasis — urgent 2WW referral or direct contact with oncology/spinal team. MRI whole spine urgently. Consider dexamethasone if cord compression suspected",
+      "C": "Refer to pain management clinic for chronic back pain",
+      "D": "Arrange routine X-ray lumbar spine",
+      "E": "Check PSA and review in 2 weeks"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Back pain red flags in the context of known malignancy: previous cancer history, progressive thoracic pain, unintentional weight loss >5kg, night pain, age >50 — all are red flags per NICE NG12. In a patient with prostate cancer history, vertebral metastases causing potential metastatic spinal cord compression (MSCC) must be considered. MSCC is an oncological emergency. Per NICE CG75 (MSCC), if MSCC suspected: dexamethasone 16mg (loading dose) immediately, whole spine MRI within 24 hours (4 hours if rapidly deteriorating), urgent spinal oncology/surgery team contact. Even without neurological deficit, progressive thoracic pain + cancer history requires urgent MRI.",
+      "A": "Incorrect — Cancer history + thoracic pain + night pain + weight loss = red flags. Mechanical back pain diagnosis is dangerous here.",
+      "B": "CORRECT — Suspected MSCC/spinal metastases: urgent MRI + dexamethasone + oncology/spinal team per NICE CG75/NICE NG12.",
+      "C": "Incorrect — Chronic pain management is wholly inappropriate for a potential MSCC presentation.",
+      "D": "Incorrect — Plain X-ray is insensitive for early metastases and spinal cord compression — MRI is required.",
+      "E": "Incorrect — Checking PSA alone and waiting 2 weeks is dangerous — MSCC can cause permanent paraplegia within hours."
+    },
+    "reference": "NICE CG75 — Metastatic spinal cord compression. NICE NG12 — Suspected cancer. https://www.nice.org.uk/guidance/cg75",
+    "tags": ["metastatic spinal cord compression", "MSCC", "cancer red flag", "back pain", "dexamethasone", "NICE CG75"]
+  },
+  {
+    "id": "QG-MSK-114-004",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Musculoskeletal",
+    "difficulty": "Medium",
+    "question": "A 38-year-old man presents with a 3-month history of morning back stiffness lasting 2 hours, improving with exercise, buttock pain alternating between sides, and reduced chest expansion. ESR 45 mm/hr. HLA-B27 is positive. MRI sacroiliac joints shows bilateral sacroiliitis. Per NICE NG65, what is the diagnosis and initial management?",
+    "options": {
+      "A": "Mechanical low back pain — physiotherapy only",
+      "B": "Axial spondyloarthritis (ankylosing spondylitis) — NSAIDs as first-line, physiotherapy (spinal exercises critical for maintaining mobility), refer to rheumatology. Biologic therapy (anti-TNF or IL-17 inhibitor) if NSAIDs fail after ≥2 different NSAIDs at adequate dose for 4 weeks each",
+      "C": "Psoriatic arthritis — methotrexate first-line",
+      "D": "Reactive arthritis — STI screening and doxycycline",
+      "E": "Sacroiliac joint dysfunction — corticosteroid injection only"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Axial spondyloarthritis (axSpA)/ankylosing spondylitis: inflammatory spinal disease. Features: young male, prolonged morning stiffness improving with exercise (not rest), bilateral sacroiliitis on MRI, positive HLA-B27, elevated inflammatory markers, reduced chest expansion (costovertebral joint involvement). Per NICE NG65 (Spondyloarthritis), first-line: NSAIDs (full dose, adequate duration) + intensive physiotherapy (extension spinal exercises maintain spinal mobility). Second-line: biologic therapy (anti-TNF: adalimumab, etanercept, certolizumab; or IL-17 inhibitor: secukinumab, ixekizumab) after failure of ≥2 NSAIDs. Annual monitoring including cardiovascular risk (increased risk in axSpA).",
+      "A": "Incorrect — Bilateral sacroiliitis on MRI + HLA-B27 + inflammatory symptoms = axSpA. Physiotherapy alone is insufficient.",
+      "B": "CORRECT — axSpA: NSAIDs + physiotherapy first-line; biologic therapy after NSAID failure per NICE NG65.",
+      "C": "Incorrect — Psoriatic arthritis affects peripheral joints predominantly — different from axSpA.",
+      "D": "Incorrect — Reactive arthritis follows infection and has different clinical course — HLA-B27 MRI sacroiliitis pattern with 3-month history = axSpA.",
+      "E": "Incorrect — SI joint injection alone does not treat the underlying inflammatory axial disease."
+    },
+    "reference": "NICE NG65 — Spondyloarthritis in over 16s: diagnosis and management. https://www.nice.org.uk/guidance/ng65",
+    "tags": ["ankylosing spondylitis", "axSpA", "HLA-B27", "NSAIDs", "biologic therapy", "NICE NG65"]
+  },
+  {
+    "id": "QG-MSK-114-005",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Musculoskeletal",
+    "difficulty": "Easy",
+    "question": "A 52-year-old woman presents with pain and stiffness in both knees, worse after activity and at end of the day, with crepitus and mild swelling but no warmth or systemic features. X-ray shows joint space narrowing and osteophytes bilaterally. Per NICE NG226, what is the most appropriate first-line management approach?",
+    "options": {
+      "A": "Immediate referral for total knee replacement",
+      "B": "Core non-pharmacological management: education and self-management advice, therapeutic exercise (strengthening and aerobic exercise), weight loss if BMI >25. Add paracetamol or topical NSAIDs for pain relief. Oral NSAIDs if needed (with PPI cover). Avoid opioids as routine treatment",
+      "C": "Long-term oral codeine — effective for osteoarthritis pain",
+      "D": "Glucosamine supplements — proven to modify osteoarthritis",
+      "E": "Intra-articular corticosteroid injections as first-line before trying exercise"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per NICE NG226 (Osteoarthritis in over 16s: diagnosis and management, updated 2022), core first-line management of osteoarthritis is non-pharmacological: education about osteoarthritis (self-management, realistic expectations), therapeutic exercise (strengthening + aerobic — both have strong evidence for pain and function), weight loss if overweight. Pharmacological add-ons: topical NSAIDs (first choice — diclofenac gel, fewer systemic side effects), paracetamol (limited evidence but widely used), oral NSAIDs with PPI (if topical insufficient). Opioids are NOT recommended as routine treatment due to lack of long-term benefit and harms. Glucosamine and chondroitin — NOT recommended (NICE NG226 does not support their use). Intra-articular corticosteroid or hyaluronate injections: adjuncts, not first-line.",
+      "A": "Incorrect — Joint replacement is for end-stage OA after conservative management has failed.",
+      "B": "CORRECT — Exercise + education + weight loss + topical NSAIDs is the core first-line approach per NICE NG226.",
+      "C": "Incorrect — Opioids are NOT recommended as routine OA treatment per NICE NG226.",
+      "D": "Incorrect — NICE NG226 explicitly does not recommend glucosamine or chondroitin supplements.",
+      "E": "Incorrect — Intra-articular corticosteroid injections are adjuncts — not first-line before exercise is tried."
+    },
+    "reference": "NICE NG226 — Osteoarthritis in over 16s: diagnosis and management. https://www.nice.org.uk/guidance/ng226",
+    "tags": ["osteoarthritis", "exercise", "weight loss", "topical NSAIDs", "NICE NG226", "no opioids"]
+  },
+  {
+    "id": "QG-MSK-114-006",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Musculoskeletal",
+    "difficulty": "Medium",
+    "question": "A 60-year-old woman with bilateral knee osteoarthritis has been on maximum oral NSAIDs with PPI for 3 months and has completed 12 weeks of physiotherapy-directed exercise. She continues to have significant pain limiting her daily activities. Her BMI is 32. She asks about knee injections. Per NICE NG226, what is the evidence for intra-articular corticosteroid injection in OA?",
+    "options": {
+      "A": "Intra-articular corticosteroid is strongly evidence-based and provides long-term structural benefit to the joint",
+      "B": "Intra-articular corticosteroid injection can be offered as an adjunct for short-term pain relief (typically 4-12 weeks benefit) when other treatments are insufficient. It does NOT modify disease progression. No more than 3-4 injections per joint per year recommended",
+      "C": "Intra-articular hyaluronic acid (viscosupplementation) is more evidence-based than corticosteroid",
+      "D": "Intra-articular PRP (platelet-rich plasma) is recommended by NICE as first-line injection therapy",
+      "E": "Corticosteroid injection is contraindicated in osteoarthritis — only used for inflammatory arthritis"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per NICE NG226, intra-articular corticosteroid injection can be considered as an adjunct for short-term pain relief (weeks to 3 months) when other treatments are insufficient, particularly for flares of OA pain. It does NOT slow disease progression or modify cartilage loss. Evidence: moderate short-term pain reduction; effect wanes over 3 months. Practical guidance: limit to 3-4 injections per joint per year; avoid if injection site infection; the joint should be rested for 24 hours post-injection. Hyaluronic acid (HA): NICE NG226 does not recommend HA (viscosupplementation) due to insufficient evidence of meaningful clinical benefit over placebo. PRP: not currently recommended by NICE.",
+      "A": "Incorrect — Corticosteroid provides short-term symptom relief only — no structural/disease-modifying benefit.",
+      "B": "CORRECT — Intra-articular corticosteroid: short-term adjunct pain relief (4-12 weeks), 3-4 per year maximum, no disease modification per NICE NG226.",
+      "C": "Incorrect — NICE NG226 does NOT recommend hyaluronic acid due to insufficient evidence.",
+      "D": "Incorrect — PRP is not currently recommended by NICE for osteoarthritis.",
+      "E": "Incorrect — Intra-articular corticosteroid CAN be used in OA — not just inflammatory arthritis."
+    },
+    "reference": "NICE NG226 — Osteoarthritis in over 16s. https://www.nice.org.uk/guidance/ng226",
+    "tags": ["osteoarthritis", "intra-articular corticosteroid", "short-term benefit", "no HA", "NICE NG226", "injection"]
+  },
+  {
+    "id": "QG-MSK-114-007",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Musculoskeletal",
+    "difficulty": "Hard",
+    "question": "A 55-year-old woman has recently been started on a biologic anti-TNF therapy (adalimumab) for rheumatoid arthritis by her rheumatologist. She presents to the GP with fever, productive cough and right basal crackles. CXR shows a right lower lobe consolidation. Per NICE NG100 and guidance on biologic therapy, what must be considered?",
+    "options": {
+      "A": "Treat with oral amoxicillin and continue adalimumab unchanged",
+      "B": "Withhold adalimumab and treat the infection — anti-TNF therapy significantly increases risk of serious infections (including TB, pneumonia, invasive fungal). Inform rheumatologist. Do not restart until infection is fully resolved",
+      "C": "Double the adalimumab dose — TNF inhibition helps fight pneumonia",
+      "D": "Switch to a different biologic immediately",
+      "E": "Continue adalimumab — biologics do not increase pneumonia risk"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Anti-TNF therapies (adalimumab, etanercept, infliximab, certolizumab) significantly increase the risk of serious bacterial infections (pneumonia, sepsis), tuberculosis reactivation, and invasive fungal infections (histoplasmosis, aspergillosis). Per NICE NG100 and biologic prescribing guidance: withhold anti-TNF therapy during active serious infection. Treat the infection appropriately (amoxicillin/hospital admission depending on severity). Inform the prescribing rheumatologist. Do not restart anti-TNF until the infection has fully resolved. TB screening (IGRA/Mantoux + CXR) must be performed before starting anti-TNF — check this was done. If TB not excluded: consider referral to respiratory.",
+      "A": "Incorrect — Continuing adalimumab during active pneumonia is dangerous — impaired TNF-mediated immune response may prevent infection clearance.",
+      "B": "CORRECT — Withhold anti-TNF + treat infection + inform rheumatologist + restart only after full resolution per NICE NG100.",
+      "C": "Incorrect — Anti-TNF inhibitors impair anti-bacterial immunity — this would worsen the pneumonia.",
+      "D": "Incorrect — Switching to another biologic during active infection is not appropriate — all biologics share infection risk.",
+      "E": "Incorrect — Anti-TNF therapy significantly increases serious infection risk — this is well-established."
+    },
+    "reference": "NICE NG100 — Rheumatoid arthritis. BSR — Biologic therapy guidelines. https://www.nice.org.uk/guidance/ng100",
+    "tags": ["adalimumab", "anti-TNF", "serious infection", "withhold biologic", "RA", "NICE NG100"]
+  },
+  {
+    "id": "QG-MSK-102-004",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Musculoskeletal",
+    "difficulty": "Medium",
+    "question": "A 62-year-old woman is on alendronate 70mg weekly for osteoporosis. She develops severe jaw pain and an area of exposed bone in the mouth that has not healed for 8 weeks after a dental extraction. Per NICE and MHRA guidance, what is the likely complication and management?",
+    "options": {
+      "A": "Normal post-extraction healing — continue alendronate",
+      "B": "Osteonecrosis of the jaw (ONJ) — a recognised rare complication of bisphosphonate therapy. Inform the prescribing doctor and dental team. Specialist maxillofacial referral. Consider withholding alendronate (discuss risk-benefit with specialist — stopping may not reverse ONJ). Preventive dental care before starting bisphosphonates is recommended",
+      "C": "Dental abscess — oral amoxicillin and continue alendronate",
+      "D": "Bisphosphonates are contraindicated for life after ONJ — stop immediately and never restart",
+      "E": "Osteonecrosis only occurs with IV bisphosphonates — oral alendronate is safe"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Osteonecrosis of the jaw (ONJ): a rare but serious complication of bisphosphonate therapy (more common with IV bisphosphonates used in malignancy but also reported with oral alendronate for osteoporosis). Risk factors: dental extractions, dental implants, periodontal disease, oral surgery, poor oral hygiene, corticosteroids, IV bisphosphonate use. Presentation: exposed bone not healing >8 weeks, jaw pain, infection. Per MHRA and NICE: preventive dental care is recommended before starting bisphosphonates; avoid dental extractions if possible while on bisphosphonates; if ONJ develops — specialist maxillofacial referral, individualised decision about continuing/stopping bisphosphonate (stopping may not reverse established ONJ). Good oral hygiene throughout treatment.",
+      "A": "Incorrect — Non-healing exposed bone for 8 weeks is not normal — this is ONJ until proven otherwise.",
+      "B": "CORRECT — ONJ: specialist maxillofacial referral + discuss withholding alendronate with specialist + preventive dental advice per MHRA/NICE.",
+      "C": "Incorrect — Dental abscess would show signs of acute infection but exposed non-healing bone for 8 weeks is ONJ.",
+      "D": "Incorrect — The decision to permanently stop bisphosphonate is individualised after specialist review — blanket permanent cessation is not mandatory.",
+      "E": "Incorrect — ONJ has been reported with oral bisphosphonates, though the risk is much lower than with IV bisphosphonates."
+    },
+    "reference": "MHRA — Bisphosphonates: osteonecrosis of the jaw. NICE — Bisphosphonate prescribing guidance. https://www.gov.uk/drug-safety-update",
+    "tags": ["osteonecrosis of jaw", "ONJ", "bisphosphonate", "alendronate", "MHRA", "dental complication"]
+  },
+  {
+    "id": "QG-MSK-114-008",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Musculoskeletal",
+    "difficulty": "Easy",
+    "question": "A 40-year-old woman presents with pain and tenderness directly over the lateral elbow, made worse by gripping and extending the wrist against resistance. Passive stretching of the forearm extensors reproduces the pain. There is no joint effusion. What is the diagnosis and first-line management per NICE CKS?",
+    "options": {
+      "A": "Rheumatoid arthritis — anti-CCP antibodies",
+      "B": "Lateral epicondylitis (tennis elbow) — relative rest, topical or oral NSAIDs, physiotherapy (eccentric strengthening exercises). Most cases resolve within 12 months",
+      "C": "Radial tunnel syndrome — urgent nerve conduction studies",
+      "D": "Olecranon bursitis — aspiration",
+      "E": "Cubital tunnel syndrome — elbow splinting and neurology referral"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Lateral epicondylitis (tennis elbow): overuse tendinopathy of the common extensor origin at the lateral epicondyle of the humerus. Classic features: tenderness over lateral epicondyle, pain reproduced by resisted wrist extension and gripping, positive Cozen's test and Mill's test. Per NICE CKS: first-line management includes relative rest, activity modification, topical NSAIDs (first-line pharmacological — fewer systemic side effects), or oral NSAIDs if topical insufficient. Physiotherapy (eccentric strengthening exercises — the primary evidence-based treatment). Steroid injection: can provide short-term relief but inferior long-term outcomes compared to exercise at 6 months. Most cases resolve within 12 months.",
+      "A": "Incorrect — No joint effusion or systemic features — this is a localised tendinopathy, not RA.",
+      "B": "CORRECT — Lateral epicondylitis: topical/oral NSAIDs + eccentric exercises. Resolves within 12 months per NICE CKS.",
+      "C": "Incorrect — Radial tunnel syndrome causes diffuse forearm aching without specific lateral epicondyle tenderness point.",
+      "D": "Incorrect — Olecranon bursitis presents with posterior elbow swelling at the tip of the olecranon — not lateral epicondyle.",
+      "E": "Incorrect — Cubital tunnel syndrome affects the medial side with ulnar nerve symptoms (little/ring finger paraesthesia)."
+    },
+    "reference": "NICE CKS — Tennis elbow. https://cks.nice.org.uk/topics/tennis-elbow/",
+    "tags": ["tennis elbow", "lateral epicondylitis", "eccentric exercises", "topical NSAIDs", "NICE CKS", "tendinopathy"]
+  }
+]

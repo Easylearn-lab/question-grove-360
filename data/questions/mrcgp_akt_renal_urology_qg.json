@@ -1,0 +1,236 @@
+[
+  {
+    "id": "QG-B2-RU-001-001",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Renal & Urology",
+    "difficulty": "Easy",
+    "question": "A 38-year-old man presents with acute severe left loin pain radiating to the left groin with nausea and vomiting. Urine dipstick shows 2+ blood. He is rolling on the bed in pain. Per NICE CKS and EAU guidelines, what is the first-line analgesia for ureteric colic?",
+    "options": {
+      "A": "Oral co-codamol 30/500 — adequate for renal colic pain",
+      "B": "Diclofenac 75mg IM or rectally (NSAID) — first-line for ureteric/renal colic; superior to opioids as it reduces ureteric smooth muscle spasm and prostaglandin-mediated inflammatory pain; reduces ureteric pressure and GFR which reduces stone-induced obstruction pain",
+      "C": "IV morphine — required for all renal colic",
+      "D": "Oral paracetamol 1g — sufficient for renal colic",
+      "E": "Hyoscine butylbromide — antispasmodic first-line"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per NICE CKS (Renal or ureteric colic) and EAU Guidelines on Urolithiasis, NSAIDs (diclofenac 75mg IM/PR, or ketorolac IV/IM) are first-line analgesia for ureteric colic. Mechanism: NSAIDs inhibit cyclo-oxygenase → reduce prostaglandin synthesis → reduce ureteric smooth muscle contraction and ureteric peristalsis → reduce ureteric pressure above the stone → decrease pain. They also cause afferent arteriolar vasoconstriction reducing GFR and thus urinary production above the obstruction. Studies show NSAIDs achieve pain control equivalent to opioids with fewer side effects (nausea, drowsiness, dependency). If NSAIDs contraindicated (renal impairment, peptic ulcer, NSAID allergy): use opioid (IV/IM morphine or tramadol). Also consider alpha-blockers (tamsulosin) to facilitate stone passage for <10mm stones.",
+      "A": "Incorrect — Oral co-codamol is insufficient for severe renal colic pain — parenteral NSAID is first-line.",
+      "B": "CORRECT — Diclofenac 75mg IM/PR is first-line for ureteric colic per NICE CKS/EAU — superior to opioids with fewer side effects.",
+      "C": "Incorrect — IV morphine is appropriate when NSAIDs are contraindicated — not the first-line choice per guidelines.",
+      "D": "Incorrect — Oral paracetamol is inadequate for severe renal colic.",
+      "E": "Incorrect — Hyoscine butylbromide has limited evidence for ureteric colic analgesia — NSAIDs are the evidence-based first-line."
+    },
+    "reference": "NICE CKS — Renal or ureteric colic. EAU Guidelines on Urolithiasis. https://cks.nice.org.uk/topics/renal-or-ureteric-colic/",
+    "tags": ["renal colic", "diclofenac", "NSAIDs first-line", "ureteric colic", "NICE CKS", "EAU"]
+  },
+  {
+    "id": "QG-B2-RU-001-002",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Renal & Urology",
+    "difficulty": "Medium",
+    "question": "A 42-year-old man with confirmed ureteric colic passes a 4mm calcium oxalate stone spontaneously. This is his second stone in 2 years. Per NICE CKS and EAU guidelines, what metabolic investigation should he have?",
+    "options": {
+      "A": "No investigation needed — stone passage confirms no further action required",
+      "B": "24-hour urine collection (calcium, oxalate, citrate, uric acid, creatinine, sodium) and blood tests (serum calcium, urate, creatinine, bicarbonate); dietary advice: increase fluid intake to >2.5 litres/day, normal dietary calcium intake (do NOT restrict), reduce salt and animal protein",
+      "C": "Repeat CT KUB annually only",
+      "D": "Start allopurinol immediately for all recurrent stones",
+      "E": "Check urine pH only — sufficient for recurrent stone assessment"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per NICE CKS and EAU Urolithiasis Guidelines, patients with recurrent kidney stones (≥2 stones) should have metabolic evaluation to identify modifiable risk factors: (1) 24-hour urine: calcium (hypercalciuria), oxalate (hyperoxaluria), citrate (low citrate is pro-lithogenic), uric acid (uricosuria), creatinine, sodium, pH, volume; (2) Blood: calcium (exclude hyperparathyroidism), urate (gout), creatinine/eGFR, bicarbonate. Dietary advice: increase fluid (>2.5 L/day urine output) — most important; do NOT restrict dietary calcium (low dietary Ca increases urinary oxalate = more stones); reduce animal protein and sodium. Medical prevention: thiazide diuretics for hypercalciuria; potassium citrate for hypocitraturia/uric acid stones; allopurinol only for uric acid stones (not calcium oxalate stones empirically).",
+      "A": "Incorrect — A second stone episode requires metabolic investigation to identify and modify risk factors.",
+      "B": "CORRECT — 24-hour urine + blood metabolic screen + dietary advice per NICE CKS/EAU for recurrent calcium oxalate stones.",
+      "C": "Incorrect — Annual CT without metabolic investigation misses modifiable causes and does not prevent recurrence.",
+      "D": "Incorrect — Allopurinol is only for uric acid stones — not appropriate empirically for all calcium oxalate stone formers.",
+      "E": "Incorrect — Urine pH alone is insufficient — a comprehensive metabolic screen is required."
+    },
+    "reference": "NICE CKS — Renal or ureteric colic. EAU Guidelines on Urolithiasis. https://cks.nice.org.uk/topics/renal-or-ureteric-colic/",
+    "tags": ["recurrent kidney stones", "24-hour urine", "metabolic evaluation", "EAU guidelines", "dietary calcium", "NICE CKS"]
+  },
+  {
+    "id": "QG-B2-RU-001-003",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Renal & Urology",
+    "difficulty": "Hard",
+    "question": "A 55-year-old man with known CKD G3b (eGFR 38 ml/min) presents with acute severe left loin pain. CT KUB confirms a 9mm left ureteric stone at the vesico-ureteric junction (VUJ). He has no signs of infection. Per EAU guidelines, what are his management options?",
+    "options": {
+      "A": "Wait for spontaneous passage — all stones <10mm pass spontaneously",
+      "B": "Medical expulsive therapy: tamsulosin 0.4mg daily (alpha-blocker) to facilitate stone passage; 9mm stones at VUJ have lower spontaneous passage rates (40-60%) than more proximal stones; if not passed in 4 weeks or develops complications: ureteroscopy + laser lithotripsy (first-line for distal ureteric stones) or ESWL; admit if: fever/infection, solitary kidney, bilateral stones, uncontrolled pain, AKI",
+      "C": "ESWL is absolutely contraindicated in CKD",
+      "D": "Immediate open surgery — the only treatment for 9mm stones",
+      "E": "Prescribe diclofenac only and review in 3 months"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per EAU Urolithiasis Guidelines 2023, for ureteric stones: stones <5mm: >80% spontaneous passage — conservative management with analgesia and hydration; stones 5-10mm (this case: 9mm): 40-60% spontaneous passage — medical expulsive therapy (MET) with tamsulosin 0.4mg daily increases passage rates by 20-30% and reduces time to passage; stones >10mm: unlikely to pass spontaneously — active intervention required. Active interventions for distal ureteric stones: ureteroscopy + laser lithotripsy (first-line — high success rate, lower re-treatment rates than ESWL); ESWL (less invasive, lower success for distal stones); percutaneous nephrolithotomy (large proximal stones). Indications for immediate intervention: obstructive uropathy with infection (sepsis — emergency), AKI, uncontrolled pain, solitary/transplant kidney. CKD is not an absolute contraindication to ESWL but caution is required.",
+      "A": "Incorrect — 9mm stones have only 40-60% spontaneous passage — medical expulsive therapy and monitoring are appropriate, not simple watchful waiting.",
+      "B": "CORRECT — Tamsulosin (MET) for 9mm stone; intervention if not passed in 4 weeks per EAU guidelines.",
+      "C": "Incorrect — ESWL is not absolutely contraindicated in CKD — caution is required but it can be performed.",
+      "D": "Incorrect — Open surgery for ureteric stones is obsolete — ureteroscopy and ESWL are minimally invasive alternatives.",
+      "E": "Incorrect — Reviewing in 3 months without active management or monitoring is too long — reassessment at 4 weeks is appropriate."
+    },
+    "reference": "EAU Guidelines on Urolithiasis 2023. https://uroweb.org/guidelines/urolithiasis",
+    "tags": ["ureteric stone", "tamsulosin MET", "ureteroscopy", "ESWL", "EAU guidelines", "9mm stone"]
+  },
+  {
+    "id": "QG-B2-RU-022-001",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Renal & Urology",
+    "difficulty": "Medium",
+    "question": "A 6-year-old boy presents with nephrotic syndrome (oedema, proteinuria, hypoalbuminaemia, hypercholesterolaemia). Per NICE CKS and renal guidelines, what is the most common cause of nephrotic syndrome in children and what is the first-line treatment?",
+    "options": {
+      "A": "Membranous nephropathy — treated with cyclophosphamide",
+      "B": "Minimal change disease — accounts for 80-90% of childhood nephrotic syndrome; responds dramatically to high-dose oral prednisolone (60mg/m²/day or 2mg/kg/day for 4-6 weeks then tapering); >90% of children achieve remission with steroids",
+      "C": "IgA nephropathy — ACE inhibitor and tonsillectomy",
+      "D": "Focal segmental glomerulosclerosis — rarely responds to steroids",
+      "E": "Alport syndrome — genetic testing and supportive care"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Minimal change disease (MCD): the most common cause of nephrotic syndrome in children (80-90%). Name refers to the minimal histological changes on light microscopy — only electron microscopy shows podocyte foot process effacement. Classic features: abrupt onset oedema (periorbital, peripheral, ascites), massive proteinuria (>3.5g/24 hours in adults, >40mg/m²/hour in children), hypoalbuminaemia <25 g/L, hypercholesterolaemia. First-line treatment: oral prednisolone 60mg/m²/day for 4-6 weeks then alternate-day dosing tapering over 4 weeks. Response rate >90% in children. Relapses are common (70%) but usually steroid-responsive. Complications of nephrotic syndrome: infections (especially pneumococcal — pneumococcal vaccine recommended), thromboembolism (loss of anticoagulant proteins), hyperlipidaemia.",
+      "A": "Incorrect — Membranous nephropathy is the most common nephrotic syndrome in adults over 60 — not children.",
+      "B": "CORRECT — Minimal change disease: most common childhood nephrotic syndrome (80-90%). First-line: prednisolone — >90% achieve remission.",
+      "C": "Incorrect — IgA nephropathy predominantly presents as nephritic syndrome (haematuria, hypertension) — not primarily nephrotic.",
+      "D": "Incorrect — FSGS is more common in adults and adolescents — not the most common cause in a 6-year-old.",
+      "E": "Incorrect — Alport syndrome presents with haematuria, hearing loss and renal failure — not primarily nephrotic syndrome."
+    },
+    "reference": "NICE CKS — Nephrotic syndrome. KDIGO Guidelines — Nephrotic Syndrome. https://cks.nice.org.uk/topics/nephrotic-syndrome-in-children/",
+    "tags": ["nephrotic syndrome", "minimal change disease", "childhood", "prednisolone", "NICE CKS", "proteinuria"]
+  },
+  {
+    "id": "QG-B2-RU-022-002",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Renal & Urology",
+    "difficulty": "Hard",
+    "question": "A 45-year-old man presents with nephrotic syndrome. His renal biopsy shows membranous nephropathy. He has proteinuria of 6g/24 hours and serum albumin of 22 g/L. A PLA2R antibody is positive. Per NICE and renal society guidelines, what is this finding suggestive of and what are the treatment priorities?",
+    "options": {
+      "A": "Secondary membranous nephropathy — treat the underlying malignancy only",
+      "B": "Primary (idiopathic) membranous nephropathy — PLA2R (phospholipase A2 receptor) antibody positivity is diagnostic of primary MN; treatment priorities: (1) optimise BP (target <130/80) with ACE inhibitor/ARB (reduce proteinuria); (2) consider immunosuppression (cyclophosphamide + corticosteroids or rituximab per KDIGO 2021) if nephrotic syndrome persists >6 months or worsening renal function; (3) anticoagulation (thromboembolism risk is high in MN with severe nephrotic syndrome); (4) screen for underlying malignancy at diagnosis regardless (10-20% are secondary MN)",
+      "C": "PLA2R positivity indicates good prognosis — no treatment needed",
+      "D": "Immediately start cyclophosphamide for all PLA2R-positive patients",
+      "E": "PLA2R antibody tests have no clinical utility in membranous nephropathy"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "PLA2R (M-type phospholipase A2 receptor) antibody: present in 70-80% of primary (idiopathic) membranous nephropathy cases. Its presence strongly supports a primary autoimmune aetiology (autoantibodies targeting podocyte PLA2R → immune complex deposition → proteinuria). Management per KDIGO 2021 Guidelines on Glomerulonephritis: (1) Supportive: ACE inhibitor/ARB (target proteinuria <0.5g/24h); statin for hypercholesterolaemia; anticoagulation if albumin <25 g/L (prophylactic LMWH/warfarin given extreme VTE risk); (2) Active disease (persisting nephrotic syndrome >6 months, worsening renal function): cyclophosphamide + prednisolone alternating monthly (Ponticelli regimen) or rituximab (KDIGO 2021 preferred for first-line immunosuppression). Monitor: PLA2R titre — declining titre precedes proteinuria improvement and predicts response.",
+      "A": "Incorrect — PLA2R positivity specifically identifies PRIMARY membranous nephropathy (autoimmune, not secondary). Secondary MN is PLA2R-negative and has other causes (SLE, HBV, malignancy).",
+      "B": "CORRECT — PLA2R-positive = primary MN. Priorities: ACE inhibitor, VTE prophylaxis, screen for malignancy, consider immunosuppression (cyclophosphamide/rituximab) if persistent.",
+      "C": "Incorrect — While 30-40% of primary MN may remit spontaneously, persistent nephrotic syndrome with low albumin requires treatment.",
+      "D": "Incorrect — Not all PLA2R-positive patients require immediate cyclophosphamide — a period of conservative management is appropriate first.",
+      "E": "Incorrect — PLA2R antibody is the key diagnostic marker for primary MN and is used to monitor treatment response — it has major clinical utility."
+    },
+    "reference": "KDIGO 2021 — Glomerulonephritis Clinical Practice Guideline. https://kdigo.org/guidelines/gn/",
+    "tags": ["membranous nephropathy", "PLA2R antibody", "primary MN", "KDIGO", "rituximab", "anticoagulation"]
+  },
+  {
+    "id": "QG-B2-RU-034-001",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Renal & Urology",
+    "difficulty": "Medium",
+    "question": "A 75-year-old woman with a long-term urethral catheter develops fever (38.6°C), rigors, loin pain and confusion. Per NICE NG111 and NG195, what is the most appropriate empirical antibiotic treatment while awaiting urine culture?",
+    "options": {
+      "A": "Oral nitrofurantoin — same as uncomplicated lower UTI",
+      "B": "Co-amoxiclav 625mg three times daily orally (or IV if unable to swallow/very unwell) — for catheter-associated upper UTI (pyelonephritis) in patients not in septic shock; broader spectrum than cefalexin; covers common catheter-associated pathogens including E. coli and Enterococcus; ciprofloxacin as alternative if penicillin allergic",
+      "C": "Metronidazole alone — covers anaerobes from catheter biofilm",
+      "D": "Oral trimethoprim for 3 days — same duration as uncomplicated UTI",
+      "E": "Await culture results before starting any antibiotic"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per NICE NG111 (Urinary tract infection in adults) and NG195, catheter-associated UTI (CAUTI) with features of upper UTI/urosepsis (fever, rigors, loin pain, confusion) requires broad-spectrum antibiotic therapy. Nitrofurantoin is CONTRAINDICATED for upper UTI (pyelonephritis) as it does not achieve adequate tissue concentrations in the renal parenchyma — only appropriate for lower UTI. Per NICE NG111: co-amoxiclav is appropriate for catheter-associated upper UTI; ciprofloxacin if penicillin allergic. Duration: 7-14 days for upper UTI (CAUTI requires longer courses than simple lower UTI). IMPORTANT: consider changing or removing the catheter at the start of treatment if possible — this significantly improves treatment response. Blood cultures should be taken before antibiotics if features of sepsis.",
+      "A": "Incorrect — Nitrofurantoin is specifically contraindicated for upper UTI/pyelonephritis — it does not achieve therapeutic tissue concentrations in the kidney.",
+      "B": "CORRECT — Co-amoxiclav for catheter-associated upper UTI per NICE NG111. Nitrofurantoin is contraindicated for pyelonephritis.",
+      "C": "Incorrect — Metronidazole alone has no significant activity against gram-negative uropathogens and is not appropriate for UTI treatment.",
+      "D": "Incorrect — Trimethoprim 3 days is only for uncomplicated lower UTI — upper UTI requires 7-14 days of appropriate antibiotics.",
+      "E": "Incorrect — In a patient with fever, rigors and confusion suggesting urosepsis, empirical treatment must be started immediately — do not await culture results."
+    },
+    "reference": "NICE NG111 — Urinary tract infection in adults. NICE NG195 — UTI antimicrobial prescribing. https://www.nice.org.uk/guidance/ng111",
+    "tags": ["catheter-associated UTI", "co-amoxiclav", "no nitrofurantoin pyelonephritis", "NICE NG111", "upper UTI", "CAUTI"]
+  },
+  {
+    "id": "QG-B2-RU-066-001",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Renal & Urology",
+    "difficulty": "Medium",
+    "question": "A 35-year-old man presents with a scrotal swelling that has developed gradually over 3 months. The scrotal swelling is large and does NOT transilluminate. The testis is not clearly palpable separately from the swelling. Per NICE NG12, what is the correct management?",
+    "options": {
+      "A": "Reassure — large hydroceles always transilluminate; if not transilluminating it is simply a large hydrocele",
+      "B": "Urgent 2WW referral for USS testes — a scrotal swelling that does NOT transilluminate, where the testis cannot be separately felt, must be urgently investigated to exclude testicular malignancy; USS is the investigation of choice",
+      "C": "Refer to urology in 6 months — non-urgent for asymptomatic swellings",
+      "D": "Aspirate the hydrocele in primary care",
+      "E": "Check AFP and beta-hCG in primary care — sufficient to exclude malignancy without USS"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per NICE NG12 (Suspected cancer: recognition and referral), a scrotal swelling that does NOT transilluminate and where the testis cannot be clearly felt separately from the mass should be referred urgently (2WW) to urology to exclude testicular cancer. Key distinction: benign hydrocele = soft, fluid-filled, transilluminates brilliantly, testis palpable separately below or within. A non-transilluminable mass = solid component = possible testicular tumour until USS proves otherwise. USS scrotum is the definitive first investigation (sensitivity >95% for testicular tumours). NICE NG12 mandates urgent 2WW for any unexplained solid testicular mass in adults. Serum tumour markers (AFP, beta-hCG, LDH) are arranged by urology — not diagnostic in primary care without imaging.",
+      "A": "Incorrect — Non-transilluminable scrotal swelling is not a benign finding — solid components must be excluded by USS.",
+      "B": "CORRECT — Non-transilluminable scrotal mass where testis not clearly palpable: urgent 2WW urology referral + USS testes per NICE NG12.",
+      "C": "Incorrect — Testicular cancer is most common in men aged 20-40 — a 6-month wait for a non-transilluminable scrotal mass risks delayed cancer diagnosis.",
+      "D": "Incorrect — Primary care aspiration of a potentially malignant scrotal mass risks tumour seeding and is contraindicated.",
+      "E": "Incorrect — Tumour markers alone cannot exclude testicular malignancy — USS is the definitive investigation and should be arranged urgently."
+    },
+    "reference": "NICE NG12 — Suspected cancer: recognition and referral. https://www.nice.org.uk/guidance/ng12",
+    "tags": ["scrotal mass", "non-transilluminable", "testicular cancer", "2WW", "USS testes", "NICE NG12"]
+  },
+  {
+    "id": "QG-B2-RU-085-001",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Renal & Urology",
+    "difficulty": "Hard",
+    "question": "A 24-year-old man presents with inability to void. On examination his bladder is palpably distended. His GP arranges a post-void residual USS which shows 450 ml residual urine. He has no neurological symptoms. Per NICE CKS and urology guidelines, what is the most likely cause in this age group and what investigations should follow?",
+    "options": {
+      "A": "Benign prostatic hyperplasia — start tamsulosin",
+      "B": "Urethral stricture — the most common cause of bladder outflow obstruction in young men under 40; causes poor stream, straining, incomplete emptying and urinary retention; investigations: urine flow rate (uroflowmetry), USS kidneys/bladder, urgent urology referral for flexible cystoscopy and ascending urethrogram to confirm and treat stricture",
+      "C": "Overactive bladder — anticholinergic therapy",
+      "D": "Urinary tract infection causing detrusor spasm",
+      "E": "Psychological voiding dysfunction — reassure"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Urethral stricture: fibrotic narrowing of the urethra causing obstructive lower urinary tract symptoms (LUTS). In young men under 40, urethral stricture is a far more common cause of bladder outflow obstruction than BPH (which typically affects men over 50). Causes: previous urethritis (gonorrhoea, chlamydia), trauma (pelvic fracture, catheterisation, instrumentation), surgery (TURP, hypospadias repair), or idiopathic. Symptoms: poor stream, split stream, straining, prolonged voiding, incomplete emptying, recurrent UTIs. Investigations: uroflowmetry (reduced flow rate), post-void residual USS, flexible cystoscopy (visualise stricture), retrograde urethrogram (define length and location). Treatment: urethral dilation, optical urethrotomy (incision), urethroplasty for long/recurrent strictures. Must exclude urethritis — GU screen.",
+      "A": "Incorrect — BPH typically affects men over 50-60 — not a 24-year-old without risk factors.",
+      "B": "CORRECT — Urethral stricture is the most common cause of bladder outflow obstruction in young men. Urology referral for cystoscopy/urethrogram per NICE CKS.",
+      "C": "Incorrect — OAB causes urgency and frequency but NOT urinary retention and large post-void residual.",
+      "D": "Incorrect — UTI-related detrusor spasm does not cause 450 ml post-void residual in a young man without other features.",
+      "E": "Incorrect — Psychological voiding dysfunction is a diagnosis of exclusion — structural obstruction must be excluded first."
+    },
+    "reference": "NICE CKS — Urinary retention. EAU Guidelines on Urethral Strictures. https://cks.nice.org.uk/topics/urinary-retention/",
+    "tags": ["urethral stricture", "young man", "bladder outflow obstruction", "urethroscopy", "NICE CKS", "EAU"]
+  },
+  {
+    "id": "QG-B2-RU-091-001",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Renal & Urology",
+    "difficulty": "Easy",
+    "question": "A 62-year-old woman presents with urge urinary incontinence — sudden compelling urge to void that she cannot defer, with involuntary urine loss. Per NICE NG123, what is the recommended first investigation before starting any pharmacological treatment?",
+    "options": {
+      "A": "Cystoscopy — bladder pathology must be excluded first",
+      "B": "Urine dipstick — exclude urinary tract infection (UTI) before attributing symptoms to overactive bladder (OAB); if UTI is confirmed: treat and reassess; if dipstick negative: proceed with OAB management",
+      "C": "Urodynamics — all urge incontinence requires urodynamic confirmation before treatment",
+      "D": "MRI pelvis — exclude pelvic floor pathology",
+      "E": "Start anticholinergic medication immediately — investigation is not needed for typical OAB"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per NICE NG123 (Urinary incontinence and pelvic organ prolapse in women), the first step in assessing urge urinary incontinence is urine dipstick testing to exclude UTI. UTI can present with identical symptoms to OAB (urgency, frequency, urge incontinence, dysuria) — treating a misdiagnosed UTI as OAB with anticholinergics is inappropriate and ineffective. If dipstick positive for leucocytes/nitrites: MSU for culture and sensitivity; treat UTI; reassess after treatment. If dipstick negative and symptoms typical of OAB: proceed with lifestyle advice and bladder training before pharmacological treatment. Cystoscopy and urodynamics are not routinely indicated for typical OAB symptoms — reserved for: haematuria, recurrent UTIs, treatment failure, suspected mixed incontinence requiring further characterisation.",
+      "A": "Incorrect — Cystoscopy is not routinely indicated as first investigation for typical urge incontinence — only if haematuria or diagnostic uncertainty.",
+      "B": "CORRECT — Urine dipstick to exclude UTI is the first investigation for urge incontinence per NICE NG123 before any OAB treatment.",
+      "C": "Incorrect — Urodynamics is not routinely required before starting OAB treatment in primary care — reserved for diagnostic uncertainty.",
+      "D": "Incorrect — MRI pelvis is not a first-line investigation for OAB symptoms.",
+      "E": "Incorrect — Starting anticholinergics before excluding UTI risks treating the wrong condition and missing an infection."
+    },
+    "reference": "NICE NG123 — Urinary incontinence and pelvic organ prolapse in women. https://www.nice.org.uk/guidance/ng123",
+    "tags": ["urge incontinence", "urine dipstick", "exclude UTI", "OAB", "NICE NG123", "first investigation"]
+  }
+]

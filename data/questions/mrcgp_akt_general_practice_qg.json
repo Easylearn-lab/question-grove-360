@@ -1,0 +1,236 @@
+[
+  {
+    "id": "QG-B2-GP-002-001",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "General Practice",
+    "difficulty": "Easy",
+    "question": "A 45-year-old man has a vasovagal syncope episode while having blood taken. He recovers fully within 2 minutes. He is a bus driver. Per DVLA guidelines, what advice should be given about driving?",
+    "options": {
+      "A": "He must surrender his licence permanently — any syncopal episode disqualifies from driving",
+      "B": "Vasovagal syncope with a clear provoking cause (blood draw) and complete recovery: Group 1 licence (car/motorcycle) — can continue to drive, no DVLA notification required if provoked, unlikely to recur while driving; Group 2 licence (bus/lorry/HGV) — must not drive and notify DVLA until assessed; bus drivers require DVLA medical assessment and may return to driving if no recurrence and underlying cause identified",
+      "C": "No restrictions needed for any licence category — vasovagal syncope is benign",
+      "D": "Must stop all driving for 6 months regardless of licence type",
+      "E": "Only DVLA notification is needed — he can continue driving while under assessment"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per DVLA 'At a Glance' Guide: syncope management varies by licence group. Vasovagal syncope (simple faint with clear provoking cause — pain, fear, emotional stress, prolonged standing, blood draw): Group 1 (car/motorcycle): if provoked and single episode, no need to stop driving or notify DVLA; Group 2 (bus/lorry/HGV): stricter standards apply due to higher public safety risk — must stop driving and notify DVLA; return to driving only after period free of episodes and medical assessment. As a bus driver (Group 2 licence), he must stop driving and notify the DVLA. The assessment will consider: frequency of episodes, underlying cause, symptoms before LOC, and risk of recurrence at the wheel.",
+      "A": "Incorrect — Vasovagal syncope with a clear provoking cause (blood draw) does not permanently disqualify from driving.",
+      "B": "CORRECT — Group 1: can continue driving. Group 2 (bus): must notify DVLA and stop driving per DVLA guidelines.",
+      "C": "Incorrect — Group 2 licence holders (bus/HGV drivers) have stricter requirements than Group 1 — no driving until assessed.",
+      "D": "Incorrect — 6-month restriction applies to unexplained syncope — not provoked vasovagal in Group 1 holders.",
+      "E": "Incorrect — As a bus driver (Group 2), he must stop driving during assessment — continuing to drive while under DVLA assessment is not permitted."
+    },
+    "reference": "DVLA — Assessing fitness to drive: a guide for medical professionals. https://www.gov.uk/government/publications/assessing-fitness-to-drive-a-guide-for-medical-professionals",
+    "tags": ["vasovagal syncope", "DVLA", "Group 2 licence", "bus driver", "fitness to drive", "DVLA guidelines"]
+  },
+  {
+    "id": "QG-B2-GP-014-001",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "General Practice",
+    "difficulty": "Hard",
+    "question": "A 19-year-old man attends requesting a sick note. On examination he has constricted pupils (miosis), bradycardia (HR 52), drowsiness, reduced respiratory rate and constipation. Per clinical pharmacology principles, what substance is most likely responsible for these features?",
+    "options": {
+      "A": "Cannabis — causes red eyes and increased appetite",
+      "B": "Methadone (opioid) — opioid toxidrome: miosis (constricted pupils), CNS depression (drowsiness, reduced GCS), reduced respiratory rate (respiratory depression — most dangerous), bradycardia, constipation; treatment: naloxone (opioid antagonist)",
+      "C": "Cocaine — causes dilated pupils and tachycardia",
+      "D": "Alcohol — causes nystagmus and wide-based gait",
+      "E": "Amphetamines — causes dilated pupils and agitation"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "The opioid toxidrome: a constellation of clinical features from opioid excess/toxicity — CONSTRICTED PUPILS (miosis — pathognomonic of opioid use; opioids stimulate the Edinger-Westphal nucleus causing pupillary constriction), CNS depression (drowsiness, sedation, coma), REDUCED RESPIRATORY RATE (respiratory depression — the most dangerous and life-threatening feature; opioids suppress the respiratory centre in the medulla), bradycardia, constipation (reduced GI motility), nausea and vomiting. Methadone: a synthetic opioid prescribed for opioid substitution therapy — longer half-life (24-36 hours) than heroin; higher overdose risk due to accumulation; causes all classic opioid features. Treatment: naloxone (competitive opioid receptor antagonist) IV/IM/intranasal; repeated doses/infusion needed for long-acting opioids like methadone.",
+      "A": "Incorrect — Cannabis causes conjunctival injection (red eyes), increased appetite, mild tachycardia, psychosis at high doses — not miosis or respiratory depression.",
+      "B": "CORRECT — Opioid toxidrome: miosis + CNS depression + respiratory depression + bradycardia. Methadone most likely in a 19-year-old.",
+      "C": "Incorrect — Cocaine causes DILATED pupils (mydriasis), tachycardia, hypertension, agitation — the sympathomimetic toxidrome.",
+      "D": "Incorrect — Alcohol causes nystagmus, ataxia, slurred speech — not specifically miosis.",
+      "E": "Incorrect — Amphetamines cause DILATED pupils, tachycardia, hypertension, hyperthermia — the sympathomimetic toxidrome."
+    },
+    "reference": "BNF — Naloxone. NICE CKS — Opioid misuse. https://bnf.nice.org.uk/drug/naloxone-hydrochloride.html",
+    "tags": ["opioid toxidrome", "miosis", "methadone", "respiratory depression", "naloxone", "constricted pupils"]
+  },
+  {
+    "id": "QG-B2-GP-047-001",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "General Practice",
+    "difficulty": "Medium",
+    "question": "An 82-year-old man with known dementia and previous stroke is brought by his carer. He has right-sided visual neglect and when handed a clock and asked to draw it, he draws all the numbers on the left side and leaves the right side empty. Per neurological principles, where is the likely lesion and what does this represent?",
+    "options": {
+      "A": "Left frontal lobe — Broca's aphasia",
+      "B": "Right parietal lobe lesion (previous stroke) causing hemispatial neglect — left parietal lobe processes the right visual field and right parietal lobe processes the left visual field; a right parietal lesion causes neglect of the left hemi-space (patient ignores the left side of space); the clock drawing test is a validated screening tool for visuospatial deficits and dementia",
+      "C": "Left occipital lobe — homonymous hemianopia",
+      "D": "Right cerebellum — intention tremor affecting drawing",
+      "E": "Left temporal lobe — Wernicke's aphasia"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Hemispatial neglect (unilateral spatial neglect): a neurological condition where a patient fails to attend to stimuli on one side of space, most commonly the left side following a right parietal lobe lesion. The right parietal cortex (inferior parietal lobule, temporo-parietal junction) is dominant for spatial attention across both sides of space — right parietal lesions cause profound left neglect. Clock drawing test findings in left neglect: all numbers crowded on the right side; left side of clock is left blank. The clock drawing test (CDT) is a validated screening test for: executive function, visuospatial ability, and cognitive impairment in dementia assessment. Hemianopia (visual field defect) is different from neglect — in hemianopia, the patient knows the visual field is lost; in neglect, the patient is unaware of the left side.",
+      "A": "Incorrect — Left frontal lobe (Broca's area) causes expressive aphasia — not visuospatial neglect.",
+      "B": "CORRECT — Right parietal lesion causes left hemispatial neglect. Clock drawing with numbers only on right side is pathognomonic.",
+      "C": "Incorrect — Left occipital lobe lesion causes right homonymous hemianopia — the patient loses the right visual field but is aware of the deficit.",
+      "D": "Incorrect — Cerebellar lesions cause ataxia and tremor — not visuospatial neglect.",
+      "E": "Incorrect — Left temporal lobe (Wernicke's area) causes receptive aphasia — fluent speech without comprehension."
+    },
+    "reference": "NICE CG42 — Dementia. Clock Drawing Test in neurological assessment. https://www.nice.org.uk/guidance/ng97",
+    "tags": ["hemispatial neglect", "right parietal lobe", "clock drawing test", "stroke", "visuospatial", "dementia"]
+  },
+  {
+    "id": "QG-B2-GP-070-001",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "General Practice",
+    "difficulty": "Medium",
+    "question": "A 50-year-old man has a BMI of 32, waist circumference of 98 cm, hypertriglyceridaemia (triglycerides 2.8 mmol/L), low HDL (0.9 mmol/L), fasting blood glucose 6.4 mmol/L and blood pressure 138/88 mmHg. Per NICE guidelines, what diagnosis does this cluster of features represent and what is the primary management?",
+    "options": {
+      "A": "Type 2 diabetes — start metformin immediately",
+      "B": "Metabolic syndrome — the cluster of: central obesity (waist circumference >94 cm in men), raised triglycerides, reduced HDL, raised fasting glucose (pre-diabetes), hypertension; significantly increases risk of type 2 diabetes and cardiovascular disease; primary management: lifestyle modification (weight loss 5-10%, Mediterranean diet, 150 minutes moderate exercise weekly, alcohol reduction, smoking cessation)",
+      "C": "Hypothyroidism — check TFTs",
+      "D": "Cushing's syndrome — dexamethasone suppression test",
+      "E": "Isolated hypertension — start antihypertensive"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Metabolic syndrome: a cluster of cardiometabolic risk factors that together significantly increase the risk of type 2 diabetes and cardiovascular disease. Diagnostic criteria (IDF/WHO criteria): central obesity PLUS 2 or more of: raised triglycerides (≥1.7 mmol/L), reduced HDL (<1.03 mmol/L in men, <1.29 mmol/L in women), raised BP (≥130/85 mmHg), impaired fasting glucose (≥5.6 mmol/L) or T2DM. This patient meets all criteria. Management priorities per NICE: lifestyle intervention is first-line — weight loss 5-10% significantly reduces all components; Mediterranean diet (vegetables, whole grains, olive oil, fish) reduces cardiovascular risk; 150 minutes moderate-intensity exercise weekly; screen annually for T2DM (fasting glucose or HbA1c); address each risk factor individually if lifestyle fails (antihypertensives, statins, etc.).",
+      "A": "Incorrect — Fasting glucose 6.4 mmol/L is impaired fasting glucose (pre-diabetes: 5.5-6.9 mmol/L) — NOT diagnostic of type 2 diabetes (≥7.0 mmol/L). Metformin is not indicated yet.",
+      "B": "CORRECT — Metabolic syndrome: central obesity + dyslipidaemia + pre-diabetes + hypertension. Lifestyle first-line per NICE.",
+      "C": "Incorrect — Hypothyroidism can contribute to some metabolic syndrome features but the full clinical picture here does not suggest hypothyroidism.",
+      "D": "Incorrect — Cushing's syndrome could cause similar metabolic features but the patient has no other Cushingoid signs.",
+      "E": "Incorrect — Treating hypertension alone misses the full metabolic syndrome requiring comprehensive lifestyle intervention."
+    },
+    "reference": "NICE NG28 — Type 2 diabetes. NICE PH35 — Metabolic syndrome. https://www.nice.org.uk/guidance/ng28",
+    "tags": ["metabolic syndrome", "central obesity", "pre-diabetes", "dyslipidaemia", "lifestyle", "NICE NG28"]
+  },
+  {
+    "id": "QG-B2-GP-076-001",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "General Practice",
+    "difficulty": "Medium",
+    "question": "A 72-year-old immunocompromised man on prednisolone 20mg daily develops a unilateral painful vesicular rash in the T5 dermatome. He has severe pain and the rash appeared yesterday. Per NICE CKS, what is the diagnosis, treatment and what important complication must be discussed?",
+    "options": {
+      "A": "Herpes simplex — aciclovir 200mg five times daily for 5 days",
+      "B": "Shingles (herpes zoster) — reactivation of varicella-zoster virus in a dermatome; first-line treatment: oral aciclovir 800mg five times daily for 7 days (or valaciclovir 1g three times daily) — start within 72 hours of rash onset; the most important complication is post-herpetic neuralgia (PHN) — persistent neuropathic pain after rash heals, more common in elderly and immunocompromised",
+      "C": "Contact dermatitis — topical hydrocortisone",
+      "D": "Impetigo — oral flucloxacillin",
+      "E": "Eczema herpeticum — IV aciclovir"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Shingles (herpes zoster): reactivation of latent VZV in the dorsal root ganglion, causing a unilateral dermatomal vesicular rash with neuropathic pain. Risk factors: elderly, immunocompromised (steroids, HIV, chemotherapy). Treatment per NICE CKS: antiviral therapy (aciclovir 800mg 5× daily for 7 days OR valaciclovir 1g TDS for 7 days) — must start within 72 hours of rash onset to reduce duration and severity; reduces risk of post-herpetic neuralgia (PHN); immunocompromised patients may need IV aciclovir or longer courses. PHN: chronic neuropathic pain (burning, allodynia) persisting >90 days after acute episode — occurs in 20-30% of elderly; treatment: amitriptyline, gabapentin, pregabalin, capsaicin. Shingles vaccination: Shingrix (adjuvanted recombinant zoster vaccine) offered to adults aged 70+ on the NHS — significantly reduces shingles and PHN risk.",
+      "A": "Incorrect — Aciclovir 200mg is the dose for genital/orolabial HSV. Shingles requires 800mg five times daily.",
+      "B": "CORRECT — Shingles: aciclovir 800mg 5× daily for 7 days within 72 hours. Discuss PHN risk per NICE CKS.",
+      "C": "Incorrect — Contact dermatitis causes bilateral, distribution-matching the contactant — not unilateral dermatomal vesicular rash.",
+      "D": "Incorrect — Impetigo causes honey-crusted lesions with a superficial bacterial infection — not dermatomal vesicles.",
+      "E": "Incorrect — Eczema herpeticum occurs in eczema patients with HSV superinfection — not the dermatomal unilateral pattern."
+    },
+    "reference": "NICE CKS — Shingles. https://cks.nice.org.uk/topics/shingles/",
+    "tags": ["shingles", "herpes zoster", "aciclovir 800mg", "post-herpetic neuralgia", "NICE CKS", "within 72 hours"]
+  },
+  {
+    "id": "QG-B2-GP-117-001",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "General Practice",
+    "difficulty": "Hard",
+    "question": "A 52-year-old man presents with intermittent diarrhoea for 3 months, episodic facial flushing (particularly after eating), and mild wheeze. On examination there are no cardiac abnormalities. His 5-HIAA (5-hydroxyindoleacetic acid) in a 24-hour urine collection is elevated. Per NICE guidelines, what is the most likely diagnosis?",
+    "options": {
+      "A": "Irritable bowel syndrome — amitriptyline",
+      "B": "Carcinoid syndrome — caused by serotonin (and other vasoactive substances) secreted by a well-differentiated neuroendocrine tumour (usually in the ileum or appendix with liver metastases); elevated urinary 5-HIAA (serotonin metabolite) is the key diagnostic finding; associated features: episodic flushing, diarrhoea, wheeze, carcinoid heart disease (right-sided valvular lesions)",
+      "C": "Menopausal flushing — HRT",
+      "D": "Mastocytosis — serum tryptase",
+      "E": "Phaeochromocytoma — 24-hour urinary catecholamines"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Carcinoid syndrome: occurs when a carcinoid tumour (well-differentiated neuroendocrine tumour — most commonly in the terminal ileum or appendix) develops liver metastases — serotonin and vasoactive substances bypass first-pass hepatic metabolism and enter the systemic circulation causing the syndrome. Classic features: episodic flushing (face/neck/chest — most common), secretory diarrhoea, wheeze/bronchospasm, carcinoid heart disease (right-sided valvular lesions — tricuspid regurgitation, pulmonary stenosis from serotonin-induced fibrosis). Diagnosis: elevated 24-hour urinary 5-HIAA (serotonin metabolite) — the key biomarker; serum chromogranin A. Imaging: CT/MRI abdomen, 68Ga-DOTATATE PET scan (most sensitive for NET). Treatment: somatostatin analogues (octreotide/lanreotide) for symptom control; surgery/ablation for primary and metastatic disease; everolimus/sunitinib for advanced disease.",
+      "A": "Incorrect — IBS does not cause elevated urinary 5-HIAA or episodic flushing.",
+      "B": "CORRECT — Carcinoid syndrome: flushing + diarrhoea + wheeze + elevated 5-HIAA = neuroendocrine tumour with liver metastases.",
+      "C": "Incorrect — Menopausal flushing does not cause diarrhoea or wheeze and does not elevate urinary 5-HIAA.",
+      "D": "Incorrect — Mastocytosis causes similar features and elevated serum tryptase — 5-HIAA is not specifically elevated.",
+      "E": "Incorrect — Phaeochromocytoma causes flushing and hypertension with elevated catecholamines — not specifically elevated 5-HIAA."
+    },
+    "reference": "NICE NG183 — Neuroendocrine tumours. https://www.nice.org.uk/guidance/ng183",
+    "tags": ["carcinoid syndrome", "5-HIAA", "neuroendocrine tumour", "flushing diarrhoea wheeze", "NICE NG183", "liver metastases"]
+  },
+  {
+    "id": "QG-B2-GP-121-001",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "General Practice",
+    "difficulty": "Easy",
+    "question": "A 48-year-old woman asks about her breast cancer risk. She has a BMI of 34 kg/m², uses the combined oral contraceptive pill, and drinks 14 units of alcohol per week. She has no family history. Per NICE NG12 and Cancer Research UK, which of these factors most significantly increases her breast cancer risk?",
+    "options": {
+      "A": "Family history (absent in this patient) is always the greatest risk factor",
+      "B": "Obesity (BMI 34) — excess adipose tissue produces oestrogen through aromatase activity, significantly increasing breast cancer risk in post-menopausal women; obesity is one of the most modifiable risk factors for breast cancer alongside alcohol (each unit increases relative risk by ~7% cumulative) and COCP use",
+      "C": "Being female is the greatest risk factor — gender is unchanged",
+      "D": "Age alone determines risk",
+      "E": "COCP use increases risk by more than obesity"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Modifiable breast cancer risk factors per NICE NG12 and Cancer Research UK: Obesity: BMI >30 significantly increases breast cancer risk, particularly post-menopausal breast cancer (adipose tissue converts androgens to oestrogens via aromatase — oestrogen is the main driver of hormone receptor-positive breast cancer); Alcohol: each additional unit per day increases relative risk by ~7-10% cumulative — dose-dependent relationship; COCP: small increased risk (relative risk approximately 1.2) that returns to baseline within 5-10 years of stopping; HRT: combined HRT increases risk more than oestrogen-only; Physical inactivity, nulliparity, early menarche, late menopause. Overall, obesity is one of the most impactful modifiable risk factors alongside alcohol. Non-modifiable: age (greatest overall risk factor), female sex, BRCA mutations, family history.",
+      "A": "Incorrect — This patient has no family history. Absent family history is not a risk factor here. Obesity is the greatest modifiable risk factor present.",
+      "B": "CORRECT — Obesity (BMI 34) significantly increases breast cancer risk through aromatase-mediated oestrogen production. Most significant modifiable factor here.",
+      "C": "Incorrect — Being female is the greatest non-modifiable risk factor but the question asks about modifiable factors this patient can address.",
+      "D": "Incorrect — Age is important but non-modifiable. The question focuses on risk factors present in this patient.",
+      "E": "Incorrect — COCP increases breast cancer risk only modestly (RR ~1.2) — obesity has a greater impact on absolute risk than COCP use."
+    },
+    "reference": "NICE NG12 — Suspected cancer. Cancer Research UK — Breast cancer risk factors. https://www.nice.org.uk/guidance/ng12",
+    "tags": ["breast cancer risk", "obesity", "aromatase", "modifiable risk", "NICE NG12", "COCP"]
+  },
+  {
+    "id": "QG-B2-GP-176-001",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "General Practice",
+    "difficulty": "Medium",
+    "question": "A 50-year-old man presents with progressive fatigue, joint pain, loss of libido and abnormal skin bronzing. His blood tests show: Hb 144 g/L, ferritin 1,840 mcg/L, transferrin saturation 68%, fasting glucose 9.2 mmol/L. His father had diabetes. Per NICE guidelines, what is the likely diagnosis and confirmatory investigation?",
+    "options": {
+      "A": "Iron deficiency anaemia — oral ferrous sulphate",
+      "B": "Hereditary haemochromatosis (HH) — autosomal recessive disorder of iron overload (most commonly HFE gene mutation C282Y); excess iron deposits in: liver (cirrhosis), pancreas (diabetes — 'bronze diabetes'), joints (chondrocalcinosis), skin (bronzing), pituitary/gonads (hypogonadism); confirmatory investigation: HFE gene mutation analysis (homozygous C282Y is diagnostic); liver biopsy for fibrosis staging; treatment: regular venesection",
+      "C": "Thalassaemia — haemoglobin electrophoresis",
+      "D": "Haemolytic anaemia — reticulocyte count",
+      "E": "Dietary iron excess — restrict dietary iron"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Hereditary haemochromatosis (HH): the most common autosomal recessive condition in Northern Europeans (~1 in 300 homozygous for C282Y mutation). Excess iron absorption and deposition causes end-organ damage. Classic triad: cirrhosis, diabetes, skin bronzing ('bronze diabetes'). Other features: arthralgias (chondrocalcinosis especially 2nd/3rd MCP joints — pathognomonic), cardiomyopathy, arrhythmias, hypogonadism (pituitary/gonadal iron deposition). Biochemistry: elevated ferritin (>300 mcg/L in men), elevated transferrin saturation (>45% — most sensitive early marker). Confirmatory test per NICE: HFE gene testing (C282Y homozygosity is diagnostic); liver biopsy if ferritin >1000 to assess fibrosis/cirrhosis. Treatment: regular venesection (phlebotomy — removes excess iron); weekly until ferritin <50 then maintenance every 2-3 months. Screen first-degree relatives.",
+      "A": "Incorrect — Ferritin 1,840 is massively elevated (iron overload) — the complete opposite of iron deficiency.",
+      "B": "CORRECT — Hereditary haemochromatosis: iron overload + bronzing + diabetes + arthralgia + family history (autosomal recessive). HFE gene testing per NICE.",
+      "C": "Incorrect — Thalassaemia causes haemolytic anaemia with low ferritin initially — not iron overload.",
+      "D": "Incorrect — Haemolytic anaemia causes low Hb with raised reticulocytes — not the iron overload picture.",
+      "E": "Incorrect — Dietary iron restriction is not effective for hereditary haemochromatosis — the defect is in intestinal iron absorption regulation."
+    },
+    "reference": "NICE CKS — Haemochromatosis. https://cks.nice.org.uk/topics/haemochromatosis/",
+    "tags": ["hereditary haemochromatosis", "HFE gene", "bronze diabetes", "ferritin", "venesection", "NICE CKS"]
+  },
+  {
+    "id": "QG-B2-GP-185-001",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "General Practice",
+    "difficulty": "Easy",
+    "question": "A 68-year-old man presents with tingling, numbness and weakness of both legs and mild cognitive impairment. He has a history of gastric surgery 10 years ago. Per NICE CKS, what is the likely diagnosis and confirmatory test?",
+    "options": {
+      "A": "Diabetic peripheral neuropathy — HbA1c",
+      "B": "Subacute combined degeneration of the cord (vitamin B12 deficiency) — B12 deficiency causes: peripheral neuropathy, posterior column degeneration (sensory ataxia, loss of vibration/proprioception), lateral column demyelination (spastic weakness), and cognitive impairment/dementia; following gastric surgery (gastrectomy), intrinsic factor is lost → B12 malabsorption; confirmatory test: serum B12 level; treatment: intramuscular hydroxocobalamin",
+      "C": "Multiple sclerosis — MRI brain and spine",
+      "D": "Motor neuron disease — EMG and nerve conduction studies",
+      "E": "Syphilis — TPHA serology"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Subacute combined degeneration of the spinal cord (SACD): a neurological complication of vitamin B12 deficiency causing simultaneous degeneration of the posterior columns (dorsal — vibration/proprioception loss, sensory ataxia) and lateral columns (corticospinal tracts — upper motor neurone weakness, spasticity). Features: bilateral lower limb weakness + sensory loss (vibration, proprioception) + cognitive impairment. Cause here: gastric surgery (gastrectomy) → removal of parietal cells → loss of intrinsic factor → inability to absorb B12 from ileum (B12 requires intrinsic factor for absorption). Other causes: pernicious anaemia (autoimmune destruction of parietal cells — most common UK cause), strict veganism, inflammatory bowel disease. Blood film: macrocytic anaemia (not always present in neurological B12 deficiency). Treatment: IM hydroxocobalamin (not oral — intrinsic factor absent, oral absorption ineffective in this cause).",
+      "A": "Incorrect — Diabetic neuropathy causes glove-and-stocking sensory loss but not posterior + lateral column combined degeneration or cognitive impairment.",
+      "B": "CORRECT — SACD from B12 deficiency post-gastrectomy. Serum B12 + MCV (macrocytosis) + IM hydroxocobalamin treatment per NICE CKS.",
+      "C": "Incorrect — MS causes relapsing-remitting episodes typically in younger patients — not this progressive bilateral picture post-gastrectomy.",
+      "D": "Incorrect — MND causes pure motor LMN/UMN features without sensory loss or cognitive impairment typically.",
+      "E": "Incorrect — Neurosyphilis (tabes dorsalis) causes posterior column degeneration similar to SACD but the gastric surgery history makes B12 the most likely cause."
+    },
+    "reference": "NICE CKS — Vitamin B12 deficiency. https://cks.nice.org.uk/topics/vitamin-b12-deficiency/",
+    "tags": ["vitamin B12 deficiency", "SACD", "subacute combined degeneration", "post-gastrectomy", "hydroxocobalamin", "NICE CKS"]
+  }
+]

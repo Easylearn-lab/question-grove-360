@@ -1,1013 +1,522 @@
 [
   {
-    "id": "QG-CV-019-001",
+    "id": "QG-B2-CV-008-001",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Cardiovascular",
+    "difficulty": "Medium",
+    "question": "A 58-year-old man with known cirrhosis and oesophageal varices is being managed in primary care. Per BSG guidelines, which medication should be prescribed to reduce the risk of variceal haemorrhage as primary prophylaxis?",
+    "options": {
+      "A": "Desmopressin",
+      "B": "Propranolol (non-selective beta-blocker) — reduces portal pressure and variceal wall tension, reducing the risk of first variceal bleed",
+      "C": "Spironolactone",
+      "D": "Terlipressin",
+      "E": "Isosorbide mononitrate alone"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per BSG guidelines on the management of oesophageal varices, non-selective beta-blockers (propranolol or carvedilol) are the first-line pharmacological prophylaxis for preventing first variceal bleeding in patients with medium or large oesophageal varices. Propranolol reduces cardiac output and causes splanchnic vasoconstriction, thereby reducing portal venous pressure and variceal wall tension. Carvedilol (alpha and beta blocker) is an alternative with evidence of superior portal pressure reduction. Endoscopic band ligation (EBL) is an alternative for patients who cannot tolerate beta-blockers.",
+      "A": "Incorrect — Desmopressin is used in acute variceal bleeding (increases von Willebrand factor); it has no role in primary variceal prophylaxis.",
+      "B": "CORRECT — Propranolol (non-selective beta-blocker) is first-line primary prophylaxis for variceal haemorrhage per BSG guidelines.",
+      "C": "Incorrect — Spironolactone manages ascites in cirrhosis but does not reduce variceal bleeding risk.",
+      "D": "Incorrect — Terlipressin is used in acute variceal bleeding emergencies — not for primary prophylaxis.",
+      "E": "Incorrect — Isosorbide mononitrate as monotherapy is not recommended for primary variceal prophylaxis."
+    },
+    "reference": "BSG Guidelines — Management of oesophageal varices. https://www.bsg.org.uk/clinical-resource/bsg-guidelines-management-acute-upper-gastrointestinal-bleeding/",
+    "tags": ["variceal prophylaxis", "propranolol", "portal hypertension", "cirrhosis", "BSG", "primary prophylaxis"]
+  },
+  {
+    "id": "QG-B2-CV-008-002",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Cardiovascular",
+    "difficulty": "Hard",
+    "question": "A 55-year-old man with cirrhosis on propranolol 80mg twice daily for variceal prophylaxis is brought to A&E vomiting fresh blood. His BP is 88/54 mmHg. Per BSG guidelines on acute variceal haemorrhage, what immediate pharmacological treatment should be given alongside endoscopy?",
+    "options": {
+      "A": "Stop propranolol and give IV adrenaline",
+      "B": "IV terlipressin 2mg every 4 hours (vasoactive drug) plus IV antibiotics (ceftriaxone 1g daily for 5 days) — both should be started immediately upon suspicion of variceal bleeding, before endoscopy",
+      "C": "IV omeprazole bolus 80mg",
+      "D": "Fresh frozen plasma only — correct coagulopathy first",
+      "E": "Desmopressin 0.3 mcg/kg IV"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per BSG acute upper GI bleeding guidelines 2015 and NICE NG141, management of suspected acute variceal haemorrhage includes: (1) Vasoactive drugs — terlipressin (2mg IV every 4 hours) or somatostatin/octreotide — reduce portal pressure and should be started immediately, before endoscopy, and continued for 3-5 days; (2) Prophylactic antibiotics — ceftriaxone 1g daily IV for 5 days reduces risk of spontaneous bacterial peritonitis and early rebleeding; (3) Urgent endoscopy (within 24 hours) for diagnosis and band ligation; (4) Blood products — restrictive transfusion strategy (target Hb 70-80 g/L); (5) Avoid propranolol acutely (haemodynamic instability). This dual approach (vasoactive + antibiotic) before endoscopy is a key MRCGP AKT principle.",
+      "A": "Incorrect — IV adrenaline is not used in variceal bleeding. Propranolol should be withheld in acute haemodynamic compromise.",
+      "B": "CORRECT — IV terlipressin + IV ceftriaxone started immediately on suspicion of variceal bleeding, before endoscopy per BSG/NICE NG141.",
+      "C": "Incorrect — IV omeprazole is for non-variceal upper GI bleeding (peptic ulcer) — not variceal haemorrhage where terlipressin is needed.",
+      "D": "Incorrect — Coagulopathy correction is important but does not address the portal hypertension driving variceal bleeding.",
+      "E": "Incorrect — Desmopressin is for haemophilia A and von Willebrand disease — not for variceal haemorrhage management."
+    },
+    "reference": "BSG/NICE NG141 — Acute upper gastrointestinal bleeding. https://www.nice.org.uk/guidance/ng141",
+    "tags": ["variceal haemorrhage", "terlipressin", "ceftriaxone", "BSG", "NICE NG141", "acute bleeding"]
+  },
+  {
+    "id": "QG-B2-CV-008-003",
     "exam": "MRCGP AKT",
     "domain": "Clinical Medicine",
     "specialty": "Cardiovascular",
     "difficulty": "Easy",
-    "question": "A 58-year-old man with type 2 diabetes attends for a cardiovascular risk review. His fasting lipid profile shows: total cholesterol 6.2 mmol/L, HDL 1.1 mmol/L, LDL 3.8 mmol/L, triglycerides 2.9 mmol/L. His LDL result is flagged as unreliable due to the high triglyceride level. What is his non-HDL cholesterol and why is it clinically useful?",
+    "question": "A 50-year-old man with known oesophageal varices is prescribed propranolol 40mg twice daily. He asks if the dose is correct. Per BSG guidance, how is propranolol titrated for variceal prophylaxis and what is the target?",
     "options": {
-      "A": "4.9 mmol/L — it captures all atherogenic lipoproteins including VLDL, IDL and LDL, and is reliable regardless of fasting status or triglyceride levels",
-      "B": "5.1 mmol/L — it is calculated as total cholesterol minus triglycerides",
-      "C": "3.8 mmol/L — it is the same as LDL and only useful when triglycerides are normal",
-      "D": "4.5 mmol/L — it is calculated as HDL minus total cholesterol",
-      "E": "2.4 mmol/L — it is calculated as LDL minus HDL and reflects residual cardiovascular risk"
+      "A": "Fixed dose 40mg twice daily — no titration required",
+      "B": "Titrate propranolol to the maximum tolerated dose, aiming for a resting heart rate of 55-60 bpm, or a 25% reduction from baseline heart rate",
+      "C": "Titrate to achieve a systolic blood pressure of 100 mmHg",
+      "D": "Propranolol is given at a single dose of 80mg once at night only",
+      "E": "Increase dose until symptoms of variceal bleeding are prevented — no monitoring needed"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per BSG guidelines on variceal management, propranolol for primary prophylaxis should be titrated to achieve a resting heart rate of 55-60 beats per minute (bpm) or a 25% reduction from baseline heart rate. This indicates adequate portal pressure reduction. The starting dose is typically 40mg twice daily, titrated upward to the maximum tolerated dose. Carvedilol 6.25mg daily (titrated to 12.5mg if tolerated) is an alternative with evidence of superior portal pressure reduction. If heart rate is already <55 bpm or contraindications exist (severe asthma, severe peripheral vascular disease), endoscopic band ligation (EBL) should be offered instead.",
+      "A": "Incorrect — Fixed dosing without titration is not the recommended approach — dose should be titrated to target heart rate.",
+      "B": "CORRECT — Titrate propranolol to resting HR 55-60 bpm or 25% reduction from baseline per BSG variceal guidelines.",
+      "C": "Incorrect — Blood pressure is not the titration target for propranolol in variceal prophylaxis — heart rate is the target.",
+      "D": "Incorrect — Propranolol is given twice daily for variceal prophylaxis — once nightly dosing is not the standard regimen.",
+      "E": "Incorrect — Monitoring heart rate to assess response and titrating the dose is essential."
+    },
+    "reference": "BSG Guidelines — Oesophageal varices. https://www.bsg.org.uk/clinical-resource/bsg-guidelines-management-acute-upper-gastrointestinal-bleeding/",
+    "tags": ["propranolol", "variceal prophylaxis", "heart rate target", "55-60 bpm", "BSG", "cirrhosis"]
+  },
+  {
+    "id": "QG-B2-CV-027-001",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Cardiovascular",
+    "difficulty": "Medium",
+    "question": "A 72-year-old man with a mechanical mitral valve replacement is prescribed anticoagulation. His cardiologist wants to ensure the correct agent is used. Per NICE NG196 (Atrial fibrillation) and ESC guidelines, which anticoagulant is mandated for patients with mechanical heart valves and why?",
+    "options": {
+      "A": "Apixaban 5mg twice daily — DOACs are preferred for all indications",
+      "B": "Warfarin — mechanical heart valves are the only cardiac indication where DOACs (direct oral anticoagulants) are absolutely contraindicated; warfarin with target INR 2.5-3.5 (or higher depending on valve type/position) is the only recommended anticoagulant",
+      "C": "Dabigatran 150mg twice daily — RE-ALIGN trial showed superiority over warfarin",
+      "D": "Rivaroxaban — once daily dosing improves compliance with mechanical valves",
+      "E": "Heparin infusion long-term — most reliable anticoagulation for metal valves"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Mechanical heart valves are an absolute contraindication to direct oral anticoagulants (DOACs). The RE-ALIGN trial (dabigatran vs warfarin in mechanical valves) was stopped early due to significantly increased rates of thromboembolic events and bleeding with dabigatran. This applies to ALL DOACs (apixaban, rivaroxaban, edoxaban, dabigatran). Warfarin remains the only approved anticoagulant for mechanical heart valves. Target INR depends on valve position and type: aortic mechanical valve: INR 2.0-3.0; mitral mechanical valve: INR 2.5-3.5; higher targets for older/thrombogenic valves. Per ESC/NICE: DOAC use in mechanical valves is a patient safety issue — this is a Never Event if a DOAC is prescribed.",
+      "A": "Incorrect — DOACs including apixaban are absolutely contraindicated with mechanical heart valves.",
+      "B": "CORRECT — Warfarin is the ONLY anticoagulant for mechanical heart valves. DOACs are absolutely contraindicated per ESC/NICE.",
+      "C": "Incorrect — The RE-ALIGN trial showed dabigatran was INFERIOR to warfarin in mechanical valves with more thrombosis and bleeding — the trial was stopped early.",
+      "D": "Incorrect — Rivaroxaban is absolutely contraindicated in mechanical heart valves.",
+      "E": "Incorrect — Long-term heparin is not practical or recommended for mechanical valve anticoagulation — warfarin is the standard."
+    },
+    "reference": "NICE NG196 — Atrial fibrillation. ESC Guidelines on Valvular Heart Disease 2021. https://www.nice.org.uk/guidance/ng196",
+    "tags": ["mechanical heart valve", "warfarin", "DOACs contraindicated", "RE-ALIGN trial", "NICE NG196", "ESC"]
+  },
+  {
+    "id": "QG-B2-CV-027-002",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Cardiovascular",
+    "difficulty": "Easy",
+    "question": "A GP encounters a patient with a bioprosthetic (tissue) aortic valve replacement who is in sinus rhythm with no other risk factors. He is 3 months post-surgery. Per current guidelines, what anticoagulation is recommended?",
+    "options": {
+      "A": "Lifelong warfarin at INR 3.0-4.0 — same as mechanical valves",
+      "B": "Aspirin 75mg daily OR warfarin for first 3-6 months post-implantation, then anticoagulation can often be stopped in those with bioprosthetic valves in sinus rhythm. Long-term anticoagulation is NOT required for bioprosthetic valves in sinus rhythm",
+      "C": "Dabigatran 150mg twice daily — DOACs are safe with bioprosthetic valves",
+      "D": "No treatment required immediately after valve replacement",
+      "E": "Clopidogrel 75mg daily for life"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Unlike mechanical heart valves, bioprosthetic (tissue) valves have a much lower thrombogenicity. Per ESC and NICE guidelines: early post-implantation (0-3 months): warfarin is often recommended for the first 3 months (or aspirin, depending on centre protocol) while valve endothelialises; after 3-6 months: in patients with bioprosthetic valves in sinus rhythm with no other anticoagulation indications, long-term anticoagulation is generally not required — aspirin 75mg daily or no antithrombotic therapy; if the patient has additional indications for anticoagulation (AF, previous thromboembolism): warfarin or DOAC can be used. This distinguishes bioprosthetic from mechanical valve management — an important distinction in the AKT.",
+      "A": "Incorrect — Lifelong warfarin at high INR is for mechanical valves — not bioprosthetic valves in sinus rhythm.",
+      "B": "CORRECT — Bioprosthetic valves: warfarin/aspirin for 3-6 months post-op, then often stopped in sinus rhythm patients per ESC guidelines.",
+      "C": "Incorrect — DOACs are actually acceptable with bioprosthetic valves (unlike mechanical) but the key point is long-term anticoagulation is often not required at all.",
+      "D": "Incorrect — Short-term anticoagulation/antiplatelet therapy in the early post-implantation period is still required.",
+      "E": "Incorrect — Clopidogrel lifelong is not standard management for bioprosthetic valves in sinus rhythm."
+    },
+    "reference": "ESC Guidelines on Valvular Heart Disease 2021. NICE NG196. https://www.nice.org.uk/guidance/ng196",
+    "tags": ["bioprosthetic valve", "anticoagulation", "warfarin short term", "aspirin", "ESC guidelines", "NICE NG196"]
+  },
+  {
+    "id": "QG-B2-CV-027-003",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Cardiovascular",
+    "difficulty": "Hard",
+    "question": "A 68-year-old woman with a mechanical mitral valve on warfarin (target INR 2.5-3.5) needs an elective knee replacement. Her cardiologist asks the GP about bridging anticoagulation. Per current guidelines, which statement is correct regarding warfarin bridging for high-risk patients?",
+    "options": {
+      "A": "Stop warfarin 5 days pre-op and restart post-op — no bridging needed for any prosthetic valve",
+      "B": "Patients with mechanical heart valves are HIGH risk for thromboembolism during warfarin interruption — bridging with therapeutic-dose LMWH or IV unfractionated heparin is required when warfarin is interrupted for surgery. Warfarin should be stopped 5 days pre-op, bridging started when INR <2.0, and restarted post-op when haemostasis achieved",
+      "C": "Use a DOAC as a bridge — more predictable than LMWH",
+      "D": "Bridging is only required for mitral mechanical valves — not aortic mechanical valves",
+      "E": "Continue full-dose warfarin throughout surgery — interruption is never needed"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per ESC guidelines on valvular heart disease and the BRIDGE trial context, mechanical heart valves are HIGH-RISK for thromboembolism during anticoagulation interruption (especially mitral position). Bridging anticoagulation protocol: stop warfarin 5 days before surgery; start therapeutic-dose LMWH (e.g., enoxaparin 1mg/kg BD) or IV UFH when INR falls below 2.0 (approximately 2 days pre-op); stop LMWH 24 hours (BD LMWH) or 12 hours (OD LMWH) before surgery; restart warfarin post-operatively when haemostasis achieved; restart LMWH post-op until INR is therapeutic. Note: DOACs must NOT be used as bridging agents in mechanical valve patients as they are contraindicated in mechanical valves entirely.",
+      "A": "Incorrect — Mechanical heart valve patients are high-risk and require bridging anticoagulation when warfarin is interrupted.",
+      "B": "CORRECT — High-risk mechanical valve: bridging with therapeutic LMWH required. Warfarin stopped 5 days pre-op, bridging started when INR <2.0 per ESC guidelines.",
+      "C": "Incorrect — DOACs are absolutely contraindicated in mechanical heart valve patients — they cannot be used as bridging agents.",
+      "D": "Incorrect — Both mitral and aortic mechanical valves are high-risk — though mitral valves carry higher thrombotic risk.",
+      "E": "Incorrect — Continuing full-dose warfarin throughout surgery is not generally safe for major elective surgery due to bleeding risk."
+    },
+    "reference": "ESC Guidelines on Valvular Heart Disease 2021. Bridging anticoagulation. https://www.nice.org.uk/guidance/ng196",
+    "tags": ["bridging anticoagulation", "mechanical valve", "LMWH", "warfarin interruption", "ESC", "perioperative"]
+  },
+  {
+    "id": "QG-B2-CV-116-001",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Cardiovascular",
+    "difficulty": "Medium",
+    "question": "A 28-year-old man presents with sharp chest pain that worsens with exertion. His father died suddenly at age 34 from a cardiac cause. On examination there is a jerky pulse and a systolic murmur at the left sternal border that increases on standing. Per NICE CG95, what is the most likely diagnosis?",
+    "options": {
+      "A": "Aortic stenosis — calcific degeneration",
+      "B": "Hypertrophic cardiomyopathy (HCM) — autosomal dominant condition causing asymmetric septal hypertrophy with dynamic left ventricular outflow tract obstruction; family history of sudden cardiac death is a red flag",
+      "C": "Mitral valve prolapse — benign murmur in young adults",
+      "D": "Ventricular septal defect — congenital heart disease",
+      "E": "Pericarditis — pleuritic chest pain with friction rub"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Hypertrophic cardiomyopathy (HCM): autosomal dominant disorder (most commonly MYBPC3 and MYH7 mutations) characterised by asymmetric septal hypertrophy and dynamic LVOTO. Classic features: (1) Jerky pulse (rapid upstroke then rapid downstroke — 'bisferious' pulse); (2) Systolic murmur that INCREASES on standing or Valsalva (reduces venous return → worsens LVOTO) and DECREASES on squatting (increases venous return); (3) Family history of sudden cardiac death — most common cause of sudden death in young athletes in the UK; (4) Syncope on exertion, dyspnoea. Per NICE CG95: all first-degree relatives should be screened with ECG and echo. Key distinction: HCM murmur increases with standing (unlike AS/MR which decrease).",
+      "A": "Incorrect — Aortic stenosis causes a slow-rising pulse and a murmur that does not increase on standing; it affects older patients.",
+      "B": "CORRECT — HCM: jerky pulse + murmur increasing on standing + young age + family history of sudden cardiac death per NICE CG95.",
+      "C": "Incorrect — MVP causes a mid-systolic click and late systolic murmur — not a jerky pulse or family history of sudden death.",
+      "D": "Incorrect — VSD causes a pansystolic murmur at the left sternal edge — not a dynamic murmur affected by posture.",
+      "E": "Incorrect — Pericarditis causes positional pleuritic chest pain and a friction rub — not a systolic murmur or jerky pulse."
+    },
+    "reference": "NICE CG95 — Hypertrophic cardiomyopathy. https://www.nice.org.uk/guidance/cg95",
+    "tags": ["hypertrophic cardiomyopathy", "HCM", "sudden cardiac death", "dynamic murmur", "NICE CG95", "jerky pulse"]
+  },
+  {
+    "id": "QG-B2-CV-116-002",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Cardiovascular",
+    "difficulty": "Hard",
+    "question": "A 22-year-old competitive footballer is diagnosed with HCM. Per NICE CG95 and BHF/BHRS guidelines, which initial management step is most important?",
+    "options": {
+      "A": "Start amiodarone prophylactically and advise he can continue competitive sport with monitoring",
+      "B": "Advise to avoid competitive and intense sport; refer to specialist HCM service for risk stratification (HCM Risk-SCD calculator), ICD consideration, family cascade screening, and genetic testing",
+      "C": "No restrictions — HCM rarely causes sudden death in young athletes",
+      "D": "Start beta-blocker and discharge — propranolol prevents all cardiac events in HCM",
+      "E": "Urgent surgical myomectomy"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per NICE CG95 and BHRS HCM guidelines, HCM is the most common cause of sudden cardiac death in young athletes in the UK. Management priorities: (1) Advise strongly against competitive sport and strenuous exercise — physical exertion is the most common trigger for SCD in HCM; (2) Refer to specialist HCM service (tertiary centre) for comprehensive risk assessment including HCM Risk-SCD 5-year risk calculator (includes max LV wall thickness, LA diameter, LVOTO, family history of SCD, NSVT, syncope); (3) ICD implantation if 5-year risk ≥6% or other high-risk features; (4) Cascade genetic/clinical screening for all first-degree relatives; (5) Genetic testing for causative mutations. Beta-blockers reduce symptoms but do not eliminate SCD risk.",
+      "A": "Incorrect — Competitive sport must be avoided in HCM. Amiodarone is not routinely prescribed prophylactically.",
+      "B": "CORRECT — Avoid competitive sport + specialist referral for risk stratification + ICD consideration + family cascade screening per NICE CG95/BHRS.",
+      "C": "Incorrect — HCM is the MOST COMMON cause of sudden cardiac death in young athletes in the UK — restrictions are mandatory.",
+      "D": "Incorrect — Beta-blockers reduce symptoms (dyspnoea, chest pain) but do not prevent sudden cardiac death in HCM.",
+      "E": "Incorrect — Surgical myomectomy is for symptomatic LVOTO refractory to medical therapy — not first-line management at diagnosis."
+    },
+    "reference": "NICE CG95 — Hypertrophic cardiomyopathy. BHRS — HCM guidelines. https://www.nice.org.uk/guidance/cg95",
+    "tags": ["HCM", "sudden cardiac death", "competitive sport", "ICD", "NICE CG95", "cascade screening"]
+  },
+  {
+    "id": "QG-B2-CV-116-003",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Cardiovascular",
+    "difficulty": "Easy",
+    "question": "A GP is examining a 25-year-old man with suspected HCM. He listens to the heart in different positions. Which physical finding is characteristic of HCM that distinguishes it from fixed LVOTO (aortic stenosis)?",
+    "options": {
+      "A": "The murmur decreases in intensity on standing and increases on squatting",
+      "B": "The systolic murmur increases in intensity on standing (reduced preload worsens dynamic LVOTO) and decreases on squatting (increased preload reduces LVOTO) — this dynamic behaviour is pathognomonic of HCM with LVOTO",
+      "C": "A diastolic murmur is heard — HCM causes aortic regurgitation",
+      "D": "The murmur is loudest in the second right intercostal space",
+      "E": "A fixed split second heart sound is characteristic"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "The dynamic nature of the HCM murmur is pathognomonic and is frequently tested in AKT examinations. The murmur of HCM with LVOTO (due to systolic anterior motion of the mitral valve against the hypertrophied septum): INCREASES with: standing, Valsalva manoeuvre, dehydration — all reduce preload (venous return), reducing LV size and worsening LVOTO. DECREASES with: squatting, leg raising, passive leg raising — all increase preload, increasing LV size and reducing LVOTO. This is the opposite of fixed LVOTO (aortic stenosis) and MR. The murmur is best heard at the left sternal border — not the aortic area.",
+      "A": "Incorrect — This is the OPPOSITE of HCM. Murmur decreasing on standing and increasing on squatting would indicate other pathology.",
+      "B": "CORRECT — HCM murmur increases on standing (reduced preload worsens LVOTO) and decreases on squatting (increased preload improves LVOTO). Pathognomonic.",
+      "C": "Incorrect — HCM causes a systolic murmur from LVOTO — not primarily aortic regurgitation (though can coexist).",
+      "D": "Incorrect — HCM murmur is best heard at the left lower sternal border — the second right intercostal space is the aortic area.",
+      "E": "Incorrect — Fixed split S2 is associated with ASD. HCM does not cause fixed split second heart sound."
+    },
+    "reference": "NICE CG95 — Hypertrophic cardiomyopathy. Clinical examination of HCM. https://www.nice.org.uk/guidance/cg95",
+    "tags": ["HCM", "dynamic murmur", "standing squatting", "LVOTO", "NICE CG95", "clinical examination"]
+  },
+  {
+    "id": "QG-B2-CV-129-001",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Cardiovascular",
+    "difficulty": "Medium",
+    "question": "An ECG shows the following pattern: P waves are present and regular, the PR interval progressively lengthens with each beat until a P wave is not followed by a QRS complex, then the cycle resets. What type of heart block is this and what is the typical management in the community?",
+    "options": {
+      "A": "First-degree heart block — prolonged PR interval on every beat",
+      "B": "Mobitz Type I (Wenckebach) second-degree heart block — characterised by progressive PR interval lengthening culminating in a dropped beat; usually benign, associated with inferior MI or increased vagal tone; typically does not require pacing if asymptomatic",
+      "C": "Mobitz Type II second-degree heart block — requires urgent pacing",
+      "D": "Complete (third-degree) heart block — no association between P waves and QRS",
+      "E": "Bundle branch block — wide QRS complex"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Mobitz Type I (Wenckebach) second-degree heart block: progressive PR interval prolongation with each successive beat until one P wave fails to conduct (dropped beat), followed by reset of the cycle. This occurs at the level of the AV node. Common causes: inferior MI (right coronary artery occlusion affects AV node blood supply), increased vagal tone (athletes, during sleep), medication (digoxin, beta-blockers). Typically benign and asymptomatic — does not usually require permanent pacing unless symptomatic (syncope, haemodynamic compromise). Per NICE TA324: pacing is not routinely required for asymptomatic Mobitz I. Contrast with Mobitz Type II (fixed PR interval with intermittent dropped beats — higher risk, requires pacing) and complete heart block (no AV conduction at all — requires urgent pacing).",
+      "A": "Incorrect — First-degree heart block shows a consistently prolonged PR interval (>200ms) on every beat with NO dropped beats.",
+      "B": "CORRECT — Mobitz Type I (Wenckebach): progressive PR prolongation then dropped beat. Usually benign, often no pacing required if asymptomatic.",
+      "C": "Incorrect — Mobitz Type II has FIXED PR interval with sudden dropped beats — more serious and often requires pacing.",
+      "D": "Incorrect — Complete heart block has NO relationship between P waves and QRS complexes — P rate and QRS rate are independent.",
+      "E": "Incorrect — Bundle branch block causes wide QRS but normal P-QRS relationship — not a pattern of dropped beats."
+    },
+    "reference": "NICE TA324 — Dual-chamber pacemakers. ESC Guidelines on Cardiac Pacing. https://www.nice.org.uk/guidance/ta324",
+    "tags": ["Mobitz Type I", "Wenckebach", "second-degree heart block", "dropped beat", "PR prolongation", "ECG"]
+  },
+  {
+    "id": "QG-B2-CV-129-002",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Cardiovascular",
+    "difficulty": "Hard",
+    "question": "A 70-year-old woman is found to have the following ECG pattern on routine screening: P waves and QRS complexes are completely independent of each other; P rate is 80 bpm, QRS rate is 35 bpm with wide complexes. She is asymptomatic at rest. Per current guidelines, what is the correct management?",
+    "options": {
+      "A": "Observe — asymptomatic complete heart block does not require treatment",
+      "B": "Urgent referral to cardiology for permanent pacemaker implantation — complete (third-degree) heart block with ventricular escape rate of 35 bpm requires pacing regardless of symptoms",
+      "C": "Start atropine 600 mcg orally and review in 2 weeks",
+      "D": "Start digoxin — improves AV conduction",
+      "E": "Refer to cardiology in 6 weeks — non-urgent for asymptomatic patients"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Complete (third-degree) heart block: complete failure of conduction through the AV node — P waves and QRS complexes are completely independent. The ventricles are driven by an escape rhythm (ventricular escape = wide complex, rate 20-40 bpm; junctional escape = narrow complex, rate 40-60 bpm). A ventricular escape rate of 35 bpm is dangerously slow and carries high risk of asystole and sudden cardiac death — pacemaker implantation is required even if currently asymptomatic. Per ESC/NICE TA324 guidelines: permanent pacemaker is indicated for symptomatic complete heart block AND for asymptomatic complete heart block with wide complex escape rhythm at slow rates (due to unreliable escape rhythm). This is an urgent referral.",
+      "A": "Incorrect — Asymptomatic complete heart block with a slow wide-complex escape rhythm still requires permanent pacing due to risk of asystole.",
+      "B": "CORRECT — Complete heart block with ventricular escape rate 35 bpm: urgent cardiology referral for permanent pacemaker per ESC/NICE TA324.",
+      "C": "Incorrect — Oral atropine has no role in permanent management of complete heart block. IV atropine is a temporary bridge in acute settings.",
+      "D": "Incorrect — Digoxin SLOWS AV conduction — it is absolutely contraindicated in complete heart block.",
+      "E": "Incorrect — 6-week non-urgent referral is unsafe for a patient with complete heart block and ventricular escape rate 35 bpm — risk of sudden cardiac death."
+    },
+    "reference": "ESC Guidelines on Cardiac Pacing 2021. NICE TA324 — Pacemakers. https://www.nice.org.uk/guidance/ta324",
+    "tags": ["complete heart block", "third-degree", "permanent pacemaker", "ventricular escape", "NICE TA324", "ESC"]
+  },
+  {
+    "id": "QG-B2-CV-129-003",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Cardiovascular",
+    "difficulty": "Easy",
+    "question": "A 65-year-old man on digoxin for AF is found on his routine ECG to have a prolonged PR interval of 260ms with all P waves conducted and no dropped beats. His heart rate is 62 bpm. What is the diagnosis and management?",
+    "options": {
+      "A": "First-degree heart block — a prolonged PR interval >200ms with all P waves conducted; in a patient on digoxin this is a common finding and often does not require intervention, but digoxin levels should be checked and the clinical context reviewed",
+      "B": "Complete heart block — urgent pacemaker needed",
+      "C": "Mobitz Type II — urgent cardiology referral",
+      "D": "Pre-excitation syndrome (WPW) — short PR interval",
+      "E": "Right bundle branch block — wide QRS complex"
     },
     "correct_answer": "A",
     "explanation": {
-      "correct": "Non-HDL cholesterol = Total cholesterol − HDL cholesterol = 6.2 − 1.1 = 5.1 mmol/L. However, answer A correctly defines the clinical utility: non-HDL captures ALL atherogenic lipoproteins (LDL, VLDL, IDL, lipoprotein(a)) and crucially does not require fasting and remains accurate even when triglycerides are elevated (unlike LDL calculated by Friedewald equation which is unreliable when TG >4.5 mmol/L). Per NICE NG238, non-HDL is the preferred target for lipid management.",
-      "A": "CORRECT — Non-HDL = total cholesterol − HDL = 5.1 mmol/L. Captures all atherogenic lipoproteins, reliable with high TG.",
-      "B": "Incorrect — The value (5.1) is correct but the formula stated (minus triglycerides) is wrong.",
-      "C": "Incorrect — Non-HDL is not the same as LDL. It includes VLDL and IDL particles.",
-      "D": "Incorrect — The formula is reversed. Non-HDL = total cholesterol − HDL, not HDL − total cholesterol.",
-      "E": "Incorrect — This formula and value are both incorrect."
+      "correct": "First-degree heart block (PR interval >200ms) with all P waves conducting and no dropped beats. In a patient on digoxin: digoxin slows AV conduction and first-degree heart block is a common adverse effect. Management: check serum digoxin level (therapeutic range 1-2 nmol/L, sampled 6+ hours after last dose); check electrolytes (hypokalaemia and hypomagnesaemia potentiate digoxin toxicity); if digoxin level is within range and patient is asymptomatic, first-degree block alone does not require specific treatment or dose reduction. If digoxin toxicity is suspected (level elevated, nausea, bradycardia, visual disturbance): reduce or withhold dose. First-degree block alone is NOT an indication for pacing.",
+      "A": "CORRECT — First-degree heart block (PR >200ms, all P waves conducted). Digoxin commonly causes this. Check digoxin level and electrolytes.",
+      "B": "Incorrect — Complete heart block has P waves and QRS complexes completely dissociated. This ECG shows all P waves conducted.",
+      "C": "Incorrect — Mobitz Type II shows fixed PR interval with intermittent non-conducted P waves (dropped beats) — not present here.",
+      "D": "Incorrect — WPW has a SHORT PR interval (<120ms) with a delta wave — the opposite of first-degree block.",
+      "E": "Incorrect — RBBB causes wide QRS with RSR' pattern in V1 — not a PR interval abnormality."
     },
-    "reference": "NICE NG238 — Cardiovascular disease: risk assessment and reduction. https://www.nice.org.uk/guidance/ng238",
-    "tags": [
-      "non-HDL",
-      "lipids",
-      "cholesterol",
-      "cardiovascular risk",
-      "NICE NG238"
-    ],
-    "source": "Question Grove 360"
+    "reference": "BNF — Digoxin adverse effects. ESC — Cardiac pacing guidelines. https://bnf.nice.org.uk/drug/digoxin.html",
+    "tags": ["first-degree heart block", "PR interval", "digoxin", "ECG", "BNF", "AV conduction"]
   },
   {
-    "id": "QG-CV-019-002",
+    "id": "QG-B2-CV-141-001",
     "exam": "MRCGP AKT",
     "domain": "Clinical Medicine",
     "specialty": "Cardiovascular",
     "difficulty": "Medium",
-    "question": "A 65-year-old woman with established cardiovascular disease is on atorvastatin 80mg. Her latest fasting lipid profile shows: total cholesterol 4.8 mmol/L, HDL 1.3 mmol/L, triglycerides 1.8 mmol/L. Per NICE NG238, what is her non-HDL cholesterol and what is the treatment target for non-HDL in secondary prevention?",
+    "question": "A 62-year-old man with heart failure with reduced ejection fraction (HFrEF, EF 35%) is established on ramipril 10mg daily and furosemide 40mg daily. His BP is 122/78 mmHg and HR is 74 bpm. Per NICE NG106, which additional medication should be added at this review?",
     "options": {
-      "A": "Non-HDL 3.5 mmol/L — target <3.4 mmol/L for secondary prevention",
-      "B": "Non-HDL 3.5 mmol/L — target <2.5 mmol/L for secondary prevention",
-      "C": "Non-HDL 2.5 mmol/L — target <3.4 mmol/L for secondary prevention",
-      "D": "Non-HDL 3.5 mmol/L — target <1.8 mmol/L for secondary prevention",
-      "E": "Non-HDL 3.0 mmol/L — target <2.0 mmol/L for secondary prevention"
+      "A": "Amlodipine — improves cardiac output in heart failure",
+      "B": "Carvedilol (or bisoprolol) — beta-blocker is mandatory second-line therapy in HFrEF alongside ACE inhibitor; reduces mortality by approximately 34%",
+      "C": "Digoxin — first choice after ACE inhibitor",
+      "D": "Diltiazem — rate-controlling calcium channel blocker for heart failure",
+      "E": "Amiodarone — reduces arrhythmia risk in all HFrEF patients"
     },
     "correct_answer": "B",
     "explanation": {
-      "correct": "Non-HDL = 4.8 − 1.3 = 3.5 mmol/L. Per NICE NG238, for secondary prevention (established CVD), the non-HDL cholesterol target is <2.5 mmol/L (equivalent to LDL <1.8 mmol/L). This patient's non-HDL is above target — consider further lipid-lowering (add ezetimibe, or refer for PCSK9 inhibitor if on maximum tolerated statin).",
-      "A": "Incorrect — The non-HDL value is correct (3.5) but the target <3.4 is for primary prevention, not secondary prevention.",
-      "B": "CORRECT — Non-HDL 3.5 mmol/L. Target <2.5 mmol/L in secondary prevention per NICE NG238.",
-      "C": "Incorrect — Non-HDL calculation is wrong (should be 3.5 not 2.5).",
-      "D": "Incorrect — <1.8 mmol/L is the LDL target for very high risk, not the non-HDL target.",
-      "E": "Incorrect — Both the value and target are wrong."
+      "correct": "Per NICE NG106 (Chronic heart failure in adults: diagnosis and management), the evidence-based treatment algorithm for HFrEF (EF <40%): (1) ACE inhibitor (ramipril — already prescribed) + beta-blocker: carvedilol, bisoprolol, or nebivolol are the three licensed beta-blockers for heart failure — they reduce all-cause mortality by ~34%; start at low dose and titrate up. Both ACE inhibitor and beta-blocker should be used together as the backbone of HFrEF management. (2) If still symptomatic or EF <35%: add mineralocorticoid receptor antagonist (spironolactone/eplerenone). (3) SGLT2 inhibitor (dapagliflozin) reduces HF hospitalisations regardless of diabetes status (NICE TA679). Amlodipine and diltiazem are both negatively inotropic — calcium channel blockers (especially non-dihydropyridines like diltiazem/verapamil) are contraindicated in HFrEF.",
+      "A": "Incorrect — Amlodipine (dihydropyridine CCB) can be used for hypertension/angina in HF but has no mortality benefit. Non-dihydropyridine CCBs (diltiazem, verapamil) are contraindicated.",
+      "B": "CORRECT — Beta-blocker (carvedilol or bisoprolol) is mandatory second-line therapy alongside ACE inhibitor in HFrEF per NICE NG106.",
+      "C": "Incorrect — Digoxin is used in HFrEF for symptomatic benefit (especially in AF) but is not the priority second-line agent after ACE inhibitor.",
+      "D": "Incorrect — Diltiazem (non-dihydropyridine CCB) is CONTRAINDICATED in HFrEF — it reduces myocardial contractility.",
+      "E": "Incorrect — Amiodarone is only used for specific arrhythmias — it is not routine therapy for HFrEF."
     },
-    "reference": "NICE NG238 — Cardiovascular disease: risk assessment and reduction. https://www.nice.org.uk/guidance/ng238",
-    "tags": [
-      "non-HDL",
-      "secondary prevention",
-      "lipid target",
-      "statin",
-      "NICE NG238"
-    ],
-    "source": "Question Grove 360"
+    "reference": "NICE NG106 — Chronic heart failure in adults. https://www.nice.org.uk/guidance/ng106",
+    "tags": ["heart failure", "carvedilol", "bisoprolol", "beta-blocker", "NICE NG106", "HFrEF"]
   },
   {
-    "id": "QG-CV-019-003",
-    "exam": "MRCGP AKT",
-    "domain": "Clinical Medicine",
-    "specialty": "Cardiovascular",
-    "difficulty": "Medium",
-    "question": "A 52-year-old man with a QRISK3 score of 14% is being considered for primary prevention statin therapy. His lipids: total cholesterol 5.6 mmol/L, HDL 1.2 mmol/L, triglycerides 3.8 mmol/L. His LDL cannot be reliably calculated due to elevated triglycerides. What should be used to assess treatment response after starting atorvastatin 20mg?",
-    "options": {
-      "A": "LDL cholesterol — recheck after 3 months",
-      "B": "Non-HDL cholesterol — target a ≥40% reduction from baseline",
-      "C": "Total cholesterol alone — target <5.0 mmol/L",
-      "D": "Triglyceride level — target <1.7 mmol/L",
-      "E": "HDL cholesterol — target >1.5 mmol/L"
-    },
-    "correct_answer": "B",
-    "explanation": {
-      "correct": "When triglycerides are elevated (>4.5 mmol/L invalidates Friedewald LDL, but even at 3.8 mmol/L accuracy is reduced), non-HDL cholesterol is used to assess treatment response. Per NICE NG238, a ≥40% reduction in non-HDL (or LDL) from baseline is the treatment response target after starting statin therapy for primary prevention. Non-HDL = 5.6 − 1.2 = 4.4 mmol/L at baseline; target would be ≤2.6 mmol/L.",
-      "A": "Incorrect — LDL is unreliable when triglycerides are elevated. Non-HDL is the preferred alternative.",
-      "B": "CORRECT — Non-HDL is used; target ≥40% reduction from baseline per NICE NG238.",
-      "C": "Incorrect — Total cholesterol alone is not the recommended treatment response target.",
-      "D": "Incorrect — Triglyceride reduction is a secondary outcome, not the primary statin treatment target.",
-      "E": "Incorrect — HDL target is not the primary statin response measure."
-    },
-    "reference": "NICE NG238 — Cardiovascular disease: risk assessment and reduction. https://www.nice.org.uk/guidance/ng238",
-    "tags": [
-      "non-HDL",
-      "statin response",
-      "triglycerides",
-      "primary prevention",
-      "NICE NG238"
-    ],
-    "source": "Question Grove 360"
-  },
-  {
-    "id": "QG-CV-019-004",
+    "id": "QG-B2-CV-141-002",
     "exam": "MRCGP AKT",
     "domain": "Clinical Medicine",
     "specialty": "Cardiovascular",
     "difficulty": "Hard",
-    "question": "A 48-year-old woman with familial hypercholesterolaemia is on rosuvastatin 40mg and ezetimibe 10mg. Her lipid profile: total cholesterol 5.9 mmol/L, HDL 1.6 mmol/L, LDL 3.5 mmol/L, triglycerides 1.4 mmol/L. Her Simon Broome criteria confirm FH. Per NICE TA394, what is her non-HDL cholesterol and when should PCSK9 inhibitor therapy be considered?",
+    "question": "A 55-year-old woman with HFrEF (EF 28%) is on ramipril 10mg, carvedilol 25mg twice daily, and spironolactone 25mg. Her NT-proBNP remains elevated and she is still breathless on minimal exertion. Her BP is 108/72 mmHg and HR is 68 bpm. She has no diabetes. Per NICE TA679 and NICE NG106, what should be added?",
     "options": {
-      "A": "Non-HDL 4.3 mmol/L — PCSK9 inhibitor if LDL remains >2.6 mmol/L on maximum tolerated statin",
-      "B": "Non-HDL 4.3 mmol/L — PCSK9 inhibitor if LDL remains >3.5 mmol/L on maximum tolerated statin alone",
-      "C": "Non-HDL 4.3 mmol/L — PCSK9 inhibitor if non-HDL remains >2.5 mmol/L despite maximum tolerated statin + ezetimibe in secondary prevention or >3.3 mmol/L in primary prevention",
-      "D": "Non-HDL 5.9 mmol/L — PCSK9 inhibitor immediately as FH is confirmed",
-      "E": "Non-HDL 3.5 mmol/L — PCSK9 inhibitor only if LDL >5.0 mmol/L despite treatment"
+      "A": "Increase diuretic dose only",
+      "B": "Dapagliflozin 10mg daily — NICE TA679 recommends dapagliflozin as an add-on therapy for symptomatic HFrEF with EF ≤40%, regardless of diabetes status, to reduce risk of worsening heart failure and cardiovascular death",
+      "C": "Add amlodipine for additional blood pressure control",
+      "D": "Switch ramipril to a DOAC for additional anticoagulation",
+      "E": "Stop spironolactone and add digoxin instead"
     },
-    "correct_answer": "C",
+    "correct_answer": "B",
     "explanation": {
-      "correct": "Non-HDL = 5.9 − 1.6 = 4.3 mmol/L. Per NICE TA394, PCSK9 inhibitors (evolocumab or alirocumab) are recommended for adults with primary non-familial or familial hypercholesterolaemia when: non-HDL remains >2.5 mmol/L in secondary prevention (or >3.3 mmol/L in primary prevention) despite maximum tolerated statin therapy plus ezetimibe. This patient is on maximum combination therapy — if on primary prevention, her non-HDL 4.3 mmol/L far exceeds the threshold.",
-      "A": "Incorrect — The LDL threshold of 2.6 mmol/L is for secondary prevention. Non-HDL criteria per TA394 are used.",
-      "B": "Incorrect — The threshold of 3.5 mmol/L LDL and statin alone is not the NICE TA394 criteria.",
-      "C": "CORRECT — Non-HDL 4.3 mmol/L. PCSK9i indicated if non-HDL >2.5 mmol/L (2° prevention) or >3.3 mmol/L (1° prevention) on max statin + ezetimibe per NICE TA394.",
-      "D": "Incorrect — Non-HDL is calculated as total − HDL = 4.3, not 5.9. PCSK9i has specific criteria beyond FH diagnosis.",
-      "E": "Incorrect — The formula gives non-HDL 4.3, not 3.5. The LDL threshold stated is incorrect."
+      "correct": "Per NICE TA679 (Dapagliflozin for treating symptomatic chronic heart failure with reduced ejection fraction, 2021): dapagliflozin 10mg daily is recommended as an add-on to optimised standard care in adults with symptomatic HFrEF (EF ≤40%) regardless of whether they have type 2 diabetes. Evidence: DAPA-HF trial showed significant reduction in composite of worsening heart failure or CV death. This patient has: HFrEF EF 28%, optimised ACE inhibitor + beta-blocker + MRA, still symptomatic — dapagliflozin is the appropriate next addition. Additionally: consider sacubitril/valsartan (ARNI — NICE TA506) as replacement for ACE inhibitor if still symptomatic, and ICD/CRT-D if EF remains <35% despite optimal therapy.",
+      "A": "Incorrect — Increasing diuretic improves congestion symptoms but has no mortality benefit and does not address the underlying HF progression.",
+      "B": "CORRECT — Dapagliflozin 10mg for symptomatic HFrEF EF ≤40% regardless of diabetes per NICE TA679.",
+      "C": "Incorrect — Amlodipine has no mortality benefit in HFrEF and would further lower an already borderline blood pressure.",
+      "D": "Incorrect — Switching an ACE inhibitor to a DOAC is clinically irrational — DOACs do not treat heart failure.",
+      "E": "Incorrect — Spironolactone (MRA) has proven mortality benefit in HFrEF and should not be stopped for digoxin."
     },
-    "reference": "NICE TA394 — Evolocumab for treating primary hypercholesterolaemia and mixed dyslipidaemia. https://www.nice.org.uk/guidance/ta394",
-    "tags": [
-      "familial hypercholesterolaemia",
-      "PCSK9 inhibitor",
-      "non-HDL",
-      "ezetimibe",
-      "NICE TA394"
-    ],
-    "source": "Question Grove 360"
+    "reference": "NICE TA679 — Dapagliflozin for chronic heart failure with reduced ejection fraction. https://www.nice.org.uk/guidance/ta679",
+    "tags": ["dapagliflozin", "HFrEF", "NICE TA679", "SGLT2 inhibitor", "heart failure", "non-diabetic"]
   },
   {
-    "id": "QG-CV-019-005",
+    "id": "QG-B2-CV-141-003",
     "exam": "MRCGP AKT",
     "domain": "Clinical Medicine",
     "specialty": "Cardiovascular",
     "difficulty": "Easy",
-    "question": "A GP registers a 44-year-old male patient newly diagnosed with type 2 diabetes. His lipids show: total cholesterol 5.2 mmol/L, HDL 0.9 mmol/L, LDL 3.1 mmol/L, triglycerides 2.8 mmol/L. His QRISK3 score is 9.8%. Per NICE NG238, should he be started on a statin and what is his non-HDL?",
+    "question": "A 68-year-old man is started on carvedilol for heart failure by his cardiologist and attends for a GP follow-up. He reports feeling more breathless since starting the beta-blocker 1 week ago. Per NICE NG106, what is the correct advice?",
     "options": {
-      "A": "Non-HDL 4.3 mmol/L — no statin as QRISK3 <10%",
-      "B": "Non-HDL 4.3 mmol/L — offer atorvastatin 20mg; diabetes with additional risk factors warrants treatment regardless of QRISK3 score",
-      "C": "Non-HDL 3.1 mmol/L — offer atorvastatin 80mg as high-intensity statin required for diabetes",
-      "D": "Non-HDL 4.1 mmol/L — lifestyle advice only; statin indicated only if QRISK3 ≥10%",
-      "E": "Non-HDL 4.3 mmol/L — offer simvastatin 40mg as first-line for diabetes"
+      "A": "Stop carvedilol immediately — worsening breathlessness means it is causing harm",
+      "B": "Initial worsening of symptoms is common when starting beta-blockers in heart failure — continue at the current dose (do not increase), optimise diuretic if congestion has increased, and review in 2-4 weeks; long-term beta-blocker use significantly reduces mortality in HFrEF despite initial symptom worsening",
+      "C": "Increase the carvedilol dose immediately — higher doses are more effective",
+      "D": "Switch to a calcium channel blocker — better tolerated in heart failure",
+      "E": "Add amlodipine to counteract the worsening symptoms"
     },
     "correct_answer": "B",
     "explanation": {
-      "correct": "Non-HDL = 5.2 − 0.9 = 4.3 mmol/L. Per NICE NG28 (T2DM) and NG238, all adults with type 2 diabetes aged >40 years (or with additional cardiovascular risk factors such as low HDL 0.9 mmol/L) should be offered atorvastatin 20mg for primary prevention, even when QRISK3 is just below 10%. The QRISK3 threshold of 10% does not apply to people with type 2 diabetes with additional risk factors — statin therapy is recommended.",
-      "A": "Incorrect — In T2DM with additional risk factors (low HDL), statin is recommended regardless of QRISK3 slightly below 10%.",
-      "B": "CORRECT — Non-HDL 4.3 mmol/L. Atorvastatin 20mg offered in T2DM with additional risk factors per NICE NG28/NG238.",
-      "C": "Incorrect — Non-HDL calculation is wrong. Atorvastatin 80mg is for high-risk primary prevention (QRISK3 ≥10% + high-risk features), not routine T2DM.",
-      "D": "Incorrect — The non-HDL calculation is wrong (4.1 vs 4.3). Statin criteria in T2DM are not solely determined by QRISK3 threshold.",
-      "E": "Incorrect — Simvastatin 40mg is no longer recommended as first-line. Atorvastatin is the preferred statin per NICE NG238."
+      "correct": "Per NICE NG106, initial worsening of heart failure symptoms (increased breathlessness, oedema) is common and expected when starting beta-blockers in HFrEF. This is due to the acute negative inotropic and chronotropic effects before the longer-term beneficial neurohormonal effects occur (typically takes weeks to months). Management: do not stop the beta-blocker; do not increase the dose yet — maintain at current dose; optimise diuresis if fluid overload has worsened (increase furosemide dose temporarily); reassure the patient; review in 2-4 weeks; titrate beta-blocker slowly upward once symptoms stabilise. Stopping beta-blockers denies patients a mortality benefit of ~34%. Key principle: 'start low, go slow' in HF beta-blocker initiation.",
+      "A": "Incorrect — Stopping carvedilol for initial worsening of symptoms is incorrect — this is an expected and temporary effect that should be managed, not used as a reason to stop.",
+      "B": "CORRECT — Initial symptom worsening on beta-blocker in HF is expected. Maintain dose, optimise diuretic, review in 2-4 weeks per NICE NG106.",
+      "C": "Incorrect — Increasing the dose of carvedilol when the patient has worsening symptoms would be unsafe.",
+      "D": "Incorrect — Non-dihydropyridine calcium channel blockers (diltiazem, verapamil) are contraindicated in HFrEF. Amlodipine has no mortality benefit.",
+      "E": "Incorrect — Adding amlodipine does not address the mechanism of symptom worsening and adds unnecessary medication."
     },
-    "reference": "NICE NG28 — Type 2 diabetes in adults. NICE NG238 — CVD risk assessment.",
-    "tags": [
-      "statin",
-      "type 2 diabetes",
-      "non-HDL",
-      "primary prevention",
-      "atorvastatin",
-      "NICE NG28"
-    ],
-    "source": "Question Grove 360"
+    "reference": "NICE NG106 — Chronic heart failure in adults. https://www.nice.org.uk/guidance/ng106",
+    "tags": ["beta-blocker heart failure", "carvedilol", "initial worsening", "NICE NG106", "start low go slow", "HFrEF"]
   },
   {
-    "id": "QG-CV-047-001",
-    "exam": "MRCGP AKT",
-    "domain": "Clinical Medicine",
-    "specialty": "Cardiovascular",
-    "difficulty": "Easy",
-    "question": "A 58-year-old obese man (BMI 36 kg/m²) presents with central chest tightness on walking uphill, relieved by rest within 5 minutes. He has hypertension and type 2 diabetes. He has never smoked. ECG is normal at rest. What is the most likely diagnosis and most appropriate initial investigation?",
-    "options": {
-      "A": "Musculoskeletal chest pain — trial of NSAIDs and physiotherapy",
-      "B": "Stable angina (ischaemic heart disease) — CT coronary angiography",
-      "C": "GORD — trial of PPI for 4 weeks",
-      "D": "Pulmonary embolism — calculate Wells PE score and arrange CT-PA",
-      "E": "Heart failure — echocardiogram and BNP"
-    },
-    "correct_answer": "B",
-    "explanation": {
-      "correct": "Classic stable angina: exertional central chest tightness, relieved by rest, in a patient with multiple cardiovascular risk factors (obesity, hypertension, T2DM). Per NICE NG185 (Chest pain of recent onset), CT coronary angiography (CTCA) is the first-line investigation for suspected stable angina, replacing exercise tolerance testing. It has high sensitivity and specificity for coronary artery disease.",
-      "A": "Incorrect — The exertional pattern relieved by rest is not consistent with musculoskeletal pain.",
-      "B": "CORRECT — Stable angina in high-risk patient. CTCA is first-line investigation per NICE NG185.",
-      "C": "Incorrect — GORD causes burning retrosternal pain, not exertional tightness relieved by rest.",
-      "D": "Incorrect — PE causes breathlessness and pleuritic chest pain. No risk factors described.",
-      "E": "Incorrect — Heart failure causes breathlessness, orthopnoea — not exertional chest tightness specifically."
-    },
-    "reference": "NICE NG185 — Chest pain of recent onset: assessment and diagnosis. https://www.nice.org.uk/guidance/ng185",
-    "tags": [
-      "angina",
-      "IHD",
-      "chest pain",
-      "CTCA",
-      "exertional",
-      "NICE NG185"
-    ],
-    "source": "Question Grove 360"
-  },
-  {
-    "id": "QG-CV-047-002",
-    "exam": "MRCGP AKT",
-    "domain": "Clinical Medicine",
-    "specialty": "Cardiovascular",
-    "difficulty": "Medium",
-    "question": "A 62-year-old obese man presents with exertional dyspnoea and leg pain on walking 200 metres, relieved by rest. He has a 35 pack-year smoking history. On examination, femoral pulses are reduced bilaterally and ABPI is 0.72. What is the most likely cause of his exertional pain and what is the first-line management?",
-    "options": {
-      "A": "Stable angina — CTCA and beta blocker",
-      "B": "Peripheral arterial disease — supervised exercise programme, antiplatelet therapy and statin",
-      "C": "Heart failure — furosemide and ACE inhibitor",
-      "D": "Venous claudication — compression stockings",
-      "E": "Lumbar spinal stenosis — MRI lumbar spine"
-    },
-    "correct_answer": "B",
-    "explanation": {
-      "correct": "ABPI 0.72 (0.5–0.9 = moderate PAD) with bilateral reduced femoral pulses and exertional leg pain relieved by rest = intermittent claudication from peripheral arterial disease. Per NICE NG237, first-line: supervised exercise programme (minimum 2 hours/week for 3 months), antiplatelet therapy (clopidogrel preferred per NG237), high-intensity statin, cardiovascular risk factor management.",
-      "A": "Incorrect — Leg pain with reduced peripheral pulses and low ABPI points to PAD not cardiac angina.",
-      "B": "CORRECT — PAD with intermittent claudication. Supervised exercise + antiplatelet + statin per NICE NG237.",
-      "C": "Incorrect — Heart failure causes bilateral leg swelling and dyspnoea, not exertional calf pain with reduced pulses.",
-      "D": "Incorrect — Venous claudication is rare; ABPI <0.9 confirms arterial disease.",
-      "E": "Incorrect — Spinal stenosis causes neurogenic claudication (relieved by leaning forward, no pulse deficit)."
-    },
-    "reference": "NICE NG237 — Peripheral arterial disease: diagnosis and management. https://www.nice.org.uk/guidance/ng237",
-    "tags": [
-      "peripheral arterial disease",
-      "ABPI",
-      "claudication",
-      "supervised exercise",
-      "NICE NG237"
-    ],
-    "source": "Question Grove 360"
-  },
-  {
-    "id": "QG-CV-047-003",
-    "exam": "MRCGP AKT",
-    "domain": "Clinical Medicine",
-    "specialty": "Cardiovascular",
-    "difficulty": "Medium",
-    "question": "A 55-year-old obese man with BMI 38 presents with exertional breathlessness and ankle swelling. BNP is 540 pg/mL (normal <35 pg/mL). ECG shows left bundle branch block. What is the most likely diagnosis and most appropriate urgent investigation?",
-    "options": {
-      "A": "COPD — spirometry",
-      "B": "Heart failure — urgent echocardiogram within 2 weeks",
-      "C": "Pulmonary hypertension — CT pulmonary angiography",
-      "D": "Obesity hypoventilation — overnight oximetry",
-      "E": "Stable angina — CT coronary angiography"
-    },
-    "correct_answer": "B",
-    "explanation": {
-      "correct": "Elevated BNP (>400 pg/mL = high probability heart failure), LBBB on ECG, exertional dyspnoea and ankle oedema = suspected heart failure. Per NICE NG106, patients with BNP >400 pg/mL should be referred for echocardiogram within 2 weeks. Echocardiography confirms diagnosis, assesses ejection fraction (HFrEF vs HFpEF) and guides treatment.",
-      "A": "Incorrect — COPD does not cause elevated BNP or LBBB.",
-      "B": "CORRECT — BNP >400 pg/mL + LBBB + symptoms = heart failure. Echo within 2 weeks per NICE NG106.",
-      "C": "Incorrect — Pulmonary hypertension is a possibility but BNP elevation with LBBB strongly suggests heart failure first.",
-      "D": "Incorrect — Obesity hypoventilation causes hypercapnia and hypoxia but not BNP elevation or LBBB.",
-      "E": "Incorrect — Angina causes chest pain, not primarily ankle swelling and BNP elevation."
-    },
-    "reference": "NICE NG106 — Chronic heart failure in adults: diagnosis and management. https://www.nice.org.uk/guidance/ng106",
-    "tags": [
-      "heart failure",
-      "BNP",
-      "echocardiogram",
-      "exertional dyspnoea",
-      "NICE NG106"
-    ],
-    "source": "Question Grove 360"
-  },
-  {
-    "id": "QG-CV-047-004",
+    "id": "QG-B2-CV-155-001",
     "exam": "MRCGP AKT",
     "domain": "Clinical Medicine",
     "specialty": "Cardiovascular",
     "difficulty": "Hard",
-    "question": "A 60-year-old obese man presents with exertional left-sided chest pain. CTCA is performed and shows a 70% stenosis in the left anterior descending artery and fractional flow reserve (FFR) of 0.78. He is currently on aspirin and atorvastatin. What is the most appropriate next management step?",
+    "question": "A 58-year-old man has a mechanical mitral valve replacement. His routine bloods show bilirubin 48 umol/L (raised), LDH 520 U/L (raised), and Hb 92 g/L. Peripheral blood film shows fragmented red cells (schistocytes). Per guidelines on prosthetic heart valves, what is the most important investigation to check for valve dysfunction and what does this blood picture indicate?",
     "options": {
-      "A": "Add isosorbide mononitrate and review in 6 weeks",
-      "B": "Refer for percutaneous coronary intervention (PCI) — FFR ≤0.80 confirms haemodynamically significant lesion",
-      "C": "Arrange exercise tolerance test to confirm ischaemia",
-      "D": "Add ivabradine 5mg twice daily",
-      "E": "Reassure — 70% stenosis is not significant without total occlusion"
+      "A": "Check liver function only — jaundice suggests hepatitis",
+      "B": "Reticulocyte count — this blood picture (haemolytic anaemia with schistocytes, raised bilirubin, raised LDH) indicates mechanical haemolytic anaemia due to turbulent blood flow through the prosthetic valve; raised reticulocyte count confirms haemolysis. Also arrange echocardiography to assess valve function and regurgitation",
+      "C": "Check iron studies only — normocytic anaemia from iron deficiency",
+      "D": "Start warfarin immediately — thrombosis of the mechanical valve",
+      "E": "Bone marrow biopsy — suspected leukaemia"
     },
     "correct_answer": "B",
     "explanation": {
-      "correct": "Fractional flow reserve (FFR) ≤0.80 indicates a haemodynamically significant coronary stenosis causing ischaemia. FFR measures the pressure gradient across a stenosis — values ≤0.80 are the accepted threshold for PCI/revascularisation. With confirmed significant ischaemia and ongoing symptoms despite medical therapy, referral for PCI is the most appropriate next step per NICE NG185 and ESC guidelines.",
-      "A": "Incorrect — Adding nitrate is symptomatic but does not address confirmed significant ischaemia with FFR ≤0.80.",
-      "B": "CORRECT — FFR ≤0.80 confirms haemodynamically significant stenosis. Refer for PCI per NICE NG185/ESC.",
-      "C": "Incorrect — FFR has already confirmed haemodynamic significance. Exercise tolerance testing is not required.",
-      "D": "Incorrect — Ivabradine is used for stable angina when beta blockers are contraindicated, not when revascularisation is indicated.",
-      "E": "Incorrect — FFR ≤0.80 is the functional proof of significance. Anatomy alone (% stenosis) can underestimate physiological impact."
+      "correct": "Mechanical haemolytic anaemia (prosthetic valve haemolysis): mechanical destruction of red blood cells by turbulent flow through the prosthetic valve or a paravalvular leak causes intravascular haemolysis. Features: microangiopathic haemolytic anaemia (MAHA) — fragmented red cells (schistocytes/helmet cells) on blood film, raised LDH (from RBC breakdown), raised bilirubin (unconjugated — from haem metabolism), low haptoglobin, haemoglobinuria (dark urine), raised reticulocyte count (compensatory increased RBC production). Reticulocyte count is essential to confirm active haemolysis (will be elevated). Echocardiography is required to assess valve integrity (paravalvular regurgitation, obstruction or structural failure). If haemolysis is severe or valve dysfunction is confirmed: surgical repair or valve replacement may be needed.",
+      "A": "Incorrect — While bilirubin is raised, the clinical context (mechanical valve + schistocytes + raised LDH) points to haemolysis not hepatitis.",
+      "B": "CORRECT — Reticulocyte count confirms haemolysis. Schistocytes + raised LDH + raised bilirubin = mechanical haemolytic anaemia. Echo to assess valve function.",
+      "C": "Incorrect — Schistocytes and raised LDH are not features of iron deficiency anaemia. This is a haemolytic picture.",
+      "D": "Incorrect — The picture is haemolysis not valve thrombosis. Starting warfarin without echocardiographic assessment is inappropriate.",
+      "E": "Incorrect — The clinical context (mechanical valve + schistocytes) strongly suggests prosthetic valve haemolysis — leukaemia would present very differently."
     },
-    "reference": "NICE NG185 — Stable angina. ESC Guidelines on Myocardial Revascularisation 2018.",
-    "tags": [
-      "FFR",
-      "coronary stenosis",
-      "PCI",
-      "stable angina",
-      "CTCA",
-      "revascularisation"
-    ],
-    "source": "Question Grove 360"
+    "reference": "BSH Guidelines — Haemolytic anaemia. ESC Guidelines on Valvular Heart Disease. https://b-s-h.org.uk/guidelines/",
+    "tags": ["mechanical valve haemolysis", "schistocytes", "reticulocyte count", "LDH", "MAHA", "prosthetic valve"]
   },
   {
-    "id": "QG-CV-047-005",
-    "exam": "MRCGP AKT",
-    "domain": "Clinical Medicine",
-    "specialty": "Cardiovascular",
-    "difficulty": "Medium",
-    "question": "A 50-year-old obese male smoker presents with exertional chest pain. His 10-year QRISK3 score is 22%. He is not on any medications. His resting ECG is normal. What is the most appropriate primary prevention strategy?",
-    "options": {
-      "A": "Aspirin 75mg daily for primary prevention",
-      "B": "Atorvastatin 80mg daily and lifestyle advice (smoking cessation, weight loss, exercise)",
-      "C": "Atorvastatin 20mg and refer for CTCA to investigate chest pain",
-      "D": "Reassure — lifestyle modification alone sufficient until QRISK3 >30%",
-      "E": "Ramipril 2.5mg for cardiovascular protection without hypertension"
-    },
-    "correct_answer": "C",
-    "explanation": {
-      "correct": "Two issues here: (1) the patient has exertional chest pain requiring investigation (CTCA per NICE NG185), and (2) QRISK3 22% warrants primary prevention statin therapy. Per NICE NG238, for QRISK3 ≥10%, atorvastatin 20mg is recommended for primary prevention. The chest pain also needs investigation — CTCA is first-line. Atorvastatin 80mg is for secondary prevention or very high-risk primary prevention.",
-      "A": "Incorrect — Aspirin is not recommended for primary prevention of CVD due to bleeding risk outweighing benefit.",
-      "B": "Incorrect — Atorvastatin 80mg is for secondary prevention. 20mg is used for primary prevention. The chest pain also needs investigating.",
-      "C": "CORRECT — Atorvastatin 20mg for QRISK3 ≥10% primary prevention + CTCA to investigate exertional chest pain per NICE NG185/NG238.",
-      "D": "Incorrect — NICE recommends offering statin when QRISK3 ≥10%, not 30%.",
-      "E": "Incorrect — ACE inhibitors are not used for cardiovascular protection without a specific indication (hypertension, diabetes, heart failure, CKD)."
-    },
-    "reference": "NICE NG185 — Chest pain. NICE NG238 — CVD risk. https://www.nice.org.uk/guidance/ng238",
-    "tags": [
-      "QRISK3",
-      "primary prevention",
-      "statin",
-      "atorvastatin",
-      "exertional chest pain",
-      "NICE NG238"
-    ],
-    "source": "Question Grove 360"
-  },
-  {
-    "id": "QG-CV-053-001",
-    "exam": "MRCGP AKT",
-    "domain": "Clinical Medicine",
-    "specialty": "Cardiovascular",
-    "difficulty": "Medium",
-    "question": "A 64-year-old man presents with progressive breathlessness and chest tightness on walking 300 metres, present for 4 months. There is no chest pain. ECG shows normal sinus rhythm. FEV1/FVC ratio is 0.75 on spirometry. BNP is 280 pg/mL. What is the most important next investigation to determine the cause of his breathlessness?",
-    "options": {
-      "A": "Repeat spirometry after bronchodilator",
-      "B": "Echocardiogram — BNP 100-400 pg/mL warrants echo within 6 weeks per NICE NG106",
-      "C": "CT coronary angiography for suspected stable angina",
-      "D": "Chest X-ray as first-line for unexplained breathlessness",
-      "E": "Exercise tolerance test"
-    },
-    "correct_answer": "B",
-    "explanation": {
-      "correct": "BNP 280 pg/mL falls in the intermediate range (100–400 pg/mL) which, per NICE NG106, warrants echocardiogram within 6 weeks to exclude heart failure. While COPD and angina remain differential diagnoses, the elevated BNP makes heart failure a priority to exclude. FEV1/FVC 0.75 is borderline obstructive, but BNP drives investigation priority.",
-      "A": "Incorrect — Post-bronchodilator spirometry would help confirm COPD but BNP elevation makes echo more urgent.",
-      "B": "CORRECT — BNP 100-400 pg/mL = echo within 6 weeks per NICE NG106.",
-      "C": "Incorrect — CTCA is for suspected stable angina (chest pain/tightness on exertion). BNP elevation makes heart failure the priority.",
-      "D": "Incorrect — CXR is often first-line but BNP and symptoms direct to echocardiography as the key investigation.",
-      "E": "Incorrect — ETT is no longer first-line for exertional chest pain per NG185, and is not the priority here with elevated BNP."
-    },
-    "reference": "NICE NG106 — Chronic heart failure in adults. https://www.nice.org.uk/guidance/ng106",
-    "tags": [
-      "heart failure",
-      "BNP",
-      "breathlessness",
-      "echocardiogram",
-      "chest tightness",
-      "NICE NG106"
-    ],
-    "source": "Question Grove 360"
-  },
-  {
-    "id": "QG-CV-053-002",
-    "exam": "MRCGP AKT",
-    "domain": "Clinical Medicine",
-    "specialty": "Cardiovascular",
-    "difficulty": "Easy",
-    "question": "A 70-year-old man presents with breathlessness and chest tightness on minimal exertion (walking to his letterbox) over 3 months. He has bibasal crackles on auscultation, pitting oedema to the knees, and displaced apex beat. What is the most likely diagnosis?",
-    "options": {
-      "A": "Stable angina — refer for CTCA",
-      "B": "Chronic heart failure — confirm with BNP and echocardiogram",
-      "C": "COPD — spirometry and chest X-ray",
-      "D": "Pulmonary fibrosis — HRCT chest",
-      "E": "Pleural effusion — chest X-ray and thoracocentesis"
-    },
-    "correct_answer": "B",
-    "explanation": {
-      "correct": "Clinical signs of heart failure: bibasal crackles (pulmonary oedema), bilateral pitting oedema, displaced apex beat (cardiomegaly), and exertional dyspnoea with chest tightness. Per NICE NG106, measurement of BNP and echocardiogram are required to confirm diagnosis, assess ejection fraction and guide treatment.",
-      "A": "Incorrect — The signs of bibasal crackles, oedema and displaced apex beat are not consistent with stable angina.",
-      "B": "CORRECT — Heart failure: bibasal crackles + oedema + displaced apex beat. BNP and echo per NICE NG106.",
-      "C": "Incorrect — COPD typically causes overinflation, wheeze and hyperresonance — not bibasal crackles and oedema.",
-      "D": "Incorrect — Pulmonary fibrosis causes fine bibasal crackles but not peripheral oedema or displaced apex beat.",
-      "E": "Incorrect — Pleural effusion may complicate heart failure but is not the primary diagnosis to address here."
-    },
-    "reference": "NICE NG106 — Chronic heart failure in adults. https://www.nice.org.uk/guidance/ng106",
-    "tags": [
-      "heart failure",
-      "bibasal crackles",
-      "oedema",
-      "displaced apex",
-      "BNP",
-      "NICE NG106"
-    ],
-    "source": "Question Grove 360"
-  },
-  {
-    "id": "QG-CV-053-003",
-    "exam": "MRCGP AKT",
-    "domain": "Clinical Medicine",
-    "specialty": "Cardiovascular",
-    "difficulty": "Medium",
-    "question": "A 55-year-old man with breathlessness on moderate exertion is found to have heart failure with reduced ejection fraction (HFrEF, EF 30%) on echocardiogram. His BNP is 820 pg/mL. He is in sinus rhythm and his BP is 118/76 mmHg. Which initial combination of medications has the strongest mortality benefit?",
-    "options": {
-      "A": "Furosemide 40mg + spironolactone 25mg",
-      "B": "ACE inhibitor (ramipril) + beta blocker (bisoprolol)",
-      "C": "ARNI (sacubitril/valsartan) + beta blocker as initial therapy",
-      "D": "Digoxin + furosemide",
-      "E": "Ivabradine + ACE inhibitor"
-    },
-    "correct_answer": "B",
-    "explanation": {
-      "correct": "Per NICE NG106, first-line treatment for HFrEF is ACE inhibitor (or ARB if not tolerated) + beta blocker. Both reduce mortality significantly (CONSENSUS, MERIT-HF trials). These should be uptitrated to maximum tolerated doses. Aldosterone antagonist (spironolactone) is added as third-line. ARNI (sacubitril/valsartan) replaces ACE inhibitor after initial stabilisation on standard therapy.",
-      "A": "Incorrect — Furosemide improves symptoms but has no mortality benefit. Spironolactone is third-line.",
-      "B": "CORRECT — ACE inhibitor + beta blocker is first-line for HFrEF with proven mortality benefit per NICE NG106.",
-      "C": "Incorrect — ARNI is initiated by specialists after stabilisation on ACE inhibitor/ARB + beta blocker, not as initial therapy.",
-      "D": "Incorrect — Digoxin reduces hospitalisation but not mortality. Not first-line.",
-      "E": "Incorrect — Ivabradine is used after optimising ACE inhibitor, beta blocker and spironolactone."
-    },
-    "reference": "NICE NG106 — Chronic heart failure in adults. https://www.nice.org.uk/guidance/ng106",
-    "tags": [
-      "HFrEF",
-      "heart failure treatment",
-      "ACE inhibitor",
-      "bisoprolol",
-      "mortality",
-      "NICE NG106"
-    ],
-    "source": "Question Grove 360"
-  },
-  {
-    "id": "QG-CV-053-004",
+    "id": "QG-B2-CV-187-001",
     "exam": "MRCGP AKT",
     "domain": "Clinical Medicine",
     "specialty": "Cardiovascular",
     "difficulty": "Hard",
-    "question": "A 68-year-old man with HFrEF (EF 28%) is stable on ramipril 10mg, bisoprolol 10mg and spironolactone 25mg. His NYHA class is II and resting HR is 78 bpm in sinus rhythm. His latest NT-proBNP is 1800 pg/mL. He is reviewed by cardiology who wish to optimise therapy. Which additional intervention has NICE approval for further reducing hospitalisation and mortality?",
+    "question": "A 36-year-old woman presents with a 3-month history of intermittent pleuritic chest pain and breathlessness, each episode lasting several hours and resolving spontaneously. She takes the combined oral contraceptive pill. Her D-dimer is elevated at 620 ng/mL. Her ECG and CXR are normal. Per NICE NG158, what is the next investigation?",
     "options": {
-      "A": "Increase spironolactone to 50mg",
-      "B": "Add ivabradine 5mg twice daily (resting HR >75 bpm on maximum tolerated beta blocker in sinus rhythm)",
-      "C": "Add dapagliflozin 10mg daily — SGLT2 inhibitor approved for HFrEF",
-      "D": "Add amlodipine 5mg for additional afterload reduction",
-      "E": "Switch ramipril to losartan — ARB superior to ACE inhibitor in HFrEF"
-    },
-    "correct_answer": "C",
-    "explanation": {
-      "correct": "Per NICE TA679, dapagliflozin 10mg daily is approved for treating symptomatic HFrEF (EF ≤40%) regardless of diabetes status. The DAPA-HF trial showed significant reduction in CV death and worsening heart failure. SGLT2 inhibitors are now part of the quadruple therapy approach in HFrEF alongside ACE inhibitor/ARNI, beta blocker and MRA.",
-      "A": "Incorrect — Spironolactone 25mg is appropriate; increasing dose risks hyperkalaemia without additional proven benefit in stable patients.",
-      "B": "Incorrect — Ivabradine requires HR >75 bpm on maximum beta blocker. This patient's HR is 78 bpm, but maximum beta blocker dose (10mg bisoprolol) makes ivabradine potentially eligible; however, dapagliflozin has stronger current evidence.",
-      "C": "CORRECT — Dapagliflozin 10mg approved for HFrEF (EF ≤40%) per NICE TA679/NG106 update.",
-      "D": "Incorrect — Amlodipine does not reduce mortality in HFrEF and may worsen fluid retention.",
-      "E": "Incorrect — ACE inhibitors and ARBs have similar efficacy in HFrEF. Switching without intolerance is not indicated."
-    },
-    "reference": "NICE TA679 — Dapagliflozin for treating chronic heart failure with reduced ejection fraction. https://www.nice.org.uk/guidance/ta679",
-    "tags": [
-      "HFrEF",
-      "dapagliflozin",
-      "SGLT2 inhibitor",
-      "heart failure",
-      "NICE TA679"
-    ],
-    "source": "Question Grove 360"
-  },
-  {
-    "id": "QG-CV-053-005",
-    "exam": "MRCGP AKT",
-    "domain": "Clinical Medicine",
-    "specialty": "Cardiovascular",
-    "difficulty": "Medium",
-    "question": "A 72-year-old man presents with exertional breathlessness and ankle swelling. Echo shows preserved ejection fraction of 58% (HFpEF). His BNP is 420 pg/mL. BP is 158/92 mmHg. He has AF. What is the most appropriate management?",
-    "options": {
-      "A": "Ramipril + bisoprolol — same treatment as HFrEF",
-      "B": "Treat underlying causes (BP control, rate control of AF), diuretics for congestion, and consider SGLT2 inhibitor",
-      "C": "Digoxin for rate control and furosemide — no mortality benefit drugs available",
-      "D": "Refer for cardiac transplantation as HFpEF has no effective treatment",
-      "E": "Sacubitril/valsartan as first-line for HFpEF"
+      "A": "Reassure — the COCP causes raised D-dimer without PE",
+      "B": "CT pulmonary angiography (CTPA) — the gold standard investigation for pulmonary embolism. Raised D-dimer + clinical features (pleuritic pain, breathlessness) + COCP (risk factor) = intermediate-high probability of PE requiring imaging per NICE NG158 two-level PE Wells score",
+      "C": "Echocardiogram — to look for pericarditis",
+      "D": "VQ scan — preferred over CTPA in young women",
+      "E": "D-dimer is diagnostic for PE — no further imaging needed"
     },
     "correct_answer": "B",
     "explanation": {
-      "correct": "HFpEF management per NICE NG106: treat underlying comorbidities (hypertension, AF rate control, diabetes), diuretics for symptomatic congestion, lifestyle interventions. Empagliflozin and dapagliflozin (EMPEROR-Preserved, DELIVER trials) have shown benefit in HFpEF and are increasingly used. There are fewer mortality-reducing agents than in HFrEF, so treating underlying conditions is paramount.",
-      "A": "Incorrect — ACE inhibitors and beta blockers do not have the same mortality evidence in HFpEF as in HFrEF.",
-      "B": "CORRECT — Treat underlying causes + diuretics for symptoms + SGLT2 inhibitor consideration per NICE NG106/emerging evidence.",
-      "C": "Incorrect — This underestimates management. SGLT2 inhibitors now have evidence in HFpEF.",
-      "D": "Incorrect — HFpEF has management options. Transplantation is not indicated.",
-      "E": "Incorrect — ARNI (sacubitril/valsartan) has limited evidence in HFpEF and is not NICE-approved first-line for HFpEF."
-    },
-    "reference": "NICE NG106 — Chronic heart failure in adults. https://www.nice.org.uk/guidance/ng106",
-    "tags": [
-      "HFpEF",
-      "heart failure preserved EF",
-      "diuretics",
-      "SGLT2 inhibitor",
-      "AF",
-      "NICE NG106"
-    ],
-    "source": "Question Grove 360"
-  },
-  {
-    "id": "QG-CV-130-001",
-    "exam": "MRCGP AKT",
-    "domain": "Clinical Medicine",
-    "specialty": "Cardiovascular",
-    "difficulty": "Medium",
-    "question": "In a study of VTE risk, the background population risk is 2 per 1000 women per year. Women taking the combined oral contraceptive pill (COCP) have a risk of 18 per 1000 women per year. What is the relative risk of VTE associated with COCP use?",
-    "options": {
-      "A": "2.0",
-      "B": "4.5",
-      "C": "9.0",
-      "D": "16.0",
-      "E": "0.11"
-    },
-    "correct_answer": "C",
-    "explanation": {
-      "correct": "Relative risk = Risk in exposed group / Risk in unexposed group = 18/2 = 9.0. This means women taking COCP have 9 times the risk of VTE compared to non-COCP users. This is an important concept in counselling patients about COCP risk. Absolute risk increase = 18 − 2 = 16 per 1000 per year.",
-      "A": "Incorrect — 2.0 would be the background absolute risk, not the relative risk.",
-      "B": "Incorrect — 4.5 does not represent a recognised calculation from these numbers.",
-      "C": "CORRECT — RR = 18/2 = 9.0. Women on COCP have 9x the VTE risk compared to non-users.",
-      "D": "Incorrect — 16 is the absolute risk increase (18 − 2 = 16 per 1000), not relative risk.",
-      "E": "Incorrect — 0.11 would be the inverse ratio (2/18) which represents relative protection, not risk."
-    },
-    "reference": "FSRH — Clinical Guidance: Combined Hormonal Contraception 2019. UKMEC guidelines.",
-    "tags": [
-      "VTE",
-      "COCP",
-      "relative risk",
-      "statistics",
-      "contraception",
-      "risk calculation"
-    ],
-    "source": "Question Grove 360"
-  },
-  {
-    "id": "QG-CV-130-002",
-    "exam": "MRCGP AKT",
-    "domain": "Clinical Medicine",
-    "specialty": "Cardiovascular",
-    "difficulty": "Medium",
-    "question": "The background population risk of VTE is 2 per 1000 women per year. Women on the COCP have a VTE risk of 18 per 1000 per year. A patient asks: 'How many extra women per 1000 would get a clot each year because of the pill?' What is the absolute risk increase and what is the number needed to harm (NNH)?",
-    "options": {
-      "A": "ARI = 16 per 1000; NNH = 63",
-      "B": "ARI = 18 per 1000; NNH = 56",
-      "C": "ARI = 2 per 1000; NNH = 500",
-      "D": "ARI = 9 per 1000; NNH = 111",
-      "E": "ARI = 16 per 1000; NNH = 1000"
-    },
-    "correct_answer": "A",
-    "explanation": {
-      "correct": "Absolute Risk Increase (ARI) = Risk in exposed − Risk in unexposed = 18 − 2 = 16 per 1000 per year (or 0.016). Number Needed to Harm (NNH) = 1/ARI = 1/0.016 = 62.5, approximately 63. This means for every 63 women taking COCP for 1 year, 1 additional VTE event would occur compared to non-users.",
-      "A": "CORRECT — ARI = 16/1000 = 0.016; NNH = 1/0.016 ≈ 63.",
-      "B": "Incorrect — ARI of 18 would use the COCP risk alone, not the difference. NNH of 56 is not derived correctly.",
-      "C": "Incorrect — ARI of 2 uses the background risk, not the difference. NNH 500 = 1/0.002.",
-      "D": "Incorrect — ARI of 9 uses the relative risk, not the absolute difference.",
-      "E": "Incorrect — ARI is correct (16 per 1000) but NNH of 1000 is wrong — NNH = 1/0.016 = 63."
-    },
-    "reference": "FSRH — Combined Hormonal Contraception. Statistics in GP: NNH, ARI concepts.",
-    "tags": [
-      "VTE",
-      "COCP",
-      "absolute risk increase",
-      "NNH",
-      "statistics",
-      "contraception"
-    ],
-    "source": "Question Grove 360"
-  },
-  {
-    "id": "QG-CV-130-003",
-    "exam": "MRCGP AKT",
-    "domain": "Clinical Medicine",
-    "specialty": "Cardiovascular",
-    "difficulty": "Hard",
-    "question": "A 32-year-old woman requests the combined oral contraceptive pill. She has a BMI of 34 and her mother had a DVT aged 55. She does not have a personal history of VTE. Per UKMEC, what is the UKMEC category for COCP use in a woman with BMI ≥30 and a first-degree relative with VTE?",
-    "options": {
-      "A": "UKMEC 1 — no restriction, safe to use",
-      "B": "UKMEC 2 — benefits generally outweigh risks",
-      "C": "UKMEC 3 — risks generally outweigh benefits; consider alternatives",
-      "D": "UKMEC 4 — absolute contraindication, must not use",
-      "E": "No restriction — family history of VTE after age 50 is not a contraindication"
-    },
-    "correct_answer": "C",
-    "explanation": {
-      "correct": "Per UKMEC 2016/FSRH guidelines: BMI ≥35 = UKMEC 3 for COCP; BMI 30-34 = UKMEC 2. Family history of VTE in a first-degree relative = UKMEC 2 for COCP. With multiple UKMEC 2 factors (BMI 34 + FH of VTE), the combined clinical picture shifts to UKMEC 3 — risks generally outweigh benefits. A progestogen-only pill or non-hormonal method should be considered.",
-      "A": "Incorrect — Multiple VTE risk factors make COCP unsafe without risk assessment.",
-      "B": "Incorrect — Each factor individually may be UKMEC 2, but combined risk elevates to UKMEC 3.",
-      "C": "CORRECT — Combined risk factors (BMI 34 + FH VTE) = UKMEC 3; alternatives recommended per FSRH/UKMEC.",
-      "D": "Incorrect — UKMEC 4 would apply to personal history of VTE, not family history.",
-      "E": "Incorrect — First-degree relative with VTE is a recognised risk factor regardless of age at onset (pre-50 carries higher hereditary risk)."
-    },
-    "reference": "FSRH UKMEC 2016. FSRH Combined Hormonal Contraception guideline 2019.",
-    "tags": [
-      "COCP",
-      "UKMEC",
-      "VTE risk",
-      "contraception",
-      "BMI",
-      "family history VTE"
-    ],
-    "source": "Question Grove 360"
-  },
-  {
-    "id": "QG-CV-130-004",
-    "exam": "MRCGP AKT",
-    "domain": "Clinical Medicine",
-    "specialty": "Cardiovascular",
-    "difficulty": "Medium",
-    "question": "A 28-year-old woman is counselled about VTE risk before starting the COCP. She asks which type of COCP carries the highest VTE risk. Which progestogen has the highest associated VTE risk?",
-    "options": {
-      "A": "Levonorgestrel — highest VTE risk",
-      "B": "Norethisterone — highest VTE risk",
-      "C": "Desogestrel or gestodene (third-generation progestogens) — highest VTE risk",
-      "D": "Norgestimate — highest VTE risk",
-      "E": "All COCP progestogens carry equal VTE risk"
-    },
-    "correct_answer": "C",
-    "explanation": {
-      "correct": "Per FSRH guidelines and MHRA guidance, third-generation progestogens (desogestrel, gestodene) and newer agents (drospirenone, dienogest) are associated with approximately 2x higher VTE risk compared to second-generation progestogens (levonorgestrel, norethisterone). Levonorgestrel-containing COCPs have the lowest VTE risk among combined pills. Women at higher VTE risk should be offered levonorgestrel-containing COCP if COCP is chosen.",
-      "A": "Incorrect — Levonorgestrel has the LOWEST VTE risk among COCP progestogens.",
-      "B": "Incorrect — Norethisterone is a second-generation progestogen with lower VTE risk.",
-      "C": "CORRECT — Third-generation progestogens (desogestrel, gestodene) have the highest VTE risk among COCP per FSRH/MHRA.",
-      "D": "Incorrect — Norgestimate has intermediate risk.",
-      "E": "Incorrect — Significant differences in VTE risk exist between different progestogen types."
-    },
-    "reference": "FSRH — Combined Hormonal Contraception guideline 2019. MHRA Drug Safety Update — COCP and VTE.",
-    "tags": [
-      "COCP",
-      "VTE",
-      "progestogen",
-      "desogestrel",
-      "levonorgestrel",
-      "FSRH"
-    ],
-    "source": "Question Grove 360"
-  },
-  {
-    "id": "QG-CV-130-005",
-    "exam": "MRCGP AKT",
-    "domain": "Clinical Medicine",
-    "specialty": "Cardiovascular",
-    "difficulty": "Easy",
-    "question": "A 25-year-old woman who has been taking the COCP for 3 months presents with sudden onset right calf swelling, tenderness and mild breathlessness. Wells DVT score is 3 (DVT likely). What is the most appropriate immediate management?",
-    "options": {
-      "A": "Stop COCP, arrange venous Doppler ultrasound and start LMWH pending results",
-      "B": "Continue COCP, reassure that COCP does not cause DVT at this age",
-      "C": "Stop COCP only, recheck D-dimer in 2 weeks",
-      "D": "Arrange D-dimer only — if positive, arrange Doppler",
-      "E": "Start aspirin 300mg and arrange urgent GP review tomorrow"
-    },
-    "correct_answer": "A",
-    "explanation": {
-      "correct": "Wells DVT score ≥2 = DVT likely. Per NICE NG158, for patients with Wells ≥2 (DVT likely): arrange proximal leg vein Doppler ultrasound within 4 hours; if not possible within 4 hours, start LMWH and arrange ultrasound within 24 hours. The COCP should be stopped immediately as it is a significant prothrombotic risk factor. After confirmed DVT, anticoagulation with DOAC or LMWH/warfarin is commenced.",
-      "A": "CORRECT — Stop COCP + arrange Doppler + start LMWH if DVT likely per NICE NG158.",
-      "B": "Incorrect — COCP must be stopped immediately on suspicion of VTE. VTE occurs at all ages on COCP.",
-      "C": "Incorrect — D-dimer is used when Wells score is low (DVT unlikely). Wells ≥2 proceeds directly to ultrasound.",
-      "D": "Incorrect — D-dimer is not first-line when Wells score is ≥2 (DVT likely). Proceed directly to Doppler.",
-      "E": "Incorrect — Aspirin is not VTE treatment. Urgent same-day investigation is required, not next-day review."
+      "correct": "Per NICE NG158 (Venous thromboembolic diseases), the two-level PE Wells score guides investigation: PE likely (≥5 points) or PE unlikely (<5 points but D-dimer positive) → CTPA. This patient has: recurrent pleuritic chest pain and breathlessness (clinical features), COCP use (VTE risk factor), elevated D-dimer — she has a likely or intermediate PE probability requiring CTPA. Recurrent episodes over 3 months suggest either recurrent pulmonary emboli or chronic thromboembolic pulmonary hypertension (CTEPH) — important to diagnose as CTEPH is potentially curable with pulmonary endarterectomy. COCP should be stopped. Note: D-dimer alone is NOT diagnostic for PE — it has high sensitivity but low specificity (positive in many conditions including infection, inflammation, pregnancy, malignancy). VQ scan is considered in young women to reduce radiation to breast tissue — NICE NG158 offers this as an alternative.",
+      "A": "Incorrect — While COCP can raise D-dimer slightly, the clinical features and the degree of elevation require imaging.",
+      "B": "CORRECT — Elevated D-dimer + clinical features of PE + COCP risk factor → CTPA per NICE NG158 two-level Wells score pathway.",
+      "C": "Incorrect — Pericarditis causes positional chest pain with a friction rub — recurrent pleuritic pain with breathlessness and elevated D-dimer points to PE.",
+      "D": "Incorrect — VQ scan is an alternative to CTPA (preferred in young women, those with contrast allergy, renal impairment) — CTPA is still first-line per NICE NG158.",
+      "E": "Incorrect — D-dimer is a rule-out test (negative is useful) but a positive result only identifies patients who need further imaging — it is NOT diagnostic for PE."
     },
     "reference": "NICE NG158 — Venous thromboembolic diseases. https://www.nice.org.uk/guidance/ng158",
-    "tags": [
-      "DVT",
-      "COCP",
-      "Wells score",
-      "LMWH",
-      "Doppler",
-      "NICE NG158"
-    ],
-    "source": "Question Grove 360"
+    "tags": ["pulmonary embolism", "CTPA", "D-dimer", "COCP", "NICE NG158", "Wells score"]
   },
   {
-    "id": "QG-CV-095-001",
+    "id": "QG-B2-CV-187-002",
     "exam": "MRCGP AKT",
     "domain": "Clinical Medicine",
     "specialty": "Cardiovascular",
     "difficulty": "Medium",
-    "question": "A trial comparing two antihypertensive medications shows that medication B (amlodipine) reduced the rate of major cardiovascular events to 12% compared to medication A (atenolol) at 18%. The absolute risk reduction is 6% and the relative risk reduction is 33%. Which statement most accurately describes the advantage of medication B?",
+    "question": "A 40-year-old woman on the COCP is confirmed to have a first pulmonary embolism on CTPA. She is haemodynamically stable. Per NICE NG158, what is the first-line anticoagulation treatment and what should happen to the COCP?",
     "options": {
-      "A": "Medication B reduces cardiovascular events by 33% — relative risk reduction is the most clinically meaningful measure",
-      "B": "Medication B reduces cardiovascular events by 6% in absolute terms — meaning 17 patients need to be treated to prevent one additional event (NNT=17)",
-      "C": "Medication B reduces cardiovascular events by 6%, meaning 6 fewer patients per 100 have events — NNT=17",
-      "D": "Medication B halves the risk as the event rate in group B is half of group A",
-      "E": "Medication B is not meaningfully better as the difference of 6% is too small to be clinically significant"
+      "A": "Start warfarin immediately and continue COCP with caution",
+      "B": "Start a direct oral anticoagulant (DOAC — apixaban or rivaroxaban are first-line) for at least 3 months; STOP the COCP immediately as it significantly increases VTE recurrence risk — switch to a non-oestrogen-containing contraceptive (progesterone-only pill, implant, IUD, copper IUD)",
+      "C": "LMWH injection for 5 days only — DOACs are not suitable for PE",
+      "D": "Warfarin for life — single PE requires indefinite anticoagulation",
+      "E": "Continue COCP and add aspirin 75mg"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per NICE NG158, first-line treatment for acute PE in haemodynamically stable patients: DOAC (apixaban 10mg twice daily for 7 days then 5mg twice daily, OR rivaroxaban 15mg twice daily for 21 days then 20mg daily) for a minimum of 3 months. DOACs have replaced LMWH/warfarin as first-line due to comparable efficacy, lower bleeding risk and oral administration. Duration of anticoagulation: 3 months for provoked PE (identifiable risk factor — here the COCP); consider extending to 6 months or indefinitely for unprovoked PE after risk-benefit assessment. The COCP must be stopped — it significantly increases risk of recurrent VTE. Alternative non-oestrogen contraception should be offered (POP, implant, copper IUD — all are safe without VTE risk).",
+      "A": "Incorrect — Warfarin is second-line (requires bridging, INR monitoring). Continuing COCP after PE is dangerous and must be stopped.",
+      "B": "CORRECT — DOAC first-line for PE per NICE NG158. COCP must be stopped. Switch to progestogen-only or copper IUD contraception.",
+      "C": "Incorrect — LMWH for 5 days alone is not standard PE treatment — anticoagulation for at least 3 months is required.",
+      "D": "Incorrect — Provoked PE (COCP) typically requires 3 months of anticoagulation — not necessarily indefinite treatment.",
+      "E": "Incorrect — Aspirin has poor evidence for PE treatment and continuing COCP after PE is contraindicated."
+    },
+    "reference": "NICE NG158 — Venous thromboembolic diseases. https://www.nice.org.uk/guidance/ng158",
+    "tags": ["PE treatment", "DOAC", "apixaban", "COCP must stop", "NICE NG158", "3 months anticoagulation"]
+  },
+  {
+    "id": "QG-B2-CV-187-003",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Cardiovascular",
+    "difficulty": "Easy",
+    "question": "A 45-year-old woman is found to have a subsegmental PE on CTPA. She is well and haemodynamically stable. Her GP uses the two-level PE Wells score. Per NICE NG158, which of the following scores correctly calculates a higher probability of PE?",
+    "options": {
+      "A": "A score of ≥5 indicates PE likely; clinical signs of DVT (leg swelling/tenderness) scores 3 points",
+      "B": "A score of <5 indicates PE unlikely; a positive D-dimer then triggers imaging",
+      "C": "The Wells score assigns: clinical signs of DVT = 3 points; alternative diagnosis less likely than PE = 3 points; HR >100 bpm = 1.5 points; immobilisation/surgery in last 4 weeks = 1.5 points; previous DVT/PE = 1.5 points; haemoptysis = 1 point; malignancy = 1 point. Score ≥5 = PE likely; <5 = PE unlikely",
+      "D": "The Wells score only applies to DVT — not PE",
+      "E": "A D-dimer alone can diagnose PE without requiring a Wells score"
     },
     "correct_answer": "C",
     "explanation": {
-      "correct": "ARR = 18% − 12% = 6% = 0.06. NNT = 1/ARR = 1/0.06 ≈ 17. Both answers B and C are numerically correct but C more precisely describes absolute terms. RRR = 6/18 = 33%. Absolute measures (ARR and NNT) are more clinically useful than RRR as they account for baseline risk. In cardiovascular medicine, NNT provides practical meaning for treatment decisions.",
-      "A": "Incorrect — While technically correct, RRR alone is misleading without considering baseline risk. NNT is more clinically useful.",
-      "B": "Incorrect — The NNT of 17 is correct but answer C is more precisely worded.",
-      "C": "CORRECT — ARR 6%, NNT ≈ 17 is the most clinically useful summary of medication B's benefit.",
-      "D": "Incorrect — 12% is not half of 18%. The relative risk is 12/18 = 0.67, not 0.5.",
-      "E": "Incorrect — A 6% ARR with NNT of 17 is clinically significant in cardiovascular prevention."
+      "correct": "The two-level PE Wells score per NICE NG158: (1) Clinical signs and symptoms of DVT (leg swelling, pain on deep palpation) = 3 points; (2) Alternative diagnosis less likely than PE = 3 points; (3) Heart rate >100 bpm = 1.5 points; (4) Immobilisation (bed rest ≥3 days) or surgery in last 4 weeks = 1.5 points; (5) Previous DVT/PE = 1.5 points; (6) Haemoptysis = 1 point; (7) Malignancy (on treatment or in last 6 months) = 1 point. Scoring: ≥5 points = PE likely → CTPA; <5 points = PE unlikely → D-dimer: if negative → PE excluded; if positive → CTPA. This structured approach guides investigation appropriately, avoiding unnecessary CTPA in low-probability patients.",
+      "A": "Incorrect — This is partially correct (≥5 = PE likely; DVT signs = 3 points) but incomplete — does not describe the full scoring system.",
+      "B": "Incorrect — This describes the PE unlikely pathway correctly but does not describe the full scoring system.",
+      "C": "CORRECT — Full two-level PE Wells score with all 7 variables and scoring thresholds per NICE NG158.",
+      "D": "Incorrect — The Wells score has separate versions for DVT and PE — this question concerns the PE Wells score.",
+      "E": "Incorrect — D-dimer alone cannot diagnose PE — it is a rule-out test (negative result useful) but a positive result only triggers CTPA."
     },
-    "reference": "Statistics for GP examinations: ARR, RRR, NNT. Evidence-Based Medicine concepts.",
-    "tags": [
-      "statistics",
-      "NNT",
-      "absolute risk reduction",
-      "relative risk reduction",
-      "cardiovascular",
-      "antihypertensives"
-    ],
-    "source": "Question Grove 360"
+    "reference": "NICE NG158 — Venous thromboembolic diseases. https://www.nice.org.uk/guidance/ng158",
+    "tags": ["Wells score PE", "two-level", "PE likely unlikely", "D-dimer", "NICE NG158", "CTPA trigger"]
   },
   {
-    "id": "QG-CV-095-002",
+    "id": "QG-B2-CV-182-001",
     "exam": "MRCGP AKT",
     "domain": "Clinical Medicine",
     "specialty": "Cardiovascular",
     "difficulty": "Medium",
-    "question": "In a randomised controlled trial, medication B reduces 5-year mortality from cardiovascular disease to 8% compared to 14% with medication A. The 95% confidence interval for the relative risk is 0.42 to 0.79. Which statement about this result is correct?",
+    "question": "A 62-year-old man with stable angina and mild asthma (uses salbutamol PRN) presents for review. He has been prescribed ramipril 10mg and atorvastatin 40mg but is not on any anti-anginal therapy. Per NICE CG126, what is the first-line anti-anginal treatment and why must beta-blockers be used with caution?",
     "options": {
-      "A": "The result is not statistically significant as the CI is wide",
-      "B": "The result is statistically significant as the CI does not cross 1.0 — medication B is superior",
-      "C": "The CI crossing 0.5 means the result is borderline significant",
-      "D": "Statistical significance requires p <0.001 — a CI of 0.42-0.79 is insufficient",
-      "E": "A relative risk CI that includes values below 1.0 indicates no benefit"
+      "A": "Atenolol — beta-blockers are safe in all asthma patients",
+      "B": "Amlodipine (calcium channel blocker) or a long-acting nitrate — in patients with asthma, beta-blockers are relatively contraindicated as they can precipitate bronchospasm; per NICE CG126, amlodipine or long-acting nitrates are first-line anti-anginal options when beta-blockers are contraindicated",
+      "C": "Salbutamol nebulisers before exercise — symptom management only",
+      "D": "Sublingual GTN as the only anti-anginal treatment",
+      "E": "Verapamil — safest calcium channel blocker in asthma"
     },
     "correct_answer": "B",
     "explanation": {
-      "correct": "For relative risk, statistical significance is confirmed when the 95% CI does not include 1.0 (the null value — meaning no difference). The CI of 0.42–0.79 lies entirely below 1.0, confirming that medication B is statistically significantly better than medication A. The RR point estimate = 8/14 = 0.57, meaning B reduces risk by 43% relative to A.",
-      "A": "Incorrect — Statistical significance is determined by whether the CI includes the null value (1.0 for RR), not by the width of the CI.",
-      "B": "CORRECT — CI 0.42–0.79 does not cross 1.0 → statistically significant → medication B is superior.",
-      "C": "Incorrect — Crossing 0.5 is irrelevant. Crossing 1.0 is the threshold for statistical significance with RR.",
-      "D": "Incorrect — p <0.05 is the conventional significance threshold. The 95% CI not crossing 1.0 is equivalent to p <0.05.",
-      "E": "Incorrect — A CI entirely below 1.0 for RR indicates benefit (risk reduction), not the absence of benefit."
+      "correct": "Per NICE CG126 (Stable angina: management), first-line anti-anginal treatment is a beta-blocker OR calcium channel blocker. In patients with asthma: cardioselective beta-blockers (bisoprolol, atenolol) can sometimes be used with caution in mild asthma when the cardioprotective benefit outweighs the risk, but non-selective beta-blockers are absolutely contraindicated. When beta-blockers are contraindicated or not tolerated: first-line alternatives are a rate-limiting calcium channel blocker (diltiazem, verapamil — but verapamil and diltiazem are contraindicated with heart failure/low EF) or a dihydropyridine CCB (amlodipine — can be used with beta-blockers); long-acting nitrates or nicorandil are second-line additions. Sublingual GTN is for acute symptom relief only. Verapamil has interactions with beta-blockers causing severe bradycardia and is negatively inotropic.",
+      "A": "Incorrect — Atenolol is a cardioselective beta-blocker that can be used cautiously in MILD asthma, but asthma is still a caution (not absolutely safe). For first-line management when asthma is present, a CCB is the safer choice.",
+      "B": "CORRECT — Amlodipine (CCB) or long-acting nitrate when beta-blockers are contraindicated in asthmatic patients with angina per NICE CG126.",
+      "C": "Incorrect — Salbutamol is a bronchodilator — it has no anti-anginal properties.",
+      "D": "Incorrect — Sublingual GTN provides acute relief but is not a regular anti-anginal prophylactic treatment.",
+      "E": "Incorrect — Verapamil is negatively inotropic (avoided in HF) and interacts with beta-blockers causing severe bradycardia/heart block."
     },
-    "reference": "Evidence-Based Medicine: Confidence intervals and statistical significance.",
-    "tags": [
-      "confidence interval",
-      "relative risk",
-      "statistical significance",
-      "RCT",
-      "cardiovascular",
-      "statistics"
-    ],
-    "source": "Question Grove 360"
-  },
-  {
-    "id": "QG-CV-095-003",
-    "exam": "MRCGP AKT",
-    "domain": "Clinical Medicine",
-    "specialty": "Cardiovascular",
-    "difficulty": "Hard",
-    "question": "A trial comparing antihypertensive B versus A for stroke prevention is published. The outcome shows: events in group B = 45/600, events in group A = 72/600. Calculate the relative risk and state whether the result favours medication B.",
-    "options": {
-      "A": "RR = 1.6 — favours medication A (B is worse)",
-      "B": "RR = 0.63 — favours medication B (37% relative risk reduction)",
-      "C": "RR = 0.45 — favours medication B (55% relative risk reduction)",
-      "D": "RR = 1.0 — no difference between medications",
-      "E": "RR = 0.27 — favours medication B (73% relative risk reduction)"
-    },
-    "correct_answer": "B",
-    "explanation": {
-      "correct": "RR = Risk in exposed (B) / Risk in control (A) = (45/600) / (72/600) = 45/72 = 0.625 ≈ 0.63. RR <1.0 favours the treatment group. RRR = 1 − 0.63 = 0.37 = 37% relative risk reduction. ARR = 72/600 − 45/600 = 0.12 − 0.075 = 0.045 = 4.5%. NNT = 1/0.045 ≈ 22.",
-      "A": "Incorrect — RR of 1.6 would indicate medication B is worse (event rate 1.6x higher). This calculation has numerator and denominator reversed.",
-      "B": "CORRECT — RR = 45/72 = 0.63; 37% relative risk reduction favours medication B.",
-      "C": "Incorrect — 0.45 would imply 55% RRR which is too large for these numbers.",
-      "D": "Incorrect — RR = 1.0 would mean equal rates. 45 ≠ 72.",
-      "E": "Incorrect — RR of 0.27 implies 73% reduction — inconsistent with the data."
-    },
-    "reference": "Evidence-Based Medicine — Calculating relative risk and NNT.",
-    "tags": [
-      "relative risk",
-      "statistics",
-      "RRR",
-      "NNT",
-      "stroke prevention",
-      "cardiovascular trial"
-    ],
-    "source": "Question Grove 360"
-  },
-  {
-    "id": "QG-CV-095-004",
-    "exam": "MRCGP AKT",
-    "domain": "Clinical Medicine",
-    "specialty": "Cardiovascular",
-    "difficulty": "Easy",
-    "question": "A GP reads a paper comparing two antihypertensive medications. The paper reports a p-value of 0.03 for the primary outcome (reduction in cardiovascular events). Which of the following statements correctly interprets this p-value?",
-    "options": {
-      "A": "There is a 3% probability that the treatment is effective",
-      "B": "There is a 3% probability of observing results this extreme (or more so) if the null hypothesis is true — the result is statistically significant",
-      "C": "The treatment reduces events by 3%",
-      "D": "There is a 97% chance the treatment will work in all patients",
-      "E": "A p-value of 0.03 means the result is clinically significant"
-    },
-    "correct_answer": "B",
-    "explanation": {
-      "correct": "The p-value represents the probability of obtaining results at least as extreme as observed, assuming the null hypothesis (no difference) is true. p=0.03 means there is a 3% probability that the observed difference occurred by chance alone, which is below the conventional threshold of 0.05 — therefore statistically significant. Statistical significance ≠ clinical significance. The result should also be assessed for effect size and clinical meaningfulness.",
-      "A": "Incorrect — The p-value does not represent the probability that the treatment is effective.",
-      "B": "CORRECT — p=0.03 = 3% probability of results this extreme by chance if null hypothesis true = statistically significant.",
-      "C": "Incorrect — The p-value does not quantify the treatment effect size.",
-      "D": "Incorrect — The p-value does not predict individual patient response probability.",
-      "E": "Incorrect — Statistical significance (p <0.05) does not equal clinical significance. Effect size and NNT must also be considered."
-    },
-    "reference": "Evidence-Based Medicine — Interpreting p-values and statistical significance.",
-    "tags": [
-      "p-value",
-      "statistics",
-      "null hypothesis",
-      "statistical significance",
-      "EBM",
-      "interpretation"
-    ],
-    "source": "Question Grove 360"
-  },
-  {
-    "id": "QG-CV-095-005",
-    "exam": "MRCGP AKT",
-    "domain": "Clinical Medicine",
-    "specialty": "Cardiovascular",
-    "difficulty": "Medium",
-    "question": "A pharmaceutical company presents data showing medication B reduces cardiovascular mortality by 40% relative to placebo. The absolute event rates are 1% in the placebo group and 0.6% in the medication B group. What is the NNT and what is the most appropriate way to present this data to a patient?",
-    "options": {
-      "A": "NNT = 40; tell the patient the medication reduces risk by 40%",
-      "B": "NNT = 250; tell the patient that 250 people need treatment for 1 year for 1 person to benefit",
-      "C": "NNT = 100; tell the patient the medication is moderately effective",
-      "D": "NNT = 40; tell the patient 40 people need treatment for 1 to benefit",
-      "E": "NNT = 10; the medication is highly effective and should be recommended to all"
-    },
-    "correct_answer": "B",
-    "explanation": {
-      "correct": "ARR = 1% − 0.6% = 0.4% = 0.004. NNT = 1/0.004 = 250. Despite a 40% RRR, the NNT of 250 means 250 patients must be treated for 1 year to prevent 1 event. This illustrates how RRR can appear impressive while absolute benefit is small. Presenting both RRR and NNT to patients aids informed decision-making — the NICE-recommended approach. Shared decision-making tools such as Cates plots help visualise absolute benefit.",
-      "A": "Incorrect — NNT is not 40 (that is the RRR%). Presenting only RRR is misleading.",
-      "B": "CORRECT — ARR 0.4%; NNT = 250. Presenting NNT to patients gives a more accurate picture of absolute benefit.",
-      "C": "Incorrect — NNT is 250, not 100. 'Moderately effective' is vague and unhelpful.",
-      "D": "Incorrect — NNT is 250, not 40. Confusing NNT with RRR% is a common error.",
-      "E": "Incorrect — NNT is 250, not 10. This grossly overstates the benefit."
-    },
-    "reference": "NICE shared decision-making guidance. Evidence-Based Medicine — NNT and patient communication.",
-    "tags": [
-      "NNT",
-      "absolute risk reduction",
-      "relative risk reduction",
-      "shared decision-making",
-      "statistics",
-      "patient communication"
-    ],
-    "source": "Question Grove 360"
-  },
-  {
-    "id": "QG-CV-085-001",
-    "exam": "MRCGP AKT",
-    "domain": "Clinical Medicine",
-    "specialty": "Cardiovascular",
-    "difficulty": "Easy",
-    "question": "A 72-year-old woman is assessed in clinic after a recent stroke. When asked to draw a clock showing 10:10, she draws a circle with all numbers (1–12) clustered on the right side only. What neurological deficit does this demonstrate and which hemisphere is most likely damaged?",
-    "options": {
-      "A": "Dyspraxia — left hemisphere lesion",
-      "B": "Hemispatial neglect (unilateral neglect) — right hemisphere lesion (non-dominant)",
-      "C": "Dyslexia — bilateral occipital lesion",
-      "D": "Topographical disorientation — posterior parietal lesion bilaterally",
-      "E": "Cerebellar dysfunction — midline lesion"
-    },
-    "correct_answer": "B",
-    "explanation": {
-      "correct": "Hemispatial neglect (unilateral spatial neglect) results in failure to attend to stimuli on the contralateral side of space. Clustering all clock numbers on the right side indicates neglect of the left hemispace — caused by right hemisphere (typically right parietal lobe) lesion. This is the non-dominant hemisphere in most right-handed individuals. The clock drawing test is a bedside screening tool for neglect, executive dysfunction and visuospatial impairment post-stroke.",
-      "A": "Incorrect — Dyspraxia (difficulty with learned purposeful movements) is associated with left hemisphere lesions, not spatial neglect pattern.",
-      "B": "CORRECT — Hemispatial neglect of left hemispace = right (non-dominant) hemisphere lesion, typically parietal.",
-      "C": "Incorrect — Dyslexia is a developmental condition, not an acquired post-stroke deficit.",
-      "D": "Incorrect — Topographical disorientation can follow stroke but does not specifically explain the clock number clustering pattern.",
-      "E": "Incorrect — Cerebellar dysfunction causes ataxia, tremor, dysmetria — not visuospatial neglect."
-    },
-    "reference": "NICE NG128 — Stroke and TIA. Oxford Handbook of Neurology — hemispatial neglect.",
-    "tags": [
-      "stroke",
-      "hemispatial neglect",
-      "clock drawing test",
-      "right hemisphere",
-      "parietal lobe",
-      "NICE NG128"
-    ],
-    "source": "Question Grove 360"
-  },
-  {
-    "id": "QG-CV-085-002",
-    "exam": "MRCGP AKT",
-    "domain": "Clinical Medicine",
-    "specialty": "Cardiovascular",
-    "difficulty": "Medium",
-    "question": "A 68-year-old man is discharged after a right hemisphere ischaemic stroke. His wife reports he keeps bumping into objects on his left side, shaving only the right side of his face and eating only food on the right side of his plate. Which rehabilitation intervention is most evidence-based for hemispatial neglect?",
-    "options": {
-      "A": "Left eye patching to force attention to right visual field",
-      "B": "Limb activation therapy and prism adaptation therapy combined with occupational therapy",
-      "C": "Donepezil to improve attention",
-      "D": "Right-sided eye patching to redirect gaze left",
-      "E": "No specific intervention — neglect resolves spontaneously within 1 month"
-    },
-    "correct_answer": "B",
-    "explanation": {
-      "correct": "Per NICE NG128 and stroke rehabilitation evidence, hemispatial neglect management includes: limb activation therapy (using the contralesional limb to improve attention), prism adaptation therapy (using prism glasses to shift visual field), scanning training and occupational therapy strategies. These have the best evidence base. Right eye patching (monocular patching of the right eye) has been trialled to redirect attention leftward but evidence is limited.",
-      "A": "Incorrect — Left eye patching is not an established treatment and would further reduce left-side awareness.",
-      "B": "CORRECT — Limb activation + prism adaptation + OT has the strongest evidence for unilateral neglect per NICE NG128.",
-      "C": "Incorrect — Donepezil has no proven role in neglect rehabilitation.",
-      "D": "Incorrect — Right eye patching has limited evidence and is not a NICE recommendation.",
-      "E": "Incorrect — Neglect can persist long-term; early rehabilitation intervention improves functional outcomes."
-    },
-    "reference": "NICE NG128 — Stroke and TIA in over 16s: diagnosis and initial management.",
-    "tags": [
-      "hemispatial neglect",
-      "stroke rehabilitation",
-      "prism adaptation",
-      "limb activation",
-      "NICE NG128"
-    ],
-    "source": "Question Grove 360"
-  },
-  {
-    "id": "QG-CV-085-003",
-    "exam": "MRCGP AKT",
-    "domain": "Clinical Medicine",
-    "specialty": "Cardiovascular",
-    "difficulty": "Medium",
-    "question": "A 75-year-old woman presents to A&E with sudden onset left arm weakness, left facial droop and dysarthria that began 90 minutes ago. CT head is normal. NIHSS score is 8. She is on no anticoagulation. What is the most appropriate immediate management?",
-    "options": {
-      "A": "Aspirin 300mg and admit to stroke unit — thrombolysis not indicated as CT is normal",
-      "B": "IV alteplase (thrombolysis) if within 4.5 hours of onset and no contraindications, plus mechanical thrombectomy assessment",
-      "C": "Emergency carotid endarterectomy",
-      "D": "IV heparin anticoagulation for suspected cardioembolic stroke",
-      "E": "MRI brain to confirm ischaemic stroke before treatment"
-    },
-    "correct_answer": "B",
-    "explanation": {
-      "correct": "Per NICE NG128, for acute ischaemic stroke within 4.5 hours of onset, IV alteplase (thrombolysis) should be offered if there are no contraindications and the CT excludes haemorrhage. A normal CT (no haemorrhage) supports this. Mechanical thrombectomy should be considered alongside thrombolysis for large vessel occlusion. Early treatment maximises neurological recovery — 'time is brain'.",
-      "A": "Incorrect — A normal CT excludes haemorrhage and supports thrombolysis eligibility. Aspirin alone is insufficient acute treatment.",
-      "B": "CORRECT — IV alteplase within 4.5 hours + thrombectomy assessment per NICE NG128 for acute ischaemic stroke.",
-      "C": "Incorrect — CEA is secondary prevention (post-TIA or stroke in the following days/weeks), not acute treatment.",
-      "D": "Incorrect — Anticoagulation is not recommended for acute ischaemic stroke treatment due to haemorrhagic transformation risk.",
-      "E": "Incorrect — MRI should not delay thrombolysis. CT head is sufficient to exclude haemorrhage before alteplase."
-    },
-    "reference": "NICE NG128 — Stroke and TIA. https://www.nice.org.uk/guidance/ng128",
-    "tags": [
-      "acute ischaemic stroke",
-      "thrombolysis",
-      "alteplase",
-      "thrombectomy",
-      "NICE NG128",
-      "emergency"
-    ],
-    "source": "Question Grove 360"
-  },
-  {
-    "id": "QG-CV-085-004",
-    "exam": "MRCGP AKT",
-    "domain": "Clinical Medicine",
-    "specialty": "Cardiovascular",
-    "difficulty": "Hard",
-    "question": "A 70-year-old man with AF (CHA2DS2-VASc = 5) is found to have a 75% symptomatic right internal carotid artery stenosis on Doppler ultrasound following a TIA. He is on aspirin and a DOAC. What is the most appropriate secondary prevention strategy?",
-    "options": {
-      "A": "Continue aspirin and DOAC — carotid endarterectomy not beneficial with AF",
-      "B": "Carotid endarterectomy within 14 days of TIA — add clopidogrel short-term; stop DOAC peri-operatively",
-      "C": "Carotid artery stenting as preferred over endarterectomy",
-      "D": "Warfarin only — no surgical intervention needed",
-      "E": "Increase DOAC dose and repeat Doppler in 6 months"
-    },
-    "correct_answer": "B",
-    "explanation": {
-      "correct": "Per NICE NG128, symptomatic carotid stenosis ≥50% (NASCET criteria) after TIA or stroke warrants carotid endarterectomy (CEA) ideally within 14 days of symptoms (maximum benefit from urgent surgery). Carotid endarterectomy is superior to stenting in most guidelines except in patients where surgery is high risk (anatomical or medical reasons). Dual antiplatelet (aspirin + clopidogrel) is used short-term peri-procedurally. DOAC should be stopped peri-operatively and reinitiated post-procedure.",
-      "A": "Incorrect — CEA is beneficial regardless of AF status when carotid stenosis ≥50% is the likely stroke mechanism.",
-      "B": "CORRECT — CEA within 14 days for ≥50% symptomatic stenosis + dual antiplatelet peri-procedure per NICE NG128.",
-      "C": "Incorrect — CEA is preferred over stenting in most patients per NICE NG128 and CAVATAS/CREST evidence.",
-      "D": "Incorrect — Anticoagulation alone does not address the embolic risk from the carotid stenosis.",
-      "E": "Incorrect — Delaying intervention in symptomatic high-grade carotid stenosis significantly increases recurrent stroke risk."
-    },
-    "reference": "NICE NG128 — Stroke and TIA. https://www.nice.org.uk/guidance/ng128",
-    "tags": [
-      "carotid endarterectomy",
-      "carotid stenosis",
-      "TIA",
-      "secondary prevention",
-      "NICE NG128",
-      "AF"
-    ],
-    "source": "Question Grove 360"
-  },
-  {
-    "id": "QG-CV-085-005",
-    "exam": "MRCGP AKT",
-    "domain": "Clinical Medicine",
-    "specialty": "Cardiovascular",
-    "difficulty": "Medium",
-    "question": "A 65-year-old woman has a stroke affecting her right middle cerebral artery territory. On examination she has left hemiplegia, left hemisensory loss, left homonymous hemianopia and left hemispatial neglect. Which single brain region is most responsible for hemispatial neglect in this context?",
-    "options": {
-      "A": "Left frontal lobe",
-      "B": "Right parietal lobe (inferior parietal lobule)",
-      "C": "Left temporal lobe",
-      "D": "Right occipital lobe",
-      "E": "Brainstem"
-    },
-    "correct_answer": "B",
-    "explanation": {
-      "correct": "Hemispatial neglect most commonly results from lesions of the right inferior parietal lobule (specifically the supramarginal and angular gyri) and surrounding temporoparietal junction. The right hemisphere is dominant for spatial attention in most individuals. MCA territory strokes frequently damage this region, producing left-sided neglect. The right parietal lobe directs attention to both sides of space, while the left parietal lobe only directs attention contralaterally — hence right hemisphere damage produces more severe neglect.",
-      "A": "Incorrect — Left frontal lesions cause right-sided weakness and expressive dysphasia, not left hemispatial neglect.",
-      "B": "CORRECT — Right inferior parietal lobule/TPJ lesion → left hemispatial neglect.",
-      "C": "Incorrect — Left temporal lobe lesions cause receptive dysphasia and memory problems.",
-      "D": "Incorrect — Right occipital lobe lesions cause left homonymous hemianopia, not spatial neglect per se.",
-      "E": "Incorrect — Brainstem strokes cause cranial nerve palsies, crossed signs — not hemispatial neglect."
-    },
-    "reference": "Karnath HO et al. The anatomy of spatial neglect. Brain 2001. NICE NG128.",
-    "tags": [
-      "hemispatial neglect",
-      "parietal lobe",
-      "right hemisphere",
-      "stroke anatomy",
-      "MCA territory"
-    ],
-    "source": "Question Grove 360"
+    "reference": "NICE CG126 — Stable angina: management. https://www.nice.org.uk/guidance/cg126",
+    "tags": ["stable angina", "asthma", "amlodipine", "beta-blocker caution", "NICE CG126", "CCB"]
   }
 ]

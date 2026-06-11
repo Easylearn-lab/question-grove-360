@@ -1,0 +1,522 @@
+[
+  {
+    "id": "QG-PHARM-084-001",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Pharmacology & Prescribing",
+    "difficulty": "Hard",
+    "question": "A 45-year-old woman with rheumatoid arthritis collects her monthly methotrexate prescription. The pharmacist calls the GP to flag that the prescription reads 'methotrexate 2.5mg tablets — take TWO tablets DAILY'. Per NICE and NPSA (National Patient Safety Agency) guidance, what is the error and why is it so dangerous?",
+    "options": {
+      "A": "The dose of 5mg is too low for rheumatoid arthritis — increase to 20mg daily",
+      "B": "Methotrexate for inflammatory conditions must ONLY be prescribed as a WEEKLY dose — never daily. Daily dosing causes fatal bone marrow suppression, mucositis and hepatotoxicity. This is a never event. The correct prescription should specify the weekly dose (e.g., 'take TWO tablets ONCE WEEKLY on Mondays') and the prescription must state 'weekly' explicitly. The pharmacist must not dispense until corrected. A significant event analysis is mandatory",
+      "C": "Methotrexate 2.5mg tablets are the wrong formulation — only 10mg tablets should be used",
+      "D": "The prescription needs a second signature from another GP before dispensing",
+      "E": "Daily methotrexate is correct — weekly dosing is only for elderly patients"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Methotrexate dosing error is classified as an NHS Never Event and is repeatedly highlighted in NPSA Patient Safety Alerts. Methotrexate for inflammatory conditions (RA, psoriasis, IBD) is ALWAYS dosed WEEKLY — typically 7.5-25mg once weekly. Daily dosing (as in oncology — different high-dose protocols) in a patient receiving treatment for an inflammatory condition rapidly causes: bone marrow suppression (fatal pancytopenia), severe mucositis, hepatotoxicity, pulmonary toxicity. Fatal cases have been repeatedly reported. NPSA safeguards: prescriptions must explicitly state the weekly dose day; pharmacy dispensing systems should alert for daily methotrexate; patients must receive a yellow methotrexate monitoring booklet; GPs must prominently label 'WEEKLY DOSE ONLY'. Folic acid 5mg once weekly (on a different day) must accompany the prescription. The pharmacist was correct to query — this error must never be dispensed.",
+      "A": "Incorrect — The dose size may be appropriate (5mg weekly for starting dose) but DAILY dosing is the life-threatening error.",
+      "B": "CORRECT — Methotrexate must be WEEKLY not daily for inflammatory conditions. Daily dosing causes fatal bone marrow suppression — a Never Event per NPSA.",
+      "C": "Incorrect — 2.5mg tablets are the standard formulation for methotrexate in inflammatory conditions — not the error. The frequency (daily) is the error.",
+      "D": "Incorrect — A second signature is not the primary issue — the daily frequency must be corrected immediately.",
+      "E": "Incorrect — Weekly dosing applies to all patients receiving methotrexate for inflammatory conditions regardless of age."
+    },
+    "reference": "NPSA — Patient Safety Alert: Methotrexate once weekly for non-cancer treatment. NHS Never Events list. https://www.england.nhs.uk/patient-safety/never-events/",
+    "tags": ["methotrexate", "weekly dosing", "never event", "NPSA", "prescription error", "fatal"]
+  },
+  {
+    "id": "QG-PHARM-084-002",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Pharmacology & Prescribing",
+    "difficulty": "Medium",
+    "question": "A GP is prescribing methotrexate 15mg weekly for a new patient with rheumatoid arthritis. Per NICE NG100 and BSR methotrexate guidelines, what monitoring must be arranged before and during treatment?",
+    "options": {
+      "A": "No monitoring required — methotrexate is safe at doses below 20mg weekly",
+      "B": "Pre-treatment: FBC, LFTs, creatinine/eGFR, CXR (to exclude pulmonary disease — baseline for comparison if MTX pneumonitis develops), hepatitis B/C serology, pregnancy test if applicable. During treatment: FBC, LFTs, creatinine every 2-4 weeks until stable, then every 3 months when stable. Withhold if: WBC <3.5 × 10⁹/L, neutrophils <2 × 10⁹/L, platelets <150 × 10⁹/L, ALT >3× ULN, or significant renal impairment. Folic acid 5mg weekly on a non-methotrexate day throughout",
+      "C": "Annual bloods only — more frequent monitoring causes patient anxiety",
+      "D": "Monitor hepatitis B and HIV only — other bloods are not required for low-dose methotrexate",
+      "E": "Only LFTs needed — methotrexate primarily causes liver toxicity"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per NICE NG100 and BSR methotrexate monitoring guidelines, comprehensive pre-treatment and ongoing monitoring is mandatory. Pre-treatment baseline: FBC (bone marrow suppression risk), LFTs (hepatotoxicity), creatinine/eGFR (renal excretion — accumulates in renal impairment), CXR (baseline for comparison if MTX pneumonitis develops), hepatitis B/C serology (MTX immunosuppression can reactivate HBV — screen before starting), albumin, weight, pregnancy test. Ongoing monitoring: FBC + LFTs + creatinine every 2-4 weeks during dose escalation; then every 3 months when stable. Folic acid 5mg weekly (on a day other than methotrexate day) to reduce GI and haematological side effects. Threshold to withhold: WBC <3.5, neutrophils <2.0, platelets <150, ALT >3× ULN. Dose adjustments for eGFR <60.",
+      "A": "Incorrect — Monitoring is mandatory for all doses of methotrexate — there is no 'safe' dose that avoids monitoring requirements.",
+      "B": "CORRECT — Pre-treatment bloods + CXR + hepatitis serology. Then FBC/LFTs/creatinine every 3 months when stable. Folic acid 5mg weekly per BSR/NICE NG100.",
+      "C": "Incorrect — Annual monitoring is insufficient — 3-monthly (or more frequent during initiation/dose escalation) is required.",
+      "D": "Incorrect — FBC is the most critical monitoring test (pancytopenia is potentially fatal) — monitoring is not limited to hepatitis B and HIV.",
+      "E": "Incorrect — Bone marrow suppression (FBC) and renal function (eGFR) monitoring is as important as liver function monitoring."
+    },
+    "reference": "NICE NG100 — Rheumatoid arthritis. BSR — Methotrexate monitoring guidelines. https://www.nice.org.uk/guidance/ng100",
+    "tags": ["methotrexate monitoring", "FBC LFTs creatinine", "CXR baseline", "folic acid", "BSR", "NICE NG100"]
+  },
+  {
+    "id": "QG-PHARM-088-001",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Pharmacology & Prescribing",
+    "difficulty": "Medium",
+    "question": "A 55-year-old man with type 2 diabetes is started on empagliflozin 10mg (SGLT2 inhibitor) by his diabetologist. He attends for a routine GP review. Per MHRA guidance and NICE NG28, what four key safety counselling points must the GP cover?",
+    "options": {
+      "A": "SGLT2 inhibitors have no significant safety concerns — counsel on blood glucose monitoring only",
+      "B": "Four key counselling points per MHRA/NICE: (1) Genital thrush/UTI risk — keep genital area clean, report persistent symptoms; (2) Euglycaemic DKA risk — check blood ketones (not just glucose) when unwell; follow sick day rules — STOP empagliflozin if unwell, vomiting, fasting, or having surgery; (3) Fournier's gangrene — seek immediate medical attention for severe perianal/genital pain, swelling or redness; (4) Perioperative management — stop at least 3 days before elective surgery; restart only when eating and drinking normally post-operatively",
+      "C": "Only counsel about hypoglycaemia risk — SGLT2 inhibitors cause the most hypoglycaemia of all diabetes medications",
+      "D": "SGLT2 inhibitors must be taken with food to avoid nausea — this is the main counselling point",
+      "E": "SGLT2 inhibitors should be stopped in all patients with eGFR below 60 — counsel on renal monitoring only"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per MHRA Drug Safety Updates and NICE NG28, SGLT2 inhibitor counselling must cover: (1) Genital mycotic infections (very common — 8-12% of women develop vulvovaginal candidiasis; men develop balanitis) — hygiene advice, report persistent symptoms; (2) Euglycaemic DKA — SGLT2 inhibitors lower blood glucose masking DKA; check blood ketones when unwell/vomiting/fasting/reducing food intake; sick day rules: STOP empagliflozin during acute illness, surgery, procedures requiring fasting; (3) Fournier's gangrene (necrotising fasciitis of genitalia/perineum — rare but life-threatening) — seek emergency care for severe genital/perineal pain, redness, swelling; (4) Perioperative safety — stop ≥3 days before surgery; restart only when eating/drinking post-operatively. Additionally: dehydration risk (elderly, concurrent diuretics), fracture risk (canagliflozin specifically). SGLT2 inhibitors are NOT typically hypoglycaemic as monotherapy.",
+      "A": "Incorrect — SGLT2 inhibitors have multiple significant MHRA-issued safety warnings that require explicit patient counselling.",
+      "B": "CORRECT — Four key counselling points: genital infections, euglycaemic DKA sick day rules, Fournier's gangrene, perioperative management per MHRA/NICE NG28.",
+      "C": "Incorrect — SGLT2 inhibitors have very LOW intrinsic hypoglycaemia risk as monotherapy. They are not the most hypoglycaemic class.",
+      "D": "Incorrect — Food timing is not a major SGLT2 inhibitor counselling point. Euglycaemic DKA and genital infections are the priority.",
+      "E": "Incorrect — NICE TA775 and NG28 have updated guidance allowing SGLT2 inhibitors to lower eGFR thresholds for specific indications (CKD, heart failure). The blanket eGFR <60 stop rule is outdated."
+    },
+    "reference": "MHRA Drug Safety Updates — SGLT2 inhibitors. NICE NG28. https://www.gov.uk/drug-safety-update",
+    "tags": ["SGLT2 inhibitor", "empagliflozin", "sick day rules", "euglycaemic DKA", "Fournier's gangrene", "MHRA"]
+  },
+  {
+    "id": "QG-PHARM-070-001",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Pharmacology & Prescribing",
+    "difficulty": "Hard",
+    "question": "A 24-year-old woman with epilepsy (juvenile myoclonic epilepsy) is well-controlled on sodium valproate 1000mg daily. She is 22 weeks pregnant — the pregnancy was unplanned. She is reluctant to change her medication as previous switches caused seizures. Per MHRA 2023 Pregnancy Prevention Programme guidance, what are the key prescribing and safety obligations for the GP?",
+    "options": {
+      "A": "Continue valproate unchanged — seizure control is the priority and no further action is needed",
+      "B": "The GP must ensure the MHRA Pregnancy Prevention Programme (PPP) obligations are met: (1) Valproate is absolutely contraindicated in pregnancy unless no alternative exists — discuss risk urgently with prescribing neurologist; (2) Risks to this pregnancy: 10-11% risk of major malformations, 30-40% risk of neurodevelopmental disorders; (3) High-dose folic acid 5mg daily immediately; (4) Urgent foetal anomaly scan and specialist obstetric/neurology joint review; (5) If valproate is continued (specialist decision only): minimum effective dose, ensure PPP monitoring continues; (6) Emotional support and informed decision-making by the patient. Do NOT stop valproate without neurology advice — risk of status epilepticus",
+      "C": "Stop valproate immediately and replace with lamotrigine",
+      "D": "Terminate the pregnancy — valproate use makes the pregnancy unviable",
+      "E": "Refer to the patient's neurologist only — GPs have no role in managing valproate in pregnancy"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "MHRA 2023 valproate guidance: valproate is absolutely contraindicated in pregnancy unless no other effective treatment exists. This pregnancy was unplanned during ongoing valproate use — the GP's responsibilities are: (1) Immediate: folic acid 5mg daily (though neural tube closure at 4-6 weeks may have already occurred, folate reduces other defects); urgent neurology/obstetric joint review; anomaly ultrasound ± fetal medicine referral; (2) Risk counselling: 10-11% major malformations (vs 2-3% background), 30-40% neurodevelopmental disorders (IQ reduction, autism, ADHD); (3) Decision about continuing: neurologist-led (especially in JME where lamotrigine can paradoxically worsen myoclonic seizures); (4) If continuing: minimum effective dose; (5) Do NOT abruptly stop — status epilepticus is life-threatening. The GP must support but not independently manage — urgent specialist involvement is essential.",
+      "A": "Incorrect — Continuing without urgent specialist review, patient counselling and anomaly monitoring fails the patient's right to informed care.",
+      "B": "CORRECT — Urgent neurology/obstetric review + folic acid 5mg + anomaly scan + risk counselling + PPP obligations per MHRA 2023. Never stop independently.",
+      "C": "Incorrect — Switching valproate to lamotrigine in a pregnant patient with JME must be neurologist-led (lamotrigine can worsen JME myoclonus). Abrupt switching risks seizures.",
+      "D": "Incorrect — Termination is not mandated. Patient-led decision with full information and specialist support. Pregnancies on valproate can be managed.",
+      "E": "Incorrect — GPs share responsibility for PPP compliance and must take an active role in the immediate management (folic acid, monitoring, support) while facilitating specialist review."
+    },
+    "reference": "MHRA — Valproate Pregnancy Prevention Programme 2023. NICE CG137 — Epilepsies. https://www.gov.uk/drug-safety-update",
+    "tags": ["sodium valproate", "pregnancy", "PPP", "MHRA 2023", "folic acid 5mg", "teratogen"]
+  },
+  {
+    "id": "QG-PHARM-008-001",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Pharmacology & Prescribing",
+    "difficulty": "Medium",
+    "question": "A 52-year-old man has been on lithium carbonate 400mg twice daily for bipolar disorder for 10 years. His GP is reviewing his monitoring bloods. Per NICE CG185 and BNF, which blood tests are required and at what frequency?",
+    "options": {
+      "A": "Only serum lithium levels — no other monitoring required",
+      "B": "Lithium requires: (1) Serum lithium levels: 12-hourly post-dose sample; target range 0.6-1.0 mmol/L (maintenance) or 0.8-1.0 mmol/L (acute mania). Check: 5-7 days after each dose change, then every 3 months when stable; (2) Renal function (eGFR, creatinine, urea) — every 6 months (lithium causes nephrogenic diabetes insipidus and chronic tubulointerstitial nephritis); (3) Thyroid function (TSH, free T4) — every 6 months (lithium causes hypothyroidism in 20-40%); (4) Calcium (hypercalcaemia — lithium causes hyperparathyroidism); (5) FBC and urinalysis annually",
+      "C": "Annual TFTs only — thyroid is the main concern with lithium",
+      "D": "Monthly lithium levels are required for all patients on long-term lithium",
+      "E": "No routine monitoring is required for stable long-term lithium patients"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per NICE CG185 (Bipolar disorder) and BNF lithium monitoring requirements: Serum lithium levels: (1) 5-7 days after starting or dose change; (2) After achieving stable dose: every 3-6 months (NICE CG185 recommends every 6 months for stable patients, with BNF recommending 3-monthly consideration). Sample must be taken 12 hours after the last dose. Target range: 0.6-1.0 mmol/L (maintenance); signs of toxicity >1.5 mmol/L. Renal function (eGFR + creatinine): every 6 months — lithium is renally excreted and nephrotoxic (interstitial nephritis, nephrogenic DI). Thyroid function (TSH + free T4): every 6 months — lithium inhibits thyroid hormone synthesis → hypothyroidism in 20-40% of long-term users. Calcium: annually or if symptoms — lithium activates calcium-sensing receptors → hypercalcaemia and hyperparathyroidism. Lithium toxicity signs: coarse tremor, confusion, ataxia, diarrhoea — check levels urgently.",
+      "A": "Incorrect — Renal and thyroid monitoring are equally important as lithium levels — nephrotoxicity and hypothyroidism are major long-term complications.",
+      "B": "CORRECT — Lithium monitoring: 3-6 monthly levels (12-hour sample), 6-monthly renal and TFTs, annual calcium per NICE CG185/BNF.",
+      "C": "Incorrect — TFTs alone are insufficient. Renal function monitoring is critical — lithium nephrotoxicity causes CKD.",
+      "D": "Incorrect — Monthly lithium levels are not required for stable patients — 3-6 monthly is the recommended frequency.",
+      "E": "Incorrect — Lithium has a narrow therapeutic index and serious long-term toxicity risks — ongoing monitoring is mandatory indefinitely."
+    },
+    "reference": "NICE CG185 — Bipolar disorder. BNF — Lithium monitoring. https://www.nice.org.uk/guidance/cg185",
+    "tags": ["lithium monitoring", "TFTs", "renal function", "12-hour sample", "NICE CG185", "BNF"]
+  },
+  {
+    "id": "QG-PHARM-068-001",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Pharmacology & Prescribing",
+    "difficulty": "Hard",
+    "question": "A 65-year-old woman on lithium 400mg twice daily for bipolar disorder develops increased thirst, polyuria and a serum creatinine rising from 90 to 142 umol/L over 2 years. Her current lithium level is 0.7 mmol/L. Per NICE CG185 and nephrological guidance, what is happening and what should be done?",
+    "options": {
+      "A": "Normal ageing — continue lithium unchanged",
+      "B": "Lithium-induced chronic kidney disease (tubulointerstitial nephritis) — polyuria from nephrogenic diabetes insipidus plus rising creatinine. Discuss with psychiatry: consider dose reduction to lowest effective level, review continued need for lithium versus alternative mood stabilisers (lamotrigine, valproate — with PPP if female of childbearing age, quetiapine). Urgently refer to nephrology if eGFR <60 ml/min. Do NOT stop lithium abruptly — risk of bipolar relapse and rebound mania",
+      "C": "Stop lithium immediately — the rising creatinine requires urgent drug cessation",
+      "D": "Increase fluid intake and continue lithium unchanged",
+      "E": "This is hypothyroidism from lithium — check TFTs, not a renal issue"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Lithium nephrotoxicity: long-term lithium use (>10 years) causes tubulointerstitial nephritis in ~20-30% of patients, progressing to CKD. Early features: polyuria (nephrogenic diabetes insipidus — lithium blocks ADH receptor), polydipsia. Later: rising creatinine (eGFR decline). Management per NICE CG185 and renal guidance: (1) Discuss dose reduction with prescribing psychiatrist — minimum effective dose reduces nephrotoxic burden; (2) Review alternatives: lamotrigine has less nephrotoxicity; quetiapine for bipolar disorder; (3) Nephrology referral if eGFR <60 or rapidly declining; (4) Never abruptly stop lithium — risk of bipolar relapse, rebound mania and suicidality; (5) Monitor eGFR 6-monthly; (6) If eGFR <30: discontinuation is strongly advised with psychiatry input. The creatinine rise from 90 to 142 over 2 years represents significant decline requiring specialist review.",
+      "A": "Incorrect — Rising creatinine with polyuria in a long-term lithium patient is lithium nephrotoxicity — not normal ageing.",
+      "B": "CORRECT — Lithium CKD: nephrotoxicity from tubulointerstitial nephritis. Dose review with psychiatry + nephrology referral + do not stop abruptly per NICE CG185.",
+      "C": "Incorrect — Abruptly stopping lithium without psychiatric input risks bipolar relapse — gradual review with specialist is required.",
+      "D": "Incorrect — Simply increasing fluid intake does not address the progressive nephrotoxicity requiring dose review.",
+      "E": "Incorrect — Polyuria + rising creatinine = renal issue (nephrogenic DI + nephrotoxicity) — not hypothyroidism. TFTs are separate monitoring."
+    },
+    "reference": "NICE CG185 — Bipolar disorder. MHRA — Lithium: updated guidance. https://www.nice.org.uk/guidance/cg185",
+    "tags": ["lithium nephrotoxicity", "CKD", "nephrogenic DI", "tubulointerstitial nephritis", "NICE CG185", "do not stop abruptly"]
+  },
+  {
+    "id": "QG-PHARM-001-001",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Pharmacology & Prescribing",
+    "difficulty": "Medium",
+    "question": "A 68-year-old woman is prescribed warfarin for atrial fibrillation. She is started on clarithromycin for a chest infection. Per BNF drug interactions, what is the clinical significance of this combination and what action should be taken?",
+    "options": {
+      "A": "No significant interaction — warfarin and clarithromycin can be co-prescribed without concern",
+      "B": "Clarithromycin is a potent CYP3A4 inhibitor — it inhibits the metabolism of warfarin, leading to significantly elevated INR and increased bleeding risk. Action: warn the patient about bleeding signs; increase INR monitoring frequency (check INR after 2-3 days of clarithromycin and again after completing the course); consider reducing warfarin dose by 25-50% empirically; document the interaction in the notes",
+      "C": "Clarithromycin induces warfarin metabolism — the INR will fall",
+      "D": "Only check INR if the patient reports bleeding",
+      "E": "Switch warfarin to a DOAC for the duration of clarithromycin treatment"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Clarithromycin is a potent CYP3A4 (and CYP1A2) inhibitor — it significantly reduces the hepatic metabolism of warfarin, causing warfarin accumulation and INR elevation. This is a clinically significant interaction documented in the BNF. Risk: supratherapeutic INR → major bleeding (intracranial haemorrhage, GI haemorrhage). Management: warn patient about signs of bleeding (unusual bruising, prolonged bleeding, blood in urine/stool, headache); increase INR monitoring frequency (2-3 days after starting clarithromycin, mid-course, and after completing the course); consider empirical warfarin dose reduction; document the interaction. Alternative: if the chest infection allows, consider a non-interacting antibiotic (amoxicillin, doxycycline have less impact on warfarin — though all antibiotics can affect INR through gut flora changes). Other potent CYP450 inhibitors affecting warfarin: fluconazole, ciprofloxacin, metronidazole, amiodarone.",
+      "A": "Incorrect — Clarithromycin-warfarin interaction is one of the most clinically significant drug interactions in primary care.",
+      "B": "CORRECT — Clarithromycin inhibits warfarin metabolism → elevated INR → bleeding risk. Increase monitoring frequency + consider dose reduction per BNF.",
+      "C": "Incorrect — Clarithromycin INHIBITS (not induces) CYP3A4 — INR rises (not falls) with this combination.",
+      "D": "Incorrect — Waiting for bleeding is reactive management — proactive INR monitoring is the correct approach.",
+      "E": "Incorrect — Switching between anticoagulants creates transition risks and is not the appropriate response to a drug interaction."
+    },
+    "reference": "BNF — Drug interactions: Warfarin and macrolides. https://bnf.nice.org.uk/interaction/warfarin.html",
+    "tags": ["warfarin interaction", "clarithromycin", "CYP3A4 inhibitor", "INR monitoring", "BNF", "drug interaction"]
+  },
+  {
+    "id": "QG-PHARM-002-001",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Pharmacology & Prescribing",
+    "difficulty": "Easy",
+    "question": "A 35-year-old man is prescribed amoxicillin 500mg three times daily for a lower respiratory tract infection. He mentions he is on the combined oral contraceptive pill and asks if he needs to use additional contraception. Per FSRH and current evidence, what is the correct advice?",
+    "options": {
+      "A": "Use additional contraception for the entire antibiotic course and 7 days afterwards",
+      "B": "No additional contraception is needed — current FSRH guidance (2011, updated 2017) clarifies that non-enzyme-inducing antibiotics (such as amoxicillin) do NOT reduce the efficacy of the COCP. Additional contraception is only required with enzyme-inducing drugs (rifampicin, rifabutin, certain anticonvulsants)",
+      "C": "Stop the COCP and use condoms until the next period",
+      "D": "Take double the COCP dose during antibiotic treatment",
+      "E": "Switch to the progesterone-only pill during antibiotic treatment"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per FSRH guidance (2011, updated 2017) and the Faculty of Sexual and Reproductive Healthcare: the previous advice to use additional contraception during non-enzyme-inducing antibiotic courses was based on theoretical concerns about gut flora disruption and reduced COCP absorption. Subsequent evidence showed this mechanism does not reliably reduce COCP efficacy in clinical practice. Current guidance: non-enzyme-inducing antibiotics (amoxicillin, cephalexin, trimethoprim, doxycycline, clarithromycin etc.) do NOT require additional contraceptive precautions during treatment. Enzyme-inducing drugs (rifampicin, rifabutin, certain anticonvulsants — carbamazepine, phenytoin, phenobarbitone, topiramate, oxcarbazepine) DO reduce COCP efficacy — additional contraception required during treatment and for 28 days after stopping. This change in guidance has reduced unnecessary anxiety and condom use for millions of women.",
+      "A": "Incorrect — This was the old guidance before 2011. Current FSRH guidance does not require additional contraception with non-enzyme-inducing antibiotics.",
+      "B": "CORRECT — Non-enzyme-inducing antibiotics (amoxicillin) do NOT reduce COCP efficacy. No additional contraception needed per FSRH 2017 guidance.",
+      "C": "Incorrect — Stopping the COCP is not required for antibiotic courses with non-enzyme-inducing antibiotics.",
+      "D": "Incorrect — Double-dosing the COCP has no evidence base and increases side effects.",
+      "E": "Incorrect — Switching contraceptive method during a short antibiotic course is unnecessary and potentially disruptive to contraceptive cover."
+    },
+    "reference": "FSRH — Guidance on drug interactions with hormonal contraception 2017. https://www.fsrh.org/standards-and-guidance/",
+    "tags": ["COCP antibiotic interaction", "amoxicillin", "enzyme inducers", "FSRH 2017", "no additional contraception", "non-enzyme inducing"]
+  },
+  {
+    "id": "QG-PHARM-003-001",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Pharmacology & Prescribing",
+    "difficulty": "Medium",
+    "question": "A 70-year-old woman is started on alendronate 70mg weekly for osteoporosis. The pharmacist contacts the GP to clarify the administration instructions. Per BNF and product licence, what are the critical administration requirements for oral bisphosphonates?",
+    "options": {
+      "A": "Take with food and lie down for 30 minutes afterwards",
+      "B": "Take alendronate on an empty stomach with a full glass of plain water (at least 200ml), at least 30 minutes before any food, drink or other medication; remain upright (sitting or standing) for at least 30 minutes after taking; do not lie down during this period. Failure to follow these instructions increases risk of oesophageal ulceration and reduces absorption",
+      "C": "Take with milk to reduce gastric irritation",
+      "D": "Take at bedtime to avoid gastrointestinal side effects",
+      "E": "Crush the tablet and dissolve in water for easier swallowing"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Alendronate (and all oral bisphosphonates) have strict administration requirements to: (1) maximise absorption (bioavailability is only 0.6-0.7% — food, calcium and other minerals severely reduce absorption); (2) prevent oesophageal injury (bisphosphonates cause oesophageal ulceration if they remain in contact with the oesophageal mucosa). Critical requirements: take on an empty stomach (no food for at least 30 minutes after); take with plain water ONLY — mineral water, milk, juice all reduce absorption; full glass (200ml minimum) — ensures the tablet reaches the stomach; remain strictly upright (sitting or standing — NOT lying) for at least 30 minutes after taking; no food for 30 minutes after. Contraindicated in: oesophageal abnormalities (stricture, achalasia), inability to sit/stand upright for 30 minutes, severe renal impairment (eGFR <35 ml/min). Tablets must not be crushed.",
+      "A": "Incorrect — Taking with food and lying down is exactly the OPPOSITE of the correct instructions — this would cause oesophageal ulceration and reduce absorption.",
+      "B": "CORRECT — Empty stomach + plain water 200ml + upright for 30 minutes + no food for 30 minutes. Critical to prevent oesophageal injury per BNF product licence.",
+      "C": "Incorrect — Milk contains calcium which binds alendronate, preventing absorption — plain water only.",
+      "D": "Incorrect — Bedtime dosing means the patient would be lying flat — oesophageal ulceration risk is high if not upright for 30 minutes post-dose.",
+      "E": "Incorrect — Alendronate tablets must NOT be crushed — crushing increases oesophageal irritation and mucosal contact risk."
+    },
+    "reference": "BNF — Alendronate administration. Product SPC — Alendronate. https://bnf.nice.org.uk/drug/alendronic-acid.html",
+    "tags": ["alendronate", "bisphosphonate", "administration", "upright 30 minutes", "oesophageal ulceration", "BNF"]
+  },
+  {
+    "id": "QG-PHARM-004-001",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Pharmacology & Prescribing",
+    "difficulty": "Hard",
+    "question": "A 58-year-old man with heart failure and AF is on digoxin 125 mcg daily, furosemide 80mg daily and ramipril 5mg daily. He is also prescribed amiodarone 200mg daily by his cardiologist. His digoxin level comes back at 2.8 nmol/L (therapeutic range 1-2 nmol/L). He reports nausea, vomiting and yellow-green visual haloes. Per BNF, what has occurred and what is the immediate management?",
+    "options": {
+      "A": "The digoxin level is within normal limits — continue all medications",
+      "B": "Digoxin toxicity precipitated by amiodarone — amiodarone inhibits P-glycoprotein and CYP3A4, reducing digoxin excretion and increasing digoxin levels by approximately 50-100%. Classic toxicity symptoms: nausea/vomiting, yellow-green visual haloes (xanthopsia), bradycardia. Management: STOP digoxin, ECG urgently (check for life-threatening arrhythmias — heart block, VT), check electrolytes (hypokalaemia from furosemide worsens digoxin toxicity), correct hypokalaemia if present. If severe toxicity: consider digoxin-specific antibody fragments (DigiFab) and hospital admission",
+      "C": "The digoxin level is mildly elevated — reduce dose by 10% and recheck",
+      "D": "Stop amiodarone immediately — it has no significant interaction with digoxin",
+      "E": "These are symptoms of hypokalaemia — check potassium and replace"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Digoxin toxicity from amiodarone interaction: amiodarone is a potent inhibitor of P-glycoprotein (MDR1 — a renal tubular efflux pump for digoxin) and CYP3A4, reducing both renal and hepatic elimination of digoxin. When amiodarone is added to stable digoxin therapy: digoxin levels typically rise by 50-100% within 2-4 weeks. Standard recommendation: halve the digoxin dose when amiodarone is started. This patient's symptoms are classic digoxin toxicity: GI (nausea, vomiting, anorexia — early signs), visual (xanthopsia — yellow-green haloes — pathognomonic), cardiac (bradycardia, heart block, various arrhythmias). Additional risk factors: furosemide-induced hypokalaemia potentiates digoxin toxicity (hypokalaemia increases sensitivity of Na+/K+ ATPase to digoxin). Management: stop digoxin; urgent ECG; electrolytes; admit if significant arrhythmia or severe toxicity; DigiFab if life-threatening.",
+      "A": "Incorrect — Level 2.8 nmol/L (range 1-2) with classic toxicity symptoms requires immediate action.",
+      "B": "CORRECT — Amiodarone inhibits digoxin elimination → toxicity. Stop digoxin + urgent ECG + electrolytes + consider DigiFab for severe toxicity per BNF.",
+      "C": "Incorrect — Symptomatic digoxin toxicity with level 2.8 requires stopping digoxin, not just a 10% dose reduction.",
+      "D": "Incorrect — Amiodarone-digoxin interaction is one of the most clinically important drug interactions in cardiology — well documented in BNF.",
+      "E": "Incorrect — Hypokalaemia from furosemide worsens but does not cause the complete clinical picture — this is primarily digoxin toxicity."
+    },
+    "reference": "BNF — Digoxin interactions. Amiodarone-digoxin interaction. https://bnf.nice.org.uk/interaction/digoxin.html",
+    "tags": ["digoxin toxicity", "amiodarone interaction", "xanthopsia", "P-glycoprotein", "BNF", "DigiFab"]
+  },
+  {
+    "id": "QG-PHARM-005-001",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Pharmacology & Prescribing",
+    "difficulty": "Medium",
+    "question": "A 45-year-old man with HIV is stable on antiretroviral therapy (ritonavir-boosted regimen). His GP wants to prescribe simvastatin for hypercholesterolaemia. Per BNF and HIV prescribing guidance, what is the critical interaction?",
+    "options": {
+      "A": "No interaction — statins and antiretrovirals are safe to co-prescribe",
+      "B": "Ritonavir is a potent CYP3A4 inhibitor — simvastatin is predominantly metabolised by CYP3A4. Co-prescription causes massive simvastatin accumulation, increasing the risk of severe myopathy and rhabdomyolysis (potentially fatal). Simvastatin and lovastatin are CONTRAINDICATED with ritonavir-boosted regimens. Safe alternatives: pravastatin (not CYP3A4 metabolised) or rosuvastatin (minimal CYP450 metabolism) at low initial doses with careful monitoring",
+      "C": "Use simvastatin at half the normal dose with ritonavir",
+      "D": "Statin therapy is contraindicated in all patients with HIV",
+      "E": "The ritonavir dose should be reduced to allow simvastatin use"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Ritonavir (used as a pharmacokinetic booster in HIV regimens) is one of the most potent CYP3A4 inhibitors available. Simvastatin is primarily metabolised by CYP3A4 — co-administration leads to up to 3000% increase in simvastatin AUC (area under curve), massively increasing plasma simvastatin concentrations. This causes severe statin-induced myopathy and rhabdomyolysis — myoglobinuria → acute renal failure → potentially fatal. Simvastatin and lovastatin are ABSOLUTELY CONTRAINDICATED with ritonavir-containing regimens per BNF and British HIV Association (BHIVA) guidelines. Safe statins in HIV patients on protease inhibitors: pravastatin (not CYP3A4-dependent), rosuvastatin (OATP1B1 transporter — less interaction, use with caution, start at lowest dose), pitavastatin (preferred by BHIVA — minimal CYP450 interactions). Atorvastatin can be used cautiously at the lowest dose (also CYP3A4 but less extensively than simvastatin).",
+      "A": "Incorrect — The ritonavir-simvastatin interaction is one of the most dangerous drug interactions in clinical practice.",
+      "B": "CORRECT — Ritonavir inhibits simvastatin CYP3A4 metabolism → rhabdomyolysis risk. Simvastatin contraindicated. Use pravastatin or rosuvastatin per BNF/BHIVA.",
+      "C": "Incorrect — Even halving the dose does not make simvastatin safe with ritonavir — the interaction causes a 3000% increase in exposure regardless of dose reduction.",
+      "D": "Incorrect — Statins are often indicated and appropriate in HIV patients — safe alternatives to simvastatin exist.",
+      "E": "Incorrect — Ritonavir dose reduction is not appropriate — it is an essential component of the HIV regimen. The statin must be changed."
+    },
+    "reference": "BNF — Drug interactions: Simvastatin. BHIVA — Guidelines for the management of dyslipidaemia in HIV. https://bnf.nice.org.uk/interaction/simvastatin.html",
+    "tags": ["ritonavir", "simvastatin", "rhabdomyolysis", "CYP3A4", "BNF", "HIV drug interaction"]
+  },
+  {
+    "id": "QG-PHARM-006-001",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Pharmacology & Prescribing",
+    "difficulty": "Easy",
+    "question": "A 25-year-old woman is prescribed trimethoprim 200mg twice daily by her GP for a urinary tract infection. She is also taking methotrexate 15mg weekly for psoriatic arthritis. Per BNF, why is this combination potentially dangerous and what is the alternative?",
+    "options": {
+      "A": "No interaction — trimethoprim and methotrexate are safe together",
+      "B": "Trimethoprim is a folate antagonist — both trimethoprim and methotrexate inhibit dihydrofolate reductase (DHFR). Co-administration significantly increases the risk of methotrexate toxicity (bone marrow suppression, severe mucositis, pancytopenia). This combination should be avoided. Alternatives for UTI in methotrexate patients: nitrofurantoin (if eGFR adequate) or cefalexin 500mg three times daily for 3-7 days",
+      "C": "The interaction only applies to high-dose methotrexate used in oncology — low-dose weekly methotrexate is unaffected",
+      "D": "Take the two medications 4 hours apart to avoid the interaction",
+      "E": "Reduce methotrexate dose to 10mg while taking trimethoprim"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Mechanism of interaction: both trimethoprim and methotrexate inhibit dihydrofolate reductase (DHFR) — the enzyme responsible for converting dietary folate to its active form. Dual DHFR inhibition causes severe folate deficiency even in patients taking supplementary folic acid, leading to: bone marrow suppression (pancytopenia — sometimes fatal), severe mucositis, megaloblastic changes. This interaction applies to LOW-DOSE weekly methotrexate (used for RA, psoriasis, IBD) as well as high-dose oncology regimens. Per BNF: trimethoprim should be avoided in patients on methotrexate. Safe UTI alternatives: nitrofurantoin (if eGFR ≥45 ml/min), cefalexin, amoxicillin (if susceptibility confirmed). Co-trimoxazole (contains trimethoprim) is similarly contraindicated. Other folate antagonists to avoid with methotrexate: pyrimethamine, cotrimoxazole.",
+      "A": "Incorrect — This is a significant and potentially fatal drug interaction documented in the BNF.",
+      "B": "CORRECT — Trimethoprim + methotrexate = dual DHFR inhibition → bone marrow suppression. Use nitrofurantoin or cefalexin instead per BNF.",
+      "C": "Incorrect — The interaction applies to low-dose weekly methotrexate — not only oncology doses.",
+      "D": "Incorrect — Separating administration times does not eliminate the pharmacodynamic interaction — both drugs are systemic and exert prolonged DHFR inhibition.",
+      "E": "Incorrect — Dose reduction does not prevent the interaction. Trimethoprim must be avoided entirely."
+    },
+    "reference": "BNF — Drug interactions: Methotrexate and trimethoprim. https://bnf.nice.org.uk/interaction/methotrexate.html",
+    "tags": ["trimethoprim methotrexate", "DHFR inhibitor", "folate antagonist", "bone marrow suppression", "BNF", "drug interaction"]
+  },
+  {
+    "id": "QG-PHARM-007-001",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Pharmacology & Prescribing",
+    "difficulty": "Medium",
+    "question": "A 72-year-old woman is newly prescribed amitriptyline 25mg at night for neuropathic pain. She has a background of glaucoma and benign prostatic hypertrophy in her husband. Per BNF and STOPP criteria, what pharmacological properties of amitriptyline make it particularly unsuitable for elderly patients and which conditions are contraindications?",
+    "options": {
+      "A": "Amitriptyline is the safest choice for elderly patients — tricyclics are first-line for neuropathic pain",
+      "B": "Amitriptyline has strong anticholinergic properties — STOPP criteria and BNF specifically advise caution/avoidance in elderly. Anticholinergic effects: dry mouth, constipation, urinary retention (contraindicated in BPH), cognitive impairment/delirium, confusion, sedation, falls risk. Additionally: contraindicated in acute-angle closure glaucoma (pupillary dilation precipitates acute glaucoma). In elderly patients: consider gabapentin, pregabalin or duloxetine for neuropathic pain as alternatives with lower anticholinergic burden",
+      "C": "Amitriptyline is contraindicated only in severe renal failure",
+      "D": "The main concern with amitriptyline in elderly is QTc prolongation only — check ECG",
+      "E": "Amitriptyline 25mg is a very low dose and has no clinically relevant anticholinergic effects"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Amitriptyline is a tricyclic antidepressant with potent anticholinergic (antimuscarinic), antihistaminic and alpha-1 adrenergic blocking properties. In elderly patients, per STOPP/START criteria v3: strongly associated with: (1) Urinary retention — especially dangerous with BPH or bladder outlet obstruction (STOPP criteria); (2) Acute angle-closure glaucoma — anticholinergic pupillary dilation precipitates acute glaucoma in susceptible patients; (3) Cognitive impairment/delirium — anticholinergic burden is a major cause of delirium in elderly; (4) Falls and fractures — sedation + orthostatic hypotension; (5) QTc prolongation (especially at higher doses). Per NICE NG173 (Neuropathic pain) and STOPP criteria: in elderly patients, alternatives with lower anticholinergic burden are preferred — duloxetine (SNRI), gabapentinoids (gabapentin, pregabalin). Amitriptyline should be avoided where anticholinergic contraindications exist.",
+      "A": "Incorrect — Amitriptyline is specifically listed in STOPP criteria as inappropriate in elderly due to anticholinergic burden. Alternatives are preferred.",
+      "B": "CORRECT — Amitriptyline: strong anticholinergic effects contraindicated in BPH (urinary retention) and acute-angle closure glaucoma. Prefer duloxetine/gabapentinoids in elderly per STOPP/NICE NG173.",
+      "C": "Incorrect — The primary concerns are anticholinergic effects and contraindications (glaucoma, BPH) — not primarily renal failure.",
+      "D": "Incorrect — QTc prolongation is a concern but anticholinergic effects (cognitive impairment, urinary retention, falls) are the more prominent elderly concerns.",
+      "E": "Incorrect — Even low doses of amitriptyline cause clinically relevant anticholinergic effects in elderly patients — there is no safe anticholinergic dose in this population."
+    },
+    "reference": "STOPP/START criteria v3. NICE NG173 — Neuropathic pain. BNF — Amitriptyline. https://www.nice.org.uk/guidance/ng173",
+    "tags": ["amitriptyline", "anticholinergic", "elderly", "STOPP criteria", "BPH contraindication", "glaucoma"]
+  },
+  {
+    "id": "QG-PHARM-009-001",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Pharmacology & Prescribing",
+    "difficulty": "Hard",
+    "question": "A 55-year-old man is on fluoxetine 40mg daily for depression. His GP also prescribes tramadol 100mg four times daily for chronic back pain. Three weeks later he is admitted with agitation, confusion, myoclonus, hyper-reflexia, diaphoresis and pyrexia (38.8°C). Per BNF, what syndrome has developed and what is the management?",
+    "options": {
+      "A": "Neuroleptic malignant syndrome — stop antipsychotic medication",
+      "B": "Serotonin syndrome — caused by the combination of fluoxetine (SSRI — increases serotonergic transmission) and tramadol (opioid with SNRI properties and serotonin-releasing effects). Management: stop both drugs immediately; hospital admission; supportive care (benzodiazepines for agitation and myoclonus); cyproheptadine (serotonin antagonist) for moderate-severe cases; active cooling if hyperthermia; the syndrome typically resolves within 24-72 hours of drug withdrawal",
+      "C": "Opioid toxicity — give naloxone",
+      "D": "Anticholinergic toxidrome — give physostigmine",
+      "E": "Malignant hyperthermia — give dantrolene"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Serotonin syndrome: life-threatening condition caused by excess serotonergic activity in the CNS. Classic triad: (1) Neuromuscular abnormalities — myoclonus, hyperreflexia, clonus, tremor; (2) Autonomic instability — tachycardia, diaphoresis, hyperthermia, labile blood pressure; (3) Altered mental status — agitation, confusion. Cause here: fluoxetine (SSRI — inhibits serotonin reuptake) + tramadol (opioid analgesic that also inhibits serotonin and noradrenaline reuptake + promotes serotonin release). This combination is listed as a significant interaction in the BNF. Other high-risk combinations: SSRIs + MAOIs (most dangerous — fatal), SSRIs + linezolid (antibiotic with MAOI properties), SSRIs + fentanyl. Management: stop serotonergic drugs; benzodiazepines for agitation/myoclonus; cyproheptadine (5-HT2A antagonist) for persistent cases; cooling; typically resolves 24-72 hours after drug withdrawal. Distinguish from NMS (slower onset, lead-pipe rigidity, different trigger — antipsychotics).",
+      "A": "Incorrect — Neuroleptic malignant syndrome is caused by antipsychotics — this patient is not on antipsychotics. NMS has lead-pipe rigidity not hyperreflexia/myoclonus.",
+      "B": "CORRECT — Serotonin syndrome from fluoxetine + tramadol combination. Stop both drugs, benzodiazepines, cyproheptadine, supportive care per BNF.",
+      "C": "Incorrect — Opioid toxicity causes respiratory depression and miosis — not hyperreflexia, myoclonus and agitation.",
+      "D": "Incorrect — Anticholinergic toxidrome causes mydriasis, urinary retention, dry skin — not hyperreflexia or diaphoresis.",
+      "E": "Incorrect — Malignant hyperthermia follows general anaesthesia with triggering agents — not drug interactions in a conscious patient."
+    },
+    "reference": "BNF — Serotonin syndrome. Drug interactions: Fluoxetine and tramadol. https://bnf.nice.org.uk/interaction/tramadol.html",
+    "tags": ["serotonin syndrome", "fluoxetine tramadol", "SSRI interaction", "myoclonus", "cyproheptadine", "BNF"]
+  },
+  {
+    "id": "QG-PHARM-010-001",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Pharmacology & Prescribing",
+    "difficulty": "Medium",
+    "question": "A GP is reviewing an 80-year-old man's medication list as part of a structured medication review. He is on 11 regular medications. The STOPP/START criteria are being used. Per STOPP criteria v3, which of the following medication combinations would warrant a deprescribing discussion?",
+    "options": {
+      "A": "Amlodipine 5mg daily for hypertension",
+      "B": "Aspirin 75mg daily for secondary prevention after an MI 5 years ago",
+      "C": "Long-term benzodiazepine (diazepam 5mg daily for over 12 months), NSAIDs in a patient with eGFR <45, and a PPI that was started 10 years ago without reassessment of ongoing indication",
+      "D": "Ramipril 10mg daily for heart failure with reduced ejection fraction",
+      "E": "Bisoprolol 5mg daily for AF rate control"
+    },
+    "correct_answer": "C",
+    "explanation": {
+      "correct": "Per STOPP criteria v3 (Screening Tool of Older People's Prescriptions), medications that should be reviewed for stopping or deprescribing in elderly patients include: (1) Long-term benzodiazepines (>4 weeks) — falls risk (STOPP B3), cognitive impairment, dependence; (2) NSAIDs in CKD (eGFR <45 ml/min) — risk of further renal deterioration, fluid retention, hypertension, GI bleeding (STOPP H1); (3) PPIs without ongoing indication reassessment — risk of hypomagnesaemia, C. difficile, community-acquired pneumonia, fractures (STOPP J1 — review if no ongoing indication). These three represent inappropriate prescribing per STOPP criteria. The other options (amlodipine for hypertension, aspirin for secondary prevention, ramipril for HFrEF, bisoprolol for AF rate control) are all evidence-based medications that should be continued (addressed in START criteria — Screening Tool to Alert to Right Treatment).",
+      "A": "Incorrect — Amlodipine for hypertension is an appropriate, evidence-based prescription per NICE NG136 — no deprescribing required.",
+      "B": "Incorrect — Aspirin for secondary prevention after MI is START criteria-positive — it should be continued.",
+      "C": "CORRECT — STOPP criteria flag: long-term benzodiazepine (falls/cognitive risk), NSAIDs in CKD (renal harm), PPI without reassessment — all candidates for deprescribing discussion.",
+      "D": "Incorrect — ACE inhibitor for HFrEF is a START criterion — it must be continued per NICE NG106.",
+      "E": "Incorrect — Beta-blocker for AF rate control is an appropriate ongoing prescription."
+    },
+    "reference": "STOPP/START criteria version 3. O'Mahony et al. Age Ageing 2023. https://www.nice.org.uk/guidance/ng5",
+    "tags": ["STOPP criteria", "deprescribing", "benzodiazepine", "NSAIDs CKD", "PPI review", "polypharmacy"]
+  },
+  {
+    "id": "QG-PHARM-011-001",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Pharmacology & Prescribing",
+    "difficulty": "Easy",
+    "question": "A 55-year-old man with gout and hypertension is started on bendroflumethiazide 2.5mg daily by a locum for his hypertension. He is already on allopurinol 300mg daily for recurrent gout. Per BNF and NICE CG127, why is bendroflumethiazide potentially inappropriate for this patient?",
+    "options": {
+      "A": "Thiazide diuretics are first-line for hypertension in all patients — no concern with gout",
+      "B": "Thiazide and thiazide-like diuretics increase serum uric acid levels by reducing renal urate excretion — they can precipitate and worsen gout attacks. Per NICE CG127 (Hypertension in adults) and NICE CKS on gout: thiazides should be used with caution in patients with a history of gout. Alternative antihypertensives: amlodipine (first-line calcium channel blocker), ramipril (ACE inhibitor), losartan (ARB — losartan is unique among ARBs as it is uricosuric and may actually reduce uric acid levels, making it preferable in hypertension + gout)",
+      "C": "Bendroflumethiazide is contraindicated in gout — it must never be used",
+      "D": "Allopurinol completely neutralises the uric acid-raising effect of thiazides",
+      "E": "Thiazides are contraindicated in hypertension — ACE inhibitors are always first-line"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Thiazide diuretics (bendroflumethiazide, hydrochlorothiazide, indapamide) increase serum uric acid by: reducing renal urate excretion (competing with urate for tubular secretion) and causing volume depletion (enhancing proximal tubule urate reabsorption). In a patient with established gout, thiazides can precipitate acute attacks and worsen hyperuricaemia. Per NICE NG136 (Hypertension) and NICE CKS gout: thiazides are listed as a medication that raises uric acid and can exacerbate gout. Preferred antihypertensive in gout: losartan (ARB) has a unique uricosuric property — it increases renal urate excretion, actually lowering serum uric acid. For a patient with both hypertension and gout: losartan is a particularly advantageous choice — it treats hypertension AND reduces urate levels. Allopurinol reduces urate production but does not fully neutralise the uricosuric effect of thiazides.",
+      "A": "Incorrect — Thiazides are cautioned in gout and should be used carefully — they are not first-line in patients with gout.",
+      "B": "CORRECT — Thiazides worsen gout by raising uric acid. Consider losartan (uricosuric ARB) as preferred antihypertensive in gout per NICE CKS/CG127.",
+      "C": "Incorrect — Thiazides are not absolutely contraindicated in gout — they are used with caution, but alternatives are preferred.",
+      "D": "Incorrect — Allopurinol reduces urate production but does not fully counteract the uricosuric effect of thiazides on gout attacks.",
+      "E": "Incorrect — Thiazides ARE used in hypertension (NICE NG136 includes them as a treatment option). The issue is their effect in gout specifically."
+    },
+    "reference": "NICE NG136 — Hypertension in adults. NICE CKS — Gout. https://www.nice.org.uk/guidance/ng136",
+    "tags": ["thiazide diuretics", "gout", "uric acid", "losartan uricosuric", "NICE NG136", "drug interaction"]
+  },
+  {
+    "id": "QG-PHARM-012-001",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Pharmacology & Prescribing",
+    "difficulty": "Hard",
+    "question": "A 48-year-old woman with bipolar disorder on lithium 400mg twice daily is started on an NSAID (ibuprofen 400mg three times daily) by another GP for a musculoskeletal flare. Three weeks later she presents with coarse tremor, confusion, vomiting and ataxia. Her lithium level is 2.3 mmol/L. Per BNF and MHRA, what has occurred and what is the acute management?",
+    "options": {
+      "A": "Lithium toxicity from NSAID-lithium interaction — NSAIDs reduce renal prostaglandin synthesis → reduce renal blood flow → reduce lithium excretion → lithium accumulates. Stop ibuprofen and lithium immediately, urgent hospital admission, ECG, recheck lithium level, consider haemodialysis if level >3.5 mmol/L or severe symptoms",
+      "B": "Benign essential tremor — reassure and continue medications",
+      "C": "Viral encephalitis — refer to neurology",
+      "D": "This is a normal lithium level — continue all medications",
+      "E": "Stop lithium permanently — restart only when ibuprofen course is completed"
+    },
+    "correct_answer": "A",
+    "explanation": {
+      "correct": "NSAID-lithium interaction — a well-known, potentially life-threatening drug interaction documented in the BNF and MHRA safety alerts. Mechanism: NSAIDs inhibit cyclo-oxygenase → reduce prostaglandin synthesis → reduce renal afferent arteriolar dilation → reduce renal blood flow and GFR → reduced renal lithium clearance → lithium accumulation. Lithium level 2.3 mmol/L (therapeutic range 0.6-1.0 mmol/L) represents significant toxicity. Clinical features of lithium toxicity: coarse tremor (early), vomiting, diarrhoea, confusion (moderate-severe), ataxia, slurred speech (severe), seizures, cardiac arrhythmias, coma (life-threatening). Management: stop lithium AND ibuprofen immediately; urgent hospital admission; ECG (arrhythmia risk); volume status assessment and IV fluids; repeat lithium levels; consider haemodialysis if level >3.5 mmol/L or life-threatening symptoms (lithium is dialysable). Other medications that increase lithium levels: ACE inhibitors, thiazide diuretics, spironolactone.",
+      "A": "CORRECT — NSAID-lithium interaction: reduced renal excretion → toxicity (level 2.3). Stop both drugs + urgent admission + ECG + consider haemodialysis if level >3.5 per BNF.",
+      "B": "Incorrect — A lithium level of 2.3 with confusion and vomiting is a medical emergency — not benign essential tremor.",
+      "C": "Incorrect — The clinical picture is classic lithium toxicity in the context of a known drug interaction — not viral encephalitis.",
+      "D": "Incorrect — Level 2.3 mmol/L is significantly above the therapeutic range (0.6-1.0 mmol/L).",
+      "E": "Incorrect — Restarting lithium after ibuprofen without careful dose review and monitoring is unsafe — this needs specialist management."
+    },
+    "reference": "BNF — Lithium-NSAID interaction. MHRA — Lithium safety. https://bnf.nice.org.uk/interaction/lithium.html",
+    "tags": ["lithium toxicity", "NSAID interaction", "renal prostaglandins", "haemodialysis", "BNF", "MHRA"]
+  },
+  {
+    "id": "QG-PHARM-013-001",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Pharmacology & Prescribing",
+    "difficulty": "Medium",
+    "question": "A GP is prescribing ramipril 5mg for a 60-year-old man with heart failure. He is already taking potassium supplements for hypokalaemia secondary to furosemide. Three weeks later his potassium is 6.5 mmol/L. Per NICE NG106 and BNF, what has happened and what should the GP do?",
+    "options": {
+      "A": "Continue all medications — K+ 6.5 is within normal limits",
+      "B": "Hyperkalaemia from ACE inhibitor (ramipril) combined with potassium supplementation — ACE inhibitors reduce aldosterone production → reduce renal potassium excretion → increase serum potassium. When combined with concurrent potassium supplementation (previously required to counteract furosemide-induced hypokalaemia), dangerous hyperkalaemia can result. Management: stop potassium supplements immediately (furosemide-induced hypokalaemia often resolves once ACE inhibitor is added — ACE inhibitors and furosemide frequently balance each other's potassium effects in heart failure). Recheck K+ within 1 week. If still elevated: review ramipril dose and consider reducing. K+ 6.5 is dangerous — urgent ECG to exclude peaked T waves and consider hospital admission if ECG changes",
+      "C": "Stop ramipril immediately — ACE inhibitors are contraindicated in heart failure",
+      "D": "Increase potassium supplements to 40mmol daily",
+      "E": "Add spironolactone to counteract the hyperkalaemia"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "This is a classic prescribing pitfall in heart failure management. Furosemide causes hypokalaemia → potassium supplements prescribed. When ACE inhibitor (ramipril) is added: ACE inhibitor reduces aldosterone → reduces K+ excretion → serum K+ rises. The patient now has: (1) ACE inhibitor-mediated K+ retention + (2) ongoing K+ supplementation → dangerous hyperkalaemia. The furosemide and ACE inhibitor frequently balance each other's potassium effects in heart failure — potassium supplementation may no longer be needed once ACE inhibitor is started. Management: stop potassium supplements; recheck K+ in 1 week; if K+ 6.5 with possible ECG changes (peaked T waves, PR prolongation) → urgent review, consider hospital admission, consider calcium gluconate if ECG changes present; do NOT stop ACE inhibitor (central to heart failure treatment per NICE NG106) unless absolutely necessary. Spironolactone would worsen the hyperkalaemia further.",
+      "A": "Incorrect — K+ 6.5 mmol/L is significantly hyperkalaemic — normal range is 3.5-5.0 mmol/L. Immediate action required.",
+      "B": "CORRECT — Stop potassium supplements (redundant once ACE inhibitor added). Urgent ECG + recheck K+. ACE inhibitor + furosemide balance K+ per NICE NG106.",
+      "C": "Incorrect — ACE inhibitors are a cornerstone of heart failure treatment per NICE NG106. They should not be stopped — the potassium supplements should be stopped first.",
+      "D": "Incorrect — Increasing potassium supplements in the context of hyperkalaemia would be immediately life-threatening.",
+      "E": "Incorrect — Spironolactone is potassium-sparing — adding it with K+ 6.5 would cause potentially fatal hyperkalaemia."
+    },
+    "reference": "NICE NG106 — Chronic heart failure. BNF — Ramipril. https://www.nice.org.uk/guidance/ng106",
+    "tags": ["hyperkalaemia", "ACE inhibitor", "potassium supplements", "heart failure", "NICE NG106", "furosemide balance"]
+  },
+  {
+    "id": "QG-PHARM-014-001",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Pharmacology & Prescribing",
+    "difficulty": "Easy",
+    "question": "A 30-year-old woman is prescribed oral tetracycline (doxycycline) for acne. She is also taking ferrous sulphate for iron deficiency anaemia. Per BNF, does she need any advice about how to take these medications?",
+    "options": {
+      "A": "Take both medications together at the same time for convenience",
+      "B": "Doxycycline and iron (ferrous sulphate) must NOT be taken simultaneously — divalent metal ions (iron, calcium, magnesium, zinc, aluminium) form insoluble chelate complexes with tetracyclines, reducing tetracycline absorption by up to 90%. Advise: take doxycycline at least 2-3 hours before or 4-6 hours after iron supplementation. Similarly: avoid calcium-containing foods (milk, dairy), antacids and mineral supplements within 2-3 hours of doxycycline",
+      "C": "Take iron in the morning and doxycycline at night — this timing difference is sufficient",
+      "D": "Stop iron supplementation until the acne course is completed",
+      "E": "Take doxycycline with a glass of milk to reduce gastric irritation"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Tetracycline-metal ion chelation: a class-effect pharmacokinetic interaction. Divalent metal cations (Fe2+, Ca2+, Mg2+, Zn2+, Al3+) form insoluble chelate complexes with tetracyclines (doxycycline, tetracycline, minocycline) in the GI tract. These complexes are poorly absorbed → dramatically reduced tetracycline bioavailability (up to 90% reduction with iron co-administration). Clinical implications: (1) Subtherapeutic tetracycline levels → treatment failure; (2) Both medications may have reduced absorption (iron chelates). Advice: separate tetracycline and iron/dairy/antacids by minimum 2-3 hours (BNF recommends 2 hours before or 4-6 hours after). Taking doxycycline with milk is WRONG — dairy products contain calcium which causes the same chelation. Doxycycline should be taken with plenty of plain water and the patient should remain upright for 30 minutes (oesophageal irritation risk — less than alendronate but still relevant).",
+      "A": "Incorrect — Simultaneous administration causes chelation complex formation → reduced absorption of both drugs.",
+      "B": "CORRECT — Separate doxycycline from iron/dairy/antacids by at least 2-3 hours before or 4-6 hours after per BNF.",
+      "C": "Incorrect — Morning vs night timing separation may not provide the required 4-6 hour buffer depending on timing of each dose.",
+      "D": "Incorrect — Stopping iron supplementation unnecessarily in a patient with iron deficiency is inappropriate — timing separation is sufficient.",
+      "E": "Incorrect — Milk (calcium) causes the same chelation as iron — doxycycline must be taken with plain water, not milk."
+    },
+    "reference": "BNF — Drug interactions: Tetracyclines and divalent cations. https://bnf.nice.org.uk/interaction/doxycycline.html",
+    "tags": ["doxycycline iron interaction", "chelation", "tetracycline", "BNF", "timing separation", "absorption"]
+  },
+  {
+    "id": "QG-PHARM-015-001",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Pharmacology & Prescribing",
+    "difficulty": "Medium",
+    "question": "A GP receives an urgent alert from the MHRA via the Central Alerting System about a new drug safety concern with one of their common prescriptions. Per the NHS CAS (Central Alerting System) and MHRA processes, what is the GP's obligation upon receiving a Drug Safety Update (DSU) or Patient Safety Alert?",
+    "options": {
+      "A": "Drug Safety Updates are optional reading — GPs can choose to act on them at their discretion",
+      "B": "MHRA Drug Safety Updates (DSUs) and Patient Safety Alerts represent updated prescribing evidence and regulatory guidance. GPs have a professional and contractual obligation to: read and act on relevant DSUs/alerts; implement recommended changes to prescribing practice within the specified timeframe; update affected patients where necessary; document actions taken. Failure to act on MHRA guidance could constitute below-standard prescribing. Critical alerts (e.g., Never Events, Class 1 warnings) require immediate action",
+      "C": "DSUs are guidelines not regulations — they can be followed or not at the GP's clinical discretion",
+      "D": "Only hospital pharmacists need to act on MHRA Drug Safety Updates",
+      "E": "DSUs are automatically implemented by the GP practice IT system — no GP action is required"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "MHRA Drug Safety Updates and Patient Safety Alerts: the MHRA (Medicines and Healthcare products Regulatory Agency) issues ongoing drug safety communications including: (1) Drug Safety Updates (DSUs) — monthly publication with updated prescribing advice; (2) Patient Safety Alerts — time-sensitive communications requiring action; (3) Medicines safety communications — specific drug warnings. Per GMC Good Medical Practice 2024 (Domain 2 — Safety and quality) and NHS Standard Contract: healthcare professionals must keep their prescribing practice up to date with regulatory guidance; implement MHRA safety recommendations; Patient Safety Alerts issued via the Central Alerting System (CAS) require timely acknowledgment and documented action. Critical Class 1 Alerts (e.g., methotrexate daily dosing, sodium valproate PPP) require immediate practice-level action with documentation. GPs cannot choose to ignore regulatory guidance — this constitutes below-standard practice.",
+      "A": "Incorrect — MHRA guidance is regulatory and professional guidance — it is not optional reading.",
+      "B": "CORRECT — Professional and contractual obligation to act on MHRA DSUs and Patient Safety Alerts. Document actions taken per GMC Good Medical Practice.",
+      "C": "Incorrect — MHRA DSUs represent updated evidence-based regulatory guidance — ignoring them risks below-standard prescribing and professional consequences.",
+      "D": "Incorrect — GPs and all prescribers are responsible for acting on MHRA safety communications relating to their prescribing practice.",
+      "E": "Incorrect — IT systems may assist implementation but cannot replace clinical action and professional accountability."
+    },
+    "reference": "MHRA — Drug Safety Updates. GMC Good Medical Practice 2024. NHS Central Alerting System. https://www.gov.uk/drug-safety-update",
+    "tags": ["MHRA", "Drug Safety Update", "Patient Safety Alert", "GMC Good Medical Practice", "CAS", "prescribing obligation"]
+  }
+]

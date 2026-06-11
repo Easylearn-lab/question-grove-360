@@ -1,0 +1,210 @@
+[
+  {
+    "id": "QG-B2-MSK-005-001",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Musculoskeletal",
+    "difficulty": "Easy",
+    "question": "A 65-year-old woman presents with her right index finger locking in a flexed position. She reports a nodule on the palm at the base of the finger and that she can manually straighten the finger with a 'click'. Per NICE CKS, what is the diagnosis and management?",
+    "options": {
+      "A": "Boutonnière deformity — splinting and rheumatology referral",
+      "B": "Trigger finger (stenosing tenosynovitis) — thickening of the flexor tendon sheath traps the tendon nodule preventing smooth gliding; first-line: corticosteroid injection into the flexor tendon sheath (80% success rate); surgical release if injection fails",
+      "C": "Dupuytren's contracture — progressive fibrosis of the palmar fascia",
+      "D": "Mallet finger — extensor tendon rupture at the DIP joint",
+      "E": "Rheumatoid arthritis — anti-CCP and urgent rheumatology referral"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Trigger finger (stenosing tenosynovitis): fibrotic thickening of the A1 pulley at the MCP joint level traps a nodule on the flexor tendon, preventing smooth tendon gliding. Classic features: palpable nodule at base of finger on palm (A1 pulley level), locking/triggering in flexion with or without audible/palpable click on extension, can be corrected manually. Per NICE CKS: first-line treatment is corticosteroid injection into the flexor tendon sheath — 60-80% success rate. If injection fails (repeat injection after 3-6 months or refer to hand surgery for A1 pulley release). Boutonnière deformity: PIP flexion + DIP hyperextension from central slip injury — different deformity. Dupuytren's: palmar fibrotic cords causing progressive MCP/PIP flexion — no clicking.",
+      "A": "Incorrect — Boutonnière deformity shows fixed PIP flexion and DIP hyperextension from central slip rupture — no triggering or palpable nodule.",
+      "B": "CORRECT — Trigger finger: palpable nodule + locking flexion correctable manually = stenosing tenosynovitis. First-line: corticosteroid injection per NICE CKS.",
+      "C": "Incorrect — Dupuytren's contracture causes progressive palmar cord fibrosis with fixed flexion contracture — no triggering phenomenon.",
+      "D": "Incorrect — Mallet finger affects the DIP joint causing inability to extend the distal phalanx — no palmar nodule.",
+      "E": "Incorrect — RA causes symmetrical small joint synovitis without the characteristic triggering and palmar nodule."
+    },
+    "reference": "NICE CKS — Trigger finger. https://cks.nice.org.uk/topics/trigger-finger/",
+    "tags": ["trigger finger", "stenosing tenosynovitis", "corticosteroid injection", "A1 pulley", "NICE CKS", "palmar nodule"]
+  },
+  {
+    "id": "QG-B2-MSK-005-002",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Musculoskeletal",
+    "difficulty": "Medium",
+    "question": "A 70-year-old woman with known osteoporosis on alendronate 70mg weekly presents with right hip pain after bending down to pick up a light object. X-ray shows a femoral neck fracture with no significant preceding trauma. Per NICE CG146, what is this injury termed and what is the most important immediate management?",
+    "options": {
+      "A": "Stress fracture — physiotherapy and rest for 6 weeks",
+      "B": "Osteoporotic (fragility) fracture — results from low-energy trauma (forces that would not normally cause fracture); requires immediate orthopaedic assessment and surgical fixation (hemiarthroplasty or total hip replacement for displaced femoral neck fractures); post-fracture assessment: review and optimise bone-protective treatment, commence bone-protection medications if not already on them, consider falls prevention assessment",
+      "C": "Pathological fracture from malignancy — bone scan and oncology referral",
+      "D": "Normal age-related hip pain — analgesics and physiotherapy",
+      "E": "Hip labral tear — MRI arthrogram"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Fragility (osteoporotic) fracture: a fracture occurring from low-energy trauma (falling from standing height or less). The hip fracture in this context is a fragility fracture consistent with severe osteoporosis. Per NICE CG146 (Fractures: diagnosis and management) and NICE NG187: (1) Immediate surgical repair — most femoral neck fractures require surgical fixation within 36-48 hours (National Hip Fracture Database target: within 36 hours); displaced femoral neck fracture: hemiarthroplasty or THA; undisplaced or intertrochanteric: dynamic hip screw or intramedullary nail; (2) Secondary fracture prevention: ensure bone protection medications are optimised (bisphosphonate, denosumab); calcium and vitamin D supplementation; (3) Falls risk assessment: medication review, physiotherapy, occupational therapy; (4) Every hip fracture patient should be assessed with FRAX and considered for DXA.",
+      "A": "Incorrect — A fracture after minimal trauma in an osteoporotic patient requires immediate orthopaedic assessment — not conservative management.",
+      "B": "CORRECT — Osteoporotic fragility fracture: immediate orthopaedic assessment + surgical fixation + secondary fracture prevention per NICE CG146.",
+      "C": "Incorrect — While pathological fractures from malignancy occur, the clinical context (known osteoporosis on alendronate + bending trauma) points to osteoporotic fracture.",
+      "D": "Incorrect — An X-ray-confirmed femoral neck fracture requires orthopaedic management — analgesics and physiotherapy alone are inadequate.",
+      "E": "Incorrect — Hip labral tear is diagnosed by MRI and does not show on X-ray as a fracture."
+    },
+    "reference": "NICE CG146 — Hip fracture management. NICE NG187. https://www.nice.org.uk/guidance/cg124",
+    "tags": ["fragility fracture", "hip fracture", "osteoporosis", "surgical fixation", "NICE CG146", "secondary prevention"]
+  },
+  {
+    "id": "QG-B2-MSK-005-003",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Musculoskeletal",
+    "difficulty": "Hard",
+    "question": "A 65-year-old woman on long-term alendronate has been on a bisphosphonate for 10 years. She presents with a spontaneous aching mid-shaft femoral pain. X-ray shows a focal cortical thickening with a transverse lucent line. Per MHRA guidance and NICE, what complication is this and what action should be taken?",
+    "options": {
+      "A": "Osteoarthritis of the hip — physiotherapy",
+      "B": "Atypical femoral fracture (AFF) — a rare but serious adverse effect of long-term bisphosphonate use (>3-5 years); characterised by prodromal thigh/groin aching, transverse fracture pattern in subtrochanteric/diaphyseal region, bilateral in 30-50%; management: stop bisphosphonate immediately, orthopaedic assessment for prophylactic intramedullary nailing (prevents complete fracture), assess contralateral femur for similar changes",
+      "C": "Metastatic bone disease — urgent oncology referral",
+      "D": "Paget's disease of bone — refer to bone specialist",
+      "E": "Stress fracture from exercise — rest and analgesics"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Atypical femoral fractures (AFF): a rare but well-documented adverse effect of long-term bisphosphonate use (risk increases with duration >3-5 years). Mechanism: bisphosphonates suppress bone remodelling → accumulation of microdamage → stress fracture. Features: prodromal dull aching in thigh or groin (weeks to months before fracture); X-ray: transverse fracture line with endosteal and periosteal thickening ('beaking') in lateral cortex; subtrochanteric or diaphyseal location; may be bilateral. Per MHRA Drug Safety Update and NICE: stop bisphosphonate; orthopaedic assessment for prophylactic intramedullary nailing (prevent complete fracture, which is very difficult to repair); assess and X-ray the contralateral femur (30-50% bilateral); consider alternative bone protection (denosumab, romosozumab); drug holiday after 5 years of bisphosphonate use is appropriate for lower-risk patients.",
+      "A": "Incorrect — Osteoarthritis does not cause cortical thickening with a transverse lucent line in the femoral shaft.",
+      "B": "CORRECT — Atypical femoral fracture: long-term bisphosphonate complication. Stop drug + orthopaedic assessment + assess contralateral femur per MHRA/NICE.",
+      "C": "Incorrect — Metastatic disease causes lytic or sclerotic lesions with a different pattern — not the typical transverse beaking of AFF.",
+      "D": "Incorrect — Paget's disease causes bone expansion and trabecular changes — not this specific pattern.",
+      "E": "Incorrect — Typical stress fractures from exercise occur in different locations (metatarsals, tibia) without the bisphosphonate history or beaking pattern."
+    },
+    "reference": "MHRA Drug Safety Update — Bisphosphonates: atypical femoral fractures. https://www.gov.uk/drug-safety-update",
+    "tags": ["atypical femoral fracture", "bisphosphonate", "long-term", "MHRA", "stop alendronate", "intramedullary nail"]
+  },
+  {
+    "id": "QG-B2-MSK-061-001",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Musculoskeletal",
+    "difficulty": "Easy",
+    "question": "A 14-year-old boy who plays football presents with anterior knee pain and swelling just below the kneecap, worse with running and jumping and better with rest. He is still able to play but has discomfort. On examination there is tenderness and swelling over the tibial tuberosity. Per NICE CKS, what is the diagnosis and management?",
+    "options": {
+      "A": "Anterior cruciate ligament tear — MRI knee and physiotherapy",
+      "B": "Osgood-Schlatter disease — traction apophysitis of the tibial tuberosity in adolescents during growth spurts; management: reassure that it is self-limiting (resolves when growth plates fuse at skeletal maturity ~16-18 years), relative rest from pain-provoking activities, ice, analgesics (NSAIDs/paracetamol), quadriceps stretching exercises",
+      "C": "Septic arthritis — admit for joint washout",
+      "D": "Patellar fracture — X-ray and orthopaedic referral",
+      "E": "Patellofemoral pain syndrome — physiotherapy and bracing"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Osgood-Schlatter disease: the most common cause of knee pain in active adolescents aged 10-15 years. Mechanism: during rapid growth spurts, the quadriceps pull on the immature tibial tuberosity apophysis (growth plate) via the patellar tendon — causing traction apophysitis. Classic features: anterior knee pain at the tibial tuberosity (below kneecap, not at the joint line), worse with activity (running, jumping, kneeling), better with rest, tender swelling at the tibial tuberosity, typically unilateral but 30% bilateral. Per NICE CKS: management is conservative — reassurance (self-limiting condition that resolves at skeletal maturity), relative rest, NSAIDs/ice for pain, quadriceps and hamstring stretching. Only <1% require surgical management (excision of ossicle). Parents and patient can be reassured that continuing sport is acceptable if pain is tolerable.",
+      "A": "Incorrect — ACL tears present with acute injury mechanism (pivot/landing), knee effusion and positive Lachman/anterior drawer tests — not tibial tuberosity tenderness.",
+      "B": "CORRECT — Osgood-Schlatter: tibial tuberosity tenderness in adolescent during growth spurt. Reassure + relative rest + NSAIDs + stretching per NICE CKS.",
+      "C": "Incorrect — Septic arthritis causes fever, hot swollen joint with very limited range of movement — a different presentation.",
+      "D": "Incorrect — Patellar fracture is an acute traumatic injury — not a gradual onset activity-related condition.",
+      "E": "Incorrect — Patellofemoral pain syndrome (runner's knee) causes peripatellar pain with no tibial tuberosity swelling."
+    },
+    "reference": "NICE CKS — Osgood-Schlatter disease. https://cks.nice.org.uk/topics/osgood-schlatter-disease/",
+    "tags": ["Osgood-Schlatter", "tibial tuberosity", "adolescent", "traction apophysitis", "NICE CKS", "self-limiting"]
+  },
+  {
+    "id": "QG-B2-MSK-062-001",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Musculoskeletal",
+    "difficulty": "Medium",
+    "question": "A 55-year-old man has blood tests showing calcium 2.02 mmol/L (low), phosphate 0.65 mmol/L (low) and ALP 412 U/L (raised). He has bone pain and muscle weakness. He works night shifts and rarely goes outside. Per NICE CKS, what is the most likely diagnosis and next investigation?",
+    "options": {
+      "A": "Primary hyperparathyroidism — measure PTH",
+      "B": "Osteomalacia (adult form of rickets) — caused by vitamin D deficiency; low calcium, low phosphate, raised ALP (unmineralised osteoid); next investigation: serum 25-hydroxyvitamin D [25(OH)D] level to confirm vitamin D deficiency; treatment: vitamin D3 supplementation (colecalciferol)",
+      "C": "Paget's disease of bone — normal calcium with raised ALP",
+      "D": "Multiple myeloma — check serum protein electrophoresis",
+      "E": "Chronic kidney disease — check eGFR and parathyroid hormone"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Osteomalacia (adult vitamin D deficiency): inadequate mineralisation of osteoid matrix due to vitamin D deficiency. Biochemical pattern: low/normal calcium, low phosphate, markedly raised ALP (from osteoblastic activity trying to mineralise bone), raised PTH (secondary hyperparathyroidism compensating for low calcium). Symptoms: diffuse bone pain, muscle weakness, proximal myopathy, waddling gait, Looser's zones on X-ray (pseudofractures). Risk factors: limited sun exposure (night shift workers, housebound, covered clothing), malabsorption, CKD. Next investigation: serum 25-hydroxyvitamin D [25(OH)D] level. Per NICE CKS: deficiency = <25 nmol/L; insufficiency = 25-50 nmol/L. Treatment: loading dose of vitamin D3 (colecalciferol 300,000 IU in divided doses) then maintenance supplementation.",
+      "A": "Incorrect — Primary hyperparathyroidism causes HIGH calcium with normal/low phosphate — not low calcium.",
+      "B": "CORRECT — Osteomalacia: low Ca, low PO4, high ALP + vitamin D deficient lifestyle. Check serum 25(OH)D per NICE CKS.",
+      "C": "Incorrect — Paget's disease causes raised ALP with NORMAL calcium and phosphate — not low calcium/phosphate.",
+      "D": "Incorrect — Multiple myeloma causes lytic bone lesions with normal/low calcium but raised protein on electrophoresis — different biochemistry.",
+      "E": "Incorrect — CKD causes low calcium and high phosphate (not low phosphate) due to impaired phosphate excretion."
+    },
+    "reference": "NICE CKS — Osteomalacia. https://cks.nice.org.uk/topics/vitamin-d-deficiency-in-adults/",
+    "tags": ["osteomalacia", "vitamin D deficiency", "low calcium phosphate high ALP", "25-hydroxyvitamin D", "NICE CKS", "colecalciferol"]
+  },
+  {
+    "id": "QG-B2-MSK-160-001",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Musculoskeletal",
+    "difficulty": "Medium",
+    "question": "A 55-year-old woman is on prednisolone 7.5mg daily for polymyalgia rheumatica. Per NICE NG187 and Royal Osteoporosis Society guidance, which risk factor would prompt formal FRAX calculation and consideration of bone protection?",
+    "options": {
+      "A": "Taking prednisolone <3 months — short course steroids do not require bone protection",
+      "B": "Family history of hip fracture — a FRAX risk factor that, combined with glucocorticoid use (prednisolone ≥7.5mg/day for ≥3 months), significantly elevates fracture risk and should trigger FRAX assessment and consideration of bisphosphonate + calcium/vitamin D supplementation",
+      "C": "No risk factors are needed — all patients on prednisolone require bisphosphonate immediately",
+      "D": "Only post-menopausal women require bone protection assessment on steroids",
+      "E": "Family history of hip fracture is not included in the FRAX tool"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per NICE NG187 and ROS guidance on glucocorticoid-induced osteoporosis (GIOP): all patients starting prednisolone ≥7.5mg/day for ≥3 months should be assessed for fracture risk using FRAX and offered bone protection. FRAX variables include: prior fragility fracture (strongest), parental hip fracture, age, sex, BMI, current smoking, alcohol use, rheumatoid arthritis, secondary osteoporosis, and glucocorticoid use. A family history of hip fracture is incorporated into FRAX as 'parental hip fracture' — it significantly increases fracture risk prediction. For patients on glucocorticoids with FRAX score above intervention threshold (per ROS): bisphosphonate (alendronate first-line) + calcium and vitamin D supplementation. DEXA scanning recommended to refine risk assessment.",
+      "A": "Incorrect — Prednisolone ≥7.5mg for ≥3 months is the threshold for bone protection assessment — short courses <3 months are lower risk but long-term (PMR patients take steroids for years) definitely require assessment.",
+      "B": "CORRECT — Family history of hip fracture (parental hip fracture in FRAX) combined with glucocorticoid use elevates risk and triggers bone protection assessment per NICE NG187/ROS.",
+      "C": "Incorrect — Not all patients require bisphosphonate automatically — FRAX-based assessment determines who needs pharmacological bone protection.",
+      "D": "Incorrect — Men on long-term glucocorticoids also require FRAX assessment and bone protection.",
+      "E": "Incorrect — Parental hip fracture is specifically included in the FRAX tool as one of the 10 clinical risk factors."
+    },
+    "reference": "NICE NG187. Royal Osteoporosis Society — GIOP guidance. https://www.nice.org.uk/guidance/ng187",
+    "tags": ["glucocorticoid osteoporosis", "FRAX", "family history hip fracture", "bisphosphonate", "NICE NG187", "ROS"]
+  },
+  {
+    "id": "QG-B2-MSK-191-001",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Musculoskeletal",
+    "difficulty": "Medium",
+    "question": "A 72-year-old woman presents with severe temporal headache, jaw pain when chewing and scalp tenderness. She has had bilateral shoulder girdle aching for 3 months. ESR is 88 mm/hr and CRP is 62 mg/L. Per NICE CKS and BSR GCA guidelines, what is the immediate management?",
+    "options": {
+      "A": "Start prednisolone 15mg daily — same as PMR",
+      "B": "Start high-dose prednisolone 40-60mg immediately without waiting for temporal artery biopsy — clinical diagnosis of GCA; jaw claudication indicates high-risk of visual loss; arrange temporal artery biopsy within 7-14 days (steroids do not affect biopsy results for up to 4 weeks); urgent ophthalmology if any visual symptoms",
+      "C": "Arrange temporal artery biopsy first — do not start steroids until histological confirmation",
+      "D": "Start aspirin 75mg — first-line for GCA",
+      "E": "Refer to rheumatology and await appointment before starting treatment"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per NICE CKS and BSR GCA guidelines, giant cell arteritis with jaw claudication (highly specific for GCA) requires immediate high-dose corticosteroid treatment. Do NOT delay steroids waiting for biopsy: temporal artery biopsy results remain positive for up to 4-6 weeks on steroids; visual loss from GCA can occur within hours. Starting dose: 40-60mg prednisolone daily for GCA without visual symptoms; IV methylprednisolone 500mg-1g for established visual loss. Temporal artery biopsy: arrange within 7-14 days of starting steroids; false-negative rate 20-40% (skip lesions). Tocilizumab (NICE TA518): approved for relapsing/refractory GCA as a steroid-sparing agent. PMR and GCA coexist in 15-20% of patients — PMR alone: 15mg prednisolone; GCA: 40-60mg.",
+      "A": "Incorrect — 15mg prednisolone is the GCA dose for PMR alone — GCA with jaw claudication requires 40-60mg to prevent visual loss.",
+      "B": "CORRECT — Start prednisolone 40-60mg immediately for GCA — do not wait for biopsy (arrange within 7-14 days per BSR/NICE CKS).",
+      "C": "Incorrect — Delaying steroids to wait for biopsy risks irreversible visual loss — treat first, biopsy within 2 weeks.",
+      "D": "Incorrect — Aspirin 75mg is not the primary treatment for GCA — corticosteroids are mandatory.",
+      "E": "Incorrect — Awaiting rheumatology appointment before treating GCA is dangerous — treatment delay risks blindness."
+    },
+    "reference": "BSR — GCA guidelines. NICE CKS — Giant cell arteritis. NICE TA518. https://cks.nice.org.uk/topics/giant-cell-arteritis/",
+    "tags": ["giant cell arteritis", "GCA", "prednisolone 40-60mg", "jaw claudication", "temporal artery biopsy", "NICE CKS"]
+  },
+  {
+    "id": "QG-B2-MSK-191-002",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Musculoskeletal",
+    "difficulty": "Hard",
+    "question": "A 68-year-old woman is on prednisolone 40mg daily for GCA. After 6 weeks she relapses with headache recurrence. Per NICE CKS and NICE TA518, what treatment option is now available?",
+    "options": {
+      "A": "Increase prednisolone to 80mg — double the dose for relapse",
+      "B": "Tocilizumab (IL-6 receptor inhibitor) — NICE TA518 approves tocilizumab subcutaneously for relapsing or refractory GCA as an adjunct to steroids (not replacement); reduces relapse rate and allows steroid tapering; significant adverse effects: serious infections, neutropaenia — requires monitoring",
+      "C": "Switch to methotrexate — first-choice steroid-sparing agent for GCA relapse",
+      "D": "Stop prednisolone and manage symptomatically",
+      "E": "Long-term prednisolone 40mg indefinitely — no other treatment available"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per NICE TA518 (Tocilizumab for treating giant cell arteritis), tocilizumab (TCZ) subcutaneous 162mg weekly is approved for adults with relapsing or refractory GCA alongside a tapering course of glucocorticoids. GIACTA trial evidence: TCZ combined with 26-week prednisolone taper achieved sustained remission at 52 weeks in 56% vs 14% with 26-week prednisolone alone. TCZ allows significant steroid dose reduction (important to reduce steroid-related adverse effects in GCA — patients may be on steroids for 2+ years). Monitoring: FBC (neutropaenia), LFTs (hepatotoxicity), lipid profile, infection screening. Contraindications: active serious infection. Also note: NICE TA518 specifies that tocilizumab should only be used if at least one relapse has occurred — not for first-line uncomplicated GCA.",
+      "A": "Incorrect — Doubling prednisolone is not the standard approach for GCA relapse — tocilizumab is now NICE-approved.",
+      "B": "CORRECT — Tocilizumab SC 162mg weekly for relapsing GCA per NICE TA518.",
+      "C": "Incorrect — Methotrexate has some evidence as a steroid-sparing agent in GCA but is not NICE-approved as first-line for GCA relapse.",
+      "D": "Incorrect — Stopping prednisolone without immunosuppression in active GCA risks catastrophic visual loss.",
+      "E": "Incorrect — Long-term high-dose prednisolone causes significant cumulative harm — NICE TA518 specifically provides a steroid-sparing alternative."
+    },
+    "reference": "NICE TA518 — Tocilizumab for giant cell arteritis. https://www.nice.org.uk/guidance/ta518",
+    "tags": ["GCA relapse", "tocilizumab", "NICE TA518", "IL-6 inhibitor", "steroid-sparing", "GIACTA trial"]
+  }
+]

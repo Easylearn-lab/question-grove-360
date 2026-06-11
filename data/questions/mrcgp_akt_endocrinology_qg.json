@@ -1,1362 +1,288 @@
 [
   {
-    "id": "QG-ENDO-010-001",
+    "id": "QG-B2-ENDO-004-001",
     "exam": "MRCGP AKT",
     "domain": "Clinical Medicine",
     "specialty": "Endocrinology",
     "difficulty": "Medium",
-    "question": "A 32-year-old man with schizophrenia is started on olanzapine 10mg daily by his psychiatrist. He is registered with a GP for physical health monitoring. Per NICE CG178 and the Lester Tool, which set of monitoring parameters must be checked at baseline and then regularly after starting olanzapine?",
+    "question": "A 58-year-old man with type 2 diabetes is on insulin with an HbA1c of 52 mmol/mol. His urine ACR is 4.2 mg/mmol on two separate occasions 3 months apart. His BP is 138/86 mmHg. Per NICE NG28, what medication should be added to slow diabetic nephropathy progression?",
     "options": {
-      "A": "FBC and LFTs only — monthly for first 3 months",
-      "B": "Fasting glucose, HbA1c, fasting lipids, BMI/waist circumference, blood pressure, FBC — at baseline, 3 months, then annually",
-      "C": "Urine dipstick, eGFR and BP — 6-monthly",
-      "D": "Prolactin levels and ECG — baseline only",
-      "E": "Weight and blood pressure — annually"
+      "A": "Increase insulin dose only — HbA1c is the priority",
+      "B": "Lisinopril (ACE inhibitor) — first-line for diabetic nephropathy with microalbuminuria regardless of blood pressure; reduces intraglomerular pressure and urinary albumin excretion, slowing CKD progression",
+      "C": "Amlodipine — calcium channel blockers are first-line for renal protection in diabetes",
+      "D": "Bendroflumethiazide — diuretics are the best choice in diabetic kidney disease",
+      "E": "No additional medication — ACR 4.2 mg/mmol is within normal limits"
     },
     "correct_answer": "B",
     "explanation": {
-      "correct": "Olanzapine is a second-generation antipsychotic with the highest metabolic risk of any antipsychotic. Per NICE CG178 and the Lester UK Adaptation (physical health monitoring tool for people with serious mental illness), mandatory monitoring includes: fasting glucose/HbA1c (olanzapine causes insulin resistance and T2DM), fasting lipids (causes dyslipidaemia), BMI and waist circumference (causes significant weight gain), blood pressure, and FBC (for agranulocytosis, though less common than clozapine). Timing: baseline, at 3 months, then annually.",
-      "A": "Incorrect — FBC and LFTs alone are insufficient. Metabolic monitoring (glucose, lipids, BMI) is the primary concern with olanzapine.",
-      "B": "CORRECT — Fasting glucose/HbA1c + lipids + BMI/waist + BP + FBC at baseline, 3 months, annually per NICE CG178/Lester Tool.",
-      "C": "Incorrect — Renal function is not the primary monitoring requirement for olanzapine.",
-      "D": "Incorrect — Prolactin monitoring is relevant for risperidone/amisulpride (high prolactin-raising antipsychotics). Olanzapine raises prolactin less. ECG monitoring is for QTc prolongation — relevant but not the only parameter.",
-      "E": "Incorrect — Weight monitoring alone is grossly insufficient given the full metabolic risk profile of olanzapine."
+      "correct": "Per NICE NG28 (Type 2 diabetes in adults), ACE inhibitors or ARBs are the treatment of choice for diabetic nephropathy. An ACR of 3-30 mg/mmol represents microalbuminuria (A2 category per NICE NG203). In a diabetic patient with microalbuminuria, an ACE inhibitor (lisinopril, ramipril) or ARB (losartan, candesartan) should be started regardless of blood pressure — they provide specific renoprotective effects by reducing intraglomerular hypertension and albuminuria beyond just blood pressure lowering. Target BP in diabetes with CKD: <130/80 mmHg. An SGLT2 inhibitor (dapagliflozin) should also be considered per NICE NG28/NG203 to reduce CKD progression.",
+      "A": "Incorrect — HbA1c 52 mmol/mol is at target; the microalbuminuria requires specific renoprotection with an ACE inhibitor.",
+      "B": "CORRECT — ACE inhibitor (lisinopril) is first-line for diabetic nephropathy with microalbuminuria per NICE NG28 regardless of BP.",
+      "C": "Incorrect — Calcium channel blockers lower blood pressure but do not provide specific renoprotection against diabetic nephropathy.",
+      "D": "Incorrect — Thiazide diuretics are not first-line for renal protection in diabetic nephropathy.",
+      "E": "Incorrect — ACR 4.2 mg/mmol is in the A2 (microalbuminuria) category per NICE NG203 (A2 = 3-30 mg/mmol) — action is required."
     },
-    "reference": "NICE CG178 — Psychosis and schizophrenia in adults. Lester UK Adaptation tool. https://www.nice.org.uk/guidance/cg178",
-    "tags": [
-      "olanzapine",
-      "metabolic monitoring",
-      "antipsychotic",
-      "glucose",
-      "HbA1c",
-      "Lester Tool"
-    ],
-    "source": "Question Grove 360"
+    "reference": "NICE NG28 — Type 2 diabetes in adults. NICE NG203 — CKD. https://www.nice.org.uk/guidance/ng28",
+    "tags": ["diabetic nephropathy", "microalbuminuria", "lisinopril", "ACE inhibitor", "NICE NG28", "renal protection"]
   },
   {
-    "id": "QG-ENDO-010-002",
-    "exam": "MRCGP AKT",
-    "domain": "Clinical Medicine",
-    "specialty": "Endocrinology",
-    "difficulty": "Medium",
-    "question": "A 28-year-old woman has been on olanzapine 15mg daily for 6 months. Her 3-month bloods showed fasting glucose 5.8 mmol/L and BMI 28 (was 24 at baseline). At her annual review, fasting glucose is 7.2 mmol/L and HbA1c is 51 mmol/mol. BMI is now 34. What is the most appropriate management?",
-    "options": {
-      "A": "Continue olanzapine — glucose elevations are expected and do not require action",
-      "B": "Diagnose type 2 diabetes, start metformin, and discuss with psychiatrist about switching to a more metabolically neutral antipsychotic (e.g. aripiprazole or quetiapine)",
-      "C": "Stop olanzapine immediately and start aripiprazole without psychiatric input",
-      "D": "Start metformin only — antipsychotic change is too risky",
-      "E": "Refer to endocrinology and continue olanzapine unchanged"
-    },
-    "correct_answer": "B",
-    "explanation": {
-      "correct": "HbA1c 51 mmol/mol confirms type 2 diabetes diagnosis (≥48 mmol/mol). Fasting glucose 7.2 mmol/L also confirms diabetes (≥7.0 mmol/L). Per NICE NG28 (T2DM) and NICE CG178, management requires: diagnosing T2DM and starting metformin (first-line per NG28), AND discussing antipsychotic switch with the psychiatrist. Olanzapine is highly diabetogenic — switching to aripiprazole (weight-neutral, no metabolic effects) or quetiapine should be considered. Antipsychotic change must be done collaboratively with psychiatry to avoid psychosis relapse.",
-      "A": "Incorrect — Diabetes diagnosis requires treatment. Ignoring it risks serious macrovascular and microvascular complications.",
-      "B": "CORRECT — Diagnose T2DM, start metformin, discuss metabolically neutral antipsychotic switch with psychiatrist per NICE NG28/CG178.",
-      "C": "Incorrect — Stopping antipsychotic without psychiatrist input risks acute psychosis relapse.",
-      "D": "Incorrect — While antipsychotic change carries risks, it should be discussed and planned with psychiatry — not dismissed.",
-      "E": "Incorrect — Endocrinology referral may eventually be needed but the GP can initiate metformin and liaise with psychiatry without delay."
-    },
-    "reference": "NICE CG178 — Psychosis and schizophrenia. NICE NG28 — Type 2 diabetes in adults.",
-    "tags": [
-      "olanzapine",
-      "type 2 diabetes",
-      "metabolic side effects",
-      "metformin",
-      "antipsychotic switch",
-      "NICE NG28"
-    ],
-    "source": "Question Grove 360"
-  },
-  {
-    "id": "QG-ENDO-010-003",
+    "id": "QG-B2-ENDO-004-002",
     "exam": "MRCGP AKT",
     "domain": "Clinical Medicine",
     "specialty": "Endocrinology",
     "difficulty": "Hard",
-    "question": "A practice is auditing physical health monitoring of patients on antipsychotics. Which antipsychotic requires ADDITIONAL monitoring for neutropenia beyond standard metabolic monitoring, requiring mandatory registration with a monitoring service?",
+    "question": "A 52-year-old man with type 1 diabetes on insulin has a urine ACR of 38 mg/mmol and eGFR 55 ml/min. He is already on ramipril 10mg. His BP is 126/78 mmHg. His HbA1c is 68 mmol/mol. Per current NICE guidance, what additional intervention would reduce his renal risk?",
     "options": {
-      "A": "Olanzapine",
-      "B": "Risperidone",
-      "C": "Clozapine — mandatory FBC monitoring via Clozapine Patient Monitoring Service (CPMS)",
-      "D": "Aripiprazole",
-      "E": "Haloperidol"
+      "A": "Add an ARB alongside the ACE inhibitor — dual blockade is recommended",
+      "B": "Optimise glycaemic control — reducing HbA1c to below 53 mmol/mol using more intensive insulin management is the most evidence-based additional intervention for reducing diabetic nephropathy progression alongside ACE inhibitor therapy",
+      "C": "Add spironolactone for additional renal protection",
+      "D": "Double the ramipril dose to 20mg",
+      "E": "Dual ACE inhibitor and ARB therapy provides superior renal protection"
     },
-    "correct_answer": "C",
+    "correct_answer": "B",
     "explanation": {
-      "correct": "Clozapine uniquely requires mandatory registration with the Clozapine Patient Monitoring Service (CPMS) due to the risk of life-threatening agranulocytosis (1-2% of patients). CPMS mandates FBC monitoring: weekly for first 18 weeks, fortnightly for weeks 18-52, then monthly thereafter. Results are transmitted to CPMS which issues traffic light reports (Green/Amber/Red). Olanzapine does not require this level of haematological monitoring — standard metabolic monitoring applies.",
-      "A": "Incorrect — Olanzapine does not require CPMS registration or mandatory FBC monitoring service.",
-      "B": "Incorrect — Risperidone requires standard metabolic monitoring plus prolactin monitoring.",
-      "C": "CORRECT — Clozapine requires mandatory CPMS registration and regular FBC monitoring for agranulocytosis.",
-      "D": "Incorrect — Aripiprazole is the most metabolically neutral antipsychotic and does not require CPMS.",
-      "E": "Incorrect — Haloperidol (typical antipsychotic) requires ECG monitoring for QTc but not CPMS registration."
+      "correct": "Per NICE NG17 (Type 1 diabetes in adults) and NICE NG203, in type 1 diabetes with established diabetic nephropathy, the two pillars of renoprotection are: (1) Glycaemic optimisation — every 1% (11 mmol/mol) reduction in HbA1c significantly reduces microvascular complications including nephropathy (DCCT trial); target HbA1c ≤53 mmol/mol where achievable; (2) ACE inhibitor/ARB (already prescribed). Dual ACE inhibitor + ARB blockade (e.g., ramipril + losartan) was previously studied but ONTARGET trial showed increased adverse effects (hyperkalaemia, AKI, acute renal failure) without mortality benefit — this combination is NOT recommended. SGLT2 inhibitors have emerging evidence in type 1 diabetes but are not currently NICE-approved for T1DM renal indication.",
+      "A": "Incorrect — Dual renin-angiotensin blockade (ACE + ARB) is not recommended per ONTARGET trial — increased adverse effects without mortality benefit.",
+      "B": "CORRECT — Optimising glycaemic control (reduce HbA1c towards 53 mmol/mol) is the key additional intervention for diabetic nephropathy per NICE NG17.",
+      "C": "Incorrect — Spironolactone in CKD with ACE inhibitor risks dangerous hyperkalaemia — not recommended.",
+      "D": "Incorrect — Doubling ramipril beyond 10mg is not a licensed strategy for additional renoprotection.",
+      "E": "Incorrect — ACE + ARB dual blockade is specifically NOT recommended per ONTARGET — avoid."
     },
-    "reference": "BNF — Clozapine monitoring. CPMS guidelines. NICE CG178.",
-    "tags": [
-      "clozapine",
-      "CPMS",
-      "agranulocytosis",
-      "FBC monitoring",
-      "antipsychotic",
-      "neutropenia"
-    ],
-    "source": "Question Grove 360"
+    "reference": "NICE NG17 — Type 1 diabetes. DCCT trial. ONTARGET trial. https://www.nice.org.uk/guidance/ng17",
+    "tags": ["type 1 diabetes", "nephropathy", "HbA1c target", "ACE inhibitor", "NICE NG17", "dual blockade avoided"]
   },
   {
-    "id": "QG-ENDO-010-004",
+    "id": "QG-B2-ENDO-004-003",
     "exam": "MRCGP AKT",
     "domain": "Clinical Medicine",
     "specialty": "Endocrinology",
     "difficulty": "Easy",
-    "question": "A GP is reviewing a patient newly started on olanzapine. At the 3-month physical health review, the patient's BMI has increased from 26 to 30 kg/m². Fasting glucose is 6.2 mmol/L and fasting LDL is 3.8 mmol/L. Blood pressure is 138/86 mmHg. What does this clinical picture represent and what is the most appropriate action?",
+    "question": "A GP is conducting an annual diabetic foot review. Per NICE NG19 and the diabetic foot pathway, which assessment tool is used for diabetic peripheral neuropathy screening in primary care?",
     "options": {
-      "A": "Normal changes — no action needed",
-      "B": "Metabolic syndrome — lifestyle intervention, discuss antipsychotic review with psychiatrist, consider pharmacological intervention for individual risk factors",
-      "C": "Type 2 diabetes — start metformin immediately",
-      "D": "Refer to cardiologist — cardiac risk is too high for GP management",
-      "E": "Stop olanzapine — metabolic changes are unacceptable"
+      "A": "23-gauge needle to test pain sensation",
+      "B": "10-gram monofilament test — pressure applied to 3-4 standard sites on the plantar surface of the foot; inability to feel the monofilament indicates loss of protective sensation and high risk of foot ulceration",
+      "C": "Tuning fork at 128 Hz only",
+      "D": "Visual inspection alone is sufficient",
+      "E": "Nerve conduction studies at each annual review"
     },
     "correct_answer": "B",
     "explanation": {
-      "correct": "This patient meets criteria for metabolic syndrome (IDF criteria: central obesity + ≥2 of: raised triglycerides, low HDL, raised BP, raised fasting glucose). Fasting glucose 6.2 mmol/L = impaired fasting glucose (IFG — prediabetes, 5.6-6.9 mmol/L). Per NICE CG178 and Lester Tool, management: intensive lifestyle intervention (diet, exercise, smoking cessation), discuss antipsychotic optimisation with psychiatrist, treat individual risk factors (antihypertensive if BP remains elevated, statin for lipids per QRISK3). Do not stop antipsychotic without psychiatric involvement.",
-      "A": "Incorrect — Significant weight gain, IFG and elevated BP at 3 months require active management.",
-      "B": "CORRECT — Metabolic syndrome: lifestyle intervention + psychiatric review of antipsychotic + treat individual risk factors per NICE CG178.",
-      "C": "Incorrect — Fasting glucose 6.2 mmol/L is prediabetes/IFG — not yet T2DM (T2DM = ≥7.0 mmol/L). Metformin is premature.",
-      "D": "Incorrect — GP-led management with lifestyle intervention and risk factor treatment is appropriate at this stage.",
-      "E": "Incorrect — Stopping antipsychotic without psychiatry input risks psychosis relapse."
+      "correct": "Per NICE NG19 (Diabetic foot problems: prevention and management) and NICE NG28, annual diabetic foot assessment in primary care includes: (1) 10-gram monofilament test — a calibrated Semmes-Weinstein 10g monofilament is applied to 3-4 sites on the plantar foot (excluding any callus); inability to feel the monofilament = loss of protective sensation = high risk of ulceration. This is the gold standard neuropathy screening tool in primary care; (2) Vibration sensation (128 Hz tuning fork); (3) Pedal pulses + ABPI for vascular assessment; (4) Inspection for deformity, callus, ulceration, skin condition. A 23-gauge needle is NOT appropriate — it can cause injury and is not the validated screening tool for protective sensation.",
+      "A": "Incorrect — A 23-gauge needle carries risk of injury and is not the validated tool for diabetic neuropathy screening. The 10g monofilament is the correct instrument.",
+      "B": "CORRECT — 10-gram monofilament is the validated primary care screening tool for diabetic peripheral neuropathy per NICE NG19.",
+      "C": "Incorrect — Tuning fork (128 Hz) tests vibration sensation — it is part of the assessment but not the primary neuropathy screening tool.",
+      "D": "Incorrect — Visual inspection alone misses sensory neuropathy which is the key ulceration risk factor.",
+      "E": "Incorrect — Nerve conduction studies are specialist investigations — not appropriate for routine annual primary care diabetic foot review."
     },
-    "reference": "NICE CG178. Lester UK Adaptation. IDF Metabolic Syndrome criteria.",
-    "tags": [
-      "metabolic syndrome",
-      "olanzapine",
-      "prediabetes",
-      "IFG",
-      "lifestyle intervention",
-      "Lester Tool"
-    ],
-    "source": "Question Grove 360"
+    "reference": "NICE NG19 — Diabetic foot problems. NICE NG28 — Type 2 diabetes. https://www.nice.org.uk/guidance/ng19",
+    "tags": ["10g monofilament", "diabetic foot", "neuropathy screening", "annual review", "NICE NG19", "protective sensation"]
   },
   {
-    "id": "QG-ENDO-010-005",
+    "id": "QG-B2-ENDO-113-001",
     "exam": "MRCGP AKT",
     "domain": "Clinical Medicine",
     "specialty": "Endocrinology",
     "difficulty": "Medium",
-    "question": "A 35-year-old woman with bipolar disorder is on olanzapine 20mg daily. Her annual review bloods show: fasting triglycerides 4.8 mmol/L, HDL 0.7 mmol/L, LDL 4.2 mmol/L, total cholesterol 6.9 mmol/L. Her QRISK3 is 8%. What is the most appropriate lipid management?",
+    "question": "A 42-year-old woman presents with fatigue, weight loss, muscle weakness, postural dizziness and increased skin pigmentation. Blood tests show sodium 128 mmol/L, potassium 5.8 mmol/L, and raised ACTH. Per NICE CKS, what is the most likely diagnosis and first-line investigation to confirm it?",
     "options": {
-      "A": "No treatment — QRISK3 <10% means no statin indicated",
-      "B": "Start atorvastatin 20mg — severe dyslipidaemia from olanzapine warrants treatment regardless of QRISK3, and consider fibrate for hypertriglyceridaemia",
-      "C": "Dietary advice only for 3 months then reassess",
-      "D": "Stop olanzapine to resolve the dyslipidaemia",
-      "E": "Start bezafibrate only — triglycerides are the priority"
+      "A": "Cushing's syndrome — 24-hour urinary cortisol",
+      "B": "Addison's disease (primary adrenal insufficiency) — confirmed by a short Synacthen test (SST): 250 mcg tetracosactide IV/IM; cortisol measured at 0 and 30 minutes; a peak cortisol <450 nmol/L (or <500 in some labs) at 30 minutes confirms adrenal insufficiency",
+      "C": "Hypothyroidism — TSH is the confirmatory test",
+      "D": "SIADH — urine and plasma osmolality",
+      "E": "Conn's syndrome — aldosterone:renin ratio"
     },
     "correct_answer": "B",
     "explanation": {
-      "correct": "Per NICE NG238 and SMC guidelines on antipsychotic-induced dyslipidaemia, severe dyslipidaemia (particularly very high triglycerides >4.5 mmol/L which risk pancreatitis) in patients on antipsychotics may warrant treatment even when QRISK3 is below 10%. Triglycerides 4.8 mmol/L carry a risk of acute pancreatitis. Statin (atorvastatin 20mg) addresses elevated LDL and total cholesterol. A fibrate (fenofibrate) may be added for hypertriglyceridaemia if triglycerides remain >4.5 mmol/L. Discuss antipsychotic review with psychiatrist.",
-      "A": "Incorrect — QRISK3 is calculated for general population. Severe antipsychotic-induced dyslipidaemia with TG >4.5 mmol/L carries pancreatitis risk warranting treatment beyond QRISK3 thresholds.",
-      "B": "CORRECT — Statin + consider fibrate for severe olanzapine-induced dyslipidaemia with hypertriglyceridaemia per NICE NG238.",
-      "C": "Incorrect — Triglycerides 4.8 mmol/L with pancreatitis risk requires pharmacological intervention, not diet alone.",
-      "D": "Incorrect — Stopping antipsychotic requires psychiatric collaboration and is not the first intervention for dyslipidaemia.",
-      "E": "Incorrect — Fibrate alone does not address the elevated LDL and total cholesterol. Statin is also required."
+      "correct": "Addison's disease (primary adrenal insufficiency): autoimmune destruction of the adrenal cortex is the most common cause in the UK (70-80%). Classic features: fatigue, weight loss, anorexia, nausea, postural hypotension, muscle weakness, salt craving, skin and mucous membrane hyperpigmentation (due to excess ACTH stimulating melanocytes). Biochemistry: hyponatraemia, hyperkalaemia, raised ACTH (high because the failing adrenals don't produce cortisol to feedback negatively), low cortisol. Per NICE CKS: confirmatory test is the short Synacthen test (SST) — 250 mcg tetracosactide IV; cortisol measured at 0 and 30 minutes. Peak cortisol <450 nmol/L = inadequate response = adrenal insufficiency. Emergency management if adrenal crisis: IV hydrocortisone 100mg immediately.",
+      "A": "Incorrect — Cushing's syndrome causes HYPERTENSION, weight gain, moon face, purple striae — not hypotension, hyperkalaemia and hyperpigmentation.",
+      "B": "CORRECT — Addison's disease: confirmed by short Synacthen test. Peak cortisol <450 nmol/L at 30 minutes per NICE CKS.",
+      "C": "Incorrect — Hypothyroidism causes weight gain, cold intolerance, constipation — not hyperkalaemia and skin pigmentation.",
+      "D": "Incorrect — SIADH causes hyponatraemia but NOT hyperkalaemia or skin pigmentation.",
+      "E": "Incorrect — Conn's syndrome (primary hyperaldosteronism) causes HYPERTENSION + hypokalaemia — the opposite electrolyte picture to Addison's."
     },
-    "reference": "NICE NG238 — CVD risk assessment. SMC — Antipsychotic-induced metabolic syndrome guidance.",
-    "tags": [
-      "olanzapine",
-      "dyslipidaemia",
-      "hypertriglyceridaemia",
-      "statin",
-      "fibrate",
-      "NICE NG238"
-    ],
-    "source": "Question Grove 360"
+    "reference": "NICE CKS — Addison's disease. https://cks.nice.org.uk/topics/addisons-disease/",
+    "tags": ["Addison's disease", "short Synacthen test", "hyperkalaemia hyponatraemia", "ACTH", "NICE CKS", "adrenal insufficiency"]
   },
   {
-    "id": "QG-ENDO-013-001",
-    "exam": "MRCGP AKT",
-    "domain": "Clinical Medicine",
-    "specialty": "Endocrinology",
-    "difficulty": "Medium",
-    "question": "A 62-year-old woman presents with a smooth, painful red tongue (atrophic glossitis), tingling and numbness in both legs, and fatigue. Her FBC shows: Hb 92 g/L, MCV 108 fL (macrocytic). Serum B12 is 98 ng/L (normal >180 ng/L). She has a history of vitiligo and hypothyroidism. What is the most likely diagnosis and most appropriate investigation to confirm it?",
-    "options": {
-      "A": "Folate deficiency — serum and red cell folate",
-      "B": "Pernicious anaemia — intrinsic factor antibodies (IFA) and parietal cell antibodies (PCA)",
-      "C": "Coeliac disease — anti-TTG IgA",
-      "D": "Alcoholic neuropathy — liver function tests",
-      "E": "Hypothyroid neuropathy — TFTs"
-    },
-    "correct_answer": "B",
-    "explanation": {
-      "correct": "Pernicious anaemia (PA) is an autoimmune condition causing vitamin B12 deficiency through lack of intrinsic factor (anti-parietal cell antibodies destroy parietal cells; intrinsic factor antibodies prevent B12 absorption). Classic features: macrocytic anaemia, atrophic glossitis, subacute combined degeneration of spinal cord (posterior and lateral columns — causing tingling/proprioception loss), associated autoimmune conditions (vitiligo, hypothyroidism, T1DM). Most specific test: intrinsic factor antibodies (IFA — 50-70% sensitive but highly specific). Parietal cell antibodies are more sensitive but less specific.",
-      "A": "Incorrect — Folate deficiency causes macrocytic anaemia but does NOT cause subacute combined degeneration/neuropathy. No neurological features distinguish folate from B12 deficiency.",
-      "B": "CORRECT — Pernicious anaemia: B12 deficiency + macrocytic anaemia + glossitis + neuropathy + autoimmune history. IFA confirms.",
-      "C": "Incorrect — Coeliac disease can cause B12 deficiency via malabsorption but the autoimmune cluster (vitiligo + hypothyroidism) points to pernicious anaemia specifically.",
-      "D": "Incorrect — Alcoholic neuropathy is predominantly sensorimotor peripheral neuropathy without macrocytic anaemia and glossitis.",
-      "E": "Incorrect — Hypothyroid neuropathy causes carpal tunnel and peripheral sensorimotor neuropathy — not macrocytic anaemia or glossitis."
-    },
-    "reference": "NICE CKS — Vitamin B12 deficiency. BSH Guidelines — B12 and folate deficiency 2014.",
-    "tags": [
-      "pernicious anaemia",
-      "B12 deficiency",
-      "atrophic glossitis",
-      "intrinsic factor",
-      "macrocytic anaemia",
-      "subacute combined degeneration"
-    ],
-    "source": "Question Grove 360"
-  },
-  {
-    "id": "QG-ENDO-013-002",
-    "exam": "MRCGP AKT",
-    "domain": "Clinical Medicine",
-    "specialty": "Endocrinology",
-    "difficulty": "Easy",
-    "question": "A 58-year-old man is diagnosed with pernicious anaemia confirmed by low serum B12 and positive intrinsic factor antibodies. He has no neurological symptoms. What is the most appropriate B12 replacement regimen per NICE CKS and BNF?",
-    "options": {
-      "A": "Oral cyanocobalamin 1000 mcg daily indefinitely",
-      "B": "IM hydroxocobalamin 1000 mcg on alternate days for 2 weeks, then every 3 months indefinitely",
-      "C": "IM cyanocobalamin 1000 mcg weekly for 4 weeks only",
-      "D": "High-dose oral B12 500 mcg daily for 3 months then review",
-      "E": "IM hydroxocobalamin 1000 mcg weekly for 6 months then stop"
-    },
-    "correct_answer": "B",
-    "explanation": {
-      "correct": "Per NICE CKS and BNF, treatment for B12 deficiency without neurological involvement in pernicious anaemia: hydroxocobalamin 1000 mcg IM on alternate days for 2 weeks (loading/repleting doses = 6 doses total), then 1000 mcg IM every 3 months indefinitely (as intrinsic factor deficiency is permanent — oral B12 cannot be absorbed). Treatment is lifelong. Cyanocobalamin is not used for IM treatment in UK practice.",
-      "A": "Incorrect — Oral B12 is not effective in pernicious anaemia as intrinsic factor deficiency prevents oral absorption. Exception: very high-dose oral (1000+ mcg) relies on passive absorption but is not standard UK practice for PA.",
-      "B": "CORRECT — IM hydroxocobalamin: alternate days × 2 weeks loading, then every 3 months indefinitely per NICE CKS/BNF.",
-      "C": "Incorrect — Cyanocobalamin is not the UK formulation for IM B12. Hydroxocobalamin is used.",
-      "D": "Incorrect — Oral B12 is not effective in pernicious anaemia due to intrinsic factor deficiency.",
-      "E": "Incorrect — Treatment is lifelong for pernicious anaemia — not stopped after 6 months."
-    },
-    "reference": "NICE CKS — Vitamin B12 deficiency. BNF — Hydroxocobalamin dosing.",
-    "tags": [
-      "pernicious anaemia",
-      "hydroxocobalamin",
-      "B12 replacement",
-      "IM injection",
-      "loading dose",
-      "NICE CKS"
-    ],
-    "source": "Question Grove 360"
-  },
-  {
-    "id": "QG-ENDO-013-003",
+    "id": "QG-B2-ENDO-113-002",
     "exam": "MRCGP AKT",
     "domain": "Clinical Medicine",
     "specialty": "Endocrinology",
     "difficulty": "Hard",
-    "question": "A 55-year-old woman with confirmed pernicious anaemia has numbness and tingling in her feet, difficulty walking due to proprioception loss, and falls. Romberg's test is positive. She has been having 3-monthly IM B12 injections for 2 years. What modification to her treatment is required?",
+    "question": "A 38-year-old woman with known Addison's disease on hydrocortisone 10mg/10mg/5mg and fludrocortisone 100 mcg daily develops vomiting and diarrhoea from gastroenteritis. She cannot keep her oral medications down. Per NICE CKS and patient sick day rules, what must she do?",
     "options": {
-      "A": "No change — 3-monthly injections are sufficient",
-      "B": "Increase to every 2-monthly injections",
-      "C": "Restart the full loading course (alternate day injections for 2 weeks) as neurological involvement requires intensified B12 replacement — every 2 months thereafter",
-      "D": "Add oral folic acid 5mg daily",
-      "E": "Refer to neurology and stop B12 — this is not B12-related neuropathy"
-    },
-    "correct_answer": "C",
-    "explanation": {
-      "correct": "Per NICE CKS and BNF, B12 deficiency with neurological involvement requires a different regimen: loading doses of IM hydroxocobalamin 1000 mcg on alternate days until no further improvement (can be weeks to months), then every 2 months (rather than 3-monthly for those without neurological involvement). The neurological features (subacute combined degeneration of spinal cord — posterior column: proprioception/vibration loss, and lateral column: UMN signs) require intensive repleting. The goal is to reverse neurological damage early — delay risks permanent disability.",
-      "A": "Incorrect — 3-monthly injections are for B12 deficiency WITHOUT neurological involvement. Neurological involvement requires 2-monthly.",
-      "B": "Incorrect — This is partially right (2-monthly) but the loading course must first be restarted.",
-      "C": "CORRECT — Neurological B12 deficiency: restart alternate-day loading until no further improvement, then every 2 months per NICE CKS/BNF.",
-      "D": "Incorrect — Folic acid supplementation may be appropriate if folate is also deficient but does not treat B12-related neuropathy.",
-      "E": "Incorrect — These are classic features of subacute combined degeneration from B12 deficiency. Stopping B12 would be harmful."
-    },
-    "reference": "NICE CKS — Vitamin B12 deficiency. BNF — Hydroxocobalamin — neurological involvement dosing.",
-    "tags": [
-      "pernicious anaemia",
-      "subacute combined degeneration",
-      "neurological B12",
-      "every 2 months",
-      "hydroxocobalamin",
-      "NICE CKS"
-    ],
-    "source": "Question Grove 360"
-  },
-  {
-    "id": "QG-ENDO-013-004",
-    "exam": "MRCGP AKT",
-    "domain": "Clinical Medicine",
-    "specialty": "Endocrinology",
-    "difficulty": "Medium",
-    "question": "A 70-year-old man on long-term metformin 1g twice daily for type 2 diabetes is found to have serum B12 of 142 ng/L (low) and mild peripheral neuropathy. He has no history of pernicious anaemia or dietary B12 deficiency. What is the most likely cause and most appropriate management?",
-    "options": {
-      "A": "Pernicious anaemia — check intrinsic factor antibodies and start IM hydroxocobalamin",
-      "B": "Metformin-induced B12 deficiency — supplement with oral B12 cyanocobalamin and consider dose reduction if glycaemic control permits",
-      "C": "Dietary deficiency — nutritional counselling and oral supplements",
-      "D": "Hypothyroid neuropathy — check TFTs",
-      "E": "Diabetic neuropathy alone — B12 level is incidental"
+      "A": "Skip hydrocortisone until vomiting settles — steroids worsen gastroenteritis",
+      "B": "Administer hydrocortisone 100mg IM (emergency injection kit) immediately — vomiting preventing oral absorption of steroids in an Addison's patient is a life-threatening adrenal crisis. Every patient with Addison's disease should have an emergency injection kit and be trained to use it (or have a family member trained); call 999 and go to hospital for IV hydrocortisone",
+      "C": "Double the oral dose and try to keep it down",
+      "D": "Take fludrocortisone only — more important than hydrocortisone during illness",
+      "E": "Wait 24 hours before acting — minor illness does not require action"
     },
     "correct_answer": "B",
     "explanation": {
-      "correct": "Metformin reduces B12 absorption from the terminal ileum by interfering with calcium-dependent intrinsic factor–B12 complex absorption. This affects up to 30% of long-term metformin users and is dose-dependent. Per NICE NG28 update and Diabetes UK guidance, B12 should be monitored in long-term metformin users, especially if neuropathy develops. Treatment: oral B12 supplementation (cyanocobalamin 1000 mcg daily or hydroxocobalamin IM if deficiency is severe/symptomatic). Unlike pernicious anaemia, intrinsic factor function may be partially preserved — oral B12 can work.",
-      "A": "Incorrect — The cause is metformin-induced, not pernicious anaemia. Intrinsic factor antibodies not required for diagnosis here.",
-      "B": "CORRECT — Metformin-induced B12 deficiency: oral cyanocobalamin supplementation + consider dose reduction per NICE NG28/Diabetes UK.",
-      "C": "Incorrect — Dietary deficiency is possible but metformin use is the most likely cause in this context.",
-      "D": "Incorrect — TFTs are reasonable but metformin-induced B12 deficiency is the most likely cause of neuropathy in this scenario.",
-      "E": "Incorrect — B12 142 ng/L is significantly low and requires treatment, especially with neuropathy symptoms."
+      "correct": "Adrenal crisis (Addisonian crisis) is a life-threatening emergency caused by acute cortisol deficiency — most commonly triggered by illness (infection, vomiting, diarrhoea), surgery or injury in patients with Addison's disease who cannot absorb or take their replacement steroids. Sick day rules per NICE CKS and Addison's Disease Self Help Group (ADSHG): (1) Mild illness (fever, vomiting once): double or triple oral hydrocortisone dose; (2) Unable to keep oral medication down: administer 100mg IM hydrocortisone from emergency injection kit immediately; (3) Call 999 and go to A&E for IV hydrocortisone infusion and fluids. Every Addison's patient must: carry an emergency injection kit (hydrocortisone 100mg powder for injection + diluent), wear a medical alert bracelet, carry a steroid emergency card, and receive education on sick day rules. Failure to act leads to circulatory collapse and death.",
+      "A": "Incorrect — Withholding steroids during illness in an Addison's patient causes adrenal crisis — this is immediately life-threatening.",
+      "B": "CORRECT — IM hydrocortisone 100mg from emergency kit immediately + 999 for IV steroids per NICE CKS / ADSHG sick day rules.",
+      "C": "Incorrect — Doubling oral dose during vomiting is insufficient — oral absorption is unreliable when vomiting. IM injection is required.",
+      "D": "Incorrect — Fludrocortisone replaces mineralocorticoid (aldosterone) — it is the hydrocortisone (glucocorticoid) that is life-saving in an acute crisis.",
+      "E": "Incorrect — Waiting 24 hours in a vomiting Addison's patient who cannot absorb oral steroids risks fatal adrenal crisis."
     },
-    "reference": "NICE NG28 — Type 2 diabetes. Diabetes UK — Metformin and B12 deficiency guidance.",
-    "tags": [
-      "metformin",
-      "B12 deficiency",
-      "peripheral neuropathy",
-      "cyanocobalamin",
-      "diabetes",
-      "NICE NG28"
-    ],
-    "source": "Question Grove 360"
+    "reference": "NICE CKS — Addison's disease: sick day rules. ADSHG — Emergency injection. https://cks.nice.org.uk/topics/addisons-disease/",
+    "tags": ["adrenal crisis", "sick day rules", "IM hydrocortisone", "Addison's", "emergency injection", "NICE CKS"]
   },
   {
-    "id": "QG-ENDO-013-005",
+    "id": "QG-B2-ENDO-113-003",
     "exam": "MRCGP AKT",
     "domain": "Clinical Medicine",
     "specialty": "Endocrinology",
     "difficulty": "Easy",
-    "question": "A patient with pernicious anaemia asks about long-term cancer risk. Which cancer is pernicious anaemia patients at increased risk of, requiring surveillance?",
+    "question": "A 35-year-old woman with Addison's disease is due to have an elective dental extraction under local anaesthesia. Per NICE CKS and endocrine society guidance on perioperative steroid management, what advice should be given?",
     "options": {
-      "A": "Oesophageal cancer",
-      "B": "Gastric cancer — gastric carcinoid tumours and gastric adenocarcinoma",
-      "C": "Colorectal cancer",
-      "D": "Pancreatic cancer",
-      "E": "No increased cancer risk — pernicious anaemia is benign"
+      "A": "No change to steroids — dental procedures do not require dose adjustment",
+      "B": "For minor procedures under local anaesthesia: take usual morning hydrocortisone dose; for moderate procedures: double the dose on the day; for major surgery under general anaesthesia: IV hydrocortisone is required — inform the surgical and anaesthetic team",
+      "C": "Stop hydrocortisone 48 hours before the procedure to prevent infection",
+      "D": "Quadruple the dose for 1 week before and after any dental procedure",
+      "E": "Switch to prednisolone for 2 weeks perioperatively"
     },
     "correct_answer": "B",
     "explanation": {
-      "correct": "Pernicious anaemia causes chronic atrophic gastritis with achlorhydria (reduced stomach acid due to parietal cell destruction). This predisposes to: gastric carcinoid tumours (type 1 — from enterochromaffin-like cell hyperplasia due to hypergastrinaemia) and gastric adenocarcinoma (2-3x increased risk). Per BSH guidelines and NICE, patients with pernicious anaemia should be informed of this risk. Upper GI endoscopy surveillance is recommended at diagnosis and periodically. The risk, while increased, remains relatively low in absolute terms.",
-      "A": "Incorrect — Oesophageal cancer risk is not specifically elevated in pernicious anaemia.",
-      "B": "CORRECT — Pernicious anaemia increases risk of gastric carcinoid and gastric adenocarcinoma due to chronic atrophic gastritis.",
-      "C": "Incorrect — Colorectal cancer risk is not specifically elevated in pernicious anaemia.",
-      "D": "Incorrect — Pancreatic cancer risk is not specifically elevated.",
-      "E": "Incorrect — Gastric cancer risk is genuinely elevated and patients should be informed."
+      "correct": "Per NICE CKS and Society for Endocrinology perioperative guidelines, patients with Addison's disease require supplemental steroids (sick day rules) during surgical stress as their adrenals cannot mount an appropriate cortisol stress response. Dental procedures under local anaesthesia: take normal morning hydrocortisone dose — no additional supplementation usually needed for very minor procedures. Moderate procedures (minor surgery, GA): double or triple the hydrocortisone dose on the day (e.g., usual 10mg → 20-30mg morning of procedure). Major surgery under GA: IV hydrocortisone 100mg at induction, then 200-300mg/24 hours by infusion, tapered to usual dose when eating and drinking. Always inform the surgical team that the patient has Addison's disease — anaesthetic and surgical team must know. Patient should carry steroid emergency card.",
+      "A": "Incorrect — Dental extraction is a stressful procedure — Addison's patients may need dose adjustment depending on the extent of procedure and anaesthesia used.",
+      "B": "CORRECT — Stratified perioperative steroid supplementation based on procedure severity per NICE CKS / Society for Endocrinology guidelines.",
+      "C": "Incorrect — Stopping steroids perioperatively in an Addison's patient causes adrenal crisis — this is dangerous and incorrect.",
+      "D": "Incorrect — Quadrupling steroids for a week is excessive and unnecessary for minor dental procedures.",
+      "E": "Incorrect — Switching to prednisolone unnecessarily changes the patient's established regimen; dose adjustment of hydrocortisone is the appropriate approach."
     },
-    "reference": "BSH Guidelines — B12 and folate 2014. NICE CKS — Pernicious anaemia surveillance.",
-    "tags": [
-      "pernicious anaemia",
-      "gastric cancer",
-      "gastric carcinoid",
-      "atrophic gastritis",
-      "surveillance",
-      "BSH"
-    ],
-    "source": "Question Grove 360"
+    "reference": "Society for Endocrinology — Perioperative steroid management. NICE CKS — Addison's disease. https://cks.nice.org.uk/topics/addisons-disease/",
+    "tags": ["Addison's perioperative", "steroid supplementation", "dental procedure", "hydrocortisone", "NICE CKS", "surgical stress"]
   },
   {
-    "id": "QG-ENDO-017-001",
-    "exam": "MRCGP AKT",
-    "domain": "Clinical Medicine",
-    "specialty": "Endocrinology",
-    "difficulty": "Easy",
-    "question": "A 38-year-old woman presents with a 4-month history of fatigue, dizziness on standing, weight loss, nausea and craving for salty foods. Examination reveals postural hypotension and hyperpigmentation of skin creases and buccal mucosa. Blood tests: Na 127 mmol/L, K 5.9 mmol/L, glucose 3.1 mmol/L, cortisol 85 nmol/L at 9am. What is the diagnosis and the confirmatory investigation?",
-    "options": {
-      "A": "SIADH — urine osmolality and fluid restriction",
-      "B": "Addison's disease (primary adrenal insufficiency) — short Synacthen test",
-      "C": "Conn's syndrome — aldosterone:renin ratio",
-      "D": "Cushing's syndrome — overnight dexamethasone suppression test",
-      "E": "Hypothyroidism — TSH and free T4"
-    },
-    "correct_answer": "B",
-    "explanation": {
-      "correct": "Addison's disease (primary adrenal insufficiency) presents with: fatigue, postural hypotension, weight loss, nausea, salt craving, HYPERPIGMENTATION (ACTH-mediated — key distinguishing feature from secondary adrenal insufficiency), hyponatraemia (aldosterone deficiency), hyperkalaemia (aldosterone deficiency → impaired K+ excretion), hypoglycaemia (cortisol deficiency). Random cortisol 85 nmol/L at 9am strongly suggests adrenal insufficiency (normally >450 nmol/L). Confirmatory test: short Synacthen test (SST) — cortisol measured before and 30 minutes after 250 mcg IV/IM tetracosactide. Peak cortisol <500 nmol/L confirms insufficiency.",
-      "A": "Incorrect — SIADH causes hyponatraemia but with NORMAL/LOW potassium, no hyperpigmentation, no hypoglycaemia.",
-      "B": "CORRECT — Addison's: hyperpigmentation + hyponatraemia + hyperkalaemia + hypoglycaemia + postural hypotension. Short Synacthen test confirms.",
-      "C": "Incorrect — Conn's syndrome causes hypertension and HYPOKALAEMIA — opposite potassium pattern.",
-      "D": "Incorrect — Cushing's causes hypertension, central obesity, elevated glucose — not hypoglycaemia or hyperpigmentation.",
-      "E": "Incorrect — Hypothyroidism can cause hyponatraemia but not hyperkalaemia, hypoglycaemia or hyperpigmentation."
-    },
-    "reference": "Society for Endocrinology — Addison's disease guidelines. NICE CKS — Addison's disease.",
-    "tags": [
-      "Addison's disease",
-      "adrenal insufficiency",
-      "Synacthen test",
-      "hyperpigmentation",
-      "hyperkalaemia",
-      "hyponatraemia"
-    ],
-    "source": "Question Grove 360"
-  },
-  {
-    "id": "QG-ENDO-017-002",
+    "id": "QG-B2-ENDO-114-001",
     "exam": "MRCGP AKT",
     "domain": "Clinical Medicine",
     "specialty": "Endocrinology",
     "difficulty": "Medium",
-    "question": "A 45-year-old man with known Addison's disease on hydrocortisone 20mg/10mg (morning/afternoon) and fludrocortisone 100 mcg daily develops a chest infection with fever. He calls his GP asking what to do. What is the most important advice — the 'sick day rules' for Addison's disease?",
+    "question": "A 48-year-old woman presents with hypertension resistant to three antihypertensives, weight gain, central obesity, thin skin, purple striae and proximal muscle weakness. Per NICE CKS, what is the most appropriate first-line screening test for Cushing's syndrome?",
     "options": {
-      "A": "Continue usual hydrocortisone dose — illness does not change requirement",
-      "B": "DOUBLE the hydrocortisone dose during illness (sick day rules); if vomiting and cannot take oral medication, call 999 and inject IM hydrocortisone 100mg immediately",
-      "C": "Stop hydrocortisone until the infection resolves to avoid immunosuppression",
-      "D": "Increase fludrocortisone dose only — mineralocorticoid is more important during illness",
-      "E": "Reduce hydrocortisone to lowest dose to avoid side effects"
+      "A": "Random serum cortisol",
+      "B": "Overnight dexamethasone suppression test (ONDST) — 1mg dexamethasone taken at 11pm; cortisol measured at 8-9am the next morning; cortisol >50 nmol/L = failure to suppress = screen positive for Cushing's syndrome",
+      "C": "Serum ACTH level alone",
+      "D": "MRI pituitary gland",
+      "E": "Short Synacthen test"
     },
     "correct_answer": "B",
     "explanation": {
-      "correct": "Addison's disease 'sick day rules' (stress dosing) are critical to prevent life-threatening adrenal crisis: patients should DOUBLE their oral hydrocortisone dose during any febrile illness, surgery, trauma or significant physical stress (cortisol normally doubles during stress — patients with adrenal insufficiency cannot generate this response). Fludrocortisone is generally not doubled. If the patient is vomiting and cannot absorb oral hydrocortisone, they MUST inject IM hydrocortisone 100mg (emergency injection kit always prescribed) and call 999. All patients with Addison's should carry: emergency steroid card + IM hydrocortisone kit + MedicAlert bracelet.",
-      "A": "Incorrect — Illness dramatically increases cortisol requirements. Maintaining normal dose during significant illness risks adrenal crisis.",
-      "B": "CORRECT — Double hydrocortisone during illness; IM hydrocortisone 100mg if vomiting per Society for Endocrinology/NICE sick day rules.",
-      "C": "Incorrect — Stopping hydrocortisone in someone with Addison's during illness is potentially fatal — risks adrenal crisis.",
-      "D": "Incorrect — Glucocorticoid (hydrocortisone) doubling is the primary sick day rule. Fludrocortisone dose is generally unchanged.",
-      "E": "Incorrect — Reducing hydrocortisone during illness increases adrenal crisis risk."
+      "correct": "Per NICE CKS (Cushing's syndrome) and the Endocrine Society guidelines, three first-line screening tests are acceptable: (1) Overnight dexamethasone suppression test (ONDST) — 1mg dexamethasone at 11pm, cortisol at 8-9am next morning; >50 nmol/L = positive; (2) 24-hour urinary free cortisol (UFC) — at least two measurements; (3) Late-night salivary cortisol — less commonly used in UK primary care. The ONDST is the most practical for primary care — simple, outpatient, high sensitivity (~95%). A positive screening test should be followed by confirmatory testing (LDDST, 24-hour UFC) and referral to endocrinology. Note: exogenous steroid use (including topical, inhaled, injected) can cause iatrogenic Cushing's — exclude this first. A random cortisol is not useful (wide diurnal variation).",
+      "A": "Incorrect — Random serum cortisol has too much variation throughout the day to be a useful screening test for Cushing's syndrome.",
+      "B": "CORRECT — Overnight dexamethasone suppression test (1mg at 11pm; cortisol >50 nmol/L = positive) is first-line screening per NICE CKS.",
+      "C": "Incorrect — ACTH level differentiates ACTH-dependent (Cushing's disease, ectopic) from ACTH-independent causes but cannot screen for Cushing's syndrome.",
+      "D": "Incorrect — MRI pituitary is performed after biochemical confirmation of Cushing's disease (ACTH-dependent) — not first-line screening.",
+      "E": "Incorrect — Short Synacthen test diagnoses adrenal insufficiency (Addison's) — the opposite condition to Cushing's."
     },
-    "reference": "Society for Endocrinology — Addison's disease sick day rules. NICE CKS — Adrenal insufficiency.",
-    "tags": [
-      "Addison's disease",
-      "sick day rules",
-      "hydrocortisone",
-      "adrenal crisis",
-      "stress dosing",
-      "IM hydrocortisone"
-    ],
-    "source": "Question Grove 360"
+    "reference": "NICE CKS — Cushing's syndrome. Endocrine Society — Cushing's Syndrome Guidelines. https://cks.nice.org.uk/topics/cushings-syndrome/",
+    "tags": ["Cushing's syndrome", "dexamethasone suppression test", "1mg overnight", "screening", "NICE CKS", "cortisol >50"]
   },
   {
-    "id": "QG-ENDO-017-003",
+    "id": "QG-B2-ENDO-114-002",
     "exam": "MRCGP AKT",
     "domain": "Clinical Medicine",
     "specialty": "Endocrinology",
     "difficulty": "Hard",
-    "question": "A 50-year-old woman is brought to A&E deeply confused, hypotensive (BP 75/40 mmHg), tachycardic and with a temperature of 38.9°C. Her partner mentions she has Addison's disease and has been vomiting for 2 days. Blood tests: Na 118 mmol/L, K 6.8 mmol/L, glucose 2.2 mmol/L. What is the diagnosis and most appropriate immediate management?",
+    "question": "A 52-year-old man has biochemically confirmed Cushing's syndrome (elevated 24-hour urinary cortisol, failed overnight DST). His ACTH is suppressed at <1 pmol/L. Per NICE CKS and endocrinological guidelines, what does suppressed ACTH indicate and what is the next investigation?",
     "options": {
-      "A": "Septic shock — broad-spectrum IV antibiotics and IV fluids",
-      "B": "Adrenal crisis — immediate IV hydrocortisone 100mg bolus, IV 0.9% saline, IV dextrose, cardiac monitoring for hyperkalaemia",
-      "C": "Diabetic hypoglycaemia — IV 50% dextrose",
-      "D": "Hyponatraemic encephalopathy — hypertonic saline infusion",
-      "E": "Anaphylaxis — IM adrenaline 0.5mg"
+      "A": "Suppressed ACTH indicates pituitary adenoma (Cushing's disease)",
+      "B": "Suppressed ACTH indicates ACTH-independent Cushing's syndrome — the adrenal gland is autonomously producing cortisol (independently of ACTH). Next investigation: adrenal CT or MRI to identify adrenal adenoma, carcinoma or bilateral adrenal hyperplasia",
+      "C": "Suppressed ACTH indicates ectopic ACTH secretion",
+      "D": "Suppressed ACTH is a normal finding in Cushing's syndrome — no further investigation needed",
+      "E": "Suppressed ACTH confirms hypothalamic dysfunction — MRI brain required"
     },
     "correct_answer": "B",
     "explanation": {
-      "correct": "Adrenal crisis (Addisonian crisis): acute life-threatening decompensation in a patient with adrenal insufficiency triggered by a stressor (here: vomiting → inability to absorb oral hydrocortisone for 2 days). Features: profound hypotension, hyponatraemia, hyperkalaemia (life-threatening — K 6.8 mmol/L risks cardiac arrhythmia), hypoglycaemia, confusion, fever. Management: immediate IV hydrocortisone 100mg bolus (do not delay for investigation results — clinical diagnosis), IV 0.9% NaCl 1L rapid infusion, IV glucose for hypoglycaemia, cardiac monitoring (K 6.8 mmol/L), treat precipitant (antibiotics if sepsis suspected). Note: IV hydrocortisone in high doses acts as both gluco- and mineralocorticoid — fludrocortisone not needed acutely.",
-      "A": "Incorrect — While sepsis should be considered and antibiotics may be needed, adrenal crisis is the primary diagnosis and IV hydrocortisone is the most urgent treatment.",
-      "B": "CORRECT — Adrenal crisis: IV hydrocortisone 100mg immediately + IV NaCl + glucose + cardiac monitoring per Society for Endocrinology.",
-      "C": "Incorrect — Glucose 2.2 mmol/L does require correction but IV dextrose alone without hydrocortisone will not reverse adrenal crisis.",
-      "D": "Incorrect — Hypertonic saline is for severe symptomatic hyponatraemia. Here, IV saline + hydrocortisone will correct sodium as cortisol deficiency is treated.",
-      "E": "Incorrect — No features of anaphylaxis (no rash, no airway compromise, no allergen exposure)."
+      "correct": "ACTH measurement is the critical investigation to differentiate Cushing's syndrome subtypes: ACTH suppressed (<1-2 pmol/L) = ACTH-independent (adrenal source): cortisol is being produced autonomously by the adrenal gland; high cortisol feeds back to suppress pituitary ACTH. Causes: adrenal adenoma (most common unilateral), adrenal carcinoma, bilateral adrenal hyperplasia. Next step: adrenal CT/MRI. ACTH elevated or normal = ACTH-dependent: pituitary adenoma (Cushing's disease — most common overall, ~70%) or ectopic ACTH secretion (e.g., small cell lung carcinoma). For ACTH-dependent: high-dose DST ± inferior petrosal sinus sampling to distinguish pituitary vs ectopic source. Adrenal adenoma causing Cushing's: treated by laparoscopic adrenalectomy.",
+      "A": "Incorrect — Pituitary adenoma (Cushing's disease) causes ELEVATED ACTH — not suppressed.",
+      "B": "CORRECT — Suppressed ACTH = ACTH-independent Cushing's from adrenal source. Adrenal CT/MRI is next per NICE CKS.",
+      "C": "Incorrect — Ectopic ACTH secretion causes very HIGH ACTH — not suppressed.",
+      "D": "Incorrect — Suppressed ACTH is a clinically significant finding directing the investigation pathway to adrenal imaging.",
+      "E": "Incorrect — Hypothalamic dysfunction is not the interpretation of a suppressed ACTH in confirmed Cushing's syndrome."
     },
-    "reference": "Society for Endocrinology — Adrenal crisis emergency management 2020. NICE CKS — Addison's disease.",
-    "tags": [
-      "adrenal crisis",
-      "Addison's disease",
-      "IV hydrocortisone",
-      "emergency",
-      "hyperkalaemia",
-      "hyponatraemia"
-    ],
-    "source": "Question Grove 360"
+    "reference": "NICE CKS — Cushing's syndrome. Endocrine Society Guidelines. https://cks.nice.org.uk/topics/cushings-syndrome/",
+    "tags": ["Cushing's syndrome", "ACTH suppressed", "adrenal adenoma", "ACTH-independent", "adrenal CT", "NICE CKS"]
   },
   {
-    "id": "QG-ENDO-017-004",
-    "exam": "MRCGP AKT",
-    "domain": "Clinical Medicine",
-    "specialty": "Endocrinology",
-    "difficulty": "Medium",
-    "question": "A 40-year-old woman is newly diagnosed with Addison's disease. She asks about long-term replacement therapy. What is the standard oral steroid replacement regimen for Addison's disease?",
-    "options": {
-      "A": "Prednisolone 5mg every morning only",
-      "B": "Hydrocortisone 15-25mg/day in divided doses (e.g. 10mg on waking + 5mg lunchtime + 5mg late afternoon) + fludrocortisone 50-200 mcg once daily",
-      "C": "Dexamethasone 0.5mg daily as sole replacement",
-      "D": "Hydrocortisone 100mg daily as a single dose",
-      "E": "Fludrocortisone 200 mcg daily alone — mineralocorticoid is sufficient"
-    },
-    "correct_answer": "B",
-    "explanation": {
-      "correct": "Standard Addison's disease hormone replacement per Society for Endocrinology and NICE CKS: (1) Glucocorticoid replacement: hydrocortisone 15-25mg/day in 2-3 divided doses mimicking the diurnal cortisol rhythm (largest dose on waking, smaller doses at lunch/late afternoon — NOT at night as it disrupts sleep and causes insomnia); typical regimen: 10mg morning, 5mg noon, 5mg late afternoon. (2) Mineralocorticoid replacement: fludrocortisone 50-200 mcg once daily (replaces aldosterone — treats salt wasting, prevents hyperkalaemia and postural hypotension).",
-      "A": "Incorrect — Prednisolone alone doesn't include mineralocorticoid replacement (fludrocortisone). Also once daily doesn't mimic diurnal rhythm.",
-      "B": "CORRECT — Hydrocortisone divided doses (10+5+5mg or similar) + fludrocortisone for complete adrenal hormone replacement.",
-      "C": "Incorrect — Dexamethasone is used by some specialists but has a very long half-life and lacks mineralocorticoid activity — not standard UK practice.",
-      "D": "Incorrect — 100mg hydrocortisone daily is the emergency/crisis dose — far too high for maintenance replacement.",
-      "E": "Incorrect — Fludrocortisone alone does not replace glucocorticoid function (cortisol). Both are required."
-    },
-    "reference": "Society for Endocrinology — Addison's disease management. NICE CKS — Addison's disease.",
-    "tags": [
-      "Addison's disease",
-      "hydrocortisone",
-      "fludrocortisone",
-      "replacement therapy",
-      "diurnal rhythm",
-      "mineralocorticoid"
-    ],
-    "source": "Question Grove 360"
-  },
-  {
-    "id": "QG-ENDO-017-005",
+    "id": "QG-B2-ENDO-114-003",
     "exam": "MRCGP AKT",
     "domain": "Clinical Medicine",
     "specialty": "Endocrinology",
     "difficulty": "Easy",
-    "question": "A GP is reviewing a patient with Addison's disease before elective hip replacement surgery. The anaesthetist asks about perioperative steroid management. What is the correct perioperative steroid protocol?",
+    "question": "A 55-year-old man with hypertension has features of Cushing's syndrome. His GP first considers iatrogenic Cushing's. Per NICE CKS, which medication history is most important to take before requesting biochemical tests?",
     "options": {
-      "A": "Continue usual oral hydrocortisone dose — no change needed",
-      "B": "Stop steroids 24 hours before surgery to allow adrenal function to recover",
-      "C": "Administer IV hydrocortisone 100mg at induction, then 50mg every 6-8 hours for 24-48 hours post-op, then step down to usual oral dose when eating and drinking",
-      "D": "Double oral hydrocortisone for 7 days before surgery",
-      "E": "Give IV dexamethasone 8mg at induction only"
-    },
-    "correct_answer": "C",
-    "explanation": {
-      "correct": "Per Society for Endocrinology perioperative guidelines, patients with Addison's disease undergoing major surgery require supplemental IV glucocorticoid (steroid cover): IV hydrocortisone 100mg at induction of anaesthesia, followed by 50mg IV every 6-8 hours for the first 24-48 hours post-operatively (major surgery — higher dose and longer duration), then step down to twice the usual oral dose when the patient can tolerate oral intake, then return to usual dose within 1-2 days. The patient's usual fludrocortisone should continue. Minor procedures may only require double oral dose on the day.",
-      "A": "Incorrect — Maintaining usual oral dose during major surgery risks adrenal crisis as surgical stress dramatically increases cortisol requirements.",
-      "B": "Incorrect — Stopping steroids before surgery in Addison's patients will cause adrenal crisis — never done.",
-      "C": "CORRECT — IV hydrocortisone 100mg at induction + 50mg every 6-8h post-op per Society for Endocrinology perioperative guidelines.",
-      "D": "Incorrect — Pre-operative oral doubling alone is insufficient for major surgery — IV supplementation is required.",
-      "E": "Incorrect — Single-dose dexamethasone alone is insufficient perioperative cover for major surgery in Addison's disease."
-    },
-    "reference": "Society for Endocrinology — Perioperative glucocorticoid management 2020. NICE CKS — Adrenal insufficiency.",
-    "tags": [
-      "Addison's disease",
-      "perioperative",
-      "steroid cover",
-      "IV hydrocortisone",
-      "surgery",
-      "adrenal crisis prevention"
-    ],
-    "source": "Question Grove 360"
-  },
-  {
-    "id": "QG-ENDO-057-001",
-    "exam": "MRCGP AKT",
-    "domain": "Clinical Medicine",
-    "specialty": "Endocrinology",
-    "difficulty": "Medium",
-    "question": "A 32-year-old woman had gestational diabetes mellitus (GDM) during her pregnancy, managed with dietary modification and metformin. She delivered 8 weeks ago and her 6-week postnatal fasting glucose was normal (5.0 mmol/L). Per NICE NG3, what long-term annual review is recommended for women who have had GDM?",
-    "options": {
-      "A": "No follow-up required — postnatal glucose was normal",
-      "B": "Annual HbA1c to screen for progression to type 2 diabetes",
-      "C": "Annual fasting glucose and HbA1c",
-      "D": "Annual oral glucose tolerance test (OGTT)",
-      "E": "Annual urine dipstick only — renal complications are the main risk"
+      "A": "ACE inhibitor history — ramipril causes Cushingoid features",
+      "B": "Exogenous corticosteroid use — any route (oral, inhaled, topical, intra-articular, epidural, nasal) can cause iatrogenic Cushing's syndrome and will invalidate biochemical screening tests; this must be excluded before formal testing",
+      "C": "NSAID use — causes cortisol elevation",
+      "D": "Alcohol history — alcohol causes pseudo-Cushing's, biochemically similar but clinically different",
+      "E": "Statin use — associated with cortisol metabolism changes"
     },
     "correct_answer": "B",
     "explanation": {
-      "correct": "Per NICE NG3 (Diabetes in pregnancy: management from preconception to postnatal period), women who have had GDM have a 50% lifetime risk of developing type 2 diabetes, and up to 30-50% risk within 10 years. Long-term follow-up required: annual HbA1c to screen for progression to prediabetes or T2DM. The 6-week postnatal test uses fasting glucose or HbA1c to check for undiagnosed T2DM. Annual HbA1c (not OGTT) is recommended for subsequent years as it is more practical. Lifestyle advice (diet, exercise, healthy weight) should also be strongly reinforced.",
-      "A": "Incorrect — Normal postnatal glucose does not negate the significantly elevated long-term T2DM risk. Annual review is mandatory.",
-      "B": "CORRECT — Annual HbA1c for women with prior GDM to screen for T2DM per NICE NG3.",
-      "C": "Incorrect — Annual HbA1c alone (not both) is the NICE NG3 recommendation for long-term follow-up.",
-      "D": "Incorrect — OGTT is used at the 6-week postnatal check (or fasting glucose/HbA1c), not annually thereafter.",
-      "E": "Incorrect — Renal complications are not the primary annual monitoring target. T2DM development is."
+      "correct": "Per NICE CKS, the most common cause of Cushing's syndrome globally is iatrogenic — exogenous corticosteroid use by ANY route. Before biochemical testing for endogenous Cushing's, a thorough corticosteroid history must be taken including: oral prednisolone/dexamethasone; high-dose inhaled corticosteroids (e.g., fluticasone, budesonide); potent topical steroids (clobetasol); intra-articular, epidural, or intramuscular corticosteroid injections; nasal corticosteroids (smaller risk). Exogenous corticosteroids: suppress ACTH and endogenous cortisol; cause a positive dexamethasone suppression test (no endogenous cortisol to suppress); mimic Cushing's syndrome biochemically. Alcohol use causes pseudo-Cushing's (positive biochemical tests) — also important to exclude but iatrogenic steroids are more common.",
+      "A": "Incorrect — ACE inhibitors do not cause Cushingoid features or interfere with cortisol testing.",
+      "B": "CORRECT — Exogenous corticosteroid use by any route must be excluded before biochemical Cushing's testing — it causes iatrogenic Cushing's per NICE CKS.",
+      "C": "Incorrect — NSAIDs do not cause cortisol elevation or Cushingoid features.",
+      "D": "Incorrect — Alcohol causes pseudo-Cushing's (important to exclude) but the most important medication history is corticosteroid use.",
+      "E": "Incorrect — Statins do not cause Cushingoid features or cortisol metabolism changes of clinical significance."
     },
-    "reference": "NICE NG3 — Diabetes in pregnancy. https://www.nice.org.uk/guidance/ng3",
-    "tags": [
-      "gestational diabetes",
-      "GDM",
-      "HbA1c",
-      "annual review",
-      "type 2 diabetes risk",
-      "NICE NG3"
-    ],
-    "source": "Question Grove 360"
+    "reference": "NICE CKS — Cushing's syndrome. https://cks.nice.org.uk/topics/cushings-syndrome/",
+    "tags": ["iatrogenic Cushing's", "exogenous steroids", "any route", "NICE CKS", "before testing", "pseudo-Cushing's"]
   },
   {
-    "id": "QG-ENDO-057-002",
+    "id": "QG-B2-ENDO-148-001",
     "exam": "MRCGP AKT",
     "domain": "Clinical Medicine",
     "specialty": "Endocrinology",
     "difficulty": "Easy",
-    "question": "A 30-year-old woman had GDM in her last pregnancy. She is now planning another pregnancy. Per NICE NG3, what blood test should be offered at her first antenatal booking appointment to detect undiagnosed T2DM or prediabetes?",
+    "question": "A 52-year-old man is newly diagnosed with type 2 diabetes. His HbA1c is 62 mmol/mol and his BMI is 32 kg/m². He has no CKD or cardiovascular disease. Per NICE NG28, what is the first-line pharmacological treatment?",
     "options": {
-      "A": "Random blood glucose",
-      "B": "HbA1c at booking — if elevated, offer early OGTT",
-      "C": "Fasting glucose at booking",
-      "D": "75g OGTT at booking, regardless of HbA1c",
-      "E": "No test needed — previous GDM does not increase risk in subsequent pregnancy"
-    },
-    "correct_answer": "D",
-    "explanation": {
-      "correct": "Per NICE NG3, women with previous GDM should be offered an early 75g OGTT as soon as possible after booking (ideally before 20 weeks, not at the standard 24-28 weeks). This is because they have significantly elevated risk of both persistent T2DM and recurrent GDM. If the early OGTT is normal, a repeat OGTT should be offered at 24-28 weeks (usual GDM screening window). Alternatively, if HbA1c ≥48 mmol/mol at booking, T2DM is diagnosed without OGTT.",
-      "A": "Incorrect — Random glucose is not the recommended test for GDM screening in subsequent pregnancy.",
-      "B": "Incorrect — HbA1c at booking can identify T2DM (≥48 mmol/mol) but OGTT is specifically required for GDM screening in previous GDM.",
-      "C": "Incorrect — Fasting glucose alone does not provide the full picture for GDM screening.",
-      "D": "CORRECT — Early 75g OGTT at booking (as soon as possible after booking) for women with previous GDM per NICE NG3.",
-      "E": "Incorrect — Previous GDM significantly increases recurrent GDM risk (30-70%) and T2DM risk — early OGTT is mandated."
-    },
-    "reference": "NICE NG3 — Diabetes in pregnancy. https://www.nice.org.uk/guidance/ng3",
-    "tags": [
-      "GDM",
-      "subsequent pregnancy",
-      "OGTT",
-      "booking appointment",
-      "NICE NG3",
-      "recurrent GDM"
-    ],
-    "source": "Question Grove 360"
-  },
-  {
-    "id": "QG-ENDO-057-003",
-    "exam": "MRCGP AKT",
-    "domain": "Clinical Medicine",
-    "specialty": "Endocrinology",
-    "difficulty": "Medium",
-    "question": "A 35-year-old woman had GDM 3 years ago managed with insulin. Her annual HbA1c is 45 mmol/mol this year (normal: <42 mmol/mol). Her BMI is 31 kg/m². Per NICE NG28 and NG3, what does this result mean and what is the most appropriate management?",
-    "options": {
-      "A": "Normal result — no action needed",
-      "B": "Prediabetes (HbA1c 42-47 mmol/mol) — intensive lifestyle intervention, weight loss, refer to NHS Diabetes Prevention Programme",
-      "C": "Type 2 diabetes — start metformin immediately",
-      "D": "Repeat HbA1c in 5 years",
-      "E": "Refer to endocrinology"
+      "A": "Gliclazide — most effective for rapid HbA1c reduction",
+      "B": "Metformin — first-line for all newly diagnosed type 2 diabetes regardless of BMI, providing no contraindication (eGFR ≥30, no hepatic impairment); start at 500mg daily with food, titrate to 1g twice daily over 4 weeks to reduce GI side effects",
+      "C": "Insulin — required for HbA1c >58 mmol/mol at diagnosis",
+      "D": "Sitagliptin (DPP-4 inhibitor) — preferred for overweight patients",
+      "E": "Empagliflozin alone — most effective for BMI 32"
     },
     "correct_answer": "B",
     "explanation": {
-      "correct": "HbA1c 42-47 mmol/mol = prediabetes (non-diabetic hyperglycaemia — NDH). Per NICE NG28 and NG3, management: intensive lifestyle intervention (minimum 150 minutes moderate exercise/week, Mediterranean or low-calorie diet), target weight loss of 5-7% body weight, referral to NHS Diabetes Prevention Programme (NDPP — free evidence-based lifestyle intervention). Women with previous GDM plus prediabetes are at very high risk of T2DM — proactive intervention is essential. HbA1c should be repeated in 1 year (not 5 years).",
-      "A": "Incorrect — HbA1c 45 mmol/mol is above the normal range (>42). This is prediabetes requiring action.",
-      "B": "CORRECT — Prediabetes: intensive lifestyle + NHS Diabetes Prevention Programme per NICE NG28/NG3.",
-      "C": "Incorrect — T2DM is diagnosed at HbA1c ≥48 mmol/mol (confirmed on repeat). 45 mmol/mol is prediabetes, not T2DM.",
-      "D": "Incorrect — Annual HbA1c is recommended for women with previous GDM and prediabetes — not 5-yearly.",
-      "E": "Incorrect — Endocrinology referral is not required for prediabetes manageable in primary care."
+      "correct": "Per NICE NG28, metformin is the first-line pharmacological treatment for type 2 diabetes regardless of BMI, unless contraindicated. Contraindications: eGFR <30 ml/min (absolute), eGFR 30-45 (use with caution, reduce dose), hepatic impairment, acute illness with dehydration. Starting regime: standard-release metformin 500mg once or twice daily with meals, increase by 500mg every 1-2 weeks to target dose of 2g/day (or maximum tolerated); modified-release formulation if GI intolerance. If HbA1c remains above target (>53 mmol/mol) at 3-6 months: add a second agent (SGLT2 inhibitor if CVD/CKD/HF; DPP-4 inhibitor or sulfonylurea otherwise). NICE NG28 also recommends SGLT2 inhibitor earlier if the patient has established CVD or high CV risk.",
+      "A": "Incorrect — Gliclazide (sulfonylurea) is second or third-line in NICE NG28 — metformin is first-line.",
+      "B": "CORRECT — Metformin first-line for T2DM regardless of BMI per NICE NG28. Start low, titrate slowly to reduce GI side effects.",
+      "C": "Incorrect — Insulin is not first-line for newly diagnosed T2DM — dietary intervention and metformin should be tried first unless HbA1c is very high (>86 mmol/mol) or symptomatic hyperglycaemia.",
+      "D": "Incorrect — DPP-4 inhibitors are second-line add-on therapy per NICE NG28 — not first-line.",
+      "E": "Incorrect — SGLT2 inhibitors (empagliflozin) are indicated as first-line alongside metformin in high cardiovascular risk T2DM but not as monotherapy first-line at this HbA1c."
     },
-    "reference": "NICE NG28 — Type 2 diabetes. NICE NG3 — Diabetes in pregnancy. NHS Diabetes Prevention Programme.",
-    "tags": [
-      "prediabetes",
-      "HbA1c",
-      "GDM",
-      "NHS Diabetes Prevention Programme",
-      "lifestyle intervention",
-      "NICE NG28"
-    ],
-    "source": "Question Grove 360"
+    "reference": "NICE NG28 — Type 2 diabetes in adults: management. https://www.nice.org.uk/guidance/ng28",
+    "tags": ["type 2 diabetes", "metformin first-line", "newly diagnosed", "NICE NG28", "HbA1c 62", "T2DM"]
   },
   {
-    "id": "QG-ENDO-057-004",
-    "exam": "MRCGP AKT",
-    "domain": "Clinical Medicine",
-    "specialty": "Endocrinology",
-    "difficulty": "Easy",
-    "question": "A 28-year-old woman had gestational diabetes in her recent pregnancy. She is being counselled at her 6-week postnatal check. Which test is recommended at the 6-week postnatal check to exclude persistent diabetes per NICE NG3?",
-    "options": {
-      "A": "Random blood glucose",
-      "B": "Fasting plasma glucose or HbA1c",
-      "C": "75g OGTT",
-      "D": "Urine dipstick for glycosuria",
-      "E": "No test needed at 6 weeks — annual HbA1c is sufficient"
-    },
-    "correct_answer": "B",
-    "explanation": {
-      "correct": "Per NICE NG3, the 6-week postnatal check for women who had GDM should include fasting plasma glucose OR HbA1c to exclude persistent type 2 diabetes or prediabetes. The purpose is to detect those who have not returned to normoglycaemia (approximately 5-10% of GDM women have persistent T2DM postnatally). OGTT is not routinely required at 6 weeks (only if clinically indicated). Following a normal 6-week result, annual HbA1c is then recommended long-term.",
-      "A": "Incorrect — Random blood glucose is not the recommended postnatal test (insufficient sensitivity for prediabetes detection).",
-      "B": "CORRECT — Fasting glucose or HbA1c at 6-week postnatal check per NICE NG3.",
-      "C": "Incorrect — OGTT is used for GDM screening in pregnancy. At 6 weeks postnatally, fasting glucose or HbA1c is used.",
-      "D": "Incorrect — Glycosuria is not a reliable diagnostic test for diabetes.",
-      "E": "Incorrect — The 6-week postnatal check is specifically recommended — not deferred to annual review."
-    },
-    "reference": "NICE NG3 — Diabetes in pregnancy. https://www.nice.org.uk/guidance/ng3",
-    "tags": [
-      "GDM",
-      "postnatal check",
-      "6 weeks",
-      "fasting glucose",
-      "HbA1c",
-      "NICE NG3"
-    ],
-    "source": "Question Grove 360"
-  },
-  {
-    "id": "QG-ENDO-057-005",
+    "id": "QG-B2-ENDO-183-001",
     "exam": "MRCGP AKT",
     "domain": "Clinical Medicine",
     "specialty": "Endocrinology",
     "difficulty": "Hard",
-    "question": "A 34-year-old woman who had GDM asks about breastfeeding and medication for glucose management postnatally. Her glucose levels remain slightly elevated postnatally (fasting 6.5 mmol/L). She wishes to breastfeed. Per NICE NG3, which medication is considered safe to use for glucose control while breastfeeding?",
+    "question": "A patient with type 1 diabetes on a basal-bolus insulin regime has blood glucose readings: fasting morning BG consistently 9-11 mmol/L, post-meal lunch BG 12-14 mmol/L, and post-meal dinner BG 10-12 mmol/L. All other readings are above target. Per NICE NG17 and insulin adjustment principles, which insulin should be adjusted first?",
     "options": {
-      "A": "Metformin — avoid completely in breastfeeding",
-      "B": "Metformin and glibenclamide — both safe in breastfeeding",
-      "C": "Insulin — considered safe in breastfeeding; metformin can also be used",
-      "D": "All oral hypoglycaemics are contraindicated — use insulin only",
-      "E": "SGLT2 inhibitors — safe and effective in breastfeeding"
-    },
-    "correct_answer": "C",
-    "explanation": {
-      "correct": "Per NICE NG3, for women who need pharmacological glucose management postnatally while breastfeeding: insulin is considered safe (does not pass into breast milk in clinically significant amounts, and even if it did, it would be digested). Metformin can also be used in breastfeeding — small amounts pass into breast milk but are considered safe per NICE NG3 and UKDILAS. Glibenclamide is not recommended in breastfeeding (UKDILAS — limited data, risk of neonatal hypoglycaemia). SGLT2 inhibitors are contraindicated in breastfeeding.",
-      "A": "Incorrect — Metformin is considered acceptable in breastfeeding per NICE NG3 and UKDILAS.",
-      "B": "Incorrect — Metformin is safe, but glibenclamide is NOT recommended in breastfeeding.",
-      "C": "CORRECT — Insulin is safe in breastfeeding; metformin is also acceptable per NICE NG3.",
-      "D": "Incorrect — Metformin is permitted in breastfeeding per NICE NG3.",
-      "E": "Incorrect — SGLT2 inhibitors are contraindicated in breastfeeding."
-    },
-    "reference": "NICE NG3 — Diabetes in pregnancy. UKDILAS — Drugs in breastfeeding.",
-    "tags": [
-      "GDM",
-      "postnatal diabetes",
-      "breastfeeding",
-      "metformin",
-      "insulin",
-      "NICE NG3"
-    ],
-    "source": "Question Grove 360"
-  },
-  {
-    "id": "QG-ENDO-069-001",
-    "exam": "MRCGP AKT",
-    "domain": "Clinical Medicine",
-    "specialty": "Endocrinology",
-    "difficulty": "Medium",
-    "question": "A 91-year-old woman with type 2 diabetes is on metformin 500mg twice daily and gliclazide 80mg daily. Her HbA1c is 34 mmol/mol (well below target). She has had two falls in the past month. She is frail and lives in a care home. Which medication should be reduced or stopped first, and why?",
-    "options": {
-      "A": "Stop metformin — it is contraindicated in elderly patients",
-      "B": "Stop gliclazide — it causes hypoglycaemia, which is likely causing her falls; HbA1c 34 confirms over-treatment",
-      "C": "Increase gliclazide — HbA1c 34 is too low and needs correction with more aggressive treatment",
-      "D": "Continue both medications — falls are unrelated to diabetes treatment",
-      "E": "Stop both medications — diabetes treatment is not needed at age 91"
+      "A": "Increase all meal-time (bolus) insulin doses equally",
+      "B": "Increase the basal (background) insulin dose — consistently elevated fasting morning glucose across the day indicates insufficient basal insulin; once fasting is at target (4-7 mmol/L), reassess post-meal readings before adjusting bolus doses",
+      "C": "Start a GLP-1 receptor agonist to reduce all readings",
+      "D": "Reduce carbohydrate intake only — no insulin change needed",
+      "E": "Switch to premixed insulin — simplifies the regime"
     },
     "correct_answer": "B",
     "explanation": {
-      "correct": "HbA1c 34 mmol/mol is significantly below the recommended target for frail elderly patients. Per NICE NG28, in older adults with frailty or multiple comorbidities, HbA1c targets are relaxed (typically 53-64 mmol/mol, or even higher in very frail). HbA1c 34 mmol/mol strongly indicates hypoglycaemia episodes. Gliclazide (sulphonylurea) causes hypoglycaemia — a leading cause of falls and associated serious injury (hip fractures) in the elderly. Metformin does NOT cause hypoglycaemia. Stop gliclazide first. Review metformin based on eGFR. This is a classic deprescribing scenario.",
-      "A": "Incorrect — Metformin does NOT cause hypoglycaemia and is appropriate if eGFR ≥30. It is not the cause of falls.",
-      "B": "CORRECT — Stop gliclazide: it causes hypoglycaemia (HbA1c 34 = overtreated), which is causing falls per NICE NG28.",
-      "C": "Incorrect — HbA1c 34 means glucose is already too low. Increasing gliclazide risks severe hypoglycaemia.",
-      "D": "Incorrect — HbA1c 34 in a frail 91-year-old on sulphonylurea is strongly associated with hypoglycaemia-induced falls.",
-      "E": "Incorrect — Complete cessation of all diabetes treatment is not indicated. Metformin can be continued appropriately."
+      "correct": "Per NICE NG17 and DAFNE (Dose Adjustment For Normal Eating) principles, structured insulin adjustment in type 1 diabetes follows this logic: Consistently elevated fasting/morning glucose → increase BASAL insulin first. Once fasting glucose is at target (4-7 mmol/L): reassess post-meal readings. Elevated post-meal readings with normal fasting → increase the corresponding BOLUS (meal-time) dose. Rationale: if fasting glucose is high, the background insulin is insufficient regardless of meal insulin; adjusting bolus doses on top of insufficient basal leads to compounding errors. NICE NG17: structured education (DAFNE for type 1, DESMOND for type 2) teaches patients to adjust their own insulin. Basal adjustment: typically increase by 2 units every 3 days until fasting within target.",
+      "A": "Incorrect — Increasing all bolus doses equally when fasting glucose is elevated risks post-meal hypoglycaemia while the root problem (insufficient basal) is unaddressed.",
+      "B": "CORRECT — Elevated fasting BG = insufficient basal insulin. Increase basal first, then reassess bolus needs per NICE NG17/DAFNE principles.",
+      "C": "Incorrect — GLP-1 agonists are not licensed for type 1 diabetes in standard UK practice.",
+      "D": "Incorrect — While dietary management is important, the pattern of consistently elevated readings indicates insulin underdosing that must be corrected.",
+      "E": "Incorrect — Switching to premixed insulin removes the flexibility of independent basal/bolus adjustment — not appropriate for consistently elevated all-day readings in type 1 diabetes."
     },
-    "reference": "NICE NG28 — Type 2 diabetes in adults. SIGN 154 — Pharmacological management of glycaemic control in T2DM.",
-    "tags": [
-      "gliclazide",
-      "hypoglycaemia",
-      "elderly",
-      "frailty",
-      "deprescribing",
-      "NICE NG28"
-    ],
-    "source": "Question Grove 360"
-  },
-  {
-    "id": "QG-ENDO-069-002",
-    "exam": "MRCGP AKT",
-    "domain": "Clinical Medicine",
-    "specialty": "Endocrinology",
-    "difficulty": "Easy",
-    "question": "Per NICE NG28, what is the recommended HbA1c target for an older adult with type 2 diabetes who is on a drug that can cause hypoglycaemia (e.g. gliclazide or insulin)?",
-    "options": {
-      "A": "48 mmol/mol (6.5%) — same as for all patients",
-      "B": "53 mmol/mol (7.0%)",
-      "C": "58 mmol/mol (7.5%) — or higher in frail/elderly patients",
-      "D": "42 mmol/mol (6.0%)",
-      "E": "70 mmol/mol — any target is acceptable in elderly patients"
-    },
-    "correct_answer": "C",
-    "explanation": {
-      "correct": "Per NICE NG28: HbA1c 53 mmol/mol is the general target when drugs that cause hypoglycaemia are used (sulphonylureas, insulin). For older adults with multiple comorbidities, frailty or limited life expectancy, NICE recommends relaxing targets — typically 58-64 mmol/mol or higher. A HbA1c of 34 mmol/mol in a 91-year-old frail patient is a quality alert — the patient is being overtreated with unacceptable hypoglycaemia risk. The risks of hypoglycaemia (falls, fractures, cardiac events, confusion) far outweigh any benefit of tight glycaemic control in very elderly frail patients.",
-      "A": "Incorrect — 48 mmol/mol is the target when non-hypoglycaemic agents are used (e.g. metformin alone). Tighter targets with hypoglycaemia-causing drugs are inappropriate.",
-      "B": "Incorrect — 53 mmol/mol is the standard target with sulphonylureas/insulin in younger/fitter adults, not in frail elderly.",
-      "C": "CORRECT — 58 mmol/mol or relaxed further in frail/elderly patients on hypoglycaemia-causing drugs per NICE NG28.",
-      "D": "Incorrect — 42 mmol/mol represents active hypoglycaemia risk in a patient on sulphonylureas.",
-      "E": "Incorrect — While targets are relaxed, there are still guidance recommendations — not 'any target acceptable'."
-    },
-    "reference": "NICE NG28 — Type 2 diabetes in adults. https://www.nice.org.uk/guidance/ng28",
-    "tags": [
-      "HbA1c target",
-      "elderly",
-      "frailty",
-      "hypoglycaemia",
-      "sulphonylurea",
-      "NICE NG28"
-    ],
-    "source": "Question Grove 360"
-  },
-  {
-    "id": "QG-ENDO-069-003",
-    "exam": "MRCGP AKT",
-    "domain": "Clinical Medicine",
-    "specialty": "Endocrinology",
-    "difficulty": "Medium",
-    "question": "An 88-year-old man with type 2 diabetes, CKD Stage 4 (eGFR 27 ml/min) and heart failure is on gliclazide 160mg daily and metformin 1g twice daily. He has repeated hypoglycaemia episodes. Which medication changes are most appropriate?",
-    "options": {
-      "A": "Continue both — CKD doesn't affect sulphonylurea metabolism",
-      "B": "Stop metformin (eGFR <30 — contraindicated) and reduce gliclazide to lowest possible dose or stop it given recurrent hypoglycaemia",
-      "C": "Stop gliclazide only — metformin can continue at eGFR 27",
-      "D": "Increase gliclazide — HbA1c may need better control",
-      "E": "Start SGLT2 inhibitor to replace both"
-    },
-    "correct_answer": "B",
-    "explanation": {
-      "correct": "Two concurrent problems: (1) Metformin is CONTRAINDICATED at eGFR <30 ml/min (lactic acidosis risk per NICE NG28/BNF) — must be stopped; (2) Gliclazide causes hypoglycaemia — in CKD, the drug's active metabolites accumulate, significantly increasing hypoglycaemia risk. In a frail 88-year-old with recurrent hypoglycaemia, gliclazide should be reduced to minimum or stopped. Short-acting insulin may be considered with specialist input. SGLT2 inhibitors are contraindicated at eGFR <30.",
-      "A": "Incorrect — Both CKD-related contraindications and hypoglycaemia risk must be addressed.",
-      "B": "CORRECT — Stop metformin (eGFR <30 = contraindicated) + reduce/stop gliclazide (recurrent hypoglycaemia) per NICE NG28/BNF.",
-      "C": "Incorrect — Metformin must also be stopped at eGFR 27 (below the <30 threshold).",
-      "D": "Incorrect — Increasing gliclazide in the context of recurrent hypoglycaemia and CKD would be dangerous.",
-      "E": "Incorrect — SGLT2 inhibitors are contraindicated at eGFR <30 ml/min."
-    },
-    "reference": "NICE NG28 — Type 2 diabetes. BNF — Metformin contraindications. BNF — Gliclazide in renal impairment.",
-    "tags": [
-      "gliclazide",
-      "metformin",
-      "CKD",
-      "eGFR",
-      "hypoglycaemia",
-      "NICE NG28"
-    ],
-    "source": "Question Grove 360"
-  },
-  {
-    "id": "QG-ENDO-069-004",
-    "exam": "MRCGP AKT",
-    "domain": "Clinical Medicine",
-    "specialty": "Endocrinology",
-    "difficulty": "Hard",
-    "question": "A GP is performing a structured medication review for a 85-year-old frail woman with type 2 diabetes. She is on 8 medications. Her HbA1c is 41 mmol/mol. She is on gliclazide 40mg, metformin 500mg BD, linagliptin, and insulin glargine 10 units. She has had 3 hypoglycaemia episodes this year. Which intervention best addresses her over-treatment?",
-    "options": {
-      "A": "Add another antidiabetic agent to stabilise glucose",
-      "B": "Deprescribe the sulphonylurea (gliclazide) first, then review insulin dose — aim for HbA1c 58-64 mmol/mol in this frail elderly patient",
-      "C": "Continue all medications — multiple agents are needed for complex diabetes",
-      "D": "Stop insulin only and continue all oral agents",
-      "E": "Stop metformin — it is causing the hypoglycaemia"
-    },
-    "correct_answer": "B",
-    "explanation": {
-      "correct": "This is a polypharmacy and over-treatment scenario. HbA1c 41 mmol/mol with 3 hypoglycaemia episodes in a frail 85-year-old on sulphonylurea + insulin = significantly overtreated. Deprescribing approach per NICE NG28 and STOPP criteria: (1) Stop gliclazide first — sulphonylureas in elderly patients with hypoglycaemia is a STOPP criterion (inappropriate prescribing); (2) Reduce insulin glargine dose; (3) Aim for relaxed HbA1c target 58-64 mmol/mol (or higher in very frail); (4) Linagliptin can continue — it does not cause hypoglycaemia. Metformin does not cause hypoglycaemia.",
-      "A": "Incorrect — Adding more agents to an overtreated patient will worsen hypoglycaemia.",
-      "B": "CORRECT — Deprescribe gliclazide first + reduce insulin + target HbA1c 58-64 mmol/mol per NICE NG28/STOPP criteria.",
-      "C": "Incorrect — Multiple agents with hypoglycaemia in a frail patient is inappropriate. Deprescribing is required.",
-      "D": "Incorrect — Insulin should be reviewed but gliclazide (sulphonylurea) is the first priority for deprescribing per STOPP criteria.",
-      "E": "Incorrect — Metformin does not cause hypoglycaemia. Gliclazide and insulin are the causative agents."
-    },
-    "reference": "NICE NG28. STOPP/START criteria v3. SIGN 154 — Glycaemic management in T2DM.",
-    "tags": [
-      "deprescribing",
-      "frailty",
-      "gliclazide",
-      "STOPP criteria",
-      "polypharmacy",
-      "hypoglycaemia elderly"
-    ],
-    "source": "Question Grove 360"
-  },
-  {
-    "id": "QG-ENDO-069-005",
-    "exam": "MRCGP AKT",
-    "domain": "Clinical Medicine",
-    "specialty": "Endocrinology",
-    "difficulty": "Easy",
-    "question": "A community pharmacist alerts a GP that an 87-year-old care home resident with type 2 diabetes has had three episodes of hypoglycaemia (BG <4 mmol/L) documented in her care home records in the past 6 weeks. She is on gliclazide 80mg daily. What is the most appropriate immediate action?",
-    "options": {
-      "A": "Increase her carbohydrate intake to prevent hypoglycaemia",
-      "B": "Reduce or stop gliclazide and re-check HbA1c — recurrent hypoglycaemia on sulphonylurea in an elderly patient requires immediate medication review",
-      "C": "Add acarbose to slow glucose absorption",
-      "D": "Switch to a twice-daily gliclazide regimen",
-      "E": "Wait for the next routine review in 3 months"
-    },
-    "correct_answer": "B",
-    "explanation": {
-      "correct": "Recurrent hypoglycaemia on a sulphonylurea in an elderly care home resident is a prescribing safety alert. Per NICE NG28 and NHSE Medicines Safety guidance, recurrent hypoglycaemia on sulphonylureas requires IMMEDIATE medication review — reduce or stop gliclazide and measure HbA1c to assess true glycaemic control. In frail elderly patients, hypoglycaemia causes falls, fractures, cognitive impairment, cardiac events and significant mortality. Waiting 3 months is inappropriate. Increasing carbohydrate addresses symptoms but not the underlying over-treatment.",
-      "A": "Incorrect — Increasing carbohydrate intake does not address the underlying over-treatment with a hypoglycaemia-causing drug.",
-      "B": "CORRECT — Immediate gliclazide reduction/cessation + HbA1c review for recurrent hypoglycaemia per NICE NG28.",
-      "C": "Incorrect — Acarbose has no role in managing sulphonylurea-induced hypoglycaemia.",
-      "D": "Incorrect — Dose frequency adjustment does not address over-treatment. The dose or drug itself needs reviewing.",
-      "E": "Incorrect — Recurrent hypoglycaemia is a prescribing emergency requiring same-week action — not deferral to routine review."
-    },
-    "reference": "NICE NG28 — Type 2 diabetes. NHSE — Medicines safety: hypoglycaemia guidance.",
-    "tags": [
-      "gliclazide",
-      "hypoglycaemia",
-      "elderly",
-      "care home",
-      "immediate review",
-      "NICE NG28"
-    ],
-    "source": "Question Grove 360"
-  },
-  {
-    "id": "QG-ENDO-070-001",
-    "exam": "MRCGP AKT",
-    "domain": "Clinical Medicine",
-    "specialty": "Endocrinology",
-    "difficulty": "Easy",
-    "question": "A 24-year-old woman with epilepsy on sodium valproate 1000mg daily asks about planning a pregnancy. She is currently seizure-free for 2 years. Which statement best describes the teratogenic risk of sodium valproate in pregnancy?",
-    "options": {
-      "A": "Sodium valproate has the same teratogenic risk as other antiepileptics",
-      "B": "Sodium valproate carries the highest teratogenic risk of any antiepileptic drug — associated with neural tube defects (1-2%), congenital malformations (10%), and fetal valproate syndrome including neurodevelopmental disorders (intellectual disability, autism) in up to 30-40% of exposed children",
-      "C": "Sodium valproate is safe in pregnancy if folic acid is taken",
-      "D": "Sodium valproate should be avoided only in the first trimester",
-      "E": "The teratogenic risk applies only to doses above 1500mg daily"
-    },
-    "correct_answer": "B",
-    "explanation": {
-      "correct": "Sodium valproate is the antiepileptic drug with the highest teratogenic risk in pregnancy. Risks include: neural tube defects (spina bifida 1-2%), congenital malformations (cardiac, orofacial, limb — overall 10%), and fetal valproate syndrome (FVS) causing neurodevelopmental disorders including autism spectrum disorder (ASD) and intellectual disability in 30-40% of in-utero exposed children. Per MHRA and NICE, valproate must not be used in women of childbearing potential without a Pregnancy Prevention Programme (PPP) in place. Women planning pregnancy must switch to an alternative AED with specialist input.",
-      "A": "Incorrect — Valproate carries significantly higher risk than other AEDs (e.g. lamotrigine or levetiracetam).",
-      "B": "CORRECT — Highest teratogenic risk of any AED: NTD 1-2%, malformations 10%, neurodevelopmental disorders 30-40% per MHRA.",
-      "C": "Incorrect — High-dose folic acid (5mg) reduces NTD risk but does NOT adequately mitigate valproate's teratogenic risks, particularly neurodevelopmental effects.",
-      "D": "Incorrect — Neurodevelopmental effects occur throughout gestation, not just first trimester. Risk applies throughout pregnancy.",
-      "E": "Incorrect — Teratogenic risk has been demonstrated at all doses of valproate used for epilepsy."
-    },
-    "reference": "MHRA — Valproate safety restrictions 2018. NICE CG137 — Epilepsies. NICE NG217 — Epilepsy in pregnancy.",
-    "tags": [
-      "sodium valproate",
-      "teratogenic",
-      "pregnancy",
-      "neural tube defect",
-      "fetal valproate syndrome",
-      "MHRA"
-    ],
-    "source": "Question Grove 360"
-  },
-  {
-    "id": "QG-ENDO-070-002",
-    "exam": "MRCGP AKT",
-    "domain": "Clinical Medicine",
-    "specialty": "Endocrinology",
-    "difficulty": "Medium",
-    "question": "A 20-year-old woman with juvenile myoclonic epilepsy (JME) is established on sodium valproate 1500mg daily with excellent seizure control. She wishes to start a family in 12 months. Per MHRA guidance and NICE NG217, what is the most appropriate management plan?",
-    "options": {
-      "A": "Continue valproate — JME requires valproate and there is no alternative",
-      "B": "Discuss with neurologist urgently — if an alternative AED is feasible, transition to lamotrigine or levetiracetam before conception; if not, ensure Pregnancy Prevention Programme (PPP) is in place and provide full counselling",
-      "C": "Start folic acid 5mg and continue valproate unchanged",
-      "D": "Switch to carbamazepine — safer than valproate in pregnancy",
-      "E": "Stop all antiepileptics before conception — seizures during pregnancy are manageable"
-    },
-    "correct_answer": "B",
-    "explanation": {
-      "correct": "Per MHRA Valproate Safety Restrictions (2018, updated 2024) and NICE NG217, women of childbearing potential on valproate MUST: be under a Pregnancy Prevention Programme (annual specialist review, reliable contraception, annual information and counselling). For women planning pregnancy, urgent specialist neurological review is required to consider switching to a safer AED. JME can sometimes be managed with levetiracetam. Lamotrigine and levetiracetam have significantly lower teratogenic risks. The decision to switch must balance seizure risk (some JME responds only to valproate) against teratogenic risk — this requires specialist input, not GP action alone.",
-      "A": "Incorrect — While JME has limited AED options, assuming valproate is the only option without specialist review is incorrect. The situation must be discussed urgently.",
-      "B": "CORRECT — Urgent neurological review + consider AED switch before conception + ensure PPP per MHRA/NICE NG217.",
-      "C": "Incorrect — Folic acid 5mg reduces NTD risk but does not adequately mitigate valproate teratogenicity.",
-      "D": "Incorrect — Carbamazepine is also teratogenic (spina bifida ~0.5-1%) and is significantly less effective for JME.",
-      "E": "Incorrect — Stopping all AEDs risks status epilepticus, which itself carries very high maternal and fetal mortality."
-    },
-    "reference": "MHRA — Valproate safety. NICE NG217 — Epilepsy in pregnancy. NICE CG137.",
-    "tags": [
-      "sodium valproate",
-      "Pregnancy Prevention Programme",
-      "JME",
-      "lamotrigine",
-      "MHRA",
-      "NICE NG217"
-    ],
-    "source": "Question Grove 360"
-  },
-  {
-    "id": "QG-ENDO-070-003",
-    "exam": "MRCGP AKT",
-    "domain": "Clinical Medicine",
-    "specialty": "Endocrinology",
-    "difficulty": "Medium",
-    "question": "Per MHRA Valproate Pregnancy Prevention Programme (PPP), which of the following is a mandatory requirement for all women of childbearing potential currently prescribed sodium valproate?",
-    "options": {
-      "A": "Annual review with their GP only",
-      "B": "Annual specialist review, annual signing of Risk Acknowledgement Form, effective contraception, and a Patient Card carried at all times",
-      "C": "Monthly pregnancy tests",
-      "D": "Monthly liver function tests",
-      "E": "No formal programme required — patient counselling at initiation is sufficient"
-    },
-    "correct_answer": "B",
-    "explanation": {
-      "correct": "MHRA Valproate Pregnancy Prevention Programme (PPP) — mandatory components for all women of childbearing potential on valproate: (1) Annual specialist review (neurologist, psychiatrist, or GP with special interest); (2) Annual signing of the Patient/Prescriber Risk Acknowledgement Form (acknowledging understanding of risks); (3) Effective contraception (2 methods recommended); (4) Carrying the Patient Card at all times (to inform any other healthcare providers); (5) Dispensing in no more than 30-day supplies (from November 2024 MHRA update). Community pharmacies must comply. If the patient refuses to acknowledge risks or refuses contraception, prescribing must be reviewed by a specialist.",
-      "A": "Incorrect — GP review alone is insufficient. Annual specialist review is mandated.",
-      "B": "CORRECT — Annual specialist review + annual Risk Acknowledgement Form + effective contraception + Patient Card per MHRA PPP.",
-      "C": "Incorrect — Monthly pregnancy tests are not part of the MHRA PPP (quarterly or as clinically indicated may be appropriate).",
-      "D": "Incorrect — Monthly LFTs are not part of the PPP. LFTs are checked periodically for hepatotoxicity monitoring.",
-      "E": "Incorrect — Initiation counselling alone is wholly insufficient — the PPP requires ongoing annual formal review and signed documentation."
-    },
-    "reference": "MHRA — Valproate Pregnancy Prevention Programme updated 2024. https://www.gov.uk/drug-safety-update/valproate-medicines",
-    "tags": [
-      "valproate",
-      "PPP",
-      "Pregnancy Prevention Programme",
-      "Risk Acknowledgement Form",
-      "MHRA",
-      "contraception"
-    ],
-    "source": "Question Grove 360"
-  },
-  {
-    "id": "QG-ENDO-070-004",
-    "exam": "MRCGP AKT",
-    "domain": "Clinical Medicine",
-    "specialty": "Endocrinology",
-    "difficulty": "Hard",
-    "question": "A 22-year-old woman on sodium valproate for bipolar disorder presents at 6 weeks gestation. She did not know she was pregnant and has been taking valproate throughout. She is very distressed. What is the most appropriate management?",
-    "options": {
-      "A": "Stop valproate immediately — all teratogenic risk has already occurred",
-      "B": "Continue valproate unchanged — stopping now will cause bipolar relapse without reducing teratogenic risk already occurred",
-      "C": "Urgent specialist referral to psychiatry and fetal medicine — discuss risks vs benefits; if switching, do so carefully to avoid relapse; ensure high-dose folic acid 5mg; arrange detailed anomaly scan at 18-20 weeks",
-      "D": "Start high-dose folic acid and reassure — organogenesis is complete at 6 weeks",
-      "E": "Advise termination of pregnancy as outcomes are always severely affected"
-    },
-    "correct_answer": "C",
-    "explanation": {
-      "correct": "This is a complex situation requiring specialist input. Management: (1) Urgent psychiatry referral to review mood stabiliser — valproate may need to continue if no safe alternative exists for bipolar disorder control (bipolar relapse in pregnancy also carries significant risks); (2) If switching is possible, do so carefully with monitoring; (3) High-dose folic acid 5mg daily (though neural tube formation is largely complete at 6 weeks, other malformations and neurodevelopmental effects continue); (4) Fetal medicine referral for detailed anomaly scan at 18-20 weeks; (5) Specialist obstetric and neonatal counselling about risks; (6) Support for psychological distress. Do NOT advise termination categorically — outcomes are not universally severe and 60-70% of exposed children do not have neurodevelopmental disorders.",
-      "A": "Incorrect — Stopping abruptly risks severe bipolar relapse (hypomania, mania, mixed state) in pregnancy — also dangerous.",
-      "B": "Incorrect — While relapse risk is real, specialist review to explore alternatives and plan optimal management is essential.",
-      "C": "CORRECT — Urgent psychiatry + fetal medicine + folic acid 5mg + anomaly scan + psychological support per NICE NG217/MHRA.",
-      "D": "Incorrect — Organogenesis is NOT complete at 6 weeks — cardiac, limb and other structures form over weeks 4-10. Neural tube closes by day 28.",
-      "E": "Incorrect — Termination should not be presented categorically. Risks are significant but most exposed children are not severely affected. This is a decision for the woman with full information."
-    },
-    "reference": "NICE NG217 — Epilepsy in pregnancy. MHRA — Valproate in pregnancy. RCOG guidance.",
-    "tags": [
-      "valproate",
-      "pregnancy",
-      "bipolar disorder",
-      "anomaly scan",
-      "folic acid",
-      "NICE NG217"
-    ],
-    "source": "Question Grove 360"
-  },
-  {
-    "id": "QG-ENDO-070-005",
-    "exam": "MRCGP AKT",
-    "domain": "Clinical Medicine",
-    "specialty": "Endocrinology",
-    "difficulty": "Easy",
-    "question": "Which antiepileptic drug has the LOWEST teratogenic risk and is generally preferred in women of childbearing potential who require epilepsy treatment during pregnancy?",
-    "options": {
-      "A": "Sodium valproate",
-      "B": "Carbamazepine",
-      "C": "Phenobarbital",
-      "D": "Lamotrigine or levetiracetam — lowest teratogenic risk among common AEDs",
-      "E": "Phenytoin"
-    },
-    "correct_answer": "D",
-    "explanation": {
-      "correct": "Per NICE NG217, MHRA and the UK Epilepsy and Pregnancy Register, lamotrigine and levetiracetam have the lowest teratogenic risk among commonly used AEDs: major congenital malformation rates of approximately 2-3% (similar to background population rate of ~2%). They are generally preferred in women of childbearing potential. Valproate carries 10%+ major malformation rate. Carbamazepine carries ~2-3% risk (spina bifida ~0.5-1%). Phenobarbital and phenytoin carry higher risks and are generally avoided in women of childbearing potential.",
-      "A": "Incorrect — Valproate has the HIGHEST teratogenic risk — must be avoided in women of childbearing potential where possible.",
-      "B": "Incorrect — Carbamazepine has intermediate risk, higher than lamotrigine/levetiracetam.",
-      "C": "Incorrect — Phenobarbital carries significant teratogenic risk — not preferred.",
-      "D": "CORRECT — Lamotrigine or levetiracetam have the lowest teratogenic risk and are preferred per NICE NG217.",
-      "E": "Incorrect — Phenytoin carries significant teratogenic risk (fetal hydantoin syndrome)."
-    },
-    "reference": "NICE NG217 — Epilepsy in pregnancy. MHRA — AED teratogenic risks. UK Epilepsy and Pregnancy Register.",
-    "tags": [
-      "lamotrigine",
-      "levetiracetam",
-      "lowest teratogenic risk",
-      "AED pregnancy",
-      "NICE NG217",
-      "MHRA"
-    ],
-    "source": "Question Grove 360"
-  },
-  {
-    "id": "QG-ENDO-088-001",
-    "exam": "MRCGP AKT",
-    "domain": "Clinical Medicine",
-    "specialty": "Endocrinology",
-    "difficulty": "Medium",
-    "question": "A 55-year-old man with type 2 diabetes on empagliflozin 10mg daily presents with severe pain, swelling and skin necrosis involving the perineum, scrotum and perianal area. He has fever and is haemodynamically compromised. What is the diagnosis and most important immediate action?",
-    "options": {
-      "A": "Scrotal cellulitis — IV co-amoxiclav and admission",
-      "B": "Fournier's gangrene (necrotising fasciitis of the genitalia/perineum) — this is a known rare but serious adverse effect of SGLT2 inhibitors; stop empagliflozin, call 999, emergency surgical debridement + broad-spectrum IV antibiotics",
-      "C": "Genital herpes — IV aciclovir",
-      "D": "Contact dermatitis from empagliflozin — topical hydrocortisone",
-      "E": "Fournier's gangrene — continue empagliflozin as it is unrelated to this condition"
-    },
-    "correct_answer": "B",
-    "explanation": {
-      "correct": "Fournier's gangrene (necrotising fasciitis of the perineum/external genitalia) is a rare but life-threatening adverse effect of SGLT2 inhibitors (empagliflozin, dapagliflozin, canagliflozin). Per MHRA Drug Safety Update (2019), SGLT2 inhibitors increase urinary glucose → promotes bacterial/fungal growth in perineal skin → necrotising fasciitis. Immediate action: stop SGLT2 inhibitor immediately, call 999, emergency surgical debridement is life-saving (must occur within hours), broad-spectrum IV antibiotics covering gram-positive, gram-negative, and anaerobes (piperacillin/tazobactam + metronidazole).",
-      "A": "Incorrect — Scrotal cellulitis is a less severe condition without skin necrosis and haemodynamic compromise. This presentation is Fournier's gangrene — a surgical emergency.",
-      "B": "CORRECT — Fournier's gangrene from SGLT2 inhibitor: stop drug immediately + 999 + emergency debridement + IV antibiotics per MHRA 2019.",
-      "C": "Incorrect — Herpes causes vesicular erosive lesions, not tissue necrosis with haemodynamic compromise.",
-      "D": "Incorrect — Contact dermatitis does not cause tissue necrosis or haemodynamic compromise.",
-      "E": "Incorrect — SGLT2 inhibitors ARE causally associated with Fournier's gangrene per MHRA. The drug must be stopped."
-    },
-    "reference": "MHRA Drug Safety Update — SGLT2 inhibitors and Fournier's gangrene 2019. https://www.gov.uk/drug-safety-update",
-    "tags": [
-      "SGLT2 inhibitor",
-      "Fournier's gangrene",
-      "necrotising fasciitis",
-      "empagliflozin",
-      "MHRA",
-      "surgical emergency"
-    ],
-    "source": "Question Grove 360"
-  },
-  {
-    "id": "QG-ENDO-088-002",
-    "exam": "MRCGP AKT",
-    "domain": "Clinical Medicine",
-    "specialty": "Endocrinology",
-    "difficulty": "Easy",
-    "question": "A 48-year-old woman with T2DM is about to be started on dapagliflozin 10mg. The prescriber reviews MHRA safety guidance. Apart from Fournier's gangrene, which other serious adverse effects of SGLT2 inhibitors must patients be counselled about?",
-    "options": {
-      "A": "Hypoglycaemia (most common serious side effect)",
-      "B": "Diabetic ketoacidosis (DKA) — including euglycaemic DKA (blood glucose may be near normal); urinary tract and genital fungal infections; volume depletion/postural hypotension; lower limb amputation risk (canagliflozin)",
-      "C": "Lactic acidosis — risk is the same as metformin",
-      "D": "QTc prolongation — monitor ECG before starting",
-      "E": "Hepatotoxicity — check LFTs before and during treatment"
-    },
-    "correct_answer": "B",
-    "explanation": {
-      "correct": "SGLT2 inhibitor (MHRA-mandated counselling points): (1) Euglycaemic DKA — glucose may be <11 mmol/L, making diagnosis more difficult; check ketones if unwell; (2) UTI and genital fungal infections (candida) — due to urinary glucose; (3) Volume depletion and postural hypotension — particularly in elderly, diuretics users, and those with low eGFR; hold during illness/dehydration (sick day rules); (4) Lower limb amputation risk (canagliflozin specifically — black box warning); (5) Fournier's gangrene; (6) Bone fractures (canagliflozin). SGLT2 inhibitors do NOT cause hypoglycaemia as monotherapy.",
-      "A": "Incorrect — SGLT2 inhibitors do NOT cause hypoglycaemia as monotherapy (they do not stimulate insulin secretion).",
-      "B": "CORRECT — DKA (euglycaemic), UTI, genital candida, volume depletion, amputation risk (canagliflozin) per MHRA/BNF.",
-      "C": "Incorrect — Lactic acidosis is a risk with metformin, not SGLT2 inhibitors.",
-      "D": "Incorrect — QTc prolongation is not a recognised SGLT2 inhibitor adverse effect.",
-      "E": "Incorrect — Hepatotoxicity monitoring is not a routine SGLT2 inhibitor requirement."
-    },
-    "reference": "MHRA — SGLT2 inhibitor safety guidance. BNF — Dapagliflozin adverse effects. NICE NG28.",
-    "tags": [
-      "SGLT2 inhibitor",
-      "DKA",
-      "euglycaemic DKA",
-      "genital infections",
-      "amputation",
-      "MHRA"
-    ],
-    "source": "Question Grove 360"
-  },
-  {
-    "id": "QG-ENDO-088-003",
-    "exam": "MRCGP AKT",
-    "domain": "Clinical Medicine",
-    "specialty": "Endocrinology",
-    "difficulty": "Hard",
-    "question": "A 45-year-old woman with T1DM on an SGLT2 inhibitor as adjunct therapy presents with nausea, vomiting, abdominal pain and lethargy. Blood glucose is 9.8 mmol/L. Venous blood gas shows pH 7.18, bicarbonate 8 mmol/L. Blood ketones are 4.1 mmol/L. What is the diagnosis and why is it dangerous to miss in SGLT2 inhibitor users?",
-    "options": {
-      "A": "Hyperosmolar hyperglycaemic state — blood glucose is too low for DKA",
-      "B": "Euglycaemic diabetic ketoacidosis (DKA) — SGLT2 inhibitors cause DKA with near-normal blood glucose, which can be falsely reassuring and lead to delayed diagnosis",
-      "C": "Metformin-induced lactic acidosis",
-      "D": "Normal anion gap metabolic acidosis — no treatment needed",
-      "E": "Starvation ketosis — reassure and rehydrate"
-    },
-    "correct_answer": "B",
-    "explanation": {
-      "correct": "Euglycaemic DKA: blood glucose near-normal (typically 6-12 mmol/L) but marked ketonaemia and acidosis. SGLT2 inhibitors promote glycosuria → reduces blood glucose → masks hyperglycaemia of DKA. However, the underlying metabolic process (insulin deficiency causing lipolysis → ketogenesis → acidosis) continues. Critically, standard DKA diagnostic criteria (glucose >11) are NOT met — leading to missed/delayed diagnosis. MHRA warning: all patients on SGLT2 inhibitors presenting unwell should have blood ketones checked regardless of blood glucose. Treat as per standard DKA protocol (IV fluids, insulin infusion, stop SGLT2 inhibitor).",
-      "A": "Incorrect — HHS requires glucose typically >30 mmol/L, high osmolality, minimal ketones and no acidosis.",
-      "B": "CORRECT — Euglycaemic DKA from SGLT2 inhibitor: near-normal glucose but severe ketonaemia and acidosis per MHRA warning.",
-      "C": "Incorrect — Metformin-induced lactic acidosis shows elevated lactate — not ketones. She is not on metformin.",
-      "D": "Incorrect — pH 7.18 with ketones 4.1 mmol/L is severe DKA requiring emergency treatment.",
-      "E": "Incorrect — Starvation ketosis causes mild ketonaemia (typically <3 mmol/L) and does not cause acidosis of this severity."
-    },
-    "reference": "MHRA Drug Safety Update — SGLT2 inhibitors and DKA 2015, updated 2016. JBDS — DKA guidelines.",
-    "tags": [
-      "euglycaemic DKA",
-      "SGLT2 inhibitor",
-      "diabetic ketoacidosis",
-      "near-normal glucose",
-      "MHRA",
-      "ketones"
-    ],
-    "source": "Question Grove 360"
-  },
-  {
-    "id": "QG-ENDO-088-004",
-    "exam": "MRCGP AKT",
-    "domain": "Clinical Medicine",
-    "specialty": "Endocrinology",
-    "difficulty": "Medium",
-    "question": "A 60-year-old man with T2DM on empagliflozin is admitted to hospital for elective knee replacement surgery. What should happen to his empagliflozin perioperatively per MHRA guidance?",
-    "options": {
-      "A": "Continue empagliflozin throughout the perioperative period",
-      "B": "Stop empagliflozin at least 3 days before surgery and do not restart until the patient is eating and drinking normally and ketones are checked",
-      "C": "Halve the empagliflozin dose perioperatively",
-      "D": "Switch to insulin perioperatively and then restart empagliflozin after 24 hours",
-      "E": "No specific perioperative guidance exists for SGLT2 inhibitors"
-    },
-    "correct_answer": "B",
-    "explanation": {
-      "correct": "Per MHRA Drug Safety Update and JBDS perioperative guidelines, SGLT2 inhibitors should be STOPPED at least 3 days (some guidelines recommend ≥3 days, others up to 7 days) before elective surgery due to the risk of perioperative euglycaemic DKA. The physiological stress of surgery + fasting + anaesthesia increases ketogenesis. SGLT2 inhibitors mask hyperglycaemia while promoting ketone production. Empagliflozin should not be restarted until the patient is eating and drinking normally AND blood/urine ketones are checked to exclude DKA.",
-      "A": "Incorrect — Continuing SGLT2 inhibitor perioperatively risks euglycaemic DKA. MHRA mandates stopping pre-operatively.",
-      "B": "CORRECT — Stop SGLT2 inhibitor ≥3 days pre-operatively; restart only when eating/drinking + ketones checked per MHRA/JBDS.",
-      "C": "Incorrect — Dose reduction is not the recommendation — complete cessation is required.",
-      "D": "Incorrect — Restarting after only 24 hours without eating/drinking check and ketone assessment is too early.",
-      "E": "Incorrect — Specific MHRA guidance exists for perioperative SGLT2 inhibitor management."
-    },
-    "reference": "MHRA Drug Safety Update — SGLT2 inhibitors perioperative DKA risk 2023. JBDS perioperative diabetes management.",
-    "tags": [
-      "SGLT2 inhibitor",
-      "perioperative",
-      "DKA",
-      "surgery",
-      "empagliflozin",
-      "MHRA"
-    ],
-    "source": "Question Grove 360"
-  },
-  {
-    "id": "QG-ENDO-088-005",
-    "exam": "MRCGP AKT",
-    "domain": "Clinical Medicine",
-    "specialty": "Endocrinology",
-    "difficulty": "Easy",
-    "question": "A GP is prescribing dapagliflozin for a 52-year-old woman with T2DM, hypertension and eGFR 35 ml/min. Per NICE NG28 and the BNF, is dapagliflozin appropriate at this eGFR and what are the eGFR thresholds?",
-    "options": {
-      "A": "Yes — dapagliflozin can be used at any eGFR",
-      "B": "No — dapagliflozin for T2DM glucose lowering is not recommended when eGFR <45 ml/min; however dapagliflozin for heart failure or CKD protection may be started/continued at lower eGFR",
-      "C": "Yes — eGFR 35 is above the threshold of 30 for SGLT2 inhibitors",
-      "D": "No — all SGLT2 inhibitors are absolutely contraindicated at eGFR <60",
-      "E": "Yes — lower eGFR makes dapagliflozin more effective"
-    },
-    "correct_answer": "B",
-    "explanation": {
-      "correct": "Per NICE NG28 and BNF: dapagliflozin (and other SGLT2 inhibitors) for T2DM glucose-lowering: not recommended when eGFR <45 ml/min (limited glucose-lowering efficacy). However: dapagliflozin for heart failure (HFrEF/HFpEF) and CKD protection (per NICE TA775/TA679): can be started/continued down to eGFR ≥25 ml/min or even on dialysis for heart failure. At eGFR 35, dapagliflozin as glucose-lowering agent is not appropriate, but if she had HF or CKD progression, it could be considered for organ-protective indications by specialists.",
-      "A": "Incorrect — There are eGFR thresholds. Glucose-lowering efficacy is reduced and not recommended at eGFR <45.",
-      "B": "CORRECT — SGLT2 not recommended for glucose lowering at eGFR <45; organ-protective use may continue lower per NICE TA775/679.",
-      "C": "Incorrect — The threshold for glucose-lowering use is eGFR ≥45 (not ≥30).",
-      "D": "Incorrect — eGFR ≥60 is not the threshold. eGFR ≥45 for glucose lowering; ≥25 for HF/CKD organ-protective use.",
-      "E": "Incorrect — Lower eGFR reduces the glucose-lowering efficacy of SGLT2 inhibitors (less glycosuria as filtered glucose load decreases)."
-    },
-    "reference": "NICE NG28 — Type 2 diabetes. NICE TA775 — Dapagliflozin for CKD. BNF — Dapagliflozin eGFR thresholds.",
-    "tags": [
-      "dapagliflozin",
-      "SGLT2 inhibitor",
-      "eGFR threshold",
-      "CKD",
-      "NICE NG28",
-      "BNF"
-    ],
-    "source": "Question Grove 360"
-  },
-  {
-    "id": "QG-ENDO-104-001",
-    "exam": "MRCGP AKT",
-    "domain": "Clinical Medicine",
-    "specialty": "Endocrinology",
-    "difficulty": "Easy",
-    "question": "A 12-year-old girl with Down's syndrome (trisomy 21) is attending for her annual health check. Her parent reports she has been more tired than usual, constipated and gaining weight. Her TSH is 12.5 mU/L and free T4 is 9.2 pmol/L. What is the most appropriate management?",
-    "options": {
-      "A": "Reassure — mild TSH elevation is normal in Down's syndrome",
-      "B": "Start levothyroxine 25-50 mcg daily — confirmed hypothyroidism in a child with Down's syndrome",
-      "C": "Recheck TFTs in 6 months before treating",
-      "D": "Refer to CAMHS — tiredness may be behavioural",
-      "E": "Start metformin — weight gain may be pre-diabetes"
-    },
-    "correct_answer": "B",
-    "explanation": {
-      "correct": "Down's syndrome has a 15-30% lifetime prevalence of thyroid disease — predominantly autoimmune hypothyroidism (Hashimoto's thyroiditis). Annual thyroid screening is recommended. TSH 12.5 mU/L with low free T4 = overt primary hypothyroidism — treatment is indicated. Symptoms (fatigue, constipation, weight gain) confirm clinical hypothyroidism. Start levothyroxine at low dose (25 mcg in children, titrated by weight and response) with aim for TSH in normal range. Children with Down's syndrome often have subclinical hypothyroidism (elevated TSH with normal T4) — treatment threshold may be lower than in the general population.",
-      "A": "Incorrect — TSH 12.5 with low T4 is overt hypothyroidism requiring treatment, not reassurance.",
-      "B": "CORRECT — Overt hypothyroidism (elevated TSH + low T4) in Down's syndrome — start levothyroxine.",
-      "C": "Incorrect — Overt hypothyroidism with symptoms requires treatment, not 6-month delay.",
-      "D": "Incorrect — Fatigue, constipation and weight gain in a child with Down's syndrome with abnormal TFTs have a clear metabolic cause.",
-      "E": "Incorrect — Weight gain here is secondary to hypothyroidism, not primary diabetes."
-    },
-    "reference": "NICE CKS — Hypothyroidism. Down's Syndrome Medical Interest Group (DSMIG) health guidelines.",
-    "tags": [
-      "Down's syndrome",
-      "hypothyroidism",
-      "levothyroxine",
-      "annual screening",
-      "TSH",
-      "DSMIG"
-    ],
-    "source": "Question Grove 360"
-  },
-  {
-    "id": "QG-ENDO-104-002",
-    "exam": "MRCGP AKT",
-    "domain": "Clinical Medicine",
-    "specialty": "Endocrinology",
-    "difficulty": "Medium",
-    "question": "Per the Down's Syndrome Medical Interest Group (DSMIG) guidelines, how frequently should thyroid function tests be performed in individuals with Down's syndrome?",
-    "options": {
-      "A": "Only if symptomatic",
-      "B": "Every 5 years from the age of 10",
-      "C": "Annually — thyroid function should be checked every year throughout life in all people with Down's syndrome",
-      "D": "Once at birth and once at age 18",
-      "E": "Only during pregnancy"
-    },
-    "correct_answer": "C",
-    "explanation": {
-      "correct": "Per DSMIG guidelines (endorsed by NHS and NICE CKS), thyroid function tests (TSH) should be checked annually in all people with Down's syndrome throughout their life. This is because: (1) High prevalence of thyroid disease (15-30%), predominantly autoimmune; (2) Symptoms may be masked or attributed to Down's syndrome itself (cognitive changes, weight changes, constipation); (3) Early detection and treatment prevents neurocognitive deterioration and developmental delay in children. In neonates, TSH is checked as part of the standard newborn screening (Guthrie/heel prick test) but also specifically at 6 weeks and then annually.",
-      "A": "Incorrect — Thyroid disease in Down's syndrome often presents insidiously and symptoms are easily attributed to the condition — asymptomatic screening is essential.",
-      "B": "Incorrect — Annual screening throughout life, not 5-yearly from age 10.",
-      "C": "CORRECT — Annual TFTs throughout life for all people with Down's syndrome per DSMIG guidelines.",
-      "D": "Incorrect — Two lifetime checks are grossly insufficient given 15-30% prevalence and risk throughout life.",
-      "E": "Incorrect — Thyroid screening is not limited to pregnancy — annual screening applies throughout life."
-    },
-    "reference": "Down's Syndrome Medical Interest Group (DSMIG) — Health Surveillance for People with Down's Syndrome. NICE CKS.",
-    "tags": [
-      "Down's syndrome",
-      "thyroid screening",
-      "annual TFTs",
-      "DSMIG",
-      "hypothyroidism",
-      "surveillance"
-    ],
-    "source": "Question Grove 360"
-  },
-  {
-    "id": "QG-ENDO-104-003",
-    "exam": "MRCGP AKT",
-    "domain": "Clinical Medicine",
-    "specialty": "Endocrinology",
-    "difficulty": "Medium",
-    "question": "A 35-year-old man with Down's syndrome attends his annual health check. His TSH is 6.2 mU/L (slightly elevated) and free T4 is 14.5 pmol/L (normal). He has no symptoms. What is the most appropriate management for subclinical hypothyroidism in someone with Down's syndrome?",
-    "options": {
-      "A": "No treatment — TSH 6.2 is within normal variation for Down's syndrome",
-      "B": "Start levothyroxine 50 mcg immediately",
-      "C": "Repeat TFTs in 3-6 months; if persistently elevated, consider starting levothyroxine given lower treatment threshold in Down's syndrome — discuss with specialist",
-      "D": "Check anti-TPO antibodies only and take no further action",
-      "E": "Refer to endocrinology for all TFT abnormalities in Down's syndrome"
-    },
-    "correct_answer": "C",
-    "explanation": {
-      "correct": "Per DSMIG guidelines, the treatment threshold for subclinical hypothyroidism (elevated TSH with normal T4) in Down's syndrome is lower than in the general population. While standard NICE guidance would suggest monitoring TSH <10 without treatment, in Down's syndrome even a mildly elevated TSH may warrant treatment because: (1) thyroid disease progresses rapidly in Down's; (2) cognitive effects of even mild hypothyroidism may be more pronounced; (3) symptoms may be underreported. Confirm persistence at 3-6 months, check TPO antibodies, and have a low threshold to treat — ideally discuss with endocrinology or specialist.",
-      "A": "Incorrect — TSH 6.2 requires monitoring and consideration of treatment, especially in Down's syndrome where threshold is lower.",
-      "B": "Incorrect — Starting levothyroxine without confirming persistence at first single reading is premature for subclinical hypothyroidism.",
-      "C": "CORRECT — Repeat TFTs 3-6 months + consider treatment at lower threshold in Down's syndrome per DSMIG.",
-      "D": "Incorrect — TPO antibodies confirm autoimmune aetiology but taking no further action after single elevated TSH is insufficient.",
-      "E": "Incorrect — Not all TFT abnormalities in Down's syndrome require endocrinology referral — GPs with awareness of DSMIG guidance can manage this."
-    },
-    "reference": "DSMIG — Health Surveillance for People with Down's Syndrome. NICE CKS — Hypothyroidism.",
-    "tags": [
-      "Down's syndrome",
-      "subclinical hypothyroidism",
-      "DSMIG",
-      "lower treatment threshold",
-      "levothyroxine",
-      "TSH"
-    ],
-    "source": "Question Grove 360"
-  },
-  {
-    "id": "QG-ENDO-104-004",
-    "exam": "MRCGP AKT",
-    "domain": "Clinical Medicine",
-    "specialty": "Endocrinology",
-    "difficulty": "Hard",
-    "question": "A GP is preparing an annual health check template for patients with Down's syndrome in their practice. Per DSMIG guidelines, which combination of health checks should be included in the annual review for adults with Down's syndrome?",
-    "options": {
-      "A": "TSH only",
-      "B": "TSH, hearing assessment, vision assessment, BMI, blood pressure, coeliac screen (anti-TTG), dementia/Alzheimer's screening, atlantoaxial instability awareness, dental review",
-      "C": "TSH and BMI only",
-      "D": "Full blood count, TSH and HbA1c only",
-      "E": "Annual review is not recommended — Down's syndrome patients should attend as needed"
-    },
-    "correct_answer": "B",
-    "explanation": {
-      "correct": "Per DSMIG Health Surveillance for People with Down's Syndrome, the annual health check for adults should include: TSH (annual — 15-30% thyroid disease), hearing assessment (conductive/sensorineural hearing loss very common), vision assessment (cataracts, keratoconus, refractive errors), BMI and nutrition, blood pressure, coeliac disease screen (anti-TTG — 5-10% prevalence in Down's), Alzheimer's/dementia assessment (3-5x higher risk, earlier onset — from age 30+), awareness of atlantoaxial instability (for contact sports, anaesthetic considerations), dental health, and mental health screen. Down's syndrome also warrants cardiac review (congenital heart disease check-up) and haematology awareness (10-20x higher risk of leukaemia).",
-      "A": "Incorrect — TSH alone is insufficient for a comprehensive Down's syndrome annual review.",
-      "B": "CORRECT — Comprehensive annual review including TSH, hearing, vision, BMI, BP, coeliac, dementia screening per DSMIG.",
-      "C": "Incorrect — TSH and BMI alone miss critical components (hearing, vision, coeliac, dementia).",
-      "D": "Incorrect — FBC and HbA1c are useful but the comprehensive DSMIG list covers far more components.",
-      "E": "Incorrect — Annual structured health review is specifically recommended for all people with Down's syndrome per DSMIG."
-    },
-    "reference": "DSMIG — Health Surveillance for People with Down's Syndrome 2023. NHS — Annual health checks for people with learning disabilities.",
-    "tags": [
-      "Down's syndrome",
-      "annual health check",
-      "DSMIG",
-      "coeliac",
-      "dementia",
-      "Alzheimer's"
-    ],
-    "source": "Question Grove 360"
-  },
-  {
-    "id": "QG-ENDO-104-005",
-    "exam": "MRCGP AKT",
-    "domain": "Clinical Medicine",
-    "specialty": "Endocrinology",
-    "difficulty": "Easy",
-    "question": "A newborn with Down's syndrome (trisomy 21) is reviewed at the GP surgery at 6 weeks. The newborn bloodspot screening (Guthrie test) was normal. Which endocrine condition is most important to actively check for and monitor throughout this child's life?",
-    "options": {
-      "A": "Type 1 diabetes — 40% lifetime prevalence in Down's syndrome",
-      "B": "Congenital adrenal hyperplasia — must recheck at 6 weeks",
-      "C": "Hypothyroidism — 15-30% lifetime prevalence; annual TFTs recommended throughout life",
-      "D": "Cushing's syndrome — screen at 12 months",
-      "E": "Growth hormone deficiency — GH stimulation test at 2 years"
-    },
-    "correct_answer": "C",
-    "explanation": {
-      "correct": "Hypothyroidism is by far the most important and common endocrine condition in Down's syndrome — affecting 15-30% over a lifetime. The newborn bloodspot screens for congenital hypothyroidism at birth, but autoimmune hypothyroidism develops throughout life. Per DSMIG, annual TSH testing throughout life from birth (repeat at 6 weeks, then 6 months, then annually) is the standard of care. Type 1 diabetes is also more common in Down's syndrome but at lower prevalence (~1%) than hypothyroidism. CAH is excluded at birth by the Guthrie test if normal.",
-      "A": "Incorrect — T1DM is slightly more common in Down's but at ~1% prevalence, far less than hypothyroidism (15-30%).",
-      "B": "Incorrect — CAH is screened in the newborn bloodspot. If normal, rechecking is not routinely indicated.",
-      "C": "CORRECT — Hypothyroidism: 15-30% lifetime prevalence; annual TFTs throughout life per DSMIG.",
-      "D": "Incorrect — Cushing's syndrome is not a recognised increased-prevalence condition in Down's syndrome.",
-      "E": "Incorrect — GH deficiency may cause short stature in Down's syndrome but is not the primary endocrine concern for routine monitoring."
-    },
-    "reference": "DSMIG — Health Surveillance for People with Down's Syndrome. NICE CKS — Down's syndrome.",
-    "tags": [
-      "Down's syndrome",
-      "hypothyroidism",
-      "annual screening",
-      "newborn",
-      "DSMIG",
-      "TFTs"
-    ],
-    "source": "Question Grove 360"
+    "reference": "NICE NG17 — Type 1 diabetes in adults. DAFNE programme. https://www.nice.org.uk/guidance/ng17",
+    "tags": ["insulin adjustment", "basal insulin", "fasting glucose", "T1DM", "NICE NG17", "DAFNE"]
   }
 ]

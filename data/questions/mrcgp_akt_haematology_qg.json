@@ -1,0 +1,574 @@
+[
+  {
+    "id": "QG-HAEM-106-001",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Haematology",
+    "difficulty": "Medium",
+    "question": "A 45-year-old man is found to have: serum ferritin 1850 mcg/L (markedly elevated), transferrin saturation 74%, mildly elevated ALT and normal bilirubin. He reports fatigue, arthralgia affecting the 2nd and 3rd metacarpophalangeal joints and erectile dysfunction. His father died of liver cirrhosis at age 55. Which genetic test confirms the most likely diagnosis?",
+    "options": {
+      "A": "JAK2 V617F mutation — myeloproliferative disease",
+      "B": "HFE gene testing for C282Y and H63D mutations — hereditary haemochromatosis",
+      "C": "ATP7B mutation — Wilson's disease",
+      "D": "BRCA1/2 mutation — hereditary cancer syndrome",
+      "E": "Factor V Leiden mutation — thrombophilia"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Hereditary haemochromatosis (HH) is an autosomal recessive condition caused by HFE gene mutations. C282Y homozygosity accounts for ~85% of HH in Northern European populations. Classic features: elevated ferritin and transferrin saturation (>45%), liver disease, arthropathy (MCP joints — 'iron fist' sign), hypogonadism, diabetes, bronze skin, cardiomyopathy. Positive family history (father with cirrhosis) strongly supports hereditary cause. HFE gene testing (C282Y and H63D) is the diagnostic test. Per BSG guidelines, first-degree relatives should also be screened.",
+      "A": "Incorrect — JAK2 V617F is associated with polycythaemia vera, essential thrombocythaemia and myelofibrosis — not iron overload.",
+      "B": "CORRECT — HFE gene testing (C282Y/H63D) confirms hereditary haemochromatosis per BSG guidelines.",
+      "C": "Incorrect — ATP7B mutation causes Wilson's disease (copper overload) — presents with liver disease and neuropsychiatric features in young adults.",
+      "D": "Incorrect — BRCA mutations relate to breast/ovarian cancer risk — not iron overload.",
+      "E": "Incorrect — Factor V Leiden causes thrombophilia — not iron overload or MCP arthropathy."
+    },
+    "reference": "BSG Guidelines on Hereditary Haemochromatosis 2018. https://www.bsg.org.uk/clinical-resource/bsg-guidelines-on-hereditary-haemochromatosis-2018/",
+    "tags": ["haemochromatosis", "HFE gene", "C282Y", "iron overload", "MCP arthropathy", "BSG"]
+  },
+  {
+    "id": "QG-HAEM-106-002",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Haematology",
+    "difficulty": "Easy",
+    "question": "A 50-year-old man with confirmed hereditary haemochromatosis (C282Y homozygous, ferritin 2100 mcg/L, transferrin saturation 78%) has no evidence of liver fibrosis. Per BSG guidance, what is the first-line treatment?",
+    "options": {
+      "A": "Oral desferrioxamine — iron chelation therapy",
+      "B": "Regular venesection (phlebotomy) 450-500mL weekly until serum ferritin <50 mcg/L, then maintenance phlebotomy every 2-4 months",
+      "C": "Low-iron diet alone — sufficient for mild-moderate iron overload",
+      "D": "Intravenous desferasirox monthly",
+      "E": "Liver transplantation — definitive treatment for haemochromatosis"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per BSG Guidelines on Hereditary Haemochromatosis 2018, therapeutic venesection (phlebotomy) is the first-line and most effective treatment for HH. Protocol: 450-500mL blood removed weekly (each session removes approximately 200-250mg iron). Continue until ferritin <50 mcg/L and transferrin saturation <50%. Maintenance phase: phlebotomy every 2-4 months to maintain ferritin 50-100 mcg/L. Each unit of blood removed contains approximately 200-250mg iron, making this highly effective. Oral chelation is reserved for patients who cannot tolerate venesection (e.g., severe anaemia, poor venous access).",
+      "A": "Incorrect — Desferrioxamine is parenteral chelation used in transfusion-dependent conditions (thalassaemia, sickle cell) — not first-line for HH.",
+      "B": "CORRECT — Weekly venesection 450-500mL until ferritin <50 mcg/L, then maintenance per BSG HH guidelines.",
+      "C": "Incorrect — Dietary restriction alone is wholly inadequate for iron overload at this level.",
+      "D": "Incorrect — Deferasirox is an oral chelator used for transfusion iron overload — not first-line for HH.",
+      "E": "Incorrect — Liver transplantation is only for end-stage cirrhosis — not first-line treatment for HH."
+    },
+    "reference": "BSG Guidelines on Hereditary Haemochromatosis 2018. https://www.bsg.org.uk/clinical-resource/bsg-guidelines-on-hereditary-haemochromatosis-2018/",
+    "tags": ["haemochromatosis", "venesection", "phlebotomy", "ferritin", "BSG", "iron overload treatment"]
+  },
+  {
+    "id": "QG-HAEM-106-003",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Haematology",
+    "difficulty": "Hard",
+    "question": "A GP identifies a patient with HH and ferritin 950 mcg/L. The patient's brother (age 48) is concerned about his own risk. Per BSG guidelines, what screening should be offered to first-degree relatives of someone with confirmed C282Y homozygous haemochromatosis?",
+    "options": {
+      "A": "No screening needed — HH only affects the index case",
+      "B": "HFE gene testing for C282Y and H63D plus serum ferritin and transferrin saturation for all first-degree relatives (siblings have 1:4 risk of C282Y homozygosity if both parents are carriers)",
+      "C": "Liver biopsy for all siblings regardless of blood test results",
+      "D": "Annual ferritin measurement only — gene testing is not available on NHS",
+      "E": "Screen only symptomatic relatives — asymptomatic relatives do not need testing"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per BSG HH Guidelines 2018, all first-degree relatives (siblings, parents, children) of a confirmed C282Y homozygous patient should be offered cascade screening. Siblings have a 1-in-4 (25%) probability of being C282Y homozygous (both parents must be at least heterozygous carriers). Screening: HFE genotyping (C282Y and H63D) plus fasting serum ferritin and transferrin saturation. Early detection and treatment before organ damage prevents complications entirely. HFE testing IS available on the NHS via haematology or biochemistry.",
+      "A": "Incorrect — HH is autosomal recessive with significant familial risk — family screening is a BSG recommendation.",
+      "B": "CORRECT — HFE gene testing plus ferritin/transferrin saturation for all first-degree relatives per BSG HH guidelines.",
+      "C": "Incorrect — Liver biopsy is not offered to all relatives. Gene testing and biochemistry first — biopsy only if established iron overload with suspected fibrosis.",
+      "D": "Incorrect — HFE gene testing is available on NHS. Ferritin alone without genotyping misses at-risk asymptomatic relatives.",
+      "E": "Incorrect — Asymptomatic relatives may have significant iron loading — early detection prevents irreversible organ damage."
+    },
+    "reference": "BSG Guidelines on Hereditary Haemochromatosis 2018. https://www.bsg.org.uk/clinical-resource/bsg-guidelines-on-hereditary-haemochromatosis-2018/",
+    "tags": ["haemochromatosis", "family screening", "cascade testing", "C282Y", "BSG", "first-degree relatives"]
+  },
+  {
+    "id": "QG-HAEM-106-004",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Haematology",
+    "difficulty": "Medium",
+    "question": "A 38-year-old woman is found to have ferritin 680 mcg/L on routine bloods. She has no symptoms. Her transferrin saturation is 52%. She is pre-menopausal. HFE gene testing shows C282Y/H63D compound heterozygosity. What is the significance of compound heterozygosity and what action is needed?",
+    "options": {
+      "A": "Compound heterozygosity causes the same iron loading as C282Y homozygosity — treat identically",
+      "B": "C282Y/H63D compound heterozygosity causes mild iron loading in a minority of individuals — investigate for secondary causes of iron overload (alcohol, fatty liver, metabolic syndrome); if genuinely elevated, consider venesection; repeat ferritin and transferrin saturation in 6 months",
+      "C": "Compound heterozygosity is a benign carrier state — discharge without action",
+      "D": "Compound heterozygosity requires liver transplantation to prevent progression",
+      "E": "Compound heterozygosity always causes severe haemochromatosis — urgent venesection"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "C282Y/H63D compound heterozygosity causes mild to moderate iron loading in a minority (~1.5%) of individuals but rarely causes clinically significant iron overload without other co-factors (alcohol excess, NAFLD, metabolic syndrome). This is distinct from C282Y homozygosity (the major HH genotype). BSG guidance: investigate for secondary contributing factors; if no secondary cause and ferritin remains elevated, monitoring and potentially venesection if ferritin >1000 or organ disease evident. Compound heterozygotes do NOT routinely require the same intensity of treatment as C282Y homozygotes.",
+      "A": "Incorrect — Compound heterozygosity causes milder iron loading than C282Y homozygosity and requires individual assessment.",
+      "B": "CORRECT — C282Y/H63D compound heterozygosity: mild iron loading, investigate secondary causes, individualised monitoring per BSG.",
+      "C": "Incorrect — Ferritin 680 with elevated transferrin saturation requires assessment even in compound heterozygosity.",
+      "D": "Incorrect — Liver transplantation is not indicated at this stage.",
+      "E": "Incorrect — Compound heterozygosity rarely causes severe HH — this would overtreat the majority."
+    },
+    "reference": "BSG Guidelines on Hereditary Haemochromatosis 2018. https://www.bsg.org.uk/clinical-resource/bsg-guidelines-on-hereditary-haemochromatosis-2018/",
+    "tags": ["haemochromatosis", "compound heterozygosity", "C282Y H63D", "iron overload", "BSG", "secondary causes"]
+  },
+  {
+    "id": "QG-HAEM-106-005",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Haematology",
+    "difficulty": "Hard",
+    "question": "A 55-year-old man with HH has been on venesection for 3 years. His ferritin is now stable at 65 mcg/L on 3-monthly maintenance phlebotomy. His liver has established cirrhosis (Fibroscan 18.2 kPa). Per BSG guidelines, what additional surveillance is now required?",
+    "options": {
+      "A": "No further surveillance needed once ferritin is controlled",
+      "B": "6-monthly liver ultrasound and serum AFP for hepatocellular carcinoma surveillance, plus upper GI endoscopy for oesophageal varices per cirrhosis management guidelines",
+      "C": "Annual CT abdomen only",
+      "D": "Liver biopsy annually to assess fibrosis regression",
+      "E": "Discharge to GP for annual ferritin only"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Established cirrhosis from HH carries a significantly elevated risk of hepatocellular carcinoma (HCC) — relative risk 20-200x compared to the general population — even after successful iron depletion. Per BSG HH guidelines and NICE guidance on HCC surveillance: 6-monthly liver ultrasound ± serum AFP is recommended for all patients with cirrhosis regardless of cause. Additionally, per NICE CG 92 and BSG cirrhosis guidelines, screening for oesophageal varices (upper GI endoscopy) and portal hypertension complications should be initiated. Venesection does not eliminate HCC risk once cirrhosis is established.",
+      "A": "Incorrect — Cirrhosis surveillance is mandatory regardless of iron control — HCC risk persists.",
+      "B": "CORRECT — 6-monthly USS + AFP for HCC surveillance plus variceal screening for established cirrhosis per BSG/NICE.",
+      "C": "Incorrect — CT alone annually is insufficient — 6-monthly USS with AFP is the recommended HCC surveillance.",
+      "D": "Incorrect — Annual liver biopsy is not standard practice for monitoring. Non-invasive methods (Fibroscan, MRI) are preferred.",
+      "E": "Incorrect — HCC surveillance requires hepatology involvement — not GP annual ferritin alone."
+    },
+    "reference": "BSG Guidelines on Hereditary Haemochromatosis 2018. NICE guidance on HCC surveillance in cirrhosis. https://www.bsg.org.uk/clinical-resource/bsg-guidelines-on-hereditary-haemochromatosis-2018/",
+    "tags": ["haemochromatosis", "cirrhosis", "HCC surveillance", "hepatocellular carcinoma", "BSG", "6-monthly USS"]
+  },
+  {
+    "id": "QG-HAEM-013-001",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Haematology",
+    "difficulty": "Medium",
+    "question": "A 58-year-old woman presents with fatigue, pallor and koilonychia. Her blood tests show: Hb 88 g/L, MCV 68 fL (microcytic), MCH low, serum ferritin 6 mcg/L, transferrin saturation 8%. She has no obvious source of bleeding. She is post-menopausal. Per NICE NG12, what is the most important next investigation?",
+    "options": {
+      "A": "Start ferrous sulphate and review in 4 weeks — no further investigation needed",
+      "B": "Urgent 2WW upper and lower GI endoscopy to exclude gastrointestinal malignancy as the cause of iron deficiency anaemia in a post-menopausal woman",
+      "C": "Bone marrow biopsy — confirms iron deficiency",
+      "D": "CT abdomen/pelvis only",
+      "E": "Haematology referral for transfusion only"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per NICE NG12 (Suspected cancer: recognition and referral), iron deficiency anaemia in a post-menopausal woman or any man without an obvious cause requires investigation to exclude GI malignancy. The most important step is endoscopic investigation of both upper and lower GI tract (OGD and colonoscopy) as GI malignancy — particularly right-sided colon cancer — is a common cause of occult blood loss causing iron deficiency anaemia. Koilonychia confirms chronic iron deficiency. Treating the anaemia without finding the cause would delay diagnosis of potential cancer. 2WW referral is appropriate.",
+      "A": "Incorrect — Treating iron deficiency without investigating the cause in a post-menopausal woman risks missing GI malignancy.",
+      "B": "CORRECT — Urgent 2WW upper and lower GI endoscopy for unexplained IDA in post-menopausal women per NICE NG12.",
+      "C": "Incorrect — Bone marrow biopsy is for complex or refractory anaemia — not required for straightforward iron deficiency.",
+      "D": "Incorrect — CT alone cannot replace endoscopy for mucosal lesions — misses early cancers and polyps.",
+      "E": "Incorrect — Transfusion alone without investigation misses the underlying cause."
+    },
+    "reference": "NICE NG12 — Suspected cancer: recognition and referral. https://www.nice.org.uk/guidance/ng12",
+    "tags": ["iron deficiency anaemia", "IDA", "post-menopausal", "2WW", "GI malignancy", "NICE NG12"]
+  },
+  {
+    "id": "QG-HAEM-013-002",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Haematology",
+    "difficulty": "Hard",
+    "question": "A 45-year-old woman with rheumatoid arthritis has: Hb 95 g/L, MCV 80 fL (normocytic), serum ferritin 180 mcg/L (elevated), transferrin saturation 12% (low), CRP 48 mg/L. She has no bleeding symptoms. What is the most likely type of anaemia and key diagnostic distinction from iron deficiency?",
+    "options": {
+      "A": "Iron deficiency anaemia — give oral iron and recheck",
+      "B": "Anaemia of chronic disease (ACD) — ferritin elevated (acute phase reactant) with low transferrin saturation and normal/high ferritin differentiates from true iron deficiency where ferritin is low",
+      "C": "Haemolytic anaemia — request LDH, haptoglobin and blood film",
+      "D": "B12 deficiency — normocytic anaemia in rheumatoid arthritis",
+      "E": "Sideroblastic anaemia — request blood film for ring sideroblasts"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Anaemia of chronic disease (ACD)/anaemia of inflammation: occurs in chronic inflammatory conditions (RA, IBD, malignancy, CKD). Key features distinguishing from iron deficiency: ferritin is NORMAL or ELEVATED (ferritin is an acute phase reactant — rises with inflammation even with depleted iron stores); transferrin saturation low; MCV usually normocytic (may be mildly microcytic); low serum iron; high/normal ferritin. Treatment focuses on managing the underlying condition. If coexisting true iron deficiency suspected (ferritin <100 with inflammation), IV iron may help. BSH guidelines provide the differential framework.",
+      "A": "Incorrect — Elevated ferritin 180 in the context of high CRP indicates ACD — oral iron is not the primary treatment.",
+      "B": "CORRECT — ACD: elevated ferritin (acute phase reactant) + low transferrin saturation + normocytic anaemia in inflammatory disease.",
+      "C": "Incorrect — Haemolysis causes raised LDH, low haptoglobin and blood film changes — not the primary picture here.",
+      "D": "Incorrect — B12 deficiency causes macrocytic (not normocytic) anaemia with neurological features.",
+      "E": "Incorrect — Sideroblastic anaemia is rare; ring sideroblasts seen in specific conditions — not the clinical picture here."
+    },
+    "reference": "BSH Guidelines on Investigation and Management of Anaemia. https://b-s-h.org.uk/guidelines/",
+    "tags": ["anaemia of chronic disease", "ACD", "ferritin", "rheumatoid arthritis", "transferrin saturation", "BSH"]
+  },
+  {
+    "id": "QG-HAEM-089-001",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Haematology",
+    "difficulty": "Medium",
+    "question": "A 24-year-old woman of West African origin attends pre-conceptually. She and her partner wish to start a family. She is concerned about sickle cell disease as her brother has SCD. Per NHS Sickle Cell and Thalassaemia Screening Programme, what should she be offered?",
+    "options": {
+      "A": "No screening needed unless symptoms develop",
+      "B": "Haemoglobinopathy screening (FBC, HPLC and/or electrophoresis) with genetic counselling — if she is a sickle cell trait carrier (HbAS), her partner should also be screened to determine couple risk",
+      "C": "Bone marrow biopsy to determine carrier status",
+      "D": "Start hydroxycarbamide prophylactically",
+      "E": "Antenatal screening at 28 weeks gestation only"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per NHS Sickle Cell and Thalassaemia Screening Programme (NHS SCTP) and NICE guidelines, pre-conceptual haemoglobinopathy screening is offered to individuals in high-prevalence areas or with family history. Testing: FBC followed by HPLC (high performance liquid chromatography) and/or haemoglobin electrophoresis to identify carrier status (HbAS = sickle cell trait, HbSS = SCD). If both partners are carriers (HbAS × HbAS), there is a 1-in-4 risk of SCD in each pregnancy. Genetic counselling and discussion of prenatal diagnosis options (CVS at 10-13 weeks, amniocentesis at 15+ weeks) should be offered. Carrier status does NOT require treatment.",
+      "A": "Incorrect — Pre-conceptual screening is recommended for those at risk — waiting for symptoms means SCD has already developed.",
+      "B": "CORRECT — HPLC/electrophoresis for haemoglobinopathy screening + genetic counselling per NHS SCTP.",
+      "C": "Incorrect — Bone marrow biopsy has no role in haemoglobinopathy carrier screening.",
+      "D": "Incorrect — Hydroxycarbamide is for patients with SCD — not carriers.",
+      "E": "Incorrect — Pre-conceptual or early antenatal screening (ideally before 10 weeks) allows prenatal diagnosis options — 28 weeks is too late."
+    },
+    "reference": "NHS Sickle Cell and Thalassaemia Screening Programme. NICE — Haemoglobinopathies in pregnancy. https://www.gov.uk/guidance/sickle-cell-and-thalassaemia-screening-programme-overview",
+    "tags": ["sickle cell", "haemoglobinopathy screening", "HPLC", "carrier status", "NHS SCTP", "pre-conceptual"]
+  },
+  {
+    "id": "QG-HAEM-089-002",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Haematology",
+    "difficulty": "Hard",
+    "question": "A 28-year-old woman with sickle cell disease (HbSS) presents at 10 weeks gestation. She is on hydroxycarbamide. Per NICE and haematology guidelines, what changes are required to her management in pregnancy?",
+    "options": {
+      "A": "Continue hydroxycarbamide throughout pregnancy — safe in all trimesters",
+      "B": "Stop hydroxycarbamide immediately (teratogenic — contraindicated in pregnancy); switch to additional folic acid 5mg daily; arrange shared care between haematology and obstetrics; monitor for sickling crises, anaemia and pre-eclampsia; prophylactic LMWH; aspirin 75mg from 12 weeks",
+      "C": "Hydroxycarbamide can be continued in the first trimester only",
+      "D": "No changes needed — SCD management in pregnancy is the same as non-pregnant",
+      "E": "Bone marrow transplant — curative option in pregnancy"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per RCOG Green-top Guideline 61 (Management of Sickle Cell Disease in Pregnancy) and haematology guidance: hydroxycarbamide is CONTRAINDICATED in pregnancy (teratogenic in animal models, insufficient human pregnancy safety data). It must be stopped before conception or immediately on confirmation of pregnancy. Pregnancy management of SCD: folic acid 5mg daily (higher dose than standard due to increased haemopoiesis), aspirin 75mg from 12 weeks (high pre-eclampsia risk in SCD), prophylactic LMWH from 28 weeks (VTE risk), monthly blood transfusion or exchange transfusion in some cases, shared care haematology/obstetrics, regular growth scans (IUGR risk), vigilance for sickling crises, acute chest syndrome.",
+      "A": "Incorrect — Hydroxycarbamide is teratogenic and must be stopped immediately in pregnancy.",
+      "B": "CORRECT — Stop hydroxycarbamide + high-dose folic acid + aspirin + LMWH + shared haematology/obstetric care per RCOG GTG 61.",
+      "C": "Incorrect — Hydroxycarbamide must be stopped entirely — no safe trimester for use in pregnancy.",
+      "D": "Incorrect — Significant management changes are required in SCD pregnancy.",
+      "E": "Incorrect — Bone marrow transplant is not performed in pregnancy."
+    },
+    "reference": "RCOG Green-top Guideline 61 — Management of Sickle Cell Disease in Pregnancy. https://www.rcog.org.uk/guidance/browse-all-guidance/green-top-guidelines/sickle-cell-disease-in-pregnancy-management-of-green-top-guideline-no-61/",
+    "tags": ["sickle cell disease", "pregnancy", "hydroxycarbamide", "teratogenic", "RCOG GTG 61", "folic acid 5mg"]
+  },
+  {
+    "id": "QG-HAEM-123-001",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Haematology",
+    "difficulty": "Medium",
+    "question": "A 32-year-old woman of Mediterranean origin is found to have Hb 100 g/L, MCV 62 fL, MCH 18 pg. Her serum ferritin is 65 mcg/L (normal). Iron supplementation has been tried without improvement. Haemoglobin electrophoresis shows HbA2 5.8% (elevated, normal <3.5%). What is the diagnosis and key counselling point?",
+    "options": {
+      "A": "Iron deficiency anaemia — continue iron supplementation",
+      "B": "Beta-thalassaemia trait (carrier) — microcytic anaemia that does NOT respond to iron. Elevated HbA2 is diagnostic. Genetic counselling and partner screening are essential as beta-thalassaemia major in offspring requires lifelong transfusions",
+      "C": "Alpha-thalassaemia major — immediate transfusion required",
+      "D": "Haemoglobin C disease — no treatment needed",
+      "E": "Sickle cell trait — no action needed as carrier"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Beta-thalassaemia trait: autosomal recessive carrier state for beta-globin gene mutations. Features: mild microcytic hypochromic anaemia (Hb 100-110 g/L, MCV 62-72 fL) that does NOT respond to iron supplementation (normal or elevated ferritin). Elevated HbA2 >3.5% on HPLC/electrophoresis is diagnostic. Carriers are usually asymptomatic. Key counselling: if both partners are beta-thalassaemia carriers, each pregnancy has a 25% risk of beta-thalassaemia major (Cooley's anaemia) — requiring lifelong monthly blood transfusions. Partner screening and prenatal diagnosis options should be offered. Per NHS SCTP guidance.",
+      "A": "Incorrect — Iron supplementation is ineffective for thalassaemia trait. Normal ferritin confirms iron stores are adequate.",
+      "B": "CORRECT — Beta-thalassaemia trait: elevated HbA2 diagnostic. Genetic counselling + partner screening per NHS SCTP.",
+      "C": "Incorrect — Alpha-thalassaemia major (Hb Barts hydrops fetalis) is usually fatal in utero — not presenting in adulthood.",
+      "D": "Incorrect — HbC disease has different electrophoresis pattern and clinical features.",
+      "E": "Incorrect — Sickle cell trait shows HbA + HbS on electrophoresis with normal HbA2 — not elevated HbA2."
+    },
+    "reference": "NHS Sickle Cell and Thalassaemia Screening Programme. BSH Thalassaemia Guidelines. https://www.gov.uk/guidance/sickle-cell-and-thalassaemia-screening-programme-overview",
+    "tags": ["beta-thalassaemia trait", "HbA2", "microcytic anaemia", "genetic counselling", "NHS SCTP", "partner screening"]
+  },
+  {
+    "id": "QG-HAEM-046-001",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Haematology",
+    "difficulty": "Medium",
+    "question": "A 65-year-old woman is found to have platelets of 580 × 10⁹/L on a routine blood count. She has had recent knee replacement surgery 3 weeks ago. She has no splenomegaly and her FBC is otherwise normal (Hb normal, WBC normal). What is the most likely cause and appropriate action?",
+    "options": {
+      "A": "Essential thrombocythaemia — refer urgently to haematology for JAK2 testing",
+      "B": "Reactive thrombocytosis from recent surgery (post-operative inflammatory response) — repeat FBC in 4-6 weeks; if platelets normalise, no further action. If persistently elevated, investigate for underlying cause",
+      "C": "Polycythaemia vera — check haematocrit and JAK2 mutation",
+      "D": "Iron deficiency — start ferrous sulphate",
+      "E": "Haematological malignancy — urgent 2WW haematology referral"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Reactive thrombocytosis is far more common than primary (essential) thrombocythaemia. Common causes: surgery/trauma (most common — platelet count peaks 7-14 days post-operatively), infection, inflammation (IBD, RA), iron deficiency, tissue damage, splenectomy. Key features of reactive thrombocytosis: platelets usually <1000 × 10⁹/L, no splenomegaly, resolves when underlying cause treated. Management: identify and treat cause, repeat FBC in 4-6 weeks. If platelets remain elevated after resolution of precipitant → investigate for haematological cause (JAK2, bone marrow). Per BSH guidelines on investigation of thrombocytosis.",
+      "A": "Incorrect — Recent surgery makes reactive thrombocytosis far more likely than essential thrombocythaemia. Urgent referral without repeat testing is premature.",
+      "B": "CORRECT — Reactive thrombocytosis post-surgery: repeat FBC in 4-6 weeks; investigate further only if persistently elevated per BSH.",
+      "C": "Incorrect — Polycythaemia vera presents with elevated haematocrit, not isolated thrombocytosis with normal Hb.",
+      "D": "Incorrect — Iron deficiency can cause reactive thrombocytosis but surgery is the predominant cause here. Iron studies should be checked but Hb is normal.",
+      "E": "Incorrect — Reactive thrombocytosis after recent surgery is almost certainly the cause. 2WW referral is not warranted without first repeating the FBC."
+    },
+    "reference": "BSH Guidelines — Investigation and management of thrombocytosis. https://b-s-h.org.uk/guidelines/",
+    "tags": ["reactive thrombocytosis", "elevated platelets", "post-surgical", "essential thrombocythaemia", "BSH", "repeat FBC"]
+  },
+  {
+    "id": "QG-HAEM-046-002",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Haematology",
+    "difficulty": "Hard",
+    "question": "A 55-year-old woman has persistently elevated platelets at 720 × 10⁹/L on three separate FBCs over 3 months. She has no identifiable reactive cause. She reports headaches and visual disturbances. JAK2 V617F mutation is positive. What is the diagnosis and immediate management priority?",
+    "options": {
+      "A": "Reactive thrombocytosis — iron supplementation",
+      "B": "Essential thrombocythaemia (ET) with high-risk features — urgent haematology referral; likely need for cytoreductive therapy (hydroxycarbamide) to reduce platelet count and thrombosis risk; assess for microvascular symptoms (aspirin if no contraindication)",
+      "C": "Normal variant — platelets under 1000 do not require treatment",
+      "D": "Treat with warfarin — DVT prophylaxis",
+      "E": "Bone marrow transplant immediately"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Essential thrombocythaemia (ET) is a myeloproliferative neoplasm characterised by persistently elevated platelets (>450 × 10⁹/L), JAK2 V617F mutation positive in ~55% of cases, with no reactive cause. High-risk ET (age >60 or prior thrombosis or cardiovascular risk factors): cytoreductive therapy with hydroxycarbamide (first-line) to reduce platelet count <400 × 10⁹/L. Microvascular symptoms (headaches, visual disturbance, erythromelalgia): low-dose aspirin 75mg if not contraindicated. Per BSH ET guidelines. Risk of arterial/venous thrombosis and transformation to myelofibrosis or AML.",
+      "A": "Incorrect — JAK2 positive persistent thrombocytosis without reactive cause = essential thrombocythaemia — not reactive.",
+      "B": "CORRECT — ET with JAK2 positive, high-risk features, microvascular symptoms: urgent haematology + hydroxycarbamide + aspirin per BSH ET guidelines.",
+      "C": "Incorrect — Symptomatic ET with JAK2 positive requires treatment regardless of platelet absolute count.",
+      "D": "Incorrect — Warfarin alone does not address the underlying platelet overproduction.",
+      "E": "Incorrect — Bone marrow transplant is reserved for end-stage myelofibrosis transformation — not first-line ET."
+    },
+    "reference": "BSH Guidelines on Essential Thrombocythaemia. https://b-s-h.org.uk/guidelines/",
+    "tags": ["essential thrombocythaemia", "JAK2", "hydroxycarbamide", "myeloproliferative", "BSH", "thrombosis risk"]
+  },
+  {
+    "id": "QG-HAEM-040-001",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Haematology",
+    "difficulty": "Easy",
+    "question": "A 70-year-old man on warfarin for atrial fibrillation has an INR of 7.8. He has no bleeding symptoms. His target INR range is 2.0-3.0. Per NICE CG144 and BCSH guidelines, what is the most appropriate management?",
+    "options": {
+      "A": "Continue warfarin at the same dose and repeat INR next week",
+      "B": "Withhold warfarin for 1-2 doses, give oral vitamin K 1-5mg (if no bleeding), recheck INR in 24-48 hours, review and reduce warfarin dose when INR in range",
+      "C": "Immediate IV vitamin K 10mg and fresh frozen plasma regardless of symptoms",
+      "D": "Stop warfarin permanently — INR >7 means warfarin is too dangerous",
+      "E": "Switch to direct oral anticoagulant (DOAC) immediately"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per BCSH guidelines on warfarin management and NICE CG144, management of supratherapeutic INR depends on the level and bleeding status: INR 5.0-8.0 with no/minor bleeding: withold 1-2 doses of warfarin + consider oral vitamin K 1-5mg (particularly if other bleeding risk factors present) + restart at reduced dose when INR <5; recheck INR in 24 hours. INR >8.0 with no/minor bleeding: withhold warfarin + give oral vitamin K 2-5mg + recheck INR; consider referral if high thrombotic risk. Major bleeding at any INR: 4-factor prothrombin complex concentrate (Beriplex/Octaplex) + IV vitamin K 5-10mg.",
+      "A": "Incorrect — INR 7.8 requires warfarin to be withheld — continuing at the same dose is dangerous.",
+      "B": "CORRECT — Withhold warfarin + oral vitamin K 1-5mg + recheck INR in 24-48 hours per BCSH/NICE CG144.",
+      "C": "Incorrect — FFP and high-dose IV vitamin K are for major bleeding — not asymptomatic supratherapeutic INR.",
+      "D": "Incorrect — Warfarin cessation is not indicated for a single elevated INR without bleeding — dose adjustment is appropriate.",
+      "E": "Incorrect — Switching to DOAC during a supratherapeutic INR episode is not the correct acute management."
+    },
+    "reference": "BCSH Guidelines on Anticoagulation. NICE CG144 — Atrial fibrillation. https://www.nice.org.uk/guidance/cg144",
+    "tags": ["warfarin", "supratherapeutic INR", "vitamin K", "BCSH", "NICE CG144", "anticoagulation"]
+  },
+  {
+    "id": "QG-HAEM-040-002",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Haematology",
+    "difficulty": "Medium",
+    "question": "A 50-year-old man presents with a 6-month history of fatigue, night sweats, 6kg weight loss, generalised lymphadenopathy and splenomegaly. His FBC shows: WBC 28 × 10⁹/L (lymphocytes 24 × 10⁹/L), Hb 110 g/L, platelets 130 × 10⁹/L. Blood film shows small mature lymphocytes with smear cells (Gumprecht shadows). What is the most likely diagnosis?",
+    "options": {
+      "A": "Reactive lymphocytosis from viral infection — monospot test",
+      "B": "Chronic lymphocytic leukaemia (CLL) — smear cells (Gumprecht shadows) are pathognomonic. Urgent haematology referral",
+      "C": "Acute lymphoblastic leukaemia — bone marrow biopsy urgently",
+      "D": "Infectious mononucleosis — EBV serology",
+      "E": "Non-Hodgkin lymphoma — CT chest/abdomen/pelvis"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Chronic lymphocytic leukaemia (CLL): the most common adult leukaemia. Features: sustained lymphocytosis (>5 × 10⁹/L small mature lymphocytes), smear/smudge cells on blood film (Gumprecht shadows — fragile CLL cells disrupted during slide preparation), B symptoms (weight loss, night sweats, fatigue), lymphadenopathy, splenomegaly, anaemia, thrombocytopenia (Binet staging). Smear cells are virtually pathognomonic for CLL. Urgent haematology referral for immunophenotyping (CD5+/CD19+/CD23+ is CLL pattern) and staging. Per NICE NG47.",
+      "A": "Incorrect — Reactive lymphocytosis causes mononuclear cells — not the magnitude of lymphocytosis or smear cells.",
+      "B": "CORRECT — CLL: lymphocytosis + smear cells (Gumprecht shadows) + B symptoms + splenomegaly. Urgent haematology referral per NICE NG47.",
+      "C": "Incorrect — ALL presents acutely with blast cells — not the indolent picture with mature small lymphocytes.",
+      "D": "Incorrect — EBV/infectious mononucleosis causes reactive lymphocytosis with atypical lymphocytes (not smear cells) and typically resolves.",
+      "E": "Incorrect — NHL is possible but smear cells on blood film and peripheral lymphocytosis are classic CLL — haematology referral is the priority."
+    },
+    "reference": "NICE NG47 — Non-Hodgkin's lymphoma: diagnosis and management. https://www.nice.org.uk/guidance/ng52",
+    "tags": ["CLL", "chronic lymphocytic leukaemia", "smear cells", "Gumprecht shadows", "NICE NG47", "lymphocytosis"]
+  },
+  {
+    "id": "QG-HAEM-040-003",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Haematology",
+    "difficulty": "Easy",
+    "question": "A 30-year-old woman has persistent Hb 85 g/L with MCV 105 fL (macrocytic). B12 is normal. Serum folate is low at 1.2 nmol/L (normal >7 nmol/L). She is not pregnant. She drinks minimal alcohol and takes no regular medications. Per NICE CKS, what is the first investigation to determine the cause of folate deficiency?",
+    "options": {
+      "A": "Bone marrow biopsy — confirms megaloblastic anaemia",
+      "B": "Anti-TTG IgA — coeliac disease is a common cause of folate malabsorption; also assess dietary intake",
+      "C": "Start folic acid 5mg daily immediately without investigating the cause",
+      "D": "Liver biopsy — alcoholic liver disease",
+      "E": "Intrinsic factor antibodies — likely pernicious anaemia"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per NICE CKS on folate deficiency, causes of folate deficiency include: dietary inadequacy (most common), malabsorption (coeliac disease — most important to exclude in young women), alcohol excess, drugs (methotrexate, phenytoin, trimethoprim), pregnancy. Investigation: anti-TTG IgA to exclude coeliac disease (folate is absorbed in the proximal small bowel — same region affected in coeliac). Dietary assessment should be conducted. If coeliac excluded, treat with folic acid 5mg daily for 4 months (or longer if ongoing cause). Treating B12 deficiency must be excluded before starting folic acid to avoid masking B12 deficiency neurological complications.",
+      "A": "Incorrect — Bone marrow biopsy is rarely needed for simple folate deficiency investigation.",
+      "B": "CORRECT — Anti-TTG IgA to exclude coeliac disease (common cause of folate malabsorption in young women) per NICE CKS.",
+      "C": "Incorrect — Starting folic acid without investigating the cause risks missing coeliac disease and masking B12 deficiency.",
+      "D": "Incorrect — Liver biopsy is not the initial investigation for folate deficiency in a young non-drinker.",
+      "E": "Incorrect — Intrinsic factor antibodies diagnose pernicious anaemia (B12 deficiency) — not folate deficiency."
+    },
+    "reference": "NICE CKS — Anaemia: B12 and folate deficiency. https://cks.nice.org.uk/topics/anaemia-b12-folate-deficiency/",
+    "tags": ["folate deficiency", "macrocytic anaemia", "coeliac disease", "anti-TTG", "NICE CKS", "malabsorption"]
+  },
+  {
+    "id": "QG-HAEM-040-004",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Haematology",
+    "difficulty": "Medium",
+    "question": "A 55-year-old man presents with 2 months of bone pain, fatigue and recurrent infections. His bloods show: Hb 85 g/L, corrected calcium 3.1 mmol/L (elevated), creatinine 180 umol/L, total protein markedly elevated (108 g/L). Urine shows Bence Jones proteinuria. Plasma protein electrophoresis shows an M-band (paraprotein) in the IgG region. Per NICE NG35, what is the most likely diagnosis?",
+    "options": {
+      "A": "Chronic kidney disease with secondary hyperparathyroidism",
+      "B": "Multiple myeloma — M-band + hypercalcaemia + bone pain + renal failure + anaemia (CRAB criteria) — urgent 2WW haematology referral",
+      "C": "Monoclonal gammopathy of undetermined significance (MGUS)",
+      "D": "Waldenstrom's macroglobulinaemia — treat with rituximab",
+      "E": "Reactive plasmacytosis — no treatment required"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Multiple myeloma: CRAB criteria — hyperCalcaemia (Ca >2.75 mmol/L), Renal impairment (creatinine >177 umol/L), Anaemia (Hb <100 g/L), Bone lesions/pain. Plus: M-band on SPEP, Bence Jones proteinuria (light chain excretion), elevated total protein. This patient meets all CRAB criteria. Per NICE NG35, suspected myeloma is an urgent 2WW referral. Diagnosis requires bone marrow showing ≥10% plasma cells. Treatment: bortezomib-based regimens; autologous stem cell transplant for eligible patients.",
+      "A": "Incorrect — CKD with hyperparathyroidism does not cause M-band on electrophoresis or Bence Jones proteins.",
+      "B": "CORRECT — Multiple myeloma: all CRAB criteria met + M-band + Bence Jones proteinuria. Urgent 2WW haematology per NICE NG35.",
+      "C": "Incorrect — MGUS has M-band but NO CRAB features — this patient has multiple CRAB criteria.",
+      "D": "Incorrect — Waldenstrom's macroglobulinaemia causes IgM paraprotein with lymphoplasmacytic lymphoma — different entity.",
+      "E": "Incorrect — Reactive plasmacytosis does not produce M-band on electrophoresis or Bence Jones proteins."
+    },
+    "reference": "NICE NG35 — Myeloma: diagnosis and management. https://www.nice.org.uk/guidance/ng35",
+    "tags": ["multiple myeloma", "CRAB criteria", "M-band", "Bence Jones", "2WW", "NICE NG35"]
+  },
+  {
+    "id": "QG-HAEM-040-005",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Haematology",
+    "difficulty": "Hard",
+    "question": "A 60-year-old woman on warfarin for mechanical heart valve (target INR 3.0-4.0) presents with a 3cm haematoma after a fall. Her INR is 6.2. She has no active bleeding. Per BCSH and NICE guidelines, what is the most appropriate management?",
+    "options": {
+      "A": "Stop warfarin permanently — mechanical valve patients cannot safely use anticoagulation",
+      "B": "Withhold warfarin for 1-2 doses. Give oral vitamin K 1-2mg cautiously (risk of rebound subtherapeutic INR with valve thrombosis in mechanical valve patients — lower vitamin K dose preferred). Recheck INR in 24 hours. Restart warfarin at adjusted dose when INR returning to therapeutic range. Do NOT give 5-10mg vitamin K — risks acute valve thrombosis",
+      "C": "Immediate IV vitamin K 10mg and fresh frozen plasma",
+      "D": "Continue warfarin unchanged — INR 6.2 is only slightly above target",
+      "E": "Switch to DOAC immediately — safer than warfarin for mechanical valves"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Managing supratherapeutic warfarin in mechanical heart valve patients requires extreme caution: unlike patients anticoagulated for AF or VTE, reversing anticoagulation with high-dose vitamin K risks rapid fall in INR below therapeutic range, causing mechanical valve thrombosis — a life-threatening complication. Per BCSH guidelines: give low-dose oral vitamin K (1-2mg maximum) if reversal needed, to gently reduce INR without precipitating subtherapeutic levels. Withhold 1-2 doses. Recheck INR 24-hourly. Major bleeding in mechanical valve patient: PCC + IV vitamin K 5mg (with cardiothoracic surgical standby). DOACs are CONTRAINDICATED in mechanical heart valves.",
+      "A": "Incorrect — Permanent warfarin cessation in mechanical valve patients risks fatal valve thrombosis.",
+      "B": "CORRECT — Low-dose oral vitamin K 1-2mg (not high dose) + withhold 1-2 doses + recheck INR — to avoid subtherapeutic INR causing valve thrombosis per BCSH.",
+      "C": "Incorrect — FFP and high-dose IV vitamin K are for major bleeding — not a haematoma. High-dose vitamin K risks subtherapeutic INR in mechanical valve patient.",
+      "D": "Incorrect — INR 6.2 is significantly above the target of 3.0-4.0 — it requires active management.",
+      "E": "Incorrect — DOACs are absolutely contraindicated in mechanical heart valves (RE-ALIGN trial showed increased valve thrombosis)."
+    },
+    "reference": "BCSH Guidelines on Oral Anticoagulants. ESC Guidelines on Valvular Heart Disease. https://b-s-h.org.uk/guidelines/",
+    "tags": ["warfarin", "mechanical heart valve", "supratherapeutic INR", "vitamin K", "valve thrombosis", "BCSH"]
+  },
+  {
+    "id": "QG-HAEM-040-006",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Haematology",
+    "difficulty": "Medium",
+    "question": "A 25-year-old woman presents with easy bruising, heavy menstrual periods and prolonged bleeding after dental extraction. Her FBC is normal. PT (prothrombin time) is normal. APTT (activated partial thromboplastin time) is prolonged at 52 seconds (normal <35). Factor VIII level is reduced at 15% (normal >50%). What is the most likely diagnosis?",
+    "options": {
+      "A": "Haemophilia A (factor VIII deficiency) — refer to haemophilia centre",
+      "B": "Von Willebrand disease — VWF antigen and VWF activity should be checked",
+      "C": "Vitamin K deficiency — give oral vitamin K",
+      "D": "Immune thrombocytopenic purpura (ITP) — platelet count is normal so ITP excluded",
+      "E": "Liver disease — check LFTs"
+    },
+    "correct_answer": "A",
+    "explanation": {
+      "correct": "Haemophilia A: X-linked recessive factor VIII deficiency. Haemophilia affects males predominantly; female carriers may have mildly reduced factor VIII levels and symptomatic bleeding (particularly with menorrhagia and dental/surgical procedures). APTT is prolonged (intrinsic pathway affected), PT is normal. Factor VIII level 15% indicates moderate haemophilia (1-5% = severe, 5-40% = moderate, >40% = mild). Per UKHCDO (UK Haemophilia Centre Doctors' Organisation), refer to specialist haemophilia centre. Treatment: factor VIII concentrate (recombinant preferred), DDAVP (desmopressin) for mild/moderate, tranexamic acid as adjunct.",
+      "A": "CORRECT — Haemophilia A: prolonged APTT + reduced factor VIII + bleeding history. Refer to haemophilia centre per UKHCDO.",
+      "B": "Incorrect — Von Willebrand disease also causes prolonged APTT and reduced factor VIII (VWF acts as factor VIII carrier), but VWF studies are needed to differentiate. With factor VIII 15%, haemophilia A is the primary diagnosis.",
+      "C": "Incorrect — Vitamin K deficiency affects PT and APTT (factors II, VII, IX, X) — not specifically isolated factor VIII.",
+      "D": "Incorrect — ITP causes isolated thrombocytopenia — platelets and coagulation are normal in ITP.",
+      "E": "Incorrect — Liver disease causes multiple factor deficiencies with both PT and APTT prolonged — not isolated factor VIII deficiency."
+    },
+    "reference": "UKHCDO Guidelines on Haemophilia. NICE — Haemophilia. https://www.nice.org.uk/guidance/ng185",
+    "tags": ["haemophilia A", "factor VIII", "APTT", "bleeding disorder", "UKHCDO", "haemophilia centre"]
+  },
+  {
+    "id": "QG-HAEM-040-007",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Haematology",
+    "difficulty": "Easy",
+    "question": "A 40-year-old woman is found to have platelets of 42 × 10⁹/L on a routine blood count. She has no bleeding symptoms, feels well and has no medications. FBC is otherwise normal. Blood film shows no platelet clumping. What is the most important first step in managing incidentally discovered thrombocytopenia?",
+    "options": {
+      "A": "Start oral prednisolone 1mg/kg immediately — likely ITP",
+      "B": "Repeat FBC with manual platelet count from citrate tube to confirm true thrombocytopenia (exclude EDTA-induced pseudothrombocytopenia), then investigate underlying cause systematically",
+      "C": "Urgent platelet transfusion — platelets 42 × 10⁹/L is dangerously low",
+      "D": "Bone marrow biopsy immediately to exclude leukaemia",
+      "E": "Discharge — platelets 42 is within normal range"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per BSH guidelines on thrombocytopenia, the first step in managing unexpected low platelet count is to confirm it is genuine (not laboratory artefact). EDTA-induced pseudothrombocytopenia occurs when platelets clump in EDTA anticoagulant tubes — blood film shows platelet aggregates. Confirm with repeat FBC using citrate anticoagulant tube. If confirmed true thrombocytopenia (platelets 42): investigate systematically — FBC, blood film (blast cells?), liver function, autoimmune screen (ANA, anti-dsDNA), hepatitis B/C, HIV, thyroid function, drug history. Platelet transfusion is not indicated for asymptomatic chronic thrombocytopenia above 10-20 × 10⁹/L. Steroids are only after diagnosis confirmed.",
+      "A": "Incorrect — Starting steroids without confirming diagnosis risks inappropriate immunosuppression.",
+      "B": "CORRECT — Confirm true thrombocytopenia with citrate tube, then systematic investigation per BSH thrombocytopenia guidelines.",
+      "C": "Incorrect — Platelet transfusion threshold for asymptomatic chronic thrombocytopenia is <10-20 × 10⁹/L — not 42.",
+      "D": "Incorrect — Bone marrow biopsy is not the immediate first step — systematic blood tests come first.",
+      "E": "Incorrect — Platelets 42 × 10⁹/L is significantly below normal (150-400 × 10⁹/L) — requires investigation."
+    },
+    "reference": "BSH Guidelines on Investigation and Management of Thrombocytopenia. https://b-s-h.org.uk/guidelines/",
+    "tags": ["thrombocytopenia", "pseudothrombocytopenia", "EDTA", "citrate tube", "BSH", "platelet count"]
+  },
+  {
+    "id": "QG-HAEM-040-008",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Haematology",
+    "difficulty": "Medium",
+    "question": "A 62-year-old man presents with a 3-month history of fatigue, night sweats, weight loss and splenomegaly. His FBC shows: WBC 85 × 10⁹/L with a left shift (neutrophils, myelocytes, metamyelocytes, basophils prominent), Hb 98 g/L, platelets 560 × 10⁹/L. Basophilia 8% noted. Per NICE NG52, what is the most likely diagnosis and urgent investigation?",
+    "options": {
+      "A": "Reactive leucocytosis from infection — blood cultures and antibiotics",
+      "B": "Chronic myeloid leukaemia (CML) — urgent haematology referral; BCR-ABL1 fusion gene (Philadelphia chromosome) testing by PCR or FISH is diagnostic",
+      "C": "Chronic lymphocytic leukaemia — lymphocyte immunophenotyping",
+      "D": "Polycythaemia vera — JAK2 V617F testing",
+      "E": "Acute myeloid leukaemia — bone marrow biopsy urgently"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Chronic myeloid leukaemia (CML): myeloproliferative neoplasm caused by BCR-ABL1 fusion gene (Philadelphia chromosome — t(9;22) translocation). Classic features: markedly elevated WBC with full spectrum of granulocytic maturation (neutrophils, myelocytes, metamyelocytes — left shift), basophilia and eosinophilia (PATHOGNOMONIC combination), thrombocytosis, splenomegaly, B symptoms. Diagnosis: BCR-ABL1 by PCR or FISH on blood or bone marrow. Treatment: tyrosine kinase inhibitors (imatinib, dasatinib). 90% 5-year survival with treatment. Per NICE NG52.",
+      "A": "Incorrect — Infection does not produce this magnitude of leucocytosis with basophilia and full granulocytic spectrum.",
+      "B": "CORRECT — CML: WBC 85 + left shift + basophilia + splenomegaly. BCR-ABL1 PCR/FISH diagnostic. Urgent haematology per NICE NG52.",
+      "C": "Incorrect — CLL is lymphocytic — this is a granulocytic picture with basophilia.",
+      "D": "Incorrect — PV presents with elevated haematocrit — this patient has anaemia.",
+      "E": "Incorrect — AML presents acutely with blasts on blood film — CML has mature granulocytic cells with left shift."
+    },
+    "reference": "NICE NG52 — Chronic myeloid leukaemia: diagnosis and management. https://www.nice.org.uk/guidance/ng52",
+    "tags": ["CML", "chronic myeloid leukaemia", "BCR-ABL1", "Philadelphia chromosome", "basophilia", "NICE NG52"]
+  },
+  {
+    "id": "QG-HAEM-040-009",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Haematology",
+    "difficulty": "Hard",
+    "question": "A 35-year-old woman presents with petechiae, mucosal bleeding (gum bleeding, epistaxis) and heavy periods for 3 weeks. Her FBC shows: platelets 8 × 10⁹/L, Hb normal, WBC normal. Blood film shows reduced platelets with no blasts. PT, APTT and fibrinogen are all normal. She is otherwise well with no medications. What is the most likely diagnosis and management?",
+    "options": {
+      "A": "Disseminated intravascular coagulation — FFP and cryoprecipitate",
+      "B": "Immune thrombocytopenic purpura (ITP) — oral prednisolone 1mg/kg/day (first-line); consider IV immunoglobulin (IVIg) if very severe bleeding or rapid rise in platelets needed; haematology referral",
+      "C": "Thrombotic thrombocytopenic purpura (TTP) — urgent plasma exchange",
+      "D": "Aplastic anaemia — bone marrow biopsy",
+      "E": "Drug-induced thrombocytopenia — no treatment needed"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Immune thrombocytopenic purpura (ITP): autoimmune destruction of platelets by anti-platelet antibodies. Features: isolated severe thrombocytopenia (platelets <30 × 10⁹/L), mucocutaneous bleeding (petechiae, gum bleeding, menorrhagia), normal PT/APTT (coagulation cascade intact), blood film shows large platelets but reduced numbers (no blasts). Per BSH ITP guidelines and NICE: first-line treatment = oral prednisolone 1mg/kg/day for 2-4 weeks then taper; IVIg 1g/kg for urgent platelet rise needed (severe bleeding, surgery). Platelets <20 × 10⁹/L or with significant bleeding: admission to haematology.",
+      "A": "Incorrect — DIC shows prolonged PT, APTT and low fibrinogen with microangiopathic changes on blood film — not isolated thrombocytopenia.",
+      "B": "CORRECT — ITP: isolated severe thrombocytopenia + mucosal bleeding + normal coagulation. Prednisolone + IVIg + haematology referral per BSH/NICE.",
+      "C": "Incorrect — TTP (thrombotic thrombocytopenic purpura) presents with the PENTAD: thrombocytopenia + MAHA + fever + renal failure + neurological symptoms — not present here.",
+      "D": "Incorrect — Aplastic anaemia causes pancytopenia — this patient has isolated thrombocytopenia with normal Hb and WBC.",
+      "E": "Incorrect — She takes no medications. Drug-induced thrombocytopenia is excluded."
+    },
+    "reference": "BSH Guidelines on Immune Thrombocytopenia. https://b-s-h.org.uk/guidelines/",
+    "tags": ["ITP", "immune thrombocytopenia", "prednisolone", "IVIg", "platelets", "BSH"]
+  },
+  {
+    "id": "QG-HAEM-040-010",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Haematology",
+    "difficulty": "Medium",
+    "question": "A 25-year-old man presents with new onset of deep vein thrombosis in his left leg with no identifiable provoking factor. He has a family history of VTE. Per NICE NG158, when should he be tested for hereditary thrombophilia?",
+    "options": {
+      "A": "Thrombophilia testing should be done immediately at diagnosis — stop anticoagulation for testing",
+      "B": "Offer thrombophilia testing after completing anticoagulation (minimum 3 months), not during treatment — anticoagulants affect test results. Test if unprovoked VTE, family history, recurrent VTE, or unusual site. Test for: factor V Leiden, prothrombin gene mutation, antiphospholipid antibodies, protein C, protein S, antithrombin",
+      "C": "No thrombophilia testing needed — only test if VTE recurs",
+      "D": "Thrombophilia testing during active anticoagulation gives accurate results",
+      "E": "Only test for antiphospholipid syndrome — other thrombophilias are not clinically relevant"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per NICE NG158 (Venous thromboembolic diseases), thrombophilia testing is recommended for: unprovoked VTE (no provoking factor), family history of VTE, unusual site VTE (cerebral, portal, mesenteric vein), recurrent VTE. Timing: test AFTER completing anticoagulation as warfarin reduces protein C, protein S and antithrombin levels giving false low results; direct oral anticoagulants also interfere with some assays. Test after 3 months of anticoagulation for women not pregnant. Test panel: factor V Leiden, prothrombin G20210A mutation, antiphospholipid antibodies (two occasions 12 weeks apart), protein C and S, antithrombin. Results determine duration of anticoagulation.",
+      "A": "Incorrect — Testing during anticoagulation gives falsely abnormal results for protein C, S and antithrombin.",
+      "B": "CORRECT — Thrombophilia testing after completing anticoagulation (3+ months) for unprovoked VTE + family history per NICE NG158.",
+      "C": "Incorrect — First unprovoked VTE with family history warrants testing after treatment — not only after recurrence.",
+      "D": "Incorrect — Anticoagulants significantly interfere with thrombophilia test results.",
+      "E": "Incorrect — Full thrombophilia screen (factor V Leiden, prothrombin, protein C/S, antithrombin, APS) is needed — not APS alone."
+    },
+    "reference": "NICE NG158 — Venous thromboembolic diseases: diagnosis, management and thrombophilia testing. https://www.nice.org.uk/guidance/ng158",
+    "tags": ["thrombophilia testing", "VTE", "factor V Leiden", "timing of testing", "NICE NG158", "unprovoked DVT"]
+  }
+]

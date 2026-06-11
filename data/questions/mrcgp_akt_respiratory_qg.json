@@ -1,1192 +1,314 @@
 [
   {
-    "id": "QG-RESP-011-001",
-    "exam": "MRCGP AKT",
-    "domain": "Clinical Medicine",
-    "specialty": "Respiratory",
-    "difficulty": "Medium",
-    "question": "A 9-year-old girl presents with a 4-month history of episodic wheeze, nocturnal cough and breathlessness on exercise. Her FeNO (fractional exhaled nitric oxide) is 38 ppb. Her spirometry is normal between episodes. Per NICE NG80 (updated for children), what does FeNO ≥35 ppb indicate and what is the next management step?",
-    "options": {
-      "A": "FeNO ≥35 ppb is normal in children — no action needed",
-      "B": "FeNO ≥35 ppb is a positive result consistent with eosinophilic airway inflammation — supports a diagnosis of asthma; start a paediatric low-dose ICS",
-      "C": "FeNO ≥35 ppb indicates COPD — arrange spirometry with bronchodilator",
-      "D": "FeNO ≥35 ppb is non-specific — repeat in 6 weeks before treating",
-      "E": "FeNO ≥35 ppb in a child confirms diagnosis of allergic rhinitis only"
-    },
-    "correct_answer": "B",
-    "explanation": {
-      "correct": "Per NICE NG80 (Asthma: diagnosis, monitoring and chronic asthma management), FeNO ≥35 ppb in children (≥40 ppb in adults) indicates eosinophilic airway inflammation — a hallmark of atopic/eosinophilic asthma. Combined with clinical history of episodic wheeze and nocturnal symptoms, this supports an asthma diagnosis. Management: start low-dose inhaled corticosteroid (ICS) as step 2 preventer therapy. FeNO is the preferred objective test in children as spirometry may be technically difficult and peak flow variability harder to demonstrate in younger children.",
-      "A": "Incorrect — FeNO ≥35 ppb in a child is a positive test indicating eosinophilic inflammation.",
-      "B": "CORRECT — FeNO ≥35 ppb (children) = positive, supports asthma diagnosis. Start low-dose ICS per NICE NG80.",
-      "C": "Incorrect — COPD is not a diagnosis in children. Elevated FeNO indicates eosinophilic asthma.",
-      "D": "Incorrect — FeNO ≥35 ppb with compatible symptoms is sufficient to support diagnosis and start treatment.",
-      "E": "Incorrect — FeNO reflects airway eosinophilic inflammation (asthma pathway) not nasal/rhinitis inflammation."
-    },
-    "reference": "NICE NG80 — Asthma: diagnosis, monitoring and chronic asthma management. https://www.nice.org.uk/guidance/ng80",
-    "tags": [
-      "FeNO",
-      "paediatric asthma",
-      "eosinophilic inflammation",
-      "ICS",
-      "diagnosis",
-      "NICE NG80"
-    ],
-    "source": "Question Grove 360"
-  },
-  {
-    "id": "QG-RESP-011-002",
-    "exam": "MRCGP AKT",
-    "domain": "Clinical Medicine",
-    "specialty": "Respiratory",
-    "difficulty": "Medium",
-    "question": "A 12-year-old boy with suspected asthma has a FeNO of 18 ppb. His blood eosinophil count is 0.15 × 10⁹/L (normal). He has a 2-month history of cough and wheeze. His peak flow variability is 15% (borderline). Per NICE NG80, how should these results be interpreted?",
-    "options": {
-      "A": "FeNO 18 ppb is positive — start ICS immediately",
-      "B": "FeNO 18 ppb is intermediate (25-34 ppb is intermediate in adults; <25 ppb in children is negative) — asthma less likely from FeNO alone; consider bronchodilator reversibility testing or watchful waiting with reassessment",
-      "C": "FeNO 18 ppb excludes asthma completely",
-      "D": "Low eosinophil count with FeNO 18 ppb confirms eosinophilic asthma",
-      "E": "FeNO 18 ppb in a child requires referral to secondary care before any diagnosis"
-    },
-    "correct_answer": "B",
-    "explanation": {
-      "correct": "Per NICE NG80, FeNO thresholds in CHILDREN: <25 ppb = negative (asthma less likely); 25-34 ppb = intermediate (uncertain); ≥35 ppb = positive (asthma likely). FeNO 18 ppb is negative in a child. Combined with low blood eosinophils (0.15 × 10⁹/L — not elevated) and borderline peak flow variability (15% — positive threshold is >20%), asthma is less likely. However, symptoms still require explanation. Options: trial of bronchodilator reversibility testing (FEV1 increase ≥12% after SABA); watchful waiting with review; consider alternative diagnoses (vocal cord dysfunction, cardiac cause).",
-      "A": "Incorrect — FeNO 18 ppb is NEGATIVE in a child (<25 ppb). ICS should not be started without further evidence of asthma.",
-      "B": "CORRECT — FeNO 18 ppb is negative in a child per NICE NG80. Consider bronchodilator reversibility or watchful waiting.",
-      "C": "Incorrect — Negative FeNO reduces asthma probability but does not absolutely exclude it — other tests and clinical judgement apply.",
-      "D": "Incorrect — Low eosinophil count combined with negative FeNO makes eosinophilic asthma less likely.",
-      "E": "Incorrect — Negative FeNO with mild symptoms does not automatically require specialist referral."
-    },
-    "reference": "NICE NG80 — Asthma: diagnosis, monitoring and chronic asthma management. https://www.nice.org.uk/guidance/ng80",
-    "tags": [
-      "FeNO",
-      "paediatric asthma",
-      "negative FeNO",
-      "eosinophil count",
-      "NICE NG80",
-      "diagnosis"
-    ],
-    "source": "Question Grove 360"
-  },
-  {
-    "id": "QG-RESP-011-003",
-    "exam": "MRCGP AKT",
-    "domain": "Clinical Medicine",
-    "specialty": "Respiratory",
-    "difficulty": "Hard",
-    "question": "A 14-year-old girl with confirmed asthma has a blood eosinophil count of 0.52 × 10⁹/L (elevated). She is currently on step 3 (low-dose ICS/LABA) with poor control. FeNO remains elevated at 52 ppb on treatment. What does the elevated blood eosinophil count suggest about her asthma phenotype and treatment implications?",
-    "options": {
-      "A": "Elevated eosinophils are irrelevant to asthma management",
-      "B": "Elevated blood eosinophils (≥0.3 × 10⁹/L) indicate type 2/eosinophilic asthma phenotype — predicts good response to ICS dose increase; at step 4-5 failures, predicts response to biologic anti-IL-5 therapy (mepolizumab/benralizumab) when in severe asthma pathway",
-      "C": "Elevated eosinophils confirm parasitic infection — stool ova and cysts before treating",
-      "D": "Elevated eosinophils indicate non-eosinophilic asthma — switch to non-ICS treatment",
-      "E": "Blood eosinophils are only relevant in COPD management"
-    },
-    "correct_answer": "B",
-    "explanation": {
-      "correct": "Elevated blood eosinophils (≥0.3 × 10⁹/L) combined with elevated FeNO indicates type 2/eosinophilic asthma — the most treatment-responsive phenotype. Implications: (1) Predicts good response to ICS — consider step up to medium/high-dose ICS; (2) At severe refractory asthma stage (GINA step 5), elevated blood eosinophils (≥0.3-0.45 × 10⁹/L) are biomarkers for response to anti-IL-5 biologics (mepolizumab, benralizumab — NICE TA — approved for severe eosinophilic asthma). Per NICE NG80, blood eosinophils guide step-up decisions and biologic eligibility in severe asthma.",
-      "A": "Incorrect — Blood eosinophils are now central to asthma phenotyping and treatment decision-making per NICE NG80.",
-      "B": "CORRECT — Elevated eosinophils = type 2/eosinophilic asthma. Good ICS response; anti-IL-5 biologic eligibility in severe asthma per NICE NG80.",
-      "C": "Incorrect — While parasitic infection should be excluded if clinically suspected, eosinophilia in this asthma context is likely disease-related.",
-      "D": "Incorrect — Elevated eosinophils indicate EOSINOPHILIC asthma — exactly the ICS-responsive phenotype.",
-      "E": "Incorrect — Blood eosinophils in COPD guide ICS use. In asthma, they guide phenotyping and biologic eligibility."
-    },
-    "reference": "NICE NG80 — Asthma. NICE TA mepolizumab/benralizumab. GINA severe asthma guidelines.",
-    "tags": [
-      "blood eosinophils",
-      "eosinophilic asthma",
-      "type 2 asthma",
-      "biologic",
-      "mepolizumab",
-      "NICE NG80"
-    ],
-    "source": "Question Grove 360"
-  },
-  {
-    "id": "QG-RESP-011-004",
+    "id": "QG-B2-RESP-009-001",
     "exam": "MRCGP AKT",
     "domain": "Clinical Medicine",
     "specialty": "Respiratory",
     "difficulty": "Easy",
-    "question": "A 7-year-old boy is being assessed for asthma. His GP wants to use FeNO testing. Which statement about FeNO testing in children is correct per NICE NG80?",
+    "question": "A 68-year-old man presents to his GP with a 3-day history of productive cough, fever and pleuritic chest pain. His GP suspects community-acquired pneumonia. Per BTS CRB-65 guidelines for primary care, which single investigation is the most important to perform immediately?",
     "options": {
-      "A": "FeNO testing is not recommended for children under 12 years",
-      "B": "FeNO testing is recommended for children aged 5 and over as part of the diagnostic pathway for asthma when the diagnosis is uncertain",
-      "C": "FeNO testing replaces peak flow monitoring in all children with asthma",
-      "D": "FeNO testing should only be performed during an acute asthma attack",
-      "E": "FeNO testing is only useful in adults — peak flow variability is the preferred test in children"
+      "A": "Chest X-ray",
+      "B": "Pulse oximetry — oxygen saturation measurement is the most critical immediate bedside investigation in suspected pneumonia; SpO2 <94% indicates need for hospital admission and oxygen therapy",
+      "C": "Sputum culture",
+      "D": "Full blood count",
+      "E": "Urinary pneumococcal antigen test"
     },
     "correct_answer": "B",
     "explanation": {
-      "correct": "Per NICE NG80, FeNO testing is recommended for children aged 5 years and over as part of the structured diagnostic pathway when asthma is suspected and the diagnosis is uncertain. It is particularly valuable in younger children where spirometry may be technically difficult or unreliable. FeNO is measured when the patient is stable (not during an acute attack), not immediately after a recent infection, not within 1 hour of exercise, and not after eating. It should NOT be performed on the same day as spirometry as bronchodilator testing may affect FeNO.",
-      "A": "Incorrect — NICE NG80 recommends FeNO for children aged 5 and over, not just 12+.",
-      "B": "CORRECT — FeNO recommended for children aged ≥5 when asthma diagnosis is uncertain per NICE NG80.",
-      "C": "Incorrect — FeNO is a diagnostic tool; peak flow monitoring remains the primary monitoring tool during treatment.",
-      "D": "Incorrect — FeNO must be performed when the patient is STABLE, not during acute attacks.",
-      "E": "Incorrect — FeNO is particularly valuable in children where spirometry is technically more difficult."
+      "correct": "Per BTS Guidelines on Community-Acquired Pneumonia (2009, updated), pulse oximetry is the most important immediate investigation in primary care for suspected pneumonia. It provides: (1) Immediate assessment of respiratory compromise — SpO2 <94% indicates need for hospital admission or at least supplemental oxygen; (2) Risk stratification alongside CRB-65 (Confusion, Respiratory rate ≥30/min, Blood pressure systolic <90/diastolic ≤60 mmHg, age ≥65) — low SpO2 escalates management; (3) Decision support — whether to manage at home or refer. CXR is the gold standard for confirming pneumonia but is not always immediately available in primary care. CRB-65 score: 0 = low risk (home treatment); 1-2 = intermediate (hospital assessment); 3-4 = high risk (urgent hospital admission).",
+      "A": "Incorrect — CXR confirms pneumonia diagnosis but is the gold standard investigation in secondary care. Pulse oximetry is the most immediately critical primary care investigation.",
+      "B": "CORRECT — Pulse oximetry is the most important immediate investigation in suspected CAP per BTS guidelines — SpO2 guides admission decision.",
+      "C": "Incorrect — Sputum culture guides antibiotic choice but results take 48-72 hours — not the immediate priority.",
+      "D": "Incorrect — FBC is useful (raised WBC, CRP) but takes time and does not guide the immediate admission/home treatment decision as directly as SpO2.",
+      "E": "Incorrect — Urinary pneumococcal antigen is useful in secondary care for severe CAP — not the immediate primary care priority."
     },
-    "reference": "NICE NG80 — Asthma: diagnosis, monitoring and chronic asthma management. https://www.nice.org.uk/guidance/ng80",
-    "tags": [
-      "FeNO",
-      "paediatric asthma",
-      "age 5",
-      "diagnostic pathway",
-      "stable asthma",
-      "NICE NG80"
-    ],
-    "source": "Question Grove 360"
+    "reference": "BTS Guidelines — Community-acquired pneumonia in adults. https://www.brit-thoracic.org.uk/quality-improvement/guidelines/pneumonia-adults/",
+    "tags": ["pneumonia", "pulse oximetry", "CRB-65", "BTS guidelines", "primary care", "SpO2"]
   },
   {
-    "id": "QG-RESP-011-005",
+    "id": "QG-B2-RESP-009-002",
     "exam": "MRCGP AKT",
     "domain": "Clinical Medicine",
     "specialty": "Respiratory",
     "difficulty": "Medium",
-    "question": "An 8-year-old girl with newly diagnosed asthma is started on a low-dose ICS. Her mother asks what the FeNO measurement will be used for now that treatment has started. Which statement is correct?",
+    "question": "A GP assesses a 72-year-old woman with suspected community-acquired pneumonia. She is confused (new), respiratory rate 32/min, BP 88/60 mmHg, and aged ≥65. What is her CRB-65 score and what management is indicated per BTS guidelines?",
     "options": {
-      "A": "FeNO is only useful before treatment — it has no role in monitoring",
-      "B": "FeNO monitoring during treatment can guide ICS dose adjustments — persistently elevated FeNO on treatment may indicate poor adherence, ongoing allergen exposure or need for ICS dose increase",
-      "C": "FeNO normalises immediately on starting ICS",
-      "D": "FeNO should be measured weekly during ICS treatment",
-      "E": "FeNO is not affected by ICS treatment"
+      "A": "CRB-65 score 1 — low risk; manage at home with oral antibiotics",
+      "B": "CRB-65 score 4 (confusion + RR ≥30 + BP systolic <90 + age ≥65) — high risk; requires urgent hospital admission; consider 999 given haemodynamic compromise",
+      "C": "CRB-65 score 2 — intermediate; hospital assessment recommended",
+      "D": "CRB-65 is not applicable in elderly patients",
+      "E": "CRB-65 score 3 — moderate risk; prescribe oral co-amoxiclav and review tomorrow"
     },
     "correct_answer": "B",
     "explanation": {
-      "correct": "Per NICE NG80, FeNO has a role in both diagnosis AND monitoring. During treatment, FeNO measurements can inform: (1) Whether ICS is suppressing eosinophilic inflammation (FeNO should fall with adequate ICS therapy); (2) Poor adherence (FeNO persistently elevated despite claimed ICS use); (3) Ongoing allergen exposure maintaining inflammation; (4) Whether ICS dose increase is needed (persistently elevated FeNO with ongoing symptoms). FeNO typically falls after 2-4 weeks of ICS. Very low FeNO during monitoring may support ICS step-down. Used alongside clinical symptoms and peak flow for a comprehensive assessment.",
-      "A": "Incorrect — FeNO has an established role in monitoring treatment response, adherence and dose adjustment per NICE NG80.",
-      "B": "CORRECT — FeNO monitoring guides ICS dose adjustments, adherence assessment and allergen exposure identification per NICE NG80.",
-      "C": "Incorrect — FeNO falls gradually over 2-4 weeks with ICS — not immediately.",
-      "D": "Incorrect — Weekly FeNO is excessive. Periodic measurement at review appointments is appropriate.",
-      "E": "Incorrect — ICS reduces FeNO by suppressing eosinophilic airway inflammation — this is expected."
+      "correct": "CRB-65 score: C = new Confusion (1 point), R = Respiratory rate ≥30/min (1 point), B = systolic BP <90 mmHg OR diastolic ≤60 mmHg (1 point), 65 = age ≥65 years (1 point). This patient scores: C (confused) = 1 + R (RR 32) = 1 + B (BP 88/60) = 1 + 65 (age ≥65) = 1. Total = 4 points. CRB-65 interpretation per BTS: Score 0 = low severity (consider home treatment); Score 1-2 = moderate severity (consider hospital referral); Score 3-4 = high severity (urgent hospital admission). A score of 4 with hypotension indicates possible septic shock from pneumonia — immediate hospital admission via 999 is warranted. In hospital, CURB-65 (adds blood urea ≥7 mmol/L) is used for further severity stratification.",
+      "A": "Incorrect — All four CRB-65 criteria are met — score is 4, not 1.",
+      "B": "CORRECT — CRB-65 score 4 (all criteria met) = high severity pneumonia requiring urgent hospital admission per BTS guidelines.",
+      "C": "Incorrect — Score 4, not 2. Score 2 would indicate intermediate risk — this patient is high risk.",
+      "D": "Incorrect — CRB-65 specifically includes age ≥65 as a risk factor and is applicable in elderly patients.",
+      "E": "Incorrect — Score is 4 not 3. Even a score of 3 would require urgent hospital admission — oral antibiotics and 'review tomorrow' is dangerously inappropriate at this severity."
     },
-    "reference": "NICE NG80 — Asthma: diagnosis, monitoring and chronic asthma management. https://www.nice.org.uk/guidance/ng80",
-    "tags": [
-      "FeNO",
-      "monitoring",
-      "ICS adherence",
-      "asthma treatment",
-      "eosinophilic inflammation",
-      "NICE NG80"
-    ],
-    "source": "Question Grove 360"
+    "reference": "BTS Guidelines — CAP in adults. CRB-65 scoring system. https://www.brit-thoracic.org.uk/quality-improvement/guidelines/pneumonia-adults/",
+    "tags": ["CRB-65", "pneumonia severity", "hospital admission", "BTS", "community-acquired pneumonia", "score 4"]
   },
   {
-    "id": "QG-RESP-012-001",
-    "exam": "MRCGP AKT",
-    "domain": "Clinical Medicine",
-    "specialty": "Respiratory",
-    "difficulty": "Medium",
-    "question": "A 68-year-old woman with COPD (GOLD Grade 2, FEV1 55%) has persistent breathlessness and exertional limitation despite tiotropium (LAMA) alone. She has had 1 exacerbation in the past year. Her blood eosinophil count is 0.15 × 10⁹/L. There is no asthmatic features or significant bronchodilator reversibility. Per NICE NG115, what is the most appropriate treatment step-up?",
-    "options": {
-      "A": "Add an ICS to her existing LAMA",
-      "B": "Add a LABA to her existing LAMA (dual long-acting bronchodilator — LABA/LAMA combination)",
-      "C": "Start oral prednisolone maintenance",
-      "D": "Switch LAMA to a LABA only",
-      "E": "Add ICS/LABA combination and discontinue LAMA"
-    },
-    "correct_answer": "B",
-    "explanation": {
-      "correct": "Per NICE NG115 (COPD in over 16s), for patients with persistent breathlessness on a single long-acting bronchodilator (LAMA or LABA), the next step is to add the OTHER long-acting bronchodilator class to achieve dual bronchodilation (LABA + LAMA combination). This is particularly appropriate when: blood eosinophils are LOW (<0.1 × 10⁹/L) suggesting poor ICS response; no asthmatic features; primary symptom is breathlessness/exercise limitation. LABA/LAMA combinations (e.g. umeclidinium/vilanterol, tiotropium/olodaterol) provide superior bronchodilation vs monotherapy. ICS is not the priority when eosinophils are low.",
-      "A": "Incorrect — Adding ICS to LAMA without LABA is not the recommended NICE NG115 step-up. LABA should be added first.",
-      "B": "CORRECT — Add LABA to existing LAMA = LABA/LAMA dual bronchodilation for persistent breathlessness per NICE NG115.",
-      "C": "Incorrect — Oral prednisolone maintenance is not recommended in COPD due to serious systemic side effects with limited benefit.",
-      "D": "Incorrect — Switching LAMA to LABA loses the bronchodilator benefit of LAMA — adding is preferred.",
-      "E": "Incorrect — ICS/LABA without LAMA is less effective bronchodilation than LABA/LAMA. ICS should be added to LABA/LAMA, not replace LAMA."
-    },
-    "reference": "NICE NG115 — Chronic obstructive pulmonary disease in over 16s. https://www.nice.org.uk/guidance/ng115",
-    "tags": [
-      "COPD",
-      "LABA LAMA",
-      "dual bronchodilator",
-      "tiotropium",
-      "breathlessness",
-      "NICE NG115"
-    ],
-    "source": "Question Grove 360"
-  },
-  {
-    "id": "QG-RESP-012-002",
-    "exam": "MRCGP AKT",
-    "domain": "Clinical Medicine",
-    "specialty": "Respiratory",
-    "difficulty": "Hard",
-    "question": "A 72-year-old man with COPD (FEV1 38%, GOLD Grade 3) is on LABA/LAMA combination inhaler. He has had 3 exacerbations in the past year requiring oral steroids. His blood eosinophil count is 0.35 × 10⁹/L. Per NICE NG115, what additional treatment should be considered?",
-    "options": {
-      "A": "No further treatment — maximum COPD therapy has been reached",
-      "B": "Add ICS to create triple therapy (ICS/LABA/LAMA) — blood eosinophils ≥0.3 × 10⁹/L indicate likely ICS response in COPD",
-      "C": "Start azithromycin prophylaxis immediately without ICS trial",
-      "D": "Switch to ICS/LABA only — LAMA is not needed with frequent exacerbations",
-      "E": "Add theophylline as first-line additional agent"
-    },
-    "correct_answer": "B",
-    "explanation": {
-      "correct": "Per NICE NG115, for patients with COPD on LABA/LAMA with ≥2 exacerbations per year (or 1 hospitalisation), consider adding an ICS to create triple therapy (ICS/LABA/LAMA — e.g. fluticasone/umeclidinium/vilanterol, Trixeo). Critically, blood eosinophil count guides ICS use in COPD: ≥0.3 × 10⁹/L = likely ICS responder (add ICS); 0.1-0.3 × 10⁹/L = uncertain; <0.1 × 10⁹/L = unlikely ICS responder (avoid ICS — risk of pneumonia outweighs benefit). This patient has eosinophils 0.35 × 10⁹/L + 3 exacerbations = strong indication for triple therapy.",
-      "A": "Incorrect — Triple therapy (ICS/LABA/LAMA) is indicated when eosinophils ≥0.3 and frequent exacerbations.",
-      "B": "CORRECT — Add ICS for triple therapy: eosinophils ≥0.3 + frequent exacerbations on LABA/LAMA per NICE NG115.",
-      "C": "Incorrect — Azithromycin prophylaxis is considered when triple therapy fails or is contraindicated, not as first step.",
-      "D": "Incorrect — Removing LAMA from triple therapy loses proven bronchodilator benefit.",
-      "E": "Incorrect — Theophylline is last resort due to narrow therapeutic index, drug interactions and limited efficacy."
-    },
-    "reference": "NICE NG115 — COPD. https://www.nice.org.uk/guidance/ng115",
-    "tags": [
-      "COPD",
-      "triple therapy",
-      "ICS LABA LAMA",
-      "blood eosinophils",
-      "exacerbations",
-      "NICE NG115"
-    ],
-    "source": "Question Grove 360"
-  },
-  {
-    "id": "QG-RESP-012-003",
-    "exam": "MRCGP AKT",
-    "domain": "Clinical Medicine",
-    "specialty": "Respiratory",
-    "difficulty": "Medium",
-    "question": "A 65-year-old man with COPD is on triple therapy (ICS/LABA/LAMA). His blood eosinophil count is 0.08 × 10⁹/L. He has had 2 episodes of pneumonia in the past year. Per NICE NG115, what should be considered regarding the ICS component?",
-    "options": {
-      "A": "Increase the ICS dose — more ICS will prevent further pneumonia",
-      "B": "Consider withdrawing the ICS — blood eosinophils <0.1 × 10⁹/L indicates low likelihood of ICS benefit in COPD and ICS increases pneumonia risk",
-      "C": "Switch to a different ICS — one brand is safer than another",
-      "D": "Continue triple therapy unchanged — pneumonia is unrelated to ICS in COPD",
-      "E": "Add prophylactic antibiotics to the ICS regimen"
-    },
-    "correct_answer": "B",
-    "explanation": {
-      "correct": "Per NICE NG115, blood eosinophil count guides ICS use in COPD. Eosinophils <0.1 × 10⁹/L indicates very low probability of ICS benefit in COPD exacerbation reduction. ICS in COPD carries a well-documented increased pneumonia risk (OR ~1.5-2.0). With two pneumonias, low eosinophils, and no clear ICS benefit signal, withdrawal of ICS should be considered — stepping down to LABA/LAMA dual bronchodilator. Guided ICS withdrawal in low-eosinophil COPD does not increase exacerbation risk and may improve pneumonia rates. Shared decision-making with patient is essential.",
-      "A": "Incorrect — Increasing ICS dose in low-eosinophil COPD further increases pneumonia risk without additional benefit.",
-      "B": "CORRECT — Eosinophils <0.1 × 10⁹/L + recurrent pneumonia = consider ICS withdrawal per NICE NG115.",
-      "C": "Incorrect — All ICS have similar pneumonia risk in COPD. Brand switching does not resolve the issue.",
-      "D": "Incorrect — ICS significantly increases pneumonia risk in COPD — this is well-established evidence.",
-      "E": "Incorrect — Adding prophylactic antibiotics without withdrawing the likely causal agent (ICS) is not the correct approach."
-    },
-    "reference": "NICE NG115 — COPD. https://www.nice.org.uk/guidance/ng115",
-    "tags": [
-      "COPD",
-      "ICS withdrawal",
-      "blood eosinophils",
-      "pneumonia risk",
-      "NICE NG115",
-      "step down"
-    ],
-    "source": "Question Grove 360"
-  },
-  {
-    "id": "QG-RESP-012-004",
+    "id": "QG-B2-RESP-009-003",
     "exam": "MRCGP AKT",
     "domain": "Clinical Medicine",
     "specialty": "Respiratory",
     "difficulty": "Easy",
-    "question": "A 70-year-old man with COPD is symptomatic on salbutamol alone. His FEV1 is 58% predicted (GOLD Grade 2), MRC dyspnoea score 3. He has had no exacerbations in the past year. Per NICE NG115, what is the most appropriate regular inhaler treatment?",
+    "question": "A 55-year-old man has a CRB-65 score of 0 for community-acquired pneumonia managed at home. He has no penicillin allergy. Per NICE NG138 (community-acquired pneumonia antimicrobial prescribing), what is the first-line antibiotic?",
     "options": {
-      "A": "Add a low-dose ICS to his salbutamol",
-      "B": "Start a long-acting muscarinic antagonist (LAMA e.g. tiotropium) or long-acting beta-2 agonist (LABA e.g. salmeterol) as a single long-acting bronchodilator",
-      "C": "Start ICS/LABA combination immediately",
-      "D": "Start triple therapy (ICS/LABA/LAMA) from the outset",
-      "E": "Add theophylline modified-release to salbutamol"
+      "A": "Co-amoxiclav 625mg three times daily for 5 days",
+      "B": "Amoxicillin 500mg three times daily for 5 days — first-line for low-severity CAP per NICE NG138; covers Streptococcus pneumoniae (most common pathogen)",
+      "C": "Doxycycline 200mg loading then 100mg daily for 5 days",
+      "D": "Clarithromycin 500mg twice daily for 7 days",
+      "E": "Ciprofloxacin 500mg twice daily for 7 days"
     },
     "correct_answer": "B",
     "explanation": {
-      "correct": "Per NICE NG115, for symptomatic COPD patients with MRC ≥2 (breathless on level ground) who are not adequately controlled on SABA alone, the first step is to add a single long-acting bronchodilator: either a LAMA (tiotropium, aclidinium, umeclidinium) or a LABA (salmeterol, formoterol, indacaterol). LAMA is generally preferred due to stronger evidence for exacerbation reduction. ICS is not first-line in COPD unless there are eosinophilic features or asthmatic component. For this patient with no exacerbations and GOLD Grade 2, LAMA alone is appropriate initial step-up.",
-      "A": "Incorrect — ICS alone is not recommended in COPD — it must be combined with a LABA and has no bronchodilator effect.",
-      "B": "CORRECT — Single LAMA or LABA as first regular inhaler for symptomatic COPD per NICE NG115.",
-      "C": "Incorrect — ICS/LABA combination is for patients with significant exacerbation history and eosinophilic features — not first-line for GOLD Grade 2 with no exacerbations.",
-      "D": "Incorrect — Triple therapy is reserved for patients already on dual bronchodilator with persistent symptoms/exacerbations.",
-      "E": "Incorrect — Theophylline is last resort due to toxicity and limited efficacy."
-    },
-    "reference": "NICE NG115 — COPD in over 16s. https://www.nice.org.uk/guidance/ng115",
-    "tags": [
-      "COPD",
-      "LAMA",
-      "LABA",
-      "single bronchodilator",
-      "tiotropium",
-      "NICE NG115"
-    ],
-    "source": "Question Grove 360"
-  },
-  {
-    "id": "QG-RESP-012-005",
-    "exam": "MRCGP AKT",
-    "domain": "Clinical Medicine",
-    "specialty": "Respiratory",
-    "difficulty": "Hard",
-    "question": "A 74-year-old woman with severe COPD (FEV1 28%) has been admitted twice with exacerbations in the past year despite triple therapy (ICS/LABA/LAMA). She is a non-smoker. Her blood eosinophil count is 0.22 × 10⁹/L. Per NICE NG115, which additional pharmacological option should be considered?",
-    "options": {
-      "A": "Start oral prednisolone 5mg maintenance",
-      "B": "Add prophylactic azithromycin 250mg three times weekly (after excluding NTM and QTc prolongation)",
-      "C": "Add roflumilast (PDE4 inhibitor) as it is indicated for any severe COPD",
-      "D": "Switch to LABA/LAMA only — triple therapy is not working",
-      "E": "Refer for lung volume reduction surgery immediately"
-    },
-    "correct_answer": "B",
-    "explanation": {
-      "correct": "Per NICE NG115, for patients with severe COPD (FEV1 <50%) with ≥2 exacerbations per year despite optimal inhaled therapy (including triple therapy), consider prophylactic azithromycin 250mg TDS or 500mg OD. Prerequisites: non-smoker (smoking increases MAC infection risk), exclude non-tuberculous mycobacteria (NTM — sputum cultures), ECG to exclude QTc prolongation (azithromycin increases QTc), hearing test (azithromycin is ototoxic). Roflumilast is specifically for COPD with FEV1 <50%, chronic bronchitis phenotype AND ≥2 exacerbations/year — not for emphysema-predominant COPD. This patient's phenotype is not specified as chronic bronchitis.",
-      "A": "Incorrect — Long-term oral corticosteroids cause significant systemic harm in COPD (diabetes, osteoporosis) and are not recommended.",
-      "B": "CORRECT — Prophylactic azithromycin for severe COPD with ≥2 exacerbations on triple therapy, after excluding NTM and QTc per NICE NG115.",
-      "C": "Incorrect — Roflumilast is specifically for chronic bronchitis phenotype with FEV1 <50% and frequent exacerbations. Not for all severe COPD.",
-      "D": "Incorrect — Removing ICS from triple therapy in a patient with eosinophils 0.22 is uncertain — stepping down risks exacerbations.",
-      "E": "Incorrect — Lung volume reduction surgery is for specific emphysema patterns (upper-lobe predominant) — not all severe COPD."
-    },
-    "reference": "NICE NG115 — COPD. https://www.nice.org.uk/guidance/ng115. Azithromycin prophylaxis in COPD.",
-    "tags": [
-      "COPD",
-      "azithromycin prophylaxis",
-      "severe COPD",
-      "NTM",
-      "QTc",
-      "NICE NG115"
-    ],
-    "source": "Question Grove 360"
-  },
-  {
-    "id": "QG-RESP-014-001",
-    "exam": "MRCGP AKT",
-    "domain": "Clinical Medicine",
-    "specialty": "Respiratory",
-    "difficulty": "Medium",
-    "question": "A 28-year-old woman with moderate asthma is prescribed a budesonide/formoterol (MART — Maintenance And Reliever Therapy) inhaler. She asks how to use it. Which statement correctly describes the MART/AIR (Anti-Inflammatory Reliever) approach per NICE NG80?",
-    "options": {
-      "A": "Use budesonide/formoterol only when having symptoms — no regular daily dose needed",
-      "B": "Take a fixed maintenance dose of budesonide/formoterol daily AND use additional doses as reliever when symptoms occur — up to a total daily maximum (maintenance + reliever doses combined)",
-      "C": "Use budesonide/formoterol as reliever only — continue separate regular ICS preventer",
-      "D": "MART is only suitable for patients with severe uncontrolled asthma",
-      "E": "Take maximum doses of budesonide/formoterol at all times — do not reduce dose when well"
-    },
-    "correct_answer": "B",
-    "explanation": {
-      "correct": "Per NICE NG80, MART (Maintenance And Reliever Therapy) using budesonide/formoterol combines: (1) Fixed daily maintenance doses (e.g. 1-2 puffs BD) — provides regular ICS + LABA; PLUS (2) Additional reliever doses of the same inhaler when symptoms occur (formoterol has fast onset suitable as reliever). This approach is also called AIR (Anti-Inflammatory Reliever) — each reliever dose delivers ICS alongside bronchodilator, reducing exacerbation risk. Maximum daily dose limits apply (typically ≤12 puffs/day total depending on formulation). Only low-dose ICS budesonide/formoterol is licensed for MART — not high-dose or other ICS/LABA combinations.",
-      "A": "Incorrect — MART requires a regular maintenance dose PLUS PRN reliever doses — not reliever-only use.",
-      "B": "CORRECT — Fixed maintenance dose daily + additional PRN reliever doses of same inhaler per NICE NG80 MART protocol.",
-      "C": "Incorrect — In MART, budesonide/formoterol serves as BOTH preventer and reliever — separate ICS is not needed.",
-      "D": "Incorrect — MART is suitable for adults with moderate asthma at step 3 — not exclusively severe asthma.",
-      "E": "Incorrect — Maintenance dose is fixed at the prescribed level — reliever doses are additional PRN only."
-    },
-    "reference": "NICE NG80 — Asthma. BTS/SIGN Asthma Guidelines 2023. MART protocol.",
-    "tags": [
-      "MART",
-      "AIR",
-      "budesonide formoterol",
-      "asthma",
-      "maintenance reliever",
-      "NICE NG80"
-    ],
-    "source": "Question Grove 360"
-  },
-  {
-    "id": "QG-RESP-014-002",
-    "exam": "MRCGP AKT",
-    "domain": "Clinical Medicine",
-    "specialty": "Respiratory",
-    "difficulty": "Easy",
-    "question": "A 35-year-old man with asthma is on a low-dose ICS and uses his SABA (salbutamol) more than 3 days per week despite good inhaler technique and confirmed adherence. Per NICE NG80, what is the recommended step-up and when is MART an appropriate option?",
-    "options": {
-      "A": "Double the ICS dose — MART is not recommended",
-      "B": "Step up to ICS/LABA combination (step 3); MART with budesonide/formoterol is an option at step 3 as an alternative to separate ICS maintenance + SABA reliever",
-      "C": "Start oral leukotriene receptor antagonist as sole step-up",
-      "D": "Switch to LAMA — SABA overuse indicates LABA is needed",
-      "E": "Refer to secondary care before any step-up"
-    },
-    "correct_answer": "B",
-    "explanation": {
-      "correct": "Per NICE NG80, if asthma is uncontrolled on low-dose ICS (SABA use >3 days/week), step 3 options include: (1) Add a LABA to low-dose ICS (as combination inhaler); or (2) MART using low-dose budesonide/formoterol as both maintenance and reliever. MART simplifies treatment (single inhaler) and has evidence for reducing exacerbation rates compared to fixed-dose ICS/LABA + SABA reliever. MART is particularly suitable for patients with variable symptoms or poor compliance with multiple inhalers. Only budesonide/formoterol combinations are licensed for MART — beclometasone/formoterol can be used similarly in some guidelines.",
-      "A": "Incorrect — Doubling ICS dose alone (before adding LABA) was previous guidance but NICE NG80 now recommends adding LABA (or MART) at step 3.",
-      "B": "CORRECT — Step 3: add LABA to ICS; MART with budesonide/formoterol is an alternative at step 3 per NICE NG80.",
-      "C": "Incorrect — LTRA alone as step-up is a step 2 add-on option, not primary step 3.",
-      "D": "Incorrect — LAMA is used in asthma at step 4-5 for refractory asthma — not standard step 3.",
-      "E": "Incorrect — Step 3 asthma management is appropriate in primary care — referral not mandated."
-    },
-    "reference": "NICE NG80 — Asthma. https://www.nice.org.uk/guidance/ng80",
-    "tags": [
-      "asthma step-up",
-      "MART",
-      "LABA ICS",
-      "budesonide formoterol",
-      "SABA overuse",
-      "NICE NG80"
-    ],
-    "source": "Question Grove 360"
-  },
-  {
-    "id": "QG-RESP-014-003",
-    "exam": "MRCGP AKT",
-    "domain": "Clinical Medicine",
-    "specialty": "Respiratory",
-    "difficulty": "Hard",
-    "question": "A 40-year-old woman on MART therapy (budesonide/formoterol 200/6 mcg — 2 puffs BD maintenance) has been using 8 additional reliever puffs per day for the past 3 days. She is breathless but able to complete sentences. Peak flow is 62% of her best. What does this pattern indicate and what action is required?",
-    "options": {
-      "A": "Normal MART use — 8 reliever puffs per day is within normal limits",
-      "B": "Overuse of MART reliever doses suggests worsening/deteriorating asthma control — seek same-day medical review, consider oral prednisolone, review trigger factors and step up maintenance",
-      "C": "Switch back to SABA — overusing MART reliever is dangerous",
-      "D": "This represents acute severe asthma — call 999 immediately",
-      "E": "Increase maintenance dose to 4 puffs BD without seeking review"
-    },
-    "correct_answer": "B",
-    "explanation": {
-      "correct": "Per NICE NG80 and BTS/SIGN guidelines, when a patient using MART therapy requires ≥3 additional reliever doses in a day, or their reliever use is significantly increasing over several days, this indicates deteriorating asthma control — a 'yellow zone' warning. Action: seek same-day medical review, assess need for oral prednisolone course (40mg for 5 days), identify and remove trigger factors, consider stepping up maintenance dose. With PEF 62% of best, this is moderate deterioration requiring urgent assessment today. PEF <33% = life-threatening, call 999. PEF 33-50% = acute severe. PEF 50-75% = moderate.",
-      "A": "Incorrect — 8 reliever puffs/day indicates deteriorating control — not normal MART use.",
-      "B": "CORRECT — Increasing MART reliever use indicates worsening control. Same-day review + oral prednisolone consideration per NICE NG80.",
-      "C": "Incorrect — Switching away from MART during an exacerbation is not the correct acute management.",
-      "D": "Incorrect — Able to complete sentences + PEF 62% = moderate deterioration, not life-threatening. 999 is for acute severe/life-threatening (PEF <50%, silent chest, SpO2 <92%).",
-      "E": "Incorrect — Self-increasing maintenance without medical review is unsafe during deteriorating control."
-    },
-    "reference": "NICE NG80 — Asthma. BTS/SIGN Asthma Guidelines 2023 — MART monitoring.",
-    "tags": [
-      "MART",
-      "asthma deterioration",
-      "reliever overuse",
-      "oral prednisolone",
-      "PEF",
-      "NICE NG80"
-    ],
-    "source": "Question Grove 360"
-  },
-  {
-    "id": "QG-RESP-014-004",
-    "exam": "MRCGP AKT",
-    "domain": "Clinical Medicine",
-    "specialty": "Respiratory",
-    "difficulty": "Medium",
-    "question": "A GP prescribes MART therapy for a 32-year-old woman with moderate asthma. She is currently on beclometasone/formoterol DPI. Can this be used as MART, and which ICS/formoterol combination is licensed for MART in the UK?",
-    "options": {
-      "A": "Any ICS/LABA combination can be used for MART",
-      "B": "Only budesonide/formoterol (e.g. Symbicort, DuoResp) is licensed for MART in the UK — beclometasone/formoterol has a different licence",
-      "C": "Fluticasone/formoterol is the preferred MART inhaler",
-      "D": "Salmeterol-containing inhalers (fluticasone/salmeterol) can be used as MART",
-      "E": "MART can only be used with dry powder inhalers — not pressurised metered dose inhalers"
-    },
-    "correct_answer": "B",
-    "explanation": {
-      "correct": "In the UK, only budesonide/formoterol combinations (e.g. Symbicort 100/6 or 200/6 mcg Turbohaler; DuoResp Spiromax) are licensed for MART use. This is because: (1) Formoterol has rapid onset (similar to SABA — suitable as reliever); (2) Budesonide/formoterol combination has specific clinical trial evidence for MART (SMART study). Beclometasone/formoterol (Fostair) has different dosing characteristics and is NOT licensed for MART in the UK, though it is used similarly in some European guidelines. Salmeterol-containing inhalers cannot be used as MART as salmeterol has slow onset (not suitable as reliever).",
-      "A": "Incorrect — Only specific budesonide/formoterol combinations are licensed for MART in the UK.",
-      "B": "CORRECT — Only budesonide/formoterol (Symbicort/DuoResp) is UK-licensed for MART — not beclometasone/formoterol.",
-      "C": "Incorrect — Fluticasone/formoterol is not a licensed MART combination in the UK.",
-      "D": "Incorrect — Salmeterol has slow onset (10-20 minutes) making it unsuitable as a reliever for MART.",
-      "E": "Incorrect — MART can be used with DPI or pMDI depending on the specific licensed formulation."
-    },
-    "reference": "NICE NG80 — Asthma. BNF — MART licensing. Symbicort SPC. BTS/SIGN 2023.",
-    "tags": [
-      "MART",
-      "budesonide formoterol",
-      "Symbicort",
-      "licensing",
-      "asthma",
-      "NICE NG80"
-    ],
-    "source": "Question Grove 360"
-  },
-  {
-    "id": "QG-RESP-014-005",
-    "exam": "MRCGP AKT",
-    "domain": "Clinical Medicine",
-    "specialty": "Respiratory",
-    "difficulty": "Easy",
-    "question": "A 25-year-old man is started on MART therapy with budesonide/formoterol 200/6 mcg 1 puff twice daily (maintenance). He asks what to do when he has acute wheeze during the day. What is the correct instruction per NICE NG80 MART protocol?",
-    "options": {
-      "A": "Take his usual salbutamol SABA inhaler — do not use the MART inhaler as an extra dose",
-      "B": "Take 1-2 additional puffs of the same budesonide/formoterol inhaler as a reliever dose — up to a maximum daily total dose as per prescription",
-      "C": "Take 5 puffs of budesonide/formoterol immediately at the first sign of wheeze",
-      "D": "Call 999 for any wheeze episode",
-      "E": "Take oral prednisolone 40mg at the first wheeze episode"
-    },
-    "correct_answer": "B",
-    "explanation": {
-      "correct": "Per NICE NG80 MART protocol, when the patient experiences asthma symptoms: take 1-2 additional puffs of the same budesonide/formoterol inhaler as a reliever dose. This delivers both bronchodilator (formoterol — fast onset within 1-3 minutes) and ICS (budesonide — reduces airway inflammation). The patient should NOT use a separate SABA as their reliever — the MART inhaler replaces both preventer and reliever. Total daily dose (maintenance + reliever) should not exceed the prescribed maximum (typically 8 puffs/day for 200/6 mcg formulation). If more than 3-4 reliever puffs needed in a day — seek medical review.",
-      "A": "Incorrect — In MART, the budesonide/formoterol inhaler replaces both preventer AND reliever. A separate SABA is NOT used.",
-      "B": "CORRECT — Use the same MART inhaler (1-2 extra puffs) as reliever per NICE NG80 protocol.",
-      "C": "Incorrect — 5 puffs at first symptom is excessive. 1-2 puffs is the standard reliever dose.",
-      "D": "Incorrect — 999 is for life-threatening asthma attacks — not for mild wheeze that responds to reliever.",
-      "E": "Incorrect — Oral prednisolone is for exacerbations not responding to reliever — not for first wheeze episode."
-    },
-    "reference": "NICE NG80 — Asthma. BTS/SIGN Guidelines 2023 — MART protocol.",
-    "tags": [
-      "MART",
-      "reliever dose",
-      "budesonide formoterol",
-      "asthma",
-      "no SABA",
-      "NICE NG80"
-    ],
-    "source": "Question Grove 360"
-  },
-  {
-    "id": "QG-RESP-063-001",
-    "exam": "MRCGP AKT",
-    "domain": "Clinical Medicine",
-    "specialty": "Respiratory",
-    "difficulty": "Medium",
-    "question": "A 26-year-old woman at 24 weeks gestation has poorly controlled asthma — she is waking at night with wheeze 3 times per week and using her SABA daily. She is currently on a low-dose ICS. Per NICE NG80 and NICE NG133 (asthma in pregnancy), what is the most appropriate management?",
-    "options": {
-      "A": "Reduce ICS dose — steroids are harmful to the fetus in the second trimester",
-      "B": "Step up asthma treatment as in non-pregnant adults — poorly controlled asthma is more dangerous to the fetus than asthma medications; add LABA or consider MART",
-      "C": "Start oral prednisolone 40mg daily for 5 days as maintenance therapy",
-      "D": "Withhold all step-up treatment until after delivery",
-      "E": "Switch all inhalers to tablets — safer in pregnancy"
-    },
-    "correct_answer": "B",
-    "explanation": {
-      "correct": "Per NICE NG80 and BTS/SIGN asthma guidelines for pregnancy: poorly controlled asthma in pregnancy poses significant risks to the fetus (hypoxia, preterm birth, low birth weight, fetal growth restriction) that FAR OUTWEIGH risks of asthma medications. Treatment principle: step up asthma treatment to achieve good control using the same stepwise approach as in non-pregnant patients. ICS and LABA are safe in pregnancy. For this patient with nocturnal symptoms and daily SABA use on low-dose ICS — add a LABA or consider MART (budesonide/formoterol is the best-evidenced ICS/LABA in pregnancy). Oral prednisolone 40mg is used for acute exacerbations, not poor control.",
-      "A": "Incorrect — Reducing ICS in poorly controlled pregnancy asthma would worsen control and increase fetal risk.",
-      "B": "CORRECT — Step up treatment in pregnancy asthma — fetal risk from poor control > medication risk. Add LABA per NICE NG80.",
-      "C": "Incorrect — Oral prednisolone 40mg for 5 days is for acute exacerbations, not maintenance treatment of poorly controlled asthma.",
-      "D": "Incorrect — Withholding treatment causes fetal hypoxia and is far more dangerous than treated asthma.",
-      "E": "Incorrect — Inhaled medications are preferred in asthma — minimal systemic absorption and excellent safety profile in pregnancy."
-    },
-    "reference": "NICE NG80 — Asthma. BTS/SIGN Guidelines — Asthma in pregnancy 2023. NICE NG133.",
-    "tags": [
-      "asthma in pregnancy",
-      "step-up treatment",
-      "ICS safe pregnancy",
-      "LABA pregnancy",
-      "NICE NG80",
-      "fetal risk"
-    ],
-    "source": "Question Grove 360"
-  },
-  {
-    "id": "QG-RESP-063-002",
-    "exam": "MRCGP AKT",
-    "domain": "Clinical Medicine",
-    "specialty": "Respiratory",
-    "difficulty": "Easy",
-    "question": "A 30-year-old woman at 28 weeks gestation with known asthma presents with worsening wheeze, breathlessness and peak flow 58% of her best. She has taken 5 puffs of salbutamol with only partial improvement. She is able to speak in sentences. What is the most appropriate management?",
-    "options": {
-      "A": "Continue salbutamol every 4 hours and review tomorrow",
-      "B": "Oral prednisolone 40mg immediately + call 999 for obstetric and respiratory assessment — moderate acute asthma in pregnancy requires prompt hospital assessment",
-      "C": "Stop all asthma medications — they are harmful in the third trimester",
-      "D": "Double her ICS dose and review in 2 days",
-      "E": "Reassure — wheeze in pregnancy is normal due to diaphragm elevation"
-    },
-    "correct_answer": "B",
-    "explanation": {
-      "correct": "Per BTS/SIGN asthma in pregnancy guidelines, acute asthma in pregnancy requires the same urgency of treatment as in non-pregnant patients — delay increases risk of fetal hypoxia. PEF 50-75% = moderate acute asthma. Able to speak = not yet severe. Management: oral prednisolone 40mg immediately (safe in pregnancy — risks of untreated exacerbation far exceed any prednisolone risk), 999 for hospital assessment (obstetric monitoring of fetal wellbeing alongside respiratory treatment), continue salbutamol back-to-back or nebulised. Fetal monitoring (CTG) is essential in all acute asthma attacks in pregnancy.",
-      "A": "Incorrect — PEF 58% with partial response to 5 puffs SABA requires hospital assessment, not 4-hourly review.",
-      "B": "CORRECT — Oral prednisolone 40mg + 999 for hospital assessment in moderate acute asthma in pregnancy per BTS/SIGN.",
-      "C": "Incorrect — Stopping asthma medications during an acute attack will cause severe deterioration with fetal hypoxia.",
-      "D": "Incorrect — Doubling ICS during an acute exacerbation has no immediate effect on bronchospasm. Oral prednisolone is required.",
-      "E": "Incorrect — Acute wheeze with PEF 58% is never normal — it is acute asthma requiring immediate treatment."
-    },
-    "reference": "BTS/SIGN — British Guideline on Asthma Management 2023 — Section on pregnancy. NICE NG80.",
-    "tags": [
-      "asthma in pregnancy",
-      "prednisolone 40mg",
-      "moderate acute asthma",
-      "fetal hypoxia",
-      "BTS SIGN",
-      "NICE NG80"
-    ],
-    "source": "Question Grove 360"
-  },
-  {
-    "id": "QG-RESP-063-003",
-    "exam": "MRCGP AKT",
-    "domain": "Clinical Medicine",
-    "specialty": "Respiratory",
-    "difficulty": "Medium",
-    "question": "A pregnant woman with asthma asks her GP whether her ICS (budesonide) will harm her baby. What is the evidence-based advice regarding ICS use in pregnancy?",
-    "options": {
-      "A": "All ICS are contraindicated in pregnancy — use SABA only",
-      "B": "ICS are safe in pregnancy and are recommended as first-line preventer — well-controlled asthma with ICS has better fetal outcomes than undertreated asthma",
-      "C": "ICS should be halved in dose during pregnancy to minimise fetal exposure",
-      "D": "ICS can be used only in the first trimester — stop after 12 weeks",
-      "E": "ICS cause cleft palate — use LTRA (montelukast) instead"
-    },
-    "correct_answer": "B",
-    "explanation": {
-      "correct": "Per BTS/SIGN and NICE guidelines, inhaled corticosteroids are SAFE throughout pregnancy and are the recommended first-line preventer therapy for persistent asthma in pregnancy. Budesonide has the most pregnancy safety data. The risk of poorly controlled asthma (maternal and fetal hypoxia, preterm birth, fetal growth restriction) significantly outweighs any theoretical inhaled medication risk. Women should be counselled that stopping or reducing ICS in pregnancy increases the risk of exacerbations which are more dangerous than the medication itself. Continue ICS throughout pregnancy, labour and postnatal period.",
-      "A": "Incorrect — ICS are safe and recommended in pregnancy. Restricting to SABA only leaves asthma undertreated.",
-      "B": "CORRECT — ICS are safe throughout pregnancy and recommended as first-line preventer per BTS/SIGN/NICE NG80.",
-      "C": "Incorrect — Halving ICS dose during pregnancy risks loss of asthma control. Continue the effective dose.",
-      "D": "Incorrect — ICS should be continued throughout all trimesters, not stopped after 12 weeks.",
-      "E": "Incorrect — ICS do not cause cleft palate. The earlier concern was with systemic steroids at high doses. Montelukast (LTRA) safety in pregnancy is less established than ICS."
-    },
-    "reference": "BTS/SIGN Asthma in Pregnancy Guidelines. NICE NG80. NICE NG133.",
-    "tags": [
-      "ICS pregnancy",
-      "budesonide",
-      "asthma pregnancy",
-      "safety",
-      "BTS SIGN",
-      "fetal outcomes"
-    ],
-    "source": "Question Grove 360"
-  },
-  {
-    "id": "QG-RESP-063-004",
-    "exam": "MRCGP AKT",
-    "domain": "Clinical Medicine",
-    "specialty": "Respiratory",
-    "difficulty": "Hard",
-    "question": "A 28-year-old woman at 32 weeks gestation with asthma is admitted to hospital following a severe acute attack. She was given nebulised salbutamol, IV magnesium sulphate 1.2-2g and IV hydrocortisone. The team ask about giving IV aminophylline. Per BTS/SIGN guidelines for severe asthma in pregnancy, is IV aminophylline appropriate?",
-    "options": {
-      "A": "Yes — aminophylline is first-line for severe asthma in pregnancy",
-      "B": "IV aminophylline may be considered as an add-on for life-threatening asthma not responding to standard therapy, under specialist guidance — it is not first-line and has a narrow therapeutic index requiring blood level monitoring",
-      "C": "Aminophylline is absolutely contraindicated in pregnancy — risk of neonatal seizures",
-      "D": "IV aminophylline should replace IV magnesium in severe asthma",
-      "E": "Oral theophylline is preferred over IV aminophylline in pregnancy"
-    },
-    "correct_answer": "B",
-    "explanation": {
-      "correct": "Per BTS/SIGN guidelines, IV aminophylline (methylxanthine) is a third-line agent for severe/life-threatening asthma not responding to: (1) back-to-back nebulised salbutamol ± ipratropium, (2) IV magnesium sulphate, (3) IV hydrocortisone. In pregnancy, aminophylline crosses the placenta and can cause neonatal tachycardia — however it can be used when the severity of maternal asthma warrants it. Requires blood level monitoring (therapeutic range 10-20 mg/L). Not absolutely contraindicated but not first or second-line. Specialist respiratory/obstetric unit management required.",
-      "A": "Incorrect — Aminophylline is third-line — not first-line for severe asthma in pregnancy.",
-      "B": "CORRECT — IV aminophylline: third-line add-on for refractory severe asthma, under specialist guidance, with blood level monitoring.",
-      "C": "Incorrect — Aminophylline is not absolutely contraindicated in pregnancy — it can be used under specialist guidance in life-threatening scenarios.",
-      "D": "Incorrect — IV magnesium sulphate is second-line (after nebulised bronchodilators + steroids) — aminophylline is third-line.",
-      "E": "Incorrect — IV aminophylline has faster onset than oral theophylline in acute severe asthma."
-    },
-    "reference": "BTS/SIGN British Guideline on Asthma Management 2023 — Section on pregnancy and acute severe asthma.",
-    "tags": [
-      "aminophylline",
-      "severe asthma pregnancy",
-      "life-threatening asthma",
-      "BTS SIGN",
-      "third-line",
-      "pregnancy"
-    ],
-    "source": "Question Grove 360"
-  },
-  {
-    "id": "QG-RESP-063-005",
-    "exam": "MRCGP AKT",
-    "domain": "Clinical Medicine",
-    "specialty": "Respiratory",
-    "difficulty": "Medium",
-    "question": "A 22-year-old woman at 10 weeks gestation has just been diagnosed with asthma for the first time. She needs to start a preventer inhaler. Per NICE NG80 and pregnancy safety data, which ICS has the most established safety data in pregnancy and should be preferred?",
-    "options": {
-      "A": "Fluticasone propionate — highest potency, lowest dose needed",
-      "B": "Budesonide — has the most published safety data in pregnancy among ICS agents",
-      "C": "Ciclesonide — pro-drug activated locally in the lungs, lowest systemic absorption",
-      "D": "Beclometasone — the only ICS licensed in pregnancy",
-      "E": "All ICS have equal safety data in pregnancy — any can be used"
-    },
-    "correct_answer": "B",
-    "explanation": {
-      "correct": "Per BTS/SIGN and NICE guidelines, budesonide has the most extensive published pregnancy safety data of all ICS agents — large population studies from Scandinavian countries have confirmed no increased risk of congenital malformations. It is therefore the preferred ICS to start or continue in pregnancy when a choice is available. However, other ICS (beclometasone, fluticasone) are also considered safe and should not be switched if the patient is already well-controlled on them (switching itself risks loss of control). Ciclesonide has least pregnancy data despite theoretical advantages.",
-      "A": "Incorrect — Fluticasone is more potent but has less pregnancy safety data than budesonide.",
-      "B": "CORRECT — Budesonide has the most published pregnancy safety data and is preferred per BTS/SIGN.",
-      "C": "Incorrect — Ciclesonide has theoretical low-systemic-absorption advantages but limited pregnancy safety data.",
-      "D": "Incorrect — Beclometasone is not the only ICS licensed in pregnancy — most ICS are acceptable.",
-      "E": "Incorrect — Budesonide has the most data — it is the preferred ICS when initiating treatment in pregnancy."
-    },
-    "reference": "BTS/SIGN Asthma Guidelines 2023 — Pregnancy section. NICE NG80.",
-    "tags": [
-      "budesonide",
-      "ICS pregnancy",
-      "asthma pregnancy",
-      "safety data",
-      "BTS SIGN",
-      "preferred ICS"
-    ],
-    "source": "Question Grove 360"
-  },
-  {
-    "id": "QG-RESP-118-001",
-    "exam": "MRCGP AKT",
-    "domain": "Clinical Medicine",
-    "specialty": "Respiratory",
-    "difficulty": "Medium",
-    "question": "A 62-year-old man presents with progressive breathlessness. His spirometry shows: FVC 2.4 L (58% predicted), FEV1 2.1 L (65% predicted), FEV1/FVC ratio 0.88. What lung function pattern does this represent and what is the most likely diagnosis?",
-    "options": {
-      "A": "Obstructive pattern — COPD",
-      "B": "Restrictive pattern (reduced FVC, normal/elevated FEV1/FVC ratio) — likely interstitial lung disease/pulmonary fibrosis",
-      "C": "Mixed obstructive-restrictive pattern — bronchiectasis",
-      "D": "Normal spirometry — anxiety-related breathlessness",
-      "E": "Obstructive pattern — asthma"
-    },
-    "correct_answer": "B",
-    "explanation": {
-      "correct": "Spirometry interpretation: Obstructive = FEV1/FVC <0.70 (COPD, asthma). Restrictive = FEV1/FVC >0.70 (normal/elevated) with REDUCED FVC (reduced lung volumes). In this patient: FEV1/FVC 0.88 (high-normal) with FVC 58% predicted = RESTRICTIVE pattern. Causes: interstitial lung disease (IPF, sarcoidosis, extrinsic allergic alveolitis), pleural disease, neuromuscular weakness, obesity, kyphoscoliosis. The most common progressive cause in a 62-year-old = idiopathic pulmonary fibrosis (IPF). Confirm with HRCT chest (usual interstitial pneumonia pattern). Per NICE NG122.",
-      "A": "Incorrect — COPD has FEV1/FVC <0.70 (obstructive). FEV1/FVC 0.88 is normal — not obstructive.",
-      "B": "CORRECT — Restrictive pattern: reduced FVC + normal/elevated FEV1/FVC ratio = IPF/interstitial lung disease.",
-      "C": "Incorrect — Mixed pattern shows both reduced FEV1/FVC AND reduced FVC. This is pure restrictive.",
-      "D": "Incorrect — FVC 58% predicted is significantly reduced — not normal spirometry.",
-      "E": "Incorrect — Asthma causes obstructive (FEV1/FVC <0.70), not restrictive pattern."
-    },
-    "reference": "NICE NG122 — Idiopathic pulmonary fibrosis. Spirometry interpretation guidelines.",
-    "tags": [
-      "restrictive spirometry",
-      "pulmonary fibrosis",
-      "IPF",
-      "FVC",
-      "FEV1 FVC ratio",
-      "NICE NG122"
-    ],
-    "source": "Question Grove 360"
-  },
-  {
-    "id": "QG-RESP-118-002",
-    "exam": "MRCGP AKT",
-    "domain": "Clinical Medicine",
-    "specialty": "Respiratory",
-    "difficulty": "Easy",
-    "question": "A 58-year-old woman with confirmed idiopathic pulmonary fibrosis (IPF) has FVC 72% predicted. She is referred to the ILD clinic. Per NICE NG122, which treatment should be considered to slow disease progression?",
-    "options": {
-      "A": "Oral prednisolone 40mg daily — autoimmune mechanism responds to steroids",
-      "B": "Pirfenidone or nintedanib — antifibrotic agents that slow FVC decline in IPF",
-      "C": "N-acetylcysteine — antioxidant shown to halt IPF progression",
-      "D": "Azathioprine and prednisolone combination",
-      "E": "Bronchodilators (LABA/LAMA) — same as COPD management"
-    },
-    "correct_answer": "B",
-    "explanation": {
-      "correct": "Per NICE NG122, pirfenidone and nintedanib are antifibrotic agents approved for IPF with FVC 50-80% predicted. Both reduce the rate of FVC decline (slowing fibrosis progression) but do not reverse established fibrosis. Pirfenidone (anti-inflammatory and antifibrotic effects) and nintedanib (PDGFR/FGFR/VEGFR tyrosine kinase inhibitor) are NICE-approved for IPF. IPF does NOT respond to corticosteroids — unlike other ILDs (hypersensitivity pneumonitis, DIP). N-acetylcysteine was previously used but PANTHER trial showed no benefit and possible harm.",
-      "A": "Incorrect — IPF does NOT respond to corticosteroids. Steroids are for other ILDs — sarcoidosis, hypersensitivity pneumonitis.",
-      "B": "CORRECT — Pirfenidone or nintedanib slow FVC decline in IPF (FVC 50-80%) per NICE NG122.",
-      "C": "Incorrect — N-acetylcysteine was shown to have no benefit and possible harm in the PANTHER trial.",
-      "D": "Incorrect — Azathioprine/prednisolone combination was shown to increase mortality in IPF in the PANTHER trial.",
-      "E": "Incorrect — IPF is restrictive lung disease — bronchodilators provide no benefit (no airflow obstruction)."
-    },
-    "reference": "NICE NG122 — Idiopathic pulmonary fibrosis. https://www.nice.org.uk/guidance/ng122",
-    "tags": [
-      "IPF",
-      "pirfenidone",
-      "nintedanib",
-      "antifibrotic",
-      "FVC",
-      "NICE NG122"
-    ],
-    "source": "Question Grove 360"
-  },
-  {
-    "id": "QG-RESP-118-003",
-    "exam": "MRCGP AKT",
-    "domain": "Clinical Medicine",
-    "specialty": "Respiratory",
-    "difficulty": "Medium",
-    "question": "A 64-year-old man with a 40 pack-year smoking history has spirometry showing FVC 61% (reduced) and FEV1/FVC ratio 0.58 (reduced). Which lung function pattern does this represent and what does it suggest?",
-    "options": {
-      "A": "Pure restrictive pattern — likely pulmonary fibrosis",
-      "B": "Mixed obstructive-restrictive pattern — can occur in COPD with emphysema causing air trapping reducing FVC, or COPD coexisting with pulmonary fibrosis",
-      "C": "Pure obstructive pattern — COPD only",
-      "D": "Normal spirometry — symptoms are non-respiratory",
-      "E": "Restrictive pattern from obesity"
-    },
-    "correct_answer": "B",
-    "explanation": {
-      "correct": "A mixed obstructive-restrictive pattern (reduced FEV1/FVC <0.70 AND reduced FVC <80% predicted) can represent: (1) COPD with significant air trapping reducing FVC (not true restriction — need lung volumes to differentiate); (2) Coexistent COPD and pulmonary fibrosis (CPFE — combined pulmonary fibrosis and emphysema); (3) COPD plus other restrictive cause. This heavy smoker could have COPD (FEV1/FVC 0.58) with emphysema-related reduced FVC, or CPFE syndrome. Full lung function tests (including TLC, RV, DLCO) and HRCT are needed to differentiate — DLCO is severely reduced in CPFE.",
-      "A": "Incorrect — Pure restrictive pattern has NORMAL or elevated FEV1/FVC. This patient has reduced FEV1/FVC 0.58 = obstructive component.",
-      "B": "CORRECT — Mixed pattern: reduced FEV1/FVC AND reduced FVC. In a smoker, consider COPD + fibrosis (CPFE) or severe COPD with air trapping.",
-      "C": "Incorrect — Pure obstructive (COPD) shows reduced FEV1/FVC but FVC may be normal or near-normal.",
-      "D": "Incorrect — Both FEV1/FVC and FVC are significantly abnormal — not normal spirometry.",
-      "E": "Incorrect — Obesity causes restrictive pattern but FEV1/FVC is usually normal (not reduced). This man has both."
-    },
-    "reference": "NICE NG115 — COPD. NICE NG122 — IPF. Spirometry interpretation.",
-    "tags": [
-      "mixed spirometry",
-      "COPD pulmonary fibrosis",
-      "CPFE",
-      "FEV1 FVC",
-      "restrictive obstructive",
-      "spirometry"
-    ],
-    "source": "Question Grove 360"
-  },
-  {
-    "id": "QG-RESP-118-004",
-    "exam": "MRCGP AKT",
-    "domain": "Clinical Medicine",
-    "specialty": "Respiratory",
-    "difficulty": "Hard",
-    "question": "A 55-year-old woman presents with progressive breathlessness, fine end-inspiratory Velcro crackles at both lung bases, clubbing and FVC 65% predicted with FEV1/FVC 0.85. She has been on amiodarone 200mg daily for AF for 3 years. What is an important secondary cause of her restrictive lung disease to consider?",
-    "options": {
-      "A": "Metformin-induced lung fibrosis",
-      "B": "Amiodarone-induced pulmonary toxicity — causing organising pneumonia or pulmonary fibrosis",
-      "C": "Beta blocker-induced bronchoconstriction",
-      "D": "ACE inhibitor-induced cough — not fibrosis",
-      "E": "Aspirin-induced lung disease"
-    },
-    "correct_answer": "B",
-    "explanation": {
-      "correct": "Amiodarone is a well-recognised cause of drug-induced pulmonary toxicity — occurring in 5-10% of patients on long-term amiodarone. It can cause: organising pneumonia, diffuse alveolar damage, or pulmonary fibrosis. Features: progressive breathlessness, basal crackles, restrictive spirometry, bilateral infiltrates or ground-glass opacity on HRCT. Management: discuss amiodarone withdrawal with cardiologist (risk of AF recurrence), oral prednisolone if significant inflammation. Other drug causes of pulmonary fibrosis: methotrexate (hypersensitivity pneumonitis), cyclophosphamide, bleomycin, nitrofurantoin (interstitial pneumonitis), radiation.",
-      "A": "Incorrect — Metformin is not a known cause of pulmonary fibrosis.",
-      "B": "CORRECT — Amiodarone-induced pulmonary toxicity: 3-year history + restrictive spirometry + crackles. Discuss withdrawal with cardiologist.",
-      "C": "Incorrect — Beta blockers cause bronchoconstriction (obstructive pattern) — not restrictive fibrosis.",
-      "D": "Incorrect — ACE inhibitors cause dry cough (angioedema in 1%) — not pulmonary fibrosis.",
-      "E": "Incorrect — Aspirin can cause asthma exacerbations (Samter's triad) — not pulmonary fibrosis."
-    },
-    "reference": "NICE NG122 — IPF. BTS — Drug-induced lung disease guidelines. Amiodarone pulmonary toxicity.",
-    "tags": [
-      "amiodarone",
-      "drug-induced pulmonary toxicity",
-      "pulmonary fibrosis",
-      "restrictive",
-      "organising pneumonia",
-      "NICE NG122"
-    ],
-    "source": "Question Grove 360"
-  },
-  {
-    "id": "QG-RESP-118-005",
-    "exam": "MRCGP AKT",
-    "domain": "Clinical Medicine",
-    "specialty": "Respiratory",
-    "difficulty": "Easy",
-    "question": "A GP receives spirometry results for a 45-year-old non-smoker: FEV1 2.1 L (52% predicted), FVC 4.2 L (88% predicted), FEV1/FVC 0.50. Post-bronchodilator: FEV1 2.6 L (64% predicted), FEV1/FVC 0.57 — a reversibility of 24% improvement in FEV1. What is the most likely diagnosis?",
-    "options": {
-      "A": "Pulmonary fibrosis — low FEV1 indicates restriction",
-      "B": "Asthma — significant post-bronchodilator reversibility (≥12% AND ≥200mL) in a non-smoker with normal FVC",
-      "C": "COPD — obstructive pattern in smoker",
-      "D": "Vocal cord dysfunction — spirometry shows variable obstruction",
-      "E": "Normal spirometry — FEV1/FVC 0.50 is within normal limits"
-    },
-    "correct_answer": "B",
-    "explanation": {
-      "correct": "Key distinction: LOW FEV1 with NORMAL FVC and LOW FEV1/FVC = OBSTRUCTIVE pattern (not restrictive). Restrictive = LOW FVC with NORMAL or HIGH FEV1/FVC. This patient has: FEV1/FVC 0.50 (obstructive), normal FVC (88% predicted), significant post-bronchodilator reversibility (24% improvement, FEV1 increases from 2.1 to 2.6 L = increase of 0.5L = 24%). Significant reversibility: ≥12% AND ≥200mL improvement in FEV1. Non-smoker + normal FVC + significant reversibility = asthma diagnosis. Per NICE NG80.",
-      "A": "Incorrect — FVC is 88% (normal). Pulmonary fibrosis causes reduced FVC. Low FEV1 here is due to obstruction not restriction.",
-      "B": "CORRECT — Obstructive pattern (FEV1/FVC 0.50) + normal FVC + significant reversibility ≥12% + non-smoker = asthma per NICE NG80.",
-      "C": "Incorrect — COPD is possible but significant post-bronchodilator reversibility (24%) strongly favours asthma, especially in a non-smoker.",
-      "D": "Incorrect — VCD causes variable extrathoracic obstruction — different spirometry pattern (truncated inspiratory loop).",
-      "E": "Incorrect — FEV1/FVC 0.50 is well below the normal threshold of 0.70 — significantly obstructive."
-    },
-    "reference": "NICE NG80 — Asthma. Bronchodilator reversibility criteria for asthma diagnosis.",
-    "tags": [
-      "asthma",
-      "reversibility",
-      "FEV1 FVC",
-      "obstructive pattern",
-      "spirometry",
-      "NICE NG80"
-    ],
-    "source": "Question Grove 360"
-  },
-  {
-    "id": "QG-RESP-119-001",
-    "exam": "MRCGP AKT",
-    "domain": "Clinical Medicine",
-    "specialty": "Respiratory",
-    "difficulty": "Medium",
-    "question": "A 48-year-old baker has occupational spirometry performed annually. This year: FEV1 3.2 L (88% predicted), FVC 4.0 L (90% predicted), FEV1/FVC 0.80. Compared to last year: FEV1 3.6 L (99% predicted). He reports occasional wheeze at work. What is the significance of this finding?",
-    "options": {
-      "A": "Results are entirely normal — no action needed",
-      "B": "A fall in FEV1 of 400mL (11% predicted) over 1 year is excessive decline and may indicate occupational asthma or early COPD — refer to occupational health physician and consider occupational asthma investigation",
-      "C": "Normal annual variability — FEV1 always fluctuates by 400mL",
-      "D": "Interpret as COPD — start tiotropium",
-      "E": "Arrange urgent CT chest for suspected pulmonary fibrosis"
-    },
-    "correct_answer": "B",
-    "explanation": {
-      "correct": "Normal annual FEV1 decline is approximately 25-30 mL/year in healthy non-smoking adults. A decline of 400 mL in 1 year (11% predicted) is EXCESSIVE and clinically significant. In a baker with workplace wheeze, the differential includes occupational asthma (from flour/baker's sensitisation — IgE-mediated). Per BTS occupational asthma guidelines and NICE, investigation includes: serial peak flow monitoring (at and away from work — >20% diurnal variability at work vs away from work), specific bronchoprovocation testing, immunological testing (flour-specific IgE/RAST), occupational health referral. Early diagnosis and removal from exposure are critical — sensitiser-induced occupational asthma improves/resolves with early exposure cessation.",
-      "A": "Incorrect — Current values appear normal in isolation but the fall from previous results (400mL decline) is clinically significant.",
-      "B": "CORRECT — Excessive FEV1 decline (400mL/year) + occupational wheeze = investigate for occupational asthma per BTS guidelines.",
-      "C": "Incorrect — Normal annual variability is 25-30 mL/year. A 400mL decline is 13-16x the expected decline.",
-      "D": "Incorrect — FEV1/FVC 0.80 is not obstructive (>0.70). Interpreting as COPD and starting treatment would be wrong.",
-      "E": "Incorrect — The pattern and context suggest occupational asthma — not fibrosis (FVC is normal)."
-    },
-    "reference": "BTS — Occupational asthma guidelines. NICE — Occupational asthma. HSE — Occupational lung disease.",
-    "tags": [
-      "occupational asthma",
-      "baker's asthma",
-      "FEV1 decline",
-      "serial peak flow",
-      "occupational health",
-      "BTS"
-    ],
-    "source": "Question Grove 360"
-  },
-  {
-    "id": "QG-RESP-119-002",
-    "exam": "MRCGP AKT",
-    "domain": "Clinical Medicine",
-    "specialty": "Respiratory",
-    "difficulty": "Hard",
-    "question": "A 35-year-old car spray painter presents with wheeze that started 2 years into his current job. Symptoms are significantly better on holidays. His spirometry is currently normal. Peak flow monitoring over 4 weeks shows PEF variability >20% on working days vs <10% on non-working days. What is the diagnosis and most important management principle?",
-    "options": {
-      "A": "Asthma from non-occupational causes — treat with ICS and continue work",
-      "B": "Occupational asthma from isocyanates (spray paint sensitiser) — removal from exposure is the most important intervention; earlier removal = better prognosis",
-      "C": "COPD from occupational dust exposure — start LAMA",
-      "D": "Work-related worsening of pre-existing asthma — continue exposure with better treatment",
-      "E": "Anxiety-related hyperventilation — psychological support"
-    },
-    "correct_answer": "B",
-    "explanation": {
-      "correct": "Occupational asthma from isocyanates (HDI, MDI, TDI — common in spray painting) is the most common cause of occupational asthma in the UK. Classic pattern: wheeze at work, improvement on holidays/weekends — confirmed by serial PEF monitoring showing >20% variability at work vs off work. Management principle (BTS/NICE/BOHRF): COMPLETE REMOVAL FROM EXPOSURE is the primary treatment — prognosis directly correlates with time from diagnosis to exposure cessation. Workers who stop exposure within 1 year have 70% chance of remission; those who continue have very poor prognosis. Compensation (industrial injuries benefit) should be discussed. Do not manage with inhalers alone while continuing exposure.",
-      "A": "Incorrect — The work-related pattern and PEF monitoring confirm occupational asthma — not non-occupational. Continuing work without exposure control is harmful.",
-      "B": "CORRECT — Isocyanate occupational asthma: complete removal from exposure is the most important intervention. Earlier = better prognosis.",
-      "C": "Incorrect — The pattern (PEF variability correlating with work) is asthma not COPD. Normal spirometry between episodes.",
-      "D": "Incorrect — Work-related worsening of pre-existing asthma is a different category from true occupational asthma. Continuing exposure is harmful.",
-      "E": "Incorrect — Work-related PEF variability >20% is objective evidence of occupational asthma — not anxiety."
-    },
-    "reference": "BTS — Occupational asthma guidelines. BOHRF — Occupational asthma evidence. HSE — Isocyanates.",
-    "tags": [
-      "occupational asthma",
-      "isocyanates",
-      "spray painting",
-      "removal from exposure",
-      "serial PEF",
-      "BTS"
-    ],
-    "source": "Question Grove 360"
-  },
-  {
-    "id": "QG-RESP-119-003",
-    "exam": "MRCGP AKT",
-    "domain": "Clinical Medicine",
-    "specialty": "Respiratory",
-    "difficulty": "Easy",
-    "question": "Occupational health refers a 40-year-old electrician for spirometry. His results: FEV1 3.8 L (94% predicted), FVC 4.6 L (93% predicted), FEV1/FVC 0.83. He has no symptoms. He is a non-smoker. What is the correct interpretation and action?",
-    "options": {
-      "A": "Obstructive pattern — start COPD treatment",
-      "B": "Normal spirometry — reassure, no treatment needed, continue occupational health surveillance as scheduled",
-      "C": "Restrictive pattern — HRCT chest for pulmonary fibrosis",
-      "D": "Mixed pattern — refer to respiratory specialist",
-      "E": "Borderline obstructive — arrange bronchodilator reversibility test"
-    },
-    "correct_answer": "B",
-    "explanation": {
-      "correct": "Spirometry interpretation: FEV1 94% predicted (normal ≥80%), FVC 93% predicted (normal ≥80%), FEV1/FVC 0.83 (normal ≥0.70). ALL parameters are within normal ranges. This is completely normal spirometry. In occupational health surveillance, normal spirometry + asymptomatic + non-smoker = reassure and continue scheduled surveillance (typically annual or as per occupational exposure risk category). No investigation or treatment is needed.",
-      "A": "Incorrect — FEV1/FVC 0.83 is well above 0.70 threshold — not obstructive.",
-      "B": "CORRECT — Normal spirometry: all parameters within normal range. Reassure and continue surveillance.",
-      "C": "Incorrect — FVC 93% is normal. Pulmonary fibrosis causes reduced FVC (<80% predicted).",
-      "D": "Incorrect — There is no mixed pattern — both FEV1/FVC (0.83) and FVC (93%) are normal.",
-      "E": "Incorrect — Bronchodilator reversibility is indicated when FEV1/FVC is below 0.70 or when asthma is clinically suspected."
-    },
-    "reference": "NICE NG115 — COPD (spirometry interpretation). NICE NG80 — Asthma. ATS/ERS spirometry guidelines.",
-    "tags": [
-      "normal spirometry",
-      "occupational health",
-      "FEV1 FVC",
-      "surveillance",
-      "no treatment",
-      "interpretation"
-    ],
-    "source": "Question Grove 360"
-  },
-  {
-    "id": "QG-RESP-119-004",
-    "exam": "MRCGP AKT",
-    "domain": "Clinical Medicine",
-    "specialty": "Respiratory",
-    "difficulty": "Medium",
-    "question": "A 52-year-old ex-miner has occupational spirometry performed. His results show: FEV1 2.4 L (68% predicted), FVC 3.8 L (88% predicted), FEV1/FVC 0.63 (post-bronchodilator). He has no symptoms and has not smoked for 20 years. He stopped working in the mine 10 years ago. What is the significance of these findings?",
-    "options": {
-      "A": "Normal for his age — no action needed",
-      "B": "Post-bronchodilator FEV1/FVC <0.70 confirms COPD — likely occupational COPD from mine dust exposure. Register on QOF COPD register, manage per NICE NG115, discuss industrial injuries disability benefit",
-      "C": "Restrictive pattern from coal worker's pneumoconiosis — HRCT chest",
-      "D": "The low FEV1/FVC is due to not smoking — non-smokers cannot get COPD",
-      "E": "Reversible obstruction — start salbutamol only"
-    },
-    "correct_answer": "B",
-    "explanation": {
-      "correct": "Post-bronchodilator FEV1/FVC <0.70 confirms COPD regardless of smoking history. Occupational COPD from coal mine dust, silica, grain dust and other occupational exposures is well-established — NICE NG115 acknowledges occupational exposures as a COPD cause. Management: NICE NG115 COPD treatment pathway, smoking cessation counselling (although ex-smoker), pulmonary rehabilitation, consider Industrial Injuries Disability Benefit (IIDB) application — pneumoconiosis and related occupational lung diseases qualify. FVC 88% is near-normal — this is a pure obstructive pattern.",
-      "A": "Incorrect — Post-bronchodilator FEV1/FVC 0.63 (<0.70) is diagnostic of COPD regardless of age.",
-      "B": "CORRECT — Occupational COPD: post-bronchodilator FEV1/FVC <0.70 confirmed. Register and manage per NICE NG115. Discuss IIDB.",
-      "C": "Incorrect — Coal worker's pneumoconiosis causes restrictive pattern (reduced FVC). This is obstructive (low FEV1/FVC, normal FVC).",
-      "D": "Incorrect — COPD can occur in never-smokers from occupational exposures. Non-smoking history does not exclude COPD.",
-      "E": "Incorrect — Post-bronchodilator FEV1/FVC <0.70 represents fixed (not fully reversible) obstruction = COPD. SABA alone is inadequate management."
-    },
-    "reference": "NICE NG115 — COPD. Industrial Injuries Disability Benefit — occupational lung disease.",
-    "tags": [
-      "occupational COPD",
-      "coal mining",
-      "FEV1 FVC",
-      "industrial injuries benefit",
-      "NICE NG115",
-      "non-smoker COPD"
-    ],
-    "source": "Question Grove 360"
-  },
-  {
-    "id": "QG-RESP-119-005",
-    "exam": "MRCGP AKT",
-    "domain": "Clinical Medicine",
-    "specialty": "Respiratory",
-    "difficulty": "Hard",
-    "question": "An occupational health report for a 38-year-old hairdresser shows a normal FEV1/FVC but FVC declining from 4.2 L (95% predicted) three years ago to 3.4 L (76% predicted) now. She reports no symptoms. What should be considered?",
-    "options": {
-      "A": "Normal annual variability — repeat in 2 years",
-      "B": "Progressive FVC decline of 800mL over 3 years in a hairdresser warrants investigation for occupational interstitial lung disease — persulfate sensitivity from hair bleaching agents is a recognised cause of occupational ILD. Refer to occupational health physician and consider HRCT",
-      "C": "FVC 76% is still within normal range — no concern",
-      "D": "Interpret as obstructive COPD — start treatment",
-      "E": "Prescribe iron supplements — anaemia reduces FVC"
-    },
-    "correct_answer": "B",
-    "explanation": {
-      "correct": "A progressive decline in FVC (reducing FVC with normal FEV1/FVC = developing restriction) of 800mL over 3 years is clinically significant — normal annual decline in FVC is <30mL/year. In a hairdresser, occupational causes of interstitial lung disease include: persulfate sensitivity (from bleaching agents — can cause ILD and occupational asthma), hairspray aerosols. FVC 76% is below normal (≥80% predicted). Serial decline even without symptoms warrants investigation: HRCT chest (looking for ground-glass opacity, reticulation), occupational history review, and occupational health physician assessment. Early detection prevents further exposure-related damage.",
-      "A": "Incorrect — An 800mL FVC decline over 3 years is 27x the expected annual decline. Not normal variability.",
-      "B": "CORRECT — Progressive FVC decline + hairdresser occupation = investigate for occupational ILD (persulfate). HRCT + occupational health.",
-      "C": "Incorrect — FVC 76% is below the 80% normal threshold AND the trend of decline is the primary concern.",
-      "D": "Incorrect — FEV1/FVC is normal — this is developing restriction not obstruction.",
-      "E": "Incorrect — Anaemia affects exercise capacity but not static spirometry values significantly."
-    },
-    "reference": "BTS — Occupational lung disease guidelines. Persulfate and hairdresser ILD literature.",
-    "tags": [
-      "occupational ILD",
-      "hairdresser",
-      "persulfate",
-      "FVC decline",
-      "restrictive spirometry",
-      "occupational health"
-    ],
-    "source": "Question Grove 360"
-  },
-  {
-    "id": "QG-RESP-122-001",
-    "exam": "MRCGP AKT",
-    "domain": "Clinical Medicine",
-    "specialty": "Respiratory",
-    "difficulty": "Medium",
-    "question": "A 6-year-old boy presents with 3 days of cough, fever and now right-sided abdominal pain. On examination he has a temperature of 38.8°C, respiratory rate of 32 breaths/min, dullness to percussion and reduced breath sounds at the right base. Abdominal examination shows right lower quadrant tenderness. What is the most likely cause of his abdominal pain and most appropriate investigation?",
-    "options": {
-      "A": "Appendicitis — urgent surgical referral",
-      "B": "Right lower lobe pneumonia causing referred abdominal pain — chest X-ray to confirm consolidation",
-      "C": "Mesenteric adenitis — reassurance and analgesia",
-      "D": "Intussusception — abdominal ultrasound",
-      "E": "Constipation — laxatives and reassurance"
-    },
-    "correct_answer": "B",
-    "explanation": {
-      "correct": "Right lower lobe pneumonia is a classic cause of referred right lower quadrant pain in children — the phrenic nerve (C3, C4, C5) and intercostal nerves refer pain to the ipsilateral abdomen when the diaphragmatic pleura is inflamed. This can mimic appendicitis. Key distinguishing features pointing to pneumonia: respiratory symptoms preceding pain (cough + fever before abdominal pain), tachypnoea (RR 32 — normal for age 6 is <25), dullness to percussion + reduced breath sounds at base, high fever (38.8°C). Chest X-ray is the definitive investigation showing right lower lobe consolidation. Management: amoxicillin per NICE NG138 for community-treated paediatric CAP.",
-      "A": "Incorrect — Respiratory signs (dullness, reduced breath sounds) and preceding cough/fever make pneumonia far more likely than appendicitis.",
-      "B": "CORRECT — Right lower lobe pneumonia: referred RLQ abdominal pain + respiratory signs + preceding respiratory illness. CXR confirms.",
-      "C": "Incorrect — Mesenteric adenitis causes cervical lymphadenopathy + abdominal pain without significant respiratory signs.",
-      "D": "Incorrect — Intussusception causes colicky abdominal pain, vomiting, red currant jelly stool in infants — not this presentation.",
-      "E": "Incorrect — Constipation does not explain fever, tachypnoea and respiratory signs."
-    },
-    "reference": "NICE NG138 — Pneumonia (community-acquired). BTS Paediatric Pneumonia Guidelines.",
-    "tags": [
-      "paediatric pneumonia",
-      "referred abdominal pain",
-      "right lower lobe",
-      "appendicitis mimic",
-      "NICE NG138",
-      "chest X-ray"
-    ],
-    "source": "Question Grove 360"
-  },
-  {
-    "id": "QG-RESP-122-002",
-    "exam": "MRCGP AKT",
-    "domain": "Clinical Medicine",
-    "specialty": "Respiratory",
-    "difficulty": "Easy",
-    "question": "A 4-year-old girl is brought to the GP with a 2-day history of fever (38.9°C), cough and fast breathing. On examination, respiratory rate is 42 breaths/min, SpO2 95% on air, with right-sided crackles. She has intercostal recession. Per NICE NG143, what is the most appropriate management?",
-    "options": {
-      "A": "Oral amoxicillin and review in 48 hours — routine community treatment",
-      "B": "Call 999 — SpO2 95% and signs of respiratory distress (recession) in a child under 5 require emergency hospital admission",
-      "C": "Prescribe oral co-amoxiclav and review in 24 hours",
-      "D": "Arrange urgent CXR and await results before any treatment",
-      "E": "Reassure and paracetamol — viral URTI is most likely"
-    },
-    "correct_answer": "B",
-    "explanation": {
-      "correct": "Per NICE NG143 (Fever in under 5s) and BTS paediatric pneumonia guidelines, signs requiring emergency hospital admission include: SpO2 <92-95% in children, respiratory distress signs (intercostal/subcostal/sternal recession), grunting, nasal flaring, cyanosis, apnoea, poor feeding, altered consciousness. This child has: SpO2 95% (borderline), RR 42 (severely elevated — normal <40 at age 4), intercostal recession = significant respiratory distress. 999 for emergency admission, oxygen, IV antibiotics and monitoring. Not suitable for community treatment.",
-      "A": "Incorrect — Intercostal recession + SpO2 95% + RR 42 in a 4-year-old requires emergency admission, not community treatment.",
-      "B": "CORRECT — SpO2 95% + recession + high RR in young child = emergency 999 admission per NICE NG143/BTS paediatric guidelines.",
-      "C": "Incorrect — Community oral antibiotics inappropriate for child with signs of respiratory distress.",
-      "D": "Incorrect — Emergency assessment takes priority over CXR — do not delay treatment for imaging.",
-      "E": "Incorrect — Recession, SpO2 95% and RR 42 are serious clinical signs — not simple viral URTI."
-    },
-    "reference": "NICE NG143 — Fever in under 5s. BTS — Paediatric pneumonia guidelines 2011.",
-    "tags": [
-      "paediatric pneumonia",
-      "SpO2",
-      "respiratory distress",
-      "recession",
-      "emergency",
-      "NICE NG143"
-    ],
-    "source": "Question Grove 360"
-  },
-  {
-    "id": "QG-RESP-122-003",
-    "exam": "MRCGP AKT",
-    "domain": "Clinical Medicine",
-    "specialty": "Respiratory",
-    "difficulty": "Medium",
-    "question": "A 3-year-old child is diagnosed with community-acquired pneumonia and is well enough to be treated at home (SpO2 98%, RR 28, eating/drinking normally, no recession). Per NICE NG138, what is the first-line antibiotic?",
-    "options": {
-      "A": "Oral co-amoxiclav 312.5mg/5ml — broadest cover",
-      "B": "Oral amoxicillin 125mg three times daily for 5 days",
-      "C": "Oral azithromycin — atypical cover",
-      "D": "Oral doxycycline — first-line for paediatric CAP",
-      "E": "No antibiotics — watchful waiting for 48 hours first"
-    },
-    "correct_answer": "B",
-    "explanation": {
-      "correct": "Per NICE NG138 (Pneumonia — community-acquired: antimicrobial prescribing), for children with low-severity community-treated CAP, amoxicillin is first-line: under 1 year: 125mg TDS; 1-4 years: 250mg TDS; 5-17 years: 500mg TDS; for 5 days. If atypical pneumonia suspected (Mycoplasma, school-age, bilateral interstitial infiltrates): clarithromycin or azithromycin. Co-amoxiclav is NOT first-line for simple community CAP in children. Doxycycline is not used in children under 12 (tetracyclines cause dental/bone toxicity in young children).",
-      "A": "Incorrect — Co-amoxiclav is broader spectrum than needed for simple CAP. Not first-line per NICE NG138.",
-      "B": "CORRECT — Amoxicillin 125-250mg TDS for 5 days is first-line paediatric community CAP per NICE NG138.",
-      "C": "Incorrect — Azithromycin is for atypical pneumonia (Mycoplasma) or penicillin allergy — not routine first-line.",
-      "D": "Incorrect — Doxycycline is contraindicated in children under 12 due to tetracycline effects on developing teeth and bones.",
-      "E": "Incorrect — CAP with confirmed clinical signs in a young child requires antibiotic treatment, not watchful waiting."
+      "correct": "Per NICE NG138 (Pneumonia — community-acquired: antimicrobial prescribing, 2019): first-line treatment for low-severity CAP (CRB-65 score 0-1, managed in community): amoxicillin 500mg three times daily for 5 days. This covers the most common pathogen (Streptococcus pneumoniae) which accounts for ~30-40% of CAP. Duration: 5 days (short courses are effective for low-severity CAP per evidence). Alternatives: doxycycline (if penicillin allergic or atypical organism suspected), or clarithromycin. Co-amoxiclav: reserved for moderate-severe CAP or where resistant organisms suspected. Dual therapy (amoxicillin + macrolide) is sometimes used for moderate-severe CAP to also cover atypical organisms (Mycoplasma, Legionella).",
+      "A": "Incorrect — Co-amoxiclav is broader spectrum than needed for low-severity CAP and contributes to antibiotic resistance. Not first-line per NICE NG138.",
+      "B": "CORRECT — Amoxicillin 500mg TDS for 5 days is first-line for low-severity community-managed CAP per NICE NG138.",
+      "C": "Incorrect — Doxycycline is an alternative (penicillin allergy or atypical organisms) — not first-line per NICE NG138.",
+      "D": "Incorrect — Clarithromycin is used for atypical coverage or penicillin allergy — not first-line for standard CAP.",
+      "E": "Incorrect — Ciprofloxacin has poor activity against S. pneumoniae — not appropriate for CAP."
     },
     "reference": "NICE NG138 — Pneumonia (community-acquired): antimicrobial prescribing. https://www.nice.org.uk/guidance/ng138",
-    "tags": [
-      "paediatric pneumonia",
-      "amoxicillin",
-      "community CAP",
-      "NICE NG138",
-      "first-line antibiotic",
-      "children"
-    ],
-    "source": "Question Grove 360"
+    "tags": ["CAP", "amoxicillin", "community-acquired pneumonia", "NICE NG138", "low severity", "5 days"]
   },
   {
-    "id": "QG-RESP-122-004",
-    "exam": "MRCGP AKT",
-    "domain": "Clinical Medicine",
-    "specialty": "Respiratory",
-    "difficulty": "Hard",
-    "question": "A 10-year-old boy with a 10-day history of persistent cough, low-grade fever, headache and generalised malaise has bilateral perihilar infiltrates on chest X-ray. His WBC is 9.8 × 10⁹/L (mild elevation). He has not responded to 5 days of amoxicillin. What is the most likely organism and appropriate antibiotic change?",
-    "options": {
-      "A": "Streptococcus pneumoniae — increase amoxicillin dose",
-      "B": "Mycoplasma pneumoniae — switch to clarithromycin 250mg twice daily for 5 days (or azithromycin)",
-      "C": "Staphylococcus aureus — IV flucloxacillin",
-      "D": "Tuberculosis — refer to paediatric TB team",
-      "E": "Viral pneumonia — no antibiotics needed"
-    },
-    "correct_answer": "B",
-    "explanation": {
-      "correct": "Atypical pneumonia from Mycoplasma pneumoniae: classic in school-age children (5-15 years), gradual onset, low-grade fever, prominent cough, headache, malaise — 'walking pneumonia' (child remains ambulant). CXR: bilateral interstitial/perihilar infiltrates disproportionate to symptoms. Key feature: does NOT respond to beta-lactam antibiotics (amoxicillin) as Mycoplasma has no cell wall. Treatment: macrolide antibiotic (clarithromycin or azithromycin). Per NICE NG138, clarithromycin is appropriate for suspected atypical pneumonia in children.",
-      "A": "Incorrect — Streptococcal pneumonia responds to amoxicillin. Non-response + bilateral interstitial infiltrates = atypical.",
-      "B": "CORRECT — Mycoplasma pneumoniae (atypical): non-response to amoxicillin + bilateral infiltrates in school-age. Switch to clarithromycin per NICE NG138.",
-      "C": "Incorrect — Staphylococcal pneumonia causes more severe illness (empyema, pneumatoceles) in immunocompromised patients.",
-      "D": "Incorrect — TB presents more insidiously with weight loss, night sweats, contact history — different clinical picture.",
-      "E": "Incorrect — Mycoplasma requires antibiotic treatment — viral pneumonia would not show bilateral consolidation."
-    },
-    "reference": "NICE NG138 — Pneumonia. BTS — Atypical pneumonia guidelines.",
-    "tags": [
-      "Mycoplasma pneumoniae",
-      "atypical pneumonia",
-      "walking pneumonia",
-      "clarithromycin",
-      "NICE NG138",
-      "school-age"
-    ],
-    "source": "Question Grove 360"
-  },
-  {
-    "id": "QG-RESP-122-005",
+    "id": "QG-B2-RESP-011-001",
     "exam": "MRCGP AKT",
     "domain": "Clinical Medicine",
     "specialty": "Respiratory",
     "difficulty": "Medium",
-    "question": "A 7-year-old girl is brought in with right-sided abdominal pain that started yesterday. On further questioning, she had a cough and fever 5 days ago that has improved. Her temperature is 37.9°C. Abdominal examination shows right lower quadrant guarding but it is mild. CRP is 45 mg/L. The surgeon has reviewed and is uncertain between appendicitis and right lower lobe pneumonia. What single investigation is most useful to differentiate?",
+    "question": "A 65-year-old man on inhaled corticosteroids (ICS — fluticasone/salmeterol) for COPD presents with a new 2-week productive cough with purulent sputum and a temperature of 38.2°C. Per MHRA and NICE NG115, what is the recognised serious adverse effect of ICS use in COPD patients and how does it relate to this presentation?",
     "options": {
-      "A": "Abdominal CT scan — most sensitive for appendicitis",
-      "B": "Chest X-ray — right lower lobe consolidation would confirm pneumonia as the cause of referred RLQ pain",
-      "C": "Stool culture — infective cause of pain",
-      "D": "Urine dipstick — UTI causing abdominal pain",
-      "E": "FBC and CRP — if raised, confirms appendicitis"
+      "A": "ICS causes hyperglycaemia — check random blood sugar",
+      "B": "ICS use in COPD is associated with significantly increased risk of pneumonia — this is a well-documented adverse effect highlighted in the MHRA drug safety update and NICE NG115; the current presentation of productive cough, fever and purulent sputum is consistent with pneumonia as a complication of ICS therapy; consider ICS withdrawal if blood eosinophils are low",
+      "C": "ICS causes oral candidiasis only — no lower respiratory tract complications",
+      "D": "The ICS has caused adrenal suppression — check morning cortisol",
+      "E": "ICS does not cause pneumonia — the current infection is unrelated to ICS"
     },
     "correct_answer": "B",
     "explanation": {
-      "correct": "When the clinical picture is ambiguous between appendicitis and right lower lobe pneumonia (a well-recognised mimic), a CHEST X-RAY is the most important single investigation to perform first: if right lower lobe consolidation is present on CXR, this confirms pneumonia as the cause of referred abdominal pain and avoids unnecessary surgical investigation. Abdominal CT is radiation-heavy and should be avoided in children unless clearly indicated. Ultrasound abdomen is a useful non-radiation alternative to assess the appendix. FBC/CRP are non-specific — both appendicitis and pneumonia cause elevated inflammatory markers.",
-      "A": "Incorrect — CT carries significant radiation risk in children. CXR should be performed first to exclude pneumonia as the mimic.",
-      "B": "CORRECT — CXR to identify right lower lobe consolidation is the key investigation to distinguish pneumonia from appendicitis.",
-      "C": "Incorrect — Stool culture does not differentiate pneumonia from appendicitis and takes days.",
-      "D": "Incorrect — Urine dipstick is useful to exclude UTI but cannot differentiate pneumonia from appendicitis.",
-      "E": "Incorrect — FBC/CRP are non-specific — both appendicitis and pneumonia elevate inflammatory markers."
+      "correct": "Per NICE NG115 and MHRA safety guidance, ICS use in COPD (unlike in asthma where the benefit clearly outweighs risk) is associated with a significantly increased risk of pneumonia — approximately 1.5-2.0 times the baseline risk. This is one of the key arguments for the blood eosinophil-guided approach to ICS use in COPD: patients with low blood eosinophils (<0.1 × 10⁹/L) gain little benefit from ICS (low exacerbation prevention) but face the full pneumonia risk. NICE NG115: consider withdrawing ICS in patients with COPD who have had recurrent pneumonia, who have low blood eosinophils, or who are at high risk of adverse effects. Importantly, ICS withdrawal in COPD may increase exacerbation frequency in some patients — shared decision making is required.",
+      "A": "Incorrect — ICS can cause systemic effects at high doses (including modest glycaemia effects) but pneumonia is the primary COPD-specific concern.",
+      "B": "CORRECT — ICS in COPD significantly increases pneumonia risk per MHRA/NICE NG115. Consider ICS withdrawal especially if low blood eosinophils.",
+      "C": "Incorrect — ICS causes both oral candidiasis AND lower respiratory tract complications (pneumonia) in COPD patients.",
+      "D": "Incorrect — Adrenal suppression can occur at high ICS doses but is not the primary concern linking ICS to this presentation of pneumonia.",
+      "E": "Incorrect — ICS is a well-documented risk factor for pneumonia in COPD — the association is established per multiple RCTs and meta-analyses."
     },
-    "reference": "BTS — Paediatric pneumonia guidelines. NICE NG143 — Fever under 5s. Pneumonia vs appendicitis.",
-    "tags": [
-      "pneumonia",
-      "appendicitis",
-      "mimic",
-      "chest X-ray",
-      "right lower lobe",
-      "children abdominal pain"
-    ],
-    "source": "Question Grove 360"
+    "reference": "NICE NG115 — COPD in over 16s. MHRA — Inhaled corticosteroids and pneumonia in COPD. https://www.nice.org.uk/guidance/ng115",
+    "tags": ["ICS COPD pneumonia", "inhaled corticosteroids", "MHRA", "NICE NG115", "blood eosinophils", "adverse effect"]
+  },
+  {
+    "id": "QG-B2-RESP-011-002",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Respiratory",
+    "difficulty": "Easy",
+    "question": "A patient is prescribed a beclomethasone inhaler for asthma. Per NICE NG80 and BNF guidance, what advice should be given to reduce the risk of oropharyngeal candidiasis from ICS use?",
+    "options": {
+      "A": "No precautions are needed — oral candidiasis with ICS is very rare",
+      "B": "Rinse the mouth with water and spit after each inhaled corticosteroid use; use a spacer device with pressurised metered-dose inhalers (pMDI) to reduce oropharyngeal deposition",
+      "C": "Take the ICS with food to reduce oral side effects",
+      "D": "Prescribe fluconazole prophylactically with all ICS prescriptions",
+      "E": "Gargle with antiseptic mouthwash before using the ICS"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per NICE NG80 and BNF guidance, oral candidiasis (thrush) is a common local adverse effect of inhaled corticosteroids due to deposition of steroid on oropharyngeal mucosa, causing immunosuppression of local mucosal immunity. Prevention: (1) Rinse mouth with water and spit after EVERY use of ICS — this removes residual steroid from oral mucosa; (2) Use a spacer device with pMDIs — spacers reduce impaction of large steroid particles on the oropharynx, significantly decreasing local deposition; (3) Dry powder inhalers (DPIs) generally have lower oropharyngeal deposition than pMDIs without spacers. Treatment of established candidiasis: topical nystatin suspension or systemic fluconazole if severe. Spacer use also improves drug delivery to the lungs.",
+      "A": "Incorrect — Oral candidiasis is common with ICS use — preventive measures are important and should be routinely counselled.",
+      "B": "CORRECT — Rinse mouth with water and spit + use spacer with pMDI to reduce oropharyngeal ICS deposition per NICE NG80/BNF.",
+      "C": "Incorrect — Taking ICS with food has no effect on oropharyngeal deposition.",
+      "D": "Incorrect — Prophylactic fluconazole is not routinely prescribed with ICS — it is reserved for treatment of established candidiasis.",
+      "E": "Incorrect — Antiseptic mouthwash before ICS use has no evidence base for preventing oropharyngeal candidiasis."
+    },
+    "reference": "NICE NG80 — Asthma. BNF — Inhaled corticosteroids: local side effects. https://www.nice.org.uk/guidance/ng80",
+    "tags": ["ICS oral candidiasis", "rinse mouth", "spacer", "inhaled corticosteroid", "NICE NG80", "BNF"]
+  },
+  {
+    "id": "QG-B2-RESP-011-003",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Respiratory",
+    "difficulty": "Hard",
+    "question": "A 72-year-old man with COPD on triple inhaled therapy (ICS/LABA/LAMA) has had three pneumonias in two years. His blood eosinophil count is 0.05 × 10⁹/L. Per NICE NG115, what should be considered?",
+    "options": {
+      "A": "Add oral prednisolone to the ICS to provide additional anti-inflammatory cover",
+      "B": "Consider withdrawing the ICS component from triple therapy — blood eosinophils <0.1 × 10⁹/L indicate minimal ICS benefit in COPD (low exacerbation reduction), while the risk of recurrent pneumonia is high; withdrawal should be done gradually with monitoring for increased exacerbations; switch to LABA/LAMA dual bronchodilation",
+      "C": "Stop all inhalers — this patient has ICS-induced pneumonia",
+      "D": "Switch to high-dose fluticasone — stronger ICS reduces infections",
+      "E": "Add prophylactic amoxicillin to prevent further pneumonias"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per NICE NG115, blood eosinophil count guides ICS use in COPD: <0.1 × 10⁹/L = ICS unlikely to benefit (low exacerbation prevention); high risk of ICS-related pneumonia. Three pneumonias in two years on ICS = high complication burden from ICS. NICE NG115 recommends considering ICS withdrawal in COPD when: recurrent pneumonia, low blood eosinophils (<0.1 × 10⁹/L), risk of adverse effects outweighs benefit. Withdrawal protocol: taper ICS gradually (abrupt withdrawal can trigger exacerbations — some evidence of gradual exacerbation increase post-withdrawal); continue LABA/LAMA dual bronchodilation; monitor for increased exacerbation frequency; consider prophylactic azithromycin if ≥2 exacerbations remain on LABA/LAMA alone. This is one of the most clinically important COPD management questions in the AKT.",
+      "A": "Incorrect — Adding oral prednisolone maintenance is not recommended in COPD — it causes significant systemic harm without clear long-term benefit.",
+      "B": "CORRECT — Blood eosinophils <0.1 + recurrent pneumonia = consider ICS withdrawal, switch to LABA/LAMA per NICE NG115.",
+      "C": "Incorrect — Stopping ALL inhalers including LABA and LAMA would risk significant exacerbations — only the ICS should be considered for withdrawal.",
+      "D": "Incorrect — High-dose fluticasone increases (not decreases) the pneumonia risk further.",
+      "E": "Incorrect — Prophylactic amoxicillin is not the current guideline recommendation. Azithromycin prophylaxis has evidence for reducing COPD exacerbations but is not primarily for infection prevention."
+    },
+    "reference": "NICE NG115 — COPD in over 16s. https://www.nice.org.uk/guidance/ng115",
+    "tags": ["ICS withdrawal COPD", "blood eosinophils <0.1", "recurrent pneumonia", "LABA LAMA", "NICE NG115", "step down"]
+  },
+  {
+    "id": "QG-B2-RESP-032-001",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Respiratory",
+    "difficulty": "Medium",
+    "question": "A 68-year-old man with severe COPD (FEV1 28% predicted) has resting hypoxaemia with PaO2 7.1 kPa on two samples 3 weeks apart. He is a non-smoker and has no evidence of cor pulmonale or polycythaemia. Per NICE NG115 and BTS LTOT guidelines, does he qualify for long-term oxygen therapy (LTOT) and what is the minimum daily duration?",
+    "options": {
+      "A": "He qualifies — use oxygen only at night (8 hours)",
+      "B": "He qualifies for LTOT — resting PaO2 ≤7.3 kPa on two occasions 3 weeks apart in a clinically stable patient. Minimum use: 15 hours per day (including during sleep). LTOT improves survival in patients with hypoxaemic COPD; target PaO2 ≥8 kPa",
+      "C": "He does not qualify — LTOT only for patients with PaO2 below 6.0 kPa",
+      "D": "LTOT is only for post-hospital discharge — not community prescription",
+      "E": "Oxygen 2L/min for 1 hour per day is sufficient"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per BTS LTOT Guidelines and NICE NG115, LTOT indications in COPD: (1) Resting PaO2 ≤7.3 kPa on two occasions ≥3 weeks apart in a clinically stable patient (not during exacerbation); OR (2) Resting PaO2 7.3-8.0 kPa with: secondary polycythaemia, peripheral oedema, or nocturnal hypoxaemia, or pulmonary hypertension. This patient: PaO2 7.1 kPa ≤7.3 kPa threshold = qualifies. Minimum use: 15 hours per day — evidence shows mortality benefit only when used ≥15 hours/day (MRC Oxygen Trial); more hours (18-20 hours) gives greater survival benefit. Target: PaO2 ≥8 kPa with SaO2 ≥90%. Patient must be assessed after stopping smoking (hypoxia from acute smoking effects must be distinguished from chronic hypoxia).",
+      "A": "Incorrect — Nighttime use only (8 hours) is insufficient — minimum 15 hours per day is required for mortality benefit.",
+      "B": "CORRECT — PaO2 7.1 kPa ≤7.3 kPa qualifies for LTOT. Minimum 15 hours/day per BTS/NICE NG115.",
+      "C": "Incorrect — The LTOT threshold is PaO2 ≤7.3 kPa — not 6.0 kPa.",
+      "D": "Incorrect — LTOT is prescribed in the community for chronic stable hypoxaemia — it is not limited to post-hospital discharge.",
+      "E": "Incorrect — 1 hour per day has no mortality benefit — a minimum of 15 hours is the evidence-based threshold."
+    },
+    "reference": "BTS — Guideline for home oxygen use in adults. NICE NG115 — COPD. https://www.nice.org.uk/guidance/ng115",
+    "tags": ["LTOT", "long-term oxygen therapy", "15 hours", "PaO2 7.3", "BTS", "NICE NG115"]
+  },
+  {
+    "id": "QG-B2-RESP-032-002",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Respiratory",
+    "difficulty": "Hard",
+    "question": "A 65-year-old woman with COPD is being assessed for LTOT. Her PaO2 is 7.0 kPa but she smokes 15 cigarettes per day. Per BTS LTOT guidelines, what is the key consideration before prescribing LTOT?",
+    "options": {
+      "A": "Prescribe LTOT immediately — hypoxia must be treated regardless of smoking status",
+      "B": "LTOT should not be prescribed to active smokers due to fire and explosion risk (oxygen-enriched atmosphere + smoking = catastrophic fire hazard); strongly advise smoking cessation and reassess — if PaO2 improves after cessation, LTOT may no longer be needed; if they continue to smoke, LTOT is relatively contraindicated on safety grounds",
+      "C": "Prescribe 24-hour oxygen — more oxygen will help her quit smoking",
+      "D": "Smoking has no effect on the decision to prescribe LTOT",
+      "E": "LTOT is only contraindicated with more than 20 cigarettes per day"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per BTS LTOT guidelines, smoking is a critical safety issue with LTOT. Oxygen enriches the environment around flammable materials including cigarettes — active smokers using LTOT are at very high risk of severe facial burns, fire and explosion. BTS guidance: (1) Active smokers should be strongly advised to stop smoking before LTOT is prescribed; (2) If a patient continues to smoke, LTOT is generally not prescribed on safety grounds; (3) The British Thoracic Society stresses the fire hazard as a contraindication in active smokers. Additionally: smoking cessation in COPD patients with borderline hypoxia may improve PaO2 sufficiently to avoid LTOT entirely (carbon monoxide from smoking causes functional hypoxia). If safety can be guaranteed (e.g., patient committed to cessation and has attempt plan), a short trial may be considered with close follow-up.",
+      "A": "Incorrect — Active smoking with LTOT is a fire safety emergency — prescribing without addressing smoking is dangerous and contrary to BTS guidelines.",
+      "B": "CORRECT — LTOT must not be prescribed to active smokers due to catastrophic fire risk. Cessation first, then reassess per BTS guidelines.",
+      "C": "Incorrect — 24-hour oxygen in an active smoker dramatically increases fire risk — this would be an extremely dangerous prescription.",
+      "D": "Incorrect — Smoking status is the most critical safety factor in LTOT assessment per BTS guidelines.",
+      "E": "Incorrect — There is no 'safe' cigarette threshold for LTOT — all active smokers are at risk."
+    },
+    "reference": "BTS — Guideline for home oxygen use in adults. https://www.brit-thoracic.org.uk/quality-improvement/guidelines/home-oxygen/",
+    "tags": ["LTOT smoking", "fire hazard", "oxygen safety", "BTS", "smoking cessation", "COPD oxygen"]
+  },
+  {
+    "id": "QG-B2-RESP-032-003",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Respiratory",
+    "difficulty": "Easy",
+    "question": "A GP is completing a referral for long-term oxygen therapy assessment for a patient with COPD and resting hypoxaemia. Per BTS guidelines, which specialist service should conduct the formal LTOT assessment?",
+    "options": {
+      "A": "Any GP can prescribe LTOT without specialist assessment",
+      "B": "Home Oxygen Assessment and Review Service (HARS) — oxygen assessment should be performed by a respiratory specialist or HARS team who will conduct arterial blood gas analysis (two samples 3 weeks apart when clinically stable), assess oxygen flow rate, duration and monitoring needs, and ensure smoking status is documented",
+      "C": "Emergency department — ABGs are only available in A&E",
+      "D": "LTOT can be prescribed based on pulse oximetry alone — no specialist assessment needed",
+      "E": "Cardiology — LTOT is a cardiac intervention"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per BTS LTOT guidelines, formal LTOT assessment must be conducted by an appropriately trained respiratory specialist or Home Oxygen Assessment and Review Service (HARS). The assessment includes: (1) Arterial blood gas analysis on two occasions at least 3 weeks apart when the patient is clinically stable (NOT during an exacerbation); (2) Assessment of resting, exercise and nocturnal oxygen requirements; (3) Prescription of appropriate flow rate (typically 1-4 L/min via nasal cannulae); (4) Education on safe use; (5) Smoking status documentation; (6) Regular review (at least annually). Pulse oximetry alone is not sufficient for LTOT prescription — formal ABG measurement is required to accurately determine PaO2. GPs refer to the respiratory service/HARS for assessment.",
+      "A": "Incorrect — LTOT prescription without specialist assessment is not appropriate — formal ABG-based assessment is required.",
+      "B": "CORRECT — HARS or respiratory specialist: ABGs on two stable occasions 3 weeks apart, flow rate prescription, smoking assessment per BTS.",
+      "C": "Incorrect — LTOT assessment is conducted in outpatient respiratory/HARS settings — not in A&E.",
+      "D": "Incorrect — Pulse oximetry (SpO2) can guide initial assessment but LTOT prescription requires formal ABG measurement of PaO2.",
+      "E": "Incorrect — LTOT is a respiratory intervention assessed by respiratory specialists."
+    },
+    "reference": "BTS — Guideline for home oxygen use in adults. https://www.brit-thoracic.org.uk/quality-improvement/guidelines/home-oxygen/",
+    "tags": ["LTOT assessment", "HARS", "arterial blood gas", "BTS", "stable twice", "respiratory specialist"]
+  },
+  {
+    "id": "QG-B2-RESP-099-001",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Respiratory",
+    "difficulty": "Medium",
+    "question": "A 35-year-old woman with well-controlled asthma has been stable on a low-dose ICS (beclomethasone 200 mcg/day) and LABA (salmeterol) for over 6 months. She has had no attacks, uses no reliever and has normal spirometry. Per NICE NG80, what is the recommended approach to her current therapy?",
+    "options": {
+      "A": "Continue indefinitely — stepping down asthma treatment is not recommended",
+      "B": "Consider stepping down therapy — NICE NG80 recommends regular review of asthma control and attempting to step down treatment when asthma has been well controlled for at least 3 months; the LABA (salmeterol) should be reduced or stopped first (not the ICS) when stepping down from ICS/LABA combination",
+      "C": "Add montelukast to further improve control",
+      "D": "Switch to MART (budesonide/formoterol) immediately",
+      "E": "Refer to secondary care before making any dose changes"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per NICE NG80, asthma management should aim for the minimum effective therapy — stepping down treatment is as important as stepping up. When asthma has been well controlled for ≥3 months: offer step-down. When stepping down ICS/LABA: do NOT stop or reduce ICS first — reduce or stop the LABA first while maintaining the ICS dose. Rationale: ICS provides the fundamental anti-inflammatory controller effect; LABA is the 'add-on'. If stepping down from LABA leads to loss of control: step back up to ICS/LABA. If LABA stopped successfully and still controlled: consider reducing ICS dose in steps (by approximately 25-50% at each step, no more frequently than every 3 months). Document all step-down decisions with a safety net and review plan.",
+      "A": "Incorrect — NICE NG80 recommends regular review and step-down when well controlled — unnecessary ongoing therapy exposes patients to avoidable side effects.",
+      "B": "CORRECT — Well controlled ≥3 months: consider step-down. Stop/reduce LABA first (not ICS) per NICE NG80.",
+      "C": "Incorrect — Adding montelukast when asthma is already well controlled is stepping UP not DOWN — the opposite of what is needed.",
+      "D": "Incorrect — Switching to MART is not relevant to step-down management — it is an alternative to separate ICS/LABA.",
+      "E": "Incorrect — Asthma step-down is appropriate in primary care and does not require secondary care referral for well-controlled patients."
+    },
+    "reference": "NICE NG80 — Asthma: diagnosis, monitoring and chronic asthma management. https://www.nice.org.uk/guidance/ng80",
+    "tags": ["asthma step down", "LABA stop first", "ICS maintain", "well controlled", "NICE NG80", "minimum therapy"]
+  },
+  {
+    "id": "QG-B2-RESP-099-002",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Respiratory",
+    "difficulty": "Hard",
+    "question": "A 42-year-old woman with asthma is on a high-dose ICS (fluticasone 500 mcg twice daily) and LABA. She has been well controlled for 8 months. Her GP wishes to step down. Per NICE NG80, what are the specific risks of high-dose ICS and what is the step-down priority?",
+    "options": {
+      "A": "High-dose ICS has no systemic effects — step down is only for convenience",
+      "B": "High-dose ICS carries risks of: adrenal suppression (especially in children), osteoporosis, skin thinning, cataracts, and growth retardation (children); step-down priority: first attempt to reduce ICS to medium or low dose while maintaining LABA; if well controlled on low-dose ICS/LABA: consider stopping LABA; the goal is the minimum effective ICS dose that maintains good asthma control",
+      "C": "Only reduce the LABA — the ICS dose should never be reduced",
+      "D": "Stop both ICS and LABA simultaneously for the fastest step-down",
+      "E": "Reduce ICS only — salmeterol should remain unchanged indefinitely"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per NICE NG80, high-dose ICS (above 400 mcg/day budesonide equivalent) carries significant systemic adverse effects: adrenal suppression (potentially fatal in acute illness — patient should carry steroid card), osteoporosis (especially with long-term use), cataracts/glaucoma, skin thinning, Cushingoid features. Step-down from high-dose ICS is therefore clinically important. NICE NG80 step-down approach: (1) First reduce the ICS to medium/low dose while maintaining LABA — this reduces systemic steroid burden while maintaining bronchodilator protection; (2) If still well controlled on low-dose ICS + LABA: consider stopping LABA; (3) Aim for minimum effective ICS dose. Patients on high-dose ICS should be warned about adrenal suppression and should carry a steroid emergency card.",
+      "A": "Incorrect — High-dose ICS has well-documented systemic effects. Step-down significantly reduces adverse effect risk.",
+      "B": "CORRECT — High-dose ICS risks: adrenal suppression, osteoporosis, cataracts. Priority: reduce ICS dose first (then LABA when stable) per NICE NG80.",
+      "C": "Incorrect — When stepping down from high-dose ICS, reducing the ICS dose is the priority to reduce systemic adverse effects.",
+      "D": "Incorrect — Stopping both simultaneously risks acute loss of asthma control.",
+      "E": "Incorrect — LABA should ultimately be stopped when the minimum effective ICS dose has been achieved — it should not remain indefinitely."
+    },
+    "reference": "NICE NG80 — Asthma. https://www.nice.org.uk/guidance/ng80",
+    "tags": ["high-dose ICS", "adrenal suppression", "asthma step down", "NICE NG80", "systemic effects", "osteoporosis"]
+  },
+  {
+    "id": "QG-B2-RESP-188-001",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Respiratory",
+    "difficulty": "Medium",
+    "question": "A 72-year-old man with COPD is on triple inhaled therapy (ICS/LABA/LAMA). He continues to have 3 exacerbations per year requiring oral prednisolone. His blood eosinophil count is 0.28 × 10⁹/L. Per NICE NG115, what is the next treatment option?",
+    "options": {
+      "A": "No further treatment available — maximum inhaled therapy has been reached",
+      "B": "Consider prophylactic azithromycin 250mg three times weekly or 500mg once daily — after confirming non-smoking status, excluding NTM (sputum culture), and checking baseline QTc (ECG) and hearing (audiometry); azithromycin reduces COPD exacerbation frequency",
+      "C": "Start roflumilast — indicated for all COPD patients with frequent exacerbations",
+      "D": "Start long-term oral prednisolone maintenance",
+      "E": "Increase ICS to high dose"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per NICE NG115, for patients with COPD who have ≥2 exacerbations per year despite optimal triple inhaled therapy, prophylactic azithromycin can be considered. Prerequisites per NICE NG115: non-smoker (smoking dramatically increases risk of non-tuberculous mycobacterial NTM infection with macrolides and reduces efficacy); sputum culture to exclude active NTM infection (azithromycin monotherapy in NTM can cause resistance); ECG to exclude prolonged QTc (azithromycin prolongs QTc — risk of arrhythmia); audiometry (azithromycin is ototoxic). Azithromycin reduces exacerbation frequency by approximately 37% (ALBERT trial). Roflumilast is specifically for COPD with chronic bronchitis phenotype (productive cough ≥3 months/year ×2 years) and FEV1 <50% — not for all frequent exacerbators.",
+      "A": "Incorrect — Azithromycin prophylaxis, mucolytics, and pulmonary rehabilitation are additional options beyond triple inhaled therapy.",
+      "B": "CORRECT — Azithromycin prophylaxis after confirming non-smoking, excluding NTM, checking QTc and hearing per NICE NG115.",
+      "C": "Incorrect — Roflumilast is specifically for chronic bronchitis phenotype with FEV1 <50% and frequent exacerbations — not all COPD patients with exacerbations.",
+      "D": "Incorrect — Long-term oral prednisolone in COPD is not recommended — causes significant systemic harm without sustained benefit.",
+      "E": "Incorrect — Increasing ICS further with eosinophils 0.28 may provide marginal additional benefit but also increases pneumonia risk — azithromycin is the NICE-recommended next step."
+    },
+    "reference": "NICE NG115 — COPD in over 16s. https://www.nice.org.uk/guidance/ng115",
+    "tags": ["azithromycin prophylaxis", "COPD exacerbations", "NTM exclusion", "QTc", "NICE NG115", "ALBERT trial"]
   }
 ]

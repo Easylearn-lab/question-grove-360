@@ -1,0 +1,262 @@
+[
+  {
+    "id": "QG-SH-049-001",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Sexual Health",
+    "difficulty": "Medium",
+    "question": "A 24-year-old man presents with a 3-day history of urethral discharge and dysuria. He reports unprotected sexual intercourse with a new partner 5 days ago. A urethral swab NAAT (nucleic acid amplification test) is positive for Neisseria gonorrhoeae. He has no known drug allergies. Per BASHH guidelines 2019 and NICE, what is the first-line treatment for uncomplicated urogenital gonorrhoea?",
+    "options": {
+      "A": "Oral ciprofloxacin 500mg single dose",
+      "B": "Intramuscular ceftriaxone 1g single dose — first-line for uncomplicated gonorrhoea per BASHH 2019 guidelines due to increasing quinolone resistance",
+      "C": "Oral doxycycline 100mg twice daily for 7 days",
+      "D": "Oral azithromycin 1g single dose",
+      "E": "Oral amoxicillin 3g single dose"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per BASHH Gonorrhoea UK Guidelines 2019 and NICE, first-line treatment for uncomplicated urogenital gonorrhoea is IM ceftriaxone 1g as a single dose. The rationale: Neisseria gonorrhoeae has developed widespread resistance to ciprofloxacin (quinolones) — resistance rates >40% in some UK populations; oral treatment is therefore unreliable. Ceftriaxone 1g IM provides excellent tissue penetration and bactericidal activity. If ceftriaxone is not available or the patient refuses injection: oral alternatives depend on local resistance patterns and sensitivity testing — BASHH recommends against empirical oral treatment for gonorrhoea without sensitivity data. All partners within 60 days should be notified (contact tracing). Test of cure (TOC) at 2 weeks is mandatory for pharyngeal gonorrhoea and recommended for all cases.",
+      "A": "Incorrect — Ciprofloxacin resistance rates in UK gonorrhoea are very high (>40%). It should only be used if sensitivities confirm susceptibility.",
+      "B": "CORRECT — IM ceftriaxone 1g single dose is first-line for uncomplicated gonorrhoea per BASHH 2019 due to widespread quinolone resistance.",
+      "C": "Incorrect — Doxycycline is first-line for chlamydia — it has poor gonococcal coverage and increasing resistance.",
+      "D": "Incorrect — Azithromycin 1g was previously used in combination with ceftriaxone but resistance emerged rapidly — azithromycin monotherapy is not recommended for gonorrhoea.",
+      "E": "Incorrect — Amoxicillin has very poor activity against N. gonorrhoeae and is not used in gonorrhoea treatment."
+    },
+    "reference": "BASHH — UK National Guideline for the Management of Gonorrhoea in Adults 2019. https://www.bashh.org/guidelines",
+    "tags": ["gonorrhoea", "ceftriaxone", "IM injection", "BASHH", "quinolone resistance", "STI treatment"]
+  },
+  {
+    "id": "QG-SH-049-002",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Sexual Health",
+    "difficulty": "Hard",
+    "question": "A 22-year-old woman presents with purulent vaginal discharge and pelvic pain. Swabs confirm Neisseria gonorrhoeae infection. She is also 8 weeks pregnant. Per BASHH guidelines, what additional consideration applies to gonorrhoea treatment in pregnancy?",
+    "options": {
+      "A": "Treat with oral ciprofloxacin — quinolones are safe in first trimester",
+      "B": "IM ceftriaxone 1g remains the treatment of choice in pregnancy — cephalosporins are safe throughout pregnancy. Avoid: quinolones (avoid in pregnancy), tetracyclines (avoid — tooth discolouration, bone effects after first trimester), azithromycin (caution but used if alternatives unavailable). Partner notification and TOC are essential. Screen for other STIs including HIV, chlamydia, syphilis",
+      "C": "Defer treatment until second trimester — all antibiotics are teratogenic in the first trimester",
+      "D": "Oral amoxicillin 500mg three times daily for 7 days — safe in pregnancy",
+      "E": "No treatment needed — gonorrhoea does not affect pregnancy outcomes"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Gonorrhoea in pregnancy carries significant risks: maternal complications (ascending infection, PID — less common in pregnancy due to cervical mucus plug), obstetric complications (preterm labour, premature rupture of membranes), neonatal complications (ophthalmia neonatorum — gonococcal conjunctivitis causing blindness within hours of birth if untreated). IM ceftriaxone 1g remains first-line treatment in pregnancy — cephalosporins are safe throughout pregnancy. Contraindicated in pregnancy: quinolones (avoid — arthropathy in animal models, growing cartilage concerns), tetracyclines (doxycycline — causes fetal dental discolouration, bone/cartilage effects after 1st trimester), azithromycin (caution — safety data less robust than ceftriaxone). Screen all pregnant women for STIs at first antenatal appointment including gonorrhoea NAAT, chlamydia, syphilis serology, HIV.",
+      "A": "Incorrect — Quinolones (ciprofloxacin) are contraindicated in pregnancy due to arthropathy risk in animal models.",
+      "B": "CORRECT — IM ceftriaxone 1g safe and effective in pregnancy. Avoid quinolones and tetracyclines. Screen for other STIs per BASHH guidelines.",
+      "C": "Incorrect — Deferring gonorrhoea treatment risks ascending infection, obstetric complications and neonatal ophthalmia — treat immediately.",
+      "D": "Incorrect — Amoxicillin has insufficient activity against N. gonorrhoeae — this is not an appropriate treatment.",
+      "E": "Incorrect — Untreated gonorrhoea in pregnancy carries significant maternal and neonatal risks including ophthalmia neonatorum."
+    },
+    "reference": "BASHH — Gonorrhoea in Pregnancy. RCOG — Antenatal care. https://www.bashh.org/guidelines",
+    "tags": ["gonorrhoea", "pregnancy", "ceftriaxone safe in pregnancy", "ophthalmia neonatorum", "BASHH", "STI screening antenatal"]
+  },
+  {
+    "id": "QG-SH-022-001",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Sexual Health",
+    "difficulty": "Easy",
+    "question": "A 28-year-old woman requests emergency contraception. She had unprotected intercourse 108 hours (4.5 days) ago. She is currently on a progesterone-only pill (POP) which she has been taking regularly. Per FSRH guidelines, which emergency contraceptive is effective up to 120 hours (5 days)?",
+    "options": {
+      "A": "Levonorgestrel (Levonelle) 1.5mg — effective up to 5 days",
+      "B": "Ulipristal acetate (ellaOne) 30mg — licensed and effective up to 120 hours (5 days) after unprotected sex. However, there is an important interaction with her POP — she must stop the POP while taking ulipristal and not restart for 5 days due to mutual efficacy reduction",
+      "C": "Combined oral contraceptive pill (Yuzpe method) — effective up to 5 days",
+      "D": "Copper IUD — the only option effective at 108 hours",
+      "E": "No effective oral emergency contraception is available at 108 hours — copper IUD is the only option"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per FSRH Emergency Contraception guidelines (2017, updated 2023): Levonorgestrel (Levonelle): licensed up to 72 hours (3 days) — efficacy significantly reduced after 72 hours. Not licensed for use at 108 hours. Ulipristal acetate (ellaOne 30mg): licensed up to 120 hours (5 days) after unprotected sex — maintains efficacy throughout the 5-day window. Key drug interaction with POP: ulipristal (a progesterone receptor modulator) and progestogens are mutually antagonistic. Per FSRH: stop POP before taking ulipristal; do not restart POP for 5 days after ulipristal (use condoms in this period + 9 days after restarting POP). Copper IUD is more effective than oral EC at any time point but ulipristal is a valid oral option at 108 hours. Patient's BMI and weight should also be considered (ulipristal more effective than levonorgestrel in higher BMI women).",
+      "A": "Incorrect — Levonorgestrel is only licensed up to 72 hours — 108 hours is outside its licensed window.",
+      "B": "CORRECT — Ulipristal 30mg effective up to 120 hours. Stop POP before and do not restart for 5 days to avoid mutual antagonism per FSRH.",
+      "C": "Incorrect — The Yuzpe regimen (COCP for EC) is outdated, less effective, and has more side effects than modern EC options.",
+      "D": "Incorrect — Ulipristal is also an effective oral option at 108 hours — copper IUD is NOT the only option.",
+      "E": "Incorrect — Ulipristal is effective up to 120 hours — oral EC is available at 108 hours."
+    },
+    "reference": "FSRH — Emergency contraception guideline 2017 (updated 2023). https://www.fsrh.org/standards-and-guidance/",
+    "tags": ["ulipristal", "emergency contraception", "108 hours", "POP interaction", "FSRH", "5 days"]
+  },
+  {
+    "id": "QG-SH-066-001",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Sexual Health",
+    "difficulty": "Medium",
+    "question": "A 32-year-old woman who takes ulipristal acetate for emergency contraception is reviewed 2 weeks later. She is considering starting the combined oral contraceptive pill for ongoing contraception. She is currently breastfeeding a 6-month-old baby. Per FSRH guidance, is the COCP appropriate and what are the key restrictions?",
+    "options": {
+      "A": "COCP can be started immediately — breastfeeding provides adequate contraceptive cover",
+      "B": "The COCP is not recommended while breastfeeding a baby under 6 months — oestrogen reduces breast milk supply and oestrogen passes into breast milk. Per FSRH and WHO Medical Eligibility Criteria: COCP is a WHO Category 3 (risks generally outweigh benefits) for breastfeeding women <6 months postpartum. After 6 months of breastfeeding: COCP is generally acceptable (WHO Category 2). Recommend progesterone-only alternatives instead: POP (no oestrogen concerns with breastfeeding), contraceptive implant (Nexplanon), or LARC options",
+      "C": "COCP is completely safe during any stage of breastfeeding",
+      "D": "COCP can be started if she reduces breastfeeding frequency",
+      "E": "The COCP is contraindicated for life after any ulipristal use"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per FSRH UK Medical Eligibility Criteria for Contraceptive Use (UKMEC) and WHO MEC: COCP (containing oestrogen) is UKMEC 3 (risks generally outweigh benefits) for breastfeeding women where the baby is <6 months old. Concerns: oestrogen reduces prolactin production → reduces breast milk supply; small amounts of oestrogen enter breast milk (unknown long-term infant effects). After 6 months postpartum: COCP is UKMEC 2 (benefits generally outweigh risks). Preferred alternatives while fully breastfeeding: progesterone-only pill (POP — Cerelle, Noriday), subdermal implant (Nexplanon), levonorgestrel IUS (Mirena — UKMEC 2 >6 weeks postpartum), copper IUD. The baby here is 6 months — borderline; FSRH guidance suggests discussing the risk vs benefit with the individual woman. The ulipristal interaction with COCP has resolved (5-day washout already passed).",
+      "A": "Incorrect — Breastfeeding alone is not reliable contraception (lactational amenorrhoea method only effective if baby <6 months, fully breastfed and periods not returned). COCP has oestrogen concerns while breastfeeding.",
+      "B": "CORRECT — COCP is UKMEC 3 for breastfeeding <6 months (risks outweigh benefits — reduces milk supply). Recommend POP or LARC per FSRH UKMEC.",
+      "C": "Incorrect — COCP has specific concerns during breastfeeding — it is not appropriate at all stages without risk-benefit discussion.",
+      "D": "Incorrect — Reducing breastfeeding frequency is not an acceptable approach to making COCP safer — milk supply reduction is a real concern.",
+      "E": "Incorrect — The 5-day ulipristal interaction has passed — COCP can be considered at the appropriate time without permanent restriction."
+    },
+    "reference": "FSRH UKMEC — UK Medical Eligibility Criteria. FSRH — Postnatal sexual and reproductive health. https://www.fsrh.org/standards-and-guidance/",
+    "tags": ["COCP breastfeeding", "UKMEC 3", "oestrogen breast milk", "POP alternative", "FSRH", "postnatal contraception"]
+  },
+  {
+    "id": "QG-SH-001-001",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Sexual Health",
+    "difficulty": "Medium",
+    "question": "A 26-year-old woman attends for chlamydia treatment. A urine NAAT confirms Chlamydia trachomatis. She has no allergies. She is not pregnant. Per BASHH and NICE NG195, what is the first-line treatment and what partner notification advice should be given?",
+    "options": {
+      "A": "Oral amoxicillin 500mg three times daily for 7 days",
+      "B": "Oral doxycycline 100mg twice daily for 7 days (preferred over single-dose azithromycin — higher cure rates) OR azithromycin 1g single dose as an alternative. All sexual partners within the past 6 months should be notified and treated (contact tracing). Test of cure is not routinely required unless pregnancy or symptoms persist",
+      "C": "Topical metronidazole gel — first-line for chlamydia in women",
+      "D": "Oral ciprofloxacin 500mg twice daily for 5 days",
+      "E": "Single dose azithromycin 2g — higher dose for better efficacy"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per BASHH Chlamydia guidelines 2018 and NICE NG195: First-line treatment for uncomplicated urogenital chlamydia: doxycycline 100mg twice daily for 7 days (preferred — cure rate ~98%) OR azithromycin 1g single dose (alternative — cure rate ~83%, lower compliance advantage). Doxycycline is now preferred over azithromycin due to higher cure rates (particularly for rectal chlamydia). Azithromycin 1g is an alternative where doxycycline is contraindicated (pregnancy — avoid in 1st trimester, breastfeeding). Partner notification: partners within the past 6 months (or most recent partner if shorter period) should be informed, tested and treated. The patient can be given partner notification letter/cards. Test of cure (TOC): not routinely required for uncomplicated urogenital chlamydia unless: pregnant, symptoms persist, reinfection suspected, rectal/pharyngeal infection.",
+      "A": "Incorrect — Amoxicillin is not effective against Chlamydia trachomatis (an intracellular organism requiring intracellular antibiotics).",
+      "B": "CORRECT — Doxycycline 100mg BD for 7 days is preferred first-line. Azithromycin 1g is alternative. Partner notification for past 6 months per BASHH.",
+      "C": "Incorrect — Topical metronidazole is for bacterial vaginosis and trichomonas — not chlamydia.",
+      "D": "Incorrect — Ciprofloxacin is for urinary/gonorrhoea infections — not chlamydia.",
+      "E": "Incorrect — Azithromycin 2g is used for gonorrhoea treatment (not standard) — 1g is the dose for chlamydia."
+    },
+    "reference": "BASHH — UK National Guideline for the Management of Genital Tract Infection with Chlamydia trachomatis 2018. https://www.bashh.org/guidelines",
+    "tags": ["chlamydia", "doxycycline", "azithromycin", "partner notification", "BASHH", "contact tracing"]
+  },
+  {
+    "id": "QG-SH-002-001",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Sexual Health",
+    "difficulty": "Hard",
+    "question": "A 30-year-old woman presents with lower abdominal pain, fever (38.2°C), cervical motion tenderness, adnexal tenderness and mucopurulent cervicitis on speculum examination. Per BASHH PID guidelines and NICE, what is the most likely diagnosis and treatment regimen?",
+    "options": {
+      "A": "Urinary tract infection — trimethoprim 200mg BD for 7 days",
+      "B": "Pelvic inflammatory disease (PID) — treat empirically without awaiting swab results. First-line outpatient regimen per BASHH PID guidelines 2019: IM ceftriaxone 1g single dose + oral doxycycline 100mg BD + oral metronidazole 400mg BD — all for 14 days. Consider admission if: severe symptoms, surgical emergency excluded, pregnancy, failed oral therapy",
+      "C": "Endometriosis — refer to gynaecology",
+      "D": "Ovarian cyst — arrange USS and review",
+      "E": "Appendicitis — urgent surgical referral"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Pelvic inflammatory disease (PID): ascending genital tract infection affecting the uterus, fallopian tubes and/or ovaries. Most common causative organisms: Chlamydia trachomatis, Neisseria gonorrhoeae, anaerobes, Mycoplasma genitalium. Diagnosis is clinical — minimum criteria (BASHH): lower abdominal pain/tenderness + cervical motion tenderness or uterine tenderness or adnexal tenderness. Per BASHH PID guidelines 2019: treat empirically without waiting for swab results (early treatment reduces risk of tubal damage, infertility, chronic pelvic pain, ectopic pregnancy). Outpatient regimen: IM ceftriaxone 1g stat + oral doxycycline 100mg BD + metronidazole 400mg BD — 14 days total. Inpatient indications: severe illness, inability to exclude surgical emergency, pregnancy, IV drug misuse, failure of oral therapy. TOC at 72 hours. Partner notification essential.",
+      "A": "Incorrect — UTI causes dysuria and frequency — not cervical motion tenderness or adnexal tenderness with fever.",
+      "B": "CORRECT — PID: treat empirically. Outpatient: IM ceftriaxone 1g + doxycycline 100mg BD + metronidazole 400mg BD for 14 days per BASHH 2019.",
+      "C": "Incorrect — Endometriosis is a chronic condition without fever or cervical motion tenderness as acute features.",
+      "D": "Incorrect — Ovarian cysts can cause pelvic pain but fever and cervical motion tenderness indicate infection.",
+      "E": "Incorrect — Appendicitis must be excluded but the bilateral adnexal tenderness with mucopurulent cervicitis makes PID the primary diagnosis."
+    },
+    "reference": "BASHH — UK National Guideline for the Management of Pelvic Inflammatory Disease 2019. https://www.bashh.org/guidelines",
+    "tags": ["PID", "pelvic inflammatory disease", "ceftriaxone", "doxycycline", "metronidazole", "BASHH 2019"]
+  },
+  {
+    "id": "QG-SH-003-001",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Sexual Health",
+    "difficulty": "Medium",
+    "question": "A 28-year-old HIV-negative man who has sex with men (MSM) attends requesting pre-exposure prophylaxis (PrEP) for HIV prevention. Per NICE TA554 and NHS England guidance, who qualifies for PrEP on the NHS?",
+    "options": {
+      "A": "PrEP is not available on the NHS — it is only available privately",
+      "B": "Per NICE TA554 (2020) and NHS England: PrEP (tenofovir disoproxil/emtricitabine — Truvada or generic) is recommended for HIV-negative adults at high risk of HIV acquisition. Eligibility criteria: HIV-negative; assessed to be at substantial risk of HIV (e.g., MSM with condomless anal intercourse with multiple partners, or with a partner with unknown/detectable HIV viral load); tested for STIs and hepatitis B/C; renal function checked (PrEP can affect renal function). Provided through sexual health services. Ongoing 3-monthly monitoring required",
+      "C": "PrEP is only for people in serodiscordant relationships (one partner HIV positive)",
+      "D": "PrEP is only available for women at risk of HIV from heterosexual contact",
+      "E": "GPs can prescribe PrEP — no specialist sexual health review required"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per NICE TA554 (Emtricitabine–tenofovir disoproxil for pre-exposure prophylaxis of HIV-1 infection, 2020): PrEP is recommended for HIV-negative adults at substantial ongoing risk of HIV infection who: have had HIV-negative test result; have a creatinine clearance ≥60 mL/min; are offered regular monitoring and STI testing; are identified as high risk (BHIVA/BASHH criteria include: MSM with condomless anal sex with ≥2 partners in past year, or sex with HIV-positive partner with unknown/detectable VL; heterosexual women/men from high-prevalence countries or with high-risk partners; injecting drug users). PrEP is provided free on NHS through commissioned sexual health services — not through GPs. Monitoring: HIV test, creatinine, STI screen every 3 months. Efficacy: >99% reduction in HIV acquisition when taken consistently (PROUD trial evidence).",
+      "A": "Incorrect — PrEP is available on the NHS free of charge through sexual health services per NICE TA554.",
+      "B": "CORRECT — NICE TA554: PrEP for HIV-negative high-risk adults via sexual health services. Monitoring 3-monthly. MSM with condomless sex with multiple partners qualifies.",
+      "C": "Incorrect — PrEP is for any high-risk HIV-negative individual, not only those in serodiscordant relationships.",
+      "D": "Incorrect — PrEP is for any adult at substantial HIV risk — MSM, heterosexual men and women, people who inject drugs.",
+      "E": "Incorrect — PrEP is prescribed through commissioned NHS sexual health services — not typically through GPs, who are not part of the commissioning pathway."
+    },
+    "reference": "NICE TA554 — Emtricitabine–tenofovir disoproxil for PrEP. https://www.nice.org.uk/guidance/ta554",
+    "tags": ["PrEP", "HIV prevention", "MSM", "NICE TA554", "tenofovir", "sexual health"]
+  },
+  {
+    "id": "QG-SH-004-001",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Sexual Health",
+    "difficulty": "Easy",
+    "question": "A 20-year-old woman presents with a first episode of vulvovaginal candidiasis (thrush). She has white curd-like discharge, vulval itching and erythema. There are no recurrences in the past 12 months. Per NICE CKS, what is the first-line treatment?",
+    "options": {
+      "A": "Oral metronidazole 400mg twice daily for 7 days",
+      "B": "Single-dose oral fluconazole 150mg OR a single dose topical clotrimazole pessary (500mg) — both equally effective for an uncomplicated first episode of vulvovaginal candidiasis. Advise against douching and use of irritants. No partner treatment required for uncomplicated candidiasis",
+      "C": "Topical hydrocortisone cream for symptomatic relief only",
+      "D": "Oral itraconazole 200mg twice daily for 3 days",
+      "E": "Refer to GUM clinic — all candida requires specialist treatment"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per NICE CKS (Candida — female genital): uncomplicated vulvovaginal candidiasis (single episode, mild-moderate symptoms, not pregnant, not immunocompromised): single-dose oral fluconazole 150mg OR single-dose intravaginal clotrimazole 500mg pessary OR intravaginal clotrimazole cream 2% for 3 days. Both oral and topical treatments have equivalent cure rates (~80-90%). Choice depends on patient preference. Important points: not sexually transmitted — partner treatment is NOT routinely recommended for uncomplicated candidiasis; avoid in pregnancy (first trimester oral fluconazole — increased miscarriage risk per MHRA 2023); recurrent candidiasis (≥4 episodes/year) requires investigation (diabetes, HIV screening) and maintenance fluconazole 150mg weekly for 6 months. Metronidazole is for bacterial vaginosis/trichomonas — not candida.",
+      "A": "Incorrect — Metronidazole treats bacterial vaginosis and trichomonas — not candida (which requires antifungal treatment).",
+      "B": "CORRECT — Single-dose oral fluconazole 150mg OR clotrimazole 500mg pessary for uncomplicated VVC per NICE CKS. No partner treatment needed.",
+      "C": "Incorrect — Topical hydrocortisone relieves itching but does not treat the underlying candida infection.",
+      "D": "Incorrect — Itraconazole is not first-line for uncomplicated VVC in UK guidelines.",
+      "E": "Incorrect — Uncomplicated VVC is managed in primary care — specialist referral is not required for a first episode."
+    },
+    "reference": "NICE CKS — Candida: female genital. https://cks.nice.org.uk/topics/candida-female-genital/",
+    "tags": ["vulvovaginal candidiasis", "fluconazole", "clotrimazole", "thrush", "NICE CKS", "no partner treatment"]
+  },
+  {
+    "id": "QG-SH-005-001",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Sexual Health",
+    "difficulty": "Hard",
+    "question": "A 35-year-old man presents with painless indurated ulcer on his penis that has been present for 3 weeks. There is non-tender bilateral inguinal lymphadenopathy. He reports unprotected sex abroad 4 weeks ago. Per NICE CKS and BASHH, what must be excluded and what is the immediate management?",
+    "options": {
+      "A": "This is likely herpes simplex — prescribe aciclovir",
+      "B": "This presentation is highly suspicious for primary syphilis (Treponema pallidum) — the painless indurated ulcer (chancre) with non-tender inguinal lymphadenopathy is classic. Refer urgently to GUM clinic for: dark-field microscopy of the ulcer, syphilis serology (VDRL, TPHA, FTA-Abs — multiple tests needed as serology may be negative in very early primary syphilis). First-line treatment if confirmed: benzathine benzylpenicillin 2.4MU IM single dose (or oral doxycycline 100mg BD for 14 days if penicillin allergic)",
+      "C": "Apply topical corticosteroid — likely fixed drug eruption",
+      "D": "Reassure — penile ulcers are common and self-limiting",
+      "E": "Prescribe oral aciclovir — HSV is the most common cause of genital ulcers"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Primary syphilis (Treponema pallidum infection): classic presentation — painless indurated (hard-edged) ulcer (chancre) at the site of inoculation, appearing 9-90 days post-exposure (mean 3 weeks); associated with non-tender regional (inguinal) lymphadenopathy; heals spontaneously within 3-6 weeks without treatment. Diagnosis: dark-field microscopy (immediate demonstration of spirochetes from ulcer — most sensitive in active chancre); syphilis serology (TPHA, VDRL/RPR, FTA-ABS) — may be negative in very early primary syphilis (window period). Treatment per BASHH Syphilis guidelines: IM benzathine benzylpenicillin 2.4MU single dose (first-line); doxycycline 100mg BD for 14 days (if penicillin allergic or IM not feasible). Partner notification for all sexual contacts within 3 months. HIV test must be performed in all patients with syphilis.",
+      "A": "Incorrect — Herpes simplex causes painful vesicles/ulcers, typically tender and multiple — not a single painless indurated ulcer.",
+      "B": "CORRECT — Primary syphilis: painless indurated chancre + non-tender inguinal lymphadenopathy. Refer GUM for dark-field microscopy + serology + treatment per BASHH.",
+      "C": "Incorrect — Fixed drug eruption causes pigmented patches at the same site with each drug exposure — not an indurated ulcer.",
+      "D": "Incorrect — A painless indurated penile ulcer with inguinal lymphadenopathy requires urgent STI investigation — it is not self-limiting in terms of management.",
+      "E": "Incorrect — HSV causes painful ulcers — a painless indurated ulcer is pathognomonic of primary syphilis until proven otherwise."
+    },
+    "reference": "BASHH — UK National Guidelines on the Management of Syphilis 2015 (updated). https://www.bashh.org/guidelines",
+    "tags": ["primary syphilis", "chancre", "painless ulcer", "dark-field microscopy", "benzathine penicillin", "BASHH"]
+  },
+  {
+    "id": "QG-SH-006-001",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Sexual Health",
+    "difficulty": "Medium",
+    "question": "A 25-year-old man presents with a cluster of painful vesicles on his penis that ruptured to form shallow ulcers. He has mild inguinal lymphadenopathy and fever. This is his first episode. Per BASHH HSV guidelines and NICE, what is the diagnosis and treatment?",
+    "options": {
+      "A": "Primary syphilis — urgent GUM referral",
+      "B": "First episode genital herpes simplex (HSV — most likely HSV-2) — oral aciclovir 400mg three times daily for 5 days (or valaciclovir 500mg BD for 5 days). Advise: symptoms may last 2-3 weeks in primary episode, avoid sexual contact while sores present, consider suppressive therapy (aciclovir 400mg BD or valaciclovir 500mg daily) if ≥6 recurrences/year. Referral to GUM for type-specific HSV serology and counselling",
+      "C": "Genital warts — topical podophyllotoxin",
+      "D": "Candidal balanitis — topical clotrimazole",
+      "E": "Behçet's disease — oral prednisolone"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "First episode genital herpes simplex: painful vesicles that rupture to form shallow ulcers, tender inguinal lymphadenopathy, systemic features (fever, malaise) in primary episode. Caused by HSV-1 or HSV-2 (both can cause genital infection). Per BASHH Herpes Simplex guidelines and NICE: first-line treatment: oral antiviral — aciclovir 400mg TDS for 5 days, or valaciclovir 500mg BD for 5 days, or famciclovir 250mg TDS for 5 days. Start as early as possible. The primary episode is often the most severe — longer treatment (up to 10 days) if new lesions appearing after 5 days. After first episode: counsel about recurrences (HSV-2 recurs more than HSV-1), asymptomatic shedding and transmission risk, condom use, disclosure to partners. Suppressive therapy for ≥6 recurrences/year. GUM referral for swab confirmation (viral culture or PCR) and type-specific serology.",
+      "A": "Incorrect — Primary syphilis causes PAINLESS indurated ulcer — genital herpes causes painful vesicles/ulcers.",
+      "B": "CORRECT — First episode genital HSV: aciclovir 400mg TDS for 5 days (or valaciclovir 500mg BD). GUM referral for confirmation and counselling per BASHH.",
+      "C": "Incorrect — Genital warts (HPV) cause painless warty growths — not vesicles or painful ulcers.",
+      "D": "Incorrect — Candidal balanitis causes white plaques and erythema — not painful vesicular ulcers with lymphadenopathy and fever.",
+      "E": "Incorrect — Behçet's disease causes recurrent oral and genital ulcers — should be considered in recurrent cases without confirmed HSV, but first episode with systemic features in a young man makes primary HSV far more likely."
+    },
+    "reference": "BASHH — UK National Guideline for the Management of Anogenital Herpes. NICE CKS — Herpes simplex. https://www.bashh.org/guidelines",
+    "tags": ["genital herpes", "HSV", "aciclovir", "valaciclovir", "first episode", "BASHH"]
+  }
+]

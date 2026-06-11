@@ -1,0 +1,574 @@
+[
+  {
+    "id": "QG-URO-021-001",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Urology",
+    "difficulty": "Easy",
+    "question": "A 62-year-old man presents with a 3-week history of painless visible haematuria. He is a lifelong smoker with no urinary symptoms. Per NICE NG12, what is the most appropriate management?",
+    "options": {
+      "A": "Prescribe a course of antibiotics and review in 2 weeks",
+      "B": "Urgent 2WW urology referral for suspected bladder cancer — visible haematuria in any adult without obvious benign cause requires urgent investigation including cystoscopy and upper tract imaging",
+      "C": "Arrange urine cytology in primary care and refer if positive",
+      "D": "USS kidneys, ureters and bladder and review in 4 weeks",
+      "E": "Reassure — haematuria in smokers is always due to chronic cystitis"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per NICE NG12 (Suspected cancer: recognition and referral), visible (frank/macroscopic) haematuria in any adult ≥45 years without an obvious benign cause (confirmed UTI, urological trauma) requires urgent 2WW urology referral for investigation of possible bladder, kidney or ureteric malignancy. Bladder cancer is the fourth most common cancer in men; smoking is the single biggest risk factor (attributable risk ~50%). The urology assessment includes flexible cystoscopy (to directly visualise the bladder and ureteric orifices) and upper tract imaging (CT urogram is gold standard). Painless haematuria in a male smoker is bladder cancer until proven otherwise. Do not delay with antibiotic trials or GP-arranged imaging that would delay diagnosis.",
+      "A": "Incorrect — Antibiotic courses without investigation delay cancer diagnosis. Antibiotics only if confirmed UTI is present.",
+      "B": "CORRECT — Visible haematuria in adult ≥45 years: urgent 2WW urology referral per NICE NG12.",
+      "C": "Incorrect — Urine cytology has poor sensitivity for low-grade bladder cancer — cystoscopy is required and should not be delayed.",
+      "D": "Incorrect — USS alone may miss early bladder tumours — cystoscopy is essential. Arranging USS delays 2WW referral.",
+      "E": "Incorrect — Haematuria in smokers must always be investigated — chronic cystitis does not cause painless haematuria."
+    },
+    "reference": "NICE NG12 — Suspected cancer: recognition and referral. https://www.nice.org.uk/guidance/ng12",
+    "tags": ["visible haematuria", "bladder cancer", "2WW", "smoking", "cystoscopy", "NICE NG12"]
+  },
+  {
+    "id": "QG-URO-021-002",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Urology",
+    "difficulty": "Medium",
+    "question": "A 55-year-old woman presents with non-visible (microscopic) haematuria detected on urine dipstick (2+ blood, no protein, no nitrites). MSU culture is negative. She has no urinary symptoms and no hypertension. She is post-menopausal. Per NICE NG12, does this require referral?",
+    "options": {
+      "A": "No — non-visible haematuria without symptoms never requires referral",
+      "B": "Yes — per NICE NG12, non-visible haematuria in adults aged ≥60 with either dysuria OR raised white cell count on urinalysis, not explained by UTI, warrants urgent 2WW referral. Non-visible haematuria ≥45 years without dysuria but persistent on two tests also requires referral (non-urgent)",
+      "C": "Repeat dipstick in 6 months — if still positive, then refer",
+      "D": "Treat with prophylactic trimethoprim — recurrent UTI likely",
+      "E": "Refer only if haematuria is visible on two separate occasions"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per NICE NG12, non-visible haematuria (NVH) referral thresholds: Urgent 2WW: age ≥60 with unexplained NVH AND dysuria or raised WCC; age ≥45 with unexplained NVH AND confirmed on two separate occasions. Non-urgent referral: consider for all adults with unexplained persistent NVH. This 55-year-old post-menopausal woman with confirmed NVH (MSU negative, confirmed not contamination) meets the criterion for referral — she is ≥45 and NVH should be confirmed on a second test. If confirmed on repeat test, urology referral for cystoscopy and upper tract imaging is appropriate. Phase contrast microscopy can help determine if haematuria is glomerular (dysmorphic red cells → nephrology) or non-glomerular (urology).",
+      "A": "Incorrect — NICE NG12 sets clear thresholds for NVH referral — it is not always benign.",
+      "B": "CORRECT — NVH in ≥45 years: confirm on second test; if persistent, urology referral per NICE NG12.",
+      "C": "Incorrect — 6-month delay risks delayed bladder cancer diagnosis — confirm on second test within a few weeks.",
+      "D": "Incorrect — Prophylactic antibiotics are not indicated for NVH with negative culture.",
+      "E": "Incorrect — Non-visible haematuria (not visible) is the topic here — the criteria differ from visible haematuria."
+    },
+    "reference": "NICE NG12 — Suspected cancer: recognition and referral. https://www.nice.org.uk/guidance/ng12",
+    "tags": ["non-visible haematuria", "microscopic haematuria", "2WW", "urology referral", "NICE NG12", "bladder cancer"]
+  },
+  {
+    "id": "QG-URO-060-001",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Urology",
+    "difficulty": "Medium",
+    "question": "A 70-year-old man attends for a health check. He has no urinary symptoms. He asks about PSA testing. His father had prostate cancer at age 65. Per NICE NG131 and PHE guidance, what is the correct information to give?",
+    "options": {
+      "A": "PSA testing is mandatory for all men over 70 — arrange immediately",
+      "B": "PSA testing is not part of routine NHS prostate cancer screening — it should only be offered after informed discussion (Prostate Cancer Risk Management Programme — PCRMP). Inform about: PSA limitations (false positives from BPH, prostatitis, ejaculation; false negatives — 15% cancers missed), that a raised PSA leads to further investigation including possible biopsy, and anxiety. After full informed consent, if the man requests it, PSA can be measured. Family history raises his risk",
+      "C": "PSA is a definitive test for prostate cancer — arrange immediately given family history",
+      "D": "PSA testing is only for men with symptoms — do not offer to asymptomatic men",
+      "E": "Refer directly to urology for biopsy — family history requires immediate investigation"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per NICE NG131 (Prostate cancer: diagnosis and management) and the NHS Prostate Cancer Risk Management Programme (PCRMP), PSA testing is NOT part of a national screening programme in the UK due to: high false-positive rate (elevated PSA in BPH, prostatitis, UTI, recent ejaculation, vigorous exercise), false-negative rate (~15%), risk of overdiagnosis and overtreatment. Per PCRMP: GPs should offer an informed discussion to men over 50 (or younger with family history/Black ethnicity — higher risk groups) who request PSA. Provide a balanced account of benefits and harms. If the man consents after informed discussion, PSA can be measured. Family history (first-degree relative with prostate cancer <65) doubles the lifetime risk.",
+      "A": "Incorrect — PSA testing is not mandatory or part of national screening. Informed discussion is required first.",
+      "B": "CORRECT — PSA only after informed discussion (PCRMP). Family history raises risk. Inform about limitations before testing.",
+      "C": "Incorrect — PSA is not a definitive test — it has significant false-positive and false-negative rates. Informed consent required.",
+      "D": "Incorrect — Asymptomatic men who request PSA after informed discussion can have it measured — the PCRMP specifically addresses this group.",
+      "E": "Incorrect — Direct urology biopsy without any investigation is not appropriate for asymptomatic men with family history alone."
+    },
+    "reference": "NICE NG131 — Prostate cancer: diagnosis and management. NHS PCRMP. https://www.nice.org.uk/guidance/ng131",
+    "tags": ["PSA", "prostate cancer", "PCRMP", "informed consent", "screening", "NICE NG131"]
+  },
+  {
+    "id": "QG-URO-060-002",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Urology",
+    "difficulty": "Hard",
+    "question": "A 68-year-old man has a PSA of 8.4 ng/ml (age-specific upper limit of normal is approximately 4.0 ng/ml for men 60-69 years). He has no urinary symptoms and normal DRE. Per NICE NG131, what is the next step?",
+    "options": {
+      "A": "Repeat PSA in 6 months — likely benign hypertrophy",
+      "B": "Urgent 2WW urology referral for suspected prostate cancer — PSA above the age-specific reference range with raised PSA should be referred for consideration of multiparametric MRI (mpMRI) prostate and possible biopsy per NICE NG131",
+      "C": "Start finasteride for 3 months and recheck PSA",
+      "D": "Arrange transrectal ultrasound-guided biopsy in primary care",
+      "E": "PSA 8.4 requires bone scan immediately to check for metastases"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per NICE NG131, a PSA above the age-specific reference range in a man without an obvious benign cause warrants urgent 2WW urology referral for suspected prostate cancer. NICE NG131 updated pathway (2019): multiparametric MRI (mpMRI) prostate should be offered as the first investigation before biopsy in men with suspected prostate cancer — mpMRI has higher sensitivity for clinically significant prostate cancer and reduces unnecessary biopsies. If mpMRI is suspicious (Likert 3-5), transperineal biopsy is performed. Finasteride lowers PSA by approximately 50% — starting it would confuse future interpretation but does not substitute for investigation. Normal DRE does not exclude significant prostate cancer.",
+      "A": "Incorrect — PSA 8.4 is double the age-specific upper limit — delaying 6 months without investigation risks late diagnosis.",
+      "B": "CORRECT — PSA above age-specific range: urgent 2WW urology for mpMRI then possible biopsy per NICE NG131.",
+      "C": "Incorrect — Starting finasteride without investigating raised PSA delays cancer diagnosis and confounds future PSA measurements.",
+      "D": "Incorrect — Transrectal biopsy is performed by urologists under specialist guidance — not primary care. mpMRI now precedes biopsy per NICE NG131.",
+      "E": "Incorrect — Bone scan is for staging confirmed prostate cancer — not first investigation for raised PSA."
+    },
+    "reference": "NICE NG131 — Prostate cancer: diagnosis and management. https://www.nice.org.uk/guidance/ng131",
+    "tags": ["PSA", "prostate cancer", "mpMRI", "2WW", "NICE NG131", "biopsy"]
+  },
+  {
+    "id": "QG-URO-061-001",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Urology",
+    "difficulty": "Medium",
+    "question": "A 72-year-old man is diagnosed with low-risk localised prostate cancer (PSA <10, Gleason 6, T1c). He is fit and well with no significant comorbidities and has a life expectancy >10 years. Per NICE NG131, what treatment options should be discussed?",
+    "options": {
+      "A": "Immediate radical prostatectomy — surgery is the only curative option",
+      "B": "Active surveillance is the recommended first approach for low-risk localised prostate cancer in men with life expectancy >10 years — avoids immediate treatment side effects (erectile dysfunction, incontinence). Alternatives: radical prostatectomy, external beam radiotherapy (EBRT) with androgen deprivation therapy (ADT). All three are equivalent in survival for low-risk disease. Patient preference is central",
+      "C": "Watchful waiting only — no active treatment for prostate cancer over age 70",
+      "D": "Hormone therapy (ADT) alone — curative for localised prostate cancer",
+      "E": "Palliative care referral — prostate cancer is always incurable"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per NICE NG131, for low-risk localised prostate cancer (PSA <10, Gleason 6/Grade Group 1, T1-T2a) in men with life expectancy >10 years, active surveillance is the recommended first-line management. Active surveillance protocol: PSA every 3-6 months, DRE annually, repeat biopsy at 12 months then 3-5 yearly, mpMRI monitoring. Treatment is initiated if disease progresses. Alternative curative options with equivalent survival: radical prostatectomy (robotic-assisted increasingly common), EBRT (74-78 Gy) ± short-course ADT, or brachytherapy. ADT alone is not curative for localised disease. 'Watchful waiting' (no monitoring, palliation only) is for men with very limited life expectancy — different from active surveillance.",
+      "A": "Incorrect — Active surveillance is the recommended first approach for low-risk disease — surgery is one of several equally effective options.",
+      "B": "CORRECT — Active surveillance first-line for low-risk localised prostate cancer per NICE NG131. All three curative modalities are equivalent.",
+      "C": "Incorrect — Watchful waiting (no monitoring) is for men with very limited life expectancy — not a man who is fit with life expectancy >10 years.",
+      "D": "Incorrect — ADT (hormone therapy) is not curative for localised prostate cancer — it is used in high-risk/metastatic disease.",
+      "E": "Incorrect — Low-risk localised prostate cancer is highly curable — palliative care at diagnosis is inappropriate."
+    },
+    "reference": "NICE NG131 — Prostate cancer: diagnosis and management. https://www.nice.org.uk/guidance/ng131",
+    "tags": ["prostate cancer", "active surveillance", "low risk", "NICE NG131", "radical prostatectomy", "EBRT"]
+  },
+  {
+    "id": "QG-URO-062-001",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Urology",
+    "difficulty": "Medium",
+    "question": "A 55-year-old woman has had three or more UTIs in the past 12 months, each confirmed by MSU culture. She has no structural abnormality on USS kidneys and bladder. Per NICE NG195 and NICE CKS, what self-management strategies and prophylactic options should be discussed?",
+    "options": {
+      "A": "Long-term trimethoprim prophylaxis is mandatory for all recurrent UTI",
+      "B": "Discuss self-management strategies: adequate fluid intake (2-3 litres/day), urinating after intercourse, avoid tight-fitting clothing and irritants. Options: self-start antibiotics (patient-initiated antibiotic prescription), low-dose prophylactic antibiotic (trimethoprim 100mg nocte or nitrofurantoin 50-100mg nocte), post-coital prophylaxis if coitus-related. Consider vaginal oestrogen if post-menopausal (atrophic vaginitis increases risk). Topical methenamine hippurate as non-antibiotic alternative",
+      "C": "Cranberry products are proven to prevent recurrent UTI — recommend daily cranberry juice",
+      "D": "Refer to urology for cystoscopy — all recurrent UTIs require investigation",
+      "E": "Prescribe prophylactic amoxicillin — first-line for recurrent UTI"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per NICE NG195 and NICE CKS (recurrent UTI), management for women with ≥3 confirmed UTIs in 12 months includes: (1) Behavioural/self-care: adequate hydration, post-coital voiding, avoid spermicidal contraception (disrupts vaginal flora), appropriate perineal hygiene; (2) Antibiotic prophylaxis options: continuous low-dose nocte (trimethoprim 100mg, nitrofurantoin 50mg, cefalexin 125mg), or post-coital single dose if coitus-related, or patient-initiated treatment (antibiotic prescription to take at symptom onset); (3) Vaginal oestrogen in post-menopausal women — oestrogen restores vaginal flora and significantly reduces recurrence; (4) Methenamine hippurate — non-antibiotic option (urinary acidifier). Cranberry products — NICE NG195 notes insufficient evidence to recommend. USS/urology referral if structural concern or risk factors.",
+      "A": "Incorrect — Trimethoprim prophylaxis is one of several options — not mandatory for all recurrent UTI.",
+      "B": "CORRECT — Lifestyle measures + prophylactic antibiotics (nocte or post-coital) + vaginal oestrogen (if menopausal) per NICE NG195.",
+      "C": "Incorrect — NICE NG195 does not recommend cranberry products due to insufficient evidence.",
+      "D": "Incorrect — Urology referral with cystoscopy is not routinely indicated for recurrent uncomplicated UTI without risk factors.",
+      "E": "Incorrect — Amoxicillin is not first-line for UTI prophylaxis — E. coli resistance rates are very high."
+    },
+    "reference": "NICE NG195 — Urinary tract infection: antimicrobial prescribing. NICE CKS — Recurrent UTI. https://www.nice.org.uk/guidance/ng195",
+    "tags": ["recurrent UTI", "UTI prophylaxis", "trimethoprim nocte", "vaginal oestrogen", "NICE NG195", "self-management"]
+  },
+  {
+    "id": "QG-URO-062-002",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Urology",
+    "difficulty": "Hard",
+    "question": "A 75-year-old man in a care home has a urine dipstick that is positive for nitrites and leucocytes as part of a routine check. He has no urinary symptoms, no fever and no change in his baseline cognition. Per NICE NG195, should he be treated with antibiotics?",
+    "options": {
+      "A": "Yes — a positive urine dipstick always warrants antibiotic treatment in elderly men",
+      "B": "No — asymptomatic bacteriuria in elderly men (and non-pregnant women) should NOT be treated with antibiotics. Treatment does not reduce morbidity, increases antibiotic resistance and causes side effects. Address potential modifiable risk factors. Only treat if symptomatic UTI is confirmed",
+      "C": "Yes — all elderly care home residents with positive dipstick should be treated to prevent sepsis",
+      "D": "Send MSU and treat if culture positive — dipstick alone is not enough but culture confirms treatment",
+      "E": "Treat for 3 days with trimethoprim — short courses are low risk"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per NICE NG195 and antimicrobial stewardship guidance, asymptomatic bacteriuria (positive urine culture/dipstick without symptoms) in elderly men and non-pregnant women should NOT be treated with antibiotics. Evidence clearly shows: treatment does not reduce symptomatic UTI episodes, does not prevent sepsis, and promotes antibiotic resistance and C. difficile. This is one of the most common causes of inappropriate antibiotic prescribing in elderly care. Exceptions (treat ASB): pregnant women (risk of pyelonephritis), pre-urological procedures, renal transplant recipients. Confusion/delirium in elderly care home residents is commonly attributed to 'UTI' — but confusion alone without urinary symptoms does not indicate UTI. Per NICE NG15 (Antimicrobial stewardship): positive dipstick alone should never trigger antibiotics in asymptomatic patients.",
+      "A": "Incorrect — Positive dipstick in asymptomatic elderly patients should NOT trigger antibiotic treatment per NICE NG195.",
+      "B": "CORRECT — Do not treat asymptomatic bacteriuria in elderly men — no clinical benefit and promotes resistance per NICE NG195.",
+      "C": "Incorrect — Routine treatment of all care home residents with positive dipstick is a significant antimicrobial stewardship problem.",
+      "D": "Incorrect — Even a positive MSU culture in an asymptomatic elderly man does not require treatment — ASB should not be treated.",
+      "E": "Incorrect — Any antibiotic treatment for ASB in elderly men is inappropriate per NICE NG195."
+    },
+    "reference": "NICE NG195 — Urinary tract infection: antimicrobial prescribing. https://www.nice.org.uk/guidance/ng195",
+    "tags": ["asymptomatic bacteriuria", "elderly", "no treatment", "antimicrobial stewardship", "NICE NG195", "care home"]
+  },
+  {
+    "id": "QG-URO-099-001",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Urology",
+    "difficulty": "Medium",
+    "question": "A 42-year-old man presents with sudden severe right-sided loin-to-groin pain, nausea, vomiting and microscopic haematuria. He is rolling around unable to find a comfortable position. Per NICE CKS and EAU guidelines, what is the diagnosis and immediate management in primary care?",
+    "options": {
+      "A": "Appendicitis — urgent surgical referral",
+      "B": "Renal colic (ureterolithiasis) — analgesia with diclofenac 75mg IM or PR (NSAIDs are first-line for ureteric colic), IV access if vomiting. Refer to urology for imaging (CT KUB — gold standard) unless symptoms resolve. Safety net: admit if single kidney, bilateral obstruction, infection (fever), or pain uncontrolled",
+      "C": "Pyelonephritis — IV antibiotics and admission",
+      "D": "Aortic dissection — 999 immediately",
+      "E": "Muscle strain — oral ibuprofen and reassurance"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Renal colic: classic presentation — sudden severe unilateral loin-to-groin pain (following the path of the ureter), colicky in nature (patient cannot find a comfortable position — distinguishes from peritonism where patient lies still), nausea/vomiting, haematuria. Per NICE CKS and EAU guidelines: first-line analgesia is NSAIDs (diclofenac — superior to opioids for ureteric colic by reducing ureteric spasm and GFR; 75mg IM/PR or 50mg oral). Alpha-blockers (tamsulosin 0.4mg) facilitate passage of stones <10mm. CT KUB (non-contrast CT) is gold standard imaging (>95% sensitivity and specificity). Indications for immediate admission: fever/infection with obstruction (urological emergency — pyonephrosis), single kidney, bilateral obstruction, uncontrolled pain/vomiting, eGFR deterioration.",
+      "A": "Incorrect — Appendicitis causes right iliac fossa peritonism — the patient lies still. Renal colic causes writhing restlessness.",
+      "B": "CORRECT — Renal colic: diclofenac 75mg IM/PR as first-line analgesia + CT KUB + urology referral per NICE CKS/EAU.",
+      "C": "Incorrect — Pyelonephritis causes fever, renal angle tenderness and positive MSU — not the classic colicky loin-to-groin pattern.",
+      "D": "Incorrect — Aortic dissection causes tearing chest/back pain to buttocks with haemodynamic compromise — not the classic ureteric colic pattern.",
+      "E": "Incorrect — Muscle strain does not cause haematuria or nausea/vomiting with this severity and pattern."
+    },
+    "reference": "NICE CKS — Renal or ureteric colic. EAU Guidelines on Urolithiasis. https://cks.nice.org.uk/topics/renal-or-ureteric-colic/",
+    "tags": ["renal colic", "ureteric colic", "diclofenac", "CT KUB", "NSAIDs first line", "NICE CKS"]
+  },
+  {
+    "id": "QG-URO-099-002",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Urology",
+    "difficulty": "Hard",
+    "question": "A 35-year-old man has had two episodes of renal colic caused by calcium oxalate stones. CT shows a 6mm stone in the left ureter currently. He has passed the stone spontaneously. Per NICE CKS and EAU guidelines, what metabolic investigation and dietary advice should he receive to prevent recurrence?",
+    "options": {
+      "A": "No investigation or dietary advice needed — stone passage confirms no further action required",
+      "B": "24-hour urine collection for calcium, oxalate, citrate, uric acid, phosphate and sodium. Blood: calcium, urate, parathyroid hormone (if hypercalcaemia). Dietary advice: increase fluid intake to maintain urine output >2 litres/day, dietary calcium normal (do not restrict — low calcium diet increases oxalate absorption), restrict dietary sodium and animal protein, restrict high-oxalate foods (spinach, rhubarb, nuts). Potassium citrate supplements if hypocitraturia. Thiazide diuretics if hypercalciuria",
+      "C": "Start allopurinol immediately — all kidney stones are uric acid",
+      "D": "Low calcium diet is the most important intervention — calcium stones require calcium restriction",
+      "E": "Annual USS kidneys is sufficient follow-up — no dietary advice needed"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Recurrent calcium oxalate stone formers (≥2 stones) require metabolic evaluation and preventive advice per EAU urolithiasis guidelines and NICE CKS. Investigations: 24-hour urine (calcium, oxalate, citrate, uric acid, creatinine, sodium, pH); serum (calcium, urate, PTH if hypercalcaemia — to exclude primary hyperparathyroidism). Dietary advice: (1) Fluid: maintain urine output >2L/day (dilutes stone-forming salts); (2) Calcium: do NOT restrict — dietary calcium binds oxalate in the gut reducing urinary oxalate excretion; supplements have different risk profile; (3) Reduce animal protein (increases calcium and uric acid excretion, reduces citrate); (4) Reduce sodium (reduces calcium excretion); (5) Reduce high-oxalate foods (spinach, rhubarb, chocolate, nuts). Medical prevention: potassium citrate (increases urinary citrate — inhibits stone formation) if hypocitraturia; thiazide diuretics if persistent hypercalciuria.",
+      "A": "Incorrect — Recurrent stone formers require metabolic workup and preventive advice — ignoring recurrence risks further episodes.",
+      "B": "CORRECT — Metabolic evaluation (24-hour urine + bloods) + dietary advice (high fluid, normal calcium, low sodium/protein) per EAU/NICE CKS.",
+      "C": "Incorrect — Allopurinol is for uric acid stones — this patient has calcium oxalate stones (different aetiology and management).",
+      "D": "Incorrect — Restricting dietary calcium in calcium stone formers INCREASES oxalate absorption and WORSENS stone formation — this is a common misconception.",
+      "E": "Incorrect — Annual USS alone without dietary/metabolic investigation is insufficient for recurrent stone formers."
+    },
+    "reference": "EAU Guidelines on Urolithiasis. NICE CKS — Renal or ureteric colic. https://cks.nice.org.uk/topics/renal-or-ureteric-colic/",
+    "tags": ["kidney stones", "calcium oxalate", "recurrence prevention", "24-hour urine", "fluid intake", "EAU guidelines"]
+  },
+  {
+    "id": "QG-URO-099-003",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Urology",
+    "difficulty": "Easy",
+    "question": "A 55-year-old man presents with urgency, frequency (urinating 12 times per day), nocturia (4 times per night) and occasional urge incontinence for 6 months. He has no haematuria. His PSA is 1.8 ng/ml. IPSS (International Prostate Symptom Score) is 22 (severe). Per NICE NG123, what is this most likely to represent and first-line management?",
+    "options": {
+      "A": "Overactive bladder (OAB) only — anticholinergic medication immediately",
+      "B": "Lower urinary tract symptoms (LUTS) — likely overactive bladder component. First-line: lifestyle advice (fluid management, bladder retraining, caffeine reduction, weight loss if obese). If no improvement: bladder training programme. Pharmacological: if OAB predominant — mirabegron (beta-3 agonist) or anticholinergic (solifenacin, oxybutynin — caution in elderly due to cognitive effects). Rule out urinary infection and consider post-void residual measurement",
+      "C": "Benign prostatic hyperplasia — start tamsulosin immediately",
+      "D": "Prostate cancer — urgent 2WW urology referral",
+      "E": "Diabetes mellitus — fasting blood glucose"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per NICE NG123 (Lower urinary tract symptoms in men: management), LUTS encompass storage symptoms (urgency, frequency, nocturia, urge incontinence — often OAB), voiding symptoms (hesitancy, poor stream, terminal dribble — often BOO from BPH), and post-micturition symptoms. IPSS 22 = severe LUTS. This patient's symptoms are predominantly storage/OAB symptoms. Per NICE NG123: first-line = lifestyle measures (fluid management 1.5-2L/day, caffeine/alcohol reduction, bladder training, pelvic floor exercises). If medications are needed for OAB: mirabegron (beta-3 agonist — preferred in elderly as fewer cognitive side effects than anticholinergics) or solifenacin (anticholinergic). Alpha-blockers (tamsulosin) are for voiding LUTS (BPH with hesitancy/poor stream) — not primarily OAB.",
+      "A": "Incorrect — Lifestyle/behavioural interventions are first-line before pharmacological treatment per NICE NG123.",
+      "B": "CORRECT — LUTS with OAB pattern: lifestyle advice + bladder retraining first. Mirabegron or anticholinergic if needed per NICE NG123.",
+      "C": "Incorrect — Tamsulosin is for voiding LUTS (poor stream, hesitancy from BPH) — this patient has predominantly storage symptoms.",
+      "D": "Incorrect — PSA 1.8 is within normal range. No features of prostate cancer. 2WW referral is not indicated.",
+      "E": "Incorrect — Diabetes causes polyuria/polydipsia rather than urgency and urge incontinence with normal frequency pattern."
+    },
+    "reference": "NICE NG123 — Lower urinary tract symptoms in men: management. https://www.nice.org.uk/guidance/ng123",
+    "tags": ["LUTS", "overactive bladder", "OAB", "mirabegron", "bladder retraining", "NICE NG123"]
+  },
+  {
+    "id": "QG-URO-099-004",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Urology",
+    "difficulty": "Medium",
+    "question": "A 65-year-old man has benign prostatic hyperplasia (BPH) causing moderate LUTS (IPSS 14). He has hesitancy, poor stream and terminal dribble. His PSA is 2.8 ng/ml and prostate volume on USS is 42ml. He is not taking any medications. Per NICE NG123, what is the first-line pharmacological treatment?",
+    "options": {
+      "A": "5-alpha reductase inhibitor (finasteride) as first-line for all BPH",
+      "B": "Alpha-blocker (tamsulosin 400 mcg daily or alfuzosin) as first-line for voiding LUTS from BPH — improves smooth muscle relaxation in the prostate and bladder neck, improves flow rate within days to weeks",
+      "C": "Anticholinergic (solifenacin) — reduces bladder contractions",
+      "D": "Saw palmetto (phytotherapy) — evidence-based herbal treatment for BPH",
+      "E": "Immediate referral for TURP (transurethral resection of the prostate)"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per NICE NG123, for moderate voiding LUTS from BPH: first-line pharmacological treatment is an alpha-1 adrenoceptor blocker (alpha-blocker): tamsulosin 400 mcg daily, alfuzosin 10mg daily, or doxazosin. Alpha-blockers relax smooth muscle in the prostate and bladder neck, improving urinary flow within days to weeks. 5-alpha reductase inhibitors (finasteride 5mg, dutasteride 0.5mg daily) are for men with larger prostates (>40ml on USS or PSA >1.4ng/ml as surrogate) — reduce prostate volume over 6-12 months. For men with large prostates and moderate-severe LUTS: combination alpha-blocker + 5-ARI (e.g. tamsulosin + dutasteride = Combodart) provides superior symptom control. Saw palmetto: NICE NG123 does not recommend phytotherapy — insufficient evidence.",
+      "A": "Incorrect — Finasteride/dutasteride (5-ARI) is for large prostates (>40ml) — not first-line for all BPH. This man has a 42ml prostate so 5-ARI is actually indicated, but alpha-blocker is still the immediate first-line.",
+      "B": "CORRECT — Alpha-blocker (tamsulosin) is first-line for voiding LUTS from BPH per NICE NG123.",
+      "C": "Incorrect — Anticholinergics are for storage/OAB symptoms — they can worsen voiding LUTS and cause urinary retention in BPH.",
+      "D": "Incorrect — NICE NG123 does not recommend phytotherapy for BPH.",
+      "E": "Incorrect — TURP is for BPH refractory to medical treatment or with complications (retention, renal failure, recurrent UTI) — not first-line for moderate LUTS."
+    },
+    "reference": "NICE NG123 — Lower urinary tract symptoms in men: management. https://www.nice.org.uk/guidance/ng123",
+    "tags": ["BPH", "tamsulosin", "alpha-blocker", "voiding LUTS", "NICE NG123", "finasteride"]
+  },
+  {
+    "id": "QG-URO-001-001",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Urology",
+    "difficulty": "Hard",
+    "question": "A 78-year-old man with BPH is found by his carer to be confused and in pain. He has not passed urine for 14 hours. On examination he has a palpable tender suprapubic mass reaching to the umbilicus. Per NICE CKS, what is the diagnosis and immediate management?",
+    "options": {
+      "A": "Constipation — laxatives and encourage oral fluids",
+      "B": "Acute urinary retention (AUR) — 999/immediate A&E transfer. Insert urethral catheter (14-16 Fr) immediately to drain the bladder. Document residual volume (typically >300ml in AUR). Initiate alpha-blocker (tamsulosin) for trial without catheter (TWOC) after 48-72 hours. Investigate underlying cause (UTI, constipation, medications — anticholinergics, opioids). Urgent urology referral",
+      "C": "Prescribe oral tamsulosin and review in 48 hours",
+      "D": "Bladder scan only — catheterisation is not needed unless >500ml",
+      "E": "IV furosemide — promotes diuresis to relieve retention"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Acute urinary retention (AUR): inability to void with a painfully distended bladder, residual volume typically >300ml. A common BPH complication — precipitants include: acute illness, constipation, opioids/anticholinergics, UTI, alcohol. Management is an emergency: immediate urethral catheterisation (14-16Fr, or 12Fr if difficulty) to relieve acute pain and prevent long-term detrusor damage. Document exact residual volume (>800-1000ml suggests chronic urinary retention component). Start tamsulosin 400 mcg daily for 48-72 hours before trial without catheter (TWOC) — alpha-blocker significantly improves TWOC success rate. If TWOC fails: longer catheterisation and urology referral for TURP consideration. Monitor for post-obstructive diuresis (electrolytes) after catheterisation in chronic retention.",
+      "A": "Incorrect — Constipation does not cause inability to void with palpable suprapubic mass reaching the umbilicus.",
+      "B": "CORRECT — AUR: immediate catheterisation + tamsulosin + TWOC at 48-72 hours + urology referral per NICE CKS.",
+      "C": "Incorrect — Oral tamsulosin alone will not relieve acute urinary retention — immediate catheterisation is required.",
+      "D": "Incorrect — 14 hours without voiding + palpable distended bladder + pain = AUR needing immediate catheterisation. Bladder scan confirms but should not delay treatment.",
+      "E": "Incorrect — IV furosemide increases urine production in a patient who cannot void — this would worsen the retention and cause further harm."
+    },
+    "reference": "NICE CKS — Urinary retention. EAU Guidelines on LUTS. https://cks.nice.org.uk/topics/urinary-retention/",
+    "tags": ["acute urinary retention", "AUR", "catheterisation", "tamsulosin", "TWOC", "NICE CKS"]
+  },
+  {
+    "id": "QG-URO-002-001",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Urology",
+    "difficulty": "Medium",
+    "question": "A 25-year-old man presents to A&E with sudden severe right testicular pain that started 3 hours ago. The pain started abruptly during exercise. On examination the right testis is swollen, exquisitely tender and positioned higher than normal. The cremasteric reflex is absent on the right. Per NICE CKS, what is the diagnosis and most important next step?",
+    "options": {
+      "A": "Epididymo-orchitis — send MSU and start oral doxycycline",
+      "B": "Testicular torsion — surgical emergency. Immediate urology/surgical referral for scrotal exploration within 4-6 hours. Detorsion and bilateral orchidopexy. Do NOT delay for Doppler USS — imaging delays can result in testicular loss",
+      "C": "Inguinal hernia — refer to general surgery urgently",
+      "D": "Orchitis — oral prednisolone",
+      "E": "Scrotal trauma — analgesia and scrotal support"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Testicular torsion is a urological emergency — the testis twists on its spermatic cord, occluding its blood supply. Without surgical intervention: testicular salvage rates are ~100% within 6 hours, 50% at 12 hours, near zero at 24 hours. Classic presentation: sudden severe unilateral testicular pain (often during exercise or in sleep), high-riding testis (spermatic cord shortens as it twists), horizontal lie of the testis, absent cremasteric reflex (most reliable sign), swelling and erythema. Per NICE CKS: do NOT wait for Doppler USS (can give false-negative results — does not exclude torsion reliably). Immediate surgical exploration and bilateral orchidopexy (fix both testes — 'bell-clapper' deformity is bilateral predisposition). Treat as torsion until proven otherwise at exploration.",
+      "A": "Incorrect — Epididymo-orchitis has a more gradual onset and typically affects older men — acute severe pain with absent cremasteric reflex = torsion.",
+      "B": "CORRECT — Testicular torsion: immediate surgical exploration within 4-6 hours. No Doppler USS delay per NICE CKS.",
+      "C": "Incorrect — Inguinal hernia causes groin pain that may radiate to the testis — not acute high-riding tender testis with absent cremasteric reflex.",
+      "D": "Incorrect — Orchitis causes bilateral dull ache in the context of viral illness — not acute severe unilateral pain.",
+      "E": "Incorrect — No history of trauma. Testicular torsion is the working diagnosis until surgical exploration proves otherwise."
+    },
+    "reference": "NICE CKS — Testicular torsion. https://cks.nice.org.uk/topics/testicular-torsion/",
+    "tags": ["testicular torsion", "surgical emergency", "cremasteric reflex", "orchidopexy", "4-6 hours", "NICE CKS"]
+  },
+  {
+    "id": "QG-URO-003-001",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Urology",
+    "difficulty": "Easy",
+    "question": "A 32-year-old man notices a painless lump in his left testis that has been present for 3 weeks. On examination there is a 1.5cm hard non-tender mass arising from the testis itself. The testis is not transilluminable. Per NICE NG12, what is the management?",
+    "options": {
+      "A": "Reassure — most testicular lumps in young men are benign epididymal cysts",
+      "B": "Urgent 2WW urology referral for suspected testicular cancer — a hard testicular lump that does not transilluminate requires urgent investigation. Scrotal USS confirms the lesion and serum tumour markers (AFP, beta-hCG, LDH) are arranged",
+      "C": "Prescribe oral doxycycline for 2 weeks — likely epididymo-orchitis",
+      "D": "Arrange scrotal USS in 6 weeks before referring",
+      "E": "Refer to sexual health clinic for STI screen"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per NICE NG12 (Suspected cancer: recognition and referral), an unexplained painless testicular lump arising from the testis in a male of any age requires urgent 2WW urology referral for suspected testicular cancer. Testicular cancer: most common cancer in men aged 15-35. Germ cell tumours account for 95% (seminoma and non-seminomatous germ cell tumour — NSGCT). Key features: hard painless testicular mass arising from the testis (not epididymis), does not transilluminate (cf. hydrocele). Do NOT delay with antibiotics or USS before 2WW referral. Scrotal USS and tumour markers (AFP, beta-hCG, LDH) will be arranged by urology. Prognosis is excellent for all stages with appropriate treatment (>95% cure rate for Stage 1).",
+      "A": "Incorrect — A hard non-transilluminable mass arising from the testis is testicular cancer until proven otherwise — epididymal cysts are separate from the testis.",
+      "B": "CORRECT — Hard painless testicular lump: urgent 2WW urology referral per NICE NG12.",
+      "C": "Incorrect — Epididymo-orchitis causes tender swelling with systemic features — not a painless isolated testicular mass.",
+      "D": "Incorrect — Arranging USS before referral delays the 2WW pathway. Referral should not wait for USS.",
+      "E": "Incorrect — STI screen is not the priority — testicular cancer must be excluded first."
+    },
+    "reference": "NICE NG12 — Suspected cancer: recognition and referral. https://www.nice.org.uk/guidance/ng12",
+    "tags": ["testicular cancer", "painless lump", "2WW", "germ cell tumour", "NICE NG12", "tumour markers"]
+  },
+  {
+    "id": "QG-URO-004-001",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Urology",
+    "difficulty": "Medium",
+    "question": "A 40-year-old woman presents with stress urinary incontinence (leaking urine on coughing, sneezing and exercise). She has had two vaginal deliveries. She has not tried any treatment. Per NICE NG123 (Urinary incontinence in women), what is the first-line treatment?",
+    "options": {
+      "A": "Oxybutynin anticholinergic tablets — first-line for all urinary incontinence",
+      "B": "Supervised pelvic floor muscle training (PFMT) for at least 3 months — minimum 8 contractions three times daily as first-line for stress or mixed urinary incontinence. Performed under supervision of a physiotherapist or continence adviser",
+      "C": "Mid-urethral tape (TVT) procedure — first-line surgical option for stress incontinence",
+      "D": "Duloxetine 40mg twice daily — first-line pharmacological treatment for stress incontinence",
+      "E": "Pessary insertion — appropriate for all post-partum women with incontinence"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per NICE NG123 (Urinary incontinence and pelvic organ prolapse in women: management), first-line treatment for stress urinary incontinence (SUI) is supervised pelvic floor muscle training (PFMT) for a minimum of 3 months before considering other options. PFMT programme: at least 8 contractions performed 3 times daily for 3 months. Must be supervised (physiotherapist/continence adviser) — unsupervised exercises are less effective. If PFMT is not effective after 3 months: consider surgical options (mid-urethral tape — TVT/TOT) or duloxetine (second-line pharmacological — modest benefit, significant side effects — nausea). NICE NG123 (2019) notes that mid-urethral tape procedures have been associated with serious complications — careful informed consent required.",
+      "A": "Incorrect — Anticholinergics (oxybutynin) are for urgency urinary incontinence (overactive bladder) — NOT for stress urinary incontinence.",
+      "B": "CORRECT — Supervised PFMT for minimum 3 months is first-line for stress urinary incontinence per NICE NG123.",
+      "C": "Incorrect — Surgical tape procedures are second-line after failed conservative treatment, with careful counselling about complications per NICE NG123.",
+      "D": "Incorrect — Duloxetine is a second-line option for SUI — not first-line. It has significant GI side effects.",
+      "E": "Incorrect — Pessaries are primarily for pelvic organ prolapse — not first-line for stress urinary incontinence."
+    },
+    "reference": "NICE NG123 — Urinary incontinence and pelvic organ prolapse in women: management. https://www.nice.org.uk/guidance/ng123",
+    "tags": ["stress urinary incontinence", "pelvic floor muscle training", "PFMT", "physiotherapy", "NICE NG123", "first-line"]
+  },
+  {
+    "id": "QG-URO-005-001",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Urology",
+    "difficulty": "Hard",
+    "question": "A 72-year-old woman has had urgency urinary incontinence for 2 years. She has completed supervised pelvic floor muscle training and bladder retraining without improvement. Per NICE NG123, which pharmacological agent is preferred for urgency incontinence in elderly women and why?",
+    "options": {
+      "A": "Oxybutynin immediate release — cheapest anticholinergic option",
+      "B": "Mirabegron (beta-3 adrenoceptor agonist) is preferred in elderly women over anticholinergics — equivalent efficacy with significantly fewer cognitive side effects (anticholinergics are associated with increased dementia risk and cognitive impairment in elderly patients). Alternatively solifenacin or tolterodine (lower CNS side effects than oxybutynin immediate release)",
+      "C": "Duloxetine — first-line for urgency incontinence",
+      "D": "No pharmacological treatment — urgency incontinence in elderly women cannot be treated",
+      "E": "Oxybutynin immediate release is the safest option in elderly women"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per NICE NG123 and MHRA guidance (2023), anticholinergic medications (oxybutynin, solifenacin, tolterodine, darifenacin, fesoterodine) for overactive bladder carry a risk of cognitive impairment, increased dementia risk and anticholinergic burden in elderly patients. Oxybutynin immediate release is the most CNS-penetrant and should be avoided in elderly women. Preferred option: mirabegron (beta-3 agonist) — same efficacy as anticholinergics for OAB with significantly fewer cognitive side effects, no anticholinergic burden. If anticholinergics are used: solifenacin or tolterodine are preferred over oxybutynin IR. MHRA 2023 guidance specifically highlights the dementia risk with anticholinergics and recommends considering mirabegron as an alternative, especially in elderly patients. Mirabegron is contraindicated in severe uncontrolled hypertension.",
+      "A": "Incorrect — Oxybutynin IR has the highest CNS penetrance and anticholinergic burden of all OAB drugs — it is specifically not recommended in elderly patients.",
+      "B": "CORRECT — Mirabegron preferred in elderly women for OAB — avoids anticholinergic cognitive harm per NICE NG123/MHRA 2023.",
+      "C": "Incorrect — Duloxetine is for stress urinary incontinence — not urgency incontinence/OAB.",
+      "D": "Incorrect — Urgency incontinence is treatable in elderly women — behavioural and pharmacological options exist.",
+      "E": "Incorrect — Oxybutynin IR is specifically NOT safe in elderly women due to cognitive side effects — this is the opposite of current guidance."
+    },
+    "reference": "NICE NG123 — Urinary incontinence in women. MHRA 2023 — Anticholinergic medicines and dementia risk. https://www.nice.org.uk/guidance/ng123",
+    "tags": ["urgency incontinence", "OAB", "mirabegron", "anticholinergic", "elderly", "NICE NG123"]
+  },
+  {
+    "id": "QG-URO-006-001",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Urology",
+    "difficulty": "Medium",
+    "question": "A 45-year-old man presents with a first episode of epididymo-orchitis. He is sexually active with a new partner. He has no urethral discharge. Per NICE CKS and BASHH guidelines, what is the most appropriate management?",
+    "options": {
+      "A": "Oral trimethoprim for 14 days — most likely E. coli infection",
+      "B": "Refer to GUM/sexual health clinic or treat empirically with doxycycline 100mg twice daily for 10-14 days (covers Chlamydia trachomatis and Mycoplasma — most likely cause in sexually active men under 35). Test for STIs including chlamydia NAAT, gonorrhoea NAAT, HIV. Notify partner for testing. Scrotal support and analgesia",
+      "C": "Oral ciprofloxacin for 7 days — first-line for all epididymo-orchitis",
+      "D": "Urgent urology referral — testicular torsion must be excluded first",
+      "E": "No antibiotics — viral epididymo-orchitis does not need treatment"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per NICE CKS and BASHH (British Association for Sexual Health and HIV) guidelines on epididymo-orchitis: in sexually active men (particularly under 35), Chlamydia trachomatis and Neisseria gonorrhoeae are the most likely causative organisms. STI screening is essential. Empirical treatment: doxycycline 100mg BD for 10-14 days (covers Chlamydia and Mycoplasma). If gonorrhoea is suspected (high-risk sexual exposure): add ceftriaxone 500mg IM stat or refer to GUM for intramuscular treatment. In older men (>35 years), enteric organisms (E. coli) become more common (associated with UTI, urological instrumentation, BPH) — ciprofloxacin is appropriate. Partner notification and STI testing (NAAT for chlamydia and gonorrhoea) is essential regardless of age.",
+      "A": "Incorrect — Trimethoprim covers enteric organisms but not Chlamydia — not appropriate for a sexually active 45-year-old without UTI features.",
+      "B": "CORRECT — Doxycycline for sexually transmitted epididymo-orchitis + STI screening + partner notification per BASHH/NICE CKS.",
+      "C": "Incorrect — Ciprofloxacin covers enteric organisms (appropriate for older men with UTI-related epididymo-orchitis) but not Chlamydia — not appropriate here.",
+      "D": "Incorrect — Testicular torsion causes acute severe pain with absent cremasteric reflex — epididymo-orchitis is more gradual with a palpably separate swollen epididymis.",
+      "E": "Incorrect — Bacterial epididymo-orchitis from STI requires antibiotic treatment to prevent complications (abscess, infertility, orchitis)."
+    },
+    "reference": "BASHH Guidelines — Epididymo-orchitis. NICE CKS — Epididymo-orchitis. https://cks.nice.org.uk/topics/epididymo-orchitis/",
+    "tags": ["epididymo-orchitis", "doxycycline", "chlamydia", "BASHH", "STI screening", "NICE CKS"]
+  },
+  {
+    "id": "QG-URO-007-001",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Urology",
+    "difficulty": "Easy",
+    "question": "A 16-year-old boy presents with left-sided scrotal pain that started suddenly 2 hours ago during PE. On examination the left testis is tender, swollen and lying horizontally (transverse lie). The cremasteric reflex is absent. Per NICE CKS, what is the most important immediate action?",
+    "options": {
+      "A": "Send urine for culture — likely epididymo-orchitis from STI",
+      "B": "Immediate emergency urology/surgical referral for scrotal exploration — suspected testicular torsion. In a 16-year-old male with acute scrotal pain and absent cremasteric reflex, testicular torsion must be assumed and explored immediately without waiting for investigations. Time to surgery determines testicular survival",
+      "C": "Arrange Doppler USS before deciding on referral",
+      "D": "Give oral analgesia and observe for 4 hours",
+      "E": "Apply a scrotal support and prescribe doxycycline empirically"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Testicular torsion is most common at puberty (age 12-18) and in neonates. Clinical diagnosis is paramount — do NOT wait for Doppler USS which can give false-negative results and delays definitive surgery. Per NICE CKS: absent cremasteric reflex is the single most sensitive clinical sign for torsion; acute unilateral scrotal pain + absent cremasteric reflex = immediate surgical exploration regardless of any other findings. Detorsion and bilateral orchidopexy (fixing both testes to prevent future torsion — 'bell-clapper' deformity is bilateral). Time-critical: testicular salvage rates decrease dramatically after 6 hours. A 16-year-old with STI-related epididymo-orchitis is possible but torsion must be excluded first by direct visualisation at surgery.",
+      "A": "Incorrect — Urine culture is not a reason to delay surgical exploration. STI can be screened post-operatively.",
+      "B": "CORRECT — Absent cremasteric reflex + acute scrotal pain in an adolescent: immediate surgical exploration for testicular torsion per NICE CKS.",
+      "C": "Incorrect — Doppler USS delays surgery and can give false-negative results in torsion — do not let imaging delay surgery.",
+      "D": "Incorrect — Observation for 4 hours with suspected testicular torsion would result in testicular loss.",
+      "E": "Incorrect — Empirical doxycycline for STI-related epididymo-orchitis is inappropriate when torsion must first be excluded surgically."
+    },
+    "reference": "NICE CKS — Testicular torsion. https://cks.nice.org.uk/topics/testicular-torsion/",
+    "tags": ["testicular torsion", "adolescent", "cremasteric reflex", "surgical emergency", "scrotal exploration", "NICE CKS"]
+  },
+  {
+    "id": "QG-URO-008-001",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Urology",
+    "difficulty": "Medium",
+    "question": "A 60-year-old man is on tamsulosin for BPH. He is listed for cataract surgery. The ophthalmologist contacts the GP to say the patient has intraoperative floppy iris syndrome (IFIS) risk. Per MHRA guidance and NICE, what is the significance of this and what should have been done before starting tamsulosin?",
+    "options": {
+      "A": "IFIS is unrelated to tamsulosin — the ophthalmologist is incorrect",
+      "B": "Intraoperative floppy iris syndrome (IFIS) is a well-recognised complication of alpha-1 blockers (particularly tamsulosin) during cataract surgery — the iris becomes poorly dilating and billowing, increasing surgical risk. Per MHRA: patients who require cataract surgery should ideally be asked about planned eye surgery before starting tamsulosin. Once tamsulosin is started, IFIS risk persists even if the drug is stopped. The ophthalmologist must be informed that the patient is on tamsulosin so surgical modifications (viscoelastics, iris hooks) can be planned",
+      "C": "Stop tamsulosin immediately before cataract surgery — IFIS resolves within 2 weeks of stopping",
+      "D": "IFIS only occurs with oral oxybutynin — not tamsulosin",
+      "E": "Switch to finasteride — no IFIS risk with 5-alpha reductase inhibitors"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Intraoperative floppy iris syndrome (IFIS): a complication of cataract surgery associated with systemic alpha-1 adrenoceptor blockers, particularly tamsulosin (highest risk — due to its high alpha-1A selectivity for iris dilator muscle receptors). Features: iris billowing, poor pupil dilation, iris prolapse during phacoemulsification — increases risk of surgical complications and posterior capsule rupture. Per MHRA Drug Safety Update: (1) Before starting tamsulosin, ask if cataract surgery is planned — consider deferring tamsulosin until after surgery; (2) Once tamsulosin is started, IFIS risk persists even if the drug is stopped (the drug is thought to cause irreversible changes to iris smooth muscle); (3) Always inform the ophthalmologist of alpha-blocker use. The ophthalmologist can then use surgical modifications (diluted intracameral phenylephrine, Malyugin ring, iris hooks, viscoelastics) to reduce IFIS complications.",
+      "A": "Incorrect — IFIS is directly and well-established as a complication of alpha-blocker use, especially tamsulosin.",
+      "B": "CORRECT — IFIS: tamsulosin causes persistent IFIS risk even if stopped. Always inform ophthalmologist. Plan surgery modifications per MHRA.",
+      "C": "Incorrect — Stopping tamsulosin does NOT reverse IFIS — the ophthalmologist must be informed and adaptations made regardless.",
+      "D": "Incorrect — IFIS is specifically associated with alpha-1 blockers, not anticholinergics like oxybutynin.",
+      "E": "Incorrect — 5-alpha reductase inhibitors have no alpha-1 blocking activity and no IFIS risk — but the question is about managing the current tamsulosin situation."
+    },
+    "reference": "MHRA Drug Safety Update — Tamsulosin and intraoperative floppy iris syndrome. https://www.gov.uk/drug-safety-update",
+    "tags": ["IFIS", "tamsulosin", "cataract surgery", "alpha-blocker", "MHRA", "intraoperative floppy iris"]
+  },
+  {
+    "id": "QG-URO-009-001",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Urology",
+    "difficulty": "Hard",
+    "question": "A 55-year-old man has been on finasteride 5mg daily for BPH for 12 months. His PSA has fallen from 3.2 to 1.6 ng/ml. The GP is reviewing him. Per NICE NG131 and NICE NG123, what is the clinical significance of the PSA fall and what is the important monitoring principle?",
+    "options": {
+      "A": "PSA has halved — this confirms no prostate cancer and no further PSA monitoring is needed",
+      "B": "Finasteride (5-alpha reductase inhibitor) reduces PSA by approximately 50% after 6-12 months of use — to interpret PSA accurately in a man on finasteride, the measured PSA must be multiplied by 2 (or compared to a pre-treatment baseline adjusted value). A PSA that has NOT fallen by 50% or is rising on finasteride should prompt urgent investigation for prostate cancer",
+      "C": "PSA fall confirms excellent treatment response — increase finasteride dose",
+      "D": "The PSA is now too low to use as a cancer screening tool — stop monitoring",
+      "E": "Finasteride has no effect on PSA levels — the fall is from another cause"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per NICE NG131 and prescribing guidelines, 5-alpha reductase inhibitors (finasteride, dutasteride) reduce PSA by approximately 50% after 6-12 months of treatment (by reducing DHT-mediated PSA production). This creates a significant clinical monitoring challenge: a PSA of 1.6 ng/ml in a man on finasteride is equivalent to approximately 3.2 ng/ml in an untreated man. Clinicians must: (1) double the measured PSA value to get the 'equivalent' untreated PSA for comparison; (2) monitor for a PSA that rises or fails to fall 50% from baseline — this should raise suspicion of prostate cancer and prompt urology referral; (3) document pre-treatment PSA as the baseline. Per PCRMP: men taking finasteride for more than 6 months who have any increase in PSA should be referred.",
+      "A": "Incorrect — The 50% PSA fall is expected with finasteride — it does not confirm absence of cancer. Ongoing monitoring is essential.",
+      "B": "CORRECT — Finasteride halves PSA — must double the value to interpret correctly. Rising PSA on finasteride = urgent urology referral per NICE NG131.",
+      "C": "Incorrect — The PSA fall is an expected pharmacological effect — not an indication to increase the dose.",
+      "D": "Incorrect — PSA monitoring on finasteride is MORE important (not less) — using the adjusted value.",
+      "E": "Incorrect — Finasteride demonstrably and predictably reduces PSA by ~50% — this is well-established pharmacology."
+    },
+    "reference": "NICE NG131 — Prostate cancer. NHS PCRMP — PSA on finasteride. https://www.nice.org.uk/guidance/ng131",
+    "tags": ["finasteride", "PSA", "5-alpha reductase inhibitor", "PSA halved", "prostate cancer monitoring", "NICE NG131"]
+  },
+  {
+    "id": "QG-URO-010-001",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Urology",
+    "difficulty": "Easy",
+    "question": "A 28-year-old man presents with painless left scrotal swelling that has developed over 6 months. On examination there is a soft, fluctuant, non-tender swelling that transilluminates brilliantly. The testis can be felt separately below the swelling. USS confirms a hydrocele. Per NICE CKS, what is the management?",
+    "options": {
+      "A": "Urgent 2WW urology referral — all scrotal swellings are potentially malignant",
+      "B": "Reassure if USS confirms benign hydrocele with normal testis. Small asymptomatic hydroceles: observation. Larger symptomatic hydroceles: refer to urology for consideration of surgical repair (hydrocelectomy) or aspiration (high recurrence rate). Scrotal USS should exclude underlying testicular pathology",
+      "C": "Prescribe oral antibiotics — epididymal cyst or infection likely",
+      "D": "Immediate aspiration in primary care",
+      "E": "Scrotal support indefinitely — no other treatment available"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "A hydrocele is a collection of serous fluid within the tunica vaginalis surrounding the testis. Features: soft, transilluminable, fluctuant, separate from the testis (testis palpable below). Per NICE CKS: scrotal USS is essential to confirm the diagnosis and exclude underlying testicular pathology (hydroceles can develop secondary to testicular cancer, epididymo-orchitis, trauma). If USS confirms a benign hydrocele with normal testis: small asymptomatic hydroceles can be observed. Symptomatic large hydroceles: urology referral for hydrocelectomy (surgical repair — definitive) or aspiration (simple but recurrence rate >50%). Primary care aspiration is not recommended — risk of infection and recurrence. 2WW referral is not warranted if USS confirms benign aetiology.",
+      "A": "Incorrect — 2WW referral is for suspected malignant testicular pathology — a clearly transilluminable hydrocele with normal testis on USS is benign.",
+      "B": "CORRECT — Benign hydrocele confirmed on USS: observation if asymptomatic, urology referral for surgery if symptomatic per NICE CKS.",
+      "C": "Incorrect — Hydroceles are not infective — antibiotics have no role.",
+      "D": "Incorrect — Primary care aspiration of hydrocele has high recurrence rates and infection risk — urology referral is appropriate.",
+      "E": "Incorrect — Surgical hydrocelectomy provides definitive treatment — scrotal support alone is palliative."
+    },
+    "reference": "NICE CKS — Scrotal pain and swellings. https://cks.nice.org.uk/topics/scrotal-pain-swellings/",
+    "tags": ["hydrocele", "transilluminable", "scrotal swelling", "USS testis", "NICE CKS", "urology referral"]
+  },
+  {
+    "id": "QG-URO-011-001",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Urology",
+    "difficulty": "Medium",
+    "question": "A 48-year-old woman with mixed urinary incontinence (both stress and urgency components) presents after 3 months of pelvic floor muscle training (PFMT) with partial improvement in her stress symptoms but persistent urgency and urge incontinence. Per NICE NG123, what should be added to her management?",
+    "options": {
+      "A": "Proceed directly to surgical TVT tape — PFMT has failed",
+      "B": "Add bladder training (at least 6 weeks — extending the interval between voiding episodes progressively) for the urgency/OAB component. Continue PFMT. If still inadequate: consider pharmacological treatment (mirabegron preferred in most women, or solifenacin)",
+      "C": "Prescribe oxybutynin immediate release — most effective anticholinergic",
+      "D": "Stop PFMT — only one treatment should be used at a time",
+      "E": "Cystoscopy to exclude bladder pathology before any further treatment"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per NICE NG123, for mixed urinary incontinence (both stress and urgency components): (1) Continue supervised PFMT for the stress component; (2) Add bladder training (minimum 6 weeks) for the urgency/OAB component — bladder training gradually increases the interval between voids, re-establishing cortical control over bladder contractions. If symptoms persist after combined PFMT + bladder training: pharmacological treatment for OAB component — mirabegron (preferred over anticholinergics in most women due to lower side effect burden) or solifenacin. Oxybutynin IR should be avoided due to highest anticholinergic burden. Surgical options (TVT/TOT) are for the stress component after conservative treatment fails — not while urgency is also a significant component.",
+      "A": "Incorrect — TVT surgery is specifically for the stress incontinence component — mixed UI with significant urgency requires the OAB to also be addressed first.",
+      "B": "CORRECT — Add bladder training for urgency component. Continue PFMT for stress. Then pharmacological if needed per NICE NG123.",
+      "C": "Incorrect — Oxybutynin IR has the most side effects and highest anticholinergic burden of OAB drugs — it is not preferred per NICE NG123.",
+      "D": "Incorrect — PFMT and bladder training are complementary — both should continue simultaneously.",
+      "E": "Incorrect — Cystoscopy is not indicated for routine mixed UI without red flags (haematuria, recurrent UTI, pelvic mass)."
+    },
+    "reference": "NICE NG123 — Urinary incontinence and pelvic organ prolapse in women: management. https://www.nice.org.uk/guidance/ng123",
+    "tags": ["mixed urinary incontinence", "bladder training", "PFMT", "OAB", "mirabegron", "NICE NG123"]
+  }
+]

@@ -1,0 +1,288 @@
+[
+  {
+    "id": "QG-B2-HAEM-019-001",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Haematology",
+    "difficulty": "Medium",
+    "question": "A 42-year-old woman is found to carry the BRCA2 gene mutation after a family history of breast cancer. Per NICE CG164 and NICE NG151, which cancers are associated with BRCA2 mutation and what surveillance should she be offered?",
+    "options": {
+      "A": "Breast cancer only — annual mammogram is sufficient",
+      "B": "BRCA2 is associated with: breast cancer (80-85% lifetime risk), ovarian cancer (10-20%), pancreatic cancer (5×), prostate cancer (males — 20% lifetime risk), and biliary tract cancers. Per NICE NG151: offer annual MRI breast screening from age 30 (or 25 if family history warrants); consider risk-reducing bilateral mastectomy and/or salpingo-oophorectomy after discussion of risks/benefits; refer to specialist cancer genetics service",
+      "C": "Only ovarian and breast cancer — no other associations",
+      "D": "BRCA2 is only relevant to women — male carriers have no increased risk",
+      "E": "BRCA2 mutations require immediate prophylactic surgery — surveillance is insufficient"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "BRCA2 mutations are associated with a broad spectrum of cancers compared to BRCA1. BRCA2 cancer risks: breast cancer (females) — 45-85% lifetime risk; ovarian cancer — 10-20% (lower than BRCA1 which carries 40-60%); pancreatic cancer — 5× increased risk; prostate cancer (males) — ~20% lifetime risk; biliary tract cancer; melanoma. Per NICE NG151 (Familial breast cancer) and NICE CG164: specialist genetics referral; annual breast MRI screening (more sensitive than mammogram in dense young breasts) from age 30-49; discuss risk-reducing surgery (bilateral mastectomy reduces breast cancer risk by >90%; risk-reducing salpingo-oophorectomy reduces ovarian and breast cancer risk). Hormone replacement therapy post-RRSO is safe and recommended per NICE.",
+      "A": "Incorrect — BRCA2 carries multiple cancer risks beyond breast cancer — limited surveillance to mammogram alone is insufficient.",
+      "B": "CORRECT — BRCA2: breast, ovarian, pancreatic, prostate, biliary cancers. Annual MRI + specialist genetics referral + risk-reducing surgery discussion per NICE NG151.",
+      "C": "Incorrect — Pancreatic and prostate cancer associations are important BRCA2-specific risks beyond breast/ovarian.",
+      "D": "Incorrect — Male BRCA2 carriers have significantly elevated prostate cancer risk (~20% lifetime) — surveillance is important.",
+      "E": "Incorrect — Prophylactic surgery is one option discussed, not mandated — surveillance and shared decision-making are central per NICE."
+    },
+    "reference": "NICE NG151 — Familial breast cancer. NICE CG164 — Familial breast cancer. https://www.nice.org.uk/guidance/ng151",
+    "tags": ["BRCA2", "cancer risk", "breast ovarian pancreatic prostate", "MRI surveillance", "NICE NG151", "genetics"]
+  },
+  {
+    "id": "QG-B2-HAEM-023-001",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Haematology",
+    "difficulty": "Medium",
+    "question": "A 72-year-old man has blood results showing Hb 85 g/L, platelets 62 × 10⁹/L, WBC 2.1 × 10⁹/L. He has fatigue and bruising but no lymphadenopathy or splenomegaly. Blood film shows dysplastic cells and hypogranular neutrophils. Per NICE and BSH guidelines, what is the most likely diagnosis?",
+    "options": {
+      "A": "Aplastic anaemia — stop all medications",
+      "B": "Myelodysplastic syndrome (MDS) — clonal haematological disorder of abnormal stem cell differentiation causing cytopaenias with dysplastic features on blood film; requires haematology referral for bone marrow biopsy to confirm; risk stratification using IPSS-R score; treatment ranges from supportive (transfusions, EPO) to azacitidine or allogeneic stem cell transplant for high-risk disease",
+      "C": "B12 deficiency anaemia — check serum B12",
+      "D": "Acute myeloid leukaemia — urgent bone marrow biopsy and chemotherapy",
+      "E": "Hypersplenism — splenectomy"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Myelodysplastic syndrome (MDS): clonal stem cell disorder characterised by cytopaenias (anaemia, thrombocytopenia, neutropaenia — any or all) with dysplastic changes in the bone marrow. Classic blood film: hypogranular neutrophils with bilobed nuclei (pseudo-Pelger-Huet anomaly), dysplastic red cell precursors. Predominantly affects elderly patients (median age 70). Low WBC, low Hb, low platelets — without lymphadenopathy or blast crisis. Risk: 30% transform to acute myeloid leukaemia (AML). Per NICE and BSH MDS guidelines: haematology referral; bone marrow aspirate + trephine biopsy (diagnostic); cytogenetics; IPSS-R risk score. Treatment: low-risk: supportive (red cell transfusions, EPO, thrombopoietin agonists); higher risk: azacitidine (hypomethylating agent — NICE approved); allogeneic SCT for eligible patients with high-risk disease.",
+      "A": "Incorrect — Aplastic anaemia causes hypocellular bone marrow without dysplasia — different from MDS.",
+      "B": "CORRECT — MDS: elderly + pancytopaenia + dysplastic cells. Haematology referral for bone marrow biopsy + IPSS-R per BSH/NICE.",
+      "C": "Incorrect — B12 deficiency causes macrocytic anaemia with megaloblastic changes — dysplastic hypogranular neutrophils specifically point to MDS.",
+      "D": "Incorrect — AML typically shows blast cells >20% in blood/bone marrow with more rapid onset — MDS is a chronic disorder.",
+      "E": "Incorrect — Hypersplenism causes cytopaenias due to splenic sequestration — requires splenomegaly and different presentation."
+    },
+    "reference": "BSH Guidelines — Myelodysplastic syndrome. NICE — MDS management. https://b-s-h.org.uk/guidelines/",
+    "tags": ["myelodysplastic syndrome", "MDS", "pancytopaenia", "bone marrow biopsy", "BSH", "dysplastic cells"]
+  },
+  {
+    "id": "QG-B2-HAEM-154-001",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Haematology",
+    "difficulty": "Medium",
+    "question": "A 28-year-old woman presents with 6 weeks of generalised lymphadenopathy, severe itch (pruritis) and painless neck lymph node swelling. On examination her cervical and axillary lymph nodes are rubbery and non-tender. She has had night sweats and unintentional weight loss of 6kg. Per NICE NG52, what is the most likely diagnosis and investigation?",
+    "options": {
+      "A": "Reactive lymphadenopathy — reassure and review in 4 weeks",
+      "B": "Hodgkin's lymphoma — classic presentation in young adult (bimodal: 20-30 and >55 years) with painless lymphadenopathy, B symptoms (fever, night sweats, weight loss >10%), alcohol-induced pain at lymph node sites (characteristic), and severe pruritis. Urgent 2WW haematology referral; excision biopsy of lymph node for Reed-Sternberg cells (diagnostic)",
+      "C": "Non-Hodgkin's lymphoma — higher in elderly patients",
+      "D": "HIV infection — HIV test and CD4 count",
+      "E": "Toxoplasmosis — serology and azithromycin"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Hodgkin's lymphoma (HL): the most common lymphoma in young adults. Classic features: painless, rubbery lymphadenopathy (typically cervical/axillary/mediastinal — 'Cotswold staging'); B symptoms (fever >38°C, drenching night sweats, weight loss >10% in 6 months); severe pruritis (from cytokine release); alcohol-induced pain at nodal sites (pathognomonic when present — rare but specific); bimodal age distribution (20-30 and >55 years). Per NICE NG52 (Non-Hodgkin's lymphoma — also applies to HL investigation pathway): urgent 2WW referral for suspected lymphoma; lymph node excision biopsy (not fine needle aspiration — inadequate for lymphoma diagnosis); histology shows Reed-Sternberg cells (large binucleate/multinucleate cells with 'owl eye' appearance). Staging CT chest/abdomen/pelvis. Treatment: ABVD chemotherapy ± radiotherapy.",
+      "A": "Incorrect — 6 weeks of systemic lymphadenopathy with B symptoms is NOT reassurance territory — immediate 2WW referral.",
+      "B": "CORRECT — Hodgkin's lymphoma: young adult + painless rubbery lymphadenopathy + B symptoms + pruritis. 2WW referral + excision biopsy per NICE NG52.",
+      "C": "Incorrect — NHL is more common in elderly patients and has different histology; HL is the typical young adult lymphoma.",
+      "D": "Incorrect — HIV can cause lymphadenopathy but the clinical picture with weight loss, night sweats and pruritis in a young adult points to HL.",
+      "E": "Incorrect — Toxoplasmosis causes lymphadenopathy in immunocompromised patients and is usually self-limiting without B symptoms."
+    },
+    "reference": "NICE NG52 — Non-Hodgkin's lymphoma. NICE NG12 — Suspected cancer. https://www.nice.org.uk/guidance/ng52",
+    "tags": ["Hodgkin's lymphoma", "B symptoms", "Reed-Sternberg cells", "2WW", "NICE NG52", "pruritis"]
+  },
+  {
+    "id": "QG-B2-OPHENT-055-001",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Ophthalmology & ENT",
+    "difficulty": "Medium",
+    "question": "A GP performs Rinne and Weber tuning fork tests on a patient with right-sided hearing loss. Results: Rinne right ear — bone conduction (BC) louder than air conduction (AC); Weber — lateralises to the right. Per audiological principles, what is the diagnosis?",
+    "options": {
+      "A": "Right sensorineural hearing loss",
+      "B": "Right conductive hearing loss — Rinne negative on the right (BC>AC) indicates conductive hearing loss on that side; Weber lateralises to the affected ear (conductive loss side) because the skull bone transmits sound directly to the cochlea without the competing air-conducted sound being blocked on the affected side",
+      "C": "Left sensorineural hearing loss",
+      "D": "Bilateral sensorineural hearing loss",
+      "E": "Normal hearing — BC>AC is a normal finding"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Rinne and Weber interpretation: Rinne test (normal: AC>BC at that ear — positive Rinne): Negative Rinne (BC>AC) = conductive hearing loss on that side. Positive Rinne with normal hearing = normal. Positive Rinne with SNHL = sensorineural loss (AC still louder but overall reduced). Weber test (normally: no lateralisation): Lateralises to the WORSE ear = conductive hearing loss (bone vibration is better perceived in the ear with blocked AC). Lateralises to the BETTER ear = sensorineural loss (the better cochlea perceives sound more efficiently). This patient: Rinne right BC>AC (negative Rinne right) = right conductive loss; Weber lateralises right = confirms conductive loss on the right. Common causes of conductive hearing loss: wax impaction, otitis media with effusion (glue ear), tympanic membrane perforation, otosclerosis.",
+      "A": "Incorrect — SNHL shows positive Rinne (AC>BC) with Weber lateralising to the BETTER (left) ear.",
+      "B": "CORRECT — Negative Rinne right (BC>AC) + Weber to right = right conductive hearing loss.",
+      "C": "Incorrect — Left SNHL would show: positive Rinne left but reduced; Weber lateralises to the RIGHT (better ear).",
+      "D": "Incorrect — Bilateral SNHL shows positive Rinne bilaterally with Weber not lateralising.",
+      "E": "Incorrect — Normal hearing shows AC>BC (positive Rinne). BC>AC is always abnormal on the affected ear."
+    },
+    "reference": "NICE CKS — Hearing loss in adults. https://cks.nice.org.uk/topics/hearing-loss-in-adults/",
+    "tags": ["Rinne test", "Weber test", "conductive hearing loss", "BC>AC", "lateralises to affected ear", "tuning fork"]
+  },
+  {
+    "id": "QG-B2-OPHENT-162-001",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Ophthalmology & ENT",
+    "difficulty": "Medium",
+    "question": "A 5-year-old boy presents with 4 days of left ear pain, fever of 38.8°C and mucopurulent discharge from the left ear canal. He also has a left-sided red, swollen, tender post-auricular area and the ear appears to protrude forward. Per NICE CKS, what is the diagnosis and immediate management?",
+    "options": {
+      "A": "Otitis externa — topical ciprofloxacin drops",
+      "B": "Mastoiditis — a complication of acute otitis media where infection spreads to the mastoid air cells; presents with post-auricular erythema, tenderness and swelling, ear displacement (pinna pushed anteriorly), fever; requires immediate hospital admission for IV antibiotics (co-amoxiclav or ceftriaxone) and CT temporal bones; may require mastoidectomy if no improvement",
+      "C": "Otitis media with effusion — watchful waiting",
+      "D": "Parotitis — oral amoxicillin",
+      "E": "Lymphadenopathy — reassure and review in 2 weeks"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Mastoiditis: a serious complication of acute otitis media (AOM) where bacteria spread from the middle ear to the mastoid air cells. Features: preceded by AOM (ear pain, fever, discharge); post-auricular redness, swelling, tenderness over the mastoid process; forward displacement of the pinna (ear pushed outward and forward by subperiosteal abscess); severe pain; high fever. Per NICE CKS: mastoiditis is an ENT emergency requiring immediate hospital admission. Management: IV antibiotics (co-amoxiclav or ceftriaxone); CT temporal bones (delineate extent of disease, exclude intracranial complications); myringotomy (drain middle ear); mastoidectomy if no response to antibiotics or if intracranial complication (meningitis, sigmoid sinus thrombosis, brain abscess).",
+      "A": "Incorrect — Otitis externa causes anterior ear canal disease without post-auricular swelling or displaced pinna.",
+      "B": "CORRECT — Mastoiditis: post-auricular erythema + forward displaced pinna = AOM complication. Immediate hospital admission + IV antibiotics per NICE CKS.",
+      "C": "Incorrect — OME causes conductive hearing loss without acute fever or post-auricular signs.",
+      "D": "Incorrect — Parotitis causes preauricular swelling over the parotid gland — not post-auricular swelling.",
+      "E": "Incorrect — Post-auricular lymph nodes may enlarge with AOM but displaced pinna and erythema/tenderness over the mastoid are specific for mastoiditis."
+    },
+    "reference": "NICE CKS — Mastoiditis. https://cks.nice.org.uk/topics/mastoiditis/",
+    "tags": ["mastoiditis", "AOM complication", "post-auricular", "pinna displaced", "IV antibiotics", "NICE CKS"]
+  },
+  {
+    "id": "QG-B2-OPHENT-164-001",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Ophthalmology & ENT",
+    "difficulty": "Easy",
+    "question": "A 6-year-old boy is brought by his parents with a complaint that he is struggling to hear the television at school for 8 weeks. Audiometry confirms a bilateral conductive hearing loss of 25 dB. Tympanometry shows bilateral type B (flat) curves. There is no pain, no fever and no discharge. Per NICE CG60, what is the management?",
+    "options": {
+      "A": "Prescribe oral amoxicillin — antibiotics treat OME",
+      "B": "Watchful waiting for a further 5 weeks (total 13 weeks from symptom onset) — most OME resolves spontaneously; if persists beyond 13 weeks with bilateral hearing loss affecting development/quality of life: refer to ENT for consideration of grommet insertion (ventilation tubes) ± hearing aids",
+      "C": "Immediately refer for grommets — bilateral hearing loss requires surgery",
+      "D": "Nasal corticosteroid spray for 6 months — first-line treatment for OME",
+      "E": "Hearing aids only — grommets are never indicated in children"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per NICE CG60 (Surgical management of otitis media with effusion in children): OME (glue ear) is extremely common in young children and resolves spontaneously in 50% within 3 months and 90% within 12 months. At 8 weeks duration: watchful waiting is still appropriate — the condition has not yet reached the 13-week threshold. At 13 weeks of bilateral OME: refer to ENT for assessment; consider grommets if bilateral hearing loss >25 dB affecting speech/language/learning/quality of life. NICE CG60 does NOT recommend: routine antibiotics (no benefit for OME), antihistamines, decongestants, nasal steroids (insufficient evidence for OME). Bilateral OME in children with developmental/learning difficulties or Down syndrome: refer earlier. Autoinflation (Otovent balloon) has modest evidence — may be tried.",
+      "A": "Incorrect — Antibiotics have no established benefit for OME — this is non-infective fluid in the middle ear.",
+      "B": "CORRECT — Watchful waiting to 13 weeks total duration; then ENT referral for grommet consideration if bilateral persisting OME per NICE CG60.",
+      "C": "Incorrect — At 8 weeks with no developmental concerns, grommets are premature — 13 weeks is the threshold for referral.",
+      "D": "Incorrect — Nasal corticosteroids are not recommended by NICE CG60 for OME.",
+      "E": "Incorrect — Grommets (ventilation tubes) ARE indicated in appropriate cases of persistent bilateral OME with hearing loss per NICE CG60."
+    },
+    "reference": "NICE CG60 — Surgical management of otitis media with effusion in children. https://www.nice.org.uk/guidance/cg60",
+    "tags": ["OME", "glue ear", "watchful waiting 13 weeks", "grommets", "NICE CG60", "bilateral conductive loss"]
+  },
+  {
+    "id": "QG-B2-PSY-036-001",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Psychiatry",
+    "difficulty": "Easy",
+    "question": "A 38-year-old woman has responded well to sertraline for a first episode of major depressive disorder. She asks how long she should continue the antidepressant after she feels better. Per NICE NG222 and NICE CG90, what is the recommended duration of antidepressant treatment after remission from a first episode?",
+    "options": {
+      "A": "Stop as soon as symptoms resolve — no need to continue",
+      "B": "Continue for at least 6 months after achieving remission — stopping antidepressants too early significantly increases relapse risk; for those with risk factors for recurrence (previous episodes, severe episode, chronic symptoms) consider 2 years or longer",
+      "C": "Take antidepressants for exactly 3 months after remission",
+      "D": "Lifelong treatment is required after a single episode of depression",
+      "E": "Antidepressants should be stopped immediately once CBT is started"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per NICE CG90 (Depression in adults: recognition and management, 2009) and NICE NG222: after achieving remission from a first episode of major depressive disorder, continue antidepressants for at least 6 months after remission. Rationale: relapse rates within 6 months of stopping antidepressants prematurely are high (40-60%). After the 6-month maintenance period, consider gradual tapering over 4 weeks minimum (abrupt discontinuation causes antidepressant discontinuation syndrome — particularly with venlafaxine, paroxetine). Higher-risk patients (≥2 previous episodes, severe/psychotic episode, chronic depression, residual symptoms, ongoing stressors): consider antidepressants for at least 2 years. Withdrawal symptoms (dizziness, nausea, flu-like symptoms, electric shock sensations — 'brain zaps') — taper slowly.",
+      "A": "Incorrect — Stopping antidepressants as soon as symptoms resolve leads to high relapse rates within months.",
+      "B": "CORRECT — Minimum 6 months post-remission for first episode depression per NICE CG90. Longer for recurrent/severe cases.",
+      "C": "Incorrect — 3 months post-remission is insufficient — 6 months is the minimum NICE recommendation.",
+      "D": "Incorrect — Lifelong treatment is only considered for recurrent depression — not mandated after a single episode.",
+      "E": "Incorrect — CBT and antidepressants can and should be used together — starting CBT does not mean stopping medication."
+    },
+    "reference": "NICE CG90 — Depression in adults. NICE NG222. https://www.nice.org.uk/guidance/cg90",
+    "tags": ["depression", "antidepressant duration", "6 months post-remission", "NICE CG90", "relapse prevention", "sertraline"]
+  },
+  {
+    "id": "QG-B2-PSY-037-001",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Psychiatry",
+    "difficulty": "Medium",
+    "question": "A 42-year-old woman has been on fluoxetine 40mg for 6 months with no improvement. She had a good response to citalopram previously and wants to switch. Per BNF and NICE CG90, what is the correct approach when switching from fluoxetine to citalopram?",
+    "options": {
+      "A": "Stop fluoxetine and start citalopram the same day",
+      "B": "Stop fluoxetine and wait at least 7 days before starting citalopram — fluoxetine has an exceptionally long half-life (1-6 days for fluoxetine itself; 4-16 days for its active metabolite norfluoxetine); washout period of at least 7 days required before starting other SSRIs/SNRIs to avoid serotonin syndrome and pharmacological interactions",
+      "C": "Cross-taper: gradually reduce fluoxetine while introducing citalopram",
+      "D": "Fluoxetine and citalopram can always be co-prescribed — no interaction",
+      "E": "Wait 5 weeks before starting citalopram — the washout must be 5 half-lives"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per BNF guidance and NICE CG90, switching between SSRIs requires a washout period proportional to the half-life of the drug being stopped. Fluoxetine is unique among SSRIs due to its exceptionally long half-life: fluoxetine half-life: 1-6 days; active metabolite (norfluoxetine) half-life: 4-16 days. This means fluoxetine persists in the system for up to 4-5 weeks after the last dose. When switching FROM fluoxetine TO another SSRI, SRI, or MAOI: wait at least 7 days (minimum) before starting the new SSRI; when switching to an MAOI: wait at least 5 weeks (due to serotonin syndrome risk). Cross-tapering is generally not recommended between SSRIs when fluoxetine is involved due to its very long half-life. The opposite (switching from another SSRI to fluoxetine) typically requires only the standard 1-2 week washout of the first SSRI.",
+      "A": "Incorrect — Starting citalopram the same day as stopping fluoxetine risks additive serotonergic effects due to fluoxetine's long half-life.",
+      "B": "CORRECT — Fluoxetine long half-life (norfluoxetine up to 16 days): wait minimum 7 days before starting citalopram per BNF.",
+      "C": "Incorrect — Cross-tapering is not appropriate when fluoxetine is involved — its unique pharmacokinetics mean it is still active even at lower doses.",
+      "D": "Incorrect — Co-prescribing two SSRIs simultaneously increases serotonin syndrome risk.",
+      "E": "Incorrect — Waiting 5 full weeks is the recommendation when switching FROM fluoxetine TO an MAOI — not for switching to another SSRI."
+    },
+    "reference": "BNF — Antidepressant switching. NICE CG90. https://bnf.nice.org.uk/drug/fluoxetine.html",
+    "tags": ["fluoxetine washout", "SSRI switching", "7-day washout", "norfluoxetine", "BNF", "NICE CG90"]
+  },
+  {
+    "id": "QG-B2-DERM-092-001",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Dermatology",
+    "difficulty": "Easy",
+    "question": "A 28-year-old woman presents with vulval itching and a white, curd-like vaginal discharge that started 5 days after a course of cephalexin for a skin infection. Per NICE CKS, what is the diagnosis and how does antibiotic use contribute to this condition?",
+    "options": {
+      "A": "Bacterial vaginosis — treat with metronidazole",
+      "B": "Vulvovaginal candidiasis — antibiotics disrupt normal vaginal flora (Lactobacillus species that maintain acidic pH and inhibit Candida overgrowth), allowing Candida albicans to proliferate; treatment: oral fluconazole 150mg single dose or topical clotrimazole 500mg pessary",
+      "C": "Trichomonas vaginalis — treatment is oral metronidazole",
+      "D": "Contact dermatitis from perineal irritation",
+      "E": "Herpes simplex — aciclovir 400mg three times daily"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Vulvovaginal candidiasis (VVC) is a common complication of antibiotic therapy. Mechanism: antibiotics kill Lactobacillus acidophilus (the dominant vaginal flora which maintains vaginal pH ~4.0-4.5 through lactic acid production and hydrogen peroxide). Disruption of Lactobacillus allows opportunistic overgrowth of Candida albicans (a commensal organism normally present in 20-30% of women). Classic features: intense itching, white curd-like discharge (cottage cheese appearance), vulval erythema/oedema, no offensive odour (differentiates from BV). Per NICE CKS: first-line treatment — oral fluconazole 150mg single dose OR topical clotrimazole 500mg pessary (both equally effective); advise avoidance of irritants, loose clothing, avoid douching.",
+      "A": "Incorrect — BV causes a grey/white offensive fishy-smelling discharge without significant itching — white curd-like discharge with itching is candidiasis.",
+      "B": "CORRECT — Antibiotic-associated vulvovaginal candidiasis: disturbed Lactobacillus flora → Candida overgrowth. Fluconazole single dose per NICE CKS.",
+      "C": "Incorrect — Trichomoniasis causes frothy yellow-green offensive discharge with possible strawberry cervix — not curd-like white discharge.",
+      "D": "Incorrect — Contact dermatitis causes irritation/erythema without specific curd-like discharge following antibiotic use.",
+      "E": "Incorrect — HSV causes painful vesicular ulcers — not white curd-like discharge and itching."
+    },
+    "reference": "NICE CKS — Candida: female genital. https://cks.nice.org.uk/topics/candida-female-genital/",
+    "tags": ["candidiasis", "antibiotic associated", "Lactobacillus", "fluconazole", "NICE CKS", "vulvovaginal"]
+  },
+  {
+    "id": "QG-B2-DERM-100-001",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Dermatology",
+    "difficulty": "Easy",
+    "question": "A 35-year-old man presents with patchy non-scarring hair loss. On examination there are well-demarcated oval patches of complete hair loss on the scalp with no scaling or inflammation. There are exclamation mark hairs at the patch margins. Per NICE CKS, what is the diagnosis and first-line management?",
+    "options": {
+      "A": "Tinea capitis — oral terbinafine",
+      "B": "Alopecia areata — autoimmune patchy non-scarring alopecia; exclamation mark hairs (broken hairs tapering near the scalp) are pathognomonic; management: reassure (50-80% spontaneous regrowth within 1 year for limited disease), potent topical corticosteroids (first-line), intralesional corticosteroid injections for small patches, referral to dermatology if extensive or refractory",
+      "C": "Androgenetic alopecia — topical minoxidil",
+      "D": "Discoid lupus — antimalarial treatment",
+      "E": "Trichotillomania — psychological referral"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Alopecia areata: autoimmune T-cell mediated attack on hair follicles causing patchy non-scarring hair loss. Features: well-defined oval/round patches, complete loss within patches, exclamation mark hairs (tapered, short hair at margin — pathognomonic), nail pitting in 10-20%. Per NICE CKS: most limited alopecia areata (1-2 patches) regrows spontaneously within 1 year — reassurance is appropriate for mild cases. Treatment options: potent topical corticosteroids (first-line primary care), intralesional corticosteroid injections (triamcinolone — dermatology), topical minoxidil (adjunct), immunotherapy (DPCP — dermatology). Extensive alopecia (>50% scalp affected) has poorer prognosis for regrowth. Tinea capitis: scaling, broken hairs, inflammation — treated with oral antifungals. Androgenetic: gradual thinning, no discrete patches, no exclamation mark hairs.",
+      "A": "Incorrect — Tinea capitis causes scaling, inflammation and broken hairs ('black dot' appearance) — not discrete non-inflammatory patches with exclamation mark hairs.",
+      "B": "CORRECT — Alopecia areata: patchy non-scarring alopecia with exclamation mark hairs. Reassurance + topical steroids per NICE CKS.",
+      "C": "Incorrect — Androgenetic alopecia causes diffuse thinning in Hamilton/Ludwig patterns — not discrete patches.",
+      "D": "Incorrect — Discoid lupus causes SCARRING alopecia with erythema, follicular plugging — alopecia areata is non-scarring.",
+      "E": "Incorrect — Trichotillomania causes irregular broken hairs of different lengths from self-pulling — not clean oval patches."
+    },
+    "reference": "NICE CKS — Alopecia areata. https://cks.nice.org.uk/topics/alopecia-areata/",
+    "tags": ["alopecia areata", "exclamation mark hairs", "non-scarring", "topical steroids", "NICE CKS", "autoimmune"]
+  },
+  {
+    "id": "QG-B2-DERM-144-001",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Dermatology",
+    "difficulty": "Easy",
+    "question": "A 45-year-old man presents with a 6-month history of redness, papules and pustules on his cheeks, nose and forehead. He flushes easily with alcohol and spicy food. He has no comedones. Per NICE CKS, what is the diagnosis and first-line treatment?",
+    "options": {
+      "A": "Acne vulgaris — topical benzoyl peroxide",
+      "B": "Rosacea — inflammatory facial skin condition affecting central face; absence of comedones distinguishes from acne; treatment: topical metronidazole 0.75% gel or cream (first-line for papulopustular rosacea), azelaic acid (alternative), avoid triggers (alcohol, spicy food, UV exposure, extreme temperatures), sun protection",
+      "C": "Perioral dermatitis — stop any topical steroids",
+      "D": "Seborrhoeic dermatitis — ketoconazole shampoo",
+      "E": "Discoid lupus — anti-dsDNA antibodies"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Rosacea: a chronic inflammatory facial skin condition. Subtypes: erythematotelangiectatic (flushing, redness, telangiectasia), papulopustular (papules and pustules on erythematous background — most common), phymatous (rhinophyma — tissue hyperplasia of nose), ocular (lid margin inflammation). Key distinguishing features from acne: no comedones (blackheads/whiteheads), older onset (30-50+), central facial distribution, triggers (sun, alcohol, spicy food, temperature changes). Per NICE CKS: papulopustular rosacea — first-line: topical metronidazole (gel or cream) twice daily for 8-12 weeks; alternative: topical azelaic acid 15% gel. Oral antibiotics (doxycycline 40mg modified release) for moderate-severe papulopustular disease. Ivermectin cream (Soolantra) is an alternative for papulopustular rosacea. Telangiectasia: vascular laser. Rhinophyma: surgical/CO2 laser.",
+      "A": "Incorrect — Acne vulgaris has comedones (blackheads/whiteheads) — rosacea does not; different treatment.",
+      "B": "CORRECT — Rosacea: papulopustular, no comedones. First-line: topical metronidazole per NICE CKS.",
+      "C": "Incorrect — Perioral dermatitis causes perioral scaling and papules — typically caused by topical steroids; different distribution from rosacea.",
+      "D": "Incorrect — Seborrhoeic dermatitis causes scaling in seborrhoea-prone areas (scalp, nasolabial folds) with greasy scales — not papules/pustules without comedones.",
+      "E": "Incorrect — Discoid lupus causes scarring erythematous plaques — not the papulopustular picture of rosacea."
+    },
+    "reference": "NICE CKS — Rosacea. https://cks.nice.org.uk/topics/rosacea/",
+    "tags": ["rosacea", "topical metronidazole", "no comedones", "papulopustular", "NICE CKS", "triggers"]
+  }
+]

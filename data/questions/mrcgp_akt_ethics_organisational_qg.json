@@ -1,0 +1,1016 @@
+[
+  {
+    "id": "QG-ETHICS-024-001",
+    "exam": "MRCGP AKT",
+    "domain": "Organisational",
+    "specialty": "Ethics & Organisational",
+    "difficulty": "Hard",
+    "question": "A 15-year-old girl attends alone requesting contraception. She does not want her parents informed. She appears mature, understands the nature of the request, its implications and risks, and demonstrates she can make a reasoned decision. Per Fraser guidelines and GMC guidance, can the GP prescribe contraception without parental consent?",
+    "options": {
+      "A": "No — all under-16s require parental consent for any medical treatment",
+      "B": "Yes — if the young person is Fraser competent (Gillick competent for contraception specifically): she understands the advice given; cannot be persuaded to involve a parent; will begin or continue sexual activity with or without treatment; physical or mental health will suffer without treatment; it is in her best interests to provide contraception. Document competency assessment thoroughly",
+      "C": "Yes but only if she is over 14 years old",
+      "D": "No — the GP must inform her parents or refuse treatment",
+      "E": "Only if countersigned by another GP"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Fraser guidelines (from Gillick v West Norfolk and Wisbech AHA 1985, House of Lords) specifically apply to contraceptive advice and treatment in under-16s. A young person is Fraser competent if: (1) They understand the advice; (2) The GP cannot persuade them to involve parents; (3) They are likely to begin or continue sexual activity with or without contraception; (4) Their physical or mental health is likely to suffer if contraception is not provided; (5) It is in their best interest to receive contraceptive advice/treatment without parental consent. Per GMC guidance 0-18 years: document the competency assessment fully in the notes. Also consider: is this relationship potentially abusive? (age of partner, power imbalance — mandatory safeguarding consideration). Confidentiality can be breached only if there is a risk of serious harm.",
+      "A": "Incorrect — Competent under-16s can consent to treatment without parental consent (Gillick/Fraser). Parental consent is not required for competent minors.",
+      "B": "CORRECT — Fraser competent 15-year-old: can be prescribed contraception without parental consent if all five Fraser criteria are met. Document thoroughly.",
+      "C": "Incorrect — Fraser competence is not age-specific beyond being under 16 — it depends on the individual's maturity and understanding, not a fixed age threshold.",
+      "D": "Incorrect — Informing parents against the young person's wishes would breach confidentiality and is not required when Fraser criteria are met.",
+      "E": "Incorrect — Countersignature is not required. The prescribing GP's documented competency assessment is sufficient."
+    },
+    "reference": "GMC — 0 to 18 years: guidance for all doctors. Fraser guidelines. https://www.gmc-uk.org/ethical-guidance/ethical-guidance-for-doctors/0-18-years",
+    "tags": ["Fraser guidelines", "Gillick competence", "under 16", "contraception", "parental consent", "GMC"]
+  },
+  {
+    "id": "QG-ETHICS-024-002",
+    "exam": "MRCGP AKT",
+    "domain": "Organisational",
+    "specialty": "Ethics & Organisational",
+    "difficulty": "Medium",
+    "question": "A 15-year-old boy discloses during a routine appointment that he has been having sexual intercourse with his 24-year-old male employer. He says it started 3 months ago and is consensual. He does not want anyone to know. What must the GP do?",
+    "options": {
+      "A": "Respect his confidentiality completely — he is Gillick competent and requests privacy",
+      "B": "This describes a safeguarding concern — sexual activity between a 15-year-old and a 24-year-old adult is statutory rape (under 16 cannot legally consent to sexual activity). The GP must follow safeguarding procedures: consult with the named safeguarding lead, make a referral to children's services/police under Section 47 (Children Act 1989). The employer is committing a criminal offence. Confidentiality can be overridden to prevent serious harm to the child",
+      "C": "Prescribe contraception and advise the boy to use protection",
+      "D": "Refer the boy to CAMHS for psychological support only",
+      "E": "Ask the boy to bring his employer to the next appointment to discuss the relationship"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Sexual activity between an adult (24 years) and a child under 16 is a criminal offence under the Sexual Offences Act 2003 (statutory rape/sexual activity with a child) regardless of apparent consent. This is a child safeguarding emergency. The GP's duty of confidentiality is overridden when there is a risk of serious harm to the child. Per GMC guidance and NICE CG89: the GP must not promise confidentiality when safeguarding concerns exist; consult the named/designated safeguarding lead immediately; make a referral to children's services and/or police under Working Together to Safeguard Children 2023. The power imbalance (employer/employee relationship) and age gap make this exploitation. Document carefully. The GP should inform the young person of the need to refer unless this would put the child at greater risk.",
+      "A": "Incorrect — Gillick/Fraser competence does not override mandatory safeguarding duties. The adult is committing a criminal offence and the child is at risk of serious harm.",
+      "B": "CORRECT — Statutory rape (under 16 with adult). Mandatory safeguarding referral to children's services/police. Confidentiality overridden to prevent serious harm.",
+      "C": "Incorrect — Prescribing contraception without addressing the safeguarding risk would leave the child at risk of ongoing abuse.",
+      "D": "Incorrect — CAMHS referral alone is insufficient — the criminal activity must be reported to protect the child.",
+      "E": "Incorrect — Involving the employer (perpetrator) would compromise the investigation and potentially increase risk to the child."
+    },
+    "reference": "GMC — 0 to 18 years. NICE CG89 — Child maltreatment. Working Together to Safeguard Children 2023. https://www.gmc-uk.org/ethical-guidance/ethical-guidance-for-doctors/0-18-years",
+    "tags": ["safeguarding", "statutory rape", "under 16", "confidentiality override", "children's services", "Working Together"]
+  },
+  {
+    "id": "QG-ETHICS-043-001",
+    "exam": "MRCGP AKT",
+    "domain": "Organisational",
+    "specialty": "Ethics & Organisational",
+    "difficulty": "Medium",
+    "question": "A 78-year-old woman with moderate dementia is brought to the GP by her son. He requests a 'Do Not Attempt Resuscitation' (DNAR) order to be placed in her notes. She is currently well and has not expressed any wishes about resuscitation previously. Per GMC guidance and MCA 2005, what is the correct process?",
+    "options": {
+      "A": "The son has the right to request DNAR — complete the form immediately",
+      "B": "Assess the patient's mental capacity specifically for this decision. If she lacks capacity, the DNAR decision must be made in her best interests using the MCA 2005 framework: consider her previously expressed wishes (advance statements), values and beliefs, consult family and those close to her (including the son as consultee), involve the wider clinical team, document the decision and rationale. The son cannot unilaterally make this decision as he is a consultee not a decision-maker unless he holds Lasting Power of Attorney for health and welfare",
+      "C": "Defer the decision — DNAR discussions are only relevant when the patient is critically unwell",
+      "D": "Complete DNAR without discussion — moderate dementia means she definitely lacks capacity for all decisions",
+      "E": "Only a hospital specialist can make a DNAR decision"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per the Mental Capacity Act 2005 and GMC guidance, DNAR decisions require: (1) Capacity assessment — capacity is decision-specific; moderate dementia does not automatically mean lack of capacity for all decisions. Assess whether she can understand, retain, use/weigh information and communicate her decision about resuscitation; (2) If she lacks capacity: best interests decision using the MCA 2005 framework — documented evidence of previous wishes, values, beliefs, consult family as consultees (not decision-makers unless LPA holder), clinical team discussion; (3) The son is a consultee (must be consulted) but CANNOT make the decision unless he holds Health and Welfare LPA; (4) An Independent Mental Capacity Advocate (IMCA) should be involved if no appropriate consultee is available; (5) Document the decision-making process thoroughly in the notes.",
+      "A": "Incorrect — The son does not have the right to unilaterally request a DNAR order unless he holds LPA for health and welfare.",
+      "B": "CORRECT — Capacity assessment first. If lacking capacity: MCA best interests decision with son as consultee. Document thoroughly per GMC/MCA 2005.",
+      "C": "Incorrect — Advance care planning, including DNAR discussions, is most valuable when the patient is well enough to participate — not deferred until crisis.",
+      "D": "Incorrect — Capacity is decision-specific and fluctuating — moderate dementia does not automatically remove all capacity. A specific capacity assessment for this decision is required.",
+      "E": "Incorrect — GPs can and should make DNAR decisions in community/primary care settings, with appropriate consultation and documentation."
+    },
+    "reference": "Mental Capacity Act 2005. GMC — Treatment and care towards the end of life. https://www.gmc-uk.org/ethical-guidance/ethical-guidance-for-doctors/treatment-and-care-towards-the-end-of-life",
+    "tags": ["DNAR", "mental capacity", "MCA 2005", "best interests", "LPA", "advance care planning"]
+  },
+  {
+    "id": "QG-ETHICS-071-001",
+    "exam": "MRCGP AKT",
+    "domain": "Organisational",
+    "specialty": "Ethics & Organisational",
+    "difficulty": "Medium",
+    "question": "A 45-year-old man with schizophrenia requires depot antipsychotic injections. He refuses treatment today, saying the injections make him feel 'like a zombie'. He is currently well, engaging with his community mental health team, and not an immediate risk to himself or others. Per the Mental Capacity Act 2005, what is the appropriate response?",
+    "options": {
+      "A": "Administer the injection regardless — schizophrenia means he lacks capacity",
+      "B": "Assess his mental capacity for this specific decision. If he has capacity: respect his refusal — a capacitous adult has the right to refuse treatment even if the refusal may harm them. Explore his concerns about side effects, consider medication alternatives or dose adjustment in discussion with the psychiatrist. Document the discussion. Do NOT administer against his will",
+      "C": "Immediately detain him under the Mental Health Act 1983 for treatment",
+      "D": "Contact his family to override his refusal",
+      "E": "Administer half the dose as a compromise"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per the Mental Capacity Act 2005: capacity is presumed unless assessed otherwise; capacity is decision-specific. A diagnosis of schizophrenia does not automatically mean lack of capacity — many people with schizophrenia have full capacity between episodes. If he has capacity: his refusal must be respected — a competent adult's right to refuse treatment is absolute under the MCA 2005, even if the refusal may be harmful to them. Explore his side effect concerns — consider switching to a different antipsychotic with a better side effect profile, dose reduction, or adding medication to manage side effects. Forced treatment against the wishes of a capacitous patient would constitute assault. If he lacks capacity and is posing a risk to himself or others: the Mental Health Act 1983 (compulsory treatment for mental disorder) or MCA (best interests) frameworks may apply.",
+      "A": "Incorrect — Schizophrenia does not automatically mean lack of capacity. A specific capacity assessment for this specific decision is required.",
+      "B": "CORRECT — Assess capacity first. If capacitous: respect refusal, explore concerns, discuss alternatives. Document per MCA 2005.",
+      "C": "Incorrect — Detention under the MHA 1983 requires risk to self or others — a well, non-risky patient who refuses one injection does not meet criteria.",
+      "D": "Incorrect — Family members cannot override a capacitous adult's refusal. They have no legal right to make medical decisions for capacitous adults.",
+      "E": "Incorrect — Administering any treatment against a capacitous patient's explicit refusal constitutes unlawful treatment/assault, regardless of the dose."
+    },
+    "reference": "Mental Capacity Act 2005. GMC — Consent: patients and doctors making decisions together. https://www.gmc-uk.org/ethical-guidance/ethical-guidance-for-doctors/consent",
+    "tags": ["mental capacity", "refusal of treatment", "schizophrenia", "MCA 2005", "autonomy", "GMC consent"]
+  },
+  {
+    "id": "QG-ETHICS-076-001",
+    "exam": "MRCGP AKT",
+    "domain": "Organisational",
+    "specialty": "Ethics & Organisational",
+    "difficulty": "Hard",
+    "question": "A 70-year-old woman with advanced metastatic ovarian cancer has written an Advance Decision to Refuse Treatment (ADRT) stating she does not wish to receive cardiopulmonary resuscitation, artificial ventilation or artificial nutrition and hydration if she is unable to make decisions for herself. She is now unconscious following a haemorrhagic stroke. Her son insists CPR should be attempted. Per the Mental Capacity Act 2005, what is the legal status of the ADRT and what should happen?",
+    "options": {
+      "A": "The son's wishes override the ADRT — family members have the final say",
+      "B": "A valid and applicable ADRT has the same legal force as a contemporaneous refusal of treatment. If the ADRT is valid (made when capacitous, in writing, signed, witnessed, specifically refusing life-sustaining treatment) and applicable (the current circumstances are those anticipated), it must be respected. CPR should NOT be attempted. The son should be informed compassionately of the legal position",
+      "C": "ADRTs are not legally binding — they are only guidance documents",
+      "D": "The ADRT is overridden by the son's request as next of kin",
+      "E": "Attempt CPR — the ADRT might not cover this exact situation"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per the Mental Capacity Act 2005 (Sections 24-26), a valid and applicable Advance Decision to Refuse Treatment (ADRT) is legally binding and has the same force as a contemporaneous decision by a capacitous patient. Validity requirements: made by a person aged ≥18 with capacity; in writing; signed by the person; witnessed and signed by the witness; if refusing life-sustaining treatment — must include the statement 'this applies even if my life is at risk'. Applicability: the circumstances that have arisen must match those anticipated in the ADRT. If both valid and applicable: the clinical team MUST respect the ADRT. Family members (including next of kin) cannot override a valid ADRT. The son must be supported and informed compassionately. Clinicians acting in accordance with a valid ADRT are legally protected.",
+      "A": "Incorrect — Family members, including sons/next of kin, have no legal right to override a valid ADRT under the MCA 2005.",
+      "B": "CORRECT — Valid and applicable ADRT is legally binding under MCA 2005 Sections 24-26. CPR must NOT be attempted. Son has no legal authority to override it.",
+      "C": "Incorrect — ADRTs ARE legally binding under MCA 2005 when valid and applicable.",
+      "D": "Incorrect — 'Next of kin' has no legal status in English law for treatment decisions for adults — only LPA holders do.",
+      "E": "Incorrect — The ADRT explicitly covers CPR and the patient is now in the anticipated circumstances. It is applicable."
+    },
+    "reference": "Mental Capacity Act 2005 — Sections 24-26. GMC — Treatment and care towards end of life. https://www.legislation.gov.uk/ukpga/2005/9/contents",
+    "tags": ["ADRT", "advance decision", "MCA 2005", "legally binding", "next of kin", "CPR refusal"]
+  },
+  {
+    "id": "QG-ETHICS-079-001",
+    "exam": "MRCGP AKT",
+    "domain": "Organisational",
+    "specialty": "Ethics & Organisational",
+    "difficulty": "Medium",
+    "question": "A GP discovers that a controlled drug (tramadol) has been incorrectly administered to a patient — the patient received 5mg morphine instead of the prescribed tramadol due to a dispensing error. The patient experienced drowsiness but has recovered fully. Per the NHS duty of candour regulations (Health and Social Care Act 2008), what must happen?",
+    "options": {
+      "A": "Document in the notes and take no further action as the patient has recovered",
+      "B": "The duty of candour requires: notifying the patient (or their representative) that the incident has occurred as soon as practicable; providing a truthful account of all the known facts; offering a sincere apology; explaining what further enquiries will be made. A significant event analysis (SEA) must also be completed. Document all steps taken",
+      "C": "Contact the GMC to report the incident before informing the patient",
+      "D": "Only inform the patient if they directly ask",
+      "E": "The duty of candour only applies to deaths — a recovered patient does not trigger the duty"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "The statutory Duty of Candour (Regulation 20 of the Health and Social Care Act 2008 (Regulated Activities) Regulations 2014) applies to all NHS providers. A notifiable safety incident triggers the duty when a patient receives unexpected or unintended care resulting in: moderate or severe harm, prolonged psychological harm, or death. A dispensing error causing drowsiness likely constitutes a notifiable incident. Requirements: (1) Notify the patient (or representative) as soon as reasonably practicable after the incident is identified; (2) Provide a truthful written account; (3) Offer a sincere apology; (4) Explain the likely effects. Additionally: a Significant Event Analysis (SEA)/Serious Incident (SI) report must be completed; report to relevant organisations (care quality commission if required); implement learning to prevent recurrence.",
+      "A": "Incorrect — Recovery of the patient does not negate the duty of candour — a notifiable incident occurred and must be handled appropriately.",
+      "B": "CORRECT — Duty of candour: notify patient, provide truthful account, apologise sincerely, explain further enquiries. Plus SEA. Per Regulation 20.",
+      "C": "Incorrect — Notifying the GMC before the patient is not the correct order — the patient must be notified first. GMC is contacted in specific circumstances, not routinely for all medication errors.",
+      "D": "Incorrect — The duty of candour is proactive — the provider must inform the patient, not wait to be asked.",
+      "E": "Incorrect — The duty of candour applies to moderate/severe harm and prolonged psychological harm — not only deaths."
+    },
+    "reference": "Health and Social Care Act 2008 — Regulation 20 (Duty of Candour). CQC — Duty of candour guidance. https://www.cqc.org.uk/guidance-providers/all-services/duty-candour",
+    "tags": ["duty of candour", "notifiable incident", "medication error", "SEA", "CQC", "Regulation 20"]
+  },
+  {
+    "id": "QG-ETHICS-081-001",
+    "exam": "MRCGP AKT",
+    "domain": "Organisational",
+    "specialty": "Ethics & Organisational",
+    "difficulty": "Medium",
+    "question": "A GP trainee notices that a senior partner consistently prescribes high-dose opioids to patients without appropriate review and fails to follow NICE guidance. Several patients appear to have signs of dependence. The partner dismisses any concerns raised informally. Per GMC Good Medical Practice and the duty to raise concerns, what must the trainee do?",
+    "options": {
+      "A": "Do nothing — raising concerns about a senior colleague could damage career prospects",
+      "B": "The GMC Good Medical Practice (2024) places a clear duty to raise concerns about patient safety. The trainee must: raise concerns through the practice's local governance structures (practice manager, clinical lead); if not resolved, escalate to the GP training programme director or NHS England; if serious concern about patient safety, report to the CQC or GMC directly. Keep records of concerns raised. The Personal Development Plan (PDP) and Freedom to Speak Up Guardian support this process",
+      "C": "Only the GMC can investigate concerns about GPs — report directly to the GMC",
+      "D": "Discuss informally with the partner again but take no formal action",
+      "E": "The trainee's responsibility is to their own patients only — other partners' prescribing is not their concern"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per GMC Good Medical Practice 2024 (Domain 4 — Maintaining trust), doctors have a professional duty to raise and act on concerns about patient safety, even when this is difficult. The GMC requires: raising concerns about systems, practices or colleagues that may put patients at risk; not participating in covering up concerns; using employer's procedures first, then escalating if unresolved. Escalation pathway: (1) Immediate manager/practice lead; (2) Clinical governance lead/CCG/ICB; (3) NHS England or training programme director; (4) CQC (if regulated activities at risk); (5) GMC (for fitness to practise concerns). Freedom to Speak Up Guardians (NHS) provide confidential support. GMC whistleblowing guidance protects doctors who raise concerns in good faith. Concern about opioid prescribing with potential patient dependence without review is a significant patient safety concern.",
+      "A": "Incorrect — Failing to raise legitimate patient safety concerns is a violation of GMC Good Medical Practice — it is not acceptable to prioritise career over patient safety.",
+      "B": "CORRECT — GMC duty to raise concerns: local governance first, then escalate. Freedom to Speak Up Guardian support. Document all steps.",
+      "C": "Incorrect — The GMC is a last resort — local governance structures should be used first, with escalation to GMC if unresolved.",
+      "D": "Incorrect — Repeating an informal discussion that has already been dismissed is insufficient — formal action is required.",
+      "E": "Incorrect — GMC Good Medical Practice specifically includes a duty to raise concerns about colleagues' practice when patient safety is at risk."
+    },
+    "reference": "GMC Good Medical Practice 2024. GMC — Raising and acting on concerns about patient safety. https://www.gmc-uk.org/ethical-guidance/ethical-guidance-for-doctors/raising-and-acting-on-concerns",
+    "tags": ["whistleblowing", "duty to raise concerns", "GMC", "patient safety", "Freedom to Speak Up", "Good Medical Practice"]
+  },
+  {
+    "id": "QG-ETHICS-082-001",
+    "exam": "MRCGP AKT",
+    "domain": "Organisational",
+    "specialty": "Ethics & Organisational",
+    "difficulty": "Easy",
+    "question": "A GP practice experiences a significant event: a patient with a new diagnosis of colorectal cancer had a 6-week delay in their 2WW referral due to a clerical error. The patient is now receiving treatment. What is the purpose and process of a Significant Event Analysis (SEA)?",
+    "options": {
+      "A": "SEA is a disciplinary process to identify which staff member made the error",
+      "B": "SEA (Significant Event Analysis/Audit) is a structured, blame-free educational process to understand what happened, why it happened, what can be learned and what changes will be implemented to prevent recurrence. Key elements: What happened? Why did it happen (root cause analysis)? What was learned? What changes will be made? Reviewed at a practice meeting, documented in the practice SEA log, and submitted to the appraisal portfolio. The focus is on system improvement, not individual blame",
+      "C": "SEA is only required for deaths — a living patient does not require an SEA",
+      "D": "SEA must be submitted to the GMC within 24 hours",
+      "E": "SEA is only relevant in secondary care settings — GPs are not required to conduct them"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Significant Event Analysis (SEA): a structured, prospective, learning-focused process for analysing significant events in primary care. Originally introduced as a QOF requirement and now embedded in GP appraisal (RCGP guidance). Key principles: blame-free (systems-focused rather than individual blame — Swiss cheese model); structured format (what happened, why, learning points, action plan); multidisciplinary (all practice staff involved); documented; shared at practice meetings; submitted as evidence in annual appraisal portfolio and revalidation. SEAs should be conducted for: deaths (expected and unexpected), near misses, significant errors (delayed referrals), complaints, medication errors. The NHS Patient Safety Incident Response Framework (PSIRF 2022) now provides the broader organisational context for incident learning.",
+      "A": "Incorrect — SEA is explicitly NOT a disciplinary process. Its core principle is blame-free learning to improve systems.",
+      "B": "CORRECT — SEA: structured, blame-free, learning-focused analysis. What happened? Why? Learning? Action? Required for appraisal/revalidation.",
+      "C": "Incorrect — SEA is conducted for significant events including near misses, serious errors and complaints — not only deaths.",
+      "D": "Incorrect — SEA is not submitted to the GMC within 24 hours. It is documented in the practice log and submitted as part of annual appraisal.",
+      "E": "Incorrect — SEA is a core primary care quality improvement process specifically required in GP practice and appraisal."
+    },
+    "reference": "RCGP — Significant Event Analysis guidance. GMC Revalidation. https://www.rcgp.org.uk/clinical-and-research/resources/quality-improvement-tools/significant-event-analysis.aspx",
+    "tags": ["significant event analysis", "SEA", "blame-free", "root cause analysis", "appraisal", "RCGP"]
+  },
+  {
+    "id": "QG-ETHICS-083-001",
+    "exam": "MRCGP AKT",
+    "domain": "Organisational",
+    "specialty": "Ethics & Organisational",
+    "difficulty": "Hard",
+    "question": "During an SEA meeting, a GP discovers that a receptionist manually overrode the electronic system to cancel a patient's 2WW colonoscopy appointment. The receptionist believed the patient had told them to cancel. The patient was not contacted to confirm. The patient subsequently presented 4 months later with Duke's C colon cancer. What governance structure frameworks should the practice apply?",
+    "options": {
+      "A": "SEA only — no other processes are needed",
+      "B": "Multiple frameworks apply: (1) SEA for learning and system improvement; (2) Duty of candour — inform the patient of the incident; (3) Serious Incident (SI) investigation under NHS England PSIRF (Patient Safety Incident Response Framework 2022); (4) Consider whether a Structured Judgement Review is needed; (5) Review administrative processes for appointment cancellation (dual verification system); (6) Staff training; (7) Report to ICB/NHS England if serious incident criteria met; (8) CQC notification if relevant. The SEA alone is insufficient for this level of harm",
+      "C": "Suspend the receptionist pending investigation — disciplinary action is the priority",
+      "D": "No action required — the patient consented to the original appointment cancellation",
+      "E": "Refer only to NHS Resolution for indemnity purposes"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "A 4-month delay in a cancer diagnosis caused by an administrative error constitutes a serious patient safety incident requiring multiple governance responses. Under NHS Patient Safety Incident Response Framework (PSIRF 2022): (1) SEA for practice-level learning; (2) Duty of candour — statutory obligation to inform the patient; (3) Serious Incident investigation — patient safety incident causing significant harm requires escalation beyond practice SEA; (4) ICB notification; (5) System redesign to prevent recurrence (appointment cancellation requires patient confirmation); (6) Staff education and supervision review. The focus is on system failures (why did the process allow this?) not individual blame, though appropriate management of the staff member's actions is a separate HR process. NHS Resolution (CNST/CDDFT) should also be notified as a potential clinical negligence claim may arise.",
+      "A": "Incorrect — An SEA alone is insufficient for a serious incident causing significant harm. Multiple governance processes are required.",
+      "B": "CORRECT — Multiple frameworks: SEA + duty of candour + PSIRF SI investigation + ICB notification + system redesign + duty of candour to patient.",
+      "C": "Incorrect — Disciplinary action may follow an HR process but is separate from patient safety governance. Suspending staff before investigation can compromise the learning process.",
+      "D": "Incorrect — Even if the patient mentioned cancellation, clinical processes require verification before cancelling a 2WW appointment. The system failed.",
+      "E": "Incorrect — NHS Resolution notification is appropriate but is only one part of the required governance response."
+    },
+    "reference": "NHS PSIRF 2022 — Patient Safety Incident Response Framework. CQC — Notifying CQC. Duty of candour. https://www.england.nhs.uk/patient-safety/incident-response/",
+    "tags": ["PSIRF", "serious incident", "duty of candour", "cancer delay", "governance", "SEA"]
+  },
+  {
+    "id": "QG-ETHICS-092-001",
+    "exam": "MRCGP AKT",
+    "domain": "Organisational",
+    "specialty": "Ethics & Organisational",
+    "difficulty": "Medium",
+    "question": "A 65-year-old man is in a GP consultation. He agrees to the proposed treatment for a new diagnosis of hypertension. After the consultation, the GP realises they forgot to mention that amlodipine can cause ankle swelling as a side effect in approximately 10% of patients. Per GMC consent guidance and the Montgomery ruling, does the GP need to contact the patient to inform him of this side effect?",
+    "options": {
+      "A": "No — 10% is not a serious side effect and does not require additional disclosure",
+      "B": "Yes — the Montgomery ruling (2015, Supreme Court) established that doctors must disclose any risk that a reasonable patient in that patient's situation would consider significant. A 10% risk of ankle swelling that could affect compliance, quality of life and raise concerns about other causes must be disclosed. The GP should contact the patient to complete the informed consent process",
+      "C": "Only disclose if the patient asks about side effects at a subsequent visit",
+      "D": "The GMC threshold for disclosure is side effects occurring in >25% of patients — 10% does not require disclosure",
+      "E": "Disclosure is only required for life-threatening side effects"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "The Montgomery v Lanarkshire Health Board [2015] UKSC 11 Supreme Court ruling fundamentally changed the law on informed consent in the UK. The Bolam test (what a reasonable doctor would disclose) was replaced by: a doctor must tell a patient about any material risk — a risk is material if: a reasonable person in the patient's position would likely attach significance to it, OR if the doctor is or should be aware that this particular patient would attach significance to it. Ankle swelling affects 10% of amlodipine users — this is likely to be material to a patient as: it could be mistaken for other causes (DVT, cardiac failure), may affect compliance, and could impact daily activities. The GP must contact the patient to complete informed consent. Per GMC Good Medical Practice 2024 — patients must be given the information they need to make informed decisions.",
+      "A": "Incorrect — Under Montgomery, materiality is not determined by severity alone — a 10% risk of a bothersome side effect is likely material to a reasonable patient.",
+      "B": "CORRECT — Montgomery ruling: disclose any material risk. 10% ankle swelling risk is likely material — contact patient to complete informed consent.",
+      "C": "Incorrect — Waiting for the patient to ask does not fulfil the proactive disclosure duty established by Montgomery.",
+      "D": "Incorrect — There is no 25% GMC threshold for disclosure. The Montgomery test is based on material risk as perceived by a reasonable patient, not a fixed percentage.",
+      "E": "Incorrect — Life-threatening side effects are obviously material, but common/bothersome side effects also require disclosure under Montgomery."
+    },
+    "reference": "Montgomery v Lanarkshire Health Board [2015] UKSC 11. GMC — Consent guidance. https://www.gmc-uk.org/ethical-guidance/ethical-guidance-for-doctors/consent",
+    "tags": ["Montgomery ruling", "informed consent", "material risk", "amlodipine", "disclosure", "GMC consent"]
+  },
+  {
+    "id": "QG-ETHICS-093-001",
+    "exam": "MRCGP AKT",
+    "domain": "Organisational",
+    "specialty": "Ethics & Organisational",
+    "difficulty": "Hard",
+    "question": "A GP partner has been observed by practice staff to arrive to work appearing confused and having alcohol on his breath on two occasions. He denies any problem when approached informally. Patients have not yet been harmed. Per GMC Good Medical Practice 2024 and the duties of partners/colleagues, what must other partners do?",
+    "options": {
+      "A": "Continue monitoring informally — act only if a patient is actually harmed",
+      "B": "Escalate formally: the partnership has a duty to protect patients. Steps: ensure the partner does not see patients until assessed; contact the GP's responsible officer/appraisal lead; refer to NHS Practitioner Health Programme (confidential support for doctors); report to NHS England (if England) or equivalent; consider whether immediate GMC referral is needed (fitness to practise concern). Offer support but patient safety must take priority",
+      "C": "This is a private matter — colleagues should not interfere in a partner's personal struggles",
+      "D": "Ask the partner to see fewer patients until they feel better",
+      "E": "Report directly to police — driving while impaired is a criminal offence"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per GMC Good Medical Practice 2024 (Domain 4) and the GMC guidance 'Supporting doctors, protecting patients', colleagues who become aware that a doctor's health, conduct or performance may be putting patients at risk have a duty to act. Steps: (1) Immediate patient safety: remove the doctor from clinical duties while assessment occurs; (2) Offer support: refer to NHS Practitioner Health Programme (PHP) — a confidential NHS service for healthcare professionals with mental health and addiction problems; (3) Formal notification: notify the responsible officer (appraisal lead), NHS England (employer notification duties); (4) Consider GMC referral if immediate patient safety risk or if local action fails; (5) Document all steps. The GMC is clear: professional loyalty does not override patient safety. Doctors with alcohol dependency are encouraged to seek help proactively — PHP provides this.",
+      "A": "Incorrect — Waiting for patient harm before acting is a violation of the duty to protect patients and raises legal liability.",
+      "B": "CORRECT — Remove from clinical duties + NHS PHP referral + responsible officer notification + consider GMC referral per GMC Good Medical Practice 2024.",
+      "C": "Incorrect — A partner's alcohol problem when attending work constitutes a patient safety risk — it is not solely a private matter.",
+      "D": "Incorrect — Reducing the patient list while the impaired partner still sees patients does not adequately protect those patients.",
+      "E": "Incorrect — Police referral is not the primary pathway. The NHS PHP and responsible officer pathway is appropriate first."
+    },
+    "reference": "GMC Good Medical Practice 2024. GMC — Supporting doctors, protecting patients. NHS Practitioner Health Programme. https://www.gmc-uk.org/ethical-guidance/ethical-guidance-for-doctors/raising-and-acting-on-concerns",
+    "tags": ["impaired doctor", "alcohol", "patient safety", "NHS PHP", "GMC duty", "responsible officer"]
+  },
+  {
+    "id": "QG-ETHICS-100-001",
+    "exam": "MRCGP AKT",
+    "domain": "Organisational",
+    "specialty": "Ethics & Organisational",
+    "difficulty": "Medium",
+    "question": "A GP is approached by a journalist who wants to discuss a specific patient they have seen at the practice, claiming the patient (who is a local celebrity) has consented to their story being published. The patient has not spoken to the GP about this. Per GMC confidentiality guidance, what should the GP do?",
+    "options": {
+      "A": "Share information with the journalist since the patient has apparently consented to the story",
+      "B": "Do not share any patient information with the journalist without direct confirmation of valid consent from the patient themselves. Apparent consent obtained by a third party (the journalist) cannot be relied upon. Contact the patient directly to verify consent before any disclosure. If uncertain, seek advice from the medical defence organisation. Maintain confidentiality as the default",
+      "C": "Share only non-identifiable information about the condition",
+      "D": "Share the full medical record as the patient is a public figure who has waived privacy",
+      "E": "Report the journalist to the police for attempted breach of confidentiality"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per GMC Confidentiality: Good Practice in Handling Patient Information (2017), patient confidentiality is a fundamental duty. For disclosure to occur lawfully: explicit consent must be given by the patient directly to the GP (or their authorised representative); the GP cannot rely on second-hand reports of consent from third parties (including journalists, family members, or employers). The journalist claiming the patient consented is not valid authorisation — the journalist may have misrepresented the patient's position, or obtained consent in conditions where the patient did not fully understand what information would be disclosed. The GP must: decline to share information; contact the patient directly if appropriate to verify; seek medical defence organisation advice; remind the journalist that GP records are confidential. Public figure status does not reduce confidentiality protections.",
+      "A": "Incorrect — A journalist's claim that the patient consented is not valid authorisation for disclosure — the GP must verify consent directly with the patient.",
+      "B": "CORRECT — Verify consent directly with the patient. Do not disclose based on journalist's claim. Maintain confidentiality as default per GMC guidance.",
+      "C": "Incorrect — Non-identifiable information about a celebrity patient may still be identifiable given their public profile.",
+      "D": "Incorrect — Public figures have the same confidentiality rights as all patients — celebrity status does not waive medical confidentiality.",
+      "E": "Incorrect — Reporting the journalist to the police is not the appropriate response to a media inquiry — declining and maintaining confidentiality is."
+    },
+    "reference": "GMC — Confidentiality: good practice in handling patient information 2017. https://www.gmc-uk.org/ethical-guidance/ethical-guidance-for-doctors/confidentiality",
+    "tags": ["confidentiality", "media", "journalist", "consent verification", "GMC", "public figure"]
+  },
+  {
+    "id": "QG-ETHICS-107-001",
+    "exam": "MRCGP AKT",
+    "domain": "Organisational",
+    "specialty": "Ethics & Organisational",
+    "difficulty": "Medium",
+    "question": "A GP has genuine moral objections to prescribing emergency hormonal contraception on religious grounds. A woman presents urgently requesting the morning after pill. Per GMC Good Medical Practice 2024 and the Equality Act 2010, what must the GP do?",
+    "options": {
+      "A": "Refuse treatment — a GP's religious beliefs always take precedence",
+      "B": "The GP may conscientiously object to providing treatment but MUST: inform the patient immediately that they are unable to prescribe in this situation; refer the patient promptly to another practitioner who can provide the treatment without undue delay (or provide the details of where they can access treatment, e.g. pharmacist, sexual health clinic). Conscience clause does not permit abandoning patients or causing harm through delay. Document the conscientious objection and referral",
+      "C": "Refuse and advise the patient to go to hospital",
+      "D": "Prescribe despite the objection — professional duties override personal beliefs",
+      "E": "Ask the patient to justify her request before deciding whether to prescribe"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per GMC Good Medical Practice 2024 (paragraphs 50-52) and GMC guidance on personal beliefs and medical practice: doctors may exercise conscientious objection to treatments that conflict with sincerely held personal or religious beliefs in limited circumstances. However, the conscientious objection does not permit the doctor to: abandon or harm the patient through delay; fail to provide basic emergency care; refuse to tell the patient about their options or refer them appropriately. Requirements when conscientiously objecting: (1) Tell the patient immediately you are not going to provide the treatment; (2) Give them enough information to seek help elsewhere; (3) Refer them to another practitioner who can provide the treatment without undue delay. Emergency contraception is time-sensitive — delay could harm the patient. If no alternative is immediately available, the GP may be required to provide treatment.",
+      "A": "Incorrect — Religious beliefs do not take absolute precedence over patient care. The GMC allows conscientious objection only with immediate alternative provision.",
+      "B": "CORRECT — Conscientious objection is permitted but must include: immediate disclosure, patient information, prompt referral to another provider per GMC Good Medical Practice.",
+      "C": "Incorrect — Telling the patient to go to hospital without facilitating a clear referral fails the standard of care and may cause harmful delay.",
+      "D": "Incorrect — GMC Good Medical Practice acknowledges the right to conscientious objection in appropriate circumstances — it does not require doctors to violate sincere beliefs if they ensure patient access.",
+      "E": "Incorrect — Interrogating the patient's reasons for requesting emergency contraception is ethically inappropriate and discriminatory."
+    },
+    "reference": "GMC Good Medical Practice 2024 — paragraphs 50-52. GMC — Personal beliefs and medical practice. https://www.gmc-uk.org/ethical-guidance/ethical-guidance-for-doctors/personal-beliefs-and-medical-practice",
+    "tags": ["conscientious objection", "emergency contraception", "GMC", "refer promptly", "personal beliefs", "Good Medical Practice"]
+  },
+  {
+    "id": "QG-ETHICS-132-001",
+    "exam": "MRCGP AKT",
+    "domain": "Organisational",
+    "specialty": "Ethics & Organisational",
+    "difficulty": "Medium",
+    "question": "An 80-year-old man is found dead at home by his carer. He had been seen by the GP 3 days ago and was diagnosed with a chest infection, prescribed antibiotics and expected to recover. He had no known terminal illness. The death was unexpected. Per UK law (Coroners and Justice Act 2009 and the Notification of Deaths Regulations 2019), what must the GP do?",
+    "options": {
+      "A": "Issue the medical certificate of cause of death (MCCD) immediately — the GP recently saw the patient",
+      "B": "Report the death to the coroner. An unexpected death, where the cause is uncertain, the patient has not been seen within 28 days before death (Scotland/England rules differ), or where the death may be due to natural causes but circumstances are unclear, must be referred to the coroner. The coroner will decide if a post-mortem is required. The MCCD cannot be issued until the coroner's decision",
+      "C": "Ask the family if they consent to a post-mortem before making any decision",
+      "D": "Issue the MCCD citing lower respiratory tract infection as the cause of death",
+      "E": "Call 999 to certify the death"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per the Coroners and Justice Act 2009 and the Notification of Deaths Regulations 2019, certain deaths must be referred to the coroner. Mandatory referral criteria include: cause of death is unknown; death is unexpected given the patient's recent condition; the deceased was not seen by a medical practitioner in the 28 days before death (in England — rules vary slightly by nation); death may be due to industrial disease, accident, violence, self-neglect, neglect, substance misuse, or in suspicious circumstances; death occurred during or after anaesthesia. Here: a patient seen 3 days ago and expected to recover from a chest infection dying unexpectedly is likely reportable — the GP cannot be certain the chest infection was the cause without further investigation. The coroner will assess whether a post-mortem is required. The Medical Examiner system (England/Wales from April 2024) also reviews deaths before cremation/burial.",
+      "A": "Incorrect — An unexpected death requires coroner referral assessment — the GP cannot simply issue the MCCD without coroner input.",
+      "B": "CORRECT — Unexpected death with uncertain cause: refer to coroner per Coroners and Justice Act 2009 / Notification of Deaths Regulations 2019.",
+      "C": "Incorrect — Family consent is not required before coroner referral — this is a legal obligation regardless of family wishes.",
+      "D": "Incorrect — Issuing MCCD citing LRTI without coroner referral for an unexpected death may be legally incorrect and prevents proper investigation.",
+      "E": "Incorrect — 999 is for life-threatening emergencies. For a confirmed death, the coroner (and possibly police if suspicious) is the appropriate contact."
+    },
+    "reference": "Coroners and Justice Act 2009. Notification of Deaths Regulations 2019. Medical Examiner System 2024. https://www.legislation.gov.uk/ukpga/2009/25/contents",
+    "tags": ["death certification", "coroner referral", "unexpected death", "Coroners and Justice Act", "MCCD", "Medical Examiner"]
+  },
+  {
+    "id": "QG-ETHICS-001-001",
+    "exam": "MRCGP AKT",
+    "domain": "Organisational",
+    "specialty": "Ethics & Organisational",
+    "difficulty": "Easy",
+    "question": "A 35-year-old woman tells her GP that her husband, who is also registered at the practice, is physically abusing her at home. She is not in immediate danger today. She asks the GP to keep this confidential and not to involve anyone else. Per GMC guidance on confidentiality and domestic violence, what is the appropriate response?",
+    "options": {
+      "A": "Report immediately to the police — domestic violence is a criminal matter",
+      "B": "Respect her confidentiality as requested while: documenting the disclosure in her notes; providing information about domestic violence support services (National Domestic Violence Helpline, DASH risk assessment); developing a safety plan; assessing for immediate risk. Only breach confidentiality without her consent if there is risk to life (her own or others), particularly if children are in the household (mandatory safeguarding consideration)",
+      "C": "Confront the husband at his next appointment to warn him",
+      "D": "Refuse to see her as a patient while she remains in the relationship",
+      "E": "Do nothing — this is a personal matter outside the GP's role"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per GMC Confidentiality guidance and NICE PH50 (Domestic violence and abuse), the GP's response to domestic abuse disclosure: (1) Believe and validate the patient; (2) Document clearly in the patient's own records (not the husband's); (3) Assess immediate risk — DASH (Domestic Abuse, Stalking and Honour-Based Violence) risk assessment; (4) Provide information about support services (National DV Helpline: 0808 2000 247, MARAC — Multi-Agency Risk Assessment Conference for high-risk cases); (5) Develop a safety plan; (6) Respect confidentiality as requested unless: risk to life, children at risk (safeguarding duty), patient at very high risk needing immediate intervention. Routine disclosure to police without patient consent is NOT appropriate unless immediate danger to life. If children are in the household: mandatory safeguarding consideration — children may be at risk.",
+      "A": "Incorrect — Routine reporting to police without patient consent and without immediate risk breaches confidentiality and may increase danger by removing the patient's sense of control.",
+      "B": "CORRECT — Respect confidentiality + document + DASH assessment + support services + safety plan + mandatory safeguarding if children in household per GMC/NICE PH50.",
+      "C": "Incorrect — Confronting the perpetrator could significantly escalate risk to the patient.",
+      "D": "Incorrect — Refusing to see a patient in a difficult situation abandons them at a vulnerable time and violates professional duties.",
+      "E": "Incorrect — Domestic violence is a significant health and safety issue — the GP has a clear professional role in supporting the patient."
+    },
+    "reference": "NICE PH50 — Domestic violence and abuse. GMC Confidentiality guidance. https://www.nice.org.uk/guidance/ph50",
+    "tags": ["domestic violence", "confidentiality", "DASH risk assessment", "MARAC", "NICE PH50", "safeguarding"]
+  },
+  {
+    "id": "QG-ETHICS-002-001",
+    "exam": "MRCGP AKT",
+    "domain": "Organisational",
+    "specialty": "Ethics & Organisational",
+    "difficulty": "Hard",
+    "question": "A 68-year-old man with mild cognitive impairment is being assessed for a new residential care placement. His son wants to use the Mental Capacity Act 2005 Deprivation of Liberty Safeguards (DoLS) to authorise the placement, as the patient sometimes tries to leave the care home and expresses a wish to 'go home'. Per the MCA 2005 and the Supreme Court ruling in Cheshire West (2014), what framework applies and what does this mean for the patient?",
+    "options": {
+      "A": "DoLS do not apply to patients who lack capacity",
+      "B": "If the patient is in a care home or hospital setting, lacks capacity to consent to being there, and is under continuous supervision and control and not free to leave — this constitutes a Deprivation of Liberty per the Cheshire West ruling (2014). Formal DoLS authorisation (or Deprivation of Liberty Order from the Court of Protection) must be obtained from the local authority to make the deprivation lawful. A best interests assessment is required. The patient is entitled to advocacy (IMCA if appropriate)",
+      "C": "The son can authorise the care placement as next of kin",
+      "D": "Mild cognitive impairment means the patient retains full capacity — DoLS cannot apply",
+      "E": "DoLS only apply to patients with severe dementia — mild cognitive impairment is excluded"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per the Mental Capacity Act 2005 (Schedule A1 — DoLS) and the Supreme Court judgment P v Cheshire West [2014] UKSC 19, a person is being deprived of their liberty if they are: under continuous supervision and control AND not free to leave. This applies regardless of the 'relative normality' of the placement or whether the person appears content. For care home residents who lack capacity and are deprived of liberty: a Standard or Urgent DoLS authorisation from the local authority supervisory body is required to make the deprivation lawful. The patient must have a Best Interests Assessor (BIA) assessment and a Mental Health Assessor assessment. An Independent Mental Capacity Advocate (IMCA) must be involved if there is no appropriate person to represent them. Cheshire West significantly broadened the definition of deprivation of liberty — dramatically increasing DoLS applications.",
+      "A": "Incorrect — DoLS specifically apply to patients who LACK capacity and are being deprived of liberty.",
+      "B": "CORRECT — Cheshire West (2014): continuous supervision + not free to leave = deprivation of liberty requiring DoLS authorisation per MCA 2005.",
+      "C": "Incorrect — The son, as next of kin, cannot legally authorise a deprivation of liberty — only the local authority supervisory body (via DoLS) or Court of Protection can.",
+      "D": "Incorrect — Mild cognitive impairment can cause lack of capacity for specific decisions. A capacity assessment for the specific decision (consenting to live in the care home) is needed.",
+      "E": "Incorrect — DoLS applies to any person over 18 who lacks capacity and is being deprived of liberty in a hospital or care home — regardless of severity of cognitive impairment."
+    },
+    "reference": "Mental Capacity Act 2005 — Schedule A1. P v Cheshire West [2014] UKSC 19. https://www.legislation.gov.uk/ukpga/2005/9/contents",
+    "tags": ["DoLS", "deprivation of liberty", "Cheshire West", "MCA 2005", "care home", "IMCA"]
+  },
+  {
+    "id": "QG-ETHICS-003-001",
+    "exam": "MRCGP AKT",
+    "domain": "Organisational",
+    "specialty": "Ethics & Organisational",
+    "difficulty": "Medium",
+    "question": "A 28-year-old man with a history of paranoid schizophrenia is brought to the GP by police. He is acutely psychotic — believing he is being persecuted and has been violent towards his neighbours. He refuses voluntary hospital admission. Per the Mental Health Act 1983, what Section may be applied and what are the criteria?",
+    "options": {
+      "A": "Section 136 — police can detain in a place of safety for up to 24 hours for assessment",
+      "B": "Section 2 (admission for assessment) or Section 3 (admission for treatment) may be applied, requiring: an application by an Approved Mental Health Professional (AMHP), two medical recommendations (one from a Section 12 approved doctor), and that the patient is suffering from a mental disorder of a nature or degree warranting detention, and detention is necessary for their health, safety or protection of others. Section 3 requires a specific diagnosis and a treatment plan",
+      "C": "Section 5(2) — GP can detain the patient immediately without AMHP",
+      "D": "Section 4 — emergency admission with one medical recommendation only",
+      "E": "No MHA section applies in primary care — only in hospital settings"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Mental Health Act 1983 (amended 2007) sections: Section 2: Admission for assessment — up to 28 days; criteria: mental disorder of nature/degree warranting assessment/treatment; necessary for patient's health/safety or protection of others; two medical recommendations (one Section 12 approved) + AMHP application. Section 3: Admission for treatment — initially up to 6 months (renewable); criteria: specific mental disorder diagnosis; appropriate treatment available; necessary for health/safety/others; two medical recommendations + AMHP. Section 4: Emergency admission — up to 72 hours; ONE medical recommendation only + AMHP; for urgent necessity when Section 2 criteria met but cannot wait. Section 5(2): Hospital doctors (not GPs) can detain an informal inpatient for up to 72 hours. Section 136: Police power to remove from public place to place of safety (up to 24 hours, extendable to 36 hours). This patient is in the community — Section 136 by police OR assessment for Section 2 by AMHP and doctors is appropriate.",
+      "A": "Incorrect — Section 136 is specifically a police power to remove from a public place. The patient is now at the GP surgery — Section 2 assessment is the appropriate process.",
+      "B": "CORRECT — Section 2 (assessment) or Section 3 (treatment): AMHP application + two medical recommendations (one Section 12 approved). Criteria: mental disorder + necessary for health/safety/others per MHA 1983.",
+      "C": "Incorrect — Section 5(2) is only for hospital doctors to detain existing INPATIENTS — not for GPs in the community.",
+      "D": "Incorrect — Section 4 (emergency) requires an AMHP application + ONE medical recommendation, but is only for urgent cases where Section 2 cannot wait. Section 2 is more appropriate here.",
+      "E": "Incorrect — Mental Health Act assessments can occur in the community (including GP surgeries) — admission then follows."
+    },
+    "reference": "Mental Health Act 1983 (amended 2007). Mental Health Act Code of Practice 2015. https://www.legislation.gov.uk/ukpga/1983/20/contents",
+    "tags": ["Mental Health Act", "Section 2", "Section 3", "AMHP", "Section 12", "involuntary admission"]
+  },
+  {
+    "id": "QG-ETHICS-004-001",
+    "exam": "MRCGP AKT",
+    "domain": "Organisational",
+    "specialty": "Ethics & Organisational",
+    "difficulty": "Easy",
+    "question": "A 55-year-old woman recently diagnosed with type 2 diabetes asks the GP about her right to access her medical records. Per the UK General Data Protection Regulation (UK GDPR) and Access to Health Records Act, what are her rights?",
+    "options": {
+      "A": "Patients have no right to access their own medical records",
+      "B": "Under UK GDPR (Article 15), patients have the right to access their personal data held by a controller (the GP practice) — a Subject Access Request (SAR). The practice must respond within one month. Records must be provided free of charge. Limited exceptions: withholding information that may cause serious harm to the patient or a third party, or third-party information. Patients can also request corrections of inaccurate data (UK GDPR Article 16)",
+      "C": "Patients can only access records with their GP's permission",
+      "D": "Records can only be accessed if the patient pays a fee of £10",
+      "E": "Access is only available for records made in the past 12 months"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per UK General Data Protection Regulation (UK GDPR, which retained EU GDPR post-Brexit): Article 15 — Right of Access: patients (data subjects) have the right to access their personal data. Practical implementation: Subject Access Request (SAR) — the practice must respond within one calendar month (extendable by 2 months for complex requests); provide copies of medical records free of charge (since GDPR 2018 — no longer the previous £10 fee); in accessible format. Exceptions to disclosure: information that would be likely to cause serious physical or mental harm to the patient; information that would identify a third party (unless third party consents or it is reasonable to disclose). Patients can also request rectification of inaccurate data (Article 16). Access to Health Records Act 1990 applies to deceased patients' records.",
+      "A": "Incorrect — Patients have a statutory right to access their own medical records under UK GDPR.",
+      "B": "CORRECT — UK GDPR Article 15: SAR must be responded to within one month, free of charge. Limited exceptions per ICO guidance.",
+      "C": "Incorrect — Patient access to records is a statutory right — GP permission is not required.",
+      "D": "Incorrect — Since UK GDPR 2018, subject access requests for medical records must be provided FREE of charge (the previous £10 fee was abolished).",
+      "E": "Incorrect — UK GDPR provides access to all personal data held — not limited to the past 12 months."
+    },
+    "reference": "UK GDPR — Article 15. Access to Health Records Act 1990. ICO — Subject access requests. https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/individual-rights/individual-rights/right-of-access/",
+    "tags": ["subject access request", "UK GDPR", "right to access records", "medical records", "ICO", "data protection"]
+  },
+  {
+    "id": "QG-ETHICS-005-001",
+    "exam": "MRCGP AKT",
+    "domain": "Organisational",
+    "specialty": "Ethics & Organisational",
+    "difficulty": "Medium",
+    "question": "A GP is asked by an insurance company to provide a medical report about a patient who is making a life insurance claim. The company has sent a form asking for the GP to complete it and return directly without patient involvement. Per the Access to Medical Reports Act 1988 and GMC guidance, what must the GP do?",
+    "options": {
+      "A": "Complete and return the report to the insurance company immediately",
+      "B": "The Access to Medical Reports Act 1988 gives patients the right to: be notified that a report has been requested before it is prepared; apply to see the report before it is sent; withhold consent for the report to be sent. The GP must NOT complete the report without the patient's explicit consent. Obtain signed consent from the patient, allow them to review the report before it is sent, and only send if the patient consents. The patient has the right to request corrections or add a statement",
+      "C": "Send the report to the insurance company — the company's request is sufficient authorisation",
+      "D": "Refuse to complete any medical reports for insurance companies",
+      "E": "Complete the report but remove any sensitive mental health information"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "The Access to Medical Reports Act 1988 (AMRA) applies to medical reports prepared by a patient's own doctor for employment or insurance purposes. Patient rights under AMRA: (1) Right to be notified that a report has been requested; (2) Right to withhold consent for the report; (3) Right to see the report before it is sent (within 21 days of the request); (4) Right to request amendments if the patient believes the report is incorrect or misleading; (5) Right to attach their own statement to the report. The GP must not send a report without the patient's written consent. Completing and returning a report without patient consent violates AMRA, GMC confidentiality guidance and UK GDPR. If the patient gives consent and has reviewed the report, the GP can send it.",
+      "A": "Incorrect — Completing and returning without patient consent violates AMRA 1988 and GMC confidentiality guidance.",
+      "B": "CORRECT — AMRA 1988: patient must be notified, can view report before sending, must consent before GP sends. Cannot send without patient agreement.",
+      "C": "Incorrect — Insurance company's request is not sufficient authorisation — explicit patient consent is required under AMRA.",
+      "D": "Incorrect — GPs can and should complete medical reports with proper patient consent — refusing entirely is not the correct response.",
+      "E": "Incorrect — Selectively editing the report without patient knowledge and consent is not appropriate — the patient should review the complete report."
+    },
+    "reference": "Access to Medical Reports Act 1988. GMC — Confidentiality guidance. https://www.legislation.gov.uk/ukpga/1988/28/contents",
+    "tags": ["Access to Medical Reports Act", "AMRA 1988", "insurance report", "patient consent", "GMC", "confidentiality"]
+  },
+  {
+    "id": "QG-ETHICS-006-001",
+    "exam": "MRCGP AKT",
+    "domain": "Organisational",
+    "specialty": "Ethics & Organisational",
+    "difficulty": "Hard",
+    "question": "A GP is nearing the end of a busy clinic. A 42-year-old man consults with a new complaint of chest pain. The GP is running 40 minutes late and is concerned about the time pressure. She briefly assesses him and reassures him without conducting a thorough examination. He is admitted to hospital 4 hours later with a NSTEMI. Per GMC Good Medical Practice 2024 and the four ethical principles, which principles were potentially violated?",
+    "options": {
+      "A": "Only beneficence was violated — the GP failed to benefit the patient",
+      "B": "Potentially violated: Non-maleficence (failed to avoid harm — inadequate assessment allowed harm to occur), Beneficence (failed to provide appropriate benefit — thorough assessment and appropriate action), Autonomy (patient may not have been given sufficient information to make an informed decision about seeking further help). Time pressure does not excuse departure from the standard of care. Justice is also relevant — equitable access to appropriate assessment",
+      "C": "No ethical principles were violated — time pressure is an accepted limitation in NHS primary care",
+      "D": "Only justice was violated — the patient was disadvantaged by being seen late in the clinic",
+      "E": "Autonomy was violated — the GP should have asked the patient's permission to examine him"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "The four ethical principles (Beauchamp and Childress — Principles of Biomedical Ethics): (1) Autonomy: respect the patient's right to make informed decisions — the GP may have failed to give adequate information about warning signs to allow autonomous decision-making; (2) Beneficence: act in the patient's best interests — an inadequate assessment fails to provide optimal benefit; (3) Non-maleficence: do no harm — inadequate assessment of chest pain allowed preventable harm (NSTEMI missed); (4) Justice: fair and equitable distribution of resources and care — all patients deserve equitable assessment regardless of clinic timing. Time pressure and clinic running late does not legally or ethically justify a departure from the standard of care. Per GMC Good Medical Practice 2024: 'Make the care of your patient your first concern.' This case also raises clinical negligence concerns (Bolam/Bolitho standard — would a reasonable GP have missed this diagnosis?).",
+      "A": "Incorrect — Non-maleficence (harm occurred through inadequate assessment) and potentially autonomy (insufficient information) are also violated.",
+      "B": "CORRECT — Multiple principles potentially violated: non-maleficence (harm occurred), beneficence (inadequate care), autonomy (insufficient information), justice (inequitable care).",
+      "C": "Incorrect — Time pressure does not justify a departure from appropriate standard of care or ethical principles.",
+      "D": "Incorrect — While justice is relevant, the more immediately apparent violations are non-maleficence and beneficence.",
+      "E": "Incorrect — Permission to examine is part of autonomy/consent but is not the primary ethical concern here — the inadequate assessment is."
+    },
+    "reference": "Beauchamp TL, Childress JF — Principles of Biomedical Ethics. GMC Good Medical Practice 2024. https://www.gmc-uk.org/ethical-guidance/ethical-guidance-for-doctors/good-medical-practice",
+    "tags": ["four ethical principles", "beneficence", "non-maleficence", "autonomy", "justice", "GMC Good Medical Practice"]
+  },
+  {
+    "id": "QG-ETHICS-007-001",
+    "exam": "MRCGP AKT",
+    "domain": "Organisational",
+    "specialty": "Ethics & Organisational",
+    "difficulty": "Easy",
+    "question": "A GP is about to perform a minor surgical procedure (excision of a lipoma) on a 50-year-old woman. She has signed a consent form. Just as the procedure is about to begin, she says 'actually, I've changed my mind. I don't want to go ahead today.' Per GMC consent guidance, what must the GP do?",
+    "options": {
+      "A": "Proceed — the consent form was signed and is binding",
+      "B": "Stop immediately and respect her withdrawal of consent. A signed consent form does not prevent a patient from withdrawing consent at any time. Consent is an ongoing process, not a one-time event. Explain the implications of postponing the procedure, reschedule if she wishes and document her withdrawal of consent in the notes",
+      "C": "Ask her to reconsider — she has wasted the clinic appointment",
+      "D": "Proceed if the procedure has been partly started",
+      "E": "Contact her GP and proceed if the GP agrees"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per GMC Consent guidance (2008, updated) and case law, a signed consent form does not irrevocably commit the patient to undergo a procedure. Consent is a process, not a signature — it must be valid at the time of the procedure. A patient can withdraw consent at ANY time before or during a procedure. Once consent is withdrawn, proceeding would constitute unlawful touching/assault regardless of: any previously signed consent form; the stage of the procedure; inconvenience to the clinical team; the patient's previous agreement. The GP must: stop immediately; explain the clinical implications of not proceeding; listen to and address the patient's concerns; offer to reschedule; document the withdrawal of consent and discussion in the notes. If a procedure has begun: the minimum necessary actions may be taken to ensure patient safety (e.g., closing an incision).",
+      "A": "Incorrect — A signed consent form does not bind the patient. Consent is an ongoing process and can be withdrawn at any time.",
+      "B": "CORRECT — Respect immediate withdrawal of consent. Stop the procedure. Explain implications. Reschedule. Document per GMC consent guidance.",
+      "C": "Incorrect — Pressuring a patient to reconsider their withdrawal of consent undermines autonomy and may itself constitute coercion.",
+      "D": "Incorrect — If consent is withdrawn mid-procedure, the minimum safe action must be taken (e.g., close incision) but the full procedure cannot continue without consent.",
+      "E": "Incorrect — The referring GP's agreement does not override the patient's own withdrawal of consent."
+    },
+    "reference": "GMC — Consent: patients and doctors making decisions together. https://www.gmc-uk.org/ethical-guidance/ethical-guidance-for-doctors/consent",
+    "tags": ["withdrawal of consent", "consent process", "GMC consent", "autonomy", "signed consent form", "ongoing process"]
+  },
+  {
+    "id": "QG-ETHICS-008-001",
+    "exam": "MRCGP AKT",
+    "domain": "Organisational",
+    "specialty": "Ethics & Organisational",
+    "difficulty": "Medium",
+    "question": "A GP receives a request from a solicitor for copies of a deceased patient's medical records. The patient died 6 months ago. The solicitor is acting on behalf of the deceased's estate in a personal injury claim. Per the Access to Health Records Act 1990, who has the right to access these records?",
+    "options": {
+      "A": "Nobody — records become private property of the GP practice after death",
+      "B": "Under the Access to Health Records Act 1990, after a patient's death: the patient's personal representative (executor/administrator of the estate) has the right to access records that are relevant to any claim arising from the death; any person who may have a claim arising from the patient's death. The Access to Medical Reports Act 1988 (for living patients) does not apply after death — AHRA 1990 applies instead. Information that may cause serious harm to a third party may be withheld",
+      "C": "Any member of the deceased's family can access records without restriction",
+      "D": "Only the deceased's spouse can access records after death",
+      "E": "Solicitors have unrestricted access to all deceased patients' records"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "The Access to Health Records Act 1990 (AHRA) governs access to health records of deceased patients (the Data Protection Act/UK GDPR only applies to living individuals). Under AHRA 1990: the personal representative (executor or administrator of the estate — i.e., the person managing the deceased's affairs) has a right of access; any person who may have a claim arising from the patient's death (e.g., dependants claiming compensation). Access is restricted to information relevant to the claim. The GP should: verify the solicitor's authority (letter of administration or grant of probate, or written authority from the personal representative); provide relevant records only; withhold information that may cause serious harm to a third party. The GP practice should also notify their medical defence organisation if a legal claim is anticipated.",
+      "A": "Incorrect — Records do not become the practice's private property — legal rights of access continue after death under AHRA 1990.",
+      "B": "CORRECT — AHRA 1990: personal representative and those with a claim arising from death have the right to access deceased patient's relevant records.",
+      "C": "Incorrect — Family members do not have unrestricted access — only the personal representative or those with a relevant claim have rights under AHRA.",
+      "D": "Incorrect — Spouse access depends on whether they are the personal representative or have a claim arising from the death — not automatically granted.",
+      "E": "Incorrect — Solicitors must demonstrate authority (representing the personal representative or claimant) — they do not have unrestricted access."
+    },
+    "reference": "Access to Health Records Act 1990. BMA — Guidance on access to health records. https://www.legislation.gov.uk/ukpga/1990/23/contents",
+    "tags": ["Access to Health Records Act", "deceased patient", "personal representative", "solicitor", "AHRA 1990", "medical records"]
+  },
+  {
+    "id": "QG-ETHICS-009-001",
+    "exam": "MRCGP AKT",
+    "domain": "Organisational",
+    "specialty": "Ethics & Organisational",
+    "difficulty": "Hard",
+    "question": "A 16-year-old girl is assessed by a GP and found to have Fraser competence to make her own healthcare decisions. She decides to refuse a blood transfusion for a bleeding disorder on religious grounds (she is a Jehovah's Witness). Her parents strongly support the transfusion. Per the legal framework, can the GP accept her refusal?",
+    "options": {
+      "A": "Yes — a Fraser competent 16-year-old's refusal of treatment must always be respected",
+      "B": "The situation is legally complex. Unlike consent (where a Fraser-competent under-16 or a 16-17 year old under Family Law Reform Act 1969 can consent), REFUSAL of treatment by under-18s, even if competent, can be overridden by those with parental responsibility or by the courts if the refusal is life-threatening. The GP must apply urgently to the court for a declaration if parents and young person disagree about life-saving treatment. Immediate blood transfusion may be justified in a life-threatening emergency pending court ruling",
+      "C": "The parents' religious wishes override the young person's views — proceed with transfusion",
+      "D": "No clinical team member can be compelled to treat a Jehovah's Witness — religious discrimination applies",
+      "E": "The GP should contact the local Jehovah's Witnesses congregation for guidance"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "The legal framework for refusal of treatment by under-18s is significantly more complex than consent. Key legal principles: (1) Under 16: Gillick/Fraser competence allows consent to treatment — but courts have consistently held that competent under-16s' REFUSAL of life-saving treatment CAN be overridden by those with parental responsibility or by the courts (Re W [1992]); (2) 16-17 year olds: Family Law Reform Act 1969 s8 gives a right to consent to treatment — but not an absolute right to refuse life-saving treatment; (3) Courts have overridden refusals by competent minors in life-threatening situations; (4) Emergency blood transfusion: in an immediately life-threatening situation, the clinical team may proceed with transfusion to preserve life while emergency court application is made. The key principle: a minor's refusal of LIFE-SAVING treatment has less legal force than an adult's and can be overridden to preserve life.",
+      "A": "Incorrect — Unlike adults, a competent minor's refusal of life-saving treatment can be overridden by courts or those with parental responsibility.",
+      "B": "CORRECT — Complex law on minor's refusal of life-saving treatment. Court application urgently if life at risk. Transfusion may proceed in emergency to preserve life pending court per Re W and subsequent cases.",
+      "C": "Incorrect — The young person's competent views must be considered and balanced — parents cannot unilaterally override them without court involvement.",
+      "D": "Incorrect — Individual clinicians may conscientiously object but the patient's clinical needs must be met — another clinician must provide the transfusion.",
+      "E": "Incorrect — Religious organisations have no role in clinical or legal decision-making about life-saving treatment."
+    },
+    "reference": "Re W (A Minor) [1992] 3 WLR 758. Family Law Reform Act 1969 s8. MCA 2005. GMC — 0-18 years guidance. https://www.gmc-uk.org/ethical-guidance/ethical-guidance-for-doctors/0-18-years",
+    "tags": ["refusal of treatment", "minor", "Jehovah's Witness", "blood transfusion", "court order", "Fraser competent"]
+  },
+  {
+    "id": "QG-ETHICS-010-001",
+    "exam": "MRCGP AKT",
+    "domain": "Organisational",
+    "specialty": "Ethics & Organisational",
+    "difficulty": "Medium",
+    "question": "A 40-year-old man is newly diagnosed with Huntington's disease after genetic testing. He has three siblings who may be at risk. He refuses to inform his siblings as he does not want to worry them. Per GMC confidentiality guidance on genetic information, what ethical obligations does the GP have?",
+    "options": {
+      "A": "Immediately contact the siblings — the GP has a duty to warn all at-risk relatives",
+      "B": "Respect the patient's confidentiality initially while: exploring the patient's reasons for not disclosing; explaining to the patient the implications for their siblings (50% risk of HD); encouraging him to share the information or to consent to the GP doing so; if he continues to refuse and there is a serious risk of harm to identifiable third parties — the GP may be justified in disclosing in the public interest (balancing confidentiality against harm to others). Document all discussions. Genetic counselling referral is essential",
+      "C": "No obligation exists — genetic information is entirely private and cannot be shared without consent",
+      "D": "Refer to the GMC who will decide whether to inform the siblings",
+      "E": "Tell the patient's siblings immediately — Huntington's disease is a notifiable condition"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Disclosure of genetic information to at-risk relatives is an area of significant ethical complexity. GMC Confidentiality guidance and the Framework for Genetic Information (PHG Foundation/BMA): the GP's primary obligation is to the patient (confidentiality). However, when genetic conditions carry significant risk to identifiable third parties (50% risk of fatal Huntington's disease for each sibling is serious and significant), the public interest in disclosure may outweigh confidentiality. Approach: (1) Explore and address patient's concerns; (2) Explain implications to the patient; (3) Encourage patient disclosure or consent to GP disclosure; (4) If patient continues to refuse and the risk of harm is serious, the GP may be justified in disclosure — but this is not automatic and should be a last resort after all other options exhausted; (5) Seek advice from medical defence organisation/clinical ethics committee; (6) Refer to clinical genetics for specialist support. Huntington's disease is NOT notifiable.",
+      "A": "Incorrect — Immediate disclosure without attempting to work with the patient first is not ethically justified.",
+      "B": "CORRECT — Respect confidentiality initially; explore reasons; encourage disclosure; if refused and serious risk to identifiable others: public interest disclosure may be justified as last resort per GMC guidance.",
+      "C": "Incorrect — While confidentiality is the starting point, genetic information affecting identifiable third parties at serious risk is one of the limited circumstances where public interest disclosure may be justified.",
+      "D": "Incorrect — The GMC does not adjudicate individual disclosure decisions in this way — the GP must navigate this with clinical ethics support and legal guidance.",
+      "E": "Incorrect — Huntington's disease is not a notifiable disease under the Health Protection Regulations."
+    },
+    "reference": "GMC — Confidentiality: good practice in handling patient information. PHG Foundation — Genetic Information and the Family. https://www.gmc-uk.org/ethical-guidance/ethical-guidance-for-doctors/confidentiality",
+    "tags": ["genetic information", "confidentiality", "Huntington's disease", "disclosure to relatives", "GMC", "public interest"]
+  },
+  {
+    "id": "QG-ETHICS-011-001",
+    "exam": "MRCGP AKT",
+    "domain": "Organisational",
+    "specialty": "Ethics & Organisational",
+    "difficulty": "Easy",
+    "question": "A GP trainee (ST3) is asked by a patient to confirm they are medically fit to drive an HGV (Heavy Goods Vehicle). The patient has poorly controlled type 1 diabetes with frequent hypoglycaemic episodes. Per DVLA guidance and GMC obligations, what must the GP do?",
+    "options": {
+      "A": "Sign the fitness to drive certificate — the patient is the expert on their own condition",
+      "B": "Advise the patient they should inform the DVLA of their condition as they may not meet the fitness to drive standards for HGV licensing. The GP must not complete a fitness certificate if the patient does not meet DVLA medical standards. If the patient refuses to inform the DVLA and continues to drive, the GP may breach confidentiality and notify the DVLA directly to prevent serious road safety risk",
+      "C": "Refer to an endocrinologist before giving any driving advice",
+      "D": "Report the patient to the police immediately",
+      "E": "This is DVLA's responsibility — the GP has no role in driving fitness assessments"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "DVLA Medical Standards of Fitness to Drive (the 'At a Glance' Guide) and GMC guidance: Frequent hypoglycaemia in type 1 diabetes is a disqualifying condition for Group 2 (HGV/bus) licences. The patient must: notify the DVLA of their condition; must not drive an HGV until DVLA has assessed and they meet the standards. GP responsibilities: (1) Advise the patient to notify DVLA; (2) Advise them not to drive if they don't meet standards; (3) If the patient refuses to notify DVLA and continues to drive, creating a serious road safety risk: the GP may breach confidentiality and notify the DVLA directly — this is sanctioned by GMC guidance ('Confidentiality and disclosure for public safety purposes'). The GP should: document the advice given, attempt to persuade the patient, notify the medical defence organisation before breaking confidentiality. Failure to advise appropriately could constitute regulatory failure.",
+      "A": "Incorrect — GPs must not certify fitness to drive for HGV when the medical standards are not met.",
+      "B": "CORRECT — Advise patient to inform DVLA. If they refuse and continue to drive creating public safety risk: GP may notify DVLA per GMC guidance.",
+      "C": "Incorrect — Specialist referral may be helpful but does not change the immediate DVLA notification obligation.",
+      "D": "Incorrect — Reporting to police is not the appropriate action — DVLA notification is the relevant authority.",
+      "E": "Incorrect — GPs have a clear professional and legal role in advising patients about fitness to drive."
+    },
+    "reference": "DVLA — Assessing fitness to drive: a guide for medical professionals. GMC — Confidentiality and disclosures for public safety. https://www.gov.uk/government/publications/assessing-fitness-to-drive-a-guide-for-medical-professionals",
+    "tags": ["DVLA", "fitness to drive", "HGV", "diabetes hypoglycaemia", "GMC", "public safety"]
+  },
+  {
+    "id": "QG-ETHICS-012-001",
+    "exam": "MRCGP AKT",
+    "domain": "Organisational",
+    "specialty": "Ethics & Organisational",
+    "difficulty": "Medium",
+    "question": "A GP is conducting an appraisal for a GP colleague. During the appraisal discussion, the colleague mentions several patients by name and describes their clinical management in detail. Per GMC confidentiality guidance and UK GDPR, is this appropriate?",
+    "options": {
+      "A": "Appraisal discussions are exempt from confidentiality obligations — share freely",
+      "B": "Patient identifiable information should NOT be shared in appraisal without explicit patient consent. Clinical case discussions for appraisal should use anonymised cases. Appraisal portfolios containing patient identifiable data risk breaching UK GDPR and GMC confidentiality guidance. The GP appraiser should advise the colleague to anonymise cases and ensure the discussion does not identify patients",
+      "C": "GPs are permitted to share any information with their appraiser — the appraiser has medical professional confidentiality",
+      "D": "Only names can be shared — clinical details are protected",
+      "E": "Patient consent is only required if the patient is likely to find out about the appraisal discussion"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per GMC Confidentiality guidance and UK GDPR, patient confidentiality obligations apply to appraisal discussions. Appraisal is not an exception to confidentiality. Key principles: (1) Clinical cases discussed in appraisal should be anonymised — names, dates of birth, postcodes, unique identifiers should be removed; (2) Appraisal portfolios submitted electronically must not contain patient identifiable information; (3) Case-based discussions (CBD), clinical encounter tools (CET) and other appraisal evidence must be anonymised. Rationale: appraisal documentation may be accessed by additional parties (responsible officers, GMC if fitness to practise proceedings); patients have not consented to their information being used for this purpose. RCGP and NHS Revalidation guidance is clear: patient data in appraisal portfolios must be anonymised.",
+      "A": "Incorrect — Appraisal discussions are NOT exempt from confidentiality obligations — patient information must be anonymised.",
+      "B": "CORRECT — Patient identifiable information should not be used in appraisal without consent. Anonymised cases must be used per GMC and RCGP guidance.",
+      "C": "Incorrect — The appraiser's medical status does not create a confidentiality exemption — patient data must be anonymised regardless.",
+      "D": "Incorrect — Both names AND clinical details must be anonymised when they could identify a patient.",
+      "E": "Incorrect — Patient consent is required regardless of whether the patient is likely to find out — their right to confidentiality is not contingent on their awareness."
+    },
+    "reference": "GMC — Confidentiality guidance. RCGP — Appraisal portfolio guidance. https://www.gmc-uk.org/ethical-guidance/ethical-guidance-for-doctors/confidentiality",
+    "tags": ["appraisal", "confidentiality", "anonymisation", "UK GDPR", "patient data", "GMC"]
+  },
+  {
+    "id": "QG-ETHICS-013-001",
+    "exam": "MRCGP AKT",
+    "domain": "Organisational",
+    "specialty": "Ethics & Organisational",
+    "difficulty": "Hard",
+    "question": "A patient with severe treatment-resistant depression asks their GP about assisted dying. They say they have heard it is legal in some countries and want to know if it is available in the UK. Per current UK law (as of 2024) and GMC guidance, what is the correct information?",
+    "options": {
+      "A": "Assisted dying is legal in the UK — refer to the relevant service",
+      "B": "Assisted dying (assisted suicide and euthanasia) is illegal in England, Wales and Scotland under the Suicide Act 1961 (as amended). It is a criminal offence to assist another person to end their life. The Terminally Ill Adults (End of Life) Bill was passing through Parliament in 2024-2025. GPs must not provide, prescribe or administer substances to end a patient's life. However, the GP must: listen compassionately to the patient's distress; explore their suffering; ensure optimal symptom management and palliative care; provide information about legal support options including advance decisions and palliative sedation; signpost to emotional support services. They should not simply dismiss the request",
+      "C": "GPs can discretely assist patients to access assisted dying services abroad — this is legal",
+      "D": "The GP must report the patient to social services for expressing a wish to die",
+      "E": "Palliative sedation is the same as assisted dying — equally illegal"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "As of 2024, assisted dying (both assisted suicide — providing means for a patient to end their own life — and euthanasia — a clinician administering the lethal substance) is illegal in England, Wales and Scotland under the Suicide Act 1961. In Northern Ireland, it is illegal under separate legislation. The Terminally Ill Adults (End of Life) Bill was introduced to Parliament in late 2024 and was at various stages of debate — GPs should follow current legislation. GMC guidance: doctors cannot be compelled to participate in assisted dying even if it were legal; must provide good end-of-life care; must explore patient suffering compassionately; may discuss legal alternatives (advance decisions, palliative sedation, hospice care). Helping a patient travel abroad for assisted dying (where legal, e.g., Switzerland — Dignitas) is a complex legal area — GPs should take legal advice. Palliative sedation (appropriately titrated sedation to relieve suffering) is legal and distinct from assisted dying.",
+      "A": "Incorrect — Assisted dying is illegal in the UK as of 2024 (legislation may change — check current law).",
+      "B": "CORRECT — Assisted dying illegal in UK. GP must not assist. Must compassionately explore suffering, provide palliative care and legal alternatives. Document.",
+      "C": "Incorrect — Assisting a patient to access assisted dying services (including travel to Switzerland) is a complex legal grey area — GPs should seek legal advice before providing such assistance.",
+      "D": "Incorrect — Expressing a wish to die in the context of severe depression requires compassionate exploration and mental health support — not social services referral.",
+      "E": "Incorrect — Palliative sedation (appropriately titrated symptom relief) is legal and entirely distinct from assisted dying — this is a critical distinction."
+    },
+    "reference": "Suicide Act 1961. GMC — End of life care. Terminally Ill Adults (End of Life) Bill 2024. https://www.gmc-uk.org/ethical-guidance/ethical-guidance-for-doctors/treatment-and-care-towards-the-end-of-life",
+    "tags": ["assisted dying", "Suicide Act 1961", "end of life", "GMC", "palliative sedation", "euthanasia"]
+  },
+  {
+    "id": "QG-ETHICS-014-001",
+    "exam": "MRCGP AKT",
+    "domain": "Organisational",
+    "specialty": "Ethics & Organisational",
+    "difficulty": "Easy",
+    "question": "A GP receives a complaint from a patient who feels their concerns were not listened to during a consultation. Per the NHS Complaints Procedure (NHS England Complaints Regulations 2009, updated 2023), how should the practice respond?",
+    "options": {
+      "A": "Ignore complaints — patients have no formal right to complain about GPs",
+      "B": "Acknowledge the complaint within 3 working days; attempt local resolution within 6 months; offer the patient the option of a meeting; provide a written response addressing all concerns; inform the patient of their right to take the complaint to the Parliamentary and Health Service Ombudsman (PHSO) if not satisfied. The complaint must be investigated and the patient kept informed of progress",
+      "C": "Refer the complaint immediately to NHS England without any local resolution attempt",
+      "D": "Ask the patient to complain in writing before acknowledging the complaint",
+      "E": "Tell the patient that the GP's clinical judgment is not subject to complaint"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per NHS Complaints Regulations 2009 (amended) and NHS England guidance, the practice must follow the NHS complaints procedure: (1) Acknowledge the complaint within 3 working days in writing; (2) Investigate the complaint promptly; (3) Aim to resolve within 6 months (complexity may extend this); (4) Offer a meeting with the patient if they wish; (5) Provide a written response addressing each concern; (6) Include an apology (without admission of liability) where appropriate; (7) Inform the patient of their right to refer to the Parliamentary and Health Service Ombudsman (PHSO) if not satisfied with the local resolution; (8) Keep a complaints register as part of clinical governance. The NHS complaint process does not prevent the patient from also seeking legal advice or reporting to the GMC/CQC.",
+      "A": "Incorrect — Patients have a statutory right to complain under NHS Complaints Regulations 2009.",
+      "B": "CORRECT — Acknowledge within 3 days, investigate, aim to resolve in 6 months, written response, inform of PHSO rights per NHS Complaints Regulations.",
+      "C": "Incorrect — Local resolution must be attempted first — immediate escalation to NHS England without local process is not appropriate.",
+      "D": "Incorrect — Complaints can be made verbally or in writing — the practice must acknowledge verbal complaints within the same timeframe.",
+      "E": "Incorrect — Clinical judgment is not exempt from the complaints process — patients have the right to question clinical decisions through the complaints system."
+    },
+    "reference": "NHS Complaints Regulations 2009. NHS England — Complaints procedures. https://www.england.nhs.uk/ourwork/patient-participation/patient-and-public-participation/",
+    "tags": ["NHS complaints", "acknowledge 3 days", "PHSO", "local resolution", "NHS Regulations", "complaints procedure"]
+  },
+  {
+    "id": "QG-ETHICS-015-001",
+    "exam": "MRCGP AKT",
+    "domain": "Organisational",
+    "specialty": "Ethics & Organisational",
+    "difficulty": "Medium",
+    "question": "A GP has been asked by a police officer who attends the practice to provide information about a patient who is suspected of a serious violent crime. The officer says the patient is dangerous and needs to be found. The GP has not received any formal court order or legal process. Per GMC confidentiality guidance, what should the GP do?",
+    "options": {
+      "A": "Provide all patient information immediately — police requests always override confidentiality",
+      "B": "Police requests without a court order do not automatically override confidentiality. The GP should: consider whether there is a serious and credible risk of harm to others that outweighs the duty of confidentiality; can disclose the minimum necessary information in the public interest if the crime is serious (e.g., serious violence, murder) and disclosure could prevent serious harm; should ideally seek legal advice; document the decision-making process carefully. Disclosure without consent is only justified when: the benefit of disclosure outweighs the harm, the information cannot be obtained another way, disclosure is proportionate. Routine requests without this threshold do not require disclosure",
+      "C": "Tell the police the patient is not registered at the practice — any response protects confidentiality",
+      "D": "Provide name and address only — this is the minimum necessary for police purposes",
+      "E": "Require a formal court order before any discussion — nothing else is acceptable"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per GMC Confidentiality guidance (2017), disclosure to the police without consent may be justified in the public interest when: there is a risk of serious crime or serious harm to others; the benefit of disclosure outweighs confidentiality harm; the information is necessary and could not reasonably be obtained another way; disclosure is proportionate to the risk. GPs must not routinely disclose patient information to police on request — a police officer attending without a court order/production order (under PACE 1984 S9/Schedule 1) does not have an automatic right to medical records. The GP should: assess the specific risk; consider whether this is a genuine emergency; consult their medical defence organisation if time allows; document the decision carefully; disclose only the minimum necessary if public interest outweighs confidentiality.",
+      "A": "Incorrect — Police requests without a court order do not automatically override confidentiality. Each request must be assessed on its merits.",
+      "B": "CORRECT — Assess public interest threshold. Disclose minimum necessary only if serious harm risk outweighs confidentiality. Document carefully per GMC.",
+      "C": "Incorrect — Providing false information to police is itself potentially a criminal offence. The GP should decline to confirm or deny without providing false information.",
+      "D": "Incorrect — Even name and address requires the public interest threshold to be met — it cannot be provided as a routine response.",
+      "E": "Incorrect — A court order is not always required — genuine public interest/serious harm situations can justify disclosure without a court order per GMC guidance."
+    },
+    "reference": "GMC — Confidentiality: good practice in handling patient information 2017. PACE 1984. https://www.gmc-uk.org/ethical-guidance/ethical-guidance-for-doctors/confidentiality",
+    "tags": ["police request", "confidentiality", "public interest", "GMC", "PACE 1984", "court order"]
+  },
+  {
+    "id": "QG-ETHICS-016-001",
+    "exam": "MRCGP AKT",
+    "domain": "Organisational",
+    "specialty": "Ethics & Organisational",
+    "difficulty": "Hard",
+    "question": "A 62-year-old man has been seeing his GP for several years. He presents with depression and during the consultation he discloses passive suicidal ideation. He has no active plans and says he would never act on it. He asks the GP not to tell anyone as he fears losing his job. Per GMC guidance and suicide prevention frameworks, what is the appropriate management?",
+    "options": {
+      "A": "Immediately hospitalise the patient and inform his employer",
+      "B": "Conduct a thorough risk assessment (including thoughts, plans, intent, means, protective factors). Provide immediate therapeutic response — validate, explore the ideation, develop a safety plan. Consider urgent mental health team involvement if risk appears significant. Maintain confidentiality as requested if the risk does not constitute an immediate threat to life requiring disclosure. Document thoroughly. Arrange urgent follow-up. Provide crisis contact details (Samaritans, NHS 111, CRUSE)",
+      "C": "Dismiss the passive ideation — patients who disclose suicidal thoughts never act on them",
+      "D": "Inform his employer immediately — they need to know about the risk",
+      "E": "Prescribe antidepressants and review in 6 weeks"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per NICE NG222 (Self-harm: assessment, management and preventing recurrence, 2022) and Zero Suicide Alliance guidance, suicidal ideation requires a structured clinical response. The GP should: (1) Conduct a thorough risk assessment — not a checkbox exercise but a clinical conversation exploring nature of thoughts, any plans, intent, means, protective factors (social support, responsibilities, reasons for living); (2) Respond therapeutically — validate the patient's experience, maintain the therapeutic alliance; (3) Develop a collaborative safety plan; (4) Assess urgency — passive ideation without plan or intent = lower immediate risk but still significant; (5) Consider mental health team involvement; (6) Maintain confidentiality unless immediate threat to life; (7) Arrange urgent follow-up; (8) Provide crisis resources. Informing employer without consent would be a serious confidentiality breach — passive ideation without plan is not grounds for disclosure.",
+      "A": "Incorrect — Passive ideation without active plan or intent does not automatically require hospital admission or employer notification.",
+      "B": "CORRECT — Thorough risk assessment + safety plan + therapeutic response + confidentiality (unless immediate risk) + urgent follow-up per NICE NG222.",
+      "C": "Incorrect — All suicidal ideation must be taken seriously — passive ideation is clinically significant and requires assessment.",
+      "D": "Incorrect — Informing his employer without consent breaches confidentiality — passive suicidal ideation without imminent risk does not justify this disclosure.",
+      "E": "Incorrect — Antidepressants take 4-6 weeks to work — prescribing and reviewing in 6 weeks without interim safety planning and follow-up for suicidal ideation is inadequate."
+    },
+    "reference": "NICE NG222 — Self-harm: assessment, management and preventing recurrence. Zero Suicide Alliance. https://www.nice.org.uk/guidance/ng222",
+    "tags": ["suicidal ideation", "risk assessment", "safety plan", "NICE NG222", "confidentiality", "mental health"]
+  },
+  {
+    "id": "QG-ETHICS-017-001",
+    "exam": "MRCGP AKT",
+    "domain": "Organisational",
+    "specialty": "Ethics & Organisational",
+    "difficulty": "Medium",
+    "question": "A 30-year-old GP trainee (ST2) fails her MRCGP AKT examination for the second time and becomes very distressed. She confides in her educational supervisor that she feels completely unable to cope with the demands of general practice and wonders if she has made the wrong career choice. She has been attending work and has not made any clinical errors. Per GMC Good Medical Practice 2024 and the responsibility of educational supervisors, what should the educational supervisor do?",
+    "options": {
+      "A": "Immediately refer her to the GMC for fitness to practise concerns",
+      "B": "Support the trainee compassionately: explore her distress and concerns; ensure she has access to occupational health and counselling (NHS Practitioner Health Programme); review her training needs and personal development plan; consider additional educational support for AKT; ensure she knows she can continue training while seeking support; only escalate to programme director if there are genuine patient safety concerns arising from her clinical performance. Emotional distress from exam failure is not a fitness to practise issue",
+      "C": "Tell her to reconsider her career immediately — two AKT failures suggests she is not suitable for general practice",
+      "D": "Add a negative supervisor's report to her e-portfolio noting she is not coping",
+      "E": "No action — trainee wellbeing is not the educational supervisor's responsibility"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per GMC Good Medical Practice 2024 and RCGP guidance on trainee support, the educational supervisor has a duty of care to their trainee. Emotional distress from exam failure is not a GMC fitness to practise matter unless it is affecting patient care. The supervisor should: (1) Create a safe, non-judgmental space for the trainee to express distress; (2) Signpost to occupational health and NHS Practitioner Health Programme (PHP); (3) Review the AKT preparation approach — consider additional resources, study leave, mock examinations; (4) Ensure the Personal Development Plan (PDP) addresses her learning needs; (5) Only escalate if there are genuine patient safety concerns from clinical practice; (6) Avoid adding negative entries to e-portfolio based on emotional distress rather than performance concerns. Trainee wellbeing is explicitly part of the educational supervisor's responsibilities per RCGP and GPST training programme requirements.",
+      "A": "Incorrect — Exam failure and emotional distress is NOT a GMC fitness to practise concern unless patient safety is affected.",
+      "B": "CORRECT — Support compassionately + occupational health/PHP + educational support + PDP review + only escalate if patient safety concerns. Per GMC and RCGP guidance.",
+      "C": "Incorrect — Two AKT failures does not indicate unsuitability for general practice. Many successful GPs have required multiple attempts. Support and review is appropriate.",
+      "D": "Incorrect — A negative e-portfolio entry based on emotional distress from exam failure rather than clinical performance would be inappropriate and potentially harmful.",
+      "E": "Incorrect — Trainee wellbeing is explicitly part of the educational supervisor's role per RCGP and GMC guidance."
+    },
+    "reference": "GMC Good Medical Practice 2024. RCGP — Educational supervisor responsibilities. NHS Practitioner Health Programme. https://www.gmc-uk.org/ethical-guidance/ethical-guidance-for-doctors/good-medical-practice",
+    "tags": ["trainee wellbeing", "educational supervisor", "NHS PHP", "AKT failure", "GMC", "RCGP"]
+  },
+  {
+    "id": "QG-ETHICS-018-001",
+    "exam": "MRCGP AKT",
+    "domain": "Organisational",
+    "specialty": "Ethics & Organisational",
+    "difficulty": "Easy",
+    "question": "A GP is asked to provide evidence for his annual appraisal. One of the domains requires evidence of quality improvement activity. Which of the following best describes what quality improvement evidence should include per the RCGP appraisal guidance?",
+    "options": {
+      "A": "A statement saying the GP 'aims to improve quality'",
+      "B": "Evidence of participation in completed audit cycles, SEAs, QI projects or peer review — demonstrating reflection on findings, implementation of changes and re-measurement of outcomes. Evidence should show learning has occurred and changes have been implemented, not just that data was collected",
+      "C": "Submission of patient satisfaction scores only",
+      "D": "Evidence that no complaints have been received in the past year",
+      "E": "A certificate from a management course"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per RCGP appraisal guidance and GMC revalidation framework, quality improvement activity for appraisal must demonstrate: (1) Completed audit cycles (with re-measurement showing impact of changes); (2) Significant Event Analyses with documented learning and action plans; (3) Quality Improvement projects; (4) Peer review participation; (5) Clinical record reviews. Evidence requirements: demonstration that the GP has: identified a problem or learning opportunity; analysed it systematically; implemented change; re-evaluated outcomes. Crucially, incomplete audits (data collected but no change implemented or no re-audit) do not meet the quality improvement standard. The evidence must show reflection and genuine system improvement — not just data collection. GMC revalidation requires evidence from five domains including quality improvement at each 5-year cycle.",
+      "A": "Incorrect — Aspirational statements without evidence of actual completed activities do not meet the appraisal standard.",
+      "B": "CORRECT — Completed audit cycles with re-measurement + SEAs with action plans + QI projects demonstrating implementation and re-evaluation per RCGP guidance.",
+      "C": "Incorrect — Patient satisfaction scores are relevant supporting evidence but are not the primary quality improvement evidence required.",
+      "D": "Incorrect — Absence of complaints is not quality improvement evidence — it is a negative measure.",
+      "E": "Incorrect — A management course certificate may be CPD evidence but is not quality improvement activity evidence."
+    },
+    "reference": "RCGP — Appraisal guidance. GMC — Revalidation: what you need to do. https://www.rcgp.org.uk/clinical-and-research/resources/quality-improvement-tools.aspx",
+    "tags": ["appraisal", "quality improvement", "SEA", "clinical audit", "revalidation", "RCGP"]
+  },
+  {
+    "id": "QG-ETHICS-019-001",
+    "exam": "MRCGP AKT",
+    "domain": "Organisational",
+    "specialty": "Ethics & Organisational",
+    "difficulty": "Medium",
+    "question": "A GP is running a minor surgery list. Between cases she is asked by a pharmaceutical company representative to review a drug's information leaflet as a 'consultancy service' for which she will receive payment. She has not declared this arrangement to the practice and there is no formal contract. Per GMC guidance on financial conflicts of interest and probity, what is the appropriate response?",
+    "options": {
+      "A": "Accept the payment — this is a legitimate additional income source for GPs",
+      "B": "Decline to review during surgery time — any work for pharmaceutical companies must be: transparent; conducted outside clinical time; not influence clinical practice or prescribing; declared as a potential conflict of interest in relevant contexts (e.g., when advising on drug formularies, speaking to colleagues about the drug). All financial relationships with pharmaceutical organisations must be disclosed per GMC Good Medical Practice",
+      "C": "Accept payment but do not mention it to anyone — financial arrangements are private",
+      "D": "This is acceptable as long as the review is independent",
+      "E": "Refer the representative to the practice manager for a commercial contract"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per GMC Good Medical Practice 2024 (Domain 4 — Maintaining trust, paragraphs on probity and financial conflicts of interest): doctors must be honest and open about any financial interests that may influence their clinical practice or judgments. Working for pharmaceutical companies is not prohibited but must be: transparent (declared to employer/practice, in publications, when advising on prescribing); conducted separately from clinical practice time (during clinical time is inappropriate and potentially fraudulent use of NHS resources); not allowed to influence clinical decisions inappropriately; managed to avoid conflicts of interest. ABPI Code of Practice (Association of the British Pharmaceutical Industry) also governs interactions between pharma and clinicians. Undisclosed financial relationships with pharma companies that could influence prescribing behaviour are a probity concern.",
+      "A": "Incorrect — Accepting payment during clinical surgery time uses NHS resources for private gain — this is an undisclosed conflict of interest.",
+      "B": "CORRECT — Decline during clinical time. Pharma consultancy must be outside clinical time, transparent, declared as potential COI per GMC Good Medical Practice.",
+      "C": "Incorrect — Financial arrangements with pharmaceutical companies must be disclosed, not kept private — GMC Good Medical Practice requires transparency.",
+      "D": "Incorrect — Independence alone does not address the conflict of time (clinical vs private) and the need for transparency.",
+      "E": "Incorrect — The practice manager referral does not address the immediate ethical issue of reviewing pharmaceutical materials during clinical surgery time."
+    },
+    "reference": "GMC Good Medical Practice 2024. ABPI Code of Practice. https://www.gmc-uk.org/ethical-guidance/ethical-guidance-for-doctors/good-medical-practice",
+    "tags": ["conflict of interest", "pharmaceutical company", "probity", "GMC Good Medical Practice", "financial interests", "transparency"]
+  },
+  {
+    "id": "QG-ETHICS-020-001",
+    "exam": "MRCGP AKT",
+    "domain": "Organisational",
+    "specialty": "Ethics & Organisational",
+    "difficulty": "Hard",
+    "question": "A 72-year-old man with COPD and heart failure is admitted to hospital. He is not currently in a position to make decisions. His advance statement (not an ADRT — a statement of values and preferences) states he 'would prefer not to be admitted to hospital or receive aggressive treatment if possible.' He does not have LPA. His family wants 'everything done.' Per the MCA 2005, what weight does the advance statement carry?",
+    "options": {
+      "A": "The advance statement is legally binding — it must be followed exactly",
+      "B": "An advance statement (statement of preferences and values — not an ADRT) is NOT legally binding but must be given serious weight in best interests decisions under MCA 2005. It is an important source of evidence about the patient's values and preferences that must be considered alongside: family views, clinical assessment, professional judgment. It does not override clinical decision-making but should significantly inform the best interests decision. The family's wishes are also a consultee input, not a decision",
+      "C": "The family's decision to have 'everything done' overrides the advance statement",
+      "D": "Without LPA, advance statements have no relevance to treatment decisions",
+      "E": "The advance statement and family wishes cancel each other out — the clinical team decides independently"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Under the Mental Capacity Act 2005, there is a critical distinction: Advance Decision to Refuse Treatment (ADRT): legally binding if valid and applicable (must be in writing, signed, witnessed, specify the treatment being refused). Advance Statement (statement of preferences, values, wishes): NOT legally binding but must be given 'serious consideration' in best interests decisions under MCA 2005 Section 4(6)(a) — 'the person's past and present wishes and feelings...and the beliefs and values that would be likely to influence his decision.' The clinical team must: consider the advance statement as important evidence; consult family as consultees; make the best interests decision taking all evidence into account. The family's wishes are consultee input — they inform but do not determine the decision. The advance statement expressing preference against aggressive hospital treatment is clinically significant — it represents the patient's values when capacitous.",
+      "A": "Incorrect — An advance STATEMENT (of preferences/values) is NOT legally binding — only an ADRT is legally binding when valid and applicable.",
+      "B": "CORRECT — Advance statement must be given serious weight in MCA 2005 best interests decision. Family are consultees not decision-makers. Clinicians make the decision.",
+      "C": "Incorrect — Family wishes are consultee input — they do not override the patient's expressed preferences in an advance statement.",
+      "D": "Incorrect — Advance statements are relevant and must be considered under MCA 2005 Section 4(6) — LPA is not required for their consideration.",
+      "E": "Incorrect — The clinical team does not decide independently — they must give serious weight to the advance statement and family input in the structured best interests framework."
+    },
+    "reference": "Mental Capacity Act 2005 — Section 4. MCA Code of Practice. https://www.legislation.gov.uk/ukpga/2005/9/contents",
+    "tags": ["advance statement", "ADRT distinction", "MCA 2005", "best interests", "LPA", "consultee"]
+  },
+  {
+    "id": "QG-ETHICS-021-001",
+    "exam": "MRCGP AKT",
+    "domain": "Organisational",
+    "specialty": "Ethics & Organisational",
+    "difficulty": "Medium",
+    "question": "A GP practice manager informs the GP partners that the practice's network (PCN) has been asked to implement a new diabetes care pathway that includes a Patient Participation Group (PPG) review. A partner asks what the PPG is and what role they play per NHS England guidance.",
+    "options": {
+      "A": "PPG is an optional committee with no formal role in practice governance",
+      "B": "Patient Participation Groups (PPGs) are a required component of GP practices under NHS England directions. PPGs: represent patient and community perspectives in practice decisions; are consulted on proposed changes to services; review and provide feedback on practice performance; help develop patient information materials; contribute to the practice's patient experience improvement plans. Per NHS England guidance (as a condition of the GP contract), practices must establish and maintain a PPG and take account of its views",
+      "C": "PPGs have the right to veto any clinical decision made by the GP partners",
+      "D": "PPGs are only required in practices with more than 5000 registered patients",
+      "E": "PPGs are voluntary bodies with no contractual requirement"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Patient Participation Groups (PPGs) are required under the GMS/PMS contract directed by NHS England. Per the NHS Patients' right to be involved, GPs must: establish and maintain a PPG; seek their views; use their feedback to develop an annual practice development plan; publish a patient participation report annually. PPG roles: patient perspective input into service development; patient experience surveys; review of patient-facing communications; development of health promotion activities; input into access and appointment policies. PPGs are consultative — they provide input to decision-making but do not have veto power over clinical or operational decisions. They are part of the broader NHS England commitment to patient and public participation in healthcare.",
+      "A": "Incorrect — PPGs are a contractual requirement, not optional.",
+      "B": "CORRECT — PPGs are required under GP contract. Represent patient perspectives. Consulted on service changes. Practice must act on their views per NHS England.",
+      "C": "Incorrect — PPGs are consultative — they do not have veto power over clinical decisions.",
+      "D": "Incorrect — The PPG requirement applies to all GP practices regardless of list size.",
+      "E": "Incorrect — PPGs are a contractual requirement under the GMS/PMS contract — not voluntary."
+    },
+    "reference": "NHS England — Patient participation directions. GMS Contract. https://www.england.nhs.uk/gp/investment/gp-contract/",
+    "tags": ["Patient Participation Group", "PPG", "GMS contract", "NHS England", "patient involvement", "primary care"]
+  },
+  {
+    "id": "QG-ETHICS-022-001",
+    "exam": "MRCGP AKT",
+    "domain": "Organisational",
+    "specialty": "Ethics & Organisational",
+    "difficulty": "Easy",
+    "question": "A 45-year-old teacher is seeking a sick note (fit note) from her GP. She has been off work with moderate depression for 3 weeks and is feeling somewhat better. She asks if she can return to work on a phased return. Per the current fit note system (Statement of Fitness for Work) introduced in 2010, what can the GP document?",
+    "options": {
+      "A": "Fit notes can only state 'fit for work' or 'not fit for work' — no intermediate options",
+      "B": "The current Statement of Fitness for Work (fit note) has four options: (1) 'May be fit for work' — with specified adjustments (amended duties, altered hours, workplace adaptations, phased return to work); (2) 'Not fit for work'; (3) If the GP ticks 'may be fit for work' with phased return: the employer and employee discuss whether adjustments are possible; if not, the patient is treated as unfit. GPs are not required to complete fit notes for the first 7 days of absence",
+      "C": "Only hospital specialists can sign fit notes for mental health conditions",
+      "D": "Fit notes must be signed by a GP — nurses and physiotherapists cannot sign them",
+      "E": "Fit notes are only valid for conditions lasting longer than 4 weeks"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "The Statement of Fitness for Work (fit note) was introduced in April 2010, replacing the old 'sick note'. Key features: (1) Options: 'Not fit for work' (specific period) OR 'May be fit for work' with functional effects described and one or more recommended adjustments (phased return to work, amended duties, altered hours, workplace adaptations); (2) If 'may be fit for work' is selected: employer and employee discuss; if adjustments not possible, the note is treated as 'not fit for work'; (3) No fit note required for first 7 days of absence — self-certification is used; (4) Fit notes can be signed by doctors, nurse practitioners, physiotherapists, occupational therapists and pharmacists (extended to allied health professionals in 2022); (5) Fit notes can cover periods retrospectively. For moderate depression showing improvement, 'may be fit for work' with phased return is clinically appropriate and supports recovery.",
+      "A": "Incorrect — Fit notes introduced in 2010 specifically added 'may be fit for work' as a third option, with the ability to recommend adjustments.",
+      "B": "CORRECT — Fit note options: 'not fit for work' or 'may be fit for work' with adjustments (phased return, amended duties, altered hours). No fit note needed for first 7 days.",
+      "C": "Incorrect — GPs can sign fit notes for mental health conditions — specialist referral is not required for fit note completion.",
+      "D": "Incorrect — Since 2022, fit notes can be signed by nurses, physiotherapists, occupational therapists and pharmacists in addition to doctors.",
+      "E": "Incorrect — Fit notes are not limited to conditions lasting longer than 4 weeks — they apply from day 8 of absence onwards."
+    },
+    "reference": "DWP — Statement of Fitness for Work guidance. Fit note reform 2010/2022. https://www.gov.uk/government/collections/fit-note",
+    "tags": ["fit note", "Statement of Fitness for Work", "phased return", "may be fit for work", "DWP", "work adjustments"]
+  },
+  {
+    "id": "QG-ETHICS-023-001",
+    "exam": "MRCGP AKT",
+    "domain": "Organisational",
+    "specialty": "Ethics & Organisational",
+    "difficulty": "Hard",
+    "question": "A 40-year-old woman with a known personality disorder diagnosis has a long and complex medical history. During a consultation about a new physical symptom (back pain), the GP notices she feels dismissed and undervalued. She says 'you just think I'm attention-seeking because of my mental health.' The GP has limited time. Per the Equality Act 2010, the NHS Constitution and good practice in managing patients with complex needs, what are the key obligations?",
+    "options": {
+      "A": "Document 'frequent attender' in the notes and limit consultation time",
+      "B": "Provide equitable, non-discriminatory care: the Equality Act 2010 protects individuals from discrimination based on disability (mental health conditions qualify). A personality disorder diagnosis must not bias the assessment of physical symptoms. The GP must: validate the patient's experience; take the back pain seriously; conduct a thorough assessment; document clearly and without stigmatising language. Consider the NHS Constitution: patients have the right to be treated with dignity and respect. Coordinate care with the community mental health team. Adjust consultation length if needed (reasonable adjustment)",
+      "C": "Refer to mental health services — the back pain is likely psychosomatic",
+      "D": "Limit consultations to 10 minutes per NHS GP contract — legal obligation",
+      "E": "Patients with personality disorder diagnoses cannot expect the same level of clinical assessment as other patients"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per the Equality Act 2010, mental health conditions that substantially affect day-to-day activities (including personality disorder) constitute a disability under the Act. The NHS has a duty not to discriminate in provision of services and to make reasonable adjustments. Key obligations: (1) Non-discrimination — a personality disorder diagnosis must not bias assessment of physical symptoms (diagnostic overshadowing — attributing physical symptoms to mental health diagnosis — is a recognised and harmful clinical bias); (2) NHS Constitution rights — be treated with dignity and respect; access to healthcare; (3) Reasonable adjustments — longer appointments, case coordination, care plans; (4) Documentation — use dignified, non-stigmatising language in notes; (5) Collaboration — work with mental health services. The stigma associated with personality disorder diagnoses significantly contributes to health inequalities and premature mortality in this population.",
+      "A": "Incorrect — 'Frequent attender' labelling and limiting time without clinical justification is discriminatory and risks missing serious pathology.",
+      "B": "CORRECT — Equitable, non-discriminatory care. Equality Act 2010 protection. Reasonable adjustment (longer appointment). Diagnostic overshadowing must be avoided per NHS Constitution.",
+      "C": "Incorrect — Dismissing physical symptoms as psychosomatic based on mental health diagnosis is diagnostic overshadowing — a form of bias that must be avoided.",
+      "D": "Incorrect — There is no fixed 10-minute legal obligation per GP contract — appointment length is a clinical decision. Reasonable adjustments may require longer appointments.",
+      "E": "Incorrect — All patients have equal rights to clinical assessment under the Equality Act 2010 and NHS Constitution — diagnosis must not reduce entitlement to care."
+    },
+    "reference": "Equality Act 2010. NHS Constitution. GMC Good Medical Practice 2024. https://www.legislation.gov.uk/ukpga/2010/15/contents",
+    "tags": ["Equality Act 2010", "personality disorder", "diagnostic overshadowing", "reasonable adjustment", "NHS Constitution", "discrimination"]
+  },
+  {
+    "id": "QG-ETHICS-025-001",
+    "exam": "MRCGP AKT",
+    "domain": "Organisational",
+    "specialty": "Ethics & Organisational",
+    "difficulty": "Medium",
+    "question": "A GP is treating a patient who has recently been released from prison. The patient is requesting their records from before their imprisonment. They mention that during their time in prison they developed hepatitis C and received treatment. Per UK GDPR and NHS guidance, does a patient's previous incarceration affect their right to access their medical records?",
+    "options": {
+      "A": "Prisoners lose the right to access medical records upon conviction",
+      "B": "No — a person's history of incarceration does not affect their UK GDPR Article 15 right to access their personal data. The GP practice must respond to a valid subject access request within one month, free of charge, regardless of the patient's past. Records from the prison healthcare period (held by the prison healthcare service, not the GP) would require a separate SAR to the relevant prison trust. All patients have equal data rights under UK GDPR",
+      "C": "Only recent (post-release) records can be accessed",
+      "D": "Former prisoners must provide proof of identity before accessing records — unlike other patients",
+      "E": "Records from before imprisonment are automatically deleted by NHS systems after 2 years"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "UK GDPR (UK General Data Protection Regulation) establishes data rights that apply to all individuals in the UK regardless of criminal history, immigration status, or other personal circumstances. The right of access (Article 15) allows any data subject to request and receive copies of their personal data held by a controller. The GP practice must: respond within one month; provide the requested records free of charge; apply only the standard limited exceptions (harm to self/third party, third-party data). A person's conviction history does not create any additional barriers to their data rights. Records held during imprisonment are held by NHS England/prison healthcare trust — a separate SAR to that organisation would be required. The ICO confirms that criminal convictions do not affect an individual's data rights under UK GDPR.",
+      "A": "Incorrect — Criminal conviction does not affect UK GDPR rights. Data subject rights apply equally to all individuals.",
+      "B": "CORRECT — All individuals including former prisoners have equal UK GDPR Article 15 rights. Prison healthcare records are held by a separate trust and require a separate SAR.",
+      "C": "Incorrect — The right of access applies to all personal data held — not limited to recent records.",
+      "D": "Incorrect — Proof of identity verification requirements are the same for all patients — not enhanced for former prisoners.",
+      "E": "Incorrect — NHS medical records are retained according to NHS Records Management Code of Practice — not automatically deleted after 2 years."
+    },
+    "reference": "UK GDPR Article 15. ICO — Right of access. NHS Records Management Code of Practice. https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/individual-rights/",
+    "tags": ["UK GDPR", "subject access request", "former prisoner", "right of access", "ICO", "data rights"]
+  },
+  {
+    "id": "QG-ETHICS-026-001",
+    "exam": "MRCGP AKT",
+    "domain": "Organisational",
+    "specialty": "Ethics & Organisational",
+    "difficulty": "Hard",
+    "question": "A 28-year-old woman discloses to her GP that she is a sex worker. She asks for confidential sexual health testing. She expresses fear that her profession will be shared with other healthcare providers. Per GMC confidentiality guidance and UK GDPR, what assurances can the GP give regarding confidentiality?",
+    "options": {
+      "A": "Sex work is a criminal activity — the GP must report this to the police",
+      "B": "The GP can assure her that: her disclosure will be treated in strict confidence per GMC confidentiality guidance and UK GDPR; information will only be shared with other healthcare providers who have a direct need to know for her care (on a 'need to know' basis and in her best interests); it will not be shared with police, immigration services or other agencies unless there is an immediate risk to life; she has the right to request that sensitive information be restricted in the electronic record. Providing non-judgmental, accessible healthcare to marginalised populations is a core professional duty",
+      "C": "Sex work must be recorded on the medical record and automatically shared with all healthcare providers",
+      "D": "The GP cannot provide confidential sexual health testing — this must be done at a GUM clinic",
+      "E": "The GP must immediately refer to social services as sex work indicates vulnerability"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per GMC confidentiality guidance and UK GDPR: (1) Sex work in England and Wales is not itself illegal (though associated activities may be) — it is not a reportable matter; (2) Information shared in a clinical consultation is held in strict confidence; (3) Sharing with other healthcare providers: on a 'need to know' basis for direct care only — unnecessary disclosure of occupational information is a breach of confidentiality; (4) The patient can request sensitive information be restricted in shared records (Summary Care Record — patients can request restriction of specific information); (5) The GP should provide non-judgmental, equitable healthcare. Equity in healthcare access is a professional duty — marginalised populations including sex workers have equal rights to confidential healthcare. The doctor's role is to provide healthcare, not to judge occupational choices. Disclosure to police or immigration services would not be justified in these circumstances.",
+      "A": "Incorrect — Sex work (selling sex) is not illegal in England and Wales — it is not reportable to police.",
+      "B": "CORRECT — Strict confidentiality applies. Need-to-know sharing only. Patient can request restriction. Non-judgmental care is a professional duty per GMC.",
+      "C": "Incorrect — Occupational information must be shared only on a need-to-know basis — automatic sharing with all providers would breach UK GDPR and GMC confidentiality guidance.",
+      "D": "Incorrect — GP practices can provide sexual health testing. GUM clinics are not the only option — reducing barriers to healthcare access is important for this population.",
+      "E": "Incorrect — Sex work alone does not automatically trigger social services referral. There may be safeguarding concerns in specific circumstances, but employment as a sex worker is not itself a mandatory referral trigger."
+    },
+    "reference": "GMC — Confidentiality: good practice in handling patient information. UK GDPR. https://www.gmc-uk.org/ethical-guidance/ethical-guidance-for-doctors/confidentiality",
+    "tags": ["confidentiality", "sex worker", "non-judgmental care", "need to know", "GMC", "marginalised populations"]
+  }
+]

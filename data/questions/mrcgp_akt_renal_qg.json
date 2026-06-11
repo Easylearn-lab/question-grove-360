@@ -1,0 +1,496 @@
+[
+  {
+    "id": "QG-RENAL-097-001",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Renal",
+    "difficulty": "Easy",
+    "question": "A 58-year-old man with type 2 diabetes and hypertension has an eGFR of 42 ml/min/1.73m² and urine ACR of 38 mg/mmol on two separate occasions 3 months apart. His blood pressure is 136/84 mmHg. Per NICE NG203, what CKD stage does this represent and what is the most important treatment to slow progression?",
+    "options": {
+      "A": "CKD Stage 2 — reassure and repeat in 5 years",
+      "B": "CKD Stage G3b A2 — optimise blood pressure to <130/80 mmHg using an ACE inhibitor or ARB (first-line in CKD with proteinuria and diabetes), plus consider an SGLT2 inhibitor to reduce progression",
+      "C": "CKD Stage G4 — immediate dialysis referral",
+      "D": "CKD Stage G3b — no treatment needed as eGFR is above 40",
+      "E": "CKD Stage G3b A2 — start furosemide for proteinuria"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per NICE NG203 (Chronic kidney disease: assessment and management, 2021), CKD is staged using the G (GFR category) and A (albuminuria category) system. eGFR 42 = G3b (30-44 ml/min). ACR 38 mg/mmol = A2 (moderately increased, 3-30 mg/mmol range is A2 — note ACR ≥30 is A3 in some classifications; NICE NG203 defines A2 as ACR 3-30 and A3 as >30). Therefore this is G3bA3 strictly. Key treatment: ACE inhibitor or ARB is first-line to reduce proteinuria and slow progression in CKD with ACR >3 mg/mmol and diabetes or hypertension. Target BP <130/80 mmHg. SGLT2 inhibitors (dapagliflozin, empagliflozin) are now recommended by NICE NG203 to reduce CKD progression and cardiovascular risk in type 2 diabetes with CKD.",
+      "A": "Incorrect — G3b with significant albuminuria requires active management and monitoring — not 5-yearly review.",
+      "B": "CORRECT — CKD G3b with proteinuria: ACE inhibitor/ARB + BP target <130/80 + SGLT2 inhibitor per NICE NG203.",
+      "C": "Incorrect — Dialysis referral is for eGFR approaching <15 ml/min (G5) — not eGFR 42.",
+      "D": "Incorrect — ACR 38 mg/mmol represents significant proteinuria requiring treatment regardless of eGFR being above 40.",
+      "E": "Incorrect — Furosemide is a diuretic for oedema/fluid overload — it does not reduce proteinuria or slow CKD progression."
+    },
+    "reference": "NICE NG203 — Chronic kidney disease: assessment and management. https://www.nice.org.uk/guidance/ng203",
+    "tags": ["CKD", "eGFR", "ACR", "ACE inhibitor", "SGLT2 inhibitor", "NICE NG203"]
+  },
+  {
+    "id": "QG-RENAL-097-002",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Renal",
+    "difficulty": "Medium",
+    "question": "A 65-year-old woman with CKD G3b (eGFR 35 ml/min) is reviewed. Her potassium is 5.8 mmol/L on ramipril 10mg daily. Her ACR is 55 mg/mmol and BP is 128/76 mmHg. Per NICE NG203, what is the most appropriate management of her hyperkalaemia in the context of continuing ACE inhibition?",
+    "options": {
+      "A": "Stop ramipril immediately — ACE inhibitors are absolutely contraindicated with hyperkalaemia in CKD",
+      "B": "Review and reduce dietary potassium intake, review other potassium-elevating medications (NSAIDs, potassium-sparing diuretics), consider reducing ramipril dose, recheck potassium in 1-2 weeks. If persistent hyperkalaemia ≥6.0 mmol/L despite measures: consider potassium binders (patiromer or sodium zirconium cyclosilicate — NICE TA) to allow continuation of ACE inhibitor",
+      "C": "Add spironolactone to reduce BP further — beneficial in CKD",
+      "D": "Switch to a calcium channel blocker — no hyperkalaemia risk",
+      "E": "Immediate hospital admission — K+ 5.8 is life-threatening"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per NICE NG203, ACE inhibitors/ARBs are the cornerstone of CKD management with proteinuria and should not be stopped for mild hyperkalaemia without first trying conservative measures. ACE inhibitors reduce proteinuria and slow CKD progression — the benefits outweigh modest potassium rises in most patients. Management of hyperkalaemia in CKD on ACE inhibitor: (1) dietary advice (reduce high-potassium foods — bananas, tomatoes, potatoes, oranges); (2) review concurrent medications increasing potassium (NSAIDs, TMP-SMX, potassium supplements, potassium-sparing diuretics); (3) consider dose reduction; (4) new potassium binders — patiromer (NICE TA591) or sodium zirconium cyclosilicate (NICE TA599) can maintain ACE inhibitor use by controlling potassium. Potassium 5.8 is mildly elevated — not immediately life-threatening if ECG normal.",
+      "A": "Incorrect — Stopping ACE inhibitor for mild hyperkalaemia (5.8) removes renoprotective benefit. Try conservative measures first.",
+      "B": "CORRECT — Dietary advice + medication review + reduce ACE inhibitor dose + consider potassium binders to continue ACE inhibitor per NICE NG203/TA591.",
+      "C": "Incorrect — Spironolactone (potassium-sparing diuretic) would further worsen hyperkalaemia in CKD.",
+      "D": "Incorrect — Switching to a CCB loses the specific renoprotective and anti-proteinuric benefit of ACE inhibitor in CKD.",
+      "E": "Incorrect — K+ 5.8 with no ECG changes is not immediately life-threatening. Gradual management is appropriate."
+    },
+    "reference": "NICE NG203 — Chronic kidney disease. NICE TA591 — Patiromer. https://www.nice.org.uk/guidance/ng203",
+    "tags": ["CKD", "hyperkalaemia", "ACE inhibitor", "patiromer", "dietary potassium", "NICE NG203"]
+  },
+  {
+    "id": "QG-RENAL-097-003",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Renal",
+    "difficulty": "Hard",
+    "question": "A 70-year-old man has CKD G4 (eGFR 22 ml/min). He is anaemic with Hb 96 g/L. His ferritin is 180 mcg/L and transferrin saturation is 28%. Reticulocyte count is normal. No other cause of anaemia is identified. Per NICE NG203, what is the most likely cause and appropriate management?",
+    "options": {
+      "A": "Iron deficiency anaemia — oral ferrous sulphate",
+      "B": "Anaemia of chronic kidney disease (renal anaemia from reduced erythropoietin production) — check iron stores (functional deficiency possible), refer to nephrology for consideration of erythropoiesis-stimulating agents (ESA — e.g. darbepoetin alfa) once iron repleted. Target Hb 100-120 g/L",
+      "C": "B12 deficiency — hydroxocobalamin injections",
+      "D": "Haemolytic anaemia — LDH, haptoglobin and blood film",
+      "E": "Bone marrow failure — urgent haematology referral"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Renal anaemia (anaemia of CKD) results from reduced erythropoietin (EPO) production by the failing kidneys. It is normocytic normochromic anaemia. In CKD G4 (eGFR 22), renal anaemia is common. Before starting ESA therapy: iron stores must be adequate — functional iron deficiency can occur even with normal/raised ferritin (transferrin saturation <20% or ferritin <200 suggests functional deficiency in CKD context). Per NICE NG203: if iron-replete and Hb <110 g/L with symptomatic renal anaemia, refer to nephrology for ESA (darbepoetin alfa, epoetin). Target Hb 100-120 g/L — avoid >130 g/L (increased cardiovascular risk). IV iron is preferred over oral iron in CKD G4-5 (poor oral absorption). ESA prescribing is via nephrology.",
+      "A": "Incorrect — Ferritin 180 and TSAT 28% suggest iron stores are borderline/adequate. Oral iron absorption is poor in advanced CKD.",
+      "B": "CORRECT — Renal anaemia (reduced EPO) in CKD G4: nephrology referral for ESA therapy with iron optimisation per NICE NG203.",
+      "C": "Incorrect — B12 deficiency causes macrocytic anaemia — the patient has normocytic anaemia in CKD G4.",
+      "D": "Incorrect — Haemolysis would show raised LDH and fragmented cells — not expected in simple renal anaemia.",
+      "E": "Incorrect — Bone marrow failure causes pancytopenia — not isolated normocytic anaemia in the context of severe CKD."
+    },
+    "reference": "NICE NG203 — Chronic kidney disease: anaemia management. https://www.nice.org.uk/guidance/ng203",
+    "tags": ["renal anaemia", "CKD G4", "erythropoietin", "ESA", "darbepoetin", "NICE NG203"]
+  },
+  {
+    "id": "QG-RENAL-110-001",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Renal",
+    "difficulty": "Medium",
+    "question": "A 72-year-old woman with CKD G3a (eGFR 52 ml/min) is prescribed co-amoxiclav for a dental infection. Two days later her eGFR has fallen to 31 ml/min, potassium is 6.2 mmol/L and creatinine has risen from 118 to 215 umol/L. She is taking ramipril, furosemide and ibuprofen (prescribed by the dentist for pain). She has been unwell and not drinking well. Per NICE AKI guidance, what is the most likely cause and immediate management?",
+    "options": {
+      "A": "Progression of her CKD — increase diuretic dose",
+      "B": "Acute kidney injury (AKI) — likely precipitated by: ibuprofen (NSAID reduces renal prostaglandins causing afferent arteriolar constriction), dehydration (reduced oral intake) and the triple whammy effect (ACE inhibitor + diuretic + NSAID). Stop ibuprofen immediately, withhold ramipril and furosemide temporarily, rehydrate, monitor electrolytes and creatinine urgently",
+      "C": "Continue all medications — AKI in CKD is always reversible without intervention",
+      "D": "Start IV antibiotics — co-amoxiclav caused the AKI",
+      "E": "Increase ramipril dose — higher ACE inhibitor doses protect kidneys in AKI"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "The 'triple whammy' is a well-recognised drug combination causing AKI: ACE inhibitor or ARB (reduces angiotensin II-mediated efferent arteriolar tone) + diuretic (reduces circulating volume) + NSAID (blocks prostaglandin-mediated afferent arteriolar dilation). Together these dramatically reduce glomerular filtration pressure. Per NICE AKI guideline and MHRA warning, this combination should be avoided, especially in dehydrated/unwell patients. Management: STOP NSAID immediately, WITHHOLD ACE inhibitor and diuretic temporarily until AKI resolves, ensure adequate hydration (oral or IV if necessary), monitor creatinine, potassium and urine output daily, check for obstruction (bladder scan). K+ 6.2 may need urgent treatment (calcium gluconate if ECG changes, glucose/insulin). If no improvement or ongoing deterioration: hospital admission.",
+      "A": "Incorrect — Acute rise in creatinine (118→215 umol/L in 2 days) with precipitating factors = AKI, not CKD progression.",
+      "B": "CORRECT — Triple whammy AKI: stop NSAID, withhold ACE inhibitor and diuretic, rehydrate, urgent monitoring per NICE AKI guidance.",
+      "C": "Incorrect — AKI requires active management — medications contributing to AKI must be addressed.",
+      "D": "Incorrect — Co-amoxiclav can rarely cause interstitial nephritis but the triple whammy is the most likely cause here.",
+      "E": "Incorrect — ACE inhibitor must be withheld in AKI — increasing the dose would worsen the AKI."
+    },
+    "reference": "NICE AKI guideline. MHRA — Triple whammy drug combination warning. https://www.nice.org.uk/guidance/ng148",
+    "tags": ["AKI", "triple whammy", "NSAID", "ACE inhibitor", "diuretic", "NICE AKI"]
+  },
+  {
+    "id": "QG-RENAL-110-002",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Renal",
+    "difficulty": "Hard",
+    "question": "A 45-year-old man presents with a 3-day history of reduced urine output, haematuria and frothy urine following a sore throat 2 weeks ago. His BP is 158/96 mmHg, creatinine 210 umol/L, urine dipstick shows 3+ blood and 3+ protein. Complement C3 is low. Per NICE CKS, what is the most likely diagnosis and management?",
+    "options": {
+      "A": "IgA nephropathy — no specific treatment needed",
+      "B": "Post-streptococcal glomerulonephritis — supportive management (antihypertensives, fluid restriction if oedematous, dietary protein/salt restriction), penicillin V if streptococcal infection not yet treated. Almost always self-limiting in children but may persist in adults. Nephrology referral",
+      "C": "Urinary tract infection — oral trimethoprim",
+      "D": "Renal cell carcinoma — urgent CT abdomen",
+      "E": "Alport syndrome — genetic testing"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Post-streptococcal glomerulonephritis (PSGN): nephritic syndrome (haematuria, hypertension, oliguria, proteinuria, rising creatinine) occurring 1-3 weeks after group A Streptococcal pharyngitis (or skin infection). Low C3 (complement consumption from immune complex deposition) is characteristic. Throat/skin swab may still be positive; ASO titre elevated. Management: penicillin V if still active streptococcal infection; antihypertensives (usually loop diuretics or CCBs); salt and fluid restriction if oedematous; nephrology referral. PSGN is usually self-limiting in children — in adults it may be more persistent and require biopsy to confirm. Per NICE CKS and nephrology guidelines.",
+      "A": "Incorrect — IgA nephropathy follows upper respiratory tract infection by 1-3 DAYS (not 2 weeks) and complements are normal.",
+      "B": "CORRECT — PSGN: nephritic syndrome 2 weeks post-streptococcal infection + low C3. Supportive treatment + nephrology referral.",
+      "C": "Incorrect — UTI causes dysuria and cloudy urine — not nephritic syndrome with hypertension and rising creatinine.",
+      "D": "Incorrect — Renal cell carcinoma causes painless haematuria but not the acute nephritic picture with hypertension and low C3.",
+      "E": "Incorrect — Alport syndrome is hereditary progressive nephritis — not post-infectious with low complement."
+    },
+    "reference": "NICE CKS — Glomerulonephritis. BSN — Nephritis guidelines. https://cks.nice.org.uk/topics/glomerulonephritis/",
+    "tags": ["post-streptococcal GN", "glomerulonephritis", "nephritic syndrome", "low C3", "complement", "NICE CKS"]
+  },
+  {
+    "id": "QG-RENAL-110-003",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Renal",
+    "difficulty": "Medium",
+    "question": "A GP reviews a patient's eGFR trend over 3 years: year 1: eGFR 68, year 2: eGFR 61, year 3: eGFR 55 ml/min. The patient is 62 years old with well-controlled hypertension and no proteinuria (ACR 1.8 mg/mmol). Per NICE NG203, does this represent significant CKD progression requiring action?",
+    "options": {
+      "A": "No — eGFR decline with age is always physiological and requires no action",
+      "B": "Yes — a sustained decline in eGFR of >5 ml/min/year, or >10 ml/min within 5 years, or consistent downward trend represents significant CKD progression per NICE NG203. Investigate for reversible causes, optimise cardiovascular risk, consider nephrology referral",
+      "C": "Only significant if eGFR falls below 30 ml/min — no action at eGFR 55",
+      "D": "Decline from 68 to 55 over 3 years (4.3 ml/min/year) is within acceptable physiological decline — no action",
+      "E": "Perform immediate renal biopsy to determine the cause"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per NICE NG203, significant CKD progression is defined as: sustained decrease in eGFR of >5 ml/min/year, OR decrease in eGFR >10 ml/min within 5 years. This patient has declined from 68 to 55 over 3 years = decline of 13 ml/min in 3 years (~4.3 ml/min/year). This exceeds the 5 ml/min/year threshold — this IS significant progression. Action: identify and manage reversible causes (uncontrolled hypertension, nephrotoxic drugs, obstruction, dehydration), optimise cardiovascular risk (most CKD patients die from CVD before reaching dialysis), ensure ACE inhibitor/ARB if proteinuria present, consider nephrology referral. Normal physiological age-related eGFR decline is approximately 1-2 ml/min/year from age 40.",
+      "A": "Incorrect — 4.3 ml/min/year decline significantly exceeds the normal physiological rate of 1-2 ml/min/year.",
+      "B": "CORRECT — eGFR decline >5 ml/min/year = significant progression per NICE NG203. Investigate, optimise risk factors, consider nephrology.",
+      "C": "Incorrect — NICE NG203 defines significant progression based on rate of decline — not just the absolute eGFR value.",
+      "D": "Incorrect — 4.3 ml/min/year exceeds the NICE NG203 threshold of 5 ml/min/year — this warrants attention.",
+      "E": "Incorrect — Renal biopsy is not indicated in this scenario — it is for unexplained proteinuria, haematuria or rapidly declining eGFR."
+    },
+    "reference": "NICE NG203 — Chronic kidney disease: assessment and management. https://www.nice.org.uk/guidance/ng203",
+    "tags": ["CKD progression", "eGFR decline", "5 ml/min/year", "NICE NG203", "nephrology referral", "CKD monitoring"]
+  },
+  {
+    "id": "QG-RENAL-111-001",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Renal",
+    "difficulty": "Easy",
+    "question": "A 28-year-old woman is 16 weeks pregnant and has a mid-stream urine (MSU) at her booking appointment. Culture grows Escherichia coli >10⁵ CFU/ml. She has no urinary symptoms. Per NICE NG195, what is this diagnosis and how should it be treated?",
+    "options": {
+      "A": "Contaminated sample — repeat MSU and only treat if symptomatic",
+      "B": "Asymptomatic bacteriuria (ASB) in pregnancy — must be treated with antibiotics (nitrofurantoin 100mg modified release twice daily for 5 days, OR cefalexin, OR trimethoprim if after first trimester and not near term) per NICE NG195. Untreated ASB causes pyelonephritis in 30-40% of pregnant women",
+      "C": "ASB in pregnancy — reassure, no treatment needed in pregnancy",
+      "D": "Treat only if symptoms develop — oral cephalexin when symptomatic",
+      "E": "Asymptomatic bacteriuria requires IV antibiotics in pregnancy"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per NICE NG195 (Urinary tract infection: antimicrobial prescribing) and NICE NG4 (Antenatal care), asymptomatic bacteriuria (ASB) in pregnancy MUST be treated with antibiotics. Unlike non-pregnant adults (where ASB is not routinely treated), pregnancy causes urinary stasis and ureteric dilatation — untreated ASB progresses to symptomatic UTI and pyelonephritis in 30-40% of cases, with risks of preterm labour, low birth weight and maternal sepsis. Treatment: nitrofurantoin (avoid at term — risk of neonatal haemolysis), cefalexin, or trimethoprim (avoid in first trimester — folate antagonist; avoid near term). Duration: 5-7 days. Repeat MSU 7 days after treatment.",
+      "A": "Incorrect — ASB in pregnancy is NOT treated the same as in non-pregnant adults — it must be treated regardless of symptoms.",
+      "B": "CORRECT — ASB in pregnancy requires antibiotic treatment to prevent pyelonephritis and obstetric complications per NICE NG195.",
+      "C": "Incorrect — ASB in pregnancy is a treatment indication — untreated leads to pyelonephritis in 30-40% of cases.",
+      "D": "Incorrect — Waiting for symptoms means waiting for pyelonephritis to develop — this is preventable harm.",
+      "E": "Incorrect — IV antibiotics are not required for uncomplicated ASB — oral antibiotics are appropriate."
+    },
+    "reference": "NICE NG195 — Urinary tract infection: antimicrobial prescribing. NICE NG4 — Antenatal care. https://www.nice.org.uk/guidance/ng195",
+    "tags": ["asymptomatic bacteriuria", "pregnancy UTI", "nitrofurantoin", "pyelonephritis prevention", "NICE NG195", "antenatal"]
+  },
+  {
+    "id": "QG-RENAL-111-002",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Renal",
+    "difficulty": "Medium",
+    "question": "A 35-year-old non-pregnant woman presents with 3 days of dysuria, frequency and suprapubic pain. MSU shows E. coli >10⁵ CFU/ml. She has no fever, loin pain or systemic features. She has had 4 UTIs in the past 12 months. Per NICE NG195, what is the appropriate management including consideration of her recurrent UTIs?",
+    "options": {
+      "A": "Long-term prophylactic trimethoprim — start immediately for all recurrent UTIs",
+      "B": "Treat current episode: nitrofurantoin 100mg MR twice daily for 5 days (first-line per NICE NG195 for lower UTI). Investigate underlying cause of recurrence (MSU culture each episode, post-void residual, USS to exclude structural abnormality). If ≥3 episodes/year: consider prophylactic low-dose antibiotic (trimethoprim 100mg nocte or nitrofurantoin 50-100mg nocte) or post-coital prophylaxis. Refer to urology if structural cause suspected",
+      "C": "Single dose fosfomycin — sufficient for recurrent UTI",
+      "D": "No investigation needed — recurrent UTI is always behavioural in women",
+      "E": "Treat with amoxicillin — first-line for E. coli UTI"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per NICE NG195, first-line treatment for uncomplicated lower UTI in non-pregnant women: nitrofurantoin 100mg MR twice daily for 5 days (if eGFR ≥45); alternatively trimethoprim 200mg twice daily for 7 days if local E. coli resistance rates to trimethoprim <20%. Amoxicillin is not first-line for urinary E. coli due to high resistance rates. For recurrent UTI (≥2 in 6 months or ≥3 in 12 months): investigate (MSU each episode for culture/sensitivity, USS kidneys and bladder, post-void residual). If no structural cause: consider prophylactic low-dose antibiotic nocturnally or self-start antibiotic strategy. Per NICE CKS, urology referral if structural abnormality identified or postmenopausal women with recurrent UTI (consider topical oestrogen).",
+      "A": "Incorrect — Prophylactic antibiotics should not be started without treating the current episode first and investigating the cause of recurrence.",
+      "B": "CORRECT — Nitrofurantoin for current episode + investigation for structural cause + prophylaxis if ≥3/year per NICE NG195.",
+      "C": "Incorrect — Single dose fosfomycin is used for uncomplicated lower UTI but is not specifically indicated for recurrent UTI management.",
+      "D": "Incorrect — Recurrent UTI in women can have structural causes (incomplete voiding, renal stones, diverticula) that must be excluded.",
+      "E": "Incorrect — E. coli has high amoxicillin resistance rates (>50%) — it is not first-line per NICE NG195."
+    },
+    "reference": "NICE NG195 — Urinary tract infection: antimicrobial prescribing. NICE CKS — Recurrent UTI. https://www.nice.org.uk/guidance/ng195",
+    "tags": ["recurrent UTI", "nitrofurantoin", "trimethoprim", "prophylaxis", "NICE NG195", "lower UTI"]
+  },
+  {
+    "id": "QG-RENAL-120-001",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Renal",
+    "difficulty": "Medium",
+    "question": "A 55-year-old woman on long-term nitrofurantoin prophylaxis (50mg daily for 2 years) for recurrent UTIs develops progressive exertional breathlessness and a dry cough. CXR shows bilateral interstitial infiltrates. Lung function shows a restrictive pattern. Her creatinine is normal (eGFR 75 ml/min). What must be considered and what is the immediate action?",
+    "options": {
+      "A": "Community-acquired pneumonia — oral amoxicillin and continue nitrofurantoin",
+      "B": "Nitrofurantoin-induced pulmonary toxicity (chronic pulmonary reaction) — stop nitrofurantoin immediately, refer to respiratory medicine urgently. MHRA has issued warnings about this serious adverse effect with long-term use",
+      "C": "IPF — refer to ILD clinic and continue nitrofurantoin",
+      "D": "Heart failure — echocardiogram and continue nitrofurantoin",
+      "E": "Nitrofurantoin is safe long-term — this is unrelated to the medication"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Nitrofurantoin pulmonary toxicity: a well-recognised but underdiagnosed serious adverse drug reaction. Two forms: (1) Acute pulmonary reaction (within days-weeks — fever, breathlessness, bilateral infiltrates — usually reversible on stopping); (2) Chronic pulmonary reaction (as here — months to years of use causing insidious interstitial pneumonitis/fibrosis — may be irreversible). Per MHRA Drug Safety Update (2016 and 2020), nitrofurantoin for long-term prophylaxis carries risk of pulmonary toxicity — monitor for respiratory symptoms. Chronic form is associated with prolonged use (>3 months) and may mimic IPF. Management: STOP nitrofurantoin immediately, urgent respiratory referral, oral prednisolone may help acute inflammation. Per NICE CKS: reassess need for long-term nitrofurantoin at least annually.",
+      "A": "Incorrect — Bilateral interstitial infiltrates with restrictive lung function after 2 years of nitrofurantoin = nitrofurantoin toxicity, not pneumonia.",
+      "B": "CORRECT — Nitrofurantoin pulmonary toxicity: stop immediately + urgent respiratory referral per MHRA/NICE CKS.",
+      "C": "Incorrect — While IPF is in the differential, the temporal relationship with 2 years of nitrofurantoin strongly suggests drug toxicity — stop first.",
+      "D": "Incorrect — Heart failure causes pulmonary oedema (bilateral basal shadowing) but not a restrictive lung function pattern.",
+      "E": "Incorrect — Nitrofurantoin pulmonary toxicity is well-established — the MHRA has specifically warned about long-term use."
+    },
+    "reference": "MHRA Drug Safety Update — Nitrofurantoin: updated advice. NICE CKS — UTI recurrent. https://www.gov.uk/drug-safety-update",
+    "tags": ["nitrofurantoin", "pulmonary toxicity", "interstitial pneumonitis", "MHRA", "long-term prophylaxis", "NICE CKS"]
+  },
+  {
+    "id": "QG-RENAL-131-001",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Renal",
+    "difficulty": "Hard",
+    "question": "A 68-year-old man is admitted with vomiting and diarrhoea for 2 days. His regular medications include metformin 1g twice daily, ramipril 10mg, furosemide 80mg and ibuprofen (taken for back pain). His bloods show: creatinine 380 umol/L (baseline 120 umol/L), potassium 6.8 mmol/L, bicarbonate 14 mmol/L, blood glucose 12 mmol/L. His ECG shows peaked T-waves. Per NICE AKI guideline and MHRA guidance, which medications must be stopped immediately and why?",
+    "options": {
+      "A": "Only stop metformin — other medications are safe in AKI",
+      "B": "Stop ibuprofen (NSAID worsens AKI — reduced renal prostaglandins), withhold ramipril (reduces glomerular filtration in AKI), withhold furosemide (worsens pre-renal component), hold metformin (risk of lactic acidosis when eGFR <30 or in AKI). Treat hyperkalaemia urgently (ECG changes — IV calcium gluconate, glucose/insulin, consider dialysis). Urgent nephrology/ITU referral",
+      "C": "Continue all medications — AKI is self-limiting",
+      "D": "Stop metformin and ibuprofen only — ACE inhibitor is renoprotective in AKI",
+      "E": "Increase furosemide dose — diuresis treats AKI"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "This patient has severe AKI (creatinine 380 vs baseline 120 = stage 3 AKI), life-threatening hyperkalaemia (K+ 6.8 with ECG changes), and metabolic acidosis. Multiple medications are contributing: ibuprofen (NSAID causes renal vasoconstriction — triple whammy with ACE inhibitor + diuretic), ramipril (ACE inhibitor reduces GFR during AKI), furosemide (diuretic worsens pre-renal AKI in a dehydrated patient), metformin (renally cleared — accumulates in AKI causing fatal lactic acidosis; MHRA: withhold if eGFR <30 or acute illness). ECG changes with K+ 6.8 = emergency: IV calcium gluconate 10% 10ml (stabilises cardiac membrane), then glucose/insulin (drives K+ into cells), consider sodium bicarbonate, urgent nephrology for dialysis. Per NICE AKI guideline and MHRA safety information.",
+      "A": "Incorrect — All four medications must be stopped/withheld in this AKI — not just metformin.",
+      "B": "CORRECT — Stop NSAID, withhold ACE inhibitor, furosemide and metformin in AKI. Treat K+ 6.8 with ECG changes urgently per NICE AKI.",
+      "C": "Incorrect — Severe AKI with dangerous hyperkalaemia requires urgent medication review and treatment — not watchful waiting.",
+      "D": "Incorrect — ACE inhibitor should also be withheld in AKI — it reduces glomerular filtration pressure.",
+      "E": "Incorrect — Increasing diuretics in a dehydrated patient with pre-renal AKI worsens the AKI."
+    },
+    "reference": "NICE AKI guideline NG148. MHRA — Metformin: updated contraindications. https://www.nice.org.uk/guidance/ng148",
+    "tags": ["AKI", "hyperkalaemia", "metformin lactic acidosis", "triple whammy", "NICE NG148", "MHRA metformin"]
+  },
+  {
+    "id": "QG-RENAL-131-002",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Renal",
+    "difficulty": "Easy",
+    "question": "A 75-year-old woman has a baseline eGFR of 55 ml/min (CKD G3a). Her GP prescribes metformin 500mg twice daily for newly diagnosed type 2 diabetes. Per NICE NG28 and BNF, is metformin safe at this eGFR and what monitoring is required?",
+    "options": {
+      "A": "Metformin is absolutely contraindicated at eGFR 55 — use another agent",
+      "B": "Metformin is safe at eGFR 55 but should be used with caution in CKD. NICE NG28 advises: continue metformin if eGFR ≥45; use with caution and consider dose reduction if eGFR 30-45; stop if eGFR <30. Monitor eGFR every 3-6 months and withhold during acute illness (dehydration, vomiting, procedures requiring contrast)",
+      "C": "Metformin can be used at any eGFR without dose adjustment or monitoring",
+      "D": "Metformin should be stopped if eGFR falls below 60 ml/min",
+      "E": "Metformin is only safe if creatinine is below 100 umol/L"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per NICE NG28 (Type 2 diabetes in adults: management) and BNF, metformin dose guidance based on eGFR: eGFR ≥45: continue at usual doses; eGFR 30-45: use with caution, consider dose reduction (max 1g/day), review more frequently; eGFR <30: CONTRAINDICATED (risk of lactic acidosis from accumulation). eGFR 55 is safe for standard metformin. Sick day rules are critical: withhold metformin during acute illness, surgery, procedures with contrast media (contrast can cause AKI → metformin accumulation). Review eGFR at least 3-6 monthly in CKD. The old threshold was serum creatinine >150 umol/L — this is now replaced by the eGFR-based guidance.",
+      "A": "Incorrect — Metformin is safe at eGFR 55. Contraindication threshold is eGFR <30.",
+      "B": "CORRECT — Metformin safe at eGFR 55; withhold if eGFR <30 or acute illness. 3-6 monthly eGFR monitoring per NICE NG28.",
+      "C": "Incorrect — Metformin requires dose adjustment and stopping at eGFR <30 — monitoring is essential.",
+      "D": "Incorrect — Stopping at eGFR <60 is too conservative — NICE NG28 allows metformin down to eGFR 30-45 with caution.",
+      "E": "Incorrect — Serum creatinine-based thresholds are outdated — eGFR-based guidance per NICE NG28 and BNF is current practice."
+    },
+    "reference": "NICE NG28 — Type 2 diabetes in adults. BNF — Metformin eGFR guidance. https://www.nice.org.uk/guidance/ng28",
+    "tags": ["metformin", "CKD", "eGFR threshold", "lactic acidosis", "NICE NG28", "BNF"]
+  },
+  {
+    "id": "QG-RENAL-131-003",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Renal",
+    "difficulty": "Medium",
+    "question": "A 60-year-old man is found to have an eGFR of 28 ml/min on routine bloods. He feels well, has no oedema and his blood pressure is controlled. He has no history of kidney disease. His urine ACR is 95 mg/mmol. Per NICE NG203, which of these clinical features is a nephrology referral criterion?",
+    "options": {
+      "A": "No referral criteria are met — eGFR 28 is managed in primary care",
+      "B": "Multiple referral criteria are met: eGFR <30 ml/min (G4), ACR ≥70 mg/mmol (A3), and unexplained CKD (no known cause). NICE NG203 recommends nephrology referral for all of these. Refer urgently",
+      "C": "Only refer if symptomatic (oedema, hypertension)",
+      "D": "Refer only if dialysis is imminent",
+      "E": "Referral is only needed if eGFR <15 ml/min"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per NICE NG203, nephrology referral criteria include: eGFR <30 ml/min (CKD G4 or G5), ACR ≥70 mg/mmol without diabetic explanation, suspected rare or genetic CKD cause, unexplained rapidly declining eGFR (>5 ml/min/year), persistent haematuria with proteinuria, hypertension refractory to 4+ antihypertensives, suspected renal artery stenosis, or considering renal transplantation planning. This patient has eGFR 28 (G4) AND ACR 95 mg/mmol (A3 — high) AND unexplained CKD — he meets multiple referral criteria. Early nephrology involvement allows: biopsy consideration, cardiovascular optimisation, anaemia management, preparation for renal replacement therapy planning.",
+      "A": "Incorrect — eGFR 28 and ACR 95 meet multiple NICE NG203 nephrology referral criteria.",
+      "B": "CORRECT — Multiple criteria met (eGFR <30, ACR ≥70, unexplained CKD): nephrology referral per NICE NG203.",
+      "C": "Incorrect — NICE NG203 referral criteria are based on objective parameters, not just symptoms.",
+      "D": "Incorrect — Early referral (eGFR <30) allows time for planning and slowing progression — not waiting for dialysis imminent.",
+      "E": "Incorrect — eGFR <15 (G5) is very late referral — NICE NG203 recommends referral at eGFR <30."
+    },
+    "reference": "NICE NG203 — Chronic kidney disease: assessment and management. https://www.nice.org.uk/guidance/ng203",
+    "tags": ["CKD", "nephrology referral", "eGFR <30", "ACR ≥70", "NICE NG203", "CKD G4"]
+  },
+  {
+    "id": "QG-RENAL-131-004",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Renal",
+    "difficulty": "Hard",
+    "question": "A 52-year-old man with CKD G3b and diabetes is started on dapagliflozin 10mg daily as per NICE guidance. Six weeks later he presents with a 2-day history of nausea, abdominal pain and vomiting. His blood glucose is 9.8 mmol/L (mildly elevated), pH 7.18, bicarbonate 10 mmol/L, and blood ketones are 4.2 mmol/L. His dapagliflozin is still being taken. What is the diagnosis and why is this presentation a particular risk with SGLT2 inhibitors in CKD?",
+    "options": {
+      "A": "Hyperglycaemic hyperosmolar state — insulin infusion",
+      "B": "Euglycaemic diabetic ketoacidosis (euDKA) — SGLT2 inhibitors lower blood glucose while promoting ketogenesis, masking DKA with near-normal glucose. Stop dapagliflozin immediately. This is a known risk requiring patient education about sick day rules and checking ketones when unwell regardless of glucose",
+      "C": "Urinary tract infection — oral trimethoprim and continue dapagliflozin",
+      "D": "Metabolic alkalosis from vomiting — anti-emetics and IV fluids",
+      "E": "CKD progression causing metabolic acidosis — increase bicarbonate supplementation"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Euglycaemic DKA (euDKA) is a serious and potentially underdiagnosed complication of SGLT2 inhibitor therapy. Mechanism: SGLT2 inhibitors increase urinary glucose excretion (lowering blood glucose) while simultaneously increasing glucagon and promoting free fatty acid metabolism and ketogenesis. In DKA, the glucose-lowering effect of the SGLT2 inhibitor keeps blood glucose near-normal, masking the classic hyperglycaemia of DKA — leading to delayed diagnosis. MHRA 2016 alert. Per MHRA and NICE, patients must: be counselled about euDKA risk, check blood ketones (not just glucose) when unwell, follow sick day rules (stop SGLT2 inhibitor during illness, surgery, fasting), attend hospital if ketones elevated. CKD patients may have higher risk due to altered drug pharmacokinetics.",
+      "A": "Incorrect — HHS causes hyperglycaemia (glucose >30) without significant ketosis — this patient has normal glucose with high ketones.",
+      "B": "CORRECT — Euglycaemic DKA from SGLT2 inhibitor: normal glucose + high ketones + acidosis. Stop dapagliflozin + treat DKA per MHRA/NICE.",
+      "C": "Incorrect — UTI does not cause ketoacidosis and metabolic acidosis in this pattern.",
+      "D": "Incorrect — Vomiting causes metabolic ALKALOsis (loss of HCl) — not acidosis with pH 7.18.",
+      "E": "Incorrect — CKD metabolic acidosis causes bicarbonate fall but not elevated ketones."
+    },
+    "reference": "MHRA Drug Safety Update — SGLT2 inhibitors and DKA. NICE NG203. https://www.gov.uk/drug-safety-update",
+    "tags": ["euglycaemic DKA", "SGLT2 inhibitor", "dapagliflozin", "CKD", "MHRA", "sick day rules"]
+  },
+  {
+    "id": "QG-RENAL-097-004",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Renal",
+    "difficulty": "Medium",
+    "question": "A 48-year-old woman has her annual CKD review. Her eGFR is 48 ml/min (stable, G3b), ACR 5.2 mg/mmol (A1), BP 124/78 mmHg on ramipril. She is not diabetic. Per NICE NG203, what is the appropriate monitoring frequency?",
+    "options": {
+      "A": "Annual monitoring only — eGFR 48 is nearly normal",
+      "B": "Every 6 months — CKD G3b with low ACR (A1) requires 6-monthly monitoring of eGFR, ACR, BP and blood tests per NICE NG203 monitoring frequency table",
+      "C": "Monthly monitoring — all CKD requires monthly review",
+      "D": "Only monitor if symptoms develop",
+      "E": "Discharge from CKD monitoring — eGFR above 45 does not require monitoring"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per NICE NG203 CKD monitoring frequency table, monitoring frequency is determined by the GFR category (G) and albuminuria category (A): G3b + A1 (ACR <3 mg/mmol) = monitor once per year (not 6-monthly). G3b + A2 = twice per year. G3b + A3 = 3 times per year. However, given ACR 5.2 mg/mmol is actually A2 (3-30 mg/mmol range), this patient should have monitoring twice per year. The key principle: higher GFR decline risk (higher A category) requires more frequent monitoring. Checks: eGFR, ACR, BP, electrolytes (K+, bicarbonate), Hb, calcium, phosphate, parathyroid hormone. Also: cardiovascular risk assessment and statin consideration (CKD is a cardiovascular risk equivalent).",
+      "A": "Incorrect — Even G3b with low ACR requires annual monitoring — this cannot be discharged from CKD follow-up.",
+      "B": "CORRECT — G3b with A2 (ACR 5.2 = 3-30 range): 6-monthly monitoring per NICE NG203 frequency table.",
+      "C": "Incorrect — Monthly monitoring is for G4-G5 with high albuminuria — not G3b stable CKD.",
+      "D": "Incorrect — Asymptomatic CKD progression can be detected and managed on scheduled monitoring — symptoms are a late sign.",
+      "E": "Incorrect — eGFR 48 is CKD G3b which requires regular monitoring — not discharge."
+    },
+    "reference": "NICE NG203 — Chronic kidney disease: assessment and management. https://www.nice.org.uk/guidance/ng203",
+    "tags": ["CKD monitoring", "G3b A2", "6-monthly", "eGFR ACR", "NICE NG203", "monitoring frequency"]
+  },
+  {
+    "id": "QG-RENAL-097-005",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Renal",
+    "difficulty": "Hard",
+    "question": "A 65-year-old man with CKD G3b, hypertension and type 2 diabetes is being considered for an SGLT2 inhibitor per NICE NG203. His eGFR is 38 ml/min and ACR is 120 mg/mmol. His HbA1c is 62 mmol/mol. Per NICE NG28 and NG203, which SGLT2 inhibitor is specifically licensed and recommended for CKD progression reduction regardless of diabetes control?",
+    "options": {
+      "A": "Empagliflozin — only indication is cardiovascular risk reduction",
+      "B": "Dapagliflozin 10mg daily — NICE TA775 approves dapagliflozin specifically for CKD (with or without T2DM) to reduce CKD progression and cardiovascular events when eGFR 25-75 and ACR ≥22.6 mg/mmol",
+      "C": "Canagliflozin — first SGLT2i in CKD",
+      "D": "SGLT2 inhibitors are absolutely contraindicated below eGFR 45 in all circumstances",
+      "E": "No SGLT2 inhibitor is NICE-approved for CKD — only for type 2 diabetes with cardiovascular disease"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per NICE TA775 (Dapagliflozin for treating chronic kidney disease, 2021) and NICE NG203, dapagliflozin 10mg daily is specifically approved for adults with CKD to reduce progression and cardiovascular events in patients with eGFR 25-75 ml/min/1.73m² AND ACR ≥22.6 mg/mmol (approximately 200 mg/g) regardless of whether they have type 2 diabetes. This is a landmark change — SGLT2 inhibitors can now be used below eGFR 45 for CKD indications (whereas their glucose-lowering effect is lost below eGFR 30). The DAPA-CKD trial demonstrated significant reductions in composite endpoint of ≥50% sustained eGFR decline, end-stage kidney disease, CV death and hospitalisations.",
+      "A": "Incorrect — Empagliflozin has cardiovascular and CKD indications but NICE TA775 specifically approved dapagliflozin for CKD first.",
+      "B": "CORRECT — Dapagliflozin 10mg approved by NICE TA775 for CKD (eGFR 25-75, ACR ≥22.6) regardless of diabetes status.",
+      "C": "Incorrect — Canagliflozin (CREDENCE trial) showed renal benefits but NICE TA775 specifically approved dapagliflozin for CKD in the UK.",
+      "D": "Incorrect — NICE TA775 specifically extends dapagliflozin use below eGFR 45 for the CKD indication.",
+      "E": "Incorrect — NICE TA775 approval is specifically for CKD — not only cardiovascular/diabetic indication."
+    },
+    "reference": "NICE TA775 — Dapagliflozin for treating chronic kidney disease. https://www.nice.org.uk/guidance/ta775",
+    "tags": ["dapagliflozin", "CKD", "SGLT2 inhibitor", "NICE TA775", "ACR", "eGFR 25-75"]
+  },
+  {
+    "id": "QG-RENAL-111-003",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Renal",
+    "difficulty": "Easy",
+    "question": "A 28-year-old woman is 10 days post-partum and develops a fever of 38.9°C, rigors, right-sided loin pain and vomiting. She has been breastfeeding. Urine dipstick shows 3+ leucocytes and 2+ nitrites. MSU is sent. Per NICE NG111, what is the diagnosis and recommended treatment?",
+    "options": {
+      "A": "Lower urinary tract infection — oral nitrofurantoin for 3 days",
+      "B": "Pyelonephritis (upper UTI) — hospital admission for IV co-amoxiclav or IV cefuroxime, IV fluids, analgesia. If improving after 24-48 hours IV antibiotics: switch to oral co-amoxiclav to complete 14 days total. Avoid nitrofurantoin (limited tissue penetration for upper UTI). Consider USS kidneys to exclude abscess/obstruction",
+      "C": "Endometritis — IV benzylpenicillin and metronidazole",
+      "D": "Mastitis — oral flucloxacillin and continue breastfeeding",
+      "E": "Appendicitis — urgent surgical referral"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Pyelonephritis (upper UTI/kidney infection): fever, rigors, loin pain, nausea/vomiting with positive urine dipstick. Postpartum women are at increased UTI risk. Per NICE NG111 (Urinary tract infection in adults: antimicrobial prescribing) and NG195: pyelonephritis requires systemic antibiotic treatment — oral antibiotics may be used for mild-moderate cases but hospital admission and IV antibiotics are preferred for severe illness (fever, vomiting, sepsis features). IV co-amoxiclav or cefuroxime are first-line. Treatment duration: 14 days total. Nitrofurantoin is NOT appropriate for pyelonephritis — it achieves inadequate tissue levels for renal parenchyma. USS to exclude renal abscess, calculi or obstruction.",
+      "A": "Incorrect — 3-day nitrofurantoin is for lower UTI — not pyelonephritis. Nitrofurantoin has poor renal tissue penetration.",
+      "B": "CORRECT — Pyelonephritis with fever/vomiting: hospital admission + IV antibiotics + 14 days total treatment per NICE NG111/NG195.",
+      "C": "Incorrect — Endometritis causes uterine tenderness and discharge — not loin pain and dipstick positive urine.",
+      "D": "Incorrect — Mastitis causes localised breast tenderness — not loin pain and fever with positive urinalysis.",
+      "E": "Incorrect — Appendicitis causes right iliac fossa pain — not loin pain with positive urine dipstick and postpartum context."
+    },
+    "reference": "NICE NG111 — Urinary tract infection in adults. NICE NG195 — UTI antimicrobial prescribing. https://www.nice.org.uk/guidance/ng111",
+    "tags": ["pyelonephritis", "upper UTI", "IV antibiotics", "co-amoxiclav", "nitrofurantoin not for pyelonephritis", "NICE NG111"]
+  },
+  {
+    "id": "QG-RENAL-097-006",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Renal",
+    "difficulty": "Medium",
+    "question": "A 55-year-old man with established CKD G3a is found to have bicarbonate of 18 mmol/L (normal 22-29 mmol/L) on blood tests. He has no other cause of metabolic acidosis. Per NICE NG203, what is the significance and management?",
+    "options": {
+      "A": "Bicarbonate 18 is within acceptable range for CKD — no action",
+      "B": "Metabolic acidosis is a recognised complication of CKD (reduced acid excretion by damaged kidneys). Per NICE NG203: if bicarbonate <22 mmol/L in CKD, consider oral sodium bicarbonate supplementation (1-3 tablets twice daily) as it may slow CKD progression. Nephrology referral if bicarbonate persistently <18 mmol/L despite supplementation",
+      "C": "Give IV sodium bicarbonate in A&E — bicarbonate 18 is an emergency",
+      "D": "Bicarbonate 18 is caused by dietary excess of protein — restrict protein to <0.5g/kg/day",
+      "E": "Bicarbonate supplementation worsens CKD by increasing sodium load"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per NICE NG203, metabolic acidosis is a complication of progressive CKD (reduced renal acid excretion). Bicarbonate <22 mmol/L in CKD is associated with faster CKD progression (acidosis increases protein catabolism and tubular ammoniagenesis causing further nephron damage). NICE NG203 recommends offering sodium bicarbonate supplementation to patients with CKD and bicarbonate <22 mmol/L to slow CKD progression, unless contraindicated (fluid overload). Oral sodium bicarbonate (1-3 × 500-600mg tablets twice daily) — titrate to serum bicarbonate 22-29 mmol/L. This is relatively low-cost and has evidence for slowing progression. Bicarbonate 18 is symptomatic acidosis warranting treatment but not an acute emergency.",
+      "A": "Incorrect — Bicarbonate 18 is below the NICE NG203 threshold of 22 mmol/L — treatment is indicated.",
+      "B": "CORRECT — Sodium bicarbonate supplementation for CKD with bicarbonate <22 mmol/L per NICE NG203.",
+      "C": "Incorrect — IV bicarbonate is for severe symptomatic acidosis — oral supplementation is appropriate for chronic CKD acidosis.",
+      "D": "Incorrect — Severe protein restriction (<0.5g/kg) is not recommended in CKD — moderate restriction (0.6-0.8g/kg) may be discussed with nephrology.",
+      "E": "Incorrect — Evidence shows sodium bicarbonate slows CKD progression. Sodium load is monitored but benefit outweighs risk in most patients."
+    },
+    "reference": "NICE NG203 — Chronic kidney disease. https://www.nice.org.uk/guidance/ng203",
+    "tags": ["CKD metabolic acidosis", "sodium bicarbonate", "bicarbonate <22", "CKD progression", "NICE NG203", "renal acidosis"]
+  },
+  {
+    "id": "QG-RENAL-110-004",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Renal",
+    "difficulty": "Easy",
+    "question": "A 40-year-old woman presents with painless haematuria (visible haematuria on three separate occasions). She is a non-smoker. Urine cytology is negative. MSU culture is negative. Per NICE NG12, what is the most appropriate next step?",
+    "options": {
+      "A": "Reassure — haematuria is common and usually benign in young women",
+      "B": "Urgent 2WW referral to urology for investigation of visible haematuria — visible haematuria at any age in adults requires urgent investigation to exclude urological malignancy",
+      "C": "Repeat urine dipstick in 6 weeks — if positive again, then refer",
+      "D": "CT kidney-ureter-bladder (KUB) in primary care before referring",
+      "E": "Refer only if haematuria persists for more than 6 months"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per NICE NG12 (Suspected cancer: recognition and referral), visible (frank) haematuria at any age in adults without an obvious benign cause warrants urgent 2WW referral to urology for investigation of possible bladder or kidney cancer. This applies regardless of age, sex or absence of other symptoms. The urology assessment will include cystoscopy (to visualise the bladder) and upper tract imaging (CT urogram or USS). Bladder cancer is the most common cause of painless visible haematuria in adults. Non-visible (microscopic) haematuria has different thresholds per NICE NG12 (age/sex dependent). Three separate episodes of visible haematuria make the urgency even clearer.",
+      "A": "Incorrect — Painless visible haematuria requires urgent investigation — it should never be dismissed as benign without specialist assessment.",
+      "B": "CORRECT — Visible haematuria at any adult age: urgent 2WW urology referral per NICE NG12.",
+      "C": "Incorrect — Three episodes of documented visible haematuria already justify urgent 2WW referral — further waiting is harmful.",
+      "D": "Incorrect — CT in primary care should not delay 2WW referral — specialist investigation (including cystoscopy) is essential.",
+      "E": "Incorrect — Waiting 6 months before referring for visible haematuria risks delayed cancer diagnosis."
+    },
+    "reference": "NICE NG12 — Suspected cancer: recognition and referral. https://www.nice.org.uk/guidance/ng12",
+    "tags": ["haematuria", "visible haematuria", "2WW", "bladder cancer", "urology referral", "NICE NG12"]
+  },
+  {
+    "id": "QG-RENAL-131-005",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Renal",
+    "difficulty": "Medium",
+    "question": "A 70-year-old man with CKD G3b is about to have a contrast-enhanced CT scan to investigate a suspected renal mass. He takes metformin 1g twice daily. Per MHRA and NICE guidance, what advice should be given regarding his metformin?",
+    "options": {
+      "A": "Continue metformin throughout — contrast does not interact with metformin",
+      "B": "Withhold metformin on the day of and for 48 hours after contrast administration, recheck renal function before restarting — iodinated contrast can cause contrast-induced AKI, which could cause metformin accumulation and fatal lactic acidosis",
+      "C": "Stop metformin permanently before any CT scan",
+      "D": "No action needed if eGFR >30 ml/min",
+      "E": "Halve metformin dose for 1 week after CT scan"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per MHRA guidance and NICE, iodinated contrast media can cause contrast-induced nephropathy (CIN), leading to acute kidney injury. In patients on metformin with CKD, CIN causing AKI could lead to metformin accumulation and lactic acidosis — a potentially fatal complication. Standard guidance: withhold metformin on the day of and for 48 hours after iodinated contrast administration in patients with eGFR <60 ml/min (CKD G3 and above). Recheck renal function at 48 hours — restart metformin only if eGFR remains stable/acceptable. Adequate hydration (oral or IV) reduces CIN risk. This applies to all contrast procedures (CT, coronary angiography, etc.).",
+      "A": "Incorrect — Contrast-induced AKI causing metformin accumulation and lactic acidosis is a recognised risk.",
+      "B": "CORRECT — Withhold metformin day of and 48 hours post-contrast; recheck renal function before restarting per MHRA guidance.",
+      "C": "Incorrect — Permanent cessation is not required — temporary withholding with recheck is the recommendation.",
+      "D": "Incorrect — CKD G3b (eGFR 35) means standard guidance applies — withhold metformin regardless of eGFR being above 30.",
+      "E": "Incorrect — Halving the dose without monitoring renal function after contrast is insufficient."
+    },
+    "reference": "MHRA — Metformin and contrast media. https://www.gov.uk/drug-safety-update",
+    "tags": ["metformin", "contrast media", "CIN", "lactic acidosis", "MHRA", "withhold 48 hours"]
+  }
+]

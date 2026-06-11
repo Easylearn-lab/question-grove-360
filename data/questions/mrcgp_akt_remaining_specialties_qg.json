@@ -1,0 +1,600 @@
+[
+  {
+    "id": "QG-B2-PAED-010-001",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Paediatrics",
+    "difficulty": "Medium",
+    "question": "An 8-year-old boy is newly diagnosed with cystic fibrosis. His 4-year-old sister has not been tested. Per NICE CG76, what should be arranged for the sister?",
+    "options": {
+      "A": "No testing needed — she is well and asymptomatic",
+      "B": "Arrange sweat chloride test and CFTR genetic testing — CF is autosomal recessive; siblings have a 25% chance of being affected; early diagnosis enables earlier intervention",
+      "C": "Test only if symptoms develop",
+      "D": "Wait until she is 16 and can consent herself",
+      "E": "Only parental testing is required"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Cystic fibrosis is autosomal recessive (CFTR gene mutations). If both parents are carriers, each sibling has a 25% chance of having CF, 50% of being a carrier, and 25% of being an unaffected non-carrier. Per NICE CG76, the sibling of a confirmed CF patient should have diagnostic testing: sweat chloride test (>60 mmol/L = CF; 30-59 = borderline) and/or CFTR mutation analysis. Early diagnosis enables prophylactic physiotherapy, nutritional optimisation, prophylactic flucloxacillin in infancy and prevents diagnostic delay.",
+      "A": "Incorrect — Asymptomatic CF causes progressive lung disease before symptoms become obvious. Early diagnosis is essential.",
+      "B": "CORRECT — CF sibling has 25% risk. Arrange sweat chloride + CFTR testing per NICE CG76.",
+      "C": "Incorrect — Waiting for symptoms means delayed diagnosis. Early intervention significantly improves outcomes.",
+      "D": "Incorrect — Waiting until age 16 is clinically inappropriate. CF children benefit from early diagnosis.",
+      "E": "Incorrect — Parental testing confirms carrier status but does not diagnose or exclude CF in the sibling."
+    },
+    "reference": "NICE CG76 — Cystic fibrosis: diagnosis and management. https://www.nice.org.uk/guidance/cg76",
+    "tags": ["cystic fibrosis", "sibling testing", "sweat chloride test", "CFTR", "NICE CG76", "autosomal recessive"]
+  },
+  {
+    "id": "QG-B2-PAED-013-001",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Paediatrics",
+    "difficulty": "Easy",
+    "question": "A 2-year-old boy is brought by his parents who are worried because the foreskin cannot be retracted over the glans. Per NICE CKS, what is the appropriate management?",
+    "options": {
+      "A": "Forcibly retract the foreskin under general anaesthetic",
+      "B": "Reassure — physiological phimosis is normal up to the age of 10 years; spontaneous resolution occurs in 90% by age 16; no treatment required unless recurrent infections or symptomatic scarring",
+      "C": "Refer for urgent circumcision",
+      "D": "Apply topical betamethasone cream daily to force retraction",
+      "E": "Test for diabetes — phimosis always indicates an underlying condition"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Physiological (non-retractile) phimosis is normal in young boys. The foreskin is non-retractile in virtually all newborns, 50% at age 1, and 10% at age 10. Spontaneous resolution occurs in approximately 90% by age 16. Per NICE CKS, no treatment is required for physiological phimosis. Reassure parents. Indications for treatment: pathological phimosis (scarring from balanitis xerotica obliterans), recurrent balanoposthitis (infections), urinary obstruction, or persistent symptomatic non-retractility in older children/adults. Treatment options if needed: topical steroid cream (betamethasone 0.05% twice daily for 4-8 weeks) as first-line non-surgical option, or circumcision.",
+      "A": "Incorrect — Forcible retraction causes tearing, scarring and may convert physiological phimosis to pathological phimosis.",
+      "B": "CORRECT — Physiological phimosis is normal up to age 10. Reassure per NICE CKS. No treatment required.",
+      "C": "Incorrect — Urgent circumcision is not indicated for normal physiological phimosis in a 2-year-old.",
+      "D": "Incorrect — Topical steroids may be appropriate for pathological/symptomatic phimosis but not for routine physiological phimosis in a 2-year-old.",
+      "E": "Incorrect — Diabetes mellitus can cause recurrent balanitis leading to acquired phimosis but isolated physiological phimosis in a toddler does not indicate diabetes."
+    },
+    "reference": "NICE CKS — Phimosis. https://cks.nice.org.uk/topics/phimosis/",
+    "tags": ["phimosis", "physiological", "normal up to 10", "reassure", "NICE CKS", "non-retractile foreskin"]
+  },
+  {
+    "id": "QG-B2-PAED-030-001",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Paediatrics",
+    "difficulty": "Medium",
+    "question": "A 15-year-old boy is brought by his mother with progressive proximal muscle weakness over 2 years. He has difficulty rising from the floor (uses hands to walk up his legs — Gowers' sign). He has pseudohypertrophy of the calves. Serum CK is markedly elevated at 18,000 U/L. Per NICE guidelines, what is the most likely diagnosis?",
+    "options": {
+      "A": "Becker muscular dystrophy — mild form, normal life expectancy",
+      "B": "Duchenne muscular dystrophy — X-linked recessive dystrophinopathy (mutations in DMD gene); presents in boys aged 2-6 with progressive proximal weakness, Gowers' sign, calf pseudohypertrophy, markedly elevated CK; most require a wheelchair by early teens; cardiac and respiratory involvement; diagnosis confirmed by muscle biopsy/dystrophin immunostaining and genetic testing; steroids (deflazacort/prednisolone) slow progression",
+      "C": "Polymyositis — autoimmune myopathy treated with prednisolone",
+      "D": "Spinal muscular atrophy — lower motor neurone weakness",
+      "E": "Myotonic dystrophy — autosomal dominant"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Duchenne muscular dystrophy (DMD): X-linked recessive disorder caused by mutations in the DMD gene (dystrophin protein absent/severely reduced). Most common fatal genetic disease of childhood, affecting 1 in 3,500 male births. Clinical features: onset 2-6 years; proximal muscle weakness (waddling gait, difficulty climbing stairs/rising from floor); Gowers' sign (using hands to walk up legs when rising); calf pseudohypertrophy (replacement by fat/fibrosis); markedly elevated CK (often >5000 U/L); wheelchair dependent by age 12 on average; cardiomyopathy and respiratory failure in 3rd decade. Becker MD: milder, same gene, some dystrophin produced, later onset, better prognosis. Diagnosis: CK, muscle biopsy, dystrophin immunostaining, genetic testing. Treatment per NICE NG90: glucocorticoids (deflazacort preferred), multidisciplinary care, ataluren (for nonsense mutations).",
+      "A": "Incorrect — Becker MD has a milder course with some residual dystrophin. Markedly elevated CK and rapid progression at age 15 suggest DMD.",
+      "B": "CORRECT — Duchenne MD: X-linked + Gowers' sign + calf pseudohypertrophy + CK 18,000. Confirmed by genetic testing + muscle biopsy per NICE NG90.",
+      "C": "Incorrect — Polymyositis is an acquired autoimmune myopathy in adults, responds to steroids — not this X-linked childhood presentation.",
+      "D": "Incorrect — SMA causes LMN weakness (fasciculations, flaccidity) — not pseudohypertrophy or massively elevated CK.",
+      "E": "Incorrect — Myotonic dystrophy causes distal weakness and myotonia (inability to relax grip) — not proximal weakness and pseudohypertrophy."
+    },
+    "reference": "NICE NG90 — Neuromuscular conditions (Duchenne). https://www.nice.org.uk/guidance/ng90",
+    "tags": ["Duchenne muscular dystrophy", "Gowers' sign", "calf pseudohypertrophy", "CK elevated", "NICE NG90", "X-linked recessive"]
+  },
+  {
+    "id": "QG-B2-PAED-042-001",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Paediatrics",
+    "difficulty": "Hard",
+    "question": "A 6-week-old baby is brought to the GP by his mother following a home visit by the health visitor. The baby has painful swelling and bruising of the left leg. The mother gives an inconsistent history of the baby 'rolling off the sofa'. Per NICE CG89 and safeguarding guidance, what is the first investigation and what should the GP do?",
+    "options": {
+      "A": "Reassure — babies roll off sofas commonly",
+      "B": "X-ray the affected limb first to assess the fracture pattern — metaphyseal corner fractures, spiral fractures and posterior rib fractures in infants are highly suspicious for non-accidental injury (NAI); immediately refer to paediatrics and trigger the safeguarding pathway; do not leave the child at risk",
+      "C": "Prescribe analgesia and review in 1 week",
+      "D": "Ask the father before contacting safeguarding",
+      "E": "Refer to orthopaedics only — this is a clinical fracture requiring fixation"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per NICE CG89 (Child maltreatment: when to suspect maltreatment in under 18s) and Working Together to Safeguard Children 2023: a fracture in a non-mobile infant (under 6 months, unable to roll) with an inconsistent history is highly suspicious for non-accidental injury. Fracture types most associated with NAI: metaphyseal/corner fractures (grabbing/pulling), posterior rib fractures (squeezing), spiral fractures of long bones (twisting), bilateral fractures. X-ray of the affected limb is the immediate first investigation to characterise the fracture. Then: skeletal survey (full body radiological survey) to identify occult fractures at other sites; immediate paediatric referral; safeguarding referral to children's services; document history precisely; do not confront or alert the carer — this risks the child being removed from professional reach. The child's safety is paramount.",
+      "A": "Incorrect — A 6-week-old cannot roll. An inconsistent history with unexplained fracture in an infant is a safeguarding emergency.",
+      "B": "CORRECT — X-ray fracture + paediatric referral + safeguarding pathway per NICE CG89. Fracture in non-mobile infant = NAI until proven otherwise.",
+      "C": "Incorrect — Prescribing analgesia and reviewing in 1 week leaves a potentially at-risk infant in danger.",
+      "D": "Incorrect — Contacting the father before safeguarding could alert the perpetrator and compromise investigation.",
+      "E": "Incorrect — Orthopaedic management alone without triggering safeguarding is insufficient and dangerous."
+    },
+    "reference": "NICE CG89 — Child maltreatment. Working Together to Safeguard Children 2023. https://www.nice.org.uk/guidance/cg89",
+    "tags": ["NAI", "non-accidental injury", "infant fracture", "safeguarding", "NICE CG89", "X-ray first"]
+  },
+  {
+    "id": "QG-B2-PAED-125-001",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Paediatrics",
+    "difficulty": "Easy",
+    "question": "A 9-year-old boy with ADHD has been started on methylphenidate 10mg twice daily. Per NICE NG87 and BNF guidance, what parameter must be monitored at every routine appointment?",
+    "options": {
+      "A": "Full blood count — methylphenidate causes bone marrow suppression",
+      "B": "Blood pressure and heart rate — methylphenidate is a CNS stimulant that increases BP and HR; these must be measured at every review alongside height and weight (methylphenidate can suppress growth velocity in some children)",
+      "C": "Liver function tests — hepatotoxicity is the main concern",
+      "D": "Blood glucose — methylphenidate causes hyperglycaemia",
+      "E": "ECG — mandatory at every review for all children on methylphenidate"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per NICE NG87 (Attention deficit hyperactivity disorder: diagnosis and management) and BNF, methylphenidate (a CNS stimulant) monitoring requirements at every review: (1) Blood pressure and heart rate — stimulants can increase both; if resting HR >120 bpm or BP above the 95th centile for age, review medication; (2) Height and weight — methylphenidate can suppress growth velocity (particularly at higher doses); monitor on centile charts; consider drug holidays if growth faltering; (3) Appetite and sleep — stimulants commonly reduce appetite and cause insomnia. ECG: recommended before starting methylphenidate if there is a personal or family history of cardiac disease, not routinely at every review. FBC and LFTs are not routinely monitored with methylphenidate.",
+      "A": "Incorrect — Bone marrow suppression is not a recognised adverse effect of methylphenidate. FBC is not routinely monitored.",
+      "B": "CORRECT — BP and HR at every review (+ height/weight) per NICE NG87. Stimulants elevate cardiovascular parameters.",
+      "C": "Incorrect — Liver function tests are not routinely monitored with methylphenidate.",
+      "D": "Incorrect — Methylphenidate can rarely affect blood glucose but this is not the primary monitoring parameter.",
+      "E": "Incorrect — ECG is needed before starting if cardiac history — not mandatory at every routine review."
+    },
+    "reference": "NICE NG87 — ADHD: diagnosis and management. https://www.nice.org.uk/guidance/ng87",
+    "tags": ["methylphenidate", "blood pressure monitoring", "ADHD", "NICE NG87", "BNF", "height weight"]
+  },
+  {
+    "id": "QG-B2-PAED-152-001",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Paediatrics",
+    "difficulty": "Medium",
+    "question": "A 10-year-old boy with learning disability is brought by his mother. He has hypotonia, small hands and feet, an insatiable appetite with obesity (BMI 97th centile), hypogonadism, and behavioural difficulties. Per clinical genetics principles, what is the most likely diagnosis?",
+    "options": {
+      "A": "Down syndrome (Trisomy 21)",
+      "B": "Prader-Willi syndrome — caused by loss of paternal chromosome 15q11-q13 region (deletion or maternal uniparental disomy); characterised by: hypotonia and feeding difficulties in infancy, then insatiable hyperphagia leading to morbid obesity, intellectual disability, behavioural problems, hypogonadism, and short stature with small hands and feet",
+      "C": "Fragile X syndrome — most common inherited cause of intellectual disability in males",
+      "D": "Turner syndrome — affects females only",
+      "E": "Angelman syndrome — also chromosome 15 but different features"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Prader-Willi syndrome (PWS): a genomic imprinting disorder caused by loss of paternally expressed genes in the 15q11-q13 region. Causes: paternal deletion (70%), maternal uniparental disomy (25%), imprinting defects (5%). Clinical phases: Infancy: severe hypotonia and feeding difficulty (tube feeding often needed); Childhood onwards: hyperphagia (insatiable appetite without satiety) → morbid obesity; intellectual disability (mild-moderate); hypogonadism; short stature; characteristic facial features; small hands and feet; behavioural problems (obsessive-compulsive, skin picking, temper tantrums). Diagnosis: methylation analysis (detects abnormal methylation pattern at 15q11-q13 locus). Management: strict dietary supervision (caloric restriction), growth hormone therapy (improves height, body composition), multidisciplinary care. Angelman syndrome: same region but maternal deletion/paternal UPD — causes severe ID, seizures, happy demeanour, absent speech.",
+      "A": "Incorrect — Down syndrome causes trisomy 21 with different features (upslanting palpebral fissures, Brushfield spots, single palmar crease, cardiac defects).",
+      "B": "CORRECT — Prader-Willi: hypotonia + insatiable hyperphagia/obesity + small hands/feet + hypogonadism + learning disability.",
+      "C": "Incorrect — Fragile X causes intellectual disability and macroorchidism in males but not the hyperphagia/obesity phenotype.",
+      "D": "Incorrect — Turner syndrome (45,X) affects females only with short stature, neck webbing, primary ovarian insufficiency.",
+      "E": "Incorrect — Angelman syndrome causes severe ID, seizures, absent speech, and happy demeanour — not obesity or hyperphagia."
+    },
+    "reference": "NICE CKS — Learning disabilities: genetic causes. https://cks.nice.org.uk/topics/prader-willi-syndrome/",
+    "tags": ["Prader-Willi syndrome", "hyperphagia", "obesity", "chromosome 15", "hypotonia", "imprinting"]
+  },
+  {
+    "id": "QG-B2-PAED-178-001",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Paediatrics",
+    "difficulty": "Hard",
+    "question": "A 15-year-old boy attends for removal of an ingrowing toenail. Lignocaine local anaesthetic is injected into the toe. Shortly after injection he develops peri-oral tingling, tinnitus, confusion, twitching and then a tonic-clonic seizure. His BP falls and his HR is 38 bpm. Per AAGBI and NICE guidelines on local anaesthetic systemic toxicity (LAST), what is the specific antidote?",
+    "options": {
+      "A": "Naloxone — reverses opioid overdose",
+      "B": "Intralipid (20% lipid emulsion) IV — the specific treatment for local anaesthetic systemic toxicity (LAST); lipid emulsion acts as a 'lipid sink' sequestering the lipophilic local anaesthetic away from cardiac and neurological tissue; administer 1.5 ml/kg IV bolus immediately",
+      "C": "IV atropine for the bradycardia",
+      "D": "IV lignocaine to treat the arrhythmia",
+      "E": "IV adrenaline alone as the definitive treatment"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Local anaesthetic systemic toxicity (LAST): a potentially fatal complication of LA injection (most commonly from accidental intravascular injection or overdose). Symptoms progress: CNS (perioral tingling, tinnitus, confusion, seizures) then cardiovascular (bradycardia, hypotension, VT/VF). Per AAGBI (Association of Anaesthetists of Great Britain and Ireland) LAST guidelines and NICE: SPECIFIC ANTIDOTE is 20% Intralipid (intravenous lipid emulsion, ILE): 1.5 ml/kg IV bolus stat, then infusion; mechanism: 'lipid sink' theory — lipid emulsion sequesters the fat-soluble LA from cardiac and neurological membranes; dramatic cardiovascular recovery in bupivacaine and lignocaine toxicity. Standard resuscitation: call for help, 100% oxygen, IV access, manage seizures with benzodiazepines, CPR if cardiac arrest, avoid vasopressin.",
+      "A": "Incorrect — Naloxone reverses opioid toxicity — not LA toxicity.",
+      "B": "CORRECT — Intralipid 20% (1.5 ml/kg IV) is the specific antidote for LAST per AAGBI guidelines.",
+      "C": "Incorrect — Atropine may temporarily help bradycardia but the underlying mechanism requires Intralipid.",
+      "D": "Incorrect — IV lignocaine to treat lignocaine-induced arrhythmia would worsen toxicity.",
+      "E": "Incorrect — High-dose adrenaline is used in LA-induced cardiac arrest resuscitation but Intralipid is the specific antidote."
+    },
+    "reference": "AAGBI — Management of Severe Local Anaesthetic Toxicity. https://www.aagbi.org/",
+    "tags": ["local anaesthetic toxicity", "LAST", "Intralipid", "lipid sink", "AAGBI", "lignocaine toxicity"]
+  },
+  {
+    "id": "QG-B2-PHARM-020-001",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Pharmacology & Prescribing",
+    "difficulty": "Medium",
+    "question": "A 9-year-old boy weighing 30 kg presents to a GP surgery with anaphylaxis following a wasp sting. He is wheezing, his face is swollen and his BP is 75/50 mmHg. Per NICE CG134 and BNF, what is the correct dose of intramuscular adrenaline?",
+    "options": {
+      "A": "0.5 ml of 1:1000 IM (500 mcg) — adult dose",
+      "B": "0.3 ml of 1:1000 IM (300 mcg) — for children 6-12 years; adrenaline 1:1000 (1 mg/ml) — inject 0.3 ml IM into the anterolateral thigh",
+      "C": "0.1 ml of 1:10,000 IV — IV route is preferred",
+      "D": "0.15 ml of 1:1000 IM (150 mcg) — for children under 6 only",
+      "E": "0.5 ml of 1:10,000 IM (50 mcg) — lower concentration for children"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per NICE CG134 (Anaphylaxis: assessment and referral) and BNF, IM adrenaline doses for anaphylaxis: Adults and children over 12: 0.5 mg IM (0.5 ml of 1:1000); Children 6-12 years: 0.3 mg IM (0.3 ml of 1:1000); Children under 6 years: 0.15 mg IM (0.15 ml of 1:1000). Adrenaline 1:1000 = 1 mg/ml. Injection site: anterolateral middle third of the thigh (through clothing if necessary — faster). Repeat after 5 minutes if no improvement. This patient is 9 years old = 0.3 mg (0.3 ml of 1:1000). This equates to the EpiPen Jr dose (0.15 mg) for smaller children vs EpiPen (0.3 mg) for children 6-12 years. After IM adrenaline: call 999, give supplemental oxygen, place supine with legs elevated (or sitting up if airway compromise), consider IM chlorphenamine and IV hydrocortisone as second-line adjuncts.",
+      "A": "Incorrect — 0.5 ml (500 mcg) is the adult dose — not appropriate for a 9-year-old.",
+      "B": "CORRECT — 0.3 ml of 1:1000 IM (300 mcg) for children 6-12 years per NICE CG134/BNF.",
+      "C": "Incorrect — IV adrenaline in anaphylaxis risks arrhythmia and is only given in cardiac arrest settings by specialists. IM is the correct route.",
+      "D": "Incorrect — 0.15 ml is the under-6 dose. This 9-year-old is in the 6-12 age bracket requiring 0.3 ml.",
+      "E": "Incorrect — 1:10,000 (0.1 mg/ml) is the IV/resuscitation concentration — not appropriate for IM anaphylaxis treatment."
+    },
+    "reference": "NICE CG134 — Anaphylaxis. BNF — Adrenaline doses in anaphylaxis. https://www.nice.org.uk/guidance/cg134",
+    "tags": ["adrenaline anaphylaxis", "0.3 ml 1:1000", "child 6-12", "IM adrenaline", "NICE CG134", "BNF"]
+  },
+  {
+    "id": "QG-B2-PHARM-103-001",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Pharmacology & Prescribing",
+    "difficulty": "Hard",
+    "question": "A 35-year-old man with treatment-resistant schizophrenia is established on clozapine. He attends with a 2-day history of a sore throat, fever and mouth ulcers. His GP is concerned. Per NICE NG10 and BNF clozapine monitoring requirements, what must be done immediately?",
+    "options": {
+      "A": "Prescribe oral amoxicillin for tonsillitis and review in 5 days",
+      "B": "Urgently check FBC (particularly neutrophil count) — clozapine carries a risk of agranulocytosis (potentially fatal reduction in neutrophils); sore throat and fever in a clozapine patient must be investigated for agranulocytosis immediately; if neutrophils <1.5 × 10⁹/L (amber alert) withhold clozapine and contact clozapine manufacturer; if neutrophils <0.5 × 10⁹/L (red alert) stop clozapine immediately and admit urgently",
+      "C": "Continue clozapine — sore throat is unrelated to the medication",
+      "D": "Stop clozapine immediately without checking blood count — safety first",
+      "E": "Check FBC and continue clozapine if white cell count is normal"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Clozapine is the only antipsychotic with proven efficacy in treatment-resistant schizophrenia but carries a 1-2% risk of agranulocytosis (potentially fatal). Clozapine Monitoring Service (CMS) requirements per BNF and NICE NG10: weekly FBC for first 18 weeks, then every 2 weeks for 1 year, then monthly throughout treatment. Alert thresholds: White cell count <3.0 × 10⁹/L OR neutrophil count <1.5 × 10⁹/L = AMBER alert (stop clozapine, increase monitoring frequency); Neutrophil count <0.5 × 10⁹/L = RED alert (stop clozapine immediately, admit urgently, reverse barrier nursing, haematology consultation). Sore throat with fever in a clozapine patient = potential agranulocytosis emergency — FBC must be checked SAME DAY. Contact the Clozaril (or equivalent manufacturer) Patient Monitoring Service.",
+      "A": "Incorrect — Prescribing amoxicillin without FBC in a clozapine patient risks missing agranulocytosis and treating with an antibiotic while fatal neutropenia develops.",
+      "B": "CORRECT — Same-day FBC (neutrophil count) in clozapine patient with sore throat/fever. Withhold if neutrophils <1.5 per BNF/NICE NG10.",
+      "C": "Incorrect — Sore throat in a clozapine patient is a red flag requiring immediate FBC — it must not be dismissed.",
+      "D": "Incorrect — Stopping clozapine without checking blood count is not the recommended approach — the decision to stop depends on the neutrophil count.",
+      "E": "Incorrect — If WBC is normal but neutrophils are borderline, the clozapine monitoring thresholds still apply — only absolute neutrophil count is relevant."
+    },
+    "reference": "NICE NG10 — Psychosis and schizophrenia. BNF — Clozapine monitoring. https://www.nice.org.uk/guidance/ng10",
+    "tags": ["clozapine", "agranulocytosis", "neutrophil count", "FBC monitoring", "NICE NG10", "BNF"]
+  },
+  {
+    "id": "QG-B2-PHARM-118-001",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Pharmacology & Prescribing",
+    "difficulty": "Medium",
+    "question": "A 52-year-old man with schizophrenia has been on risperidone 4mg daily for 3 years. Per NICE NG10 and BNF monitoring requirements, what is the most important metabolic parameter to check annually?",
+    "options": {
+      "A": "Serum prolactin only — risperidone's main side effect",
+      "B": "HbA1c — antipsychotics including risperidone are associated with metabolic syndrome, weight gain, and increased risk of type 2 diabetes; annual monitoring includes HbA1c (or fasting glucose), lipid profile, weight/BMI, waist circumference, BP",
+      "C": "Lithium level — risperidone is a mood stabiliser",
+      "D": "Serum clozapine level",
+      "E": "Annual ECG only — QTc prolongation is the only monitoring requirement"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per NICE NG10 and BNF/Maudsley Guidelines, all patients on antipsychotic medication require regular metabolic monitoring due to the significant risk of antipsychotic-induced metabolic syndrome: weight gain, dyslipidaemia, insulin resistance and type 2 diabetes. Annual monitoring for patients on antipsychotics (including risperidone): HbA1c (or fasting plasma glucose), fasting lipid profile, weight and BMI, waist circumference, blood pressure. More frequent monitoring if abnormal results: 3-monthly in first year. Additionally for risperidone specifically: prolactin monitoring (risperidone is the most prolactin-elevating antipsychotic — causes hyperprolactinaemia, galactorrhoea, sexual dysfunction, osteoporosis); annual ECG if cardiac risk factors. HbA1c is the most important metabolic monitoring test highlighting the diabetes risk in this population.",
+      "A": "Incorrect — Serum prolactin is important for risperidone but HbA1c addressing the metabolic/diabetes risk is the more critical annual parameter per NICE NG10.",
+      "B": "CORRECT — HbA1c (plus lipids, weight, BP) annual metabolic monitoring for all antipsychotic users per NICE NG10/Maudsley.",
+      "C": "Incorrect — Risperidone is an antipsychotic, not a mood stabiliser. Lithium levels are not monitored for risperidone.",
+      "D": "Incorrect — Clozapine levels are monitored for clozapine — not risperidone.",
+      "E": "Incorrect — ECG (QTc) monitoring is relevant for some antipsychotics (especially sertindole, amisulpride) but is not the primary annual monitoring parameter for risperidone."
+    },
+    "reference": "NICE NG10 — Psychosis and schizophrenia. Maudsley Prescribing Guidelines. https://www.nice.org.uk/guidance/ng10",
+    "tags": ["risperidone monitoring", "HbA1c", "metabolic syndrome", "antipsychotic", "NICE NG10", "annual check"]
+  },
+  {
+    "id": "QG-B2-ETH-038-001",
+    "exam": "MRCGP AKT",
+    "domain": "Organisational",
+    "specialty": "Ethics & Organisational",
+    "difficulty": "Easy",
+    "question": "A GP is approached by a pharmaceutical company asking for anonymised prescribing data from the practice for a research project. The practice manager is unsure whether patient identifiable information is being used. Per UK GDPR and NHS guidance, who in the NHS has responsibility for ensuring patient information is used appropriately?",
+    "options": {
+      "A": "The NHS IT department",
+      "B": "The Caldicott Guardian — every NHS organisation must have a Caldicott Guardian (a senior clinician responsible for protecting patient information and ensuring it is used appropriately, ethically and legally); they advise on the lawful sharing, access and use of patient information",
+      "C": "The CQC inspector",
+      "D": "The practice receptionist managing records",
+      "E": "The GMC — they regulate all aspects of patient data"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "The Caldicott Guardian was established following the Caldicott Committee Report (1997) and is a senior role in NHS organisations responsible for protecting patient information. Per NHS England requirements, every NHS organisation must appoint a Caldicott Guardian — typically a senior clinician (consultant, GP partner). Responsibilities: ensuring patient information is processed legally and ethically; applying the Caldicott Principles (justify purpose, don't use patient-identifiable info unless necessary, use minimum necessary, access on need-to-know basis, staff understand responsibilities, comply with law, duty to share vs duty to protect); advising on information governance matters; reviewing proposed new flows of patient information. The national data guardian (NDG) oversees data governance across health and social care in England. Any sharing of patient identifiable information (even anonymised data) requires Caldicott Guardian review.",
+      "A": "Incorrect — IT departments manage technical systems but the clinical responsibility for information governance rests with the Caldicott Guardian.",
+      "B": "CORRECT — The Caldicott Guardian is responsible for protecting patient information appropriateness per NHS requirements.",
+      "C": "Incorrect — CQC inspects NHS services but is not responsible for day-to-day information governance.",
+      "D": "Incorrect — The receptionist manages day-to-day records but the Caldicott Guardian has strategic responsibility.",
+      "E": "Incorrect — The GMC regulates doctors' professional conduct — not specifically NHS information governance."
+    },
+    "reference": "NHS — Caldicott Principles. National Data Guardian. https://www.gov.uk/government/organisations/national-data-guardian",
+    "tags": ["Caldicott Guardian", "patient information", "information governance", "NHS", "Caldicott Principles", "data protection"]
+  },
+  {
+    "id": "QG-B2-ETH-039-001",
+    "exam": "MRCGP AKT",
+    "domain": "Organisational",
+    "specialty": "Ethics & Organisational",
+    "difficulty": "Medium",
+    "question": "A GP receives a request from an insurance company for a medical report about a patient. The patient consented to the report but has not seen its contents. Before sending the report, the GP has included information about a treated episode of gonorrhoea from 5 years ago, which the patient did not mention on the insurance application form. Per the Access to Medical Reports Act 1988 (AMRA) and GMC guidance, can the GP include this information?",
+    "options": {
+      "A": "Yes — full disclosure to insurance companies is required by law",
+      "B": "The GP should not include information that the patient has not been given the opportunity to review — per AMRA 1988, the patient has the right to see the report before it is sent and request amendments or add a statement of disagreement; the patient should be shown the draft report (including the gonorrhoea history) and the GP should await the patient's response before sending",
+      "C": "Omit the gonorrhoea history — it was treated and is clinically irrelevant",
+      "D": "Include the gonorrhoea history without informing the patient — insurance companies need full medical history",
+      "E": "Send the report immediately — the patient consented and has no further rights"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per the Access to Medical Reports Act 1988 (AMRA), when a GP prepares a medical report for insurance or employment purposes, the patient has the right to: (1) Be notified the report has been requested; (2) Withhold consent for the report to be sent; (3) View the completed report before it is sent (within 21 days of the doctor completing it); (4) Request amendments to any information they believe to be incorrect or misleading; (5) Attach a statement of disagreement if the GP refuses to amend. The GP should not send the report without giving the patient the opportunity to review it. The inclusion of the treated gonorrhoea episode is clinically relevant and should be included in the report — but the patient must first be given the opportunity to see and respond to the draft report before it is sent to the insurer.",
+      "A": "Incorrect — Full disclosure is expected but only AFTER the patient has had the opportunity to review the report per AMRA 1988.",
+      "B": "CORRECT — Patient must be given opportunity to review the report before it is sent per AMRA 1988. Show draft, await response.",
+      "C": "Incorrect — Deliberately omitting clinically relevant information from an insurance report to benefit the patient could constitute insurance fraud by the GP.",
+      "D": "Incorrect — Sending the report without giving the patient the opportunity to review violates AMRA 1988 patient rights.",
+      "E": "Incorrect — Signing consent to the report does not waive the patient's right to review it before sending under AMRA 1988."
+    },
+    "reference": "Access to Medical Reports Act 1988. GMC — Confidentiality. https://www.legislation.gov.uk/ukpga/1988/28",
+    "tags": ["AMRA 1988", "insurance report", "patient review right", "gonorrhoea disclosure", "GMC confidentiality", "medical report"]
+  },
+  {
+    "id": "QG-B2-ETH-122-001",
+    "exam": "MRCGP AKT",
+    "domain": "Organisational",
+    "specialty": "Ethics & Organisational",
+    "difficulty": "Hard",
+    "question": "A 65-year-old woman with metastatic breast cancer asks her GP about the risks of a new chemotherapy regime. The oncologist has not fully explained the risks. The GP explains that some risk of harm is unavoidable in medical treatments. Per medical negligence law and GMC Good Medical Practice, what is the term for acceptable unavoidable clinical risk and what duty does the GP have?",
+    "options": {
+      "A": "Res ipsa loquitur — the patient can sue without proving negligence",
+      "B": "Inherent clinical risk — the risk of harm that is present in a procedure or treatment even when performed correctly and competently; GPs must inform patients about material inherent risks per the Montgomery ruling (2015); disclosure of these risks is part of obtaining valid informed consent",
+      "C": "Contributory negligence — the patient shares responsibility",
+      "D": "Vicarious liability — the NHS is responsible for all clinical risks",
+      "E": "Standard of care — the Bolam test determines whether risk disclosure was adequate"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Inherent clinical risk: the unavoidable risk of harm that exists within a medical procedure or treatment even when it is performed to the highest standard of care. It is distinct from negligence — it is the irreducible minimum risk. Per the Montgomery v Lanarkshire Health Board [2015] Supreme Court ruling, the standard for disclosure of risks changed from the Bolam test (what a reasonable doctor would disclose) to the patient-centred standard: a doctor must inform patients of material risks — risks a reasonable patient in their position would consider significant, or which the specific patient would consider significant. The GP's duty: explain inherent risks of the new chemotherapy regime in terms the patient can understand; ensure she can make an informed decision; document the discussion. Inherent risk does not negate negligence if disclosure was inadequate.",
+      "A": "Incorrect — Res ipsa loquitur is the legal principle where the harm speaks for itself as evidence of negligence (e.g., wrong limb amputated) — not applicable here.",
+      "B": "CORRECT — Inherent clinical risk: unavoidable risk even with competent care. Must be disclosed per Montgomery ruling.",
+      "C": "Incorrect — Contributory negligence applies when the patient's actions contributed to the harm — not relevant here.",
+      "D": "Incorrect — Vicarious liability means employers are liable for employees' negligence — not the definition of inherent clinical risk.",
+      "E": "Incorrect — The Bolam test for risk disclosure has been superseded by the Montgomery patient-centred standard since 2015."
+    },
+    "reference": "Montgomery v Lanarkshire Health Board [2015] UKSC 11. GMC — Consent: patients and doctors making decisions together. https://www.gmc-uk.org/ethical-guidance/ethical-guidance-for-doctors/consent",
+    "tags": ["inherent clinical risk", "Montgomery ruling", "informed consent", "material risk", "GMC consent", "negligence"]
+  },
+  {
+    "id": "QG-B2-ETH-186-001",
+    "exam": "MRCGP AKT",
+    "domain": "Organisational",
+    "specialty": "Ethics & Organisational",
+    "difficulty": "Easy",
+    "question": "A GP practice discovers that a 64-year-old woman presented 6 months ago with chest pain that was reassured as musculoskeletal. She has now been diagnosed with unstable angina and has had an MI. A practice meeting discusses what happened. Per RCGP guidance, what process is used to review and learn from this event?",
+    "options": {
+      "A": "A disciplinary investigation — find who is responsible and discipline them",
+      "B": "Significant Event Analysis (SEA) — a structured, blame-free educational process that reviews what happened, why it happened, what can be learned, and what changes will be made to prevent recurrence; must be documented in the practice SEA log and submitted as evidence in the GP appraisal portfolio",
+      "C": "Refer to the GMC immediately — all missed diagnoses must be reported",
+      "D": "Ignore — patient has now been treated and is well",
+      "E": "The GP should self-refer to a retraining programme"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Significant Event Analysis (SEA): a structured, prospective learning process for analysing significant events in primary care. Per RCGP guidance and GMC revalidation requirements, SEA is conducted for: unexpected deaths, near misses, significant errors (delayed diagnoses, prescription errors), complaints, medication errors. Key SEA principles: blame-free culture (systems not individuals); structured format (what happened, why, learning, action plan); multidisciplinary discussion; documented in practice SEA log; submitted as evidence in annual appraisal portfolio and revalidation. This case: missed angina/MI diagnosis — SEA should examine: was the history adequately taken? Was cardiac risk assessed? Was ECG performed? Was follow-up arranged? What system changes can prevent recurrence? Additionally: duty of candour — the patient must be informed of the incident and offered an apology per Regulation 20.",
+      "A": "Incorrect — SEA is explicitly NOT a disciplinary process. Blame-free learning is its fundamental principle.",
+      "B": "CORRECT — Significant Event Analysis: structured, blame-free review of what happened, why, and what will change per RCGP/GMC.",
+      "C": "Incorrect — Not all missed diagnoses require immediate GMC referral — SEA and local governance are the primary processes.",
+      "D": "Incorrect — Failure to learn from a significant event violates professional and governance obligations.",
+      "E": "Incorrect — Self-referral to retraining without completing proper governance processes is not the standard approach."
+    },
+    "reference": "RCGP — Significant Event Analysis guidance. GMC — Revalidation. https://www.rcgp.org.uk/",
+    "tags": ["significant event analysis", "SEA", "missed diagnosis", "blame-free", "RCGP", "appraisal"]
+  },
+  {
+    "id": "QG-B2-STAT-075-001",
+    "exam": "MRCGP AKT",
+    "domain": "Evidence-Based Medicine",
+    "specialty": "Statistics & EBM",
+    "difficulty": "Medium",
+    "question": "A study compares lung cancer incidence in smokers versus non-smokers. The 2×2 table shows: Smokers with lung cancer: 120; Smokers without lung cancer: 480; Non-smokers with lung cancer: 10; Non-smokers without lung cancer: 390. What is the risk of lung cancer in the smoking group?",
+    "options": {
+      "A": "12/120 = 10%",
+      "B": "120/600 = 20% — 120 lung cancers out of 600 total smokers in the study",
+      "C": "120/130 = 92%",
+      "D": "10/400 = 2.5%",
+      "E": "120/510 = 23.5%"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Risk calculation from a 2×2 table: Risk in the smoking group = number with outcome in exposed / total number exposed. Smokers total = 120 (with lung cancer) + 480 (without lung cancer) = 600 total smokers. Risk of lung cancer in smokers = 120/600 = 0.20 = 20%. Risk in non-smokers = 10/(10+390) = 10/400 = 2.5%. Relative risk = Risk in smokers / Risk in non-smokers = 20%/2.5% = 8.0 (smokers are 8 times more likely to develop lung cancer). Absolute risk increase = 20% − 2.5% = 17.5%. NNT (if smoking cessation were the intervention) = 1/ARR = 1/0.175 = 5.7 (need to prevent 6 smokers from smoking to prevent 1 lung cancer).",
+      "A": "Incorrect — 12/120 does not use the correct numerator or denominator. The total smoker group is 600.",
+      "B": "CORRECT — Risk in smokers = 120 with cancer / 600 total smokers = 20%.",
+      "C": "Incorrect — 120/130 calculates the proportion of all lung cancer cases who smoked (positive predictive value), not the risk in smokers.",
+      "D": "Incorrect — 10/400 = 2.5% is the risk in non-smokers — not in smokers.",
+      "E": "Incorrect — 120/510 incorrectly uses 510 as the denominator (510 = those without lung cancer in both groups combined)."
+    },
+    "reference": "BMJ Statistics Notes — Risk from 2×2 tables. https://www.nice.org.uk/process/pmg36",
+    "tags": ["2x2 table", "risk calculation", "lung cancer smokers", "relative risk", "EBM", "cohort study"]
+  },
+  {
+    "id": "QG-B2-STAT-105-001",
+    "exam": "MRCGP AKT",
+    "domain": "Evidence-Based Medicine",
+    "specialty": "Statistics & EBM",
+    "difficulty": "Medium",
+    "question": "A GP reads a graph showing NNT = 36 for a new drug. What is the absolute risk reduction (ARR) and what does NNT = 36 mean in clinical practice?",
+    "options": {
+      "A": "ARR = 36%; 36 patients need to be treated for 1 year to benefit",
+      "B": "ARR = 1/36 = 2.8%; you need to treat 36 patients with the drug for the specified duration to prevent ONE additional adverse event compared to placebo",
+      "C": "ARR = 36/100 = 36%; the drug prevents 36 events per 100 patients",
+      "D": "NNT = 36 means 36% of patients responded to the drug",
+      "E": "ARR = 0.36%; the drug prevents 0.36 events per 100 patients"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Number Needed to Treat (NNT) = 1 / Absolute Risk Reduction (ARR). Therefore: ARR = 1/NNT = 1/36 = 0.0278 = 2.78%. NNT = 36 means: for every 36 patients treated with the drug (for the specified time period of the study), 1 additional patient benefits (avoids the adverse outcome) compared to placebo. Clinical interpretation of NNT: lower NNT = more effective treatment; NNT = 1 = every patient benefits; NNT = 100 = 1 in 100 patients benefits. NNT must always be interpreted alongside: the duration of treatment (NNT over 5 years is different from NNT over 1 year), the severity of the outcome prevented, and NNH (number needed to harm). An NNT of 36 is clinically meaningful for a serious outcome (e.g., MI prevention) but may not justify treatment if the outcome is minor.",
+      "A": "Incorrect — NNT = 36 does NOT mean ARR = 36% (that would make NNT = 1/0.36 = 2.8).",
+      "B": "CORRECT — ARR = 1/NNT = 1/36 = 2.8%. Treat 36 patients to prevent 1 additional event per treatment period.",
+      "C": "Incorrect — ARR = 36% would give NNT = 2.8 — not 36.",
+      "D": "Incorrect — NNT is not the percentage of responders — it is the number of patients needed to treat to prevent one event.",
+      "E": "Incorrect — ARR 0.36% would give NNT = 1/0.0036 = 278 — not 36."
+    },
+    "reference": "BMJ Statistics Notes — NNT and ARR. https://www.nice.org.uk/process/pmg36",
+    "tags": ["NNT", "ARR", "NNT=36", "2.8% ARR", "number needed to treat", "EBM"]
+  },
+  {
+    "id": "QG-B2-STAT-173-001",
+    "exam": "MRCGP AKT",
+    "domain": "Evidence-Based Medicine",
+    "specialty": "Statistics & EBM",
+    "difficulty": "Hard",
+    "question": "A trial of a new treatment for prostate cancer reports: hazard ratio (HR) = 0.62 (95% CI 0.48 to 0.79). Per EBM principles, how should this hazard ratio be interpreted?",
+    "options": {
+      "A": "Patients on the new treatment have 62% higher risk of death",
+      "B": "The new treatment reduces the instantaneous risk (hazard) of death at any time point by 38% compared to control (1 − 0.62 = 0.38); since the 95% CI (0.48-0.79) does not include 1.0, this is statistically significant; the new treatment significantly reduces mortality risk",
+      "C": "38% of patients on the new treatment survived",
+      "D": "HR 0.62 means the treatment is 62% effective at preventing death",
+      "E": "HR less than 1 indicates no treatment benefit"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Hazard Ratio (HR) in survival analysis: HR = hazard rate in treatment group / hazard rate in control group. Interpretation: HR < 1 = treatment reduces the risk of the outcome (beneficial). HR > 1 = treatment increases the risk. HR = 1 = no difference. HR 0.62 means: at any given time point during the study, patients in the treatment group have 62% of the hazard (instantaneous risk of dying) compared to the control group = 38% reduction in risk (1 − 0.62 = 0.38 = 38% reduction). Since the 95% CI (0.48-0.79) does not include 1.0, the result is statistically significant at p<0.05. HR is not the same as relative risk (RR) — HR measures the ratio of instantaneous hazard rates and assumes proportional hazards throughout the study period.",
+      "A": "Incorrect — HR 0.62 means 38% LOWER risk — not 62% higher. HR > 1 would indicate higher risk.",
+      "B": "CORRECT — HR 0.62: 38% reduction in hazard of death. CI 0.48-0.79 excludes 1.0 = statistically significant.",
+      "C": "Incorrect — HR does not directly indicate survival proportion — that requires Kaplan-Meier curves.",
+      "D": "Incorrect — 38% (not 62%) reduction in hazard. HR 0.62 means 62% of the control group's hazard.",
+      "E": "Incorrect — HR < 1 indicates beneficial treatment effect — it is not 'no benefit'."
+    },
+    "reference": "BMJ Statistics Notes — Hazard ratios. https://www.nice.org.uk/process/pmg36",
+    "tags": ["hazard ratio", "HR 0.62", "38% reduction", "survival analysis", "CI excludes 1", "EBM"]
+  },
+  {
+    "id": "QG-B2-INF-026-001",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Infectious Disease",
+    "difficulty": "Medium",
+    "question": "A 22-year-old university student presents with a 10-day history of fatigue, sore throat, cervical lymphadenopathy (posterior cervical chain) and a low-grade fever. On examination the tonsils are enlarged with exudate, and the spleen is palpable. A Paul-Bunnell (monospot) test is positive. Per NICE CKS, what is the diagnosis and what specific warning must the patient receive?",
+    "options": {
+      "A": "Tonsillitis — prescribe phenoxymethylpenicillin",
+      "B": "Infectious mononucleosis (glandular fever — EBV infection) — advise: avoid contact sports and strenuous exercise for at least 3-4 weeks due to risk of splenic rupture (splenomegaly present); avoid amoxicillin/ampicillin (causes a florid maculopapular rash in EBV — not a true allergy); fatigue may persist for weeks; hepatitis is common; manage with supportive care",
+      "C": "CMV infection — ganciclovir treatment",
+      "D": "HIV seroconversion — HIV test urgently",
+      "E": "Lymphoma — urgent 2WW haematology referral"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Infectious mononucleosis (IM): caused by Epstein-Barr virus (EBV), most common in young adults 15-25 years. Clinical features: fatigue, pharyngitis with exudate, posterior cervical lymphadenopathy (distinguishes from bacterial tonsillitis which causes anterior lymphadenopathy), splenomegaly (50%), hepatitis (80% with raised transaminases), fever, palatal petechiae, periorbital oedema. Diagnosis: Paul-Bunnell/monospot test (heterophile antibody test — positive in EBV IM). Key warnings per NICE CKS: (1) Splenic rupture risk — avoid contact sports and strenuous exercise for minimum 3-4 weeks (spleen is fragile and enlarged); (2) Do NOT prescribe amoxicillin or ampicillin — causes a non-allergic diffuse maculopapular rash in >90% of EBV patients; (3) Persistent fatigue (weeks to months); (4) Driving restriction (fatigue affects concentration). No specific antiviral treatment — supportive care.",
+      "A": "Incorrect — Prescribing phenoxymethylpenicillin alone without EBV-specific advice misses the splenic rupture warning. Also, amoxicillin (not penicillin V) causes the EBV rash.",
+      "B": "CORRECT — EBV/glandular fever: avoid contact sports (splenic rupture risk) + no amoxicillin per NICE CKS.",
+      "C": "Incorrect — CMV causes a similar syndrome but monospot is typically negative. Ganciclovir is for CMV retinitis in immunocompromised — not routine IM.",
+      "D": "Incorrect — HIV seroconversion can cause a mononucleosis-like illness — HIV test is reasonable to consider but positive monospot makes EBV the primary diagnosis.",
+      "E": "Incorrect — Lymphoma must be considered if lymphadenopathy persists beyond 6 weeks despite recovery, or with constitutional symptoms — not immediately in acute EBV."
+    },
+    "reference": "NICE CKS — Infectious mononucleosis. https://cks.nice.org.uk/topics/infectious-mononucleosis/",
+    "tags": ["infectious mononucleosis", "EBV", "splenic rupture", "avoid amoxicillin", "NICE CKS", "contact sports"]
+  },
+  {
+    "id": "QG-B2-INF-077-001",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Infectious Disease",
+    "difficulty": "Medium",
+    "question": "A practice nurse asks a GP whether the influenza vaccine should be given to a 55-year-old woman with hypothyroidism controlled on levothyroxine. Per PHE/UKHSA Green Book and NICE guidance, is hypothyroidism an indication for the influenza vaccine?",
+    "options": {
+      "A": "No — hypothyroidism is not an indication for influenza vaccination",
+      "B": "Yes — hypothyroidism is listed as a clinical risk group for annual influenza vaccination in the PHE Green Book and NHS flu programme; people with chronic conditions including hypothyroidism qualify for free NHS flu vaccine",
+      "C": "Only if hypothyroidism is uncontrolled",
+      "D": "Hypothyroidism patients should avoid the flu vaccine — thyroid disease is a contraindication",
+      "E": "Only if the patient is over 65 years old"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per PHE Green Book (Immunisation against infectious disease) Chapter 19 and NHS flu vaccination programme, the annual influenza vaccine is offered free to clinical risk groups including: people with chronic heart disease, chronic kidney disease, chronic liver disease, chronic respiratory disease (including asthma), chronic neurological conditions, diabetes, asplenia, immunosuppression — AND people with any condition associated with immunosuppression or complications from flu. Hypothyroidism (and other thyroid conditions including treated hyperthyroidism): included under chronic conditions that increase risk of flu complications. Even controlled hypothyroidism on levothyroxine is an indication for annual free NHS flu vaccination. This is a common trick question — the answer is YES, hypothyroidism patients should receive the flu vaccine.",
+      "A": "Incorrect — Hypothyroidism IS listed as a clinical risk group indication for annual flu vaccine per PHE Green Book.",
+      "B": "CORRECT — Hypothyroidism is an indication for annual NHS influenza vaccination per PHE Green Book / NHS flu programme.",
+      "C": "Incorrect — Even controlled hypothyroidism on levothyroxine is an indication — not limited to uncontrolled cases.",
+      "D": "Incorrect — Thyroid disease is not a contraindication to flu vaccine — it is an indication.",
+      "E": "Incorrect — Clinical risk groups (including hypothyroidism) are eligible regardless of age — not limited to over-65s."
+    },
+    "reference": "PHE Green Book — Chapter 19 Influenza. NHS flu vaccination programme. https://www.gov.uk/government/collections/immunisation-against-infectious-disease-the-green-book",
+    "tags": ["influenza vaccine", "hypothyroidism", "clinical risk group", "PHE Green Book", "NHS flu", "annual vaccination"]
+  },
+  {
+    "id": "QG-B2-GP-033-001",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "General Practice",
+    "difficulty": "Hard",
+    "question": "A 65-year-old man presents with lower back pain for 6 months, unintentional weight loss of 5 kg, night sweats and a new finding of 2+ proteinuria with 2+ blood on urine dipstick. His Hb is 89 g/L (normocytic) and calcium is 2.78 mmol/L. Per NICE NG12, what diagnosis must be excluded and what investigation is indicated?",
+    "options": {
+      "A": "Renal cell carcinoma — CT abdomen only",
+      "B": "Multiple myeloma — serum protein electrophoresis (SPEP) and urine Bence-Jones protein (BJP), serum immunoglobulins and serum free light chains; the combination of back pain, normocytic anaemia, hypercalcaemia, renal impairment with proteinuria and constitutional symptoms in an older man is the classic presentation of multiple myeloma",
+      "C": "Metastatic prostate cancer — PSA only",
+      "D": "Lymphoma — lymph node biopsy",
+      "E": "Paget's disease — ALP level"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Multiple myeloma: a plasma cell neoplasm producing monoclonal immunoglobulin (paraprotein). Classic CRAB criteria: Calcium elevated (hypercalcaemia from osteoclast activation), Renal impairment (myeloma kidney — light chain cast nephropathy), Anaemia (bone marrow infiltration by plasma cells — normocytic anaemia), Bone lesions/Back pain (lytic bone lesions). Additional features: Bence-Jones proteinuria (free light chains in urine), constitutional symptoms (weight loss, fatigue, night sweats), recurrent infections (immunoparesis). Per NICE NG35 (Myeloma) and NICE NG12: investigations include serum protein electrophoresis (paraprotein band), serum immunoglobulins, serum free light chains (kappa/lambda ratio), Bence-Jones protein in urine, skeletal survey (lytic lesions), bone marrow aspirate/trephine (>10% plasma cells = myeloma). Urgent 2WW referral to haematology.",
+      "A": "Incorrect — CT abdomen helps detect RCC but the full picture of back pain + anaemia + hypercalcaemia + proteinuria points to myeloma.",
+      "B": "CORRECT — Multiple myeloma: CRAB criteria + SPEP + BJP + serum free light chains. Haematology 2WW per NICE NG35/NG12.",
+      "C": "Incorrect — PSA/prostate cancer investigation is appropriate but the anaemia and hypercalcaemia combination with proteinuria points more strongly to myeloma.",
+      "D": "Incorrect — Lymphoma presents with lymphadenopathy — not the CRAB picture with proteinuria.",
+      "E": "Incorrect — Paget's disease causes raised ALP but normal calcium, no proteinuria and localised rather than systemic disease."
+    },
+    "reference": "NICE NG35 — Myeloma. NICE NG12 — Suspected cancer. https://www.nice.org.uk/guidance/ng35",
+    "tags": ["multiple myeloma", "CRAB criteria", "SPEP", "Bence-Jones protein", "NICE NG35", "paraprotein"]
+  },
+  {
+    "id": "QG-B2-MSKS-024-001",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Musculoskeletal Surgery",
+    "difficulty": "Medium",
+    "question": "A 45-year-old woman presents with tingling and numbness in her thumb, index and middle fingers (lateral 3½ fingers) that wakes her at night. She describes dropping objects and difficulty with fine motor tasks. She has Tinel's sign (tingling on tapping the wrist) and Phalen's test is positive. Per NICE CKS, what is the diagnosis and first-line management?",
+    "options": {
+      "A": "Ulnar nerve compression — cubital tunnel syndrome",
+      "B": "Carpal tunnel syndrome (CTS) — compression of the median nerve at the wrist; first-line treatment: wrist splint in neutral position (worn at night and ideally during the day); local corticosteroid injection into the carpal tunnel provides medium-term relief; surgical carpal tunnel decompression for severe or persistent cases",
+      "C": "De Quervain's tenosynovitis — topical NSAIDs",
+      "D": "Thoracic outlet syndrome — physiotherapy",
+      "E": "Cervical radiculopathy — MRI cervical spine"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Carpal tunnel syndrome: compression of the median nerve at the carpal tunnel of the wrist. Sensory distribution: lateral 3½ fingers (thumb, index, middle, lateral half of ring finger) and palm. Features: nocturnal tingling/numbness (worse at night — wrist flexion during sleep), waking at night, shaking the wrist relieves symptoms (flicking sign), weakness of thenar muscles (opposition, abduction of thumb), difficulty with fine motor tasks, Tinel's sign (tingling on percussion over carpal tunnel), positive Phalen's test (tingling on sustained wrist flexion for 60 seconds). Per NICE CKS: first-line: wrist splint in neutral position (especially at night); local corticosteroid injection (effective medium-term relief); nerve conduction studies to confirm diagnosis before surgery; surgical decompression for severe/refractory cases. Associated with: pregnancy, hypothyroidism, diabetes, rheumatoid arthritis, obesity.",
+      "A": "Incorrect — Cubital tunnel syndrome (ulnar nerve at elbow) affects the ring and little finger (medial 1½ fingers) — not the lateral 3½ fingers.",
+      "B": "CORRECT — CTS: median nerve compression, lateral 3½ fingers, nocturnal. Wrist splint first-line per NICE CKS.",
+      "C": "Incorrect — De Quervain's tenosynovitis causes pain at the radial aspect of the wrist (1st extensor compartment) — not sensory symptoms in the fingers.",
+      "D": "Incorrect — Thoracic outlet syndrome causes symptoms across the whole hand/arm — not the specific median nerve distribution.",
+      "E": "Incorrect — Cervical radiculopathy causes neck pain with dermatomal radiation — usually unilateral, different from bilateral nocturnal CTS presentation."
+    },
+    "reference": "NICE CKS — Carpal tunnel syndrome. https://cks.nice.org.uk/topics/carpal-tunnel-syndrome/",
+    "tags": ["carpal tunnel syndrome", "median nerve", "lateral 3 fingers", "wrist splint", "NICE CKS", "Tinel's Phalen's"]
+  },
+  {
+    "id": "QG-B2-MSKS-046-001",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Musculoskeletal Surgery",
+    "difficulty": "Easy",
+    "question": "A 72-year-old man has hypertension and recently developed lower urinary tract symptoms (poor stream, hesitancy, nocturia). He is already on amlodipine 10mg daily. Per NICE NG136 and NICE NG123, which antihypertensive would address both his hypertension and his BPH symptoms?",
+    "options": {
+      "A": "Add bisoprolol — effective for both hypertension and BPH",
+      "B": "Doxazosin (alpha-1 blocker) — alpha-1 blockers reduce blood pressure by vasodilation AND relax smooth muscle in the prostate and bladder neck, improving urinary flow; indicated for hypertension and also a standard treatment for lower urinary tract symptoms from BPH",
+      "C": "Add bendroflumethiazide — diuretics improve prostate symptoms",
+      "D": "Add ramipril — ACE inhibitors treat BPH",
+      "E": "Prescribe tamsulosin for BPH and keep amlodipine for hypertension only"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Alpha-1 adrenoceptor blockers have a dual therapeutic effect: (1) Antihypertensive: alpha-1 blockade causes arterial vasodilation, reducing peripheral vascular resistance and blood pressure; (2) BPH/LUTS improvement: alpha-1A and alpha-1D receptors in the prostate, bladder neck and urethra — blockade causes smooth muscle relaxation, reducing bladder outflow obstruction. Doxazosin (4-8mg daily) is an alpha-1 blocker with both antihypertensive and anti-BPH properties — effective for a patient with both conditions. Per NICE NG136 (hypertension) and NICE NG123 (LUTS), doxazosin is an appropriate choice when both conditions coexist. Note: tamsulosin is a selective alpha-1A/D blocker (less systemic vasodilation, more prostate-selective) — used for BPH but has less antihypertensive effect.",
+      "A": "Incorrect — Bisoprolol (beta-blocker) treats hypertension and can worsen BPH symptoms by increasing bladder neck tone.",
+      "B": "CORRECT — Doxazosin (alpha-1 blocker) treats both hypertension and BPH/LUTS symptoms per NICE NG136/NG123.",
+      "C": "Incorrect — Thiazide diuretics treat hypertension but have no benefit for BPH and can worsen urinary symptoms.",
+      "D": "Incorrect — ACE inhibitors treat hypertension and heart failure — they have no effect on prostate or LUTS.",
+      "E": "Incorrect — Adding tamsulosin only to existing amlodipine misses the opportunity to use a single drug (doxazosin) that treats both conditions."
+    },
+    "reference": "NICE NG136 — Hypertension in adults. NICE NG123 — LUTS in men. https://www.nice.org.uk/guidance/ng136",
+    "tags": ["doxazosin", "alpha-1 blocker", "hypertension BPH", "dual treatment", "NICE NG136", "NICE NG123"]
+  },
+  {
+    "id": "QG-B2-MSKS-120-001",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Musculoskeletal Surgery",
+    "difficulty": "Medium",
+    "question": "A 19-year-old man presents with acute onset severe right-sided scrotal pain that started 2 hours ago during exercise. The testis is exquisitely tender, swollen and lies higher than the left. The cremasteric reflex is absent on the right. He has no fever. Per NICE CKS, what is the diagnosis and time-critical management?",
+    "options": {
+      "A": "Epididymo-orchitis — send urine for STI screen and prescribe doxycycline",
+      "B": "Testicular torsion — surgical emergency; immediate surgical exploration is required within 4-6 hours of onset to preserve testicular viability; testicular salvage rates: ~100% at 6 hours, ~50% at 12 hours, near zero at 24 hours; bilateral orchidopexy performed at surgery",
+      "C": "Varicocele — reassure and review",
+      "D": "Hydrocele — aspiration",
+      "E": "Inguinal hernia — elective surgical repair"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Testicular torsion: twisting of the spermatic cord, occluding blood supply to the testis. Most common in adolescents and young adults (peak 12-18 years) due to 'bell-clapper' deformity (high insertion of tunica vaginalis allowing free rotation). Clinical diagnosis: sudden severe unilateral testicular pain (onset often during activity or sleep), high-riding testis, horizontal lie, absent cremasteric reflex (most reliable sign), tender firm testis, possible scrotal swelling/erythema. Per NICE CKS: suspected torsion = IMMEDIATE SURGICAL EXPLORATION — do not delay for imaging. Even a normal Doppler USS does not exclude torsion (false-negative rate). Surgery: detorsion + bilateral orchidopexy (both testes have the bell-clapper deformity). Salvage rates: 90-100% at 6h, 70% at 8h, 50% at 12h, <10% at 24h.",
+      "A": "Incorrect — Epididymo-orchitis has a more gradual onset and STI history. Absent cremasteric reflex in a 19-year-old with sudden pain = torsion until proven otherwise.",
+      "B": "CORRECT — Testicular torsion: absent cremasteric reflex + acute onset = surgical emergency. Explore within 4-6 hours per NICE CKS.",
+      "C": "Incorrect — Varicoceles cause a dull ache in the left testis with a 'bag of worms' feeling — not acute severe pain with absent cremasteric reflex.",
+      "D": "Incorrect — Hydroceles are transilluminable and non-tender — not an acute emergency.",
+      "E": "Incorrect — Inguinal hernias cause groin pain that may radiate to the scrotum but not the acute tender high-riding testis picture."
+    },
+    "reference": "NICE CKS — Testicular torsion. https://cks.nice.org.uk/topics/testicular-torsion/",
+    "tags": ["testicular torsion", "cremasteric reflex", "4-6 hours", "surgical emergency", "NICE CKS", "orchidopexy"]
+  }
+]

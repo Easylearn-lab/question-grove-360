@@ -297,3 +297,11 @@
 - [x] Remove all 7-day free trial references from pricing, landing page, and backend
 - [x] Update coupon system to only allow 3-day activation period
 - [x] Ensure coupons can only be created/distributed by admin
+
+
+## New Question Import Batch (June 11, 2026)
+- [x] Copy 20 new MRCGP AKT JSON files to project data directory
+- [x] Create import script for new batch (281 new questions imported)
+- [x] Execute import with deduplication and verify counts (781 total questions in database)
+- [x] Verify all specialties are correctly mapped (20 specialties)
+- [x] Test Question Bank page loads all questions
