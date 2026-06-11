@@ -1,4 +1,4 @@
-import { eq, and, lte, gte, asc } from "drizzle-orm";
+import { eq, and, lte, gte, asc, desc } from "drizzle-orm";
 import { drizzle } from "drizzle-orm/mysql2";
 import { InsertUser, users } from "../drizzle/schema";
 import { ENV } from './_core/env';
@@ -596,5 +596,75 @@ export async function getSpecialtyBreakdown(userId: number, days: number = 30) {
   } catch (error) {
     console.error("[Database] Failed to get specialty breakdown:", error);
     return [];
+  }
+}
+
+
+export async function getBookmarks(userId: number, limit: number = 20, offset: number = 0) {
+  const db = await getDb();
+  if (!db) return [];
+
+  try {
+    const { bookmarks, questions } = await import("../drizzle/schema");
+    const result = await db
+      .select({
+        id: bookmarks.id,
+        questionId: bookmarks.itemId,
+        question: questions.question,
+        domain: questions.domain,
+        specialty: questions.specialty,
+        difficulty: questions.difficulty,
+        optionA: questions.optionA,
+        optionB: questions.optionB,
+        optionC: questions.optionC,
+        optionD: questions.optionD,
+        optionE: questions.optionE,
+        correctAnswer: questions.correctAnswer,
+        bookmarkedAt: bookmarks.createdAt,
+      })
+      .from(bookmarks)
+      .innerJoin(questions, eq(bookmarks.itemId, questions.id))
+      .where(eq(bookmarks.userId, userId))
+      .orderBy(desc(bookmarks.createdAt))
+      .limit(limit)
+      .offset(offset);
+    return result;
+  } catch (error) {
+    console.error("[Database] Failed to get bookmarks:", error);
+    return [];
+  }
+}
+
+export async function removeBookmark(userId: number, questionId: number) {
+  const db = await getDb();
+  if (!db) return false;
+
+  try {
+    const { bookmarks } = await import("../drizzle/schema");
+    await db
+      .delete(bookmarks)
+      .where(and(eq(bookmarks.userId, userId), eq(bookmarks.itemId, questionId)));
+    return true;
+  } catch (error) {
+    console.error("[Database] Failed to remove bookmark:", error);
+    return false;
+  }
+}
+
+export async function isQuestionBookmarked(userId: number, questionId: number) {
+  const db = await getDb();
+  if (!db) return false;
+
+  try {
+    const { bookmarks } = await import("../drizzle/schema");
+    const result = await db
+      .select()
+      .from(bookmarks)
+      .where(and(eq(bookmarks.userId, userId), eq(bookmarks.itemId, questionId)))
+      .limit(1);
+    return result.length > 0;
+  } catch (error) {
+    console.error("[Database] Failed to check bookmark:", error);
+    return false;
   }
 }

@@ -305,3 +305,14 @@
 - [x] Execute import with deduplication and verify counts (781 total questions in database)
 - [x] Verify all specialties are correctly mapped (20 specialties)
 - [x] Test Question Bank page loads all questions
+
+
+## Bookmark Feature (June 11, 2026)
+- [x] Create bookmarks table in database schema (already existed)
+- [x] Add bookmark procedures to backend router (toggle, list, delete)
+- [x] Add bookmark button to Question Bank question cards (already implemented)
+- [x] Create Bookmarks page to view all saved questions (/bookmarks route)
+- [x] Write tests for bookmark functionality (6 tests passing)
+- [x] Fix bookmark toggle logic: load initial state, properly add/remove bookmarks
+- [x] Fix Bookmarks page empty state navigation bug (/questions instead of /question-bank)
+- [x] Implement proper bookmark state management in Question Bank UI

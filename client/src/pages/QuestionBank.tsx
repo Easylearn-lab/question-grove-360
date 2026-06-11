@@ -1,4 +1,3 @@
-import { useAuth } from "@/_core/hooks/useAuth";
 import { useLocation } from "wouter";
 import { useEffect, useState, useMemo } from "react";
 import { Button } from "@/components/ui/button";
@@ -11,6 +10,7 @@ import { trpc } from "@/lib/trpc";
 import { toast } from "sonner";
 import { SubscriptionGate } from "@/components/SubscriptionGate";
 import { useSubscription } from "@/hooks/useSubscription";
+import { useAuth } from "@/_core/hooks/useAuth";
 
 const SPECIALTIES = [
   "All Specialties",
@@ -59,6 +59,7 @@ export default function QuestionBank() {
 
   const recordAttempt = trpc.mockExams.recordAttempt.useMutation();
   const bookmarkMutation = trpc.questions.bookmarkQuestion.useMutation();
+  const removeBookmarkMutation = trpc.questions.removeBookmark.useMutation();
 
   // Filter questions client-side for difficulty and search
   const filteredQuestions = useMemo(() => {
@@ -95,14 +96,27 @@ export default function QuestionBank() {
   const totalQuestions = filteredQuestions.length;
   const progress = totalQuestions > 0 ? ((currentQuestionIndex + 1) / totalQuestions) * 100 : 0;
 
+  // Query bookmark status for current question
+  const isBookmarkedQuery = trpc.questions.isBookmarked.useQuery(
+    currentQuestion?.id ?? 0,
+    { enabled: !!currentQuestion?.id }
+  );
+
+  // Update local bookmarked state when query result changes
+  useEffect(() => {
+    if (isBookmarkedQuery.data !== undefined) {
+      setBookmarked(isBookmarkedQuery.data);
+    }
+  }, [isBookmarkedQuery.data]);
+
   const handleNext = () => {
     if (currentQuestionIndex < totalQuestions - 1) {
       setCurrentQuestionIndex(currentQuestionIndex + 1);
       setSelectedAnswer(null);
       setShowExplanation(false);
-      setBookmarked(false);
       setFlagged(false);
       setNotes("");
+      setBookmarked(false);
     }
   };
 
@@ -111,9 +125,9 @@ export default function QuestionBank() {
       setCurrentQuestionIndex(currentQuestionIndex - 1);
       setSelectedAnswer(null);
       setShowExplanation(false);
-      setBookmarked(false);
       setFlagged(false);
       setNotes("");
+      setBookmarked(false);
     }
   };
 
@@ -142,9 +156,30 @@ export default function QuestionBank() {
 
   const handleBookmark = () => {
     if (!currentQuestion) return;
-    setBookmarked(!bookmarked);
-    bookmarkMutation.mutate(currentQuestion.id);
-    toast.success(bookmarked ? "Bookmark removed" : "Question bookmarked");
+
+    if (bookmarked) {
+      // Remove bookmark
+      removeBookmarkMutation.mutate(currentQuestion.id, {
+        onSuccess: () => {
+          setBookmarked(false);
+          toast.success("Bookmark removed");
+        },
+        onError: () => {
+          toast.error("Failed to remove bookmark");
+        },
+      });
+    } else {
+      // Add bookmark
+      bookmarkMutation.mutate(currentQuestion.id, {
+        onSuccess: () => {
+          setBookmarked(true);
+          toast.success("Question bookmarked");
+        },
+        onError: () => {
+          toast.error("Failed to bookmark question");
+        },
+      });
+    }
   };
 
   // Empty state when no questions are available
