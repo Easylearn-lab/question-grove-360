@@ -20,6 +20,7 @@ import ActiveMockExam from "./pages/ActiveMockExam";
 import Onboarding from "./pages/Onboarding";
 import Progress from "./pages/Progress";
 import Bookmarks from "./pages/Bookmarks";
+import TwoFactorSettings from "./pages/TwoFactorSettings";
 import { AICoachFloating } from "./components/AICoachFloating";
 
 function Router() {
@@ -42,6 +43,7 @@ function Router() {
       <Route path={"/mock-exam/:id"} component={ActiveMockExam} />
       <Route path={"/progress"} component={Progress} />
       <Route path={"/bookmarks"} component={Bookmarks} />
+      <Route path={"/settings/2fa"} component={TwoFactorSettings} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />

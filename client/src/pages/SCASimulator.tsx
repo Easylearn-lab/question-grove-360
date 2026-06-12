@@ -48,6 +48,10 @@ export default function SCASimulator() {
   const mediaRecorderRef = useRef<MediaRecorder | null>(null);
   const audioChunksRef = useRef<Blob[]>([]);
 
+  // Voice mutations
+  const uploadAudioMutation = trpc.voice.uploadAudio.useMutation();
+  const transcribeMutation = trpc.voice.transcribe.useMutation();
+
   useEffect(() => {
     if (!isAuthenticated && !subLoading) {
       navigate("/");
@@ -66,10 +70,39 @@ export default function SCASimulator() {
       };
 
       mediaRecorder.onstop = async () => {
-        const audioBlob = new Blob(audioChunksRef.current, { type: "audio/wav" });
-        // In production, send to backend for transcription
-        setTranscript("Sample transcription: Patient reports acute chest pain for 2 hours...");
+        const audioBlob = new Blob(audioChunksRef.current, { type: "audio/webm" });
         stream.getTracks().forEach((track) => track.stop());
+
+        // Convert blob to base64 and send to backend for transcription
+        try {
+          const reader = new FileReader();
+          reader.onloadend = async () => {
+            const base64 = (reader.result as string).split(",")[1];
+            if (!base64) {
+              toast.error("Failed to process audio");
+              return;
+            }
+            try {
+              // Upload audio
+              const uploadResult = await uploadAudioMutation.mutateAsync({
+                audioBase64: base64,
+                mimeType: "audio/webm",
+              });
+              // Transcribe
+              const transcribeResult = await transcribeMutation.mutateAsync({
+                audioUrl: uploadResult.url,
+                language: "en",
+              });
+              setTranscript(transcribeResult.text);
+              toast.success("Voice transcribed successfully");
+            } catch (err: any) {
+              toast.error(err.message || "Transcription failed");
+            }
+          };
+          reader.readAsDataURL(audioBlob);
+        } catch (error) {
+          toast.error("Failed to process audio recording");
+        }
       };
 
       mediaRecorder.start();

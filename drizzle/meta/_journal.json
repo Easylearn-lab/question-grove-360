@@ -36,6 +36,13 @@
       "when": 1780233717838,
       "tag": "0004_magenta_texas_twister",
       "breakpoints": true
+    },
+    {
+      "idx": 5,
+      "version": "5",
+      "when": 1781141468402,
+      "tag": "0005_abandoned_omega_sentinel",
+      "breakpoints": true
     }
   ]
 }

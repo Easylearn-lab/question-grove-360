@@ -1,13 +1,17 @@
 import { useLocation } from "wouter";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useMemo } from "react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { ArrowLeft, Trash2, BookmarkX } from "lucide-react";
+import { Input } from "@/components/ui/input";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { ArrowLeft, Trash2, BookmarkX, Search, X, Filter } from "lucide-react";
 import { trpc } from "@/lib/trpc";
 import { useAuth } from "@/_core/hooks/useAuth";
 import { toast } from "sonner";
 import { SubscriptionGate } from "@/components/SubscriptionGate";
 import { useSubscription } from "@/hooks/useSubscription";
+
+const DIFFICULTIES = ["All Levels", "Easy", "Medium", "Hard"];
 
 export default function Bookmarks() {
   const { user, isAuthenticated, loading } = useAuth();
@@ -16,13 +20,27 @@ export default function Bookmarks() {
   const [selectedAnswer, setSelectedAnswer] = useState<string | null>(null);
   const [showExplanation, setShowExplanation] = useState(false);
 
+  // Filter states
+  const [searchQuery, setSearchQuery] = useState("");
+  const [specialty, setSpecialty] = useState("All Specialties");
+  const [difficulty, setDifficulty] = useState("All Levels");
+
   const { isPremium } = useSubscription();
 
   // Fetch bookmarks
   const { data: bookmarks = [], isLoading, refetch } = trpc.questions.getBookmarks.useQuery({
-    limit: 100,
+    limit: 200,
     offset: 0,
   });
+
+  // Derive specialties dynamically from bookmark data
+  const availableSpecialties = useMemo(() => {
+    const specs = new Set<string>();
+    bookmarks.forEach((b) => {
+      if (b.specialty) specs.add(b.specialty);
+    });
+    return ["All Specialties", ...Array.from(specs).sort()];
+  }, [bookmarks]);
 
   // Mutations
   const removeBookmarkMutation = trpc.questions.removeBookmark.useMutation();
@@ -32,6 +50,46 @@ export default function Bookmarks() {
       navigate("/");
     }
   }, [loading, isAuthenticated, navigate]);
+
+  // Filter bookmarks based on search, specialty, and difficulty
+  const filteredBookmarks = useMemo(() => {
+    let filtered = [...bookmarks];
+
+    if (specialty !== "All Specialties") {
+      filtered = filtered.filter((b) => b.specialty === specialty);
+    }
+
+    if (difficulty !== "All Levels") {
+      filtered = filtered.filter((b) => b.difficulty === difficulty);
+    }
+
+    if (searchQuery.trim()) {
+      const query = searchQuery.toLowerCase();
+      filtered = filtered.filter(
+        (b) =>
+          b.question?.toLowerCase().includes(query) ||
+          b.specialty?.toLowerCase().includes(query) ||
+          b.domain?.toLowerCase().includes(query)
+      );
+    }
+
+    return filtered;
+  }, [bookmarks, specialty, difficulty, searchQuery]);
+
+  // Reset question index when filters change
+  useEffect(() => {
+    setCurrentQuestionIndex(0);
+    setSelectedAnswer(null);
+    setShowExplanation(false);
+  }, [specialty, difficulty, searchQuery]);
+
+  const hasActiveFilters = specialty !== "All Specialties" || difficulty !== "All Levels" || searchQuery.trim() !== "";
+
+  const clearFilters = () => {
+    setSpecialty("All Specialties");
+    setDifficulty("All Levels");
+    setSearchQuery("");
+  };
 
   if (loading) {
     return (
@@ -47,8 +105,8 @@ export default function Bookmarks() {
     return null;
   }
 
-  const currentQuestion = bookmarks[currentQuestionIndex];
-  const totalQuestions = bookmarks.length;
+  const currentQuestion = filteredBookmarks[currentQuestionIndex];
+  const totalQuestions = filteredBookmarks.length;
 
   const handleRemoveBookmark = () => {
     if (!currentQuestion || currentQuestion.questionId === null) return;
@@ -56,7 +114,7 @@ export default function Bookmarks() {
       onSuccess: () => {
         toast.success("Bookmark removed");
         refetch();
-        if (currentQuestionIndex > 0) {
+        if (currentQuestionIndex > 0 && currentQuestionIndex >= filteredBookmarks.length - 1) {
           setCurrentQuestionIndex(currentQuestionIndex - 1);
         }
       },
@@ -104,12 +162,74 @@ export default function Bookmarks() {
               <h1 className="text-3xl font-bold text-slate-900">Bookmarked Questions</h1>
             </div>
             <div className="text-sm text-slate-600">
-              {totalQuestions === 0 ? "No bookmarks" : `${currentQuestionIndex + 1} of ${totalQuestions}`}
+              {bookmarks.length} total saved
             </div>
           </div>
 
+          {/* Filters Section */}
+          <Card className="p-4 mb-6 border-slate-200">
+            <div className="flex items-center gap-2 mb-3">
+              <Filter className="w-4 h-4 text-slate-500" />
+              <span className="text-sm font-medium text-slate-700">Filter & Search</span>
+              {hasActiveFilters && (
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  onClick={clearFilters}
+                  className="ml-auto text-xs text-slate-500 hover:text-slate-700 gap-1"
+                >
+                  <X className="w-3 h-3" />
+                  Clear Filters
+                </Button>
+              )}
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
+              {/* Search Bar */}
+              <div className="relative">
+                <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400" />
+                <Input
+                  placeholder="Search bookmarks..."
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  className="pl-9"
+                />
+              </div>
+
+              {/* Specialty Filter */}
+              <Select value={specialty} onValueChange={setSpecialty}>
+                <SelectTrigger>
+                  <SelectValue placeholder="Specialty" />
+                </SelectTrigger>
+                <SelectContent>
+                  {availableSpecialties.map((spec: string) => (
+                    <SelectItem key={spec} value={spec}>{spec}</SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
+
+              {/* Difficulty Filter */}
+              <Select value={difficulty} onValueChange={setDifficulty}>
+                <SelectTrigger>
+                  <SelectValue placeholder="Difficulty" />
+                </SelectTrigger>
+                <SelectContent>
+                  {DIFFICULTIES.map((diff) => (
+                    <SelectItem key={diff} value={diff}>{diff}</SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
+            </div>
+
+            {/* Active filter summary */}
+            {hasActiveFilters && (
+              <div className="mt-3 text-xs text-slate-500">
+                Showing {filteredBookmarks.length} of {bookmarks.length} bookmarked questions
+              </div>
+            )}
+          </Card>
+
           {/* Empty State */}
-          {totalQuestions === 0 ? (
+          {bookmarks.length === 0 ? (
             <Card className="p-12 text-center">
               <BookmarkX className="w-16 h-16 mx-auto mb-4 text-slate-300" />
               <p className="text-slate-600 text-lg mb-4">No bookmarked questions yet</p>
@@ -123,8 +243,31 @@ export default function Bookmarks() {
                 Go to Question Bank
               </Button>
             </Card>
+          ) : filteredBookmarks.length === 0 ? (
+            <Card className="p-12 text-center">
+              <Search className="w-16 h-16 mx-auto mb-4 text-slate-300" />
+              <p className="text-slate-600 text-lg mb-4">No matching bookmarks</p>
+              <p className="text-slate-500 mb-6">
+                No bookmarked questions match your current filters. Try adjusting your search or filter settings.
+              </p>
+              <Button
+                onClick={clearFilters}
+                variant="outline"
+                className="gap-2"
+              >
+                <X className="w-4 h-4" />
+                Clear All Filters
+              </Button>
+            </Card>
           ) : (
             <>
+              {/* Question Counter */}
+              <div className="flex items-center justify-between mb-4">
+                <span className="text-sm text-slate-600 font-medium">
+                  Question {currentQuestionIndex + 1} of {totalQuestions}
+                </span>
+              </div>
+
               {/* Question Card */}
               <Card className="p-6 mb-6 border-2 border-slate-200">
                 <div className="mb-4">
@@ -132,7 +275,11 @@ export default function Bookmarks() {
                     <span className="text-sm font-semibold text-teal-600">
                       {currentQuestion?.specialty || "General"}
                     </span>
-                    <span className="text-xs px-2 py-1 bg-slate-100 text-slate-700 rounded">
+                    <span className={`text-xs px-2 py-1 rounded font-medium ${
+                      currentQuestion?.difficulty === "Easy" ? "bg-green-100 text-green-700" :
+                      currentQuestion?.difficulty === "Hard" ? "bg-red-100 text-red-700" :
+                      "bg-yellow-100 text-yellow-700"
+                    }`}>
                       {currentQuestion?.difficulty || "Medium"}
                     </span>
                   </div>

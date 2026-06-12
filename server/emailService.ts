@@ -1,4 +1,5 @@
 import { storagePut } from './storage';
+import { notifyOwner } from './_core/notification';
 
 interface ExamReport {
   userId: number;
@@ -241,5 +242,116 @@ export async function scheduleEmailReport(
         resolve({ success: false, error });
       }
     }, delayMs);
+  });
+}
+
+// ============================================================
+// Email Trigger System (Owner Notifications)
+// ============================================================
+
+export type EmailTriggerType =
+  | "welcome"
+  | "study_reminder"
+  | "exam_result"
+  | "subscription_activated"
+  | "subscription_expiring"
+  | "weekly_progress";
+
+interface EmailTriggerPayload {
+  type: EmailTriggerType;
+  userId: number;
+  userName?: string;
+  data?: Record<string, any>;
+}
+
+/**
+ * Trigger an owner notification based on the event type.
+ * Returns true if the notification was sent successfully.
+ */
+export async function triggerEmailNotification(payload: EmailTriggerPayload): Promise<boolean> {
+  const { type, userName = "Unknown User", data } = payload;
+
+  let title: string;
+  let content: string;
+
+  switch (type) {
+    case "welcome":
+      title = `New User Registration: ${userName}`;
+      content = `A new user "${userName}" has registered on Question Grove 360.\n\nTimestamp: ${new Date().toISOString()}`;
+      break;
+    case "study_reminder":
+      title = `Study Reminder Alert: ${userName}`;
+      content = `User "${userName}" hasn't studied in a while.\nCurrent streak: ${data?.streak || 0} days\nLast active: ${data?.lastActive || "Unknown"}`;
+      break;
+    case "exam_result":
+      title = `Exam Result: ${userName} - ${data?.passed ? "PASSED" : "FAILED"}`;
+      content = `User "${userName}" completed "${data?.examName || "Mock Exam"}".\nScore: ${data?.score || 0}/${data?.totalQuestions || 0} (${Math.round(((data?.score || 0) / (data?.totalQuestions || 1)) * 100)}%)\nResult: ${data?.passed ? "PASSED" : "FAILED"}`;
+      break;
+    case "subscription_activated":
+      title = `Subscription Activated: ${userName}`;
+      content = `User "${userName}" has activated a ${data?.plan || "Premium"} subscription.\nTimestamp: ${new Date().toISOString()}`;
+      break;
+    case "subscription_expiring":
+      title = `Subscription Expiring: ${userName}`;
+      content = `User "${userName}"'s subscription is expiring soon.\nExpires at: ${data?.expiresAt || "Unknown"}`;
+      break;
+    case "weekly_progress":
+      title = `Weekly Progress: ${userName}`;
+      content = `Questions answered: ${data?.questionsAnswered || 0}\nCorrect rate: ${data?.correctRate || 0}%\nStudy hours: ${data?.studyHours || 0}`;
+      break;
+    default:
+      console.warn(`[EmailService] Unknown trigger type: ${type}`);
+      return false;
+  }
+
+  try {
+    const result = await notifyOwner({ title, content });
+    console.log(`[EmailService] Notification ${result ? "sent" : "failed"}: ${type} for user ${payload.userId}`);
+    return result;
+  } catch (error) {
+    console.error(`[EmailService] Error sending notification:`, error);
+    return false;
+  }
+}
+
+/**
+ * Trigger a welcome notification when a new user registers.
+ */
+export async function triggerWelcomeNotification(userId: number, userName: string): Promise<boolean> {
+  return triggerEmailNotification({ type: "welcome", userId, userName });
+}
+
+/**
+ * Trigger an exam result notification.
+ */
+export async function triggerExamResultNotification(
+  userId: number,
+  userName: string,
+  examName: string,
+  score: number,
+  totalQuestions: number,
+  passed: boolean
+): Promise<boolean> {
+  return triggerEmailNotification({
+    type: "exam_result",
+    userId,
+    userName,
+    data: { examName, score, totalQuestions, passed },
+  });
+}
+
+/**
+ * Trigger a subscription activation notification.
+ */
+export async function triggerSubscriptionNotification(
+  userId: number,
+  userName: string,
+  plan: string
+): Promise<boolean> {
+  return triggerEmailNotification({
+    type: "subscription_activated",
+    userId,
+    userName,
+    data: { plan },
   });
 }

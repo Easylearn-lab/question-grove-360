@@ -7,6 +7,9 @@ import { getOrCreateProfile, updateProfile, getProfileByUserId } from "./db";
 import { stripeRouter } from "./stripeRouter";
 import { adminRouter } from "./adminRouter";
 import { aiCoachRouter } from "./aiCoachRouter";
+import { twoFactorRouter } from "./twoFactorRouter";
+import { voiceRouter } from "./voiceRouter";
+import { adaptiveRouter } from "./adaptiveAlgorithm";
 
 export const appRouter = router({
   system: systemRouter,
@@ -205,6 +208,15 @@ export const appRouter = router({
 
   // AI Coach Router
   aiCoach: aiCoachRouter,
+
+  // Two-Factor Authentication Router
+  twoFactor: twoFactorRouter,
+
+  // Voice Router (SCA voice integration)
+  voice: voiceRouter,
+
+  // Adaptive Learning Router
+  adaptive: adaptiveRouter,
 });
 
 export type AppRouter = typeof appRouter;

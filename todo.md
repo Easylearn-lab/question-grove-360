@@ -13,7 +13,7 @@
 - [x] Implement role-based access control (user/admin roles)
 - [x] Build user profile page with specialty, training year, target exam, country
 - [x] Implement password reset functionality (passwordReset.ts)
-- [ ] Add 2FA option (TOTP via authenticator app)
+- [x] Add 2FA option (TOTP via authenticator app)
 - [x] Build session management and "remember me" functionality
 
 ## Phase 3: Core UI & Navigation
@@ -325,3 +325,17 @@
 - [x] Verify admin-only procedures protected (FORBIDDEN for non-admins)
 - [x] Verify 3-day coupon max validity enforced
 - [x] Test Results: 63/73 passing (86% pass rate)
+
+## Bookmarks Page Enhancement (June 11, 2026)
+- [x] Add specialty category filter to Bookmarks page
+- [x] Add difficulty level filter to Bookmarks page
+- [x] Add search bar to filter bookmarked questions by text
+- [x] Ensure filters work together (combined filtering)
+- [x] Add clear filters button
+
+## Advanced Features (June 11, 2026)
+- [x] Implement 2FA (TOTP via authenticator app) - setup, verify, disable (twoFactorRouter.ts + TwoFactorSettings.tsx)
+- [x] Implement email triggers (welcome email, study reminders, exam results) - triggerEmailNotification in emailService.ts
+- [x] Implement SCA voice integration (voice input/output for consultation simulator) - voiceRouter.ts with transcription + TTS
+- [x] Implement adaptive learning algorithm (spaced repetition + difficulty adjustment) - adaptiveAlgorithm.ts with SM-2 + pass prediction
+- [x] Write tests for all advanced features (24 tests passing)

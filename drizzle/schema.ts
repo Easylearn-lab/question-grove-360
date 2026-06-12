@@ -52,6 +52,19 @@ export const profiles = mysqlTable("profiles", {
 export type Profile = typeof profiles.$inferSelect;
 export type InsertProfile = typeof profiles.$inferInsert;
 
+// Two-Factor Authentication
+export const twoFactorAuth = mysqlTable("two_factor_auth", {
+  id: int("id").autoincrement().primaryKey(),
+  userId: int("userId").notNull().references(() => users.id),
+  secret: varchar("secret", { length: 255 }).notNull(),
+  isEnabled: boolean("isEnabled").default(false).notNull(),
+  backupCodes: json("backupCodes").$type<string[]>(),
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+  updatedAt: timestamp("updatedAt").defaultNow().onUpdateNow().notNull(),
+});
+
+export type TwoFactorAuth = typeof twoFactorAuth.$inferSelect;
+
 // Exams
 export const exams = mysqlTable("exams", {
   id: int("id").autoincrement().primaryKey(),
