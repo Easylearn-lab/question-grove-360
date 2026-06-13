@@ -339,3 +339,10 @@
 - [x] Implement SCA voice integration (voice input/output for consultation simulator) - voiceRouter.ts with transcription + TTS
 - [x] Implement adaptive learning algorithm (spaced repetition + difficulty adjustment) - adaptiveAlgorithm.ts with SM-2 + pass prediction
 - [x] Write tests for all advanced features (24 tests passing)
+
+## OAuth Sign-In Redirect Loop Bug Fix (June 13, 2026)
+- [x] Investigate OAuth callback route and session handling
+- [x] Fix redirect loop after Google OAuth sign-in (3 fixes applied)
+- [x] Verify session persistence after login (fallback name prevents invalid sessions)
+- [x] Verify protected routes work correctly after auth (redirect to /dashboard)
+- [x] Test full sign-in flow end-to-end (8 tests passing)

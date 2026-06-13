@@ -172,7 +172,7 @@ class SDKServer {
       {
         openId,
         appId: ENV.appId,
-        name: options.name || "",
+        name: options.name || "User",
       },
       options
     );
@@ -214,17 +214,19 @@ class SDKServer {
 
       if (
         !isNonEmptyString(openId) ||
-        !isNonEmptyString(appId) ||
-        !isNonEmptyString(name)
+        !isNonEmptyString(appId)
       ) {
-        console.warn("[Auth] Session payload missing required fields");
+        console.warn("[Auth] Session payload missing required fields (openId or appId)");
         return null;
       }
+
+      // Name can be empty for some OAuth providers (e.g., Google accounts without display names)
+      const resolvedName = typeof name === "string" ? name : "";
 
       return {
         openId,
         appId,
-        name,
+        name: resolvedName,
       };
     } catch (error) {
       console.warn("[Auth] Session verification failed", String(error));

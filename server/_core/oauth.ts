@@ -28,23 +28,26 @@ export function registerOAuthRoutes(app: Express) {
         return;
       }
 
+      const userName = userInfo.name || userInfo.email || "User";
+
       await db.upsertUser({
         openId: userInfo.openId,
-        name: userInfo.name || null,
+        name: userName,
         email: userInfo.email ?? null,
         loginMethod: userInfo.loginMethod ?? userInfo.platform ?? null,
         lastSignedIn: new Date(),
       });
 
       const sessionToken = await sdk.createSessionToken(userInfo.openId, {
-        name: userInfo.name || "",
+        name: userName,
         expiresInMs: ONE_YEAR_MS,
       });
 
       const cookieOptions = getSessionCookieOptions(req);
       res.cookie(COOKIE_NAME, sessionToken, { ...cookieOptions, maxAge: ONE_YEAR_MS });
 
-      res.redirect(302, "/");
+      // Redirect to dashboard after successful login instead of landing page
+      res.redirect(302, "/dashboard");
     } catch (error) {
       console.error("[OAuth] Callback failed", error);
       res.status(500).json({ error: "OAuth callback failed" });
