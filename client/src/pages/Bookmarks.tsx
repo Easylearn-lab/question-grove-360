@@ -12,7 +12,7 @@ import { toast } from "sonner";
 import { SubscriptionGate } from "@/components/SubscriptionGate";
 import { useSubscription } from "@/hooks/useSubscription";
 
-const DIFFICULTIES = ["All Levels", "Easy", "Medium", "Hard"];
+const DIFFICULTIES = ["All Levels", "Medium", "Hard"];
 
 export default function Bookmarks() {
   const { user, isAuthenticated, loading, isReady } = useProtectedRoute();
@@ -276,13 +276,14 @@ export default function Bookmarks() {
                     <span className="text-sm font-semibold text-teal-600">
                       {currentQuestion?.specialty || "General"}
                     </span>
-                    <span className={`text-xs px-2 py-1 rounded font-medium ${
-                      currentQuestion?.difficulty === "Easy" ? "bg-green-100 text-green-700" :
-                      currentQuestion?.difficulty === "Hard" ? "bg-red-100 text-red-700" :
-                      "bg-yellow-100 text-yellow-700"
-                    }`}>
-                      {currentQuestion?.difficulty || "Medium"}
-                    </span>
+                    {currentQuestion?.difficulty && currentQuestion.difficulty !== "Easy" && (
+                      <span className={`text-xs px-2 py-1 rounded font-medium ${
+                        currentQuestion.difficulty === "Hard" ? "bg-red-100 text-red-700" :
+                        "bg-yellow-100 text-yellow-700"
+                      }`}>
+                        {currentQuestion.difficulty}
+                      </span>
+                    )}
                   </div>
                   <h2 className="text-xl font-bold text-slate-900 mb-4">{currentQuestion?.question}</h2>
                 </div>

@@ -193,13 +193,14 @@ export default function PatternRecognition() {
                   <span className="px-3 py-1 bg-white/20 text-white rounded-full text-xs font-medium">
                     {currentCard.specialty}
                   </span>
-                  <span className={`px-3 py-1 rounded-full text-xs font-medium ${
-                    currentCard.difficulty === "Easy" ? "bg-green-400/30 text-green-100" :
-                    currentCard.difficulty === "Medium" ? "bg-yellow-400/30 text-yellow-100" :
-                    "bg-red-400/30 text-red-100"
-                  }`}>
-                    {currentCard.difficulty}
-                  </span>
+                  {currentCard.difficulty !== "Easy" && (
+                    <span className={`px-3 py-1 rounded-full text-xs font-medium ${
+                      currentCard.difficulty === "Medium" ? "bg-yellow-400/30 text-yellow-100" :
+                      "bg-red-400/30 text-red-100"
+                    }`}>
+                      {currentCard.difficulty}
+                    </span>
+                  )}
                 </div>
                 <p className="text-2xl md:text-3xl font-bold text-white leading-relaxed">
                   {currentCard.front}

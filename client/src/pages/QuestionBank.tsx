@@ -26,7 +26,7 @@ const SPECIALTIES = [
   "Renal",
 ];
 
-const DIFFICULTIES = ["All Levels", "Easy", "Medium", "Hard"];
+const DIFFICULTIES = ["All Levels", "Medium", "Hard"];
 
 export default function QuestionBank() {
   const { user, isAuthenticated, loading, isReady } = useProtectedRoute();
@@ -340,9 +340,8 @@ export default function QuestionBank() {
                             {currentQuestion.specialty}
                           </span>
                         )}
-                        {currentQuestion.difficulty && (
+                        {currentQuestion.difficulty && currentQuestion.difficulty !== "Easy" && (
                           <span className={`px-3 py-1 rounded-full text-sm font-medium ${
-                            currentQuestion.difficulty === "Easy" ? "bg-green-100 text-green-700" :
                             currentQuestion.difficulty === "Medium" ? "bg-yellow-100 text-yellow-700" :
                             "bg-red-100 text-red-700"
                           }`}>

@@ -211,6 +211,10 @@ export default function DashboardRedesigned() {
           </div>
           <div className="flex items-center gap-3">
             <Button variant="outline" size="sm" onClick={() => navigate("/pricing")}>Pricing</Button>
+            <Button variant="outline" size="sm" onClick={() => logout()} className="text-red-600 hover:text-red-700 hover:bg-red-50 border-red-200">
+              <LogOut className="w-4 h-4 mr-1" />
+              <span className="hidden sm:inline">Logout</span>
+            </Button>
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
                 <Button variant="outline" size="sm" className="flex items-center gap-2">

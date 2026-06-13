@@ -212,6 +212,7 @@ class SDKServer {
       });
       const { openId, appId, name } = payload as Record<string, unknown>;
 
+      // Only openId and appId are strictly required - name can be empty
       if (
         !isNonEmptyString(openId) ||
         !isNonEmptyString(appId)
@@ -220,13 +221,10 @@ class SDKServer {
         return null;
       }
 
-      // Name can be empty for some OAuth providers (e.g., Google accounts without display names)
-      const resolvedName = typeof name === "string" ? name : "";
-
       return {
         openId,
         appId,
-        name: resolvedName,
+        name: typeof name === "string" ? name : "",
       };
     } catch (error) {
       console.warn("[Auth] Session verification failed", String(error));

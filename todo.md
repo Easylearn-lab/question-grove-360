@@ -359,3 +359,11 @@
 - [ ] Check for any additional middleware or global redirects
 - [ ] Test full flow end-to-end in browser (incognito)
 - [ ] Verify page refresh maintains session
+
+## Production Issues Fix (June 13, 2026)
+- [x] Issue 1: Fix OAuth login on questiongrove360.com (cookie not persisting on custom domain)
+- [x] Issue 2: Fix Stripe checkout "Failed to start checkout" error
+- [x] Issue 3: Update pricing to correct amounts (from Image 3: Single Exam Monthly £7.99, Single Exam 3-Month £20, UK All-Access Monthly £39.99, UK All-Access 3-Month £99.99, International Monthly £39.99, International 3-Month £99.99)
+- [x] Issue 4: Simplify landing page exam cards - remove bullet lists, keep clean CTAs only
+- [x] Issue 5: Remove "Easy" difficulty tag from question displays (keep Medium and Hard)
+- [x] Issue 6: Add visible Logout button to dashboard navigation/header

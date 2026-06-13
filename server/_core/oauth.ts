@@ -14,43 +14,55 @@ export function registerOAuthRoutes(app: Express) {
     const code = getQueryParam(req, "code");
     const state = getQueryParam(req, "state");
 
+    console.log("[OAuth] Callback hit. code:", code ? "present" : "missing", "state:", state ? "present" : "missing");
+
     if (!code || !state) {
       res.status(400).json({ error: "code and state are required" });
       return;
     }
 
     try {
+      console.log("[OAuth] Exchanging code for token...");
       const tokenResponse = await sdk.exchangeCodeForToken(code, state);
+      console.log("[OAuth] Token exchange successful");
+
       const userInfo = await sdk.getUserInfo(tokenResponse.accessToken);
+      console.log("[OAuth] Got user info:", { openId: userInfo.openId, name: userInfo.name, email: userInfo.email });
 
       if (!userInfo.openId) {
+        console.error("[OAuth] openId missing from user info");
         res.status(400).json({ error: "openId missing from user info" });
         return;
       }
 
-      const userName = userInfo.name || userInfo.email || "User";
+      // Use email prefix or "User" as fallback if name is empty
+      const displayName = userInfo.name || (userInfo.email ? userInfo.email.split("@")[0] : "User");
 
       await db.upsertUser({
         openId: userInfo.openId,
-        name: userName,
+        name: displayName,
         email: userInfo.email ?? null,
         loginMethod: userInfo.loginMethod ?? userInfo.platform ?? null,
         lastSignedIn: new Date(),
       });
+      console.log("[OAuth] User upserted successfully");
 
       const sessionToken = await sdk.createSessionToken(userInfo.openId, {
-        name: userName,
+        name: displayName,
         expiresInMs: ONE_YEAR_MS,
       });
+      console.log("[OAuth] Session token created, length:", sessionToken.length);
 
       const cookieOptions = getSessionCookieOptions(req);
-      res.cookie(COOKIE_NAME, sessionToken, { ...cookieOptions, maxAge: ONE_YEAR_MS });
+      console.log("[OAuth] Cookie options:", JSON.stringify(cookieOptions));
 
-      // Redirect to dashboard after successful login instead of landing page
+      res.cookie(COOKIE_NAME, sessionToken, { ...cookieOptions, maxAge: ONE_YEAR_MS });
+      console.log("[OAuth] Cookie set, redirecting to /dashboard");
       res.redirect(302, "/dashboard");
-    } catch (error) {
-      console.error("[OAuth] Callback failed", error);
-      res.status(500).json({ error: "OAuth callback failed" });
+    } catch (error: any) {
+      console.error("[OAuth] Callback FAILED:", error?.message || error);
+      console.error("[OAuth] Error stack:", error?.stack);
+      res.status(500).json({ error: "OAuth callback failed", details: error?.message });
     }
   });
 }

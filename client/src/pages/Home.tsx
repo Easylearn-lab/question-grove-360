@@ -79,28 +79,7 @@ export default function Home() {
             <div className="bg-white rounded-xl p-8 border-t-4 border-teal-500 shadow-lg hover:shadow-xl transition-all hover:-translate-y-2">
               <div className="text-4xl mb-4">🇬🇧</div>
               <h3 className="text-2xl font-bold text-gray-900 mb-2">UK Medical Exams</h3>
-              <p className="text-gray-600 mb-4">MRCGP AKT • MRCGP SCA • PLAB 1 & 2 • UKMLA • MSRA • MRCP • MRCPCH • MRCS • MRCOG • and more</p>
-              
-              <div className="space-y-2 mb-6">
-                <div className="flex items-center gap-2 text-gray-700">
-                  <span className="text-teal-600 font-bold">✓</span> 15+ UK postgraduate exams
-                </div>
-                <div className="flex items-center gap-2 text-gray-700">
-                  <span className="text-teal-600 font-bold">✓</span> SCA consultation simulator with instant feedback
-                </div>
-                <div className="flex items-center gap-2 text-gray-700">
-                  <span className="text-teal-600 font-bold">✓</span> AKT question bank 1,600+ questions
-                </div>
-                <div className="flex items-center gap-2 text-gray-700">
-                  <span className="text-teal-600 font-bold">✓</span> PLAB 1 & 2 full preparation
-                </div>
-                <div className="flex items-center gap-2 text-gray-700">
-                  <span className="text-teal-600 font-bold">✓</span> Note360 revision notes
-                </div>
-                <div className="flex items-center gap-2 text-gray-700">
-                  <span className="text-teal-600 font-bold">✓</span> Pattern Recognition flashcards
-                </div>
-              </div>
+              <p className="text-gray-600 mb-6">Complete preparation for 15+ UK postgraduate and licensing exams including MRCGP, PLAB, UKMLA, MRCP, and more.</p>
               
               <a href={getLoginUrl()} className="w-full bg-teal-600 text-white py-3 rounded-lg font-semibold hover:bg-teal-700 text-center block">
                 Access UK Exams →
@@ -111,28 +90,7 @@ export default function Home() {
             <div className="bg-white rounded-xl p-8 border-t-4 border-purple-500 shadow-lg hover:shadow-xl transition-all hover:-translate-y-2">
               <div className="text-4xl mb-4">🌍</div>
               <h3 className="text-2xl font-bold text-gray-900 mb-2">International Exams</h3>
-              <p className="text-gray-600 mb-4">USMLE Steps 1-3 • MCCQE Canada • AMC Australia • FMGE India • DHA UAE • HAAD • SCFHS Saudi Arabia • and more</p>
-              
-              <div className="space-y-2 mb-6">
-                <div className="flex items-center gap-2 text-gray-700">
-                  <span className="text-purple-600 font-bold">✓</span> 17+ international licensing exams
-                </div>
-                <div className="flex items-center gap-2 text-gray-700">
-                  <span className="text-purple-600 font-bold">✓</span> USMLE Steps 1, 2 CK, 3
-                </div>
-                <div className="flex items-center gap-2 text-gray-700">
-                  <span className="text-purple-600 font-bold">✓</span> MCCQE1 & MCCQE2 Canada
-                </div>
-                <div className="flex items-center gap-2 text-gray-700">
-                  <span className="text-purple-600 font-bold">✓</span> AMC MCQ & Clinical Australia
-                </div>
-                <div className="flex items-center gap-2 text-gray-700">
-                  <span className="text-purple-600 font-bold">✓</span> Middle East licensing exams
-                </div>
-                <div className="flex items-center gap-2 text-gray-700">
-                  <span className="text-purple-600 font-bold">✓</span> Spaced repetition algorithm
-                </div>
-              </div>
+              <p className="text-gray-600 mb-6">Complete preparation for 17+ international licensing exams including USMLE, MCCQE, AMC, and Middle East exams.</p>
               
               <a href={getLoginUrl()} className="w-full bg-purple-600 text-white py-3 rounded-lg font-semibold hover:bg-purple-700 text-center block">
                 Access International Exams →

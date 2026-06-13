@@ -1,6 +1,6 @@
-import { protectedProcedure, router } from "./_core/trpc";
+import { protectedProcedure, publicProcedure, router } from "./_core/trpc";
 import { z } from "zod";
-import { SUBSCRIPTION_PLANS } from "./products";
+import { SUBSCRIPTION_PLANS, type PlanKey } from "./products";
 import Stripe from "stripe";
 
 // Initialize Stripe with the secret key
@@ -12,11 +12,15 @@ function getStripe(): Stripe | null {
   return new Stripe(key, { apiVersion: "2025-04-30.basil" as any });
 }
 
+const PLAN_KEYS = Object.keys(SUBSCRIPTION_PLANS) as PlanKey[];
+
 export const stripeRouter = router({
   // Create checkout session for subscription
   createCheckoutSession: protectedProcedure
     .input(z.object({
-      planKey: z.enum(["STARTER", "PROFESSIONAL", "ELITE"]),
+      planKey: z.string().refine((val): val is PlanKey => PLAN_KEYS.includes(val as PlanKey), {
+        message: "Invalid plan key",
+      }),
     }))
     .mutation(async ({ ctx, input }) => {
       const stripe = getStripe();
@@ -24,7 +28,7 @@ export const stripeRouter = router({
         throw new Error("Stripe is not configured. Please add your Stripe API keys in Settings → Payment.");
       }
 
-      const plan = SUBSCRIPTION_PLANS[input.planKey];
+      const plan = SUBSCRIPTION_PLANS[input.planKey as PlanKey];
       if (!plan) {
         throw new Error("Invalid plan selected");
       }
@@ -59,8 +63,18 @@ export const stripeRouter = router({
     }),
 
   // Get subscription status from local DB (no Stripe API call needed)
-  getSubscriptionStatus: protectedProcedure
+  getSubscriptionStatus: publicProcedure
     .query(async ({ ctx }) => {
+      // Return inactive for unauthenticated users (prevents UNAUTHORIZED error
+      // from triggering global redirect during OAuth callback race condition)
+      if (!ctx.user) {
+        return {
+          status: "inactive" as const,
+          plan: null,
+          currentPeriodEnd: null,
+          cancelAtPeriodEnd: false,
+        };
+      }
       const { getProfileByUserId } = await import("./db");
       const profile = await getProfileByUserId(ctx.user.id);
 

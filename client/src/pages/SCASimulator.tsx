@@ -184,17 +184,17 @@ export default function SCASimulator() {
                     <span className="text-xs px-2 py-1 bg-slate-100 text-slate-700 rounded-full">
                       {caseItem.specialty}
                     </span>
-                    <span
-                      className={`text-xs px-2 py-1 rounded-full ${
-                        caseItem.difficulty === "Easy"
-                          ? "bg-green-100 text-green-700"
-                          : caseItem.difficulty === "Medium"
-                          ? "bg-yellow-100 text-yellow-700"
-                          : "bg-red-100 text-red-700"
-                      }`}
-                    >
-                      {caseItem.difficulty}
-                    </span>
+                    {caseItem.difficulty !== "Easy" && (
+                      <span
+                        className={`text-xs px-2 py-1 rounded-full ${
+                          caseItem.difficulty === "Medium"
+                            ? "bg-yellow-100 text-yellow-700"
+                            : "bg-red-100 text-red-700"
+                        }`}
+                      >
+                        {caseItem.difficulty}
+                      </span>
+                    )}
                   </div>
                 </div>
                 <p className="text-sm text-slate-600 mb-6">{caseItem.scenario}</p>

@@ -13,23 +13,9 @@ export function useAuth(options?: UseAuthOptions) {
     options ?? {};
   const utils = trpc.useUtils();
 
-  // Initialize from localStorage to persist auth across page refreshes
-  const cachedUser = useMemo(() => {
-    if (typeof window === "undefined") return null;
-    try {
-      const cached = localStorage.getItem("manus-runtime-user-info");
-      return cached ? JSON.parse(cached) : null;
-    } catch {
-      return null;
-    }
-  }, []);
-
   const meQuery = trpc.auth.me.useQuery(undefined, {
     retry: false,
     refetchOnWindowFocus: false,
-    refetchOnReconnect: false,
-    staleTime: 1000 * 60 * 5, // 5 minutes
-    initialData: cachedUser,
   });
 
   const logoutMutation = trpc.auth.logout.useMutation({
@@ -56,17 +42,10 @@ export function useAuth(options?: UseAuthOptions) {
   }, [logoutMutation, utils]);
 
   const state = useMemo(() => {
-    // Persist user to localStorage whenever it changes
-    if (meQuery.data) {
-      localStorage.setItem(
-        "manus-runtime-user-info",
-        JSON.stringify(meQuery.data)
-      );
-    } else if (meQuery.data === null && !meQuery.isLoading) {
-      // Only clear on explicit logout, not on initial load
-      localStorage.removeItem("manus-runtime-user-info");
-    }
-    
+    localStorage.setItem(
+      "manus-runtime-user-info",
+      JSON.stringify(meQuery.data)
+    );
     return {
       user: meQuery.data ?? null,
       loading: meQuery.isLoading || logoutMutation.isPending,

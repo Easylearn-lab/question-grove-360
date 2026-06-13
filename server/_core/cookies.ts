@@ -2,12 +2,6 @@ import type { CookieOptions, Request } from "express";
 
 const LOCAL_HOSTS = new Set(["localhost", "127.0.0.1", "::1"]);
 
-function isIpAddress(host: string) {
-  // Basic IPv4 check and IPv6 presence detection.
-  if (/^\d{1,3}(\.\d{1,3}){3}$/.test(host)) return true;
-  return host.includes(":");
-}
-
 function isSecureRequest(req: Request) {
   if (req.protocol === "https") return true;
 
@@ -21,36 +15,23 @@ function isSecureRequest(req: Request) {
   return protoList.some(proto => proto.trim().toLowerCase() === "https");
 }
 
+function isLocalhost(req: Request): boolean {
+  const hostname = req.hostname || req.headers.host?.split(":")[0] || "";
+  return LOCAL_HOSTS.has(hostname);
+}
+
 export function getSessionCookieOptions(
   req: Request
 ): Pick<CookieOptions, "domain" | "httpOnly" | "path" | "sameSite" | "secure"> {
-  // const hostname = req.hostname;
-  // const shouldSetDomain =
-  //   hostname &&
-  //   !LOCAL_HOSTS.has(hostname) &&
-  //   !isIpAddress(hostname) &&
-  //   hostname !== "127.0.0.1" &&
-  //   hostname !== "::1";
-
-  // const domain =
-  //   shouldSetDomain && !hostname.startsWith(".")
-  //     ? `.${hostname}`
-  //     : shouldSetDomain
-  //       ? hostname
-  //       : undefined;
-
-  const isSecure = isSecureRequest(req);
-  
-  // CRITICAL: sameSite: "none" REQUIRES secure: true
-  // If we detect we're in production (not localhost), force secure: true
-  const hostname = req.hostname || "";
-  const isLocalhost = LOCAL_HOSTS.has(hostname) || isIpAddress(hostname);
-  const forceSecure = !isLocalhost; // Force secure for non-localhost (production)
+  // For production (non-localhost), always set secure: true
+  // This is critical because sameSite: "none" requires secure: true
+  // and the x-forwarded-proto header may not always be present on custom domains
+  const secure = isLocalhost(req) ? isSecureRequest(req) : true;
 
   return {
     httpOnly: true,
     path: "/",
     sameSite: "none",
-    secure: isSecure || forceSecure, // Use isSecure OR force secure for production
+    secure,
   };
 }
