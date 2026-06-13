@@ -7,6 +7,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { ArrowLeft, Trash2, BookmarkX, Search, X, Filter } from "lucide-react";
 import { trpc } from "@/lib/trpc";
 import { useAuth } from "@/_core/hooks/useAuth";
+import { useProtectedRoute } from "@/hooks/useProtectedRoute";
 import { toast } from "sonner";
 import { SubscriptionGate } from "@/components/SubscriptionGate";
 import { useSubscription } from "@/hooks/useSubscription";
@@ -14,7 +15,7 @@ import { useSubscription } from "@/hooks/useSubscription";
 const DIFFICULTIES = ["All Levels", "Easy", "Medium", "Hard"];
 
 export default function Bookmarks() {
-  const { user, isAuthenticated, loading } = useAuth();
+  const { user, isAuthenticated, loading, isReady } = useProtectedRoute();
   const [, navigate] = useLocation();
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [selectedAnswer, setSelectedAnswer] = useState<string | null>(null);

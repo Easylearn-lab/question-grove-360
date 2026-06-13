@@ -1,4 +1,5 @@
 import { useAuth } from "@/_core/hooks/useAuth";
+import { useProtectedRoute } from "@/hooks/useProtectedRoute";
 import { useLocation } from "wouter";
 import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
@@ -167,7 +168,7 @@ Inability of the heart to pump sufficient blood to meet metabolic demands.
 };
 
 export default function Note360() {
-  const { user, isAuthenticated, loading } = useAuth();
+  const { user, isAuthenticated, loading, isReady } = useProtectedRoute();
   const [, navigate] = useLocation();
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedSpecialty, setSelectedSpecialty] = useState<string | null>(null);

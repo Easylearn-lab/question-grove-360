@@ -11,6 +11,7 @@ import { toast } from "sonner";
 import { SubscriptionGate } from "@/components/SubscriptionGate";
 import { useSubscription } from "@/hooks/useSubscription";
 import { useAuth } from "@/_core/hooks/useAuth";
+import { useProtectedRoute } from "@/hooks/useProtectedRoute";
 
 const SPECIALTIES = [
   "All Specialties",
@@ -28,7 +29,7 @@ const SPECIALTIES = [
 const DIFFICULTIES = ["All Levels", "Easy", "Medium", "Hard"];
 
 export default function QuestionBank() {
-  const { user, isAuthenticated, loading } = useAuth();
+  const { user, isAuthenticated, loading, isReady } = useProtectedRoute();
   const [, navigate] = useLocation();
   const [mode, setMode] = useState<"tutor" | "exam">("tutor");
   const [specialty, setSpecialty] = useState("All Specialties");
@@ -41,12 +42,6 @@ export default function QuestionBank() {
   const [flagged, setFlagged] = useState(false);
   const [notes, setNotes] = useState("");
 
-  useEffect(() => {
-    if (!loading && !isAuthenticated) {
-      navigate("/");
-    }
-  }, [loading, isAuthenticated, navigate]);
-
   // Fetch questions from server
   const questionsQuery = trpc.questions.getQuestions.useQuery(
     {
@@ -54,7 +49,7 @@ export default function QuestionBank() {
       limit: 50,
       offset: 0,
     },
-    { enabled: isAuthenticated }
+    { enabled: isReady && isAuthenticated }
   );
 
   const recordAttempt = trpc.mockExams.recordAttempt.useMutation();

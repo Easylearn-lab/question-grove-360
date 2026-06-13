@@ -7,18 +7,36 @@ import { BookOpen, Brain, Zap, BarChart3, Settings, LogOut, Menu } from "lucide-
 import { trpc } from "@/lib/trpc";
 
 export default function Dashboard() {
-  const { user, logout, isAuthenticated } = useAuth();
+  const { user, logout, isAuthenticated, loading } = useAuth();
   const [, navigate] = useLocation();
   const { data: profile } = trpc.profile.getProfile.useQuery();
 
   useEffect(() => {
+    if (loading) return;
     if (!isAuthenticated) {
       navigate("/");
     }
-  }, [isAuthenticated, navigate]);
+  }, [loading, isAuthenticated, navigate]);
+
+  if (loading) {
+    return (
+      <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 flex items-center justify-center">
+        <div className="text-center">
+          <div className="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-teal-600"></div>
+          <p className="mt-4 text-slate-600">Loading dashboard...</p>
+        </div>
+      </div>
+    );
+  }
 
   if (!isAuthenticated || !user) {
-    return null;
+    return (
+      <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 flex items-center justify-center">
+        <div className="text-center">
+          <p className="text-slate-600">Redirecting to login...</p>
+        </div>
+      </div>
+    );
   }
 
   return (

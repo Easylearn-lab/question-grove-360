@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useLocation, useRoute } from "wouter";
 import { useAuth } from "@/_core/hooks/useAuth";
+import { useProtectedRoute } from "@/hooks/useProtectedRoute";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import ExamTimer from "@/components/ExamTimer";
@@ -28,7 +29,7 @@ interface ExamState {
 }
 
 export default function ActiveMockExam() {
-  const { user, isAuthenticated } = useAuth();
+  const { user, isAuthenticated, loading, isReady } = useProtectedRoute();
   const [, navigate] = useLocation();
   const [, params] = useRoute("/mock-exam/:id");
   const examId = params?.id;

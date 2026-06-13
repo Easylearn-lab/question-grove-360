@@ -342,7 +342,20 @@
 
 ## OAuth Sign-In Redirect Loop Bug Fix (June 13, 2026)
 - [x] Investigate OAuth callback route and session handling
-- [x] Fix redirect loop after Google OAuth sign-in (3 fixes applied)
+- [x] Fix redirect loop after Google OAuth sign-in (3 fixes applied to sdk.ts and oauth.ts)
 - [x] Verify session persistence after login (fallback name prevents invalid sessions)
 - [x] Verify protected routes work correctly after auth (redirect to /dashboard)
 - [x] Test full sign-in flow end-to-end (8 tests passing)
+- [x] Create useProtectedRoute hook for consistent auth handling
+- [x] Update all protected pages (7 pages) to use useProtectedRoute
+- [x] Fix race condition in auth checks (wait for query completion before redirecting)
+- [x] Comprehensive OAuth tests passing (8/8 tests)
+
+## OAuth Redirect Loop - Deeper Investigation (June 13, 2026)
+- [ ] Investigate Dashboard page auth guards and redirect logic
+- [ ] Check if subscription/Stripe checks in Dashboard redirect to /
+- [ ] Verify useAuth hook behavior for new users with no subscription
+- [ ] Ensure newly authenticated users without subscription see pricing/upgrade page, not landing
+- [ ] Check for any additional middleware or global redirects
+- [ ] Test full flow end-to-end in browser (incognito)
+- [ ] Verify page refresh maintains session

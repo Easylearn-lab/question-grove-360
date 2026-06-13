@@ -1,4 +1,5 @@
 import { useAuth } from "@/_core/hooks/useAuth";
+import { useProtectedRoute } from "@/hooks/useProtectedRoute";
 import { useLocation } from "wouter";
 import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
@@ -58,7 +59,7 @@ interface CardProgress {
 }
 
 export default function PatternRecognition() {
-  const { user, isAuthenticated, loading } = useAuth();
+  const { user, isAuthenticated, loading, isReady } = useProtectedRoute();
   const [, navigate] = useLocation();
   const [currentCardIndex, setCurrentCardIndex] = useState(0);
   const [isFlipped, setIsFlipped] = useState(false);

@@ -1,4 +1,5 @@
 import { useAuth } from "@/_core/hooks/useAuth";
+import { useProtectedRoute } from "@/hooks/useProtectedRoute";
 import { useLocation } from "wouter";
 import { useEffect, useState, useRef } from "react";
 import { Button } from "@/components/ui/button";
@@ -36,7 +37,7 @@ const SCA_CASES = [
 ];
 
 export default function SCASimulator() {
-  const { user, isAuthenticated } = useAuth();
+  const { user, isAuthenticated, loading, isReady } = useProtectedRoute();
   const { isPremium, isLoading: subLoading } = useSubscription();
   const [, navigate] = useLocation();
   const [selectedCase, setSelectedCase] = useState<typeof SCA_CASES[0] | null>(null);

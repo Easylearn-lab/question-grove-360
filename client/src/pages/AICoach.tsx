@@ -1,4 +1,5 @@
 import { useAuth } from "@/_core/hooks/useAuth";
+import { useProtectedRoute } from "@/hooks/useProtectedRoute";
 import { useLocation } from "wouter";
 import { useEffect, useState, useRef } from "react";
 import { Button } from "@/components/ui/button";
@@ -18,7 +19,7 @@ const SAMPLE_CONTEXT = {
 };
 
 export default function AICoach() {
-  const { user, isAuthenticated } = useAuth();
+  const { user, isAuthenticated, loading, isReady } = useProtectedRoute();
   const [, navigate] = useLocation();
   const [messages, setMessages] = useState<Array<{ role: "user" | "assistant"; content: string }>>([
     {

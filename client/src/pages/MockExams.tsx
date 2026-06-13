@@ -8,6 +8,7 @@ import { trpc } from "@/lib/trpc";
 import { toast } from "sonner";
 import { SubscriptionGate } from "@/components/SubscriptionGate";
 import { useSubscription } from "@/hooks/useSubscription";
+import { useProtectedRoute } from "@/hooks/useProtectedRoute";
 
 const MOCK_EXAMS = [
   { id: 1, name: "MRCGP AKT - Full Mock 1", exam: "MRCGP AKT", questions: 200, duration: 180, passMark: 72, examId: 1 },
@@ -25,7 +26,7 @@ interface MockAnswer {
 }
 
 export default function MockExams() {
-  const { user, isAuthenticated, loading } = useAuth();
+  const { user, isAuthenticated, loading, isReady } = useProtectedRoute();
   const [, navigate] = useLocation();
   const [mockState, setMockState] = useState<MockState>("list");
   const [activeMock, setActiveMock] = useState<typeof MOCK_EXAMS[0] | null>(null);
@@ -38,16 +39,10 @@ export default function MockExams() {
 
   const questionsQuery = trpc.questions.getQuestions.useQuery(
     { limit: 50, offset: 0 },
-    { enabled: isAuthenticated && mockState === "active" }
+    { enabled: isReady && isAuthenticated && mockState === "active" }
   );
 
   const recordAttempt = trpc.mockExams.recordAttempt.useMutation();
-
-  useEffect(() => {
-    if (!loading && !isAuthenticated) {
-      navigate("/");
-    }
-  }, [loading, isAuthenticated, navigate]);
 
   // Timer logic
   useEffect(() => {
