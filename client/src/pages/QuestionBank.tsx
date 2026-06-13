@@ -79,22 +79,14 @@ export default function QuestionBank() {
 
   const { isPremium, isLoading: subLoading } = useSubscription();
 
-  if (loading || !isAuthenticated || !user || subLoading) {
-    return (
-      <div className="min-h-screen bg-slate-50 flex items-center justify-center">
-        <div className="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-teal-600"></div>
-      </div>
-    );
-  }
-
   const currentQuestion = filteredQuestions[currentQuestionIndex];
   const totalQuestions = filteredQuestions.length;
   const progress = totalQuestions > 0 ? ((currentQuestionIndex + 1) / totalQuestions) * 100 : 0;
 
-  // Query bookmark status for current question
+  // Query bookmark status for current question (must be above early returns to maintain hook order)
   const isBookmarkedQuery = trpc.questions.isBookmarked.useQuery(
     currentQuestion?.id ?? 0,
-    { enabled: !!currentQuestion?.id }
+    { enabled: !!currentQuestion?.id && isReady && isAuthenticated }
   );
 
   // Update local bookmarked state when query result changes
@@ -103,6 +95,14 @@ export default function QuestionBank() {
       setBookmarked(isBookmarkedQuery.data);
     }
   }, [isBookmarkedQuery.data]);
+
+  if (loading || !isAuthenticated || !user || subLoading) {
+    return (
+      <div className="min-h-screen bg-slate-50 flex items-center justify-center">
+        <div className="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-teal-600"></div>
+      </div>
+    );
+  }
 
   const handleNext = () => {
     if (currentQuestionIndex < totalQuestions - 1) {
