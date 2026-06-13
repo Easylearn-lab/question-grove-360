@@ -375,3 +375,10 @@
 - [x] Remove monthly billing toggle from pricing page
 - [x] Update landing page pricing section to match
 - [x] Verify stripeRouter.ts works with new plan keys
+
+## Add 6-Month and Annual Plans (June 13, 2026)
+- [x] Create Stripe price for 6-month plan with discount
+- [x] Create Stripe price for annual plan with discount
+- [x] Update products.ts with all three tiers
+- [x] Update Pricing page to show 3 plans with discount framing
+- [x] Update landing page pricing section to show all tiers

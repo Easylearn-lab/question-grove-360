@@ -140,24 +140,53 @@ export default function Home() {
 
       {/* Pricing Section */}
       <section className="py-16 px-4 bg-gray-50">
-        <div className="max-w-lg mx-auto text-center">
-          <h2 className="text-3xl font-bold mb-8 text-gray-900">Simple, Transparent Pricing</h2>
+        <div className="max-w-5xl mx-auto">
+          <h2 className="text-3xl font-bold text-center mb-3 text-gray-900">Simple, Transparent Pricing</h2>
+          <p className="text-center text-gray-500 mb-10 text-sm">All plans vs £7.99/month reference rate. The longer you commit, the more you save.</p>
           
-          <div className="bg-white rounded-2xl p-8 border-2 border-teal-500 shadow-xl">
-            <div className="inline-block bg-teal-50 text-teal-700 px-4 py-1 rounded-full text-sm font-semibold mb-4">Best Value</div>
-            <h3 className="text-2xl font-bold text-gray-900 mb-2">3-Month Access</h3>
-            <div className="text-5xl font-bold text-gray-900 mb-2">£20</div>
-            <div className="text-gray-600 mb-1">for 3 months</div>
-            <div className="text-sm text-gray-500 mb-6">
-              <span className="line-through">Usually £23.97</span>
-              <span className="ml-2 text-teal-600 font-semibold">Save vs £7.99/month</span>
+          <div className="grid md:grid-cols-3 gap-6">
+            {/* 3-Month */}
+            <div className="bg-white rounded-2xl p-6 border border-gray-200 shadow-md text-center">
+              <h3 className="text-xl font-bold text-gray-900 mb-1">3-Month</h3>
+              <p className="text-xs text-gray-500 mb-4">Focused exam prep sprint</p>
+              <div className="text-4xl font-bold text-gray-900 mb-1">£20</div>
+              <div className="text-gray-600 text-sm mb-1">for 3 months</div>
+              <div className="text-xs text-gray-400 mb-4">
+                <span className="line-through">£23.97</span>
+                <span className="ml-1 text-teal-600 font-semibold">Save £3.97</span>
+              </div>
+              <a href="/pricing" className="block w-full bg-gray-900 text-white py-2.5 rounded-lg font-semibold hover:bg-gray-800 transition-colors">Get Started</a>
             </div>
-            <a href={getLoginUrl()} className="w-full bg-teal-600 text-white py-3 rounded-lg font-semibold hover:bg-teal-700 text-center block">
-              Get Started →
-            </a>
+
+            {/* 6-Month - Featured */}
+            <div className="relative bg-white rounded-2xl p-6 border-2 border-teal-500 shadow-xl text-center">
+              <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-teal-600 text-white px-3 py-1 rounded-full text-xs font-bold">Most Popular</div>
+              <h3 className="text-xl font-bold text-gray-900 mb-1 mt-2">6-Month</h3>
+              <p className="text-xs text-gray-500 mb-4">Ideal study timeline</p>
+              <div className="text-4xl font-bold text-gray-900 mb-1">£35</div>
+              <div className="text-gray-600 text-sm mb-1">for 6 months</div>
+              <div className="text-xs text-gray-400 mb-4">
+                <span className="line-through">£47.94</span>
+                <span className="ml-1 text-teal-600 font-semibold">Save £12.94</span>
+              </div>
+              <a href="/pricing" className="block w-full bg-teal-600 text-white py-2.5 rounded-lg font-semibold hover:bg-teal-700 transition-colors">Get Started</a>
+            </div>
+
+            {/* Annual */}
+            <div className="bg-white rounded-2xl p-6 border border-gray-200 shadow-md text-center">
+              <h3 className="text-xl font-bold text-gray-900 mb-1">Annual</h3>
+              <p className="text-xs text-gray-500 mb-4">Best value — full year</p>
+              <div className="text-4xl font-bold text-gray-900 mb-1">£60</div>
+              <div className="text-gray-600 text-sm mb-1">for 12 months</div>
+              <div className="text-xs text-gray-400 mb-4">
+                <span className="line-through">£95.88</span>
+                <span className="ml-1 text-teal-600 font-semibold">Save £35.88</span>
+              </div>
+              <a href="/pricing" className="block w-full bg-gray-900 text-white py-2.5 rounded-lg font-semibold hover:bg-gray-800 transition-colors">Get Started</a>
+            </div>
           </div>
           
-          <p className="text-gray-600 mt-6 text-sm">3-day access coupons available from admin on request</p>
+          <p className="text-center text-gray-500 mt-6 text-sm">3-day access coupons available from admin on request</p>
         </div>
       </section>
 
