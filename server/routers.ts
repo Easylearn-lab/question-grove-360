@@ -162,6 +162,24 @@ export const appRouter = router({
     }),
   }),
 
+  // Dashboard Stats Router (real per-user data)
+  dashboard: router({
+    getStats: protectedProcedure
+      .input(
+        z.object({
+          examCode: z.string().optional(),
+        })
+      )
+      .query(async ({ ctx, input }) => {
+        const { getDashboardStats } = await import("./db");
+        return await getDashboardStats(ctx.user.id, input.examCode);
+      }),
+    getExams: protectedProcedure.query(async () => {
+      const { getAvailableExams } = await import("./db");
+      return await getAvailableExams();
+    }),
+  }),
+
   // Progress Dashboard Router
   progress: router({
     getMockExamTrends: protectedProcedure

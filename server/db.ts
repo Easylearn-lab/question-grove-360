@@ -1,4 +1,4 @@
-import { eq, and, lte, gte, asc, desc } from "drizzle-orm";
+import { eq, and, lte, gte, asc, desc, sql } from "drizzle-orm";
 import { drizzle } from "drizzle-orm/mysql2";
 import { InsertUser, users } from "../drizzle/schema";
 import { ENV } from './_core/env';
@@ -666,5 +666,254 @@ export async function isQuestionBookmarked(userId: number, questionId: number) {
   } catch (error) {
     console.error("[Database] Failed to check bookmark:", error);
     return false;
+  }
+}
+
+/**
+ * Get comprehensive dashboard stats for a user, optionally filtered by exam.
+ * Returns study streak, accuracy, question count, accuracy trend, and specialty breakdown.
+ */
+export async function getDashboardStats(userId: number, examCode?: string) {
+  const db = await getDb();
+  if (!db) return null;
+
+  try {
+    const { userAttempts, questions, exams } = await import("../drizzle/schema");
+
+    // Resolve examId if examCode provided
+    let examId: number | undefined;
+    if (examCode) {
+      const examResult = await db
+        .select({ id: exams.id })
+        .from(exams)
+        .where(eq(exams.code, examCode))
+        .limit(1);
+      if (examResult.length > 0) {
+        examId = examResult[0].id;
+      }
+    }
+
+    // Build base condition
+    const conditions = [eq(userAttempts.userId, userId)];
+    if (examId) {
+      conditions.push(eq(userAttempts.examId, examId));
+    }
+
+    // Get all attempts for this user (optionally filtered by exam)
+    const allAttempts = await db
+      .select({
+        id: userAttempts.id,
+        isCorrect: userAttempts.isCorrect,
+        createdAt: userAttempts.createdAt,
+        questionId: userAttempts.questionId,
+      })
+      .from(userAttempts)
+      .where(and(...conditions))
+      .orderBy(userAttempts.createdAt);
+
+    if (allAttempts.length === 0) {
+      return {
+        studyStreak: 0,
+        accuracy: null,
+        accuracyChange: null,
+        totalQuestions: 0,
+        questionsToday: 0,
+        passProbability: null,
+        accuracyTrend: [],
+        specialtyBreakdown: [],
+      };
+    }
+
+    // === STUDY STREAK ===
+    // Count consecutive days with activity ending today or yesterday
+    const now = new Date();
+    const todayStr = now.toISOString().split("T")[0];
+    
+    // Get unique days with activity
+    const activityDays = new Set<string>();
+    allAttempts.forEach((a) => {
+      if (a.createdAt) {
+        activityDays.add(new Date(a.createdAt).toISOString().split("T")[0]);
+      }
+    });
+    
+    let streak = 0;
+    let checkDate = new Date(now);
+    // If no activity today, start checking from yesterday
+    if (!activityDays.has(todayStr)) {
+      checkDate.setDate(checkDate.getDate() - 1);
+    }
+    
+    while (true) {
+      const dateStr = checkDate.toISOString().split("T")[0];
+      if (activityDays.has(dateStr)) {
+        streak++;
+        checkDate.setDate(checkDate.getDate() - 1);
+      } else {
+        break;
+      }
+    }
+
+    // === ACCURACY ===
+    const correctCount = allAttempts.filter((a) => a.isCorrect).length;
+    const accuracy = Math.round((correctCount / allAttempts.length) * 100);
+
+    // Accuracy change this week vs last week
+    const oneWeekAgo = new Date(now.getTime() - 7 * 24 * 60 * 60 * 1000);
+    const twoWeeksAgo = new Date(now.getTime() - 14 * 24 * 60 * 60 * 1000);
+    
+    const thisWeekAttempts = allAttempts.filter(
+      (a) => a.createdAt && new Date(a.createdAt) >= oneWeekAgo
+    );
+    const lastWeekAttempts = allAttempts.filter(
+      (a) => a.createdAt && new Date(a.createdAt) >= twoWeeksAgo && new Date(a.createdAt) < oneWeekAgo
+    );
+    
+    let accuracyChange: number | null = null;
+    if (thisWeekAttempts.length > 0 && lastWeekAttempts.length > 0) {
+      const thisWeekAcc = Math.round(
+        (thisWeekAttempts.filter((a) => a.isCorrect).length / thisWeekAttempts.length) * 100
+      );
+      const lastWeekAcc = Math.round(
+        (lastWeekAttempts.filter((a) => a.isCorrect).length / lastWeekAttempts.length) * 100
+      );
+      accuracyChange = thisWeekAcc - lastWeekAcc;
+    }
+
+    // === QUESTIONS COUNT ===
+    const totalQuestions = allAttempts.length;
+    const todayStart = new Date(todayStr);
+    const questionsToday = allAttempts.filter(
+      (a) => a.createdAt && new Date(a.createdAt) >= todayStart
+    ).length;
+
+    // === PASS PROBABILITY ===
+    // Based on accuracy + coverage. Minimum 20 questions to show.
+    let passProbability: number | null = null;
+    if (totalQuestions >= 20) {
+      // Simple model: weighted average of accuracy (70%) and consistency bonus (30%)
+      const recentAttempts = allAttempts.slice(-50); // last 50
+      const recentAcc = recentAttempts.filter((a) => a.isCorrect).length / recentAttempts.length;
+      const consistencyBonus = Math.min(totalQuestions / 200, 1) * 0.1; // up to 10% bonus for volume
+      passProbability = Math.min(Math.round((recentAcc * 0.9 + consistencyBonus) * 100), 99);
+    }
+
+    // === ACCURACY TREND ===
+    // Group attempts by date and calculate daily accuracy
+    const dailyStats: Record<string, { correct: number; total: number }> = {};
+    allAttempts.forEach((a) => {
+      if (a.createdAt) {
+        const dateStr = new Date(a.createdAt).toISOString().split("T")[0];
+        if (!dailyStats[dateStr]) {
+          dailyStats[dateStr] = { correct: 0, total: 0 };
+        }
+        dailyStats[dateStr].total++;
+        if (a.isCorrect) {
+          dailyStats[dateStr].correct++;
+        }
+      }
+    });
+
+    const accuracyTrend = Object.entries(dailyStats)
+      .sort(([a], [b]) => a.localeCompare(b))
+      .map(([date, stats]) => ({
+        date,
+        accuracy: Math.round((stats.correct / stats.total) * 100),
+        questions: stats.total,
+      }));
+
+    // === SPECIALTY BREAKDOWN ===
+    // Join with questions to get specialty data
+    const specialtyConditions = [eq(userAttempts.userId, userId)];
+    if (examId) {
+      specialtyConditions.push(eq(userAttempts.examId, examId));
+    }
+
+    const specialtyAttempts = await db
+      .select({
+        specialty: questions.specialty,
+        isCorrect: userAttempts.isCorrect,
+      })
+      .from(userAttempts)
+      .innerJoin(questions, eq(userAttempts.questionId, questions.id))
+      .where(and(...specialtyConditions));
+
+    const specialtyMap: Record<string, { correct: number; total: number }> = {};
+    specialtyAttempts.forEach((a) => {
+      const spec = a.specialty || "General";
+      if (!specialtyMap[spec]) {
+        specialtyMap[spec] = { correct: 0, total: 0 };
+      }
+      specialtyMap[spec].total++;
+      if (a.isCorrect) {
+        specialtyMap[spec].correct++;
+      }
+    });
+
+    const specialtyBreakdown = Object.entries(specialtyMap)
+      .filter(([, stats]) => stats.total > 0)
+      .map(([name, stats]) => ({
+        name,
+        value: Math.round((stats.correct / stats.total) * 100),
+        total: stats.total,
+      }))
+      .sort((a, b) => b.total - a.total)
+      .slice(0, 8); // Top 8 specialties
+
+    return {
+      studyStreak: streak,
+      accuracy,
+      accuracyChange,
+      totalQuestions,
+      questionsToday,
+      passProbability,
+      accuracyTrend,
+      specialtyBreakdown,
+    };
+  } catch (error) {
+    console.error("[Database] Failed to get dashboard stats:", error);
+    return null;
+  }
+}
+
+/**
+ * Get list of available exams from the database.
+ */
+export async function getAvailableExams() {
+  const db = await getDb();
+  if (!db) return [];
+
+  try {
+    const { exams, questions } = await import("../drizzle/schema");
+    
+    // Get all active exams
+    const allExams = await db
+      .select({
+        id: exams.id,
+        code: exams.code,
+        name: exams.name,
+        category: exams.category,
+      })
+      .from(exams)
+      .where(eq(exams.isActive, true));
+
+    // Count questions per exam
+    const questionCounts = await db
+      .select({
+        examId: questions.examId,
+        count: sql<number>`COUNT(*)`,
+      })
+      .from(questions)
+      .groupBy(questions.examId);
+
+    const countMap = new Map(questionCounts.map((q) => [q.examId, q.count]));
+
+    return allExams.map((exam) => ({
+      ...exam,
+      questionCount: countMap.get(exam.id) || 0,
+    }));
+  } catch (error) {
+    console.error("[Database] Failed to get available exams:", error);
+    return [];
   }
 }

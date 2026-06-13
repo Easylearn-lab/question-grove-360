@@ -4,43 +4,9 @@ import { Card } from "@/components/ui/card";
 import { useLocation } from "wouter";
 import { trpc } from "@/lib/trpc";
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, PieChart, Pie, Cell } from "recharts";
-import { BookOpen, Brain, Zap, TrendingUp, Flame, Award, LogOut, Menu } from "lucide-react";
+import { BookOpen, Brain, Zap, TrendingUp, Flame, Award, LogOut, BarChart3 } from "lucide-react";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuSeparator, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
 import { useState, useMemo, useEffect } from "react";
-
-// Extended mock data with daily granularity for date range filtering
-const allAccuracyData = [
-  { date: "2026-04-01", accuracy: 58, questions: 12 },
-  { date: "2026-04-03", accuracy: 61, questions: 18 },
-  { date: "2026-04-05", accuracy: 63, questions: 15 },
-  { date: "2026-04-07", accuracy: 60, questions: 20 },
-  { date: "2026-04-10", accuracy: 65, questions: 22 },
-  { date: "2026-04-12", accuracy: 68, questions: 14 },
-  { date: "2026-04-14", accuracy: 66, questions: 25 },
-  { date: "2026-04-17", accuracy: 70, questions: 30 },
-  { date: "2026-04-19", accuracy: 72, questions: 18 },
-  { date: "2026-04-21", accuracy: 74, questions: 28 },
-  { date: "2026-04-24", accuracy: 73, questions: 22 },
-  { date: "2026-04-26", accuracy: 76, questions: 35 },
-  { date: "2026-04-28", accuracy: 78, questions: 20 },
-  { date: "2026-05-01", accuracy: 77, questions: 32 },
-  { date: "2026-05-03", accuracy: 80, questions: 25 },
-  { date: "2026-05-05", accuracy: 79, questions: 28 },
-  { date: "2026-05-08", accuracy: 82, questions: 30 },
-  { date: "2026-05-10", accuracy: 81, questions: 22 },
-  { date: "2026-05-12", accuracy: 83, questions: 35 },
-  { date: "2026-05-15", accuracy: 82, questions: 28 },
-  { date: "2026-05-17", accuracy: 84, questions: 40 },
-  { date: "2026-05-19", accuracy: 83, questions: 32 },
-  { date: "2026-05-22", accuracy: 85, questions: 25 },
-  { date: "2026-05-24", accuracy: 86, questions: 38 },
-  { date: "2026-05-26", accuracy: 84, questions: 30 },
-  { date: "2026-05-28", accuracy: 87, questions: 42 },
-  { date: "2026-05-30", accuracy: 85, questions: 35 },
-  { date: "2026-06-01", accuracy: 88, questions: 28 },
-  { date: "2026-06-02", accuracy: 86, questions: 45 },
-  { date: "2026-06-03", accuracy: 85, questions: 32 },
-];
 
 type DateRange = "1W" | "2W" | "1M" | "3M" | "All";
 
@@ -74,7 +40,7 @@ function formatDateLabel(dateStr: string, range: DateRange): string {
 }
 
 // Custom tooltip component for the accuracy trend chart
-function AccuracyTooltip({ active, payload, label }: any) {
+function AccuracyTooltip({ active, payload }: any) {
   if (!active || !payload || !payload.length) return null;
 
   const data = payload[0].payload;
@@ -118,25 +84,52 @@ function AccuracyTooltip({ active, payload, label }: any) {
   );
 }
 
+// Map exam names to their codes for the backend query
+const EXAM_CODE_MAP: Record<string, string> = {
+  "MRCGP AKT": "MRCGP-AKT",
+  "MRCGP SCA": "MRCGP-SCA",
+  "PLAB 1": "PLAB-1",
+  "PLAB 2": "PLAB-2",
+  "USMLE Step 1": "USMLE-STEP1",
+  "USMLE Step 2": "USMLE-STEP2",
+  "MCCQE1": "MCCQE1",
+};
+
+const COLORS = ["#14b8a6", "#8b5cf6", "#f97316", "#3b82f6", "#ec4899", "#10b981", "#f59e0b", "#6366f1"];
+
 export default function DashboardRedesigned() {
   const { user, isAuthenticated, loading, logout } = useAuth();
   const [, navigate] = useLocation();
   const [selectedExam, setSelectedExam] = useState("MRCGP AKT");
   const [dateRange, setDateRange] = useState<DateRange>("1M");
 
-  // Filter accuracy data based on selected date range
+  // Fetch available exams from the database
+  const examsQuery = trpc.dashboard.getExams.useQuery(undefined, {
+    enabled: isAuthenticated,
+  });
+
+  // Fetch real per-user stats based on selected exam
+  const statsQuery = trpc.dashboard.getStats.useQuery(
+    { examCode: EXAM_CODE_MAP[selectedExam] },
+    { enabled: isAuthenticated }
+  );
+
+  const stats = statsQuery.data;
+
+  // Filter accuracy trend data based on selected date range
   const filteredAccuracyData = useMemo(() => {
+    if (!stats?.accuracyTrend || stats.accuracyTrend.length === 0) return [];
     const days = getDaysForRange(dateRange);
     const now = new Date();
     const cutoff = new Date(now.getTime() - days * 24 * 60 * 60 * 1000);
 
-    return allAccuracyData
+    return stats.accuracyTrend
       .filter((d) => new Date(d.date) >= cutoff)
       .map((d) => ({
         ...d,
         label: formatDateLabel(d.date, dateRange),
       }));
-  }, [dateRange]);
+  }, [stats?.accuracyTrend, dateRange]);
 
   // Calculate trend from filtered data
   const trend = useMemo(() => {
@@ -151,8 +144,6 @@ export default function DashboardRedesigned() {
   }, [filteredAccuracyData]);
 
   useEffect(() => {
-    // Only redirect after the auth query has completed and user is confirmed unauthenticated
-    // Don't redirect during loading or if we haven't checked auth yet
     if (loading) return;
     if (!isAuthenticated) {
       navigate("/");
@@ -180,25 +171,22 @@ export default function DashboardRedesigned() {
     );
   }
 
-  const specialtyData = [
-    { name: "Cardiology", value: 88 },
-    { name: "Respiratory", value: 82 },
-    { name: "GI", value: 75 },
-    { name: "Neurology", value: 79 },
-    { name: "Other", value: 71 },
-  ];
+  // Build exam list from database or fallback
+  const exams = examsQuery.data && examsQuery.data.length > 0
+    ? examsQuery.data.map((e) => ({ id: e.name, name: e.name, category: e.category || "UK", questionCount: e.questionCount }))
+    : [
+        { id: "MRCGP AKT", name: "MRCGP AKT", category: "UK", questionCount: 0 },
+        { id: "MRCGP SCA", name: "MRCGP SCA", category: "UK", questionCount: 0 },
+        { id: "PLAB 1", name: "PLAB 1", category: "UK", questionCount: 0 },
+        { id: "PLAB 2", name: "PLAB 2", category: "UK", questionCount: 0 },
+        { id: "USMLE Step 1", name: "USMLE Step 1", category: "International", questionCount: 0 },
+        { id: "USMLE Step 2", name: "USMLE Step 2", category: "International", questionCount: 0 },
+        { id: "MCCQE1", name: "MCCQE1", category: "International", questionCount: 0 },
+      ];
 
-  const COLORS = ["#14b8a6", "#8b5cf6", "#f97316", "#3b82f6", "#ec4899"];
-
-  const exams = [
-    { id: "MRCGP AKT", name: "MRCGP AKT", category: "UK" },
-    { id: "MRCGP SCA", name: "MRCGP SCA", category: "UK" },
-    { id: "PLAB 1", name: "PLAB 1", category: "UK" },
-    { id: "PLAB 2", name: "PLAB 2", category: "UK" },
-    { id: "USMLE Step 1", name: "USMLE Step 1", category: "International" },
-    { id: "USMLE Step 2", name: "USMLE Step 2", category: "International" },
-    { id: "MCCQE1", name: "MCCQE1", category: "International" },
-  ];
+  const selectedExamData = exams.find((e) => e.id === selectedExam);
+  const hasNoData = !stats || stats.totalQuestions === 0;
+  const isStatsLoading = statsQuery.isLoading;
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -253,14 +241,28 @@ export default function DashboardRedesigned() {
                 className={`p-3 rounded-lg font-medium transition-all ${
                   selectedExam === exam.id
                     ? "bg-teal-600 text-white shadow-lg"
-                    : "bg-white text-gray-700 border border-gray-200 hover:border-teal-300"
+                    : "bg-white text-gray-700 border border-gray-200 hover:border-teal-300 hover:bg-teal-50"
                 }`}
               >
-                {exam.name}
+                <span className="block text-sm">{exam.name}</span>
+                {exam.questionCount === 0 && selectedExam !== exam.id && (
+                  <span className="block text-[10px] text-gray-400 mt-0.5">Coming soon</span>
+                )}
               </button>
             ))}
           </div>
         </div>
+
+        {/* Coming Soon state for exams with no questions */}
+        {selectedExamData && selectedExamData.questionCount === 0 && (
+          <div className="mb-8 bg-amber-50 border border-amber-200 rounded-xl p-6 text-center">
+            <BarChart3 className="w-10 h-10 text-amber-500 mx-auto mb-3" />
+            <h3 className="text-lg font-semibold text-gray-900 mb-1">{selectedExam} — Coming Soon</h3>
+            <p className="text-sm text-gray-600">
+              Questions for this exam are being prepared. Check back soon or switch to another exam to start practicing.
+            </p>
+          </div>
+        )}
 
         {/* Key Metrics */}
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
@@ -269,8 +271,18 @@ export default function DashboardRedesigned() {
             <div className="flex items-center justify-between">
               <div>
                 <p className="text-sm text-gray-600 font-medium">Study Streak</p>
-                <p className="text-3xl font-bold text-orange-600 mt-2">12 days</p>
-                <p className="text-xs text-gray-600 mt-1">Keep it going!</p>
+                {isStatsLoading ? (
+                  <div className="h-9 w-24 bg-orange-200/50 rounded animate-pulse mt-2" />
+                ) : (
+                  <>
+                    <p className="text-3xl font-bold text-orange-600 mt-2">
+                      {stats?.studyStreak ?? 0} {stats?.studyStreak === 1 ? "day" : "days"}
+                    </p>
+                    <p className="text-xs text-gray-600 mt-1">
+                      {(stats?.studyStreak ?? 0) > 0 ? "Keep it going!" : "Start practicing today!"}
+                    </p>
+                  </>
+                )}
               </div>
               <Flame className="w-12 h-12 text-orange-500 opacity-30" />
             </div>
@@ -281,8 +293,23 @@ export default function DashboardRedesigned() {
             <div className="flex items-center justify-between">
               <div>
                 <p className="text-sm text-gray-600 font-medium">Accuracy</p>
-                <p className="text-3xl font-bold text-teal-600 mt-2">85%</p>
-                <p className="text-xs text-gray-600 mt-1">+3% this week</p>
+                {isStatsLoading ? (
+                  <div className="h-9 w-20 bg-teal-200/50 rounded animate-pulse mt-2" />
+                ) : hasNoData ? (
+                  <>
+                    <p className="text-2xl font-bold text-teal-600 mt-2">—</p>
+                    <p className="text-xs text-gray-600 mt-1">No data yet</p>
+                  </>
+                ) : (
+                  <>
+                    <p className="text-3xl font-bold text-teal-600 mt-2">{stats?.accuracy}%</p>
+                    <p className="text-xs text-gray-600 mt-1">
+                      {stats?.accuracyChange !== null && stats?.accuracyChange !== undefined
+                        ? `${stats.accuracyChange >= 0 ? "+" : ""}${stats.accuracyChange}% this week`
+                        : "Keep practicing for trends"}
+                    </p>
+                  </>
+                )}
               </div>
               <TrendingUp className="w-12 h-12 text-teal-500 opacity-30" />
             </div>
@@ -293,8 +320,20 @@ export default function DashboardRedesigned() {
             <div className="flex items-center justify-between">
               <div>
                 <p className="text-sm text-gray-600 font-medium">Questions</p>
-                <p className="text-3xl font-bold text-purple-600 mt-2">1,247</p>
-                <p className="text-xs text-gray-600 mt-1">+42 today</p>
+                {isStatsLoading ? (
+                  <div className="h-9 w-20 bg-purple-200/50 rounded animate-pulse mt-2" />
+                ) : (
+                  <>
+                    <p className="text-3xl font-bold text-purple-600 mt-2">
+                      {(stats?.totalQuestions ?? 0).toLocaleString()}
+                    </p>
+                    <p className="text-xs text-gray-600 mt-1">
+                      {(stats?.questionsToday ?? 0) > 0
+                        ? `+${stats?.questionsToday} today`
+                        : "None today — start now!"}
+                    </p>
+                  </>
+                )}
               </div>
               <BookOpen className="w-12 h-12 text-purple-500 opacity-30" />
             </div>
@@ -305,8 +344,21 @@ export default function DashboardRedesigned() {
             <div className="flex items-center justify-between">
               <div>
                 <p className="text-sm text-gray-600 font-medium">Pass Probability</p>
-                <p className="text-3xl font-bold text-blue-600 mt-2">92%</p>
-                <p className="text-xs text-gray-600 mt-1">Excellent progress</p>
+                {isStatsLoading ? (
+                  <div className="h-9 w-20 bg-blue-200/50 rounded animate-pulse mt-2" />
+                ) : stats?.passProbability !== null && stats?.passProbability !== undefined ? (
+                  <>
+                    <p className="text-3xl font-bold text-blue-600 mt-2">{stats.passProbability}%</p>
+                    <p className="text-xs text-gray-600 mt-1">
+                      {stats.passProbability >= 80 ? "Excellent progress" : stats.passProbability >= 60 ? "Good progress" : "Keep practicing"}
+                    </p>
+                  </>
+                ) : (
+                  <>
+                    <p className="text-lg font-bold text-blue-600 mt-2">Not enough data</p>
+                    <p className="text-xs text-gray-600 mt-1">Answer 20+ questions</p>
+                  </>
+                )}
               </div>
               <Award className="w-12 h-12 text-blue-500 opacity-30" />
             </div>
@@ -320,20 +372,22 @@ export default function DashboardRedesigned() {
             <div className="flex items-center justify-between mb-6">
               <div>
                 <h3 className="text-lg font-semibold text-gray-900">Accuracy Trend</h3>
-                <p className="text-sm text-gray-500 mt-0.5">
-                  {trend.direction === "up" && (
-                    <span className="text-emerald-600">↑ +{trend.value}% improvement</span>
-                  )}
-                  {trend.direction === "down" && (
-                    <span className="text-red-500">↓ -{trend.value}% decline</span>
-                  )}
-                  {trend.direction === "flat" && (
-                    <span className="text-gray-500">→ No change</span>
-                  )}
-                  <span className="text-gray-400 ml-1">
-                    ({filteredAccuracyData.length} sessions)
-                  </span>
-                </p>
+                {filteredAccuracyData.length >= 2 && (
+                  <p className="text-sm text-gray-500 mt-0.5">
+                    {trend.direction === "up" && (
+                      <span className="text-emerald-600">↑ +{trend.value}% improvement</span>
+                    )}
+                    {trend.direction === "down" && (
+                      <span className="text-red-500">↓ -{trend.value}% decline</span>
+                    )}
+                    {trend.direction === "flat" && (
+                      <span className="text-gray-500">→ No change</span>
+                    )}
+                    <span className="text-gray-400 ml-1">
+                      ({filteredAccuracyData.length} sessions)
+                    </span>
+                  </p>
+                )}
               </div>
               {/* Date Range Filter */}
               <div className="flex items-center gap-1 bg-gray-100 rounded-lg p-1">
@@ -352,85 +406,128 @@ export default function DashboardRedesigned() {
                 ))}
               </div>
             </div>
-            <ResponsiveContainer width="100%" height={300}>
-              <LineChart data={filteredAccuracyData} margin={{ top: 5, right: 20, left: 0, bottom: 5 }}>
-                <defs>
-                  <linearGradient id="accuracyGradient" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="5%" stopColor="#14b8a6" stopOpacity={0.2} />
-                    <stop offset="95%" stopColor="#14b8a6" stopOpacity={0} />
-                  </linearGradient>
-                </defs>
-                <CartesianGrid strokeDasharray="3 3" stroke="#f0f0f0" />
-                <XAxis
-                  dataKey="label"
-                  tick={{ fontSize: 11, fill: "#6b7280" }}
-                  tickLine={false}
-                  axisLine={{ stroke: "#e5e7eb" }}
-                />
-                <YAxis
-                  domain={[50, 100]}
-                  tick={{ fontSize: 11, fill: "#6b7280" }}
-                  tickLine={false}
-                  axisLine={{ stroke: "#e5e7eb" }}
-                  tickFormatter={(v) => `${v}%`}
-                />
-                <Tooltip
-                  content={<AccuracyTooltip />}
-                  cursor={{ stroke: "#14b8a6", strokeWidth: 1, strokeDasharray: "4 4" }}
-                />
-                <Line
-                  type="monotone"
-                  dataKey="accuracy"
-                  stroke="#14b8a6"
-                  strokeWidth={2.5}
-                  dot={{ r: 4, fill: "#14b8a6", stroke: "#fff", strokeWidth: 2 }}
-                  activeDot={{
-                    r: 7,
-                    fill: "#14b8a6",
-                    stroke: "#fff",
-                    strokeWidth: 3,
-                    className: "drop-shadow-md",
-                  }}
-                  fill="url(#accuracyGradient)"
-                />
-                {/* Pass threshold reference line */}
-                <Line
-                  type="monotone"
-                  dataKey={() => 80}
-                  stroke="#d1d5db"
-                  strokeWidth={1}
-                  strokeDasharray="6 4"
-                  dot={false}
-                  activeDot={false}
-                  name="Pass Threshold"
-                />
-              </LineChart>
-            </ResponsiveContainer>
-            <div className="flex items-center justify-center gap-4 mt-3 text-xs text-gray-500">
-              <span className="flex items-center gap-1.5">
-                <span className="w-3 h-0.5 bg-teal-500 rounded-full inline-block" />
-                Your Accuracy
-              </span>
-              <span className="flex items-center gap-1.5">
-                <span className="w-3 h-0.5 bg-gray-300 rounded-full inline-block border-dashed" style={{ borderTop: "1px dashed #d1d5db" }} />
-                Pass Threshold (80%)
-              </span>
-            </div>
+            {filteredAccuracyData.length > 0 ? (
+              <>
+                <ResponsiveContainer width="100%" height={300}>
+                  <LineChart data={filteredAccuracyData} margin={{ top: 5, right: 20, left: 0, bottom: 5 }}>
+                    <defs>
+                      <linearGradient id="accuracyGradient" x1="0" y1="0" x2="0" y2="1">
+                        <stop offset="5%" stopColor="#14b8a6" stopOpacity={0.2} />
+                        <stop offset="95%" stopColor="#14b8a6" stopOpacity={0} />
+                      </linearGradient>
+                    </defs>
+                    <CartesianGrid strokeDasharray="3 3" stroke="#f0f0f0" />
+                    <XAxis
+                      dataKey="label"
+                      tick={{ fontSize: 11, fill: "#6b7280" }}
+                      tickLine={false}
+                      axisLine={{ stroke: "#e5e7eb" }}
+                    />
+                    <YAxis
+                      domain={[0, 100]}
+                      tick={{ fontSize: 11, fill: "#6b7280" }}
+                      tickLine={false}
+                      axisLine={{ stroke: "#e5e7eb" }}
+                      tickFormatter={(v) => `${v}%`}
+                    />
+                    <Tooltip
+                      content={<AccuracyTooltip />}
+                      cursor={{ stroke: "#14b8a6", strokeWidth: 1, strokeDasharray: "4 4" }}
+                    />
+                    <Line
+                      type="monotone"
+                      dataKey="accuracy"
+                      stroke="#14b8a6"
+                      strokeWidth={2.5}
+                      dot={{ r: 4, fill: "#14b8a6", stroke: "#fff", strokeWidth: 2 }}
+                      activeDot={{
+                        r: 7,
+                        fill: "#14b8a6",
+                        stroke: "#fff",
+                        strokeWidth: 3,
+                        className: "drop-shadow-md",
+                      }}
+                      fill="url(#accuracyGradient)"
+                    />
+                    {/* Pass threshold reference line */}
+                    <Line
+                      type="monotone"
+                      dataKey={() => 80}
+                      stroke="#d1d5db"
+                      strokeWidth={1}
+                      strokeDasharray="6 4"
+                      dot={false}
+                      activeDot={false}
+                      name="Pass Threshold"
+                    />
+                  </LineChart>
+                </ResponsiveContainer>
+                <div className="flex items-center justify-center gap-4 mt-3 text-xs text-gray-500">
+                  <span className="flex items-center gap-1.5">
+                    <span className="w-3 h-0.5 bg-teal-500 rounded-full inline-block" />
+                    Your Accuracy
+                  </span>
+                  <span className="flex items-center gap-1.5">
+                    <span className="w-3 h-0.5 bg-gray-300 rounded-full inline-block" style={{ borderTop: "1px dashed #d1d5db" }} />
+                    Pass Threshold (80%)
+                  </span>
+                </div>
+              </>
+            ) : (
+              <div className="flex flex-col items-center justify-center h-[300px] text-center">
+                <TrendingUp className="w-12 h-12 text-gray-300 mb-3" />
+                <p className="text-gray-500 font-medium">No accuracy data yet</p>
+                <p className="text-sm text-gray-400 mt-1">Start answering questions to see your progress over time</p>
+              </div>
+            )}
           </Card>
 
           {/* Specialty Breakdown */}
           <Card className="p-6">
             <h3 className="text-lg font-semibold text-gray-900 mb-4">Specialty Breakdown</h3>
-            <ResponsiveContainer width="100%" height={300}>
-              <PieChart>
-                <Pie data={specialtyData} cx="50%" cy="50%" labelLine={false} label={({ name, value }) => `${name}: ${value}%`} outerRadius={80} fill="#8884d8" dataKey="value">
-                  {specialtyData.map((entry, index) => (
-                    <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+            {stats?.specialtyBreakdown && stats.specialtyBreakdown.length > 0 ? (
+              <>
+                <ResponsiveContainer width="100%" height={300}>
+                  <PieChart>
+                    <Pie
+                      data={stats.specialtyBreakdown}
+                      cx="50%"
+                      cy="50%"
+                      labelLine={false}
+                      label={({ name, value }) => `${name}: ${value}%`}
+                      outerRadius={80}
+                      fill="#8884d8"
+                      dataKey="value"
+                    >
+                      {stats.specialtyBreakdown.map((_, index) => (
+                        <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+                      ))}
+                    </Pie>
+                    <Tooltip formatter={(value: number) => `${value}%`} />
+                  </PieChart>
+                </ResponsiveContainer>
+                <div className="mt-4 space-y-2">
+                  {stats.specialtyBreakdown.map((item, index) => (
+                    <div key={item.name} className="flex items-center justify-between text-sm">
+                      <div className="flex items-center gap-2">
+                        <div className="w-3 h-3 rounded-full" style={{ backgroundColor: COLORS[index % COLORS.length] }} />
+                        <span className="text-gray-700">{item.name}</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <span className="font-semibold text-gray-900">{item.value}%</span>
+                        <span className="text-gray-400 text-xs">({item.total} Qs)</span>
+                      </div>
+                    </div>
                   ))}
-                </Pie>
-                <Tooltip />
-              </PieChart>
-            </ResponsiveContainer>
+                </div>
+              </>
+            ) : (
+              <div className="flex flex-col items-center justify-center h-[300px] text-center">
+                <Brain className="w-12 h-12 text-gray-300 mb-3" />
+                <p className="text-gray-500 font-medium">No specialty data yet</p>
+                <p className="text-sm text-gray-400 mt-1">Answer questions across different specialties to see your breakdown</p>
+              </div>
+            )}
           </Card>
         </div>
 

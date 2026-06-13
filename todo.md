@@ -382,3 +382,14 @@
 - [x] Update products.ts with all three tiers
 - [x] Update Pricing page to show 3 plans with discount framing
 - [x] Update landing page pricing section to show all tiers
+
+## Dashboard Issues Fix (June 13, 2026)
+- [x] Issue 1: Make all exam tabs clickable (not just MRCGP AKT)
+- [x] Issue 1: Show "Coming soon" state for exams with no questions
+- [x] Issue 2: Replace hardcoded Study Streak with real per-user consecutive days
+- [x] Issue 2: Replace hardcoded Accuracy with real per-user correct/total ratio
+- [x] Issue 2: Replace hardcoded Questions count with real per-user attempt count
+- [x] Issue 2: Replace hardcoded Pass Probability with calculated metric or "Not enough data"
+- [x] Issue 2: Replace hardcoded Accuracy Trend chart with real per-user time-series data
+- [x] Issue 2: Replace hardcoded Specialty Breakdown with real per-user specialty accuracy
+- [x] Issue 2: Show appropriate empty states for new users with no activity
