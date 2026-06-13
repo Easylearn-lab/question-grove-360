@@ -39,10 +39,18 @@ export function getSessionCookieOptions(
   //       ? hostname
   //       : undefined;
 
+  const isSecure = isSecureRequest(req);
+  
+  // CRITICAL: sameSite: "none" REQUIRES secure: true
+  // If we detect we're in production (not localhost), force secure: true
+  const hostname = req.hostname || "";
+  const isLocalhost = LOCAL_HOSTS.has(hostname) || isIpAddress(hostname);
+  const forceSecure = !isLocalhost; // Force secure for non-localhost (production)
+
   return {
     httpOnly: true,
     path: "/",
     sameSite: "none",
-    secure: isSecureRequest(req),
+    secure: isSecure || forceSecure, // Use isSecure OR force secure for production
   };
 }
