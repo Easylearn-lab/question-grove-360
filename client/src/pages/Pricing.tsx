@@ -1,118 +1,14 @@
 import { useLocation } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { ArrowLeft, Check } from "lucide-react";
+import { ArrowLeft, Check, Sparkles } from "lucide-react";
 import { useAuth } from "@/_core/hooks/useAuth";
 import { trpc } from "@/lib/trpc";
 import { toast } from "sonner";
 import { useState } from "react";
 
-type PlanKey = "SINGLE_EXAM_MONTHLY" | "SINGLE_EXAM_3MONTH" | "UK_ALL_ACCESS_MONTHLY" | "UK_ALL_ACCESS_3MONTH" | "INTERNATIONAL_MONTHLY" | "INTERNATIONAL_3MONTH";
-
-interface PlanInfo {
-  name: string;
-  description: string;
-  price: number;
-  interval: string;
-  planKey: PlanKey;
-  features: string[];
-  highlighted?: boolean;
-}
-
-const plans: PlanInfo[] = [
-  {
-    name: "Single Exam Monthly",
-    description: "Access to a single exam preparation track",
-    price: 7.99,
-    interval: "/month",
-    planKey: "SINGLE_EXAM_MONTHLY",
-    features: [
-      "Access to one exam question bank",
-      "Mock exams for selected exam",
-      "Basic study notes",
-      "Email support",
-    ],
-  },
-  {
-    name: "Single Exam 3-Month",
-    description: "Access to a single exam - save with 3-month plan",
-    price: 20,
-    interval: "/3 months",
-    planKey: "SINGLE_EXAM_3MONTH",
-    features: [
-      "Access to one exam question bank",
-      "Mock exams for selected exam",
-      "Basic study notes",
-      "Email support",
-      "Save vs monthly",
-    ],
-  },
-  {
-    name: "UK All-Access Monthly",
-    description: "Full access to all UK exam tracks",
-    price: 39.99,
-    interval: "/month",
-    planKey: "UK_ALL_ACCESS_MONTHLY",
-    highlighted: true,
-    features: [
-      "All UK exam question banks",
-      "Unlimited mock exams",
-      "Note360 study notes",
-      "Pattern recognition flashcards",
-      "SCA consultation simulator",
-      "Priority support",
-    ],
-  },
-  {
-    name: "UK All-Access 3-Month",
-    description: "Full UK access - save with 3-month plan",
-    price: 99.99,
-    interval: "/3 months",
-    planKey: "UK_ALL_ACCESS_3MONTH",
-    features: [
-      "All UK exam question banks",
-      "Unlimited mock exams",
-      "Note360 study notes",
-      "Pattern recognition flashcards",
-      "SCA consultation simulator",
-      "Priority support",
-      "Save vs monthly",
-    ],
-  },
-  {
-    name: "International Monthly",
-    description: "Full access to all international exam tracks",
-    price: 39.99,
-    interval: "/month",
-    planKey: "INTERNATIONAL_MONTHLY",
-    features: [
-      "All international exam question banks",
-      "Unlimited mock exams",
-      "Note360 study notes",
-      "Pattern recognition flashcards",
-      "AI Coach360 assistant",
-      "Priority support",
-    ],
-  },
-  {
-    name: "International 3-Month",
-    description: "Full international access - save with 3-month plan",
-    price: 99.99,
-    interval: "/3 months",
-    planKey: "INTERNATIONAL_3MONTH",
-    features: [
-      "All international exam question banks",
-      "Unlimited mock exams",
-      "Note360 study notes",
-      "Pattern recognition flashcards",
-      "AI Coach360 assistant",
-      "Priority support",
-      "Save vs monthly",
-    ],
-  },
-];
-
-function PlanCard({ plan }: { plan: PlanInfo }) {
+export default function Pricing() {
+  const [, navigate] = useLocation();
   const { isAuthenticated } = useAuth();
   const [isLoading, setIsLoading] = useState(false);
   const createCheckout = trpc.stripe.createCheckoutSession.useMutation();
@@ -126,7 +22,7 @@ function PlanCard({ plan }: { plan: PlanInfo }) {
     setIsLoading(true);
     try {
       const result = await createCheckout.mutateAsync({
-        planKey: plan.planKey,
+        planKey: "QUARTERLY",
       });
 
       if (result.url) {
@@ -141,61 +37,15 @@ function PlanCard({ plan }: { plan: PlanInfo }) {
     }
   };
 
-  return (
-    <Card
-      className={`flex flex-col p-6 sm:p-8 rounded-2xl transition-all duration-300 ${
-        plan.highlighted
-          ? "ring-2 ring-teal-500 shadow-2xl"
-          : "hover:shadow-lg"
-      }`}
-    >
-      {plan.highlighted && (
-        <div className="mb-4 inline-block">
-          <span className="bg-teal-500 text-white px-4 py-1 rounded-full text-sm font-semibold">
-            Most Popular
-          </span>
-        </div>
-      )}
-
-      <h3 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white mb-1">
-        {plan.name}
-      </h3>
-      <p className="text-slate-600 dark:text-slate-400 mb-4 text-sm">{plan.description}</p>
-
-      <div className="mb-6">
-        <span className="text-4xl sm:text-5xl font-bold text-slate-900 dark:text-white">
-          £{plan.price % 1 === 0 ? plan.price : plan.price.toFixed(2)}
-        </span>
-        <span className="text-slate-600 dark:text-slate-400 ml-2">{plan.interval}</span>
-      </div>
-
-      <Button
-        onClick={handleCheckout}
-        disabled={isLoading}
-        className={`w-full mb-6 py-3 rounded-lg font-semibold transition-all ${
-          plan.highlighted
-            ? "bg-teal-600 hover:bg-teal-700 text-white"
-            : "bg-slate-100 hover:bg-slate-200 text-slate-900 dark:bg-slate-800 dark:hover:bg-slate-700 dark:text-white"
-        }`}
-      >
-        {isLoading ? "Processing..." : "Get Started"}
-      </Button>
-
-      <div className="space-y-3 flex-1">
-        {plan.features.map((feature, index) => (
-          <div key={index} className="flex items-start gap-3">
-            <Check className="w-4 h-4 text-teal-600 dark:text-teal-400 flex-shrink-0 mt-0.5" />
-            <span className="text-sm text-slate-700 dark:text-slate-300">{feature}</span>
-          </div>
-        ))}
-      </div>
-    </Card>
-  );
-}
-
-export default function Pricing() {
-  const [, navigate] = useLocation();
-  const { isAuthenticated } = useAuth();
+  const features = [
+    "Full question bank access",
+    "Unlimited mock exams",
+    "Note360 study notes",
+    "Pattern recognition flashcards",
+    "SCA consultation simulator",
+    "AI Coach360 assistant",
+    "Priority support",
+  ];
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 dark:from-slate-950 dark:to-slate-900">
@@ -213,36 +63,81 @@ export default function Pricing() {
       </div>
 
       {/* Pricing Section */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-20">
+      <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-20">
         {/* Hero */}
         <div className="text-center mb-12 sm:mb-16">
           <h1 className="text-3xl sm:text-5xl font-bold text-slate-900 dark:text-white mb-4">
             Simple, Transparent Pricing
           </h1>
           <p className="text-lg sm:text-xl text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
-            Choose the plan that fits your exam preparation journey. Coupon codes available from admin on request.
+            One plan, full access. Everything you need to pass your exams.
           </p>
         </div>
 
-        {/* Pricing Cards */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mb-16">
-          {plans.map((plan) => (
-            <PlanCard key={plan.planKey} plan={plan} />
-          ))}
-        </div>
+        {/* Single Pricing Card */}
+        <Card className="p-8 sm:p-12 rounded-2xl ring-2 ring-teal-500 shadow-2xl max-w-lg mx-auto">
+          <div className="text-center mb-8">
+            <div className="inline-flex items-center gap-2 bg-teal-50 dark:bg-teal-900/30 text-teal-700 dark:text-teal-300 px-4 py-2 rounded-full text-sm font-semibold mb-6">
+              <Sparkles className="w-4 h-4" />
+              Best Value
+            </div>
+
+            <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white mb-2">
+              3-Month Access
+            </h2>
+            <p className="text-slate-600 dark:text-slate-400 mb-6">
+              Full access to all exam preparation resources
+            </p>
+
+            {/* Price Display */}
+            <div className="mb-2">
+              <span className="text-5xl sm:text-6xl font-bold text-slate-900 dark:text-white">
+                £20
+              </span>
+              <span className="text-slate-600 dark:text-slate-400 ml-2 text-lg">
+                / 3 months
+              </span>
+            </div>
+
+            {/* Discount Reference */}
+            <div className="text-sm text-slate-500 dark:text-slate-400 mb-2">
+              <span className="line-through">Usually £23.97</span>
+              <span className="ml-2 text-teal-600 dark:text-teal-400 font-semibold">
+                Save £3.97 vs £7.99/month
+              </span>
+            </div>
+          </div>
+
+          <Button
+            onClick={handleCheckout}
+            disabled={isLoading}
+            className="w-full mb-8 py-4 rounded-lg font-semibold text-lg bg-teal-600 hover:bg-teal-700 text-white transition-all"
+          >
+            {isLoading ? "Processing..." : "Get Started"}
+          </Button>
+
+          <div className="space-y-4">
+            {features.map((feature, index) => (
+              <div key={index} className="flex items-start gap-3">
+                <Check className="w-5 h-5 text-teal-600 dark:text-teal-400 flex-shrink-0 mt-0.5" />
+                <span className="text-slate-700 dark:text-slate-300">{feature}</span>
+              </div>
+            ))}
+          </div>
+        </Card>
 
         {/* FAQ Section */}
-        <div className="bg-white dark:bg-slate-900 rounded-2xl p-8 sm:p-12 border border-slate-200 dark:border-slate-800">
+        <div className="mt-16 bg-white dark:bg-slate-900 rounded-2xl p-8 sm:p-12 border border-slate-200 dark:border-slate-800">
           <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white mb-8">
             Frequently Asked Questions
           </h2>
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="space-y-8">
             <div>
               <h3 className="font-semibold text-slate-900 dark:text-white mb-2">
                 Can I cancel anytime?
               </h3>
               <p className="text-slate-600 dark:text-slate-400">
-                Yes, cancel your subscription at any time. You'll retain access until the end of your billing period.
+                Yes, cancel your subscription at any time. You'll retain access until the end of your 3-month billing period.
               </p>
             </div>
             <div>
@@ -255,18 +150,18 @@ export default function Pricing() {
             </div>
             <div>
               <h3 className="font-semibold text-slate-900 dark:text-white mb-2">
-                Is there a student discount?
+                Why only a 3-month plan?
               </h3>
               <p className="text-slate-600 dark:text-slate-400">
-                Contact our support team for potential student discounts and special offers.
+                We believe 3 months is the ideal commitment for focused exam preparation. It gives you enough time to work through the material thoroughly while keeping you motivated with a clear timeline.
               </p>
             </div>
             <div>
               <h3 className="font-semibold text-slate-900 dark:text-white mb-2">
-                Can I upgrade or downgrade?
+                Is there a discount?
               </h3>
               <p className="text-slate-600 dark:text-slate-400">
-                Yes, you can change your plan at any time. Changes take effect on your next billing cycle.
+                The 3-month plan is already discounted from the £7.99/month rate (saving you £3.97). Coupon codes may also be available from admin on request.
               </p>
             </div>
           </div>
@@ -275,13 +170,13 @@ export default function Pricing() {
         {/* CTA Section */}
         <div className="mt-16 text-center">
           <p className="text-slate-600 dark:text-slate-400 mb-6">
-            Not sure which plan is right for you?
+            Ready to start your exam preparation?
           </p>
           <Button
-            onClick={() => navigate("/dashboard")}
+            onClick={() => isAuthenticated ? handleCheckout() : navigate("/dashboard")}
             className="bg-teal-600 hover:bg-teal-700 text-white px-8 py-3 rounded-lg font-semibold"
           >
-            {isAuthenticated ? "Go to Dashboard" : "Sign In to Get Started"}
+            {isAuthenticated ? "Subscribe Now" : "Sign In to Get Started"}
           </Button>
         </div>
       </div>

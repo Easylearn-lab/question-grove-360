@@ -367,3 +367,11 @@
 - [x] Issue 4: Simplify landing page exam cards - remove bullet lists, keep clean CTAs only
 - [x] Issue 5: Remove "Easy" difficulty tag from question displays (keep Medium and Hard)
 - [x] Issue 6: Add visible Logout button to dashboard navigation/header
+
+## Pricing Restructure - Remove Monthly, 3-Month Only at £20 (June 13, 2026)
+- [x] Remove all monthly subscription options from products.ts
+- [x] Create new Stripe price for 3-month at £20 flat (if needed)
+- [x] Update pricing UI to show only 3-month plans with £7.99/month reference comparison
+- [x] Remove monthly billing toggle from pricing page
+- [x] Update landing page pricing section to match
+- [x] Verify stripeRouter.ts works with new plan keys

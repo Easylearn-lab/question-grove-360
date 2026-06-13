@@ -140,27 +140,24 @@ export default function Home() {
 
       {/* Pricing Section */}
       <section className="py-16 px-4 bg-gray-50">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl font-bold text-center mb-12 text-gray-900">Simple, Transparent Pricing</h2>
+        <div className="max-w-lg mx-auto text-center">
+          <h2 className="text-3xl font-bold mb-8 text-gray-900">Simple, Transparent Pricing</h2>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {[
-              { name: "Single Exam Monthly", price: "£7.99", period: "/month" },
-              { name: "Single Exam 3-Month", price: "£20", period: "/3 months" },
-              { name: "UK All-Access Monthly", price: "£39.99", period: "/month", featured: true },
-              { name: "UK All-Access 3-Month", price: "£99.99", period: "/3 months", featured: true },
-              { name: "International Monthly", price: "£39.99", period: "/month" },
-              { name: "International 3-Month", price: "£99.99", period: "/3 months" },
-            ].map((plan, i) => (
-              <div key={i} className={`rounded-lg p-6 ${plan.featured ? 'bg-teal-600 text-white ring-2 ring-teal-600' : 'bg-white border border-gray-200'}`}>
-                <h3 className="font-bold mb-2">{plan.name}</h3>
-                <div className="text-3xl font-bold mb-1">{plan.price}</div>
-                <div className={plan.featured ? 'text-teal-100' : 'text-gray-600'}>{plan.period}</div>
-              </div>
-            ))}
+          <div className="bg-white rounded-2xl p-8 border-2 border-teal-500 shadow-xl">
+            <div className="inline-block bg-teal-50 text-teal-700 px-4 py-1 rounded-full text-sm font-semibold mb-4">Best Value</div>
+            <h3 className="text-2xl font-bold text-gray-900 mb-2">3-Month Access</h3>
+            <div className="text-5xl font-bold text-gray-900 mb-2">£20</div>
+            <div className="text-gray-600 mb-1">for 3 months</div>
+            <div className="text-sm text-gray-500 mb-6">
+              <span className="line-through">Usually £23.97</span>
+              <span className="ml-2 text-teal-600 font-semibold">Save vs £7.99/month</span>
+            </div>
+            <a href={getLoginUrl()} className="w-full bg-teal-600 text-white py-3 rounded-lg font-semibold hover:bg-teal-700 text-center block">
+              Get Started →
+            </a>
           </div>
           
-          <p className="text-center text-gray-600 mt-8">3-day access coupons available from admin on request</p>
+          <p className="text-gray-600 mt-6 text-sm">3-day access coupons available from admin on request</p>
         </div>
       </section>
 

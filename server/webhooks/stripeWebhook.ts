@@ -102,7 +102,7 @@ async function handleCheckoutSessionCompleted(session: any) {
     stripeCustomerId: session.customer,
     stripeSubscriptionId: session.subscription,
     subscriptionStatus: "active",
-    subscriptionPlan: session.metadata?.plan_key || "PROFESSIONAL",
+    subscriptionPlan: session.metadata?.plan_key || "QUARTERLY",
   });
 
   console.log("[Webhook] Profile updated with subscription info for user:", userId);
