@@ -393,3 +393,13 @@
 - [x] Issue 2: Replace hardcoded Accuracy Trend chart with real per-user time-series data
 - [x] Issue 2: Replace hardcoded Specialty Breakdown with real per-user specialty accuracy
 - [x] Issue 2: Show appropriate empty states for new users with no activity
+
+## MedPrep Platform Fixes (June 16, 2026)
+- [x] Fix 1a: Remove Annual plan from pricing UI entirely
+- [x] Fix 1b: Create live-mode Stripe prices for AKT 3-month (£20), AKT 6-month (£35), SCA 3-month (£20), SCA 6-month (£35)
+- [x] Fix 1c: Update products.ts with separate AKT/SCA price IDs
+- [x] Fix 1d: Restructure pricing page to show AKT and SCA as separate tracks
+- [x] Fix 2: Wire AI Coach360 to real LLM (invokeLLM) — already correctly implemented
+- [x] Fix 3: Separate AKT vs SCA feature lists on pricing/checkout page
+- [x] Fix 4a: AKT "Get Started" buttons fully active, open Stripe Checkout
+- [x] Fix 4b: SCA "Get Started" buttons disabled, show "Coming Soon"

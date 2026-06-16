@@ -1,6 +1,6 @@
 import { protectedProcedure, publicProcedure, router } from "./_core/trpc";
 import { z } from "zod";
-import { SUBSCRIPTION_PLANS, type PlanKey } from "./products";
+import { SUBSCRIPTION_PLANS, PAYMENT_ENABLED, type PlanKey, type ExamTrack } from "./products";
 import Stripe from "stripe";
 
 // Initialize Stripe with the secret key
@@ -33,6 +33,11 @@ export const stripeRouter = router({
         throw new Error("Invalid plan selected");
       }
 
+      // Check if payment is enabled for this exam track
+      if (!PAYMENT_ENABLED[plan.examTrack as ExamTrack]) {
+        throw new Error(`${plan.examTrack} subscriptions are coming soon. Please check back later.`);
+      }
+
       const origin = ctx.req.headers.origin || ctx.req.headers.referer?.replace(/\/$/, "") || "";
 
       const session = await stripe.checkout.sessions.create({
@@ -52,6 +57,7 @@ export const stripeRouter = router({
           customer_email: ctx.user.email || "",
           customer_name: ctx.user.name || "",
           plan_key: input.planKey,
+          exam_track: plan.examTrack,
         },
         allow_promotion_codes: true,
       });
