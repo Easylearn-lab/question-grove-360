@@ -42,7 +42,7 @@ export const SUBSCRIPTION_PLANS = {
     interval: "3 months" as const,
     intervalCount: 3,
     examTrack: "AKT" as ExamTrack,
-    stripePriceId: "price_1Tj1PIIVrH3MHAvaFIYYeeey",
+    stripePriceId: "price_1Tj1ctIVrH3MHAvaTRmgqVsw",
   },
   AKT_6MONTH: {
     name: "AKT 6-Month Access",
@@ -55,7 +55,7 @@ export const SUBSCRIPTION_PLANS = {
     interval: "6 months" as const,
     intervalCount: 6,
     examTrack: "AKT" as ExamTrack,
-    stripePriceId: "price_1Tj1PIIVrH3MHAvayzsXp37U",
+    stripePriceId: "price_1Tj1ctIVrH3MHAvag6I5W549",
     popular: true,
   },
   SCA_3MONTH: {
@@ -69,7 +69,7 @@ export const SUBSCRIPTION_PLANS = {
     interval: "3 months" as const,
     intervalCount: 3,
     examTrack: "SCA" as ExamTrack,
-    stripePriceId: "price_1Tj1PJIVrH3MHAvamOSUS0FT",
+    stripePriceId: "price_1Tj1ctIVrH3MHAvaJolIHylh",
   },
   SCA_6MONTH: {
     name: "SCA 6-Month Access",
@@ -82,7 +82,7 @@ export const SUBSCRIPTION_PLANS = {
     interval: "6 months" as const,
     intervalCount: 6,
     examTrack: "SCA" as ExamTrack,
-    stripePriceId: "price_1Tj1PJIVrH3MHAva6Cms2qwk",
+    stripePriceId: "price_1Tj1ctIVrH3MHAvaDMZPapav",
     popular: true,
   },
 };
