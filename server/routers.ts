@@ -97,6 +97,14 @@ export const appRouter = router({
         const { resetUserQuestionAttempts } = await import("./db");
         return await resetUserQuestionAttempts(ctx.user.id);
       }),
+    resetAttemptsBySpecialty: protectedProcedure
+      .input(z.object({
+        specialty: z.string().min(1),
+      }))
+      .mutation(async ({ ctx, input }) => {
+        const { resetUserQuestionAttemptsBySpecialty } = await import("./db");
+        return await resetUserQuestionAttemptsBySpecialty(ctx.user.id, input.specialty);
+      }),
 
   }),
 

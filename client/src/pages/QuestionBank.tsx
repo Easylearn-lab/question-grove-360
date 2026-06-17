@@ -51,6 +51,9 @@ export default function QuestionBank() {
   const [bookmarked, setBookmarked] = useState(false);
   const [flagged, setFlagged] = useState(false);
   const [notes, setNotes] = useState("");
+  const [showResetModal, setShowResetModal] = useState(false);
+  const [resetMode, setResetMode] = useState<"all" | "specialty">("all");
+  const [selectedResetSpecialty, setSelectedResetSpecialty] = useState(specialty);
 
   // Fetch questions from server
   const questionsQuery = trpc.questions.getQuestions.useQuery(
@@ -66,21 +69,39 @@ export default function QuestionBank() {
   const bookmarkMutation = trpc.questions.bookmarkQuestion.useMutation();
   const removeBookmarkMutation = trpc.questions.removeBookmark.useMutation();
   const resetAttemptsMutation = trpc.questions.resetAttempts.useMutation();
+  const resetAttemptsBySpecialtyMutation = trpc.questions.resetAttemptsBySpecialty.useMutation();
 
   const handleResetAttempts = () => {
-    if (!window.confirm("Are you sure you want to reset all your question attempts? This action cannot be undone.")) {
-      return;
+    setShowResetModal(true);
+  };
+
+  const handleConfirmReset = () => {
+    if (resetMode === "all") {
+      resetAttemptsMutation.mutate(undefined, {
+        onSuccess: () => {
+          toast.success("All question attempts have been reset");
+          setShowResetModal(false);
+          window.location.reload();
+        },
+        onError: (error) => {
+          toast.error("Failed to reset attempts: " + (error?.message || "Unknown error"));
+        },
+      });
+    } else {
+      resetAttemptsBySpecialtyMutation.mutate(
+        { specialty: selectedResetSpecialty },
+        {
+          onSuccess: () => {
+            toast.success(`Progress reset for ${selectedResetSpecialty}`);
+            setShowResetModal(false);
+            window.location.reload();
+          },
+          onError: (error) => {
+            toast.error("Failed to reset attempts: " + (error?.message || "Unknown error"));
+          },
+        }
+      );
     }
-    resetAttemptsMutation.mutate(undefined, {
-      onSuccess: () => {
-        toast.success("All question attempts have been reset");
-        // Refresh the page to reload the questions
-        window.location.reload();
-      },
-      onError: (error) => {
-        toast.error("Failed to reset attempts: " + (error?.message || "Unknown error"));
-      },
-    });
   };
 
   // Filter questions client-side for difficulty and search
@@ -493,6 +514,78 @@ export default function QuestionBank() {
         </div>
         </SubscriptionGate>
       </main>
+
+      {/* Reset Modal */}
+      {showResetModal && (
+        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
+          <Card className="w-full max-w-md p-6 border-slate-200">
+            <h2 className="text-xl font-bold text-slate-900 mb-4">Reset Progress</h2>
+            
+            <div className="space-y-4 mb-6">
+              <label className="flex items-center gap-3 cursor-pointer">
+                <input
+                  type="radio"
+                  checked={resetMode === "all"}
+                  onChange={() => setResetMode("all")}
+                  className="w-4 h-4"
+                />
+                <span className="text-slate-700">Reset all question attempts</span>
+              </label>
+              
+              <label className="flex items-center gap-3 cursor-pointer">
+                <input
+                  type="radio"
+                  checked={resetMode === "specialty"}
+                  onChange={() => setResetMode("specialty")}
+                  className="w-4 h-4"
+                />
+                <span className="text-slate-700">Reset by specialty</span>
+              </label>
+            </div>
+
+            {resetMode === "specialty" && (
+              <div className="mb-6">
+                <Label className="text-slate-700 mb-2 block">Select Specialty</Label>
+                <Select value={selectedResetSpecialty} onValueChange={setSelectedResetSpecialty}>
+                  <SelectTrigger className="w-full">
+                    <SelectValue />
+                  </SelectTrigger>
+                  <SelectContent>
+                    {SPECIALTIES.filter(s => s !== "All Specialties").map((spec) => (
+                      <SelectItem key={spec} value={spec}>
+                        {spec}
+                      </SelectItem>
+                    ))}
+                  </SelectContent>
+                </Select>
+              </div>
+            )}
+
+            <div className="bg-amber-50 border border-amber-200 rounded p-3 mb-6">
+              <p className="text-sm text-amber-800">
+                ⚠️ This action cannot be undone. Your progress for {resetMode === "all" ? "all questions" : selectedResetSpecialty} will be permanently deleted.
+              </p>
+            </div>
+
+            <div className="flex gap-3">
+              <Button
+                variant="outline"
+                onClick={() => setShowResetModal(false)}
+                className="flex-1"
+              >
+                Cancel
+              </Button>
+              <Button
+                onClick={handleConfirmReset}
+                disabled={resetAttemptsMutation.isPending || resetAttemptsBySpecialtyMutation.isPending}
+                className="flex-1 bg-red-600 hover:bg-red-700 text-white"
+              >
+                {resetAttemptsMutation.isPending || resetAttemptsBySpecialtyMutation.isPending ? "Resetting..." : "Reset Progress"}
+              </Button>
+            </div>
+          </Card>
+        </div>
+      )}
     </div>
   );
 }

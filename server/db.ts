@@ -941,3 +941,46 @@ export async function resetUserQuestionAttempts(userId: number) {
     throw error;
   }
 }
+
+
+/**
+ * Reset question attempts for a specific specialty for a user.
+ */
+export async function resetUserQuestionAttemptsBySpecialty(userId: number, specialty: string) {
+  const db = await getDb();
+  if (!db) {
+    throw new Error("Database not available");
+  }
+
+  try {
+    const { userAttempts, questions } = await import("../drizzle/schema");
+    const { eq, and, inArray } = await import("drizzle-orm");
+
+    // Get all question IDs for this specialty
+    const specialtyQuestions = await db
+      .select({ id: questions.id })
+      .from(questions)
+      .where(eq(questions.specialty, specialty));
+
+    const questionIds = specialtyQuestions.map((q) => q.id);
+
+    if (questionIds.length === 0) {
+      return { success: true, message: `No questions found for specialty: ${specialty}` };
+    }
+
+    // Delete attempts for these questions
+    await db
+      .delete(userAttempts)
+      .where(
+        and(
+          eq(userAttempts.userId, userId),
+          inArray(userAttempts.questionId, questionIds)
+        )
+      );
+
+    return { success: true, message: `Progress reset for ${specialty}` };
+  } catch (error) {
+    console.error("[Database] Failed to reset user attempts by specialty:", error);
+    throw error;
+  }
+}

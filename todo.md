@@ -431,3 +431,24 @@
 - [x] Test that responses are detailed and accurate (using real Claude API)
 - [x] Remove placeholder responses (frontend uses Streamdown for markdown rendering)
 - [x] Add proper error handling for API failures (try-catch blocks in place)
+
+
+## Enhanced Reset Feature - Specialty-Specific (June 17, 2026)
+
+- [ ] Update resetUserQuestionAttempts to accept optional specialty parameter
+- [ ] Create resetUserQuestionAttemptsBySpecialty function in db.ts
+- [ ] Add new tRPC procedure for specialty-specific reset
+- [ ] Create specialty selection modal/dialog component
+- [ ] Update QuestionBank.tsx to show specialty selector in reset dialog
+- [ ] Wire reset button to new specialty-specific mutation
+- [ ] Test reset for individual specialties
+
+
+## Enhanced Reset Feature - June 17, 2026
+- [x] Update backend resetUserQuestionAttempts to support specialty parameter
+- [x] Create resetUserQuestionAttemptsBySpecialty function in db.ts
+- [x] Add resetAttemptsBySpecialty procedure to routers.ts
+- [x] Create reset modal with "All" vs "Specialty" radio options
+- [x] Wire specialty selection dropdown in modal
+- [x] Wire frontend to new specialty-specific reset mutation
+- [x] Test reset for individual specialties
