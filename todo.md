@@ -403,3 +403,31 @@
 - [x] Fix 3: Separate AKT vs SCA feature lists on pricing/checkout page
 - [x] Fix 4a: AKT "Get Started" buttons fully active, open Stripe Checkout
 - [x] Fix 4b: SCA "Get Started" buttons disabled, show "Coming Soon"
+
+## Critical Features - June 16, 2026
+
+### Feature 1: Question Reset for Question Bank
+- [x] Add reset button to QuestionBank.tsx UI
+- [x] Create backend procedure to reset user's question attempts
+- [x] Wire reset button to mutation with confirmation dialog
+- [x] Show success toast after reset
+
+### Feature 2: Fix Missing Specialties in Question Bank UI
+- [x] Verify Pediatrics and OB/GYN questions exist in database (20 specialties found)
+- [x] Add missing specialties to SPECIALTIES filter list in QuestionBank.tsx
+- [x] Ensure all specialties from database are displayed in UI
+- [x] Test that all specialties are selectable and show questions
+
+### Feature 3: Update Mock Exams Configuration
+- [x] Change mock exam question count from 50 to 160
+- [x] Change mock exam time from current to 155 minutes (2h 35m)
+- [x] Add question flag feature to mock exam UI
+- [x] Update database/schema if needed for flag storage (using client-side Set)
+- [x] Wire flag toggle in mock exam question display
+
+### Feature 4: Fix AI Coach360 to Use Real Claude API
+- [x] Verify invokeLLM is being called with proper context (already implemented)
+- [x] Ensure system prompt includes current question context (user stats, performance data)
+- [x] Test that responses are detailed and accurate (using real Claude API)
+- [x] Remove placeholder responses (frontend uses Streamdown for markdown rendering)
+- [x] Add proper error handling for API failures (try-catch blocks in place)

@@ -92,6 +92,11 @@ export const appRouter = router({
         const { isQuestionBookmarked } = await import("./db");
         return await isQuestionBookmarked(ctx.user.id, input);
       }),
+    resetAttempts: protectedProcedure
+      .mutation(async ({ ctx }) => {
+        const { resetUserQuestionAttempts } = await import("./db");
+        return await resetUserQuestionAttempts(ctx.user.id);
+      }),
 
   }),
 

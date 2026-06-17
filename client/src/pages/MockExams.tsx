@@ -3,7 +3,7 @@ import { useLocation } from "wouter";
 import { useEffect, useState, useRef, useCallback } from "react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { ArrowLeft, Clock, CheckCircle2, AlertCircle, Play, FileText, Timer, BarChart3 } from "lucide-react";
+import { ArrowLeft, Clock, CheckCircle2, AlertCircle, Play, FileText, Timer, BarChart3, Flag } from "lucide-react";
 import { trpc } from "@/lib/trpc";
 import { toast } from "sonner";
 import { SubscriptionGate } from "@/components/SubscriptionGate";
@@ -11,10 +11,10 @@ import { useSubscription } from "@/hooks/useSubscription";
 import { useProtectedRoute } from "@/hooks/useProtectedRoute";
 
 const MOCK_EXAMS = [
-  { id: 1, name: "MRCGP AKT - Full Mock 1", exam: "MRCGP AKT", questions: 200, duration: 180, passMark: 72, examId: 1 },
-  { id: 2, name: "MRCGP AKT - Full Mock 2", exam: "MRCGP AKT", questions: 200, duration: 180, passMark: 72, examId: 1 },
-  { id: 3, name: "PLAB 1 - Full Mock 1", exam: "PLAB 1", questions: 150, duration: 120, passMark: 75, examId: 3 },
-  { id: 4, name: "USMLE Step 1 - Full Mock 1", exam: "USMLE Step 1", questions: 280, duration: 420, passMark: 70, examId: 5 },
+  { id: 1, name: "MRCGP AKT - Full Mock 1", exam: "MRCGP AKT", questions: 160, duration: 155, passMark: 72, examId: 1 },
+  { id: 2, name: "MRCGP AKT - Full Mock 2", exam: "MRCGP AKT", questions: 160, duration: 155, passMark: 72, examId: 1 },
+  { id: 3, name: "PLAB 1 - Full Mock 1", exam: "PLAB 1", questions: 160, duration: 155, passMark: 75, examId: 3 },
+  { id: 4, name: "USMLE Step 1 - Full Mock 1", exam: "USMLE Step 1", questions: 160, duration: 155, passMark: 70, examId: 5 },
 ];
 
 type MockState = "list" | "active" | "results";
@@ -23,6 +23,7 @@ interface MockAnswer {
   questionId: number;
   selectedAnswer: string | null;
   isCorrect: boolean | null;
+  flagged?: boolean;
 }
 
 export default function MockExams() {
@@ -33,6 +34,7 @@ export default function MockExams() {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [answers, setAnswers] = useState<MockAnswer[]>([]);
   const [selectedAnswer, setSelectedAnswer] = useState<string | null>(null);
+  const [flaggedQuestions, setFlaggedQuestions] = useState<Set<number>>(new Set());
   const [timeRemaining, setTimeRemaining] = useState(0);
   const [mockScore, setMockScore] = useState({ score: 0, total: 0, percentage: 0, passed: false });
   const timerRef = useRef<NodeJS.Timeout | null>(null);
@@ -340,13 +342,31 @@ export default function MockExams() {
                   </div>
 
                   <div className="flex items-center justify-between">
-                    <Button
-                      variant="outline"
-                      onClick={() => { if (currentQuestionIndex > 0) { setCurrentQuestionIndex(currentQuestionIndex - 1); setSelectedAnswer(null); } }}
-                      disabled={currentQuestionIndex === 0}
-                    >
-                      Previous
-                    </Button>
+                    <div className="flex gap-2">
+                      <Button
+                        variant="outline"
+                        onClick={() => { if (currentQuestionIndex > 0) { setCurrentQuestionIndex(currentQuestionIndex - 1); setSelectedAnswer(null); } }}
+                        disabled={currentQuestionIndex === 0}
+                      >
+                        Previous
+                      </Button>
+                      <Button
+                        variant={flaggedQuestions.has(currentQuestion.id) ? "default" : "outline"}
+                        onClick={() => {
+                          const newFlagged = new Set(flaggedQuestions);
+                          if (newFlagged.has(currentQuestion.id)) {
+                            newFlagged.delete(currentQuestion.id);
+                          } else {
+                            newFlagged.add(currentQuestion.id);
+                          }
+                          setFlaggedQuestions(newFlagged);
+                        }}
+                        className={flaggedQuestions.has(currentQuestion.id) ? "bg-amber-600 hover:bg-amber-700" : ""}
+                      >
+                        <Flag className="w-4 h-4 mr-2" />
+                        {flaggedQuestions.has(currentQuestion.id) ? "Flagged" : "Flag"}
+                      </Button>
+                    </div>
                     <Button
                       onClick={handleSubmitAnswer}
                       disabled={!selectedAnswer}

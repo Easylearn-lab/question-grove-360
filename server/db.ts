@@ -917,3 +917,27 @@ export async function getAvailableExams() {
     return [];
   }
 }
+
+
+/**
+ * Reset all question attempts for a user (for the question reset feature).
+ */
+export async function resetUserQuestionAttempts(userId: number) {
+  const db = await getDb();
+  if (!db) {
+    throw new Error("Database not available");
+  }
+
+  try {
+    const { userAttempts } = await import("../drizzle/schema");
+    const { eq } = await import("drizzle-orm");
+
+    // Delete all attempts for this user
+    await db.delete(userAttempts).where(eq(userAttempts.userId, userId));
+
+    return { success: true, message: "All question attempts have been reset" };
+  } catch (error) {
+    console.error("[Database] Failed to reset user attempts:", error);
+    throw error;
+  }
+}

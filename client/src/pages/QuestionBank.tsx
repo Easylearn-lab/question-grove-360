@@ -15,15 +15,25 @@ import { useProtectedRoute } from "@/hooks/useProtectedRoute";
 
 const SPECIALTIES = [
   "All Specialties",
-  "Cardiology",
-  "Respiratory",
-  "Gastroenterology",
-  "Neurology",
-  "Endocrinology",
+  "Cardiovascular",
   "Dermatology",
-  "Psychiatry",
+  "Endocrinology",
+  "Ethics & Organisational",
+  "Gastroenterology",
+  "General Practice",
+  "Haematology",
+  "Infectious Disease",
   "Musculoskeletal",
+  "Musculoskeletal Surgery",
+  "Neurology",
+  "Obstetrics & Gynaecology",
+  "Ophthalmology & ENT",
+  "Paediatrics",
+  "Pharmacology & Prescribing",
+  "Psychiatry",
   "Renal",
+  "Renal & Urology",
+  "Respiratory",
 ];
 
 const DIFFICULTIES = ["All Levels", "Medium", "Hard"];
@@ -55,6 +65,23 @@ export default function QuestionBank() {
   const recordAttempt = trpc.mockExams.recordAttempt.useMutation();
   const bookmarkMutation = trpc.questions.bookmarkQuestion.useMutation();
   const removeBookmarkMutation = trpc.questions.removeBookmark.useMutation();
+  const resetAttemptsMutation = trpc.questions.resetAttempts.useMutation();
+
+  const handleResetAttempts = () => {
+    if (!window.confirm("Are you sure you want to reset all your question attempts? This action cannot be undone.")) {
+      return;
+    }
+    resetAttemptsMutation.mutate(undefined, {
+      onSuccess: () => {
+        toast.success("All question attempts have been reset");
+        // Refresh the page to reload the questions
+        window.location.reload();
+      },
+      onError: (error) => {
+        toast.error("Failed to reset attempts: " + (error?.message || "Unknown error"));
+      },
+    });
+  };
 
   // Filter questions client-side for difficulty and search
   const filteredQuestions = useMemo(() => {
@@ -223,10 +250,19 @@ export default function QuestionBank() {
             </Button>
             <h1 className="text-2xl font-bold text-slate-900">Question Bank</h1>
           </div>
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-4">
             <span className="text-sm text-slate-600">
               {totalQuestions > 0 ? `Question ${currentQuestionIndex + 1} of ${totalQuestions}` : "Loading..."}
             </span>
+            <Button
+              variant="outline"
+              size="sm"
+              onClick={handleResetAttempts}
+              disabled={resetAttemptsMutation.isPending}
+              className="text-red-600 border-red-200 hover:bg-red-50"
+            >
+              {resetAttemptsMutation.isPending ? "Resetting..." : "Reset All"}
+            </Button>
           </div>
         </div>
       </header>
