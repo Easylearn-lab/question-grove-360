@@ -86,6 +86,25 @@ export const appRouter = router({
         const { removeBookmark } = await import("./db");
         return await removeBookmark(ctx.user.id, input);
       }),
+    bookmarkExplanation: protectedProcedure
+      .input(z.object({
+        content: z.string(),
+      }))
+      .mutation(async ({ ctx, input }) => {
+        const { bookmarkExplanation } = await import("./db");
+        return await bookmarkExplanation(ctx.user.id, input.content);
+      }),
+    getBookmarkedExplanations: protectedProcedure
+      .query(async ({ ctx }) => {
+        const { getBookmarkedExplanations } = await import("./db");
+        return await getBookmarkedExplanations(ctx.user.id);
+      }),
+    isBookmarkedExplanation: protectedProcedure
+      .input(z.string())
+      .query(async ({ ctx, input }) => {
+        const { isBookmarkedExplanation } = await import("./db");
+        return await isBookmarkedExplanation(ctx.user.id, input);
+      }),
     isBookmarked: protectedProcedure
       .input(z.number())
       .query(async ({ ctx, input }) => {

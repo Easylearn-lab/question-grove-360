@@ -1,6 +1,6 @@
 import { useAuth } from "@/_core/hooks/useAuth";
 import { useLocation } from "wouter";
-import { useEffect, useState, useRef, useCallback } from "react";
+import React, { useEffect, useState, useRef, useCallback } from "react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { ArrowLeft, Clock, CheckCircle2, AlertCircle, Play, FileText, Timer, BarChart3, Flag } from "lucide-react";
@@ -147,6 +147,11 @@ export default function MockExams() {
 
   // Results screen
   if (mockState === "results") {
+    const [showFlaggedOnly, setShowFlaggedOnly] = useState(false);
+    const questions = questionsQuery.data || [];
+    const flaggedQuestionsFiltered = questions.filter(q => flaggedQuestions.has(q.id));
+    const displayQuestions = showFlaggedOnly ? flaggedQuestionsFiltered : questions;
+
     return (
       <div className="min-h-screen bg-slate-50">
         <header className="bg-white border-b border-slate-200 sticky top-0 z-40">
@@ -157,8 +162,8 @@ export default function MockExams() {
             <h1 className="text-2xl font-bold text-slate-900">Mock Exam Results</h1>
           </div>
         </header>
-        <main className="max-w-3xl mx-auto px-4 py-12">
-          <Card className="p-8 text-center">
+        <main className="max-w-4xl mx-auto px-4 py-12">
+          <Card className="p-8 text-center mb-8">
             <div className={`w-24 h-24 mx-auto mb-6 rounded-full flex items-center justify-center ${mockScore.passed ? "bg-green-100" : "bg-red-100"}`}>
               {mockScore.passed ? (
                 <CheckCircle2 className="w-12 h-12 text-green-600" />
@@ -194,6 +199,60 @@ export default function MockExams() {
               <Button variant="outline" onClick={() => setMockState("list")}>Back to Mocks</Button>
               <Button onClick={() => navigate("/dashboard")} className="bg-teal-600 hover:bg-teal-700 text-white">Dashboard</Button>
             </div>
+          </Card>
+
+          {/* Review Section */}
+          <Card className="p-6">
+            <div className="flex items-center justify-between mb-6">
+              <h3 className="text-xl font-bold text-slate-900">Review Questions</h3>
+              <Button
+                variant={showFlaggedOnly ? "default" : "outline"}
+                size="sm"
+                onClick={() => setShowFlaggedOnly(!showFlaggedOnly)}
+              >
+                <Flag className="w-4 h-4 mr-2" />
+                {showFlaggedOnly ? `Flagged (${flaggedQuestionsFiltered.length})` : "Show Flagged"}
+              </Button>
+            </div>
+
+            {displayQuestions.length === 0 ? (
+              <div className="text-center py-8">
+                <p className="text-slate-600">
+                  {showFlaggedOnly ? "No flagged questions" : "No questions to review"}
+                </p>
+              </div>
+            ) : (
+              <div className="space-y-4">
+                {displayQuestions.map((q: any, idx: number) => {
+                  const userAnswer = answers.find(a => a.questionId === q.id);
+                  const isCorrect = userAnswer?.selectedAnswer === q.correctAnswer;
+                  const isFlagged = flaggedQuestions.has(q.id);
+
+                  return (
+                    <div key={q.id} className="p-4 border border-slate-200 rounded-lg">
+                      <div className="flex items-start justify-between mb-3">
+                        <div className="flex items-center gap-3">
+                          <span className="text-sm font-semibold text-slate-600">Q{idx + 1}</span>
+                          <div className="flex items-center gap-2">
+                            {isCorrect ? (
+                              <CheckCircle2 className="w-5 h-5 text-green-600" />
+                            ) : (
+                              <AlertCircle className="w-5 h-5 text-red-600" />
+                            )}
+                            {isFlagged && <Flag className="w-4 h-4 text-amber-500" />}
+                          </div>
+                        </div>
+                      </div>
+                      <p className="text-sm text-slate-700 mb-3">{q.question}</p>
+                      <div className="text-xs text-slate-600">
+                        <p>Your answer: {userAnswer?.selectedAnswer || "Not answered"}</p>
+                        <p>Correct answer: {q.correctAnswer}</p>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            )}
           </Card>
         </main>
       </div>

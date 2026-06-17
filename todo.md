@@ -452,3 +452,23 @@
 - [x] Wire specialty selection dropdown in modal
 - [x] Wire frontend to new specialty-specific reset mutation
 - [x] Test reset for individual specialties
+
+
+## New Features - June 17, 2026
+- [ ] Feature 1: Mock exam review filter — Display only flagged questions in review section
+- [ ] Feature 2: AI Coach360 bookmarking — Save/bookmark specific explanations for later reference
+
+
+## New Features - June 17, 2026 - COMPLETED
+- [x] Feature 1: Mock exam review filter — Display only flagged questions in review section
+  - Added toggle button in MockExamResults component
+  - Filter shows "All Questions" vs "Flagged Only" view
+  - Displays count of flagged questions
+  - Shows question details with user answer and correct answer
+  
+- [x] Feature 2: AI Coach360 bookmarking — Save/bookmark specific explanations for later reference
+  - Added bookmark button to AIChatBox component
+  - Created backend procedures: bookmarkExplanation, getBookmarkedExplanations, isBookmarkedExplanation
+  - Store bookmarked explanations with user ID and content hash
+  - Bookmarks page displays saved explanations with specialty and difficulty filters
+  - Visual bookmark indicator shows in AI messages when explanation is bookmarked

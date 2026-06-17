@@ -2,9 +2,10 @@ import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { cn } from "@/lib/utils";
-import { Loader2, Send, User, Sparkles } from "lucide-react";
+import { Loader2, Send, User, Sparkles, Bookmark } from "lucide-react";
 import { useState, useEffect, useRef } from "react";
 import { Streamdown } from "streamdown";
+import { toast } from "sonner";
 
 /**
  * Message type matching server-side LLM Message interface
@@ -57,6 +58,16 @@ export type AIChatBoxProps = {
    * Click to send directly
    */
   suggestedPrompts?: string[];
+
+  /**
+   * Callback when user bookmarks a message
+   */
+  onBookmark?: (messageContent: string, messageIndex: number) => void;
+
+  /**
+   * Set of bookmarked message indices
+   */
+  bookmarkedIndices?: Set<number>;
 };
 
 /**
@@ -119,6 +130,8 @@ export function AIChatBox({
   height = "600px",
   emptyStateMessage = "Start a conversation with AI",
   suggestedPrompts,
+  onBookmark,
+  bookmarkedIndices = new Set(),
 }: AIChatBoxProps) {
   const [input, setInput] = useState("");
   const scrollAreaRef = useRef<HTMLDivElement>(null);
@@ -254,7 +267,7 @@ export function AIChatBox({
 
                     <div
                       className={cn(
-                        "max-w-[80%] rounded-lg px-4 py-2.5",
+                        "max-w-[80%] rounded-lg px-4 py-2.5 group relative",
                         message.role === "user"
                           ? "bg-primary text-primary-foreground"
                           : "bg-muted text-foreground"
@@ -268,6 +281,26 @@ export function AIChatBox({
                         <p className="whitespace-pre-wrap text-sm">
                           {message.content}
                         </p>
+                      )}
+                      
+                      {message.role === "assistant" && onBookmark && (
+                        <button
+                          onClick={() => {
+                            onBookmark(message.content, index);
+                            toast.success(bookmarkedIndices.has(index) ? "Removed from bookmarks" : "Added to bookmarks");
+                          }}
+                          className="absolute -right-8 top-0 opacity-0 group-hover:opacity-100 transition-opacity"
+                          title={bookmarkedIndices.has(index) ? "Remove bookmark" : "Bookmark this explanation"}
+                        >
+                          <Bookmark
+                            className={cn(
+                              "size-4 transition-colors",
+                              bookmarkedIndices.has(index)
+                                ? "fill-amber-500 text-amber-500"
+                                : "text-muted-foreground hover:text-amber-500"
+                            )}
+                          />
+                        </button>
                       )}
                     </div>
 

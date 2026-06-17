@@ -984,3 +984,112 @@ export async function resetUserQuestionAttemptsBySpecialty(userId: number, speci
     throw error;
   }
 }
+
+
+// AI Explanation Bookmarking
+export async function bookmarkExplanation(
+  userId: number,
+  content: string
+): Promise<{ bookmarked: boolean }> {
+  const db = await getDb();
+  if (!db) throw new Error("Database not available");
+
+  try {
+    const { bookmarks } = await import("../drizzle/schema");
+    const crypto = await import("crypto");
+    const hash = crypto.createHash("md5").update(content).digest("hex");
+    const itemId = parseInt(hash.substring(0, 8), 16) % 2147483647;
+
+    // Check if already bookmarked
+    const existing = await db
+      .select()
+      .from(bookmarks)
+      .where(
+        and(
+          eq(bookmarks.userId, userId),
+          eq(bookmarks.itemType, "ai_explanation"),
+          eq(bookmarks.itemId, itemId)
+        )
+      )
+      .limit(1);
+
+    if (existing.length > 0) {
+      // Remove bookmark
+      await db
+        .delete(bookmarks)
+        .where(
+          and(
+            eq(bookmarks.userId, userId),
+            eq(bookmarks.itemType, "ai_explanation"),
+            eq(bookmarks.itemId, itemId)
+          )
+        );
+      return { bookmarked: false };
+    } else {
+      // Add bookmark
+      await db.insert(bookmarks).values({
+        userId,
+        itemId,
+        itemType: "ai_explanation",
+      });
+      return { bookmarked: true };
+    }
+  } catch (error) {
+    console.error("[Database] Failed to bookmark explanation:", error);
+    throw error;
+  }
+}
+
+export async function getBookmarkedExplanations(userId: number) {
+  const db = await getDb();
+  if (!db) return [];
+
+  try {
+    const { bookmarks } = await import("../drizzle/schema");
+    return await db
+      .select()
+      .from(bookmarks)
+      .where(
+        and(
+          eq(bookmarks.userId, userId),
+          eq(bookmarks.itemType, "ai_explanation")
+        )
+      )
+      .orderBy(desc(bookmarks.createdAt));
+  } catch (error) {
+    console.error("[Database] Failed to get bookmarked explanations:", error);
+    return [];
+  }
+}
+
+export async function isBookmarkedExplanation(
+  userId: number,
+  content: string
+): Promise<boolean> {
+  const db = await getDb();
+  if (!db) return false;
+
+  try {
+    const { bookmarks } = await import("../drizzle/schema");
+    const crypto = await import("crypto");
+    const hash = crypto.createHash("md5").update(content).digest("hex");
+    const itemId = parseInt(hash.substring(0, 8), 16) % 2147483647;
+
+    const result = await db
+      .select()
+      .from(bookmarks)
+      .where(
+        and(
+          eq(bookmarks.userId, userId),
+          eq(bookmarks.itemType, "ai_explanation"),
+          eq(bookmarks.itemId, itemId)
+        )
+      )
+      .limit(1);
+
+    return result.length > 0;
+  } catch (error) {
+    console.error("[Database] Failed to check bookmarked explanation:", error);
+    return false;
+  }
+}
