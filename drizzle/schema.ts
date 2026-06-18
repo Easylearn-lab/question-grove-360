@@ -16,6 +16,10 @@ export const users = mysqlTable("users", {
   name: text("name"),
   email: varchar("email", { length: 320 }),
   loginMethod: varchar("loginMethod", { length: 64 }),
+  /** JSON array of active login methods: ["google"], ["email_password"], or ["google", "email_password"] */
+  loginMethods: json("loginMethods").$type<string[]>().default(JSON.stringify(["email_password"])),
+  /** Bcrypt hashed password for email/password login (null if not set) */
+  passwordHash: varchar("passwordHash", { length: 255 }),
   role: mysqlEnum("role", ["user", "admin"]).default("user").notNull(),
   createdAt: timestamp("createdAt").defaultNow().notNull(),
   updatedAt: timestamp("updatedAt").defaultNow().onUpdateNow().notNull(),
@@ -64,6 +68,19 @@ export const twoFactorAuth = mysqlTable("two_factor_auth", {
 });
 
 export type TwoFactorAuth = typeof twoFactorAuth.$inferSelect;
+
+// Password Reset Tokens
+export const passwordResetTokens = mysqlTable("password_reset_tokens", {
+  id: int("id").autoincrement().primaryKey(),
+  userId: int("userId").notNull().references(() => users.id),
+  token: varchar("token", { length: 255 }).notNull().unique(),
+  expiresAt: timestamp("expiresAt").notNull(),
+  usedAt: timestamp("usedAt"),
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+});
+
+export type PasswordResetToken = typeof passwordResetTokens.$inferSelect;
+export type InsertPasswordResetToken = typeof passwordResetTokens.$inferInsert;
 
 // Exams
 export const exams = mysqlTable("exams", {

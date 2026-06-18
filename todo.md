@@ -487,3 +487,12 @@
 - [x] Copy question JSON files to /public/questions/ for easy access
 - [ ] Phase 4: Implement question navigation, progress tracking, and subscription gating
 - [ ] Phase 5: Verify all features and save final checkpoint
+
+
+## Database Restoration - examId=30001 (June 18, 2026)
+- [x] Delete 823 broken questions from examId=30001 (missing optionA, optionB, explanations)
+- [x] Import 845 complete questions from pre_beans_bread_ALL_DB_READY.json with examId overridden to 30001
+- [x] Verify: examId=30001 has 845 questions, 0 incomplete rows
+- [x] Verify specialty breakdown matches expected (Neurology 102, Endocrinology 71, Cardiovascular 70, etc.)
+- [x] Verify pasted_content.txt Cardiovascular questions already exist in examId=1 (no duplicates needed)
+- [x] Final DB state: examId=1: 793 questions, examId=30001: 845 questions, Grand total: 1,638 all complete

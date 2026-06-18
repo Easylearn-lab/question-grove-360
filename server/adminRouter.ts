@@ -310,4 +310,95 @@ export const adminRouter = router({
       activeSubscribers: activeSubscribers?.total || 0,
     };
   }),
+
+  // Import 430 MRCGP AKT Questions
+  importMRCGPAKTQuestions: adminProcedure.mutation(async () => {
+    const { getDb } = await import("./db");
+    const db = await getDb();
+    if (!db) throw new TRPCError({ code: "INTERNAL_SERVER_ERROR", message: "Database unavailable" });
+
+    const { questions: questionsTable, exams } = await import("../drizzle/schema");
+    const { sql: sqlFn } = await import("drizzle-orm");
+
+    // Get MRCGP AKT exam ID
+    const examResult = await db.select().from(exams).where(eq(exams.code, "MRCGP_AKT")).limit(1);
+    if (examResult.length === 0) {
+      throw new TRPCError({ code: "NOT_FOUND", message: "MRCGP AKT exam not found" });
+    }
+    const examId = examResult[0].id;
+
+    // Load questions from JSON
+    const questionsData = await fetch("/manus-storage/completion_batch_c_f78133c3.json").then(r => r.json());
+    
+    let imported = 0;
+    let updated = 0;
+    let errors = 0;
+
+    for (const q of questionsData) {
+      try {
+        // Map JSON to database schema
+        const questionData = {
+          examId,
+          domain: q.domain || null,
+          specialty: q.specialty || null,
+          subSpecialty: q.specialty || null,
+          difficulty: q.difficulty || "Medium",
+          question: q.question,
+          optionA: q.options?.A || "",
+          optionB: q.options?.B || "",
+          optionC: q.options?.C || "",
+          optionD: q.options?.D || "",
+          optionE: q.options?.E || null,
+          correctAnswer: q.correct_answer,
+          explanationCorrect: q.explanation?.correct || q.explanation?.[q.correct_answer] || null,
+          explanationA: q.explanation?.A || null,
+          explanationB: q.explanation?.B || null,
+          explanationC: q.explanation?.C || null,
+          explanationD: q.explanation?.D || null,
+          explanationE: q.explanation?.E || null,
+          reference: q.reference || null,
+          tags: JSON.stringify(q.tags || []),
+          status: "active",
+        };
+
+        // Upsert using raw SQL
+        await db.execute(sqlFn`
+          INSERT INTO questions (examId, domain, specialty, subSpecialty, difficulty, question, optionA, optionB, optionC, optionD, optionE, correctAnswer, explanationCorrect, explanationA, explanationB, explanationC, explanationD, explanationE, reference, tags, status)
+          VALUES (${questionData.examId}, ${questionData.domain}, ${questionData.specialty}, ${questionData.subSpecialty}, ${questionData.difficulty}, ${questionData.question}, ${questionData.optionA}, ${questionData.optionB}, ${questionData.optionC}, ${questionData.optionD}, ${questionData.optionE}, ${questionData.correctAnswer}, ${questionData.explanationCorrect}, ${questionData.explanationA}, ${questionData.explanationB}, ${questionData.explanationC}, ${questionData.explanationD}, ${questionData.explanationE}, ${questionData.reference}, ${questionData.tags}, ${questionData.status})
+          ON DUPLICATE KEY UPDATE
+            domain = VALUES(domain),
+            specialty = VALUES(specialty),
+            difficulty = VALUES(difficulty),
+            question = VALUES(question),
+            optionA = VALUES(optionA),
+            optionB = VALUES(optionB),
+            optionC = VALUES(optionC),
+            optionD = VALUES(optionD),
+            optionE = VALUES(optionE),
+            correctAnswer = VALUES(correctAnswer),
+            explanationCorrect = VALUES(explanationCorrect),
+            explanationA = VALUES(explanationA),
+            explanationB = VALUES(explanationB),
+            explanationC = VALUES(explanationC),
+            explanationD = VALUES(explanationD),
+            explanationE = VALUES(explanationE),
+            reference = VALUES(reference),
+            tags = VALUES(tags),
+            updatedAt = NOW()
+        `);
+        imported++;
+      } catch (err) {
+        console.error(`Error importing question ${q.id}:`, err);
+        errors++;
+      }
+    }
+
+    return {
+      success: true,
+      imported,
+      updated,
+      errors,
+      total: questionsData.length,
+    };
+  }),
 });

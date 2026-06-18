@@ -1,5 +1,4 @@
 import { useAuth } from "@/_core/hooks/useAuth";
-import { useProtectedRoute } from "@/hooks/useProtectedRoute";
 import { useLocation } from "wouter";
 import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
@@ -10,6 +9,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { ArrowLeft, Save, Loader2, LogOut } from "lucide-react";
 import { trpc } from "@/lib/trpc";
 import { toast } from "sonner";
+import { SecuritySettings } from "@/components/SecuritySettings";
 
 const SPECIALTIES = [
   "Cardiology",
@@ -329,6 +329,9 @@ export default function Profile() {
                 </Label>
               </div>
             </Card>
+
+            {/* Security Settings */}
+            <SecuritySettings />
 
             {/* Submit Button */}
             <div className="flex gap-4">
