@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { ArrowLeft, ChevronLeft, ChevronRight, Bookmark, Flag } from "lucide-react";
 import { useProtectedRoute } from "@/hooks/useProtectedRoute";
+import { trpc } from "@/lib/trpc";
 import { toast } from "sonner";
 
 interface Question {
@@ -62,37 +63,35 @@ export default function MRCGPAKTPractice() {
 
   const specialtyName = specialtySlug ? SPECIALTIES_MAP[specialtySlug] : "";
 
-  // Load questions from JSON files
+  // Load questions from tRPC
+  const questionsQuery = trpc.mrcgpAkt.getQuestions.useQuery(
+    { specialty: specialtyName },
+    { enabled: !!specialtyName }
+  );
+
   useEffect(() => {
-    const loadQuestions = async () => {
-      try {
-        setQuestionsLoading(true);
-        const [batchA, batchB] = await Promise.all([
-          fetch("/questions/batch_a.json").then((r) => r.json()),
-          fetch("/questions/batch_b.json").then((r) => r.json()),
-        ]);
-
-        const allQuestions = [...batchA, ...batchB];
-        const filtered = allQuestions.filter(
-          (q: Question) => q.specialty === specialtyName
-        );
-
-        setQuestions(filtered);
-        setCurrentIndex(0);
-        setSelectedAnswer(null);
-        setShowExplanation(false);
-      } catch (error) {
-        console.error("Failed to load questions:", error);
-        toast.error("Failed to load questions");
-      } finally {
-        setQuestionsLoading(false);
-      }
-    };
-
-    if (specialtyName) {
-      loadQuestions();
+    if (questionsQuery.data) {
+      setQuestions(questionsQuery.data as Question[]);
+      setCurrentIndex(0);
+      setSelectedAnswer(null);
+      setShowExplanation(false);
+      setQuestionsLoading(false);
     }
-  }, [specialtyName]);
+  }, [questionsQuery.data]);
+
+  useEffect(() => {
+    if (questionsQuery.isLoading) {
+      setQuestionsLoading(true);
+    }
+  }, [questionsQuery.isLoading]);
+
+  useEffect(() => {
+    if (questionsQuery.error) {
+      console.error("Failed to load questions:", questionsQuery.error);
+      toast.error("Failed to load questions");
+      setQuestionsLoading(false);
+    }
+  }, [questionsQuery.error]);
 
   useEffect(() => {
     if (!loading && !isAuthenticated) {

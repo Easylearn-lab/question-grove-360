@@ -267,6 +267,37 @@ export const appRouter = router({
 
   // Adaptive Learning Router
   adaptive: adaptiveRouter,
+
+  // MRCGP AKT Router
+  mrcgpAkt: router({
+    getQuestions: publicProcedure
+      .input(
+        z.object({
+          specialty: z.string().optional(),
+        })
+      )
+      .query(async ({ input }) => {
+        try {
+          // Load questions from storage URLs
+          const [batchA, batchB] = await Promise.all([
+            fetch("/manus-storage/batch_a_df83341a.json").then((r) => r.json()),
+            fetch("/manus-storage/batch_b_8d0e71ec.json").then((r) => r.json()),
+          ]);
+
+          const allQuestions = [...batchA, ...batchB];
+          
+          // Filter by specialty if provided
+          if (input.specialty) {
+            return allQuestions.filter((q: any) => q.specialty === input.specialty);
+          }
+          
+          return allQuestions;
+        } catch (error) {
+          console.error("Failed to load MRCGP questions:", error);
+          throw new Error("Failed to load questions");
+        }
+      }),
+  }),
 });
 
 export type AppRouter = typeof appRouter;
