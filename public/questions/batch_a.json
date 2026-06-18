@@ -1,0 +1,548 @@
+[
+  {
+    "id": "QG-BB-030-002",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Endocrinology",
+    "difficulty": "Hard",
+    "question": "A 35-year-old man presents with polyuria, polydipsia and nocturia. His serum sodium is 152 mmol/L, serum osmolality 308 mOsm/kg, and urine osmolality 95 mOsm/kg despite being thirsty. Plasma glucose is normal. Per NICE CKS, what is the investigation required to differentiate cranial DI from nephrogenic DI and primary polydipsia?",
+    "options": {
+      "A": "Random serum ADH level alone is sufficient to diagnose diabetes insipidus",
+      "B": "Water deprivation test (WDT) followed by desmopressin administration — fluid restriction for up to 8 hours with serial urine and plasma osmolality measurements; if urine fails to concentrate (remains <300 mOsm/kg), give desmopressin 2 mcg IM; cranial DI responds with urine osmolality rising >50%; nephrogenic DI shows no response",
+      "C": "MRI pituitary is the only investigation needed — anatomy determines the diagnosis",
+      "D": "24-hour urine collection for osmolality is sufficient",
+      "E": "Glucose tolerance test — to exclude diabetes mellitus as the cause"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "The water deprivation test (WDT) per NICE CKS and endocrine society guidelines: conducted under medical supervision. Phase 1 — fluid restriction for up to 8 hours; urine and plasma osmolality measured hourly. Normal and primary polydipsia: urine concentrates >600 mOsm/kg (functioning ADH). Cranial and nephrogenic DI: urine remains dilute <300 mOsm/kg. Phase 2 — desmopressin (synthetic ADH) 2 mcg IM given when urine osmolality plateaus or after 8 hours. Cranial DI: urine osmolality rises >50% (kidneys respond to exogenous ADH, confirming ADH deficiency). Nephrogenic DI: minimal/no rise (kidneys resistant to ADH). Primary polydipsia: partial concentration during deprivation, minimal desmopressin response. After diagnosis of cranial DI: MRI pituitary/hypothalamus mandatory.",
+      "A": "Incorrect — Random ADH levels are unreliable and not validated for routine clinical diagnosis of DI.",
+      "B": "CORRECT — WDT followed by desmopressin challenge is the gold standard to differentiate cranial DI, nephrogenic DI, and primary polydipsia per NICE CKS.",
+      "C": "Incorrect — MRI pituitary is done AFTER confirming cranial DI biochemically, not as the primary diagnostic tool.",
+      "D": "Incorrect — 24-hour urine collection provides limited information without the controlled stimulus of fluid deprivation.",
+      "E": "Incorrect — Glucose has already been excluded as normal. GTT does not differentiate types of DI."
+    },
+    "reference": "NICE CKS — Diabetes insipidus. https://cks.nice.org.uk/topics/diabetes-insipidus/",
+    "tags": ["water deprivation test", "diabetes insipidus", "desmopressin challenge", "cranial vs nephrogenic", "NICE CKS"]
+  },
+  {
+    "id": "QG-BB-030-003",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Endocrinology",
+    "difficulty": "Medium",
+    "question": "A 28-year-old woman with confirmed cranial diabetes insipidus (cranial DI) is commenced on desmopressin. Three weeks later she presents to her GP with headache, nausea, confusion and a serum sodium of 124 mmol/L. Per NICE CKS, what is the most likely complication?",
+    "options": {
+      "A": "Adrenal crisis — give IV hydrocortisone immediately",
+      "B": "Desmopressin-induced dilutional hyponatraemia — excessive water retention from over-replacement with desmopressin in the context of continued fluid intake; desmopressin must be temporarily withheld, fluid restricted and sodium corrected cautiously (no faster than 10 mmol/L per 24 hours to avoid central pontine myelinolysis)",
+      "C": "Recurrence of DI — increase desmopressin dose",
+      "D": "Cerebral salt wasting — give IV normal saline rapidly",
+      "E": "Hypothyroidism from pituitary damage — check TSH urgently"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Desmopressin over-replacement causing dilutional hyponatraemia is the most important complication of DI treatment. Mechanism: desmopressin causes renal water retention; if the patient continues to drink freely (particularly water or low-solute fluids), free water accumulates and dilutes serum sodium. Symptoms of hyponatraemia: headache, nausea, confusion, seizures, coma (in severe cases). Per NICE CKS: management of desmopressin-induced hyponatraemia — withhold desmopressin; fluid restrict; correct sodium cautiously at no more than 10 mmol/L per 24 hours (rapid correction risks central pontine myelinolysis — osmotic demyelination syndrome). Prevention: patients should be counselled to allow a 'desmopressin-free' window (e.g. one morning per week) to allow any excess free water to be excreted.",
+      "A": "Incorrect — Adrenal crisis presents with hypotension, vomiting, hypoglycaemia and hyperkalemia — not isolated hyponatraemia in a patient on desmopressin.",
+      "B": "CORRECT — Desmopressin over-replacement → dilutional hyponatraemia. Withhold desmopressin, fluid restrict, correct Na⁺ slowly ≤10 mmol/L/24h per NICE CKS.",
+      "C": "Incorrect — DI recurrence would cause hypernatraemia and concentrated plasma, not hyponatraemia.",
+      "D": "Incorrect — Cerebral salt wasting causes hyponatraemia with urinary salt wasting (high urine sodium) after neurosurgery — different context.",
+      "E": "Incorrect — Hypothyroidism can cause hyponatraemia but this is a desmopressin-treated patient with a clear mechanism."
+    },
+    "reference": "NICE CKS — Diabetes insipidus. https://cks.nice.org.uk/topics/diabetes-insipidus/",
+    "tags": ["desmopressin hyponatraemia", "over-replacement", "central pontine myelinolysis", "slow sodium correction", "NICE CKS"]
+  },
+  {
+    "id": "QG-BB-042-002",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "General Practice",
+    "difficulty": "Medium",
+    "question": "A 58-year-old man with type 2 diabetes develops microalbuminuria (albumin:creatinine ratio 4.2 mg/mmol) on routine screening. His blood pressure is 138/86 mmHg. He is not yet on any antihypertensive. Per NICE NG28, what medication should be added to protect his kidneys?",
+    "options": {
+      "A": "Amlodipine — best blood pressure reduction in diabetics",
+      "B": "ACE inhibitor (e.g. ramipril) or ARB (if ACE inhibitor not tolerated) — first-line nephroprotective agents in diabetic nephropathy; reduce intraglomerular pressure by dilating the efferent arteriole; slow progression of microalbuminuria to macroalbuminuria and reduce progression to end-stage renal disease regardless of blood pressure level",
+      "C": "Beta-blocker — renoprotective in diabetic nephropathy",
+      "D": "Indapamide — thiazide-like diuretic preferred in diabetes",
+      "E": "No medication needed — microalbuminuria is below the clinical threshold"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per NICE NG28 (Type 2 diabetes in adults) and NICE NG203 (Chronic kidney disease): ACE inhibitors (e.g. ramipril, lisinopril) are first-line for diabetic nephropathy with microalbuminuria (ACR ≥3 mg/mmol) or macroalbuminuria, regardless of blood pressure. Mechanism: ACE inhibitors dilate the efferent arteriole more than the afferent → reduce intraglomerular hypertension → reduce proteinuria and slow nephropathy progression. Evidence: UKPDS, IRMA-2, RENAAL trials demonstrate significant renoprotection. If ACE inhibitor is not tolerated (cough): switch to ARB (losartan, irbesartan). Monitor: eGFR and potassium at baseline, 1-2 weeks after initiation and after dose increases (risk of hyperkalaemia and acute kidney injury). BP target in diabetic nephropathy: <130/80 mmHg per NICE.",
+      "A": "Incorrect — Amlodipine (CCB) reduces blood pressure effectively but does not have the specific renoprotective mechanism of ACE inhibitors in diabetic nephropathy.",
+      "B": "CORRECT — ACE inhibitor is first-line renoprotection in diabetic nephropathy with microalbuminuria per NICE NG28, regardless of BP.",
+      "C": "Incorrect — Beta-blockers reduce BP but are not nephroprotective in diabetic nephropathy and can mask hypoglycaemia symptoms.",
+      "D": "Incorrect — Thiazide diuretics reduce BP but are not nephroprotective in diabetic nephropathy and can worsen glucose control.",
+      "E": "Incorrect — Microalbuminuria (ACR ≥3 mg/mmol) in a diabetic patient is a significant finding warranting ACE inhibitor therapy per NICE NG28."
+    },
+    "reference": "NICE NG28 — Type 2 diabetes in adults. https://www.nice.org.uk/guidance/ng28",
+    "tags": ["diabetic nephropathy", "microalbuminuria", "ACE inhibitor", "NICE NG28", "renoprotection", "efferent arteriole"]
+  },
+  {
+    "id": "QG-BB-042-003",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "General Practice",
+    "difficulty": "Hard",
+    "question": "A 62-year-old man with type 2 diabetes and microalbuminuria is started on ramipril 5mg. Two weeks later his eGFR drops from 68 to 54 ml/min and his potassium rises from 4.2 to 5.1 mmol/L. Per NICE NG203, what is the appropriate action?",
+    "options": {
+      "A": "Stop ramipril immediately and never restart it",
+      "B": "Continue ramipril unchanged — an eGFR drop of up to 25% and potassium up to 5.5 mmol/L within the first few weeks of ACE inhibitor initiation is acceptable and expected; only stop if eGFR drops >25% from baseline or potassium rises above 5.5 mmol/L",
+      "C": "Halve the dose and repeat bloods in 3 months",
+      "D": "Add spironolactone to counteract the potassium rise",
+      "E": "Admit urgently — eGFR drop after ACE inhibitor initiation always indicates renal artery stenosis"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per NICE NG203 (Chronic kidney disease) and NICE NG28: an eGFR drop of up to 25% from baseline AND potassium rise to up to 5.5 mmol/L within the first 2 weeks of starting an ACE inhibitor or ARB is EXPECTED and ACCEPTABLE — do not stop the medication. This reflects reduced intraglomerular pressure (the therapeutic mechanism) and mild aldosterone suppression. Action thresholds to stop ACE inhibitor: eGFR drop >25% from baseline, OR potassium >5.5 mmol/L, OR bilateral renal artery stenosis suspected. Here: eGFR dropped from 68 to 54 = drop of 14/68 = ~21% (within the 25% acceptable threshold); potassium 5.1 mmol/L (below 5.5 mmol/L threshold). Continue ramipril, repeat bloods in 4 weeks. If patient has bilateral renal artery stenosis: ACE inhibitors can cause acute kidney injury — investigate if eGFR drops >25%.",
+      "A": "Incorrect — Stopping ramipril is not indicated for an eGFR drop of 21% and potassium 5.1 mmol/L — both are within acceptable limits.",
+      "B": "CORRECT — eGFR drop ≤25% and K⁺ ≤5.5 mmol/L is acceptable and expected with ACE inhibitor initiation. Continue and monitor per NICE NG203.",
+      "C": "Incorrect — Dose reduction is not indicated when changes are within acceptable limits.",
+      "D": "Incorrect — Adding spironolactone to an ACE inhibitor with rising potassium risks dangerous hyperkalaemia.",
+      "E": "Incorrect — Not every eGFR drop indicates renal artery stenosis; this level of drop is expected. Investigate for RAS if drop exceeds 25% threshold."
+    },
+    "reference": "NICE NG203 — Chronic kidney disease. https://www.nice.org.uk/guidance/ng203",
+    "tags": ["ACE inhibitor eGFR drop", "25% threshold", "potassium 5.5", "NICE NG203", "acceptable change", "continue ramipril"]
+  },
+  {
+    "id": "QG-BB-043-003",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "General Practice",
+    "difficulty": "Hard",
+    "question": "A 72-year-old man with BPH and hypertension has been on doxazosin 4mg daily for 6 months with good effect on both urinary symptoms and blood pressure. He is about to undergo elective right hip replacement surgery. Per MHRA and anaesthetic guidance, what peri-operative concern is associated with alpha-blockers?",
+    "options": {
+      "A": "Alpha-blockers must always be stopped 2 weeks before any surgery",
+      "B": "Intraoperative floppy iris syndrome (IFIS) — alpha-1 blockers (including doxazosin, tamsulosin) cause relaxation of the iris dilator muscle; during cataract surgery, this leads to poor pupillary dilation, iris billowing and iris prolapse through the surgical incision; the ophthalmologist must be informed prior to any planned cataract surgery so modified surgical technique can be used; this is less relevant for hip surgery",
+      "C": "Alpha-blockers cause malignant hyperthermia under general anaesthesia",
+      "D": "Doxazosin causes severe intraoperative hypertension resistant to treatment",
+      "E": "No surgical concerns — doxazosin is safely continued through all operations"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Intraoperative floppy iris syndrome (IFIS): a well-documented complication of alpha-1 adrenoceptor blockade during cataract surgery. Alpha-1A receptors in the iris dilator muscle maintain pupil dilation during surgery; when blocked (by tamsulosin, doxazosin, prazosin, silodosin), the iris fails to dilate adequately and becomes flaccid — leading to progressive miosis, iris billowing (wave-like movements), and iris prolapse through phaco incisions, significantly increasing operative complexity and complication risk. Per MHRA guidance and Royal College of Ophthalmologists: any patient who has EVER taken an alpha-1 blocker must inform their ophthalmologist before cataract surgery (IFIS can persist even after stopping the drug). The surgeon can then use modified techniques (iris hooks, pupil expansion rings, intracameral phenylephrine). For hip replacement: the main concern is first-dose/postural hypotension with spinal anaesthesia — alpha-blockers potentiate hypotension and the anaesthetist should be informed.",
+      "A": "Incorrect — Stopping alpha-blockers 2 weeks before all surgery is not standard practice; the specific concern is cataract surgery (IFIS) and postural hypotension with neuraxial anaesthesia.",
+      "B": "CORRECT — IFIS: alpha-1 blockers cause floppy iris during cataract surgery. Ophthalmologist must be informed before cataract surgery per MHRA/RCOphth guidance.",
+      "C": "Incorrect — Alpha-blockers are not associated with malignant hyperthermia.",
+      "D": "Incorrect — Alpha-blockers cause hypotension (not hypertension) intraoperatively — they vasodilate.",
+      "E": "Incorrect — IFIS is a specific and serious concern for cataract surgery; the anaesthetist should also be informed about postural hypotension risk."
+    },
+    "reference": "MHRA — Intraoperative floppy iris syndrome. https://www.gov.uk/drug-safety-update",
+    "tags": ["IFIS", "floppy iris syndrome", "alpha blocker cataract", "doxazosin tamsulosin", "MHRA", "ophthalmologist inform"]
+  },
+  {
+    "id": "QG-BB-044-003",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Pharmacology & Prescribing",
+    "difficulty": "Medium",
+    "question": "A 4-year-old child (weight 16 kg) with known peanut allergy develops anaphylaxis at home. Their parent has been trained in using an adrenaline auto-injector. Per NICE CG134, which auto-injector device is appropriate for this child?",
+    "options": {
+      "A": "EpiPen 0.3 mg (300 mcg) — standard adult device",
+      "B": "EpiPen Jr 0.15 mg (150 mcg) or equivalent junior device — for children 15-30 kg; delivers 150 mcg adrenaline IM; appropriate for this 16 kg child",
+      "C": "No auto-injector — only IM injection with a syringe is appropriate for children under 5",
+      "D": "EpiPen 0.5 mg (500 mcg) — higher dose for more reliable effect",
+      "E": "Oral antihistamine is the first-line treatment for anaphylaxis in young children"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per NICE CG134 (Anaphylaxis) and BNF: adrenaline auto-injector prescribing by weight: <15 kg: specialist advice — junior device or drawn-up syringe; 15-30 kg: 150 mcg junior auto-injector (EpiPen Jr, Jext 150, Emerade 150); >30 kg: 300 mcg adult auto-injector (EpiPen, Jext 300, Emerade 300). This 16 kg child falls in the 15-30 kg bracket — junior 150 mcg device is correct. All patients at risk of anaphylaxis should be prescribed TWO auto-injectors (second dose if no response or recurrence before emergency services arrive). Training for patients and carers is essential. The devices are used into the anterolateral thigh, can be given through clothing. Follow-up: all anaphylaxis reactions require referral to allergy specialist for investigation and ongoing management plan.",
+      "A": "Incorrect — EpiPen 0.3 mg is for children/adults over 30 kg. This 16 kg child requires the junior 150 mcg device.",
+      "B": "CORRECT — EpiPen Jr (150 mcg) for 15-30 kg: correct for a 16 kg child per NICE CG134/BNF.",
+      "C": "Incorrect — Auto-injectors ARE appropriate for young children and are the recommended community treatment for anaphylaxis.",
+      "D": "Incorrect — 0.5 mg (500 mcg) is not a standard auto-injector strength in the UK paediatric range.",
+      "E": "Incorrect — Antihistamines are NOT first-line for anaphylaxis — they treat urticaria/itch but do not treat the life-threatening airway/cardiovascular components. Adrenaline is always first-line."
+    },
+    "reference": "NICE CG134 — Anaphylaxis. BNF — Adrenaline auto-injectors. https://www.nice.org.uk/guidance/cg134",
+    "tags": ["EpiPen Jr", "150 mcg", "anaphylaxis child", "15-30 kg", "NICE CG134", "auto-injector weight"]
+  },
+  {
+    "id": "QG-BB-045-003",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Pharmacology & Prescribing",
+    "difficulty": "Medium",
+    "question": "A 64-year-old man is referred to urology for a rising PSA. His urologist wishes to start finasteride 5mg daily. He asks his GP what side effects to expect. Per BNF and patient information, which combination of side effects is most accurately associated with finasteride?",
+    "options": {
+      "A": "Weight gain, hyperglycaemia and hypertension — metabolic effects",
+      "B": "Erectile dysfunction, reduced libido, decreased ejaculate volume and gynaecomastia — sexual side effects from 5-alpha reductase inhibition reducing DHT; these can persist after stopping the drug (post-finasteride syndrome in some men); also associated with a small increased risk of high-grade prostate cancer detection (Gleason ≥7)",
+      "C": "Bradycardia, hypotension and fatigue — beta-blocker-like effects",
+      "D": "Dry cough, ankle swelling and hyperkalaemia — ACE inhibitor-like effects",
+      "E": "Peripheral neuropathy, hepatotoxicity and bone marrow suppression"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Finasteride (5-alpha reductase inhibitor type 2): inhibits conversion of testosterone to the more potent DHT. Key side effects per BNF: sexual dysfunction — erectile dysfunction, reduced libido, decreased ejaculate volume (in up to 2-3% of patients); gynaecomastia and breast tenderness (rare); depression and mood changes (post-marketing reports). Post-finasteride syndrome: some men report persistent sexual side effects after stopping finasteride — remains debated but should be mentioned. Important prescribing caveat: finasteride (via the PCPT trial) was associated with a small but statistically significant increase in high-grade prostate cancer (Gleason ≥7) — the clinical significance is uncertain (may be detection bias as finasteride reduces prostate volume making biopsy more representative). Women of childbearing potential must not handle crushed finasteride tablets due to risk of fetal 5-alpha reductase inhibition.",
+      "A": "Incorrect — Metabolic effects (weight gain, hyperglycaemia) are not associated with finasteride.",
+      "B": "CORRECT — Erectile dysfunction, reduced libido, decreased ejaculate, gynaecomastia are the key side effects of finasteride per BNF.",
+      "C": "Incorrect — Bradycardia and hypotension are beta-blocker side effects, not finasteride.",
+      "D": "Incorrect — Dry cough and hyperkalaemia are ACE inhibitor side effects, not finasteride.",
+      "E": "Incorrect — These are methotrexate/cytotoxic side effects — not associated with finasteride."
+    },
+    "reference": "BNF — Finasteride. https://bnf.nice.org.uk/drug/finasteride.html",
+    "tags": ["finasteride side effects", "erectile dysfunction", "libido reduction", "BNF", "DHT inhibition", "post-finasteride syndrome"]
+  },
+  {
+    "id": "QG-BB-051-002",
+    "exam": "MRCGP AKT",
+    "domain": "Organisational",
+    "specialty": "Ethics & Organisational",
+    "difficulty": "Hard",
+    "question": "A patient calls the GP surgery requesting their complete medical records including letters from a hospital where they were treated 3 years ago for a mental health condition. The receptionist is unsure what to do. Per the UK GDPR (Data Protection Act 2018) and GMC guidance, what is the correct approach?",
+    "options": {
+      "A": "The GP can only share records they personally created — hospital letters cannot be shared",
+      "B": "Under UK GDPR, patients have a right of subject access (SAR) to ALL their personal data held by the practice, including hospital correspondence copied to the GP; the practice must respond within one calendar month; data may only be withheld if disclosure would cause serious harm to the patient or a third party; redact third-party information; there is no charge for a SAR",
+      "C": "The patient must pay £50 and wait 40 days for their records",
+      "D": "Records can only be released to the patient if the GP deems it clinically appropriate",
+      "E": "Mental health records are exempt from subject access requests under the Data Protection Act"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per UK GDPR (implemented via the Data Protection Act 2018) and GMC guidance on confidentiality: patients have a statutory right to access ALL personal data held about them — this is a Subject Access Request (SAR). Key points: response deadline: one calendar month (not 40 days — that was the old pre-GDPR rule); no fee (unless request is manifestly unfounded or excessive); all data must be provided including hospital correspondence held at the practice; exemptions — data can be withheld if it would be likely to cause serious harm to the physical or mental health of the patient or another person (must be a clinician's decision, not administrative); third-party information about others must be redacted unless the third party consents. Mental health records are NOT exempt — they follow the same rules with the 'serious harm' exemption available if applicable.",
+      "A": "Incorrect — Practices must provide all personal data they hold, including correspondence received from other providers.",
+      "B": "CORRECT — UK GDPR SAR: all personal data within 1 month, no charge, serious harm exemption applies for withholding. Mental health records not exempt per UK GDPR/GMC.",
+      "C": "Incorrect — Post-GDPR (from May 2018): no standard fee and the deadline is 1 calendar month (not 40 days).",
+      "D": "Incorrect — Clinical appropriateness is not the standard — patients have a legal right of access regardless of clinical opinion, subject only to the serious harm exemption.",
+      "E": "Incorrect — Mental health records are subject to the same GDPR rules as all other medical records; they are not categorically exempt."
+    },
+    "reference": "UK GDPR — Data Protection Act 2018. GMC — Confidentiality guidance. https://www.gmc-uk.org/ethical-guidance",
+    "tags": ["subject access request", "UK GDPR", "1 calendar month", "no fee", "GMC confidentiality", "mental health records"]
+  },
+  {
+    "id": "QG-BB-051-003",
+    "exam": "MRCGP AKT",
+    "domain": "Organisational",
+    "specialty": "Ethics & Organisational",
+    "difficulty": "Medium",
+    "question": "A GP surgery receives a Subject Access Request (SAR) for a patient's records. On reviewing the records, the GP notices a letter containing sensitive third-party information about a family member who is also a patient at the practice. Per UK GDPR and ICO guidance, what should the GP do?",
+    "options": {
+      "A": "Refuse the entire SAR because of third-party information",
+      "B": "Redact the third party's personal information from the records before releasing them to the requesting patient — the requesting patient's right of access should be honoured as fully as possible; only the specific third-party identifying information should be redacted (not the entire letter), unless the third party consents to disclosure",
+      "C": "Release the full records including third-party information — once in the GP notes it becomes the patient's data",
+      "D": "Ask the third party for written consent before responding — delay the SAR until consent is obtained",
+      "E": "Refer the entire matter to the ICO and take no action until instructed"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per UK GDPR and ICO (Information Commissioner's Office) guidance on SARs: when records contain third-party personal data, the practice should: (1) Consider whether the third party would consent to disclosure — if yes, release with third-party information included; (2) If consent cannot be obtained or would not be given: redact the third party's identifying details but provide as much of the original document as possible without identifying the third party; (3) Only withhold the entire document if it is impossible to redact adequately and disclosure would unfairly impact the third party. The key principle: the requesting patient's SAR should be honoured to the maximum extent possible — redaction is preferred over full withholding. The response must still be provided within one calendar month.",
+      "A": "Incorrect — Refusing the entire SAR due to third-party information is disproportionate — redaction of the specific third-party details is the correct approach.",
+      "B": "CORRECT — Redact third-party personal information; provide as much of the record as possible to the requesting patient per UK GDPR/ICO guidance.",
+      "C": "Incorrect — Information about a third party in the requesting patient's notes does not automatically become the requesting patient's data — the third party retains data rights.",
+      "D": "Incorrect — Delaying the SAR to seek third-party consent is not standard; redaction is the practical solution and the 1-month deadline must be met.",
+      "E": "Incorrect — Referring to the ICO is not a standard response to routine SARs with third-party information; this is a common situation practices handle themselves."
+    },
+    "reference": "ICO — Right of access guidance. UK GDPR. https://ico.org.uk/for-organisations/guide-to-data-protection/",
+    "tags": ["SAR third party", "redaction", "UK GDPR", "ICO guidance", "access request", "data protection"]
+  },
+  {
+    "id": "QG-BB-052-002",
+    "exam": "MRCGP AKT",
+    "domain": "Organisational",
+    "specialty": "Ethics & Organisational",
+    "difficulty": "Medium",
+    "question": "A counsellor working at a GP practice submits a Freedom of Information (FOI) request asking for information about the number of formal complaints made against clinical staff at the surgery in the past 2 years. Per the Freedom of Information Act 2000 and NHS guidance, is this a valid FOI request?",
+    "options": {
+      "A": "Yes — all information held by GP practices is always disclosable under FOI",
+      "B": "GP practices in England are NOT public authorities covered by the Freedom of Information Act 2000 for their general practice functions — however, they ARE subject to the Environmental Information Regulations for certain data; the requester should instead make a Subject Access Request under UK GDPR if they seek their own personal data, or contact NHS England or the ICB for aggregated complaints data",
+      "C": "Yes — any employee can request all practice complaints data via FOI",
+      "D": "The request should be forwarded directly to NHS England to handle",
+      "E": "FOI applies only to hospital trusts — GP practices are entirely exempt"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Freedom of Information Act 2000: applies to 'public authorities' — which includes NHS trusts, CCGs/ICBs, NHS England, local councils, schools etc. Individual GP practices (as independent contractor organisations) are NOT currently classified as public authorities under the FOIA for general practice functions, meaning they are not obliged to respond to FOI requests about their internal operational information (including complaints data). However: NHS England, Integrated Care Boards and NHS Resolution DO handle complaints and incident data and ARE subject to FOIA. If the counsellor is seeking their own personal data: this is a Subject Access Request under UK GDPR, not FOIA. Aggregated anonymised data about NHS complaints: can be requested from NHS England/ICB under FOIA. This is a commonly tested organisational knowledge point in the AKT.",
+      "A": "Incorrect — GP practices are not categorised as public authorities under FOIA for their general practice functions.",
+      "B": "CORRECT — GP practices are NOT public authorities under FOIA. Complaints data should be sought from NHS England/ICB via FOIA; personal data via SAR/GDPR.",
+      "C": "Incorrect — FOI does not apply to GP practices; employees cannot compel a GP practice to disclose internal complaints data via this route.",
+      "D": "Incorrect — Simply forwarding is not the appropriate advice; the requester needs to understand FOIA does not apply to the practice itself.",
+      "E": "Incorrect — Overstated — NHS trusts and ICBs ARE subject to FOIA; the exemption applies specifically to individual GP practices as independent contractors."
+    },
+    "reference": "Freedom of Information Act 2000. ICO — FOI and health. https://ico.org.uk/for-organisations/guide-to-freedom-of-information/",
+    "tags": ["Freedom of Information Act", "GP practices not public authorities", "FOIA", "ICO", "complaints data", "NHS England FOIA"]
+  },
+  {
+    "id": "QG-BB-052-003",
+    "exam": "MRCGP AKT",
+    "domain": "Organisational",
+    "specialty": "Ethics & Organisational",
+    "difficulty": "Hard",
+    "question": "A GP is asked by a police officer to disclose a patient's medical records related to a suspected serious crime. The patient has not consented. Per GMC guidance on confidentiality and the Police and Criminal Evidence Act 1984, what is the correct approach?",
+    "options": {
+      "A": "Always comply immediately — police requests override patient confidentiality",
+      "B": "Voluntary disclosure without consent may be justified in the public interest if the crime is sufficiently serious (murder, serious assault, terrorism, child abuse) and the benefit to society outweighs the patient's privacy interest; however, police requests do not compel disclosure — only a court order or specific statutory power does; seek legal advice, document decision-making, and consider disclosing the minimum necessary information",
+      "C": "Never disclose without patient consent under any circumstances",
+      "D": "Refer all police requests directly to the GMC before taking any action",
+      "E": "Disclose only if the police officer is also a registered medical professional"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per GMC Confidentiality guidance (2017) and PCEA 1984: patient confidentiality is a fundamental principle but not absolute. Disclosure without consent to police: voluntary disclosure in the public interest — justified when: the crime is sufficiently serious (e.g. murder, manslaughter, rape, terrorism, child abuse, serious harm to others), the information will be useful and not available by other means, the public benefit outweighs the privacy harm. Police cannot compel disclosure by simply requesting records — they need a court order (Production Order under PACE Schedule 1) for 'excluded material' (confidential medical records). GPs should: consider whether the public interest test is met; disclose only the minimum necessary information; document the decision and reasoning; notify the patient if safe to do so (unless doing so would put someone at risk or obstruct the investigation); seek advice from MDO/GMC if uncertain.",
+      "A": "Incorrect — Police requests alone do not override confidentiality. Only a court order compels disclosure of excluded medical material.",
+      "B": "CORRECT — Voluntary public interest disclosure for serious crimes is permissible but not mandatory. Court order compels disclosure. Minimum necessary, document decision per GMC guidance.",
+      "C": "Incorrect — There are legitimate grounds to disclose without consent in the public interest for serious crimes per GMC guidance.",
+      "D": "Incorrect — Referring to the GMC is not required for police confidentiality decisions; the GP should consult their MDO.",
+      "E": "Incorrect — The professional registration of the requesting officer has no bearing on the legal or ethical framework for disclosure."
+    },
+    "reference": "GMC — Confidentiality: good practice in handling patient information 2017. PACE 1984. https://www.gmc-uk.org/ethical-guidance",
+    "tags": ["police disclosure", "confidentiality", "public interest", "GMC guidance", "court order", "PACE 1984"]
+  },
+  {
+    "id": "QG-BB-053-002",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Paediatrics",
+    "difficulty": "Medium",
+    "question": "A 7-year-old boy has been on trimethoprim prophylaxis for recurrent UTIs. He presents with fever, dysuria and loin pain. Urine culture shows E. coli >10⁵ CFU/ml sensitive only to cefalexin (resistant to trimethoprim, nitrofurantoin, and amoxicillin). Per NICE NG224, what is the correct antibiotic management?",
+    "options": {
+      "A": "Continue trimethoprim prophylaxis at double the dose",
+      "B": "Treat with oral cefalexin (guided by sensitivity results) for 7-10 days for this upper UTI; review the need for ongoing trimethoprim prophylaxis — breakthrough UTI on prophylaxis with resistant organism warrants paediatric nephrology/urology review and reassessment of the prophylaxis strategy",
+      "C": "Give IV ceftriaxone in hospital for all children with resistant UTIs",
+      "D": "Withhold antibiotics and monitor — the resistance means no oral antibiotic will work",
+      "E": "Switch prophylaxis to nitrofurantoin immediately"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per NICE NG224 (Urinary tract infection in under 16s): for a child with a confirmed upper UTI (fever + loin pain + positive culture), treat with an oral antibiotic guided by culture sensitivity for 7-10 days. Cefalexin is sensitive and appropriate. Breakthrough UTI on prophylaxis with a resistant organism is clinically significant: indicates the prophylactic strategy is failing; warrants specialist (paediatric nephrology or urology) reassessment; may require further imaging (renal USS, DMSA, MAG3 depending on prior imaging history), change of prophylaxis, or reassessment of whether prophylaxis remains indicated. The resistant organism (resistant to trimethoprim) means the current prophylaxis is selecting for resistant organisms — this cannot simply be doubled or ignored. Nitrofurantoin as an alternative prophylaxis can be considered but the breakthrough infection itself needs treating first with sensitivity-guided therapy.",
+      "A": "Incorrect — The organism is resistant to trimethoprim — doubling the dose will not be effective.",
+      "B": "CORRECT — Treat with sensitivity-guided cefalexin; review and refer for specialist reassessment of prophylaxis per NICE NG224.",
+      "C": "Incorrect — IV antibiotics are reserved for children who cannot tolerate oral medication or are systemically unwell/septic.",
+      "D": "Incorrect — Cefalexin is sensitive — this child CAN be treated with an oral antibiotic.",
+      "E": "Incorrect — The immediate priority is treating the acute infection with appropriate antibiotics; prophylaxis changes should follow specialist review."
+    },
+    "reference": "NICE NG224 — Urinary tract infection in under 16s. https://www.nice.org.uk/guidance/ng224",
+    "tags": ["UTI prophylaxis breakthrough", "cefalexin", "resistant organism", "NICE NG224", "paediatric UTI", "specialist referral"]
+  },
+  {
+    "id": "QG-BB-053-003",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Paediatrics",
+    "difficulty": "Easy",
+    "question": "A 2-year-old girl presents with her third UTI in 6 months. She has been treated successfully each time. Her renal USS was normal. Per NICE NG224, what is the indication for considering prophylactic antibiotics in this child?",
+    "options": {
+      "A": "All children under 3 with any UTI should automatically receive 2 years of prophylaxis",
+      "B": "Prophylactic antibiotics are recommended for children with recurrent UTIs (typically 3 or more per year, or 2 or more in 6 months in some guidance) when the benefit of preventing recurrent infections and their complications (renal scarring, pyelonephritis) outweighs the risk of antibiotic resistance and side effects; trimethoprim or nitrofurantoin at low dose nightly are the usual agents",
+      "C": "Prophylaxis is never given to children under 5 — natural immunity will develop",
+      "D": "Prophylaxis is only indicated if vesicoureteric reflux (VUR) is confirmed on MCUG",
+      "E": "A single UTI in a girl under 2 is sufficient indication for lifelong prophylaxis"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per NICE NG224 (UTI in under 16s): antibiotic prophylaxis is considered for children with recurrent UTIs — typically when there have been 2 or more symptomatic UTIs in a 6-month period, or 3 or more per year, particularly in younger children where the risk of renal scarring from repeated pyelonephritis is significant. Agents: trimethoprim (once nightly at a quarter of the therapeutic dose) or nitrofurantoin (if eGFR adequate) are standard. Duration: generally reviewed every 6-12 months. Imaging: NICE NG224 recommends renal USS after first UTI in all children under 6 months, and after recurrent UTIs in older children; DMSA scan 4-6 months after acute pyelonephritis in children under 3 to detect renal scarring. VUR (detected on MCUG) may influence prophylaxis decisions but is not a prerequisite for starting prophylaxis.",
+      "A": "Incorrect — Automatic prophylaxis for all children under 3 with any UTI is not the NICE guidance; prophylaxis is based on frequency of recurrence.",
+      "B": "CORRECT — Recurrent UTIs (2+ in 6 months or 3+ per year) are the typical indication for prophylaxis per NICE NG224; trimethoprim or nitrofurantoin nightly.",
+      "C": "Incorrect — Prophylaxis IS used in children under 5 when indicated — recurrent UTIs in young children carry the highest risk of renal scarring.",
+      "D": "Incorrect — Prophylaxis is not exclusively for confirmed VUR; recurrent infection frequency alone is an indication regardless of MCUG findings.",
+      "E": "Incorrect — A single UTI in a girl under 2 does not automatically warrant prophylaxis — the pattern of recurrence drives the decision."
+    },
+    "reference": "NICE NG224 — Urinary tract infection in under 16s. https://www.nice.org.uk/guidance/ng224",
+    "tags": ["antibiotic prophylaxis UTI", "recurrent UTI child", "trimethoprim prophylaxis", "NICE NG224", "2 in 6 months", "renal scarring"]
+  },
+  {
+    "id": "QG-BB-054-003",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "General Practice",
+    "difficulty": "Hard",
+    "question": "A 54-year-old man presents with episodic severe headaches, sweating attacks and palpitations, each lasting 20-30 minutes and occurring 2-3 times per week. His BP during an attack is 210/118 mmHg, returning to normal between episodes. He is not on any antihypertensive. Per NICE CKS, what investigation is most specific for the suspected diagnosis?",
+    "options": {
+      "A": "24-hour ambulatory BP monitoring — to document white coat hypertension",
+      "B": "24-hour urinary fractionated metanephrines (or plasma free metanephrines) — the most sensitive and specific test for phaeochromocytoma; metanephrines are stable metabolites of catecholamines; 24-hour urine metanephrines have sensitivity >95% and specificity >85%",
+      "C": "Random serum adrenaline during an attack",
+      "D": "Urinary vanillylmandelic acid (VMA) — first-line investigation",
+      "E": "CT abdomen to look for adrenal mass — imaging is the first-line investigation"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Phaeochromocytoma: a catecholamine-secreting tumour of the adrenal medulla (90%) or extra-adrenal paraganglioma (10%). Classic triad: episodic headache, sweating, palpitations with hypertensive crises. Per NICE CKS and Endocrine Society guidelines: first-line biochemical investigation is 24-hour urinary fractionated metanephrines (normetanephrine + metanephrine) or plasma free metanephrines (metanephrine + normetanephrine). Why metanephrines not catecholamines: catecholamines are secreted episodically (may miss the peak); metanephrines are continuously produced from catecholamine metabolism and are more stable — higher sensitivity. Urinary VMA was historically used but is less sensitive and specific than metanephrines (now largely superseded). After biochemical confirmation: imaging (CT/MRI abdomen + pelvis) to localise the tumour. Then functional imaging (MIBG scan or Gallium DOTATATE PET-CT) if CT/MRI inconclusive.",
+      "A": "Incorrect — Ambulatory BP monitoring assesses hypertension patterns but does not diagnose phaeochromocytoma biochemically.",
+      "B": "CORRECT — 24-hour urinary fractionated metanephrines (or plasma free metanephrines) is the most sensitive/specific first-line test for phaeochromocytoma per NICE CKS.",
+      "C": "Incorrect — Random catecholamine levels are highly variable due to episodic secretion and stress effects — unreliable for diagnosis.",
+      "D": "Incorrect — Urinary VMA has been largely superseded by metanephrines, which are more sensitive and specific.",
+      "E": "Incorrect — Imaging is done AFTER biochemical confirmation of catecholamine excess — imaging first risks missing biochemically active small tumours and false positive incidentalomas."
+    },
+    "reference": "NICE CKS — Phaeochromocytoma. https://cks.nice.org.uk/topics/phaeochromocytoma/",
+    "tags": ["phaeochromocytoma", "urinary metanephrines", "episodic hypertension", "NICE CKS", "first-line investigation", "catecholamine tumour"]
+  },
+  {
+    "id": "QG-BB-055-003",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Dermatology",
+    "difficulty": "Hard",
+    "question": "A 68-year-old man is referred with a well-demarcated solitary erythematous scaly plaque on his lower leg, confirmed as Bowen's disease on biopsy. The lesion measures 3.5 cm diameter. Per NICE CKS and BAD guidelines, what is the most appropriate treatment for a large Bowen's disease lesion?",
+    "options": {
+      "A": "Watch and wait — Bowen's disease never becomes invasive",
+      "B": "Photodynamic therapy (PDT) — the preferred treatment for large (>2 cm) Bowen's disease lesions particularly on the lower leg where healing is poor; a photosensitising agent (methyl aminolaevulinate — MAL) is applied, followed by activation with red light; effective with good cosmetic outcome and suitable for large, multiple or awkwardly sited lesions",
+      "C": "Wide local excision with 1 cm margins — as for invasive SCC",
+      "D": "Mohs micrographic surgery — required for all Bowen's disease",
+      "E": "Topical hydrocortisone cream for 8 weeks — reduces the dysplasia"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per NICE CKS and British Association of Dermatology (BAD) guidelines for Bowen's disease: treatment choice depends on size, site, number of lesions, and patient factors. Options: cryotherapy (suitable for small, <1-2 cm, accessible lesions); topical 5-fluorouracil 5% cream (self-applied for 4-6 weeks); topical imiquimod 5% (off-label); photodynamic therapy (PDT): preferred for LARGE (>2 cm), MULTIPLE, or lower-leg lesions. Why lower leg is special: poor vascularity and healing make surgery and cryotherapy more problematic on the lower leg. PDT: methyl aminolaevulinate (MAL) applied under occlusion for 3 hours, then red light activation; 2 treatment sessions 1 week apart; cure rates 80-95% for Bowen's disease; good cosmetic outcome. Excision: appropriate for smaller lesions in surgically accessible sites; 3-4 mm margins for SCC in situ.",
+      "A": "Incorrect — Bowen's disease carries a 3-5% risk of progression to invasive SCC and should be treated.",
+      "B": "CORRECT — PDT is preferred for large (>2 cm) Bowen's disease, particularly on lower leg per NICE CKS/BAD guidelines.",
+      "C": "Incorrect — Wide excision with 1 cm margins is used for invasive SCC, not for SCC in situ (Bowen's). Narrower margins (3-4 mm) are used if excising Bowen's.",
+      "D": "Incorrect — Mohs surgery is reserved for invasive high-risk SCC in cosmetically sensitive areas — not routinely for Bowen's disease.",
+      "E": "Incorrect — Topical corticosteroids have no role in treating Bowen's disease dysplasia."
+    },
+    "reference": "NICE CKS — Bowen's disease. BAD guidelines. https://cks.nice.org.uk/topics/bowens-disease/",
+    "tags": ["Bowen's disease PDT", "photodynamic therapy", "large lesion", "lower leg", "BAD guidelines", "NICE CKS"]
+  },
+  {
+    "id": "QG-BB-056-003",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Haematology",
+    "difficulty": "Medium",
+    "question": "A couple attend pre-conception counselling. Both are confirmed carriers of beta-thalassaemia trait (heterozygous). Per genetics and NHS screening guidance, what is their risk of having an affected child and what options are available?",
+    "options": {
+      "A": "25% risk of an affected child (thalassaemia major); 50% carrier; 25% unaffected — autosomal recessive inheritance; options include preimplantation genetic diagnosis (PGD) via IVF, prenatal diagnosis (chorionic villus sampling at 11-14 weeks or amniocentesis at 15-20 weeks) with termination if affected; or continuing pregnancy with awareness",
+      "B": "50% risk — one parent always passes on the affected gene",
+      "C": "No risk — carriers of beta-thalassaemia trait are immune from having affected children",
+      "D": "100% risk — both carriers will always produce affected offspring",
+      "E": "The risk is only significant if both parents are of Mediterranean or Southeast Asian origin"
+    },
+    "correct_answer": "A",
+    "explanation": {
+      "correct": "Beta-thalassaemia: autosomal recessive condition (chromosome 11 — HBB gene). Two carrier parents (Bb × Bb): 25% chance of thalassaemia major (BB — severely affected, requires lifelong transfusions); 50% carriers (Bb — thalassaemia trait, mild/no symptoms); 25% completely unaffected (bb). Per NHS Sickle Cell and Thalassaemia Screening Programme and RCOG guidelines: couples where both are carriers should be referred to a specialist haemoglobinopathy counsellor. Options: preimplantation genetic diagnosis (PGD) via IVF — embryos screened before implantation; prenatal diagnosis — chorionic villus sampling (CVS at 11-14 weeks) or amniocentesis (15-20 weeks) with fetal genotyping; if affected fetus: couple may choose termination or continuation. Thalassaemia major: without treatment, severe haemolytic anaemia causing death in infancy; with treatment: regular blood transfusions + iron chelation (desferrioxamine) + possible bone marrow transplantation (curative).",
+      "A": "CORRECT — 25% thalassaemia major risk; 50% carrier; 25% unaffected. PGD and prenatal diagnosis available per NHS screening/RCOG guidance.",
+      "B": "Incorrect — 50% risk applies to autosomal dominant inheritance, not autosomal recessive.",
+      "C": "Incorrect — Two carriers of autosomal recessive conditions have a 25% chance of an affected child per pregnancy.",
+      "D": "Incorrect — 100% risk would require both parents to be homozygous affected — carriers are heterozygous.",
+      "E": "Incorrect — The 25% risk applies regardless of ethnicity; while thalassaemia is more prevalent in Mediterranean, Middle Eastern, South Asian and Southeast Asian populations, the genetics apply universally."
+    },
+    "reference": "NHS — Sickle Cell and Thalassaemia Screening. RCOG guidelines. https://www.nhs.uk/conditions/thalassaemia/",
+    "tags": ["beta-thalassaemia", "autosomal recessive", "25% risk", "preimplantation genetic diagnosis", "NHS screening", "CVS amniocentesis"]
+  },
+  {
+    "id": "QG-BB-057-002",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Haematology",
+    "difficulty": "Medium",
+    "question": "A 45-year-old man is found incidentally to have a total cholesterol of 9.8 mmol/L, LDL 7.2 mmol/L, and HDL 1.3 mmol/L. His father had a myocardial infarction at age 42 and his brother has a cholesterol of 8.9 mmol/L. Per NICE CG71 and Simon Broome criteria, what is the most likely diagnosis and initial management?",
+    "options": {
+      "A": "Secondary hyperlipidaemia — check TFTs, LFTs, renal function, and HbA1c first",
+      "B": "Familial hypercholesterolaemia (FH) — autosomal dominant mutation in LDL receptor gene (LDLR), apolipoprotein B (APOB) or PCSK9; Simon Broome criteria: definite FH if LDL >4.9 mmol/L plus tendon xanthomata OR DNA evidence of mutation; probable FH if LDL >4.9 mmol/L plus family history of premature CVD or elevated cholesterol; refer to lipid clinic; high-intensity statin (rosuvastatin 40mg); cascade screening of first-degree relatives",
+      "C": "Dietary modification only for 6 months before starting medication",
+      "D": "Start low-intensity statin and recheck in 12 months",
+      "E": "No treatment required — cholesterol of 9.8 mmol/L is within normal limits for his age"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Familial hypercholesterolaemia (FH): autosomal DOMINANT (not recessive) condition caused by mutations in LDL receptor (LDLR — most common, 85%), apolipoprotein B (APOB — 5%), or PCSK9 gene (~1%) — leading to markedly elevated LDL cholesterol from birth. Simon Broome criteria for adults: DEFINITE FH: LDL >4.9 mmol/L (TC >7.5 mmol/L) AND tendon xanthomata in patient or first/second degree relative, OR DNA-confirmed mutation. PROBABLE FH: LDL >4.9 mmol/L AND family history of premature MI (<50 in 1st degree relative, <60 in 2nd degree) OR family history of raised cholesterol. This patient: LDL 7.2 mmol/L + father with MI at 42 + brother with elevated cholesterol = PROBABLE/DEFINITE FH. Per NICE CG71: refer to lipid clinic; high-intensity statin (atorvastatin 80mg or rosuvastatin 40mg); target LDL reduction ≥50%; cascade screening for first-degree relatives; consider ezetimibe or PCSK9 inhibitor if statin insufficient.",
+      "A": "Incorrect — Secondary causes should be excluded, but this family history and LDL level strongly point to FH — investigation and treatment should proceed simultaneously.",
+      "B": "CORRECT — Probable/definite FH: refer lipid clinic, high-intensity statin, cascade screen first-degree relatives per NICE CG71.",
+      "C": "Incorrect — FH requires urgent statin therapy; dietary modification alone is insufficient for genetic LDL receptor dysfunction.",
+      "D": "Incorrect — Low-intensity statin is inadequate for FH — high-intensity statin (atorvastatin 80mg or rosuvastatin 40mg) is required per NICE CG71.",
+      "E": "Incorrect — LDL of 7.2 mmol/L is markedly elevated and with this family history represents very high cardiovascular risk requiring urgent treatment."
+    },
+    "reference": "NICE CG71 — Identification and management of familial hypercholesterolaemia. https://www.nice.org.uk/guidance/cg71",
+    "tags": ["familial hypercholesterolaemia", "Simon Broome criteria", "autosomal dominant", "NICE CG71", "high-intensity statin", "cascade screening"]
+  },
+  {
+    "id": "QG-BB-057-003",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Haematology",
+    "difficulty": "Hard",
+    "question": "A 38-year-old woman with confirmed familial hypercholesterolaemia is on atorvastatin 80mg. Her LDL remains at 5.1 mmol/L (target <2.6 mmol/L per NICE CG71). She has no other cardiovascular risk factors. Per NICE CG71 and TA394, what is the next step?",
+    "options": {
+      "A": "Increase atorvastatin to 160 mg — double the dose",
+      "B": "Add ezetimibe 10mg daily — first add-on therapy when statin alone is insufficient; inhibits intestinal cholesterol absorption; LDL lowering of approximately 15-20% additional; if still not at target, consider PCSK9 inhibitor (evolocumab or alirocumab) via specialist",
+      "C": "Stop atorvastatin and start rosuvastatin 5 mg to reduce side effects",
+      "D": "Refer for LDL apheresis immediately without trying additional medication",
+      "E": "Accept current LDL — targets are aspirational only and do not require add-on therapy"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per NICE CG71 (FH) and NICE TA394 (Evolocumab): when maximum tolerated statin dose is insufficient to achieve LDL targets in FH, the stepwise approach is: Step 1 — Maximum tolerated statin (atorvastatin 80mg or rosuvastatin 40mg); Step 2 — Add ezetimibe 10mg (first-line add-on; inhibits Niemann-Pick C1-Like 1 protein in the small intestinal brush border; reduces LDL by additional 15-20%); Step 3 — If still not at target with statin + ezetimibe: PCSK9 inhibitors (evolocumab or alirocumab — monoclonal antibodies against PCSK9; can reduce LDL by 50-60%; given SC every 2 weeks or monthly) via specialist lipid clinic. Step 4 — LDL apheresis (extracorporeal LDL removal): for homozygous FH or severe heterozygous FH unresponsive to maximal drug therapy. Atorvastatin maximum licensed dose is 80mg — cannot double to 160mg.",
+      "A": "Incorrect — Atorvastatin 80mg is the maximum licensed dose. Exceeding this is not appropriate.",
+      "B": "CORRECT — Add ezetimibe 10mg as first add-on to maximum statin per NICE CG71; PCSK9 inhibitor via specialist if still insufficient.",
+      "C": "Incorrect — Switching to a lower dose of rosuvastatin would reduce LDL lowering — not appropriate when the goal is to reach target.",
+      "D": "Incorrect — LDL apheresis is reserved for homozygous FH or severe heterozygous FH after maximal drug therapy has failed — not the next step here.",
+      "E": "Incorrect — NICE CG71 sets a specific LDL target of <2.6 mmol/L (or >50% reduction from baseline) — targets require active pursuit."
+    },
+    "reference": "NICE CG71 — Familial hypercholesterolaemia. NICE TA394. https://www.nice.org.uk/guidance/cg71",
+    "tags": ["FH statin insufficient", "ezetimibe add-on", "PCSK9 inhibitor", "NICE CG71", "LDL target", "evolocumab"]
+  },
+  {
+    "id": "QG-BB-059-002",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Ophthalmology & ENT",
+    "difficulty": "Medium",
+    "question": "A 55-year-old woman presents complaining of difficulty hearing in noisy environments and needing the TV louder. Pure tone audiometry shows a symmetrical sloping high-frequency sensorineural hearing loss bilaterally. She has no tinnitus and no vertigo. Per NICE CKS, what is the most likely diagnosis and management?",
+    "options": {
+      "A": "Bilateral acoustic neuromas — urgent MRI IAM bilaterally",
+      "B": "Presbyacusis (age-related sensorineural hearing loss) — the most common cause of hearing loss in older adults; characterised by bilateral symmetrical high-frequency SNHL; managed with hearing aid referral via NHS audiology; no curative treatment; reassurance; safety advice regarding driving and telephone use",
+      "C": "Ménière's disease — betahistine and low-sodium diet",
+      "D": "Bilateral otosclerosis — refer for stapedectomy",
+      "E": "Noise-induced hearing loss — all bilateral SNHL in adults is from noise exposure"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Presbyacusis (age-related hearing loss): the most common cause of hearing loss globally and the most common cause of SNHL in adults over 50. Characterised by: bilateral symmetrical high-frequency SNHL on pure tone audiometry (audiogram shows sloping loss, worse at high frequencies — 4-8 kHz); gradual onset over years; difficulty hearing in background noise (selective impairment of speech discrimination in noise); no vertigo, no tinnitus (though tinnitus can coexist). Cause: cumulative degeneration of cochlear hair cells (particularly basal turn encoding high frequencies) from ageing, noise exposure and genetic factors. Per NICE CKS: refer to NHS audiology for hearing aid fitting (digital hearing aids available free via NHS); no curative treatment; Cochlear implant for severe-profound SNHL not responding to hearing aids. Red flags requiring ENT referral: asymmetrical SNHL (must exclude acoustic neuroma), sudden SNHL, unilateral SNHL.",
+      "A": "Incorrect — Bilateral acoustic neuromas are very rare and associated with neurofibromatosis type 2; symmetrical audiogram and no additional features make this very unlikely.",
+      "B": "CORRECT — Presbyacusis: bilateral symmetrical high-frequency SNHL in older adult; NHS hearing aids per NICE CKS.",
+      "C": "Incorrect — Ménière's disease causes episodic vertigo + fluctuating low-frequency SNHL + tinnitus + aural fullness — not a stable symmetrical high-frequency loss.",
+      "D": "Incorrect — Otosclerosis causes CONDUCTIVE hearing loss (abnormal Rinne test — BC>AC) — not sensorineural hearing loss.",
+      "E": "Incorrect — Noise-induced hearing loss causes a characteristic 4 kHz notch on audiogram and requires occupational history; presbyacusis is the most common diagnosis for bilateral symmetric high-frequency SNHL in older adults."
+    },
+    "reference": "NICE CKS — Hearing loss in adults. https://cks.nice.org.uk/topics/hearing-loss-in-adults/",
+    "tags": ["presbyacusis", "bilateral SNHL", "high frequency", "hearing aids NHS", "NICE CKS", "age-related hearing loss"]
+  },
+  {
+    "id": "QG-BB-059-003",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Ophthalmology & ENT",
+    "difficulty": "Hard",
+    "question": "A 58-year-old man presents with a 3-month history of progressive unilateral left-sided sensorineural hearing loss with tinnitus. He denies vertigo. Pure tone audiometry shows asymmetric low-frequency SNHL on the left. Per NICE CKS, what is the most important diagnosis to exclude and investigation?",
+    "options": {
+      "A": "Presbyacusis — bilateral, so unilateral loss does not fit; no investigation needed",
+      "B": "Acoustic neuroma (vestibular schwannoma) — any unilateral SNHL or unilateral tinnitus should raise suspicion; MRI internal auditory meati (IAM) with gadolinium is the gold standard investigation; urgent ENT referral for assessment and MRI request; acoustic neuromas are benign tumours of CN VIII Schwann cells that can be managed with surveillance, stereotactic radiosurgery or microsurgical excision",
+      "C": "Ménière's disease requires no imaging — diagnose clinically and treat with betahistine",
+      "D": "Bilateral audiometry and hearing aid fitting as first step",
+      "E": "CT temporal bones — preferred over MRI for acoustic neuroma detection"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per NICE CKS and ENT guidelines: UNILATERAL SNHL or unilateral tinnitus requires exclusion of acoustic neuroma (vestibular schwannoma) — a benign tumour of the Schwann cells of the vestibular division of CN VIII growing in the internal auditory canal and/or cerebellopontine angle. Symptoms: progressive unilateral SNHL (any frequency), unilateral tinnitus, later — vertigo, facial numbness (CN V compression), facial weakness. Investigation: MRI IAM with gadolinium — gold standard; sensitivity >99%; detects tumours as small as 1-2 mm. CT temporal bones detects bony erosion in larger tumours but misses small intracanalicular acoustic neuromas. ENT referral is mandatory for any unexplained asymmetric SNHL. Management: observation (small tumours, elderly) with serial MRI; stereotactic radiosurgery (Gamma Knife); microsurgical excision. Note: Ménière's disease also causes unilateral hearing loss but is episodic with vertigo and fullness — acoustic neuroma must be excluded first.",
+      "A": "Incorrect — Unilateral SNHL absolutely requires investigation — acoustic neuroma must be excluded regardless of the patient's age.",
+      "B": "CORRECT — Unilateral SNHL: MRI IAM with gadolinium to exclude acoustic neuroma; urgent ENT referral per NICE CKS.",
+      "C": "Incorrect — Ménière's disease is a diagnosis of exclusion after acoustic neuroma has been ruled out by MRI.",
+      "D": "Incorrect — Hearing aids should not be fitted for unilateral SNHL until acoustic neuroma is excluded.",
+      "E": "Incorrect — CT temporal bones can miss small intracanalicular acoustic neuromas; MRI with gadolinium is the gold standard."
+    },
+    "reference": "NICE CKS — Acoustic neuroma. https://cks.nice.org.uk/topics/acoustic-neuroma/",
+    "tags": ["acoustic neuroma", "unilateral SNHL", "MRI IAM gadolinium", "NICE CKS", "vestibular schwannoma", "ENT referral"]
+  },
+  {
+    "id": "QG-BB-060-003",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Obstetrics & Gynaecology",
+    "difficulty": "Medium",
+    "question": "A 39-year-old woman has an FSH of 68 IU/L on two occasions 4 weeks apart with amenorrhoea for 8 months. She has hot flushes and vaginal dryness. Per NICE NG23, what is the diagnosis and what important health consideration must be discussed alongside HRT?",
+    "options": {
+      "A": "Polycystic ovary syndrome — clomifene citrate",
+      "B": "Premature ovarian insufficiency (POI) — FSH >25 IU/L on two occasions 4+ weeks apart before age 40; bone health is a critical concern as prolonged oestrogen deficiency causes premature bone loss and increased fracture risk; HRT (or COCP) is strongly recommended until the natural age of menopause (approximately 51) to protect bone density and cardiovascular health; DEXA scan for baseline bone density",
+      "C": "Normal perimenopause — no treatment needed at 39",
+      "D": "Pituitary adenoma secreting excess FSH — MRI pituitary urgently",
+      "E": "HRT should be avoided in POI due to increased cancer risk"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Premature ovarian insufficiency (POI): ovarian function ceases before age 40 (by definition) — affecting approximately 1% of women under 40 and 0.1% under 30. Diagnostic criteria: amenorrhoea >4 months + FSH >25 IU/L on two separate occasions ≥4 weeks apart. Per NICE NG23: HRT or COCP is strongly recommended in POI until the natural age of menopause (~51 years). Rationale: prolonged oestrogen deficiency from a young age causes: accelerated bone loss (osteoporosis, fragility fractures), premature cardiovascular disease, sexual dysfunction, neurological effects (cognitive), psychological impact. DEXA scan at diagnosis for baseline bone mineral density. Fertility: approximately 5% of women with POI may still ovulate spontaneously; oocyte donation is the most effective option for pregnancy. The HRT in POI is REPLACEMENT therapy restoring physiological oestrogen levels — the breast cancer risk concern applies to HRT taken BEYOND the natural menopause age, not to replacement therapy in POI.",
+      "A": "Incorrect — PCOS is associated with normal or low FSH with elevated LH and androgens — FSH of 68 IU/L indicates ovarian failure, not PCOS.",
+      "B": "CORRECT — POI: FSH >25 on two occasions <40 years. HRT recommended until age ~51 for bone/cardiovascular protection per NICE NG23.",
+      "C": "Incorrect — FSH of 68 IU/L at age 39 with 8 months amenorrhoea is diagnostic of POI — this is not normal perimenopause and requires treatment.",
+      "D": "Incorrect — Elevated FSH in this context reflects absent negative feedback from failing ovaries — not pituitary overproduction.",
+      "E": "Incorrect — HRT in POI is STRONGLY recommended by NICE NG23; the cancer risk profile of HRT in POI is different from HRT taken after natural menopause as it is restoring physiological hormone levels."
+    },
+    "reference": "NICE NG23 — Menopause. https://www.nice.org.uk/guidance/ng23",
+    "tags": ["premature ovarian insufficiency", "POI", "FSH >25", "HRT until 51", "bone health", "NICE NG23"]
+  }
+]

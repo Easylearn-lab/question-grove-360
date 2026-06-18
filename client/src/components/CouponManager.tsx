@@ -108,7 +108,7 @@ export function CouponManager() {
         <Button
           onClick={handleCreateCoupon}
           disabled={createCoupon.isPending}
-          className="flex items-center gap-2 bg-teal-600 hover:bg-teal-700"
+          className="flex items-center gap-2 bg-green-600 hover:bg-green-700"
         >
           <Plus className="w-4 h-4" />
           Create Coupon
@@ -131,7 +131,7 @@ export function CouponManager() {
               >
                 <div className="flex-1">
                   <div className="flex items-center gap-2 mb-1">
-                    <code className="font-mono font-bold text-teal-600 dark:text-teal-400">
+                    <code className="font-mono font-bold text-green-600 dark:text-green-400">
                       {coupon.code}
                     </code>
                     <button

@@ -88,7 +88,7 @@ export function AICoachWidget() {
     return (
       <button
         onClick={() => setIsOpen(true)}
-        className="fixed bottom-6 right-6 z-40 flex items-center justify-center w-14 h-14 rounded-full bg-teal-600 hover:bg-teal-700 text-white shadow-lg transition-all hover:scale-110"
+        className="fixed bottom-6 right-6 z-40 flex items-center justify-center w-14 h-14 rounded-full bg-green-600 hover:bg-green-700 text-gray-900 shadow-lg transition-all hover:scale-110"
         title="Open AI Coach360"
       >
         <MessageCircle className="w-6 h-6" />
@@ -99,16 +99,16 @@ export function AICoachWidget() {
   return (
     <Card className="fixed bottom-6 right-6 z-40 w-96 h-[600px] flex flex-col shadow-2xl">
       {/* Header */}
-      <div className="flex items-center justify-between p-4 border-b bg-teal-600 text-white rounded-t-lg">
+      <div className="flex items-center justify-between p-4 border-b bg-green-600 text-gray-900 rounded-t-lg">
         <div>
           <h3 className="font-semibold">AI Coach360</h3>
-          <p className="text-xs text-teal-100">Your personal exam coach</p>
+          <p className="text-xs text-green-100">Your personal exam coach</p>
         </div>
         <Button
           variant="ghost"
           size="sm"
           onClick={() => setIsOpen(false)}
-          className="text-white hover:bg-teal-700"
+          className="text-white hover:bg-green-700"
         >
           <X className="w-4 h-4" />
         </Button>
@@ -133,7 +133,7 @@ export function AICoachWidget() {
                 <div
                   className={`max-w-xs px-4 py-2 rounded-lg ${
                     msg.role === "user"
-                      ? "bg-teal-600 text-white rounded-br-none"
+                      ? "bg-green-600 text-gray-900 rounded-br-none"
                       : "bg-gray-100 text-gray-900 rounded-bl-none"
                   }`}
                 >
@@ -171,7 +171,7 @@ export function AICoachWidget() {
             type="submit"
             disabled={isLoading || !input.trim()}
             size="sm"
-            className="bg-teal-600 hover:bg-teal-700"
+            className="bg-green-600 hover:bg-green-700"
           >
             <Send className="w-4 h-4" />
           </Button>

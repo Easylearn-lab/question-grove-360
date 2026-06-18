@@ -35,7 +35,7 @@ export default function TwoFactorSettings() {
     return (
       <main className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 p-4">
         <div className="flex items-center justify-center h-screen">
-          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-teal-600"></div>
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-green-600"></div>
         </div>
       </main>
     );
@@ -152,7 +152,7 @@ export default function TwoFactorSettings() {
             <Button
               onClick={handleSetup}
               disabled={setupMutation.isPending}
-              className="bg-teal-600 hover:bg-teal-700 text-white gap-2"
+              className="bg-green-600 hover:bg-green-700 text-gray-900 gap-2"
             >
               <Shield className="w-4 h-4" />
               {setupMutation.isPending ? "Setting up..." : "Begin Setup"}
@@ -233,7 +233,7 @@ export default function TwoFactorSettings() {
                 <Button
                   onClick={handleVerify}
                   disabled={verifyMutation.isPending || verificationCode.length !== 6}
-                  className="bg-teal-600 hover:bg-teal-700 text-white"
+                  className="bg-green-600 hover:bg-green-700 text-gray-900"
                 >
                   {verifyMutation.isPending ? "Verifying..." : "Verify & Enable"}
                 </Button>

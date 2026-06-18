@@ -185,7 +185,7 @@ export default function Note360() {
   if (loading || !isAuthenticated || !user || subLoading) {
     return (
       <div className="min-h-screen bg-slate-50 flex items-center justify-center">
-        <div className="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-teal-600"></div>
+        <div className="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-green-600"></div>
       </div>
     );
   }
@@ -212,7 +212,7 @@ export default function Note360() {
             <div className="mb-6 pb-6 border-b border-slate-200">
               <h1 className="text-3xl font-bold text-slate-900 mb-3">{selectedNote.title}</h1>
               <div className="flex items-center gap-3 text-sm">
-                <span className="px-3 py-1 bg-teal-100 text-teal-700 rounded-full">{selectedNote.specialty}</span>
+                <span className="px-3 py-1 bg-green-100 text-green-700 rounded-full">{selectedNote.specialty}</span>
                 <span className="px-3 py-1 bg-slate-100 text-slate-700 rounded-full">{selectedNote.exam}</span>
                 <span className="flex items-center gap-1 text-yellow-600">
                   <Zap className="w-4 h-4" />
@@ -271,8 +271,8 @@ export default function Note360() {
                   onClick={() => setSelectedNote(note)}
                 >
                   <div className="flex items-start justify-between mb-3">
-                    <h3 className="text-lg font-bold text-slate-900 group-hover:text-teal-700 transition-colors">{note.title}</h3>
-                    <BookMarked className="w-5 h-5 text-teal-600 flex-shrink-0" />
+                    <h3 className="text-lg font-bold text-slate-900 group-hover:text-green-700 transition-colors">{note.title}</h3>
+                    <BookMarked className="w-5 h-5 text-green-600 flex-shrink-0" />
                   </div>
                   <div className="flex items-center gap-2 mb-4">
                     <span className="text-xs px-2 py-1 bg-slate-100 text-slate-700 rounded-full">{note.exam}</span>
@@ -328,7 +328,7 @@ export default function Note360() {
                 <div className={`w-12 h-12 rounded-xl flex items-center justify-center mb-4 ${specialty.color}`}>
                   <Icon className="w-6 h-6" />
                 </div>
-                <h3 className="text-lg font-bold text-slate-900 mb-1 group-hover:text-teal-700 transition-colors">
+                <h3 className="text-lg font-bold text-slate-900 mb-1 group-hover:text-green-700 transition-colors">
                   {specialty.name}
                 </h3>
                 <p className="text-sm text-slate-600">{specialty.noteCount} notes</p>

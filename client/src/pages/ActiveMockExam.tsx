@@ -225,7 +225,7 @@ export default function ActiveMockExam() {
               {/* Question Header */}
               <div className="mb-6 pb-6 border-b border-slate-200">
                 <div className="flex items-center justify-between mb-2">
-                  <span className="text-sm font-semibold text-teal-600">
+                  <span className="text-sm font-semibold text-green-600">
                     Question {examState.currentQuestionIndex + 1} of {questions.length}
                   </span>
                   <div className="flex gap-2">
@@ -262,7 +262,7 @@ export default function ActiveMockExam() {
                     onClick={() => handleAnswerSelect(idx)}
                     className={`w-full p-4 rounded-lg border-2 text-left transition-all ${
                       selectedAnswer === idx
-                        ? "border-teal-600 bg-teal-50"
+                        ? "border-green-600 bg-green-50"
                         : "border-slate-200 bg-white hover:border-slate-300"
                     }`}
                   >
@@ -270,7 +270,7 @@ export default function ActiveMockExam() {
                       <div
                         className={`w-6 h-6 rounded-full border-2 flex items-center justify-center ${
                           selectedAnswer === idx
-                            ? "border-teal-600 bg-teal-600"
+                            ? "border-green-600 bg-green-600"
                             : "border-slate-300"
                         }`}
                       >
@@ -296,7 +296,7 @@ export default function ActiveMockExam() {
                 <Button
                   onClick={handleNext}
                   disabled={examState.currentQuestionIndex === questions.length - 1}
-                  className="bg-teal-600 hover:bg-teal-700 text-white gap-2 flex-1"
+                  className="bg-green-600 hover:bg-green-700 text-gray-900 gap-2 flex-1"
                 >
                   Next
                   <ChevronRight className="w-4 h-4" />
@@ -316,7 +316,7 @@ export default function ActiveMockExam() {
                     onClick={() => setExamState((prev) => ({ ...prev, currentQuestionIndex: idx }))}
                     className={`w-8 h-8 rounded text-xs font-semibold transition-all ${
                       idx === examState.currentQuestionIndex
-                        ? "bg-teal-600 text-white"
+                        ? "bg-green-600 text-gray-900"
                         : examState.answers[q.id] !== undefined
                         ? "bg-green-100 text-green-700"
                         : examState.flagged.has(q.id)
@@ -332,7 +332,7 @@ export default function ActiveMockExam() {
               {/* Submit Button */}
               <Button
                 onClick={handleSubmitExam}
-                className="w-full bg-teal-600 hover:bg-teal-700 text-white mt-6"
+                className="w-full bg-green-600 hover:bg-green-700 text-gray-900 mt-6"
               >
                 Submit Exam
               </Button>

@@ -198,7 +198,7 @@ export default function SCASimulator() {
                   </div>
                 </div>
                 <p className="text-sm text-slate-600 mb-6">{caseItem.scenario}</p>
-                <Button className="w-full bg-teal-600 hover:bg-teal-700 text-white">
+                <Button className="w-full bg-green-600 hover:bg-green-700 text-gray-900">
                   Start Consultation
                 </Button>
               </Card>
@@ -261,7 +261,7 @@ export default function SCASimulator() {
                   <div
                     className={`max-w-xs lg:max-w-md px-4 py-2 rounded-lg ${
                       msg.role === "user"
-                        ? "bg-teal-600 text-white"
+                        ? "bg-green-600 text-gray-900"
                         : "bg-slate-100 text-slate-900"
                     }`}
                   >
@@ -318,7 +318,7 @@ export default function SCASimulator() {
               <Button
                 onClick={handleSendMessage}
                 disabled={isLoading || (!manualInput && !transcript)}
-                className="bg-teal-600 hover:bg-teal-700 text-white"
+                className="bg-green-600 hover:bg-green-700 text-gray-900"
               >
                 <Send className="w-4 h-4" />
               </Button>

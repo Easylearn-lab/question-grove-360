@@ -36,7 +36,7 @@ export function AICoachFloating() {
       {/* Floating Button */}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className={`fixed bottom-6 right-6 w-14 h-14 rounded-full bg-teal-600 hover:bg-teal-700 text-white shadow-lg flex items-center justify-center transition-all z-40 ${
+        className={`fixed bottom-6 right-6 w-14 h-14 rounded-full bg-green-600 hover:bg-green-700 text-gray-900 shadow-lg flex items-center justify-center transition-all z-40 ${
           isOpen ? "scale-0" : "scale-100"
         }`}
       >
@@ -47,12 +47,12 @@ export function AICoachFloating() {
       {isOpen && (
         <div className="fixed bottom-0 right-0 w-full sm:w-96 h-screen sm:h-[600px] bg-white rounded-t-lg sm:rounded-lg shadow-2xl flex flex-col z-50 animate-in slide-in-from-bottom-4 duration-300">
           {/* Header */}
-          <div className="bg-gradient-to-r from-teal-600 to-teal-700 text-white p-4 rounded-t-lg sm:rounded-t-lg flex items-center justify-between">
+          <div className="bg-gradient-to-r from-green-600 to-green-700 text-gray-900 p-4 rounded-t-lg sm:rounded-t-lg flex items-center justify-between">
             <div>
               <h3 className="font-bold text-lg">AI Coach360</h3>
-              <p className="text-sm text-teal-100">Your personalized study assistant</p>
+              <p className="text-sm text-green-100">Your personalized study assistant</p>
             </div>
-            <button onClick={() => setIsOpen(false)} className="hover:bg-teal-800 p-2 rounded-lg transition-all">
+            <button onClick={() => setIsOpen(false)} className="hover:bg-green-800 p-2 rounded-lg transition-all">
               <X className="w-5 h-5" />
             </button>
           </div>
@@ -63,7 +63,7 @@ export function AICoachFloating() {
               <div key={i} className={`flex ${msg.role === "user" ? "justify-end" : "justify-start"}`}>
                 <div
                   className={`max-w-xs px-4 py-2 rounded-lg ${
-                    msg.role === "user" ? "bg-teal-600 text-white rounded-br-none" : "bg-gray-200 text-gray-900 rounded-bl-none"
+                    msg.role === "user" ? "bg-green-600 text-gray-900 rounded-br-none" : "bg-gray-200 text-gray-900 rounded-bl-none"
                   }`}
                 >
                   {msg.role === "assistant" ? <Streamdown>{msg.content}</Streamdown> : <p>{msg.content}</p>}
@@ -91,9 +91,9 @@ export function AICoachFloating() {
               onChange={(e) => setInput(e.target.value)}
               onKeyPress={(e) => e.key === "Enter" && handleSend()}
               placeholder="Ask me anything..."
-              className="flex-1 border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:border-teal-500"
+              className="flex-1 border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:border-green-500"
             />
-            <button onClick={handleSend} disabled={isLoading} className="bg-teal-600 hover:bg-teal-700 text-white p-2 rounded-lg transition-all disabled:opacity-50">
+            <button onClick={handleSend} disabled={isLoading} className="bg-green-600 hover:bg-green-700 text-gray-900 p-2 rounded-lg transition-all disabled:opacity-50">
               <Send className="w-5 h-5" />
             </button>
           </div>

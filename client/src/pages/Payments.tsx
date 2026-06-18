@@ -53,10 +53,10 @@ export default function Payments() {
 
           {subscriptionStatus.isLoading ? (
             <Card className="p-8 flex items-center justify-center">
-              <Loader2 className="w-6 h-6 animate-spin text-teal-600" />
+              <Loader2 className="w-6 h-6 animate-spin text-green-600" />
             </Card>
           ) : (
-            <Card className="p-8 border-l-4 border-l-teal-600">
+            <Card className="p-8 border-l-4 border-l-green-600">
               <div className="flex items-start justify-between">
                 <div>
                   <div className="flex items-center gap-3 mb-4">
@@ -122,7 +122,7 @@ export default function Payments() {
 
           {paymentHistory.isLoading ? (
             <Card className="p-8 flex items-center justify-center">
-              <Loader2 className="w-6 h-6 animate-spin text-teal-600" />
+              <Loader2 className="w-6 h-6 animate-spin text-green-600" />
             </Card>
           ) : paymentHistory.data && paymentHistory.data.length > 0 ? (
             <div className="space-y-4">
@@ -161,7 +161,7 @@ export default function Payments() {
                         href={payment.pdfUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 px-4 py-2 bg-teal-600 hover:bg-teal-700 text-white rounded-lg transition-colors"
+                        className="inline-flex items-center gap-2 px-4 py-2 bg-green-600 hover:bg-green-700 text-gray-900 rounded-lg transition-colors"
                       >
                         <Download className="w-4 h-4" />
                         Invoice

@@ -116,7 +116,7 @@ export default function AdminCouponManager() {
         </div>
         <Button
           onClick={() => setShowForm(!showForm)}
-          className="bg-teal-600 hover:bg-teal-700 text-white gap-2"
+          className="bg-green-600 hover:bg-green-700 text-gray-900 gap-2"
         >
           <Plus className="w-4 h-4" />
           New Coupon
@@ -199,7 +199,7 @@ export default function AdminCouponManager() {
             </div>
           </div>
           <div className="flex gap-2 mt-6">
-            <Button onClick={handleAddCoupon} className="bg-teal-600 hover:bg-teal-700 text-white">
+            <Button onClick={handleAddCoupon} className="bg-green-600 hover:bg-green-700 text-gray-900">
               Create Coupon
             </Button>
             <Button onClick={() => setShowForm(false)} variant="outline">
@@ -228,13 +228,13 @@ export default function AdminCouponManager() {
                 <TableRow key={coupon.id}>
                   <TableCell>
                     <div className="flex items-center gap-2">
-                      <code className="font-mono font-bold text-teal-600">{coupon.code}</code>
+                      <code className="font-mono font-bold text-green-600">{coupon.code}</code>
                       <button
                         onClick={() => handleCopyCode(coupon.code, coupon.id)}
                         className="p-1 hover:bg-slate-100 rounded"
                       >
                         {copiedId === coupon.id ? (
-                          <Check className="w-4 h-4 text-teal-600" />
+                          <Check className="w-4 h-4 text-green-600" />
                         ) : (
                           <Copy className="w-4 h-4 text-slate-400" />
                         )}
@@ -253,7 +253,7 @@ export default function AdminCouponManager() {
                       <p className="font-medium">{coupon.usedCount}/{coupon.maxUses}</p>
                       <div className="w-20 h-1 bg-slate-200 rounded-full mt-1">
                         <div
-                          className="h-1 bg-teal-600 rounded-full"
+                          className="h-1 bg-green-600 rounded-full"
                           style={{ width: `${(coupon.usedCount / coupon.maxUses) * 100}%` }}
                         ></div>
                       </div>
@@ -265,7 +265,7 @@ export default function AdminCouponManager() {
                       onClick={() => handleToggleCoupon(coupon.id)}
                       className={`px-3 py-1 rounded-full text-xs font-semibold ${
                         coupon.active
-                          ? "bg-teal-100 text-teal-700"
+                          ? "bg-green-100 text-green-700"
                           : "bg-slate-100 text-slate-600"
                       }`}
                     >
@@ -295,7 +295,7 @@ export default function AdminCouponManager() {
         </Card>
         <Card className="p-4 border-slate-200">
           <p className="text-sm text-slate-600">Active</p>
-          <p className="text-3xl font-bold text-teal-600 mt-1">{coupons.filter((c) => c.active).length}</p>
+          <p className="text-3xl font-bold text-green-600 mt-1">{coupons.filter((c) => c.active).length}</p>
         </Card>
         <Card className="p-4 border-slate-200">
           <p className="text-sm text-slate-600">Total Uses</p>

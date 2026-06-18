@@ -96,7 +96,7 @@ export default function Bookmarks() {
     return (
       <main className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 p-4">
         <div className="flex items-center justify-center h-screen">
-          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-teal-600"></div>
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-green-600"></div>
         </div>
       </main>
     );
@@ -239,7 +239,7 @@ export default function Bookmarks() {
               </p>
               <Button
                 onClick={() => navigate("/questions")}
-                className="bg-teal-600 hover:bg-teal-700 text-white"
+                className="bg-green-600 hover:bg-green-700 text-gray-900"
               >
                 Go to Question Bank
               </Button>
@@ -273,7 +273,7 @@ export default function Bookmarks() {
               <Card className="p-6 mb-6 border-2 border-slate-200">
                 <div className="mb-4">
                   <div className="flex items-center justify-between mb-2">
-                    <span className="text-sm font-semibold text-teal-600">
+                    <span className="text-sm font-semibold text-green-600">
                       {currentQuestion?.specialty || "General"}
                     </span>
                     {currentQuestion?.difficulty && currentQuestion.difficulty !== "Easy" && (
@@ -364,7 +364,7 @@ export default function Bookmarks() {
                 <Button
                   onClick={handleNext}
                   disabled={currentQuestionIndex === totalQuestions - 1}
-                  className="flex-1 bg-teal-600 hover:bg-teal-700 text-white"
+                  className="flex-1 bg-green-600 hover:bg-green-700 text-gray-900"
                 >
                   Next
                 </Button>

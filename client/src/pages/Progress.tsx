@@ -98,7 +98,7 @@ export default function Progress() {
   if (authLoading) {
     return (
       <div className="min-h-screen flex items-center justify-center">
-        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-teal-600" />
+        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-green-600" />
       </div>
     );
   }
@@ -151,7 +151,7 @@ export default function Progress() {
                   onClick={() => setDateRange(opt.value)}
                   className={`px-3 py-1.5 text-sm font-medium rounded-md transition-all duration-200 ${
                     dateRange === opt.value
-                      ? "bg-teal-600 text-white shadow-sm"
+                      ? "bg-green-600 text-gray-900 shadow-sm"
                       : "text-gray-600 hover:text-gray-900 hover:bg-gray-200"
                   }`}
                 >
@@ -186,7 +186,7 @@ export default function Progress() {
               <Card>
                 <CardContent className="p-4">
                   <p className="text-sm text-gray-500">Average Score</p>
-                  <p className="text-2xl font-bold text-teal-600">{overallStats.avg}%</p>
+                  <p className="text-2xl font-bold text-green-600">{overallStats.avg}%</p>
                 </CardContent>
               </Card>
               <Card>
@@ -208,7 +208,7 @@ export default function Progress() {
             <Card className="col-span-4">
               <CardContent className="p-8 text-center">
                 <p className="text-gray-500">No mock exam data yet. Complete your first mock exam to see progress.</p>
-                <Button className="mt-4 bg-teal-600 hover:bg-teal-700" onClick={() => navigate("/mocks")}>
+                <Button className="mt-4 bg-green-600 hover:bg-green-700" onClick={() => navigate("/mocks")}>
                   Start a Mock Exam
                 </Button>
               </CardContent>
@@ -390,11 +390,11 @@ export default function Progress() {
                     <span className="text-sm font-semibold">{flashcardStats.total || 0}</span>
                   </div>
                   {/* Mastery percentage */}
-                  <div className="bg-teal-50 rounded-lg p-4 text-center">
-                    <p className="text-3xl font-bold text-teal-700">
+                  <div className="bg-green-50 rounded-lg p-4 text-center">
+                    <p className="text-3xl font-bold text-green-700">
                       {flashcardStats.total ? Math.round(((flashcardStats.mastered || 0) / flashcardStats.total) * 100) : 0}%
                     </p>
-                    <p className="text-sm text-teal-600 mt-1">Overall Mastery</p>
+                    <p className="text-sm text-green-600 mt-1">Overall Mastery</p>
                   </div>
                 </div>
               ) : (

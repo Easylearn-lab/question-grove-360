@@ -154,7 +154,7 @@ export default function Pricing() {
               onClick={() => setActiveTrack("AKT")}
               className={`px-6 sm:px-8 py-3 rounded-lg font-semibold text-sm transition-all ${
                 activeTrack === "AKT"
-                  ? "bg-teal-600 text-white shadow-md"
+                  ? "bg-green-600 text-gray-900 shadow-md"
                   : "text-slate-600 hover:text-slate-900"
               }`}
             >
@@ -164,7 +164,7 @@ export default function Pricing() {
               onClick={() => setActiveTrack("SCA")}
               className={`px-6 sm:px-8 py-3 rounded-lg font-semibold text-sm transition-all ${
                 activeTrack === "SCA"
-                  ? "bg-teal-600 text-white shadow-md"
+                  ? "bg-green-600 text-gray-900 shadow-md"
                   : "text-slate-600 hover:text-slate-900"
               }`}
             >
@@ -191,12 +191,12 @@ export default function Pricing() {
               key={plan.key}
               className={`relative p-6 sm:p-8 rounded-2xl transition-all ${
                 plan.popular
-                  ? "ring-2 ring-teal-500 shadow-2xl scale-[1.02]"
+                  ? "ring-2 ring-green-500 shadow-2xl scale-[1.02]"
                   : "border border-slate-200 shadow-lg hover:shadow-xl"
               }`}
             >
               {plan.popular && (
-                <Badge className="absolute -top-3 left-1/2 -translate-x-1/2 bg-teal-600 text-white px-4 py-1.5 text-xs font-bold">
+                <Badge className="absolute -top-3 left-1/2 -translate-x-1/2 bg-green-600 text-gray-900 px-4 py-1.5 text-xs font-bold">
                   <Sparkles className="w-3 h-3 mr-1" />
                   Best Value
                 </Badge>
@@ -221,7 +221,7 @@ export default function Pricing() {
                 </div>
                 <div className="text-xs text-slate-500">
                   <span className="line-through">Usually £{plan.fullPrice}</span>
-                  <span className="ml-2 text-teal-600 font-semibold">
+                  <span className="ml-2 text-green-600 font-semibold">
                     Save £{plan.savings}
                   </span>
                 </div>
@@ -245,7 +245,7 @@ export default function Pricing() {
                   disabled={loadingPlan !== null}
                   className={`w-full py-3 rounded-lg font-semibold text-base transition-all ${
                     plan.popular
-                      ? "bg-teal-600 hover:bg-teal-700 text-white"
+                      ? "bg-green-600 hover:bg-green-700 text-gray-900"
                       : "bg-slate-900 hover:bg-slate-800 text-white"
                   }`}
                 >
@@ -267,7 +267,7 @@ export default function Pricing() {
           <div className="grid sm:grid-cols-2 gap-4 max-w-2xl mx-auto">
             {features.map((feature, index) => (
               <div key={index} className="flex items-start gap-3">
-                <Check className="w-5 h-5 text-teal-600 flex-shrink-0 mt-0.5" />
+                <Check className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
                 <span className="text-slate-700">{feature}</span>
               </div>
             ))}

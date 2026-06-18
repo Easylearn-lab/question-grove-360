@@ -140,7 +140,7 @@ export default function MockExams() {
   if (loading || !isAuthenticated || !user || subLoading) {
     return (
       <div className="min-h-screen bg-slate-50 flex items-center justify-center">
-        <div className="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-teal-600"></div>
+        <div className="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-green-600"></div>
       </div>
     );
   }
@@ -197,7 +197,7 @@ export default function MockExams() {
 
             <div className="flex gap-3 justify-center">
               <Button variant="outline" onClick={() => setMockState("list")}>Back to Mocks</Button>
-              <Button onClick={() => navigate("/dashboard")} className="bg-teal-600 hover:bg-teal-700 text-white">Dashboard</Button>
+              <Button onClick={() => navigate("/dashboard")} className="bg-green-600 hover:bg-green-700 text-gray-900">Dashboard</Button>
             </div>
           </Card>
 
@@ -270,7 +270,7 @@ export default function MockExams() {
       return (
         <div className="min-h-screen bg-slate-50 flex items-center justify-center">
           <div className="text-center">
-            <div className="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-teal-600"></div>
+            <div className="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-green-600"></div>
             <p className="mt-4 text-slate-600">Loading exam questions...</p>
           </div>
         </div>
@@ -289,12 +289,12 @@ export default function MockExams() {
             </div>
           </header>
           <main className="max-w-3xl mx-auto px-4 py-16 text-center">
-            <div className="w-20 h-20 mx-auto mb-6 bg-teal-100 rounded-full flex items-center justify-center">
-              <FileText className="w-10 h-10 text-teal-600" />
+            <div className="w-20 h-20 mx-auto mb-6 bg-green-100 rounded-full flex items-center justify-center">
+              <FileText className="w-10 h-10 text-green-600" />
             </div>
             <h2 className="text-2xl font-bold text-slate-900 mb-3">No Questions Available</h2>
             <p className="text-slate-600 mb-6">Questions haven't been added to this exam yet. Check back soon.</p>
-            <Button onClick={() => setMockState("list")} className="bg-teal-600 hover:bg-teal-700 text-white">Back to Mocks</Button>
+            <Button onClick={() => setMockState("list")} className="bg-green-600 hover:bg-green-700 text-gray-900">Back to Mocks</Button>
           </main>
         </div>
       );
@@ -336,8 +336,8 @@ export default function MockExams() {
                         key={idx}
                         onClick={() => { setCurrentQuestionIndex(idx); setSelectedAnswer(null); }}
                         className={`w-8 h-8 rounded text-xs font-medium transition-all ${
-                          isCurrent ? "bg-teal-600 text-white ring-2 ring-teal-300" :
-                          isAnswered ? "bg-teal-100 text-teal-700" :
+                          isCurrent ? "bg-green-600 text-gray-900 ring-2 ring-green-300" :
+                          isAnswered ? "bg-green-100 text-green-700" :
                           "bg-slate-100 text-slate-600 hover:bg-slate-200"
                         }`}
                       >
@@ -349,7 +349,7 @@ export default function MockExams() {
                 <div className="mt-4 pt-4 border-t border-slate-200">
                   <p className="text-xs text-slate-600">Answered: {answeredCount}/{totalQuestions}</p>
                   <div className="w-full bg-slate-200 rounded-full h-1.5 mt-2">
-                    <div className="bg-teal-600 h-1.5 rounded-full" style={{ width: `${(answeredCount / totalQuestions) * 100}%` }} />
+                    <div className="bg-green-600 h-1.5 rounded-full" style={{ width: `${(answeredCount / totalQuestions) * 100}%` }} />
                   </div>
                 </div>
               </Card>
@@ -386,12 +386,12 @@ export default function MockExams() {
                           key={option}
                           onClick={() => setSelectedAnswer(option)}
                           className={`w-full text-left p-4 rounded-lg border-2 transition-all ${
-                            isSelected ? "border-teal-600 bg-teal-50" : "border-slate-200 bg-white hover:border-slate-300"
+                            isSelected ? "border-green-600 bg-green-50" : "border-slate-200 bg-white hover:border-slate-300"
                           }`}
                         >
                           <div className="flex items-center gap-3">
                             <div className={`w-6 h-6 rounded-full border-2 flex items-center justify-center font-medium text-sm ${
-                              isSelected ? "border-teal-600 bg-teal-600 text-white" : "border-slate-300"
+                              isSelected ? "border-green-600 bg-green-600 text-gray-900" : "border-slate-300"
                             }`}>{option}</div>
                             <span className="text-slate-900">{optionText}</span>
                           </div>
@@ -429,7 +429,7 @@ export default function MockExams() {
                     <Button
                       onClick={handleSubmitAnswer}
                       disabled={!selectedAnswer}
-                      className="bg-teal-600 hover:bg-teal-700 text-white"
+                      className="bg-green-600 hover:bg-green-700 text-gray-900"
                     >
                       {currentQuestionIndex === totalQuestions - 1 ? "Submit & Finish" : "Next"}
                     </Button>
@@ -471,7 +471,7 @@ export default function MockExams() {
                   <p className="text-sm text-slate-600 mb-1">{stat.label}</p>
                   <p className="text-3xl font-bold text-slate-900">{stat.value}</p>
                 </div>
-                <stat.icon className="w-10 h-10 text-teal-600 opacity-20" />
+                <stat.icon className="w-10 h-10 text-green-600 opacity-20" />
               </div>
             </Card>
           ))}
@@ -501,7 +501,7 @@ export default function MockExams() {
                 <div className="text-right">
                   <Button
                     onClick={() => handleStartMock(mock)}
-                    className="bg-teal-600 hover:bg-teal-700 text-white w-full gap-2"
+                    className="bg-green-600 hover:bg-green-700 text-gray-900 w-full gap-2"
                   >
                     <Play className="w-4 h-4" />
                     Start Exam

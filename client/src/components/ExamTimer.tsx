@@ -39,7 +39,7 @@ export default function ExamTimer({ totalSeconds, onTimeExpired, isPaused = fals
   return (
     <Card className={`p-4 border-2 ${isWarning ? "border-red-500 bg-red-50" : "border-slate-200"}`}>
       <div className="flex items-center gap-3">
-        <Clock className={`w-5 h-5 ${isWarning ? "text-red-600 animate-pulse" : "text-teal-600"}`} />
+        <Clock className={`w-5 h-5 ${isWarning ? "text-red-600 animate-pulse" : "text-green-600"}`} />
         <div>
           <p className="text-xs text-slate-600 font-medium">Time Remaining</p>
           <p className={`text-2xl font-bold font-mono ${isWarning ? "text-red-600" : "text-slate-900"}`}>

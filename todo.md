@@ -472,3 +472,18 @@
   - Store bookmarked explanations with user ID and content hash
   - Bookmarks page displays saved explanations with specialty and difficulty filters
   - Visual bookmark indicator shows in AI messages when explanation is bookmarked
+
+
+## MRCGP AKT Enhancement (June 18, 2026)
+- [x] Phase 1: Global brand color change from teal (#00968A) to lime green (#32CD32) across entire codebase (176 occurrences replaced)
+- [x] Fix text contrast: white text on green backgrounds changed to dark gray (#1A1A1A) for WCAG AA compliance
+- [x] Phase 2: Create questions_mrcgp database table with text-based IDs and full schema
+- [x] Phase 3: Build MRCGPAKTSpecialties component with specialty grid UI (15 specialties, 60 total questions)
+- [x] Phase 3: Build MRCGPAKTPractice component with practice view and question navigation
+- [x] Add routes to App.tsx: /mrcgp-akt and /practice/mrcgp-akt/:specialty
+- [x] Integrate MRCGP AKT button into Dashboard with "60 Q" indicator
+- [x] Add onClick handler to navigate to /mrcgp-akt specialties page
+- [x] Create unit tests for MRCGP AKT components (4 tests passing)
+- [x] Copy question JSON files to /public/questions/ for easy access
+- [ ] Phase 4: Implement question navigation, progress tracking, and subscription gating
+- [ ] Phase 5: Verify all features and save final checkpoint

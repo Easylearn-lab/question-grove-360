@@ -47,14 +47,14 @@ export default function ExamResults({
       </Button>
 
       {/* Score Card */}
-      <Card className={`p-12 mb-8 text-center border-2 ${passed ? "border-teal-500 bg-gradient-to-br from-teal-50 to-blue-50" : "border-red-500 bg-gradient-to-br from-red-50 to-orange-50"}`}>
-        <h1 className={`text-6xl font-bold mb-2 ${passed ? "text-teal-600" : "text-red-600"}`}>{percentage}%</h1>
-        <p className={`text-2xl font-semibold mb-4 ${passed ? "text-teal-700" : "text-red-700"}`}>{passed ? "PASS ✓" : "FAIL"}</p>
+      <Card className={`p-12 mb-8 text-center border-2 ${passed ? "border-green-500 bg-gradient-to-br from-green-50 to-blue-50" : "border-red-500 bg-gradient-to-br from-red-50 to-orange-50"}`}>
+        <h1 className={`text-6xl font-bold mb-2 ${passed ? "text-green-600" : "text-red-600"}`}>{percentage}%</h1>
+        <p className={`text-2xl font-semibold mb-4 ${passed ? "text-green-700" : "text-red-700"}`}>{passed ? "PASS ✓" : "FAIL"}</p>
         <p className="text-slate-600 mb-6">
           You answered {score} out of {totalQuestions} questions correctly in {minutes} minutes
         </p>
         <div className="flex gap-4 justify-center">
-          <Button onClick={onDownloadPDF} className="bg-teal-600 hover:bg-teal-700 gap-2">
+          <Button onClick={onDownloadPDF} className="bg-green-600 hover:bg-green-700 gap-2">
             <Download className="w-4 h-4" />
             Download PDF Report
           </Button>
@@ -69,7 +69,7 @@ export default function ExamResults({
       <div className="grid md:grid-cols-4 gap-6 mb-8">
         <Card className="p-6 border-slate-200">
           <p className="text-sm text-slate-600 mb-2">Your Score</p>
-          <p className="text-3xl font-bold text-teal-600">{percentage}%</p>
+          <p className="text-3xl font-bold text-green-600">{percentage}%</p>
         </Card>
         <Card className="p-6 border-slate-200">
           <p className="text-sm text-slate-600 mb-2">Platform Average</p>
@@ -77,7 +77,7 @@ export default function ExamResults({
         </Card>
         <Card className="p-6 border-slate-200">
           <p className="text-sm text-slate-600 mb-2">Difference</p>
-          <p className={`text-3xl font-bold ${percentage >= platformAverage ? "text-teal-600" : "text-red-600"}`}>
+          <p className={`text-3xl font-bold ${percentage >= platformAverage ? "text-green-600" : "text-red-600"}`}>
             {percentage >= platformAverage ? "+" : ""}{percentage - platformAverage}%
           </p>
         </Card>
@@ -147,7 +147,7 @@ export default function ExamResults({
                 <div className="flex-1">
                   <p className="font-medium text-slate-900">{item.specialty}</p>
                   <div className="w-full bg-slate-200 rounded-full h-2 mt-1">
-                    <div className="bg-teal-600 h-2 rounded-full" style={{ width: `${percentage}%` }}></div>
+                    <div className="bg-green-600 h-2 rounded-full" style={{ width: `${percentage}%` }}></div>
                   </div>
                 </div>
                 <div className="ml-4 text-right">

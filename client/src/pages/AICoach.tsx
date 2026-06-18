@@ -144,7 +144,7 @@ Would you like me to create a specific study plan for ${SAMPLE_CONTEXT.weakAreas
             <ArrowLeft className="w-4 h-4" />
           </Button>
           <div className="flex items-center gap-2">
-            <Sparkles className="w-6 h-6 text-teal-600" />
+            <Sparkles className="w-6 h-6 text-green-600" />
             <div>
               <h1 className="text-2xl font-bold text-slate-900">AI Coach360</h1>
               <p className="text-xs text-slate-600">Powered by Claude AI</p>
@@ -161,7 +161,7 @@ Would you like me to create a specific study plan for ${SAMPLE_CONTEXT.weakAreas
               <div
                 className={`max-w-2xl px-6 py-4 rounded-lg ${
                   msg.role === "user"
-                    ? "bg-teal-600 text-white"
+                    ? "bg-green-600 text-gray-900"
                     : "bg-white border border-slate-200 text-slate-900"
                 }`}
               >
@@ -176,7 +176,7 @@ Would you like me to create a specific study plan for ${SAMPLE_CONTEXT.weakAreas
           {isLoading && (
             <div className="flex justify-start">
               <div className="bg-white border border-slate-200 text-slate-900 px-6 py-4 rounded-lg">
-                <Loader2 className="w-5 h-5 animate-spin text-teal-600" />
+                <Loader2 className="w-5 h-5 animate-spin text-green-600" />
               </div>
             </div>
           )}
@@ -203,7 +203,7 @@ Would you like me to create a specific study plan for ${SAMPLE_CONTEXT.weakAreas
             <Button
               onClick={handleSendMessage}
               disabled={isLoading || !input.trim()}
-              className="bg-teal-600 hover:bg-teal-700 text-white"
+              className="bg-green-600 hover:bg-green-700 text-gray-900"
             >
               <Send className="w-4 h-4" />
             </Button>

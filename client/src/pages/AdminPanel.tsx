@@ -99,7 +99,7 @@ export default function AdminPanel() {
                       <p className="text-sm text-slate-600 mb-1">{stat.label}</p>
                       <p className="text-3xl font-bold text-slate-900">{stat.value.toLocaleString()}</p>
                     </div>
-                    <stat.icon className="w-10 h-10 text-teal-600 opacity-20" />
+                    <stat.icon className="w-10 h-10 text-green-600 opacity-20" />
                   </div>
                 </Card>
               ))}
@@ -198,7 +198,7 @@ export default function AdminPanel() {
           {/* Questions Tab */}
           <TabsContent value="questions">
             <div className="mb-6">
-              <Button className="bg-teal-600 hover:bg-teal-700 text-white gap-2">
+              <Button className="bg-green-600 hover:bg-green-700 text-gray-900 gap-2">
                 <Plus className="w-4 h-4" />
                 Add Question
               </Button>
@@ -272,7 +272,7 @@ export default function AdminPanel() {
                   <Input defaultValue="3" type="number" disabled />
                   <p className="text-xs text-slate-500 mt-1">Fixed at 3 days. Coupons are admin-only.</p>
                 </div>
-                <Button className="bg-teal-600 hover:bg-teal-700 text-white">Save Settings</Button>
+                <Button className="bg-green-600 hover:bg-green-700 text-gray-900">Save Settings</Button>
               </div>
             </Card>
           </TabsContent>

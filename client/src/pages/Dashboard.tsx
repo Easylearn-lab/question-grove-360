@@ -22,7 +22,7 @@ export default function Dashboard() {
     return (
       <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 flex items-center justify-center">
         <div className="text-center">
-          <div className="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-teal-600"></div>
+          <div className="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-green-600"></div>
           <p className="mt-4 text-slate-600">Loading dashboard...</p>
         </div>
       </div>
@@ -45,7 +45,7 @@ export default function Dashboard() {
       <header className="bg-white border-b border-slate-200 sticky top-0 z-40">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <div className="w-8 h-8 bg-gradient-to-br from-teal-600 to-teal-700 rounded-lg flex items-center justify-center">
+            <div className="w-8 h-8 bg-gradient-to-br from-green-600 to-green-700 rounded-lg flex items-center justify-center">
               <Brain className="w-5 h-5 text-white" />
             </div>
             <span className="font-bold text-xl text-slate-900">Question Grove 360</span>
@@ -55,7 +55,7 @@ export default function Dashboard() {
               <p className="text-sm font-medium text-slate-900">{user.name || user.email}</p>
               <p className="text-xs text-slate-500">{profile?.specialty || "Medical Student"}</p>
             </div>
-            <div className="w-10 h-10 bg-gradient-to-br from-teal-600 to-teal-700 rounded-full flex items-center justify-center text-white font-bold">
+            <div className="w-10 h-10 bg-gradient-to-br from-green-600 to-green-700 rounded-full flex items-center justify-center text-white font-bold">
               {(user.name?.[0] || user.email?.[0] || "U").toUpperCase()}
             </div>
             <Button
@@ -100,7 +100,7 @@ export default function Dashboard() {
                   <p className="text-sm text-slate-600 mb-1">{stat.label}</p>
                   <p className="text-3xl font-bold text-slate-900">{stat.value}</p>
                 </div>
-                <stat.icon className="w-10 h-10 text-teal-600 opacity-20" />
+                <stat.icon className="w-10 h-10 text-green-600 opacity-20" />
               </div>
             </Card>
           ))}
@@ -111,12 +111,12 @@ export default function Dashboard() {
           {/* Question Bank */}
           <Card className="p-8 border-slate-200 hover:shadow-lg transition-all cursor-pointer group" onClick={() => navigate("/questions")}>
             <div className="flex items-start justify-between mb-4">
-              <BookOpen className="w-12 h-12 text-teal-600 group-hover:scale-110 transition-transform" />
-              <span className="text-xs font-semibold text-teal-600 bg-teal-50 px-3 py-1 rounded-full">NEW</span>
+              <BookOpen className="w-12 h-12 text-green-600 group-hover:scale-110 transition-transform" />
+              <span className="text-xs font-semibold text-green-600 bg-green-50 px-3 py-1 rounded-full">NEW</span>
             </div>
             <h3 className="text-2xl font-bold text-slate-900 mb-2">Question Bank</h3>
             <p className="text-slate-600 mb-6">Practice with thousands of curated questions in tutor or exam mode</p>
-            <Button className="bg-teal-600 hover:bg-teal-700 text-white w-full">
+            <Button className="bg-green-600 hover:bg-green-700 text-gray-900 w-full">
               Start Practicing
             </Button>
           </Card>
@@ -159,20 +159,20 @@ export default function Dashboard() {
         </div>
 
         {/* SCA Simulator */}
-        <Card className="mt-8 p-8 border-slate-200 bg-gradient-to-r from-teal-50 to-blue-50 hover:shadow-lg transition-all cursor-pointer" onClick={() => navigate("/sca")}>
+        <Card className="mt-8 p-8 border-slate-200 bg-gradient-to-r from-green-50 to-blue-50 hover:shadow-lg transition-all cursor-pointer" onClick={() => navigate("/sca")}>
           <div className="flex items-start justify-between">
             <div className="flex-1">
               <div className="flex items-center gap-3 mb-3">
-                <Zap className="w-6 h-6 text-teal-600" />
-                <span className="text-xs font-semibold text-teal-600 bg-teal-100 px-3 py-1 rounded-full">PREMIUM</span>
+                <Zap className="w-6 h-6 text-green-600" />
+                <span className="text-xs font-semibold text-green-600 bg-green-100 px-3 py-1 rounded-full">PREMIUM</span>
               </div>
               <h3 className="text-2xl font-bold text-slate-900 mb-2">SCA Consultation Simulator</h3>
               <p className="text-slate-600 mb-4">Experience real-time voice-based patient consultations with instant feedback</p>
-              <Button className="bg-teal-600 hover:bg-teal-700 text-white">
+              <Button className="bg-green-600 hover:bg-green-700 text-gray-900">
                 Start Simulation
               </Button>
             </div>
-            <div className="hidden md:block w-32 h-32 bg-gradient-to-br from-teal-200 to-blue-200 rounded-2xl opacity-20"></div>
+            <div className="hidden md:block w-32 h-32 bg-gradient-to-br from-green-200 to-blue-200 rounded-2xl opacity-20"></div>
           </div>
         </Card>
 
@@ -195,7 +195,7 @@ export default function Dashboard() {
           </div>
           <h3 className="text-2xl font-bold text-slate-900 mb-2">Upgrade Your Plan</h3>
           <p className="text-slate-600 mb-6">Unlock premium features and accelerate your exam preparation</p>
-          <Button className="bg-green-600 hover:bg-green-700 text-white w-full">
+          <Button className="bg-green-600 hover:bg-green-700 text-gray-900 w-full">
             View Plans
           </Button>
         </Card>

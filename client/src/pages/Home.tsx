@@ -20,7 +20,7 @@ export default function Home() {
     return (
       <div className="min-h-screen bg-white flex items-center justify-center">
         <div className="text-center">
-          <div className="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-teal-600"></div>
+          <div className="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-green-600"></div>
           <p className="mt-4 text-slate-600">Loading...</p>
         </div>
       </div>
@@ -31,7 +31,7 @@ export default function Home() {
     return (
       <div className="min-h-screen bg-white flex items-center justify-center">
         <div className="text-center">
-          <div className="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-teal-600"></div>
+          <div className="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-green-600"></div>
           <p className="mt-4 text-slate-600">Redirecting to dashboard...</p>
         </div>
       </div>
@@ -44,13 +44,13 @@ export default function Home() {
       <nav className="sticky top-0 z-50 bg-white border-b border-gray-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <div className="w-8 h-8 bg-gradient-to-br from-teal-600 to-teal-700 rounded-lg flex items-center justify-center">
+            <div className="w-8 h-8 bg-gradient-to-br from-green-600 to-green-700 rounded-lg flex items-center justify-center">
               <Brain className="w-5 h-5 text-white" />
             </div>
             <span className="font-bold text-xl text-slate-900">Question Grove 360</span>
           </div>
           <a href={getLoginUrl()} className="inline-flex">
-            <Button className="bg-teal-600 hover:bg-teal-700 text-white">
+            <Button className="bg-green-600 hover:bg-green-700 text-gray-900">
               Sign In
             </Button>
           </a>
@@ -61,7 +61,7 @@ export default function Home() {
       <section className="bg-gradient-to-b from-gray-900 to-gray-800 text-white py-24 px-4">
         <div className="max-w-7xl mx-auto text-center">
           <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
-            One Platform. <span className="text-teal-500">Global Success.</span>
+            One Platform. <span className="text-green-500">Global Success.</span>
           </h1>
           <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
             The world's most advanced medical exam preparation platform.
@@ -76,12 +76,12 @@ export default function Home() {
           
           <div className="grid md:grid-cols-2 gap-8 mb-8">
             {/* UK Medical Exams Card */}
-            <div className="bg-white rounded-xl p-8 border-t-4 border-teal-500 shadow-lg hover:shadow-xl transition-all hover:-translate-y-2">
+            <div className="bg-white rounded-xl p-8 border-t-4 border-green-500 shadow-lg hover:shadow-xl transition-all hover:-translate-y-2">
               <div className="text-4xl mb-4">🇬🇧</div>
               <h3 className="text-2xl font-bold text-gray-900 mb-2">UK Medical Exams</h3>
               <p className="text-gray-600 mb-6">Complete preparation for 15+ UK postgraduate and licensing exams including MRCGP, PLAB, UKMLA, MRCP, and more.</p>
               
-              <a href={getLoginUrl()} className="w-full bg-teal-600 text-white py-3 rounded-lg font-semibold hover:bg-teal-700 text-center block">
+              <a href={getLoginUrl()} className="w-full bg-green-600 text-gray-900 py-3 rounded-lg font-semibold hover:bg-green-700 text-center block">
                 Access UK Exams →
               </a>
             </div>
@@ -153,25 +153,25 @@ export default function Home() {
               <div className="text-gray-600 text-sm mb-1">for 3 months</div>
               <div className="text-xs text-gray-400 mb-4">
                 <span className="line-through">£23.97</span>
-                <span className="ml-1 text-teal-600 font-semibold">Save £3.97</span>
+                <span className="ml-1 text-green-600 font-semibold">Save £3.97</span>
               </div>
               <div className="text-xs text-gray-500 mb-4">That's just £6.67/month</div>
               <a href="/pricing" className="block w-full bg-gray-900 text-white py-2.5 rounded-lg font-semibold hover:bg-gray-800 transition-colors">Get Started</a>
             </div>
 
             {/* 6-Month - Featured */}
-            <div className="relative bg-white rounded-2xl p-6 border-2 border-teal-500 shadow-xl text-center">
-              <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-teal-600 text-white px-3 py-1 rounded-full text-xs font-bold">Best Value</div>
+            <div className="relative bg-white rounded-2xl p-6 border-2 border-green-500 shadow-xl text-center">
+              <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-green-600 text-gray-900 px-3 py-1 rounded-full text-xs font-bold">Best Value</div>
               <h3 className="text-xl font-bold text-gray-900 mb-1 mt-2">6-Month</h3>
               <p className="text-xs text-gray-500 mb-4">Ideal study timeline</p>
               <div className="text-4xl font-bold text-gray-900 mb-1">£35</div>
               <div className="text-gray-600 text-sm mb-1">for 6 months</div>
               <div className="text-xs text-gray-400 mb-4">
                 <span className="line-through">£47.94</span>
-                <span className="ml-1 text-teal-600 font-semibold">Save £12.94</span>
+                <span className="ml-1 text-green-600 font-semibold">Save £12.94</span>
               </div>
               <div className="text-xs text-gray-500 mb-4">That's just £5.83/month</div>
-              <a href="/pricing" className="block w-full bg-teal-600 text-white py-2.5 rounded-lg font-semibold hover:bg-teal-700 transition-colors">Get Started</a>
+              <a href="/pricing" className="block w-full bg-green-600 text-gray-900 py-2.5 rounded-lg font-semibold hover:bg-green-700 transition-colors">Get Started</a>
             </div>
           </div>
           

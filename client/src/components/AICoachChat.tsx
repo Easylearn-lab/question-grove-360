@@ -72,9 +72,9 @@ export default function AICoachChat() {
   return (
     <div className="flex flex-col h-full bg-white rounded-lg border border-slate-200">
       {/* Header */}
-      <div className="p-4 border-b border-slate-200 bg-gradient-to-r from-teal-50 to-blue-50">
+      <div className="p-4 border-b border-slate-200 bg-gradient-to-r from-green-50 to-blue-50">
         <div className="flex items-center gap-3">
-          <div className="w-10 h-10 bg-gradient-to-br from-teal-600 to-teal-700 rounded-full flex items-center justify-center">
+          <div className="w-10 h-10 bg-gradient-to-br from-green-600 to-green-700 rounded-full flex items-center justify-center">
             <MessageCircle className="w-5 h-5 text-white" />
           </div>
           <div>
@@ -100,7 +100,7 @@ export default function AICoachChat() {
               <div
                 className={`max-w-xs lg:max-w-md px-4 py-3 rounded-lg ${
                   message.role === "user"
-                    ? "bg-teal-600 text-white rounded-br-none"
+                    ? "bg-green-600 text-gray-900 rounded-br-none"
                     : "bg-slate-100 text-slate-900 rounded-bl-none"
                 }`}
               >
@@ -109,7 +109,7 @@ export default function AICoachChat() {
                 ) : (
                   <p>{message.content}</p>
                 )}
-                <p className={`text-xs mt-2 ${message.role === "user" ? "text-teal-100" : "text-slate-500"}`}>
+                <p className={`text-xs mt-2 ${message.role === "user" ? "text-green-100" : "text-slate-500"}`}>
                   {message.timestamp.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" })}
                 </p>
               </div>
@@ -140,7 +140,7 @@ export default function AICoachChat() {
           <Button
             onClick={handleSendMessage}
             disabled={isLoading || !input.trim()}
-            className="bg-teal-600 hover:bg-teal-700 text-white gap-2"
+            className="bg-green-600 hover:bg-green-700 text-gray-900 gap-2"
           >
             <Send className="w-4 h-4" />
           </Button>

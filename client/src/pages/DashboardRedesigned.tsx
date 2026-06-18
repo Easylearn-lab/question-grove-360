@@ -56,9 +56,9 @@ function AccuracyTooltip({ active, payload }: any) {
     <div className="bg-white border border-gray-200 rounded-xl shadow-lg p-4 min-w-[200px]">
       <p className="text-xs text-gray-500 font-medium mb-2">{formattedDate}</p>
       <div className="flex items-center gap-2 mb-1.5">
-        <div className="w-3 h-3 rounded-full bg-teal-500" />
+        <div className="w-3 h-3 rounded-full bg-green-500" />
         <span className="text-sm text-gray-700">Accuracy:</span>
-        <span className="text-sm font-bold text-teal-700">{data.accuracy}%</span>
+        <span className="text-sm font-bold text-green-700">{data.accuracy}%</span>
       </div>
       <div className="flex items-center gap-2">
         <div className="w-3 h-3 rounded-full bg-purple-500" />
@@ -154,7 +154,7 @@ export default function DashboardRedesigned() {
     return (
       <div className="min-h-screen bg-gray-50 flex items-center justify-center">
         <div className="text-center">
-          <div className="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-teal-600"></div>
+          <div className="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-green-600"></div>
           <p className="mt-4 text-gray-600">Loading dashboard...</p>
         </div>
       </div>
@@ -206,7 +206,7 @@ export default function DashboardRedesigned() {
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
                 <Button variant="outline" size="sm" className="flex items-center gap-2">
-                  <div className="w-7 h-7 rounded-full bg-teal-100 flex items-center justify-center text-teal-700 font-semibold text-sm">
+                  <div className="w-7 h-7 rounded-full bg-green-100 flex items-center justify-center text-green-700 font-semibold text-sm">
                     {user?.name?.charAt(0) || "U"}
                   </div>
                   <span className="hidden md:inline">{user?.name}</span>
@@ -234,22 +234,34 @@ export default function DashboardRedesigned() {
         <div className="mb-8">
           <h2 className="text-lg font-semibold text-gray-900 mb-4">Select Exam</h2>
           <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-2">
-            {exams.map((exam) => (
-              <button
-                key={exam.id}
-                onClick={() => setSelectedExam(exam.id)}
-                className={`p-3 rounded-lg font-medium transition-all ${
-                  selectedExam === exam.id
-                    ? "bg-teal-600 text-white shadow-lg"
-                    : "bg-white text-gray-700 border border-gray-200 hover:border-teal-300 hover:bg-teal-50"
-                }`}
-              >
-                <span className="block text-sm">{exam.name}</span>
-                {exam.questionCount === 0 && selectedExam !== exam.id && (
-                  <span className="block text-[10px] text-gray-400 mt-0.5">Coming soon</span>
-                )}
-              </button>
-            ))}
+            {exams.map((exam) => {
+              const isMRCGPAKT = exam.id === "MRCGP AKT";
+              return (
+                <button
+                  key={exam.id}
+                  onClick={() => {
+                    if (isMRCGPAKT) {
+                      navigate("/mrcgp-akt");
+                    } else {
+                      setSelectedExam(exam.id);
+                    }
+                  }}
+                  className={`p-3 rounded-lg font-medium transition-all ${
+                    selectedExam === exam.id && !isMRCGPAKT
+                      ? "bg-green-600 text-gray-900 shadow-lg"
+                      : "bg-white text-gray-700 border border-green-300 hover:border-green-400 hover:bg-green-50"
+                  }`}
+                >
+                  <span className="block text-sm">{exam.name}</span>
+                  {isMRCGPAKT && (
+                    <span className="block text-[10px] text-green-600 mt-0.5 font-semibold">60 Q</span>
+                  )}
+                  {exam.questionCount === 0 && selectedExam !== exam.id && !isMRCGPAKT && (
+                    <span className="block text-[10px] text-gray-400 mt-0.5">Coming soon</span>
+                  )}
+                </button>
+              );
+            })}
           </div>
         </div>
 
@@ -289,20 +301,20 @@ export default function DashboardRedesigned() {
           </Card>
 
           {/* Accuracy */}
-          <Card className="p-6 bg-gradient-to-br from-teal-50 to-teal-100 border-teal-200">
+          <Card className="p-6 bg-gradient-to-br from-green-50 to-green-100 border-green-200">
             <div className="flex items-center justify-between">
               <div>
                 <p className="text-sm text-gray-600 font-medium">Accuracy</p>
                 {isStatsLoading ? (
-                  <div className="h-9 w-20 bg-teal-200/50 rounded animate-pulse mt-2" />
+                  <div className="h-9 w-20 bg-green-200/50 rounded animate-pulse mt-2" />
                 ) : hasNoData ? (
                   <>
-                    <p className="text-2xl font-bold text-teal-600 mt-2">—</p>
+                    <p className="text-2xl font-bold text-green-600 mt-2">—</p>
                     <p className="text-xs text-gray-600 mt-1">No data yet</p>
                   </>
                 ) : (
                   <>
-                    <p className="text-3xl font-bold text-teal-600 mt-2">{stats?.accuracy}%</p>
+                    <p className="text-3xl font-bold text-green-600 mt-2">{stats?.accuracy}%</p>
                     <p className="text-xs text-gray-600 mt-1">
                       {stats?.accuracyChange !== null && stats?.accuracyChange !== undefined
                         ? `${stats.accuracyChange >= 0 ? "+" : ""}${stats.accuracyChange}% this week`
@@ -311,7 +323,7 @@ export default function DashboardRedesigned() {
                   </>
                 )}
               </div>
-              <TrendingUp className="w-12 h-12 text-teal-500 opacity-30" />
+              <TrendingUp className="w-12 h-12 text-green-500 opacity-30" />
             </div>
           </Card>
 
@@ -397,8 +409,8 @@ export default function DashboardRedesigned() {
                     onClick={() => setDateRange(option.value)}
                     className={`px-3 py-1.5 rounded-md text-xs font-semibold transition-all duration-200 ${
                       dateRange === option.value
-                        ? "bg-teal-600 text-white shadow-sm"
-                        : "text-gray-600 hover:text-teal-700 hover:bg-gray-200"
+                        ? "bg-green-600 text-gray-900 shadow-sm"
+                        : "text-gray-600 hover:text-green-700 hover:bg-gray-200"
                     }`}
                   >
                     {option.label}
@@ -464,7 +476,7 @@ export default function DashboardRedesigned() {
                 </ResponsiveContainer>
                 <div className="flex items-center justify-center gap-4 mt-3 text-xs text-gray-500">
                   <span className="flex items-center gap-1.5">
-                    <span className="w-3 h-0.5 bg-teal-500 rounded-full inline-block" />
+                    <span className="w-3 h-0.5 bg-green-500 rounded-full inline-block" />
                     Your Accuracy
                   </span>
                   <span className="flex items-center gap-1.5">
@@ -544,7 +556,7 @@ export default function DashboardRedesigned() {
               </div>
               <h3 className="font-semibold text-gray-900">{item.title}</h3>
               <p className="text-sm text-gray-600 mt-1">{item.desc}</p>
-              <p className="text-teal-600 font-medium mt-4">Get Started →</p>
+              <p className="text-green-600 font-medium mt-4">Get Started →</p>
             </Card>
           ))}
         </div>

@@ -22,6 +22,8 @@ import Progress from "./pages/Progress";
 import Bookmarks from "./pages/Bookmarks";
 import TwoFactorSettings from "./pages/TwoFactorSettings";
 import { AICoachFloating } from "./components/AICoachFloating";
+import MRCGPAKTSpecialties from "./pages/MRCGPAKTSpecialties";
+import MRCGPAKTPractice from "./pages/MRCGPAKTPractice";
 
 function Router() {
   // make sure to consider if you need authentication for certain routes
@@ -44,6 +46,8 @@ function Router() {
       <Route path={"/progress"} component={Progress} />
       <Route path={"/bookmarks"} component={Bookmarks} />
       <Route path={"/settings/2fa"} component={TwoFactorSettings} />
+      <Route path={"/mrcgp-akt"} component={MRCGPAKTSpecialties} />
+      <Route path={"/practice/mrcgp-akt/:specialty"} component={MRCGPAKTPractice} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />

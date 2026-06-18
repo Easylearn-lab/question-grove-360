@@ -147,7 +147,7 @@ export default function QuestionBank() {
   if (loading || !isAuthenticated || !user || subLoading) {
     return (
       <div className="min-h-screen bg-slate-50 flex items-center justify-center">
-        <div className="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-teal-600"></div>
+        <div className="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-green-600"></div>
       </div>
     );
   }
@@ -238,8 +238,8 @@ export default function QuestionBank() {
           </div>
         </header>
         <main className="max-w-3xl mx-auto px-4 py-16 text-center">
-          <div className="w-20 h-20 mx-auto mb-6 bg-teal-100 rounded-full flex items-center justify-center">
-            <BookOpen className="w-10 h-10 text-teal-600" />
+          <div className="w-20 h-20 mx-auto mb-6 bg-green-100 rounded-full flex items-center justify-center">
+            <BookOpen className="w-10 h-10 text-green-600" />
           </div>
           <h2 className="text-2xl font-bold text-slate-900 mb-3">No Questions Available</h2>
           <p className="text-slate-600 mb-6 max-w-md mx-auto">
@@ -251,7 +251,7 @@ export default function QuestionBank() {
             <Button variant="outline" onClick={() => { setSpecialty("All Specialties"); setDifficulty("All Levels"); setSearchQuery(""); }}>
               Reset Filters
             </Button>
-            <Button onClick={() => navigate("/dashboard")} className="bg-teal-600 hover:bg-teal-700 text-white">
+            <Button onClick={() => navigate("/dashboard")} className="bg-green-600 hover:bg-green-700 text-gray-900">
               Back to Dashboard
             </Button>
           </div>
@@ -305,7 +305,7 @@ export default function QuestionBank() {
                     <button
                       onClick={() => setMode("tutor")}
                       className={`w-full text-left px-4 py-2 rounded-lg transition-colors ${
-                        mode === "tutor" ? "bg-teal-600 text-white" : "bg-slate-100 text-slate-700 hover:bg-slate-200"
+                        mode === "tutor" ? "bg-green-600 text-gray-900" : "bg-slate-100 text-slate-700 hover:bg-slate-200"
                       }`}
                     >
                       Tutor Mode
@@ -313,7 +313,7 @@ export default function QuestionBank() {
                     <button
                       onClick={() => setMode("exam")}
                       className={`w-full text-left px-4 py-2 rounded-lg transition-colors ${
-                        mode === "exam" ? "bg-teal-600 text-white" : "bg-slate-100 text-slate-700 hover:bg-slate-200"
+                        mode === "exam" ? "bg-green-600 text-gray-900" : "bg-slate-100 text-slate-700 hover:bg-slate-200"
                       }`}
                     >
                       Exam Mode
@@ -372,7 +372,7 @@ export default function QuestionBank() {
           <div className="lg:col-span-3">
             {questionsQuery.isLoading ? (
               <div className="flex items-center justify-center py-16">
-                <div className="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-teal-600"></div>
+                <div className="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-green-600"></div>
               </div>
             ) : currentQuestion ? (
               <>
@@ -383,7 +383,7 @@ export default function QuestionBank() {
                     <span className="text-sm text-slate-600">{Math.round(progress)}%</span>
                   </div>
                   <div className="w-full bg-slate-200 rounded-full h-2">
-                    <div className="bg-teal-600 h-2 rounded-full transition-all duration-300" style={{ width: `${progress}%` }} />
+                    <div className="bg-green-600 h-2 rounded-full transition-all duration-300" style={{ width: `${progress}%` }} />
                   </div>
                 </div>
 
@@ -407,7 +407,7 @@ export default function QuestionBank() {
                         )}
                       </div>
                       <div className="flex items-center gap-2">
-                        <Button variant="ghost" size="sm" onClick={handleBookmark} className={bookmarked ? "text-teal-600" : "text-slate-400"}>
+                        <Button variant="ghost" size="sm" onClick={handleBookmark} className={bookmarked ? "text-green-600" : "text-slate-400"}>
                           <Bookmark className="w-5 h-5" fill={bookmarked ? "currentColor" : "none"} />
                         </Button>
                         <Button variant="ghost" size="sm" onClick={() => setFlagged(!flagged)} className={flagged ? "text-orange-600" : "text-slate-400"}>
@@ -439,7 +439,7 @@ export default function QuestionBank() {
                           className={`w-full text-left p-4 rounded-lg border-2 transition-all ${
                             showCorrect ? "border-green-500 bg-green-50" :
                             showIncorrect ? "border-red-500 bg-red-50" :
-                            isSelected ? "border-teal-600 bg-teal-50" :
+                            isSelected ? "border-green-600 bg-green-50" :
                             "border-slate-200 bg-white hover:border-slate-300"
                           }`}
                         >
@@ -447,7 +447,7 @@ export default function QuestionBank() {
                             <div className={`w-6 h-6 rounded-full border-2 flex items-center justify-center font-medium text-sm ${
                               showCorrect ? "border-green-500 bg-green-500 text-white" :
                               showIncorrect ? "border-red-500 bg-red-500 text-white" :
-                              isSelected ? "border-teal-600 bg-teal-600 text-white" :
+                              isSelected ? "border-green-600 bg-green-600 text-gray-900" :
                               "border-slate-300"
                             }`}>
                               {option}
@@ -461,7 +461,7 @@ export default function QuestionBank() {
 
                   {/* Submit Button */}
                   {!showExplanation && (
-                    <Button onClick={handleSubmitAnswer} disabled={!selectedAnswer} className="w-full bg-teal-600 hover:bg-teal-700 text-white">
+                    <Button onClick={handleSubmitAnswer} disabled={!selectedAnswer} className="w-full bg-green-600 hover:bg-green-700 text-gray-900">
                       Submit Answer
                     </Button>
                   )}
@@ -487,7 +487,7 @@ export default function QuestionBank() {
                         value={notes}
                         onChange={(e) => setNotes(e.target.value)}
                         placeholder="Add your notes for this question..."
-                        className="w-full mt-2 p-3 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-600 resize-none"
+                        className="w-full mt-2 p-3 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-600 resize-none"
                         rows={3}
                       />
                     </div>
@@ -503,7 +503,7 @@ export default function QuestionBank() {
                   <div className="text-sm text-slate-600">
                     {currentQuestionIndex + 1} / {totalQuestions}
                   </div>
-                  <Button onClick={handleNext} disabled={currentQuestionIndex === totalQuestions - 1} className="bg-teal-600 hover:bg-teal-700 text-white gap-2">
+                  <Button onClick={handleNext} disabled={currentQuestionIndex === totalQuestions - 1} className="bg-green-600 hover:bg-green-700 text-gray-900 gap-2">
                     Next
                     <ChevronRight className="w-4 h-4" />
                   </Button>

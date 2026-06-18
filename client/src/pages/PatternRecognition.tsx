@@ -79,7 +79,7 @@ export default function PatternRecognition() {
   if (loading || !isAuthenticated || !user || subLoading) {
     return (
       <div className="min-h-screen bg-slate-50 flex items-center justify-center">
-        <div className="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-teal-600"></div>
+        <div className="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-green-600"></div>
       </div>
     );
   }
@@ -168,7 +168,7 @@ export default function PatternRecognition() {
             <span className="text-sm text-slate-600">{Math.round(progress)}%</span>
           </div>
           <div className="w-full bg-slate-200 rounded-full h-2">
-            <div className="bg-teal-600 h-2 rounded-full transition-all duration-300" style={{ width: `${progress}%` }} />
+            <div className="bg-green-600 h-2 rounded-full transition-all duration-300" style={{ width: `${progress}%` }} />
           </div>
         </div>
 
@@ -185,7 +185,7 @@ export default function PatternRecognition() {
           >
             {/* Front */}
             <div
-              className="absolute inset-0 rounded-2xl shadow-2xl flex flex-col items-center justify-center p-8 bg-gradient-to-br from-teal-600 to-teal-700"
+              className="absolute inset-0 rounded-2xl shadow-2xl flex flex-col items-center justify-center p-8 bg-gradient-to-br from-green-600 to-green-700"
               style={{ backfaceVisibility: "hidden" }}
             >
               <div className="text-center">
@@ -205,7 +205,7 @@ export default function PatternRecognition() {
                 <p className="text-2xl md:text-3xl font-bold text-white leading-relaxed">
                   {currentCard.front}
                 </p>
-                <p className="text-teal-200 text-sm mt-8 opacity-70">Tap to reveal answer</p>
+                <p className="text-green-200 text-sm mt-8 opacity-70">Tap to reveal answer</p>
               </div>
             </div>
 
@@ -267,7 +267,7 @@ export default function PatternRecognition() {
           <Button onClick={handleRestart} variant="outline" className="gap-2">
             <RotateCcw className="w-4 h-4" /> Restart
           </Button>
-          <Button onClick={handleNext} disabled={currentCardIndex === totalCards - 1} className="bg-teal-600 hover:bg-teal-700 text-white gap-2">
+          <Button onClick={handleNext} disabled={currentCardIndex === totalCards - 1} className="bg-green-600 hover:bg-green-700 text-gray-900 gap-2">
             Next <ChevronRight className="w-4 h-4" />
           </Button>
         </div>

@@ -50,7 +50,7 @@ export default function Onboarding() {
               <div
                 key={s}
                 className={`h-1 flex-1 mx-1 rounded-full transition-all ${
-                  s <= step ? "bg-teal-500" : "bg-gray-700"
+                  s <= step ? "bg-green-500" : "bg-gray-700"
                 }`}
               />
             ))}
@@ -71,7 +71,7 @@ export default function Onboarding() {
                 <select
                   value={formData.specialty}
                   onChange={(e) => setFormData({ ...formData, specialty: e.target.value })}
-                  className="w-full bg-gray-700 text-white rounded-lg p-3 border border-gray-600 focus:border-teal-500 outline-none"
+                  className="w-full bg-gray-700 text-white rounded-lg p-3 border border-gray-600 focus:border-green-500 outline-none"
                 >
                   <option value="">Select a specialty...</option>
                   <option value="General Practice">General Practice</option>
@@ -99,7 +99,7 @@ export default function Onboarding() {
                 <select
                   value={formData.trainingYear}
                   onChange={(e) => setFormData({ ...formData, trainingYear: e.target.value })}
-                  className="w-full bg-gray-700 text-white rounded-lg p-3 border border-gray-600 focus:border-teal-500 outline-none"
+                  className="w-full bg-gray-700 text-white rounded-lg p-3 border border-gray-600 focus:border-green-500 outline-none"
                 >
                   <option value="">Select training year...</option>
                   <option value="1">Year 1</option>
@@ -124,7 +124,7 @@ export default function Onboarding() {
                 <select
                   value={formData.targetExam}
                   onChange={(e) => setFormData({ ...formData, targetExam: e.target.value })}
-                  className="w-full bg-gray-700 text-white rounded-lg p-3 border border-gray-600 focus:border-teal-500 outline-none"
+                  className="w-full bg-gray-700 text-white rounded-lg p-3 border border-gray-600 focus:border-green-500 outline-none"
                 >
                   <option value="">Select exam...</option>
                   <option value="MRCGP AKT">MRCGP AKT</option>
@@ -154,7 +154,7 @@ export default function Onboarding() {
                 <select
                   value={formData.country}
                   onChange={(e) => setFormData({ ...formData, country: e.target.value })}
-                  className="w-full bg-gray-700 text-white rounded-lg p-3 border border-gray-600 focus:border-teal-500 outline-none"
+                  className="w-full bg-gray-700 text-white rounded-lg p-3 border border-gray-600 focus:border-green-500 outline-none"
                 >
                   <option value="">Select country...</option>
                   <option value="United Kingdom">United Kingdom</option>
@@ -187,7 +187,7 @@ export default function Onboarding() {
                 (step === 3 && !formData.targetExam) ||
                 (step === 4 && !formData.country)
               }
-              className="flex-1 bg-teal-600 hover:bg-teal-700 text-white disabled:opacity-50"
+              className="flex-1 bg-green-600 hover:bg-green-700 text-gray-900 disabled:opacity-50"
             >
               {step === 4 ? "Complete Setup" : "Next"}
             </Button>

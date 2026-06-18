@@ -1,0 +1,1016 @@
+[
+  {
+    "id": "QG-BB-081-002",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Cardiovascular",
+    "difficulty": "Medium",
+    "question": "A 78-year-old woman attends for a routine ECG. She is asymptomatic. The ECG shows: regular P waves at 72/min, followed by progressively lengthening PR intervals over 3 beats, then a dropped QRS, then the cycle repeats. Per NICE and ESC guidelines, what is this ECG pattern and management?",
+    "options": {
+      "A": "Complete heart block — permanent pacemaker immediately",
+      "B": "Mobitz Type I (Wenckebach) second-degree AV block — progressive PR prolongation then a dropped beat; in asymptomatic patients, particularly when associated with inferior MI or vagal tone, this is often benign; monitor, avoid AV-nodal blocking drugs (beta-blockers, digoxin, verapamil, diltiazem), refer to cardiology for assessment",
+      "C": "First-degree heart block — no action required",
+      "D": "Mobitz Type II second-degree AV block — requires urgent pacing",
+      "E": "Atrial flutter with variable block — rate control with digoxin"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Mobitz Type I (Wenckebach) second-degree AV block: progressive PR interval lengthening over consecutive beats until one P wave fails to conduct (dropped QRS), then the cycle resets. Distinguished from Mobitz II (sudden dropped beat without PR prolongation). Wenckebach characteristics: block is typically at the level of the AV node (proximal); associated with: inferior MI (RCA supplies AV node), vagal tone, myocarditis, beta-blocker/calcium channel blocker/digoxin toxicity. Prognosis: generally benign in the absence of structural heart disease or symptoms. Management per ESC Pacing Guidelines: asymptomatic Wenckebach — no pacing required; avoid AV-nodal blocking drugs; cardiology review; treat reversible causes. If symptomatic (dizziness, syncope, pre-syncope) — pacemaker may be indicated. Mobitz II (sudden dropped beats, often wide QRS escape) carries higher risk of progression to complete heart block and is more often a pacing indication.",
+      "A": "Incorrect — Complete heart block has AV dissociation (P and QRS completely independent). Wenckebach has a maintained relationship with progressive PR lengthening before the dropped beat.",
+      "B": "CORRECT — Mobitz I (Wenckebach): progressive PR prolongation then dropped beat. Benign in asymptomatic patient; avoid AV-nodal drugs; cardiology review per ESC guidelines.",
+      "C": "Incorrect — First-degree AV block has a prolonged but constant PR interval with every P wave conducting. There are no dropped beats.",
+      "D": "Incorrect — Mobitz Type II shows sudden dropped beats (no preceding PR prolongation) and is a higher-risk finding that more often requires pacing. This is Wenckebach (Type I).",
+      "E": "Incorrect — Atrial flutter shows a characteristic sawtooth atrial pattern at ~300/min with variable ventricular response. This ECG has sinus P waves."
+    },
+    "reference": "ESC Guidelines on Cardiac Pacing 2021. https://www.escardio.org/Guidelines",
+    "tags": ["Wenckebach", "Mobitz Type I", "second-degree AV block", "progressive PR prolongation", "ESC pacing", "benign"]
+  },
+  {
+    "id": "QG-BB-081-003",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Cardiovascular",
+    "difficulty": "Hard",
+    "question": "A 65-year-old man presents with two episodes of syncope. His ECG shows: regular P waves with a constant PR interval, then sudden dropped QRS complexes (2:1 pattern — every other P wave blocked). The QRS when present is wide (0.16 seconds) with LBBB morphology. Per ESC guidelines, what is the risk of this ECG and management?",
+    "options": {
+      "A": "Mobitz I (Wenckebach) — benign; reassure and discharge",
+      "B": "Mobitz Type II second-degree AV block with LBBB — high risk of progression to complete heart block and sudden cardiac death; the wide QRS indicates block below the AV node (infranodal — His-Purkinje system); syncope with this pattern is an indication for urgent permanent pacemaker implantation; admit same-day for cardiology assessment",
+      "C": "First-degree AV block — no treatment required",
+      "D": "Ventricular tachycardia — synchronised DC cardioversion",
+      "E": "Physiological AV block from athletic training — no treatment"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Mobitz Type II second-degree AV block: sudden dropped beats WITHOUT preceding PR prolongation; PR interval is constant when beats do conduct. The wide QRS (LBBB morphology) indicates the block is at the infranodal level (His-Purkinje system) — below the AV node. This is a high-risk finding: infranodal block can deteriorate without warning into complete heart block and asystole. Risk factors indicating urgent pacing: Mobitz II + wide QRS complex (infranodal) + syncope. Per ESC Cardiac Pacing Guidelines 2021: Mobitz II with symptoms (syncope/pre-syncope) is a Class I indication for permanent pacemaker, particularly when the QRS is wide. Even asymptomatic Mobitz II with wide QRS is often a pacing indication (Class IIa). Same-day hospital admission and cardiology assessment is essential.",
+      "A": "Incorrect — Wenckebach (Mobitz I) has progressive PR prolongation before the dropped beat. This ECG shows sudden dropped beats with constant PR (Mobitz II). These are different diagnoses with very different prognoses.",
+      "B": "CORRECT — Mobitz II + LBBB + syncope: high risk of progression to complete heart block. Urgent permanent pacemaker per ESC 2021 (Class I indication).",
+      "C": "Incorrect — First-degree block has prolonged but constant PR with all P waves conducting. This has dropped beats.",
+      "D": "Incorrect — This is a conduction block, not a tachyarrhythmia. Cardioversion is inappropriate.",
+      "E": "Incorrect — Athletic AV block is vagally mediated Wenckebach during sleep/rest — not Mobitz II with wide QRS in a symptomatic older adult."
+    },
+    "reference": "ESC Guidelines on Cardiac Pacing 2021. https://www.escardio.org/Guidelines",
+    "tags": ["Mobitz Type II", "infranodal block", "wide QRS", "LBBB", "pacemaker urgent", "ESC 2021"]
+  },
+  {
+    "id": "QG-BB-082-002",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Cardiovascular",
+    "difficulty": "Hard",
+    "question": "A 62-year-old man presents with an anterior STEMI and is taken for primary PCI. Post-procedure, his ECG shows new ST elevation in leads V1-V4 persisting at 48 hours along with a new pansystolic murmur. Per cardiology guidelines, what complication should be suspected?",
+    "options": {
+      "A": "Pericarditis — common after MI, treat with aspirin and colchicine",
+      "B": "Ventricular septal defect (VSD) — a mechanical complication of anterior MI (LAD territory) typically occurring 3-7 days post-STEMI; septal necrosis causes an acute left-to-right shunt; presents with new pansystolic murmur, haemodynamic deterioration and oxygenation step-up from right atrium to pulmonary artery; requires urgent echocardiogram; high mortality without surgical/percutaneous closure",
+      "C": "Acute mitral regurgitation from papillary muscle rupture — inferior MI more commonly causes this",
+      "D": "Right ventricular infarction — treated with IV fluids and avoiding nitrates",
+      "E": "Dressler syndrome — autoimmune pericarditis 2-10 weeks post-MI"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Post-STEMI mechanical complications — rare but life-threatening: (1) Ventricular septal defect (VSD): occurs 3-7 days post-anterior MI (LAD/septal branches); septal wall necrosis → rupture → left-to-right shunt; presentation: new loud pansystolic murmur (louder at left sternal edge), acute haemodynamic deterioration, pulmonary oedema, cardiogenic shock. Diagnosis: bedside echo (step-up in O2 saturation from RA to PA on right heart catheter). Treatment: urgent surgical repair or percutaneous closure; high mortality. (2) Papillary muscle rupture → acute mitral regurgitation: occurs with inferior MI (posterior papillary muscle — RCA territory); softer murmur radiating to axilla; pulmonary oedema. (3) Free wall rupture → haemopericardium, tamponade, death. The pansystolic murmur at 48 hours post-anterior STEMI = VSD until proven otherwise.",
+      "A": "Incorrect — Post-MI pericarditis (early) causes pleuritic chest pain and a friction rub — not a new pansystolic murmur with haemodynamic change.",
+      "B": "CORRECT — Post-anterior STEMI pansystolic murmur = VSD until proven otherwise. Urgent echo + cardiology/cardiac surgery per guidelines.",
+      "C": "Incorrect — Papillary muscle rupture causes acute MR and is more common after inferior MI (posterior papillary muscle from RCA). Anterior STEMI more commonly causes VSD.",
+      "D": "Incorrect — RV infarction (inferior/posterior MI) causes elevated JVP, hypotension, clear lungs. Not associated with anterior STEMI + new murmur.",
+      "E": "Incorrect — Dressler syndrome occurs 2-10 weeks post-MI and causes pleuritic chest pain with pericardial effusion — not an acute pansystolic murmur at 48 hours."
+    },
+    "reference": "ESC Guidelines — Management of STEMI. https://www.escardio.org/Guidelines",
+    "tags": ["post-STEMI VSD", "ventricular septal defect", "mechanical complication MI", "pansystolic murmur", "anterior MI", "urgent echo"]
+  },
+  {
+    "id": "QG-BB-082-003",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Cardiovascular",
+    "difficulty": "Easy",
+    "question": "A GP is reviewing the ECG of a 55-year-old man and notices: no P waves, an irregular baseline with fine fibrillatory waves at 350-600/min, and an irregular ventricular response at 90/min with narrow QRS complexes. Per NICE NG196, what is this rhythm and initial management?",
+    "options": {
+      "A": "Atrial flutter — refer for DC cardioversion",
+      "B": "Atrial fibrillation (AF) — most common sustained cardiac arrhythmia; requires assessment of: stroke risk (CHA₂DS₂-VASc score for anticoagulation decision), ventricular rate control (target <110 bpm at rest using beta-blocker or calcium channel blocker), and consideration of rhythm control (cardioversion, antiarrhythmic drugs, ablation); exclude reversible causes (thyroid disease, infection)",
+      "C": "Sinus tachycardia — reassure and monitor",
+      "D": "Ventricular fibrillation — emergency defibrillation immediately",
+      "E": "Junctional rhythm — no treatment required"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Atrial fibrillation (AF): no organised P waves (replaced by fine fibrillatory baseline), irregularly irregular ventricular response, narrow QRS (unless aberrant conduction). Affects approximately 1.5 million in the UK — most common sustained arrhythmia. Per NICE NG196: (1) Rate control: first-line in most patients; target resting HR <110 bpm; use beta-blocker (bisoprolol) or rate-limiting CCB (diltiazem, verapamil); digoxin for sedentary patients or as add-on. (2) Stroke prevention: CHA₂DS₂-VASc score ≥1 (men), ≥2 (women) = anticoagulate with DOAC (apixaban, rivaroxaban, edoxaban, dabigatran) or warfarin; assess bleeding risk (ORBIT score). (3) Rhythm control: for symptomatic AF despite rate control, younger patients, recent onset; options: cardioversion, antiarrhythmics (flecainide if no structural disease; amiodarone), AF ablation. (4) Investigate and treat reversible causes: TFTs, FBC, renal function, echocardiogram.",
+      "A": "Incorrect — Atrial flutter has a regular sawtooth atrial pattern at ~300/min and usually a regular ventricular rate (150/min in 2:1 block). This ECG is irregularly irregular with fibrillatory baseline — AF.",
+      "B": "CORRECT — AF: irregularly irregular, no P waves. NICE NG196: rate control + CHA₂DS₂-VASc-guided anticoagulation + consider rhythm control.",
+      "C": "Incorrect — Sinus tachycardia has regular P waves before each QRS with a rate 100-150/min. This has no P waves and is irregular.",
+      "D": "Incorrect — VF shows chaotic high-amplitude disorganised activity with no discernible QRS complexes — a cardiac arrest rhythm. This patient has a pulse with organised QRS complexes.",
+      "E": "Incorrect — Junctional rhythm has narrow QRS with absent or inverted P waves near the QRS at a rate of 40-60/min. Not the irregular AF pattern described."
+    },
+    "reference": "NICE NG196 — Atrial fibrillation. https://www.nice.org.uk/guidance/ng196",
+    "tags": ["atrial fibrillation", "irregularly irregular", "no P waves", "CHA2DS2-VASc", "NICE NG196", "rate control"]
+  },
+  {
+    "id": "QG-BB-083-002",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Musculoskeletal",
+    "difficulty": "Medium",
+    "question": "A 32-year-old man presents with a 6-month history of inflammatory low back pain (worse at night, better with exercise, morning stiffness >45 minutes), bilateral buttock pain and anterior uveitis. His CRP is 28 mg/L. Per NICE NG65, what is the most likely diagnosis and key investigation?",
+    "options": {
+      "A": "Lumbar disc prolapse — MRI lumbar spine urgently",
+      "B": "Axial spondyloarthritis (axSpA) / ankylosing spondylitis — characterised by inflammatory back pain, sacroiliitis, HLA-B27 positivity (90% of AS); uveitis is a classic extra-articular feature; HLA-B27 blood test and MRI sacroiliac joints (detects early sacroiliitis before X-ray changes); refer to rheumatology",
+      "C": "Reactive arthritis — check for preceding STI or GI infection",
+      "D": "Fibromyalgia — amitriptyline and pain management programme",
+      "E": "Osteoporotic vertebral fractures — DEXA scan"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Axial spondyloarthritis (axSpA) including ankylosing spondylitis: a seronegative spondyloarthropathy characterised by inflammatory back pain and sacroiliitis. Inflammatory back pain features (per ASAS criteria): onset <40 years, insidious onset, improvement with exercise (not rest), worse at night/morning, responds to NSAIDs. Extra-articular manifestations: anterior uveitis (25-40% — recurrent acute unilateral iritis), psoriasis, inflammatory bowel disease, aortic regurgitation. Per NICE NG65 (Spondyloarthritis): HLA-B27 testing (positive in ~90% of ankylosing spondylitis in white Europeans); MRI sacroiliac joints (detects bone marrow oedema/sacroiliitis before X-ray erosions appear — crucial for early diagnosis); refer to rheumatology. Treatment: regular NSAIDs (first-line); physiotherapy; anti-TNF biologics if inadequate response to 2 NSAIDs (adalimumab, etanercept); IL-17 inhibitors (secukinumab).",
+      "A": "Incorrect — Mechanical back pain (disc prolapse) is worse with activity, better at rest, and does not cause morning stiffness >45 minutes or uveitis.",
+      "B": "CORRECT — Axial spondyloarthritis: inflammatory back pain + uveitis + raised CRP. HLA-B27 + MRI SIJ per NICE NG65.",
+      "C": "Incorrect — Reactive arthritis (formerly Reiter's) presents within weeks of a triggering infection with asymmetric peripheral arthritis and urethritis — not a 6-month history of back pain with uveitis.",
+      "D": "Incorrect — Fibromyalgia causes widespread musculoskeletal pain with normal inflammatory markers — CRP 28 mg/L and uveitis argue strongly against fibromyalgia.",
+      "E": "Incorrect — Osteoporotic fractures occur in elderly patients with mechanical pain — not a young man with inflammatory back pain, raised CRP and uveitis."
+    },
+    "reference": "NICE NG65 — Spondyloarthritis. https://www.nice.org.uk/guidance/ng65",
+    "tags": ["ankylosing spondylitis", "axial spondyloarthritis", "HLA-B27", "MRI sacroiliac joints", "NICE NG65", "anterior uveitis"]
+  },
+  {
+    "id": "QG-BB-083-003",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Musculoskeletal",
+    "difficulty": "Medium",
+    "question": "A 28-year-old man with confirmed ankylosing spondylitis has failed 2 NSAIDs. His BASDAI score is 5.2 (range 0-10). Per NICE TA383 and TA28, what is the next treatment option?",
+    "options": {
+      "A": "Oral methotrexate — first DMARD in axial spondyloarthritis",
+      "B": "Anti-TNF biologic therapy (e.g. adalimumab, etanercept, infliximab, certolizumab) — indicated when BASDAI ≥4 after failure of 2 or more NSAIDs; approved by NICE TA383; alternatively IL-17A inhibitor (secukinumab or ixekizumab — NICE TA407) is equally effective and first-line biologic option; exclude TB and hepatitis B before starting",
+      "C": "Oral prednisolone long-term — systemic steroids are the backbone of AS treatment",
+      "D": "Physiotherapy alone is sufficient for BASDAI >4",
+      "E": "Sulfasalazine — effective for axial disease in ankylosing spondylitis"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per NICE TA383 (TNF-alpha inhibitors for AS) and NICE TA407 (Secukinumab for AS): biologic therapy is indicated when: BASDAI (Bath Ankylosing Spondylitis Disease Activity Index) ≥4 AND inadequate response to ≥2 NSAIDs. Anti-TNF agents: adalimumab, etanercept, infliximab, certolizumab, golimumab. IL-17 inhibitors: secukinumab, ixekizumab. Both classes are NICE-approved as first-line biologic therapy with comparable efficacy. Pre-biologic screening: TB (Mantoux/IGRA), hepatitis B/C, HIV. Important: conventional DMARDs (methotrexate, sulfasalazine) are NOT effective for axial disease in AS — they are only used for associated peripheral arthritis. Systemic corticosteroids are not a long-term treatment for AS. Physiotherapy: important adjunct throughout, but not sufficient alone for active disease (BASDAI ≥4).",
+      "A": "Incorrect — Methotrexate and other conventional DMARDs are not effective for axial spondyloarthritis — they do not reduce spinal inflammation or radiographic progression.",
+      "B": "CORRECT — BASDAI ≥4 after 2 NSAIDs: anti-TNF or IL-17 inhibitor per NICE TA383/TA407. Pre-screen for TB and hepatitis B.",
+      "C": "Incorrect — Systemic corticosteroids are not recommended for long-term management of axial spondyloarthritis due to limited efficacy and significant side effects.",
+      "D": "Incorrect — Physiotherapy is an important but insufficient treatment when BASDAI ≥4 with failed NSAIDs — biologic therapy is indicated.",
+      "E": "Incorrect — Sulfasalazine has very limited evidence for axial AS; it may be considered for peripheral arthritis only — not for the spinal/sacroiliac disease."
+    },
+    "reference": "NICE TA383 — TNF-alpha inhibitors for AS. NICE TA407 — Secukinumab for AS. https://www.nice.org.uk/guidance/ta383",
+    "tags": ["ankylosing spondylitis biologic", "BASDAI ≥4", "anti-TNF", "NICE TA383", "secukinumab", "IL-17 inhibitor"]
+  },
+  {
+    "id": "QG-BB-085-002",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Cardiovascular",
+    "difficulty": "Medium",
+    "question": "A 48-year-old woman has palpitations occurring twice weekly, each lasting 5-10 minutes. A 7-day ambulatory ECG captures her symptoms: during palpitations the ECG shows: regular narrow complex tachycardia at 178/min with no visible P waves (or P waves buried within the QRS). Per NICE NG196, what is the most likely arrhythmia?",
+    "options": {
+      "A": "Atrial fibrillation — irregularly irregular narrow complex tachycardia",
+      "B": "AV nodal re-entrant tachycardia (AVNRT) — the most common cause of regular narrow complex tachycardia (SVT) in adults; characterised by a re-entrant circuit within the AV node; P waves are absent or visible just after the QRS (retrograde); abrupt onset/offset; responds to vagal manoeuvres and IV adenosine; definitive treatment: radiofrequency catheter ablation",
+      "C": "Sinus tachycardia — normal physiological response to exercise",
+      "D": "Ventricular tachycardia — broad complex, requires immediate DC cardioversion",
+      "E": "Atrial flutter — sawtooth pattern at 300/min"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "AV nodal re-entrant tachycardia (AVNRT): the most common paroxysmal SVT in adults (accounts for ~60% of SVTs). Mechanism: dual AV nodal pathways (fast and slow) create a re-entrant circuit; typically slow-fast AVNRT — conduction down the slow pathway and retrogradely up the fast pathway. ECG: regular narrow complex tachycardia 140-220/min; P waves buried within or just after the QRS (retrograde atrial activation near-simultaneous with ventricular). Symptoms: abrupt onset/offset palpitations (classically described as pounding in the neck), dizziness. Per NICE NG196: acute termination: vagal manoeuvres (Valsalva, carotid sinus massage) → IV adenosine (6mg rapid bolus IV; if no response 12mg; monitor for bronchospasm — withhold in asthmatics). Prevention: beta-blockers, flecainide (if no structural heart disease), verapamil. Definitive: radiofrequency catheter ablation (>95% cure rate).",
+      "A": "Incorrect — AF is irregularly irregular with no P waves and a chaotic baseline. This tachycardia is regular.",
+      "B": "CORRECT — AVNRT: regular narrow complex SVT at 150-220/min, P waves in/after QRS, abrupt onset/offset. Adenosine for acute termination; ablation for cure per NICE NG196.",
+      "C": "Incorrect — Sinus tachycardia has clearly visible P waves before each QRS, gradual onset/offset, and rate rarely exceeds 150/min at rest.",
+      "D": "Incorrect — VT is broad complex (QRS >0.12s). This is narrow complex — AVNRT.",
+      "E": "Incorrect — Atrial flutter has characteristic sawtooth flutter waves at 300/min with ventricular rate typically 150/min (2:1 block)."
+    },
+    "reference": "NICE NG196 — Atrial fibrillation and arrhythmias. https://www.nice.org.uk/guidance/ng196",
+    "tags": ["AVNRT", "SVT", "narrow complex tachycardia", "adenosine", "catheter ablation", "NICE NG196"]
+  },
+  {
+    "id": "QG-BB-085-003",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Cardiovascular",
+    "difficulty": "Hard",
+    "question": "A 35-year-old man presents to the GP with palpitations. During the episode his ECG shows: regular narrow complex tachycardia at 196/min with a short PR interval of 0.09 seconds and a delta wave visible on the initial upstroke of the QRS on the resting ECG. Per guidelines, what is the diagnosis and important management consideration?",
+    "options": {
+      "A": "Sinus tachycardia — no action needed",
+      "B": "Wolff-Parkinson-White (WPW) syndrome — accessory pathway (Bundle of Kent) bypasses the AV node causing ventricular pre-excitation (short PR, delta wave on resting ECG); in AF, the accessory pathway can conduct very rapidly to the ventricles causing ventricular rates >300/min and ventricular fibrillation; AVOID AV-nodal blocking drugs (adenosine, beta-blockers, verapamil, digoxin) if AF develops with WPW — they may accelerate accessory pathway conduction; refer to electrophysiology for catheter ablation (curative)",
+      "C": "Brugada syndrome — avoid sodium channel blockers and arrange ICD",
+      "D": "Long QT syndrome — avoid QT-prolonging drugs",
+      "E": "AVNRT — adenosine is safe and first-line in all narrow complex SVTs"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Wolff-Parkinson-White (WPW) syndrome: congenital accessory conduction pathway (Bundle of Kent) connecting atria to ventricles, bypassing the AV node. Resting ECG: short PR (<0.12s), delta wave (slurred upstroke of QRS due to ventricular pre-excitation), widened QRS. During SVT: usually orthodromic AVRT — narrow complex tachycardia (conduction down AV node, retrograde up accessory pathway). CRITICAL RISK: if AF develops in WPW, the accessory pathway can conduct extremely rapidly to the ventricles (>300/min) → ventricular fibrillation → sudden cardiac death. CONTRAINDICATED in WPW with AF: adenosine, beta-blockers, verapamil, diltiazem, digoxin — these block the AV node but may facilitate rapid conduction via the accessory pathway. Management of WPW with AF: IV flecainide or DC cardioversion. Definitive treatment: electrophysiology study + radiofrequency catheter ablation (>95% cure). Refer ALL WPW patients to electrophysiology.",
+      "A": "Incorrect — Short PR + delta wave + SVT is WPW, not sinus tachycardia. This diagnosis carries a risk of sudden cardiac death if unrecognised.",
+      "B": "CORRECT — WPW: short PR, delta wave, accessory pathway. Avoid AV-nodal blockers if AF develops (VF risk). Electrophysiology referral for ablation.",
+      "C": "Incorrect — Brugada syndrome shows right bundle branch block pattern with ST elevation in V1-V3 — not delta waves and short PR.",
+      "D": "Incorrect — Long QT syndrome shows prolonged QT interval — not short PR and delta wave.",
+      "E": "Incorrect — Adenosine is specifically CONTRAINDICATED in WPW with AF. It can precipitate rapid accessory pathway conduction and VF. This is a critical prescribing safety point."
+    },
+    "reference": "ESC Guidelines — SVT management 2019. https://www.escardio.org/Guidelines",
+    "tags": ["WPW", "delta wave", "short PR", "accessory pathway", "adenosine contraindicated", "VF risk"]
+  },
+  {
+    "id": "QG-BB-088-002",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Respiratory",
+    "difficulty": "Medium",
+    "question": "A 24-year-old woman with asthma is 22 weeks pregnant and has an acute asthma attack in the GP surgery. Her peak flow is 210 L/min (her personal best is 480 L/min = 44% of best). She is breathless at rest but can speak in sentences. Per BTS/SIGN asthma guidelines and RCOG guidance, what is the severity and acute management?",
+    "options": {
+      "A": "Mild attack — give salbutamol 2 puffs via spacer and review in 1 hour",
+      "B": "Moderate to severe acute asthma — peak flow 44% of best indicates a moderate-severe attack; give salbutamol 2.5-5 mg nebuliser and ipratropium 0.5mg nebuliser; oral prednisolone 40-50 mg (or IV hydrocortisone 100 mg); oxygen to maintain SpO2 94-98%; call 999/arrange urgent hospital admission; fetal monitoring is important in severe asthma in pregnancy",
+      "C": "Near-fatal attack — immediate intubation and ventilation in the GP surgery",
+      "D": "Give salbutamol inhaler and monitor at home — prednisolone is contraindicated in pregnancy",
+      "E": "Refer to obstetrics only — respiratory conditions in pregnancy are managed by obstetricians"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per BTS/SIGN asthma guidelines: acute asthma severity classification: Moderate: PEFR 50-75% best/predicted, SpO2 ≥92%, can talk. Severe: PEFR 33-50% best, SpO2 ≥92%, difficulty talking. Life-threatening: PEFR <33% best, SpO2 <92%, exhaustion, silent chest, cyanosis. This patient: PEFR 44% = severe. Management: salbutamol 2.5-5 mg nebulised (repeat every 20 minutes); ipratropium 0.5 mg nebulised; oral prednisolone 40-50 mg (IV hydrocortisone 100 mg if unable to swallow); oxygen (target SpO2 94-98%); urgent hospital admission. Prednisolone IS safe in pregnancy (benefits outweigh risks) — per RCOG and BTS/SIGN: never withhold prednisolone from a pregnant woman with acute severe asthma. Fetal wellbeing monitoring needed. Magnesium sulphate IV 1.2-2g over 20 min if poor response.",
+      "A": "Incorrect — PEFR 44% is not a mild attack — it is severe. Mild attack would be PEFR >75%.",
+      "B": "CORRECT — Severe acute asthma: nebulised salbutamol + ipratropium + oral prednisolone + O2 + urgent hospital admission. Prednisolone IS safe in pregnancy per BTS/SIGN/RCOG.",
+      "C": "Incorrect — Near-fatal asthma has PEFR <33% with SpO2 <92%, cyanosis, silent chest, exhaustion. This patient can speak in sentences.",
+      "D": "Incorrect — Prednisolone is NOT contraindicated in pregnancy for acute severe asthma — withholding it risks maternal and fetal hypoxia.",
+      "E": "Incorrect — Acute asthma in pregnancy is a medical emergency managed by the acute medical team with obstetric input, not by obstetrics alone."
+    },
+    "reference": "BTS/SIGN — Asthma guideline 2019. RCOG — Asthma in pregnancy. https://www.brit-thoracic.org.uk/quality-improvement/guidelines/asthma/",
+    "tags": ["acute asthma pregnancy", "severe attack", "PEFR 44%", "prednisolone safe pregnancy", "BTS SIGN", "nebulised salbutamol"]
+  },
+  {
+    "id": "QG-BB-088-003",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Respiratory",
+    "difficulty": "Hard",
+    "question": "A 30-year-old pregnant woman at 28 weeks has her asthma reviewed. She is currently on salbutamol PRN only and has daily symptoms and 3 night wakings per week. Per NICE NG80 and BTS/SIGN, at which treatment step does she sit and what should be added?",
+    "options": {
+      "A": "Step 1 — increase salbutamol dose only",
+      "B": "Step 2 — daily symptoms and nocturnal symptoms indicate uncontrolled asthma at Step 1; add an inhaled corticosteroid (ICS — e.g. beclometasone 200-800 mcg daily); ICS is safe throughout pregnancy and is the most important preventer medication; do NOT withhold ICS in pregnancy — uncontrolled asthma carries greater risks to the fetus than ICS",
+      "C": "Step 4 — all pregnant women need high-dose ICS plus LABA",
+      "D": "No medication change — accept suboptimal control during pregnancy",
+      "E": "Step 3 — add LABA before trying ICS first"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per NICE NG80 and BTS/SIGN asthma management guidelines: BTS/SIGN stepwise approach: Step 1: SABA (salbutamol) PRN only — mild intermittent symptoms. Step 2: Low-dose ICS (e.g. beclometasone 200-400 mcg BDP equivalent daily) — when: symptoms >2/week OR nocturnal symptoms OR SABA use >2 days/week OR any nocturnal symptoms. This patient: daily symptoms + 3 night wakings/week → Step 2 treatment is clearly indicated. ICS safety in pregnancy: well-established safety profile throughout all trimesters; do NOT withhold ICS. Uncontrolled asthma in pregnancy → fetal hypoxia, IUGR, preterm delivery — risks far exceed any theoretical ICS risk. Step 3 (if Step 2 insufficient): add LABA (salmeterol or formoterol) to ICS. Step 4+: specialist review, additional agents.",
+      "A": "Incorrect — Simply increasing salbutamol dose does not address the underlying airway inflammation — ICS preventer therapy is required.",
+      "B": "CORRECT — Daily symptoms + nocturnal symptoms = Step 2: add ICS. ICS is safe in pregnancy. Greater risk from uncontrolled asthma per NICE NG80/BTS.",
+      "C": "Incorrect — Step 4 (high-dose ICS + LABA + other agents) is for uncontrolled asthma despite lower step treatment. This patient is on Step 1 requiring Step 2.",
+      "D": "Incorrect — Accepting poor asthma control in pregnancy is dangerous — uncontrolled asthma reduces fetal oxygenation and increases risk of prematurity and IUGR.",
+      "E": "Incorrect — LABA should never be used as monotherapy or before ICS. BTS Step 2 is ICS first; LABA added at Step 3 only."
+    },
+    "reference": "NICE NG80 — Asthma. BTS/SIGN asthma guideline. https://www.nice.org.uk/guidance/ng80",
+    "tags": ["asthma step 2", "ICS safe pregnancy", "beclometasone", "NICE NG80", "BTS SIGN", "nocturnal symptoms"]
+  },
+  {
+    "id": "QG-BB-093-002",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Paediatrics",
+    "difficulty": "Easy",
+    "question": "A mother brings her 12-year-old daughter for her NHS vaccinations. The daughter has received all routine vaccinations to date. Per the NHS childhood immunisation schedule, which vaccine is she due at age 12-13 (school year 8)?",
+    "options": {
+      "A": "MMR booster — third dose at age 12",
+      "B": "HPV vaccine (Gardasil 9) — offered to all girls AND boys aged 12-13 in Year 8; protects against HPV types 6, 11, 16, 18, 31, 33, 45, 52, 58; prevents cervical cancer, other anogenital cancers, and genital warts; 2-dose schedule (0 and 6-12 months) if started before age 15; 3-dose schedule if started age 15 or older",
+      "C": "Hepatitis B booster — routine booster at age 12",
+      "D": "Varicella vaccine — offered to all 12-year-olds without prior chickenpox",
+      "E": "BCG vaccine — routine booster at age 12"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per NHS childhood immunisation schedule (current 2024): at age 12-13 (Year 8): HPV vaccine (Gardasil 9 — 9-valent HPV vaccine protecting against HPV 6, 11, 16, 18, 31, 33, 45, 52, 58). Since September 2019: offered to ALL children (girls AND boys) in Year 8. Why: protects against: HPV 16/18 — cause 70% of cervical cancers; HPV 31/33/45/52/58 — cause additional 20% of cervical cancers; HPV 6/11 — cause 90% of genital warts; other HPV-related cancers (oropharyngeal, anal, vulval, vaginal, penile). Dosing schedule: 2 doses (0 and 6-12 months apart) if first dose given before age 15; 3 doses (0, 1-2, 6 months) if started age 15+. Catch-up to age 25 for those who missed school programme. BCG is no longer routine but offered to high-risk neonates. No routine booster for hepatitis B, MMR (2 doses already given), or varicella (not on NHS routine schedule).",
+      "A": "Incorrect — MMR is given at 1 year and 3 years 4 months (pre-school booster). There is no routine MMR booster at age 12.",
+      "B": "CORRECT — HPV vaccine (Gardasil 9) is the Year 8 (age 12-13) vaccine for all children on the NHS schedule.",
+      "C": "Incorrect — Hepatitis B is given in infancy (8, 12 and 16 weeks); there is no routine booster at age 12 on the NHS schedule.",
+      "D": "Incorrect — Varicella vaccine is not on the routine NHS childhood immunisation schedule (offered to high-risk groups and healthcare workers but not universally).",
+      "E": "Incorrect — BCG is no longer given routinely at age 13 on the NHS schedule; it is offered to high-risk neonates."
+    },
+    "reference": "NHS — Childhood immunisation schedule 2024. https://www.nhs.uk/vaccinations/nhs-vaccinations-and-when-to-have-them/",
+    "tags": ["HPV vaccine", "Year 8", "Gardasil 9", "NHS schedule", "12-13 years", "cervical cancer prevention"]
+  },
+  {
+    "id": "QG-BB-093-003",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Paediatrics",
+    "difficulty": "Medium",
+    "question": "A practice nurse asks about the MMR vaccine schedule. A new GP registrar queries whether MMR is contraindicated in egg allergy. Per NICE CKS and PHE immunisation guidelines, what is the correct advice?",
+    "options": {
+      "A": "MMR is absolutely contraindicated in all children with any egg allergy",
+      "B": "MMR vaccine is safe to administer in children with egg allergy including severe anaphylaxis to egg — the MMR vaccine is not grown on egg-containing medium; previous recommendations advising against MMR in egg allergy were based on outdated information; MMR should be given in the normal setting with standard 15-minute post-vaccination observation; specialist referral is only needed for anaphylaxis to a PREVIOUS DOSE of MMR itself",
+      "C": "MMR can be given in mild egg allergy only; severe egg allergy requires hospital administration",
+      "D": "A skin prick test with egg protein must be performed before MMR in any child with egg allergy",
+      "E": "Only the measles component carries risk in egg allergy — give measles vaccine separately"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per PHE/UKHSA 'The Green Book' (Immunisation against Infectious Disease) and NICE CKS: MMR vaccine IS SAFE in children with egg allergy including severe anaphylaxis to egg. Rationale: MMR (Priorix, M-M-RvaxPro) is produced in chick embryo fibroblast cell cultures — NOT in egg white. The residual ovalbumin content is extremely low (nanogram quantities) — insufficient to trigger anaphylaxis. Evidence: multiple large studies confirm MMR is safe in egg-allergic children including those with severe/anaphylactic reactions to egg. Current guidance: administer MMR in the normal community setting (GP surgery/school); observe for 15 minutes post-vaccination as standard; no need for hospital setting; no skin testing required. Exception: specialist referral is required for allergy to a PREVIOUS DOSE of MMR vaccine (not egg allergy) — possible reaction to neomycin or gelatin in the vaccine.",
+      "A": "Incorrect — MMR is NOT contraindicated in egg allergy. This is outdated guidance that has been superseded by evidence and current PHE/NICE guidance.",
+      "B": "CORRECT — MMR is safe in all egg allergy including severe anaphylaxis. No special precautions needed. Referral only for allergy to previous MMR dose per PHE Green Book.",
+      "C": "Incorrect — There is no differentiation between mild and severe egg allergy for MMR administration — MMR is safe in all.",
+      "D": "Incorrect — Skin prick testing before MMR is not required or recommended in egg allergy per PHE guidance.",
+      "E": "Incorrect — The three components of MMR are formulated together and all are safe in egg allergy. Separate vaccines are not available or recommended."
+    },
+    "reference": "PHE — The Green Book: Immunisation against Infectious Disease. https://www.gov.uk/government/collections/immunisation-against-infectious-disease-the-green-book",
+    "tags": ["MMR egg allergy", "safe to give", "PHE Green Book", "chick embryo fibroblast", "no contraindication", "NICE CKS"]
+  },
+  {
+    "id": "QG-BB-094-002",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Haematology",
+    "difficulty": "Medium",
+    "question": "A 45-year-old woman presents with a 4-week history of blood-stained nipple discharge from the right breast. She has no palpable lump. Her mammogram is normal. Per NICE NG12, what is the appropriate management?",
+    "options": {
+      "A": "Reassure — normal mammogram excludes malignancy",
+      "B": "Urgent 2WW referral to breast clinic — blood-stained nipple discharge in a woman ≥50 should be referred on a suspected cancer pathway; in women under 50, non-blood-stained discharge alone from a single duct is the typical presentation of ductal papilloma; however blood-stained discharge at any age warrants urgent assessment; ductal papilloma is the most common benign cause but ductal carcinoma in situ (DCIS) and malignancy must be excluded",
+      "C": "Prescribe bromocriptine and repeat in 3 months",
+      "D": "No further investigation — ductal papilloma always resolves spontaneously",
+      "E": "Refer routinely (not urgently) to breast clinic within 18 weeks"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Blood-stained nipple discharge: always requires investigation to exclude malignancy. Causes: intraductal papilloma (most common benign cause — benign polyp within the lactiferous duct), ductal carcinoma in situ (DCIS), invasive carcinoma, duct ectasia (usually brown/green discharge). Per NICE NG12 (Suspected cancer): blood-stained nipple discharge in women ≥50 = urgent suspected cancer referral (2WW). In women under 50: urgent referral is still recommended for blood-stained discharge. A normal mammogram does NOT exclude ductal pathology — mammography is relatively insensitive for intraductal lesions. Assessment in breast clinic: clinical examination, breast USS, ductography/galactography, ductoscopy, or surgical microdochectomy (excision of the affected duct — both diagnostic and therapeutic for ductal papilloma). Ductal papilloma: benign; presents with intermittent blood-stained/serous unilateral single-duct discharge; treated by surgical excision.",
+      "A": "Incorrect — Normal mammogram does not exclude intraductal pathology or DCIS; blood-stained nipple discharge requires breast clinic assessment regardless.",
+      "B": "CORRECT — Blood-stained nipple discharge: urgent breast clinic referral to exclude DCIS and malignancy per NICE NG12. Ductal papilloma is the common benign cause.",
+      "C": "Incorrect — Bromocriptine suppresses prolactin and is used for galactorrhoea — not for blood-stained nipple discharge.",
+      "D": "Incorrect — Ductal papilloma does not always resolve spontaneously and blood-stained discharge requires exclusion of malignancy; surgical excision is often required.",
+      "E": "Incorrect — Routine 18-week referral is not appropriate for blood-stained nipple discharge — urgent/suspected cancer pathway referral is required per NICE NG12."
+    },
+    "reference": "NICE NG12 — Suspected cancer: recognition and referral. https://www.nice.org.uk/guidance/ng12",
+    "tags": ["blood-stained nipple discharge", "ductal papilloma", "2WW referral", "NICE NG12", "DCIS exclude", "breast clinic"]
+  },
+  {
+    "id": "QG-BB-094-003",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Haematology",
+    "difficulty": "Hard",
+    "question": "A 38-year-old woman presents with clear watery discharge from both nipples when expressed. She is not pregnant or breastfeeding. Her prolactin is 3,200 mIU/L (elevated). She takes no medications. Per NICE CKS, what is the most important diagnosis to exclude and what is the investigation?",
+    "options": {
+      "A": "This is physiological — reassure without investigation",
+      "B": "Prolactinoma — a prolactin-secreting pituitary adenoma is the most common pituitary tumour; elevated prolactin in a non-pregnant, non-breastfeeding woman with galactorrhoea requires MRI pituitary with gadolinium; treatment: dopamine agonist (cabergoline preferred over bromocriptine for tolerability) reduces prolactin and tumour size",
+      "C": "Hypothyroidism — check TSH only; TSH stimulates prolactin",
+      "D": "Breast cancer — urgent 2WW mammogram",
+      "E": "Ductal papilloma — refer for microdochectomy"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Hyperprolactinaemia with galactorrhoea: causes — physiological (pregnancy, breastfeeding), drug-induced (dopamine antagonists: antipsychotics, metoclopramide, domperidone, methyldopa), hypothyroidism (TRH stimulates prolactin), prolactinoma, renal failure (reduced clearance), macroprolactinaemia. This patient: no pregnancy, no breastfeeding, no medications → prolactinoma is the most important diagnosis to exclude. Per NICE CKS: MRI pituitary with gadolinium is the investigation of choice for suspected prolactinoma. Also check: TSH (hypothyroidism raises prolactin), renal function, drug history. Prolactinomas: microadenoma (<10 mm) or macroadenoma (≥10 mm — may cause visual field defects from optic chiasm compression). Treatment: cabergoline (dopamine agonist — D2 receptor agonist, suppresses prolactin secretion; very effective at reducing tumour size); bromocriptine (alternative — more side effects). Surgery: reserved for cabergoline-resistant or visual field compromise cases.",
+      "A": "Incorrect — Galactorrhoea with elevated prolactin in a non-pregnant, non-breastfeeding woman is not physiological — prolactinoma must be excluded urgently.",
+      "B": "CORRECT — Prolactinoma: most likely cause of elevated prolactin + galactorrhoea in non-pregnant woman with no medications. MRI pituitary + cabergoline treatment per NICE CKS.",
+      "C": "Incorrect — TSH should be checked but is not the priority investigation; MRI pituitary is more urgent given significantly elevated prolactin without other obvious cause.",
+      "D": "Incorrect — Clear bilateral expressed discharge with elevated prolactin is galactorrhoea from hyperprolactinaemia — not blood-stained discharge from malignancy.",
+      "E": "Incorrect — Ductal papilloma causes blood-stained or serous unilateral single-duct discharge — not bilateral milky galactorrhoea with elevated prolactin."
+    },
+    "reference": "NICE CKS — Hyperprolactinaemia. https://cks.nice.org.uk/topics/hyperprolactinaemia/",
+    "tags": ["prolactinoma", "hyperprolactinaemia", "galactorrhoea", "MRI pituitary", "cabergoline", "NICE CKS"]
+  },
+  {
+    "id": "QG-BB-095-002",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Endocrinology",
+    "difficulty": "Hard",
+    "question": "A 52-year-old man presents with proximal muscle weakness, hypokalaemia (K+ 2.9 mmol/L) and hypertension. His serum cortisol is very high (>3000 nmol/L) and ACTH is elevated at 95 pg/ml. He has no features of classic Cushing's syndrome (no striae, no moon face). Per NICE CKS, what type of Cushing's and what is the most likely cause?",
+    "options": {
+      "A": "ACTH-independent Cushing's — adrenal adenoma causing excess cortisol with suppressed ACTH",
+      "B": "Ectopic ACTH syndrome — extremely high cortisol + elevated ACTH + severe hypokalaemia + rapid onset without classic cushingoid features; most commonly from small cell lung cancer, bronchial carcinoid, or thymoma; investigate with CT chest/abdomen/pelvis + high-dose dexamethasone suppression test (ectopic ACTH fails to suppress); refer urgently to endocrinology",
+      "C": "Cushing's disease — pituitary adenoma; classic features always present",
+      "D": "Exogenous steroid use — most common cause of Cushing's overall",
+      "E": "Adrenal carcinoma — surgical resection is first-line"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Ectopic ACTH syndrome: non-pituitary, non-adrenal tumour secreting ACTH independently. Key distinguishing features from Cushing's disease (pituitary): extremely high cortisol (often >2000-3000 nmol/L — much higher than pituitary-driven Cushing's); severe hypokalaemia (ACTH-driven mineralocorticoid excess — aldosterone-independent); rapid onset; often NO classic Cushingoid features (rapid tumour progression means insufficient time to develop typical appearance); weight loss (from the primary tumour). ACTH is elevated (rules out adrenal cause — which suppresses ACTH). Common causes: small cell lung carcinoma (most common malignant cause), bronchial carcinoid, thymic carcinoid, medullary thyroid carcinoma, islet cell tumours. Per NICE CKS: High-dose dexamethasone suppression test — cortisol suppresses in Cushing's disease (pituitary) but NOT in ectopic ACTH or adrenal disease. CT chest/abdomen/pelvis; Gallium DOTATATE PET for carcinoid. Treatment: treat the primary tumour; metyrapone or ketoconazole to control cortisol pending definitive treatment.",
+      "A": "Incorrect — ACTH-independent Cushing's (adrenal adenoma) would show LOW/suppressed ACTH (negative feedback from autonomous cortisol). This patient has elevated ACTH.",
+      "B": "CORRECT — Ectopic ACTH: very high cortisol + elevated ACTH + severe hypokalaemia + no classic Cushingoid features. CT chest + high-dose dexamethasone test per NICE CKS.",
+      "C": "Incorrect — Cushing's disease (pituitary) also has elevated ACTH but typically causes classic Cushingoid features and moderately elevated cortisol; it PARTIALLY suppresses on high-dose dexamethasone. Ectopic ACTH does not suppress.",
+      "D": "Incorrect — Exogenous steroids are the most common OVERALL cause but would suppress endogenous ACTH and cortisol — not cause very high ACTH.",
+      "E": "Incorrect — Adrenal carcinoma causes ACTH-independent Cushing's with suppressed (low) ACTH, not elevated ACTH."
+    },
+    "reference": "NICE CKS — Cushing's syndrome. https://cks.nice.org.uk/topics/cushings-syndrome/",
+    "tags": ["ectopic ACTH", "Cushing's syndrome", "severe hypokalaemia", "small cell lung cancer", "high-dose dexamethasone", "NICE CKS"]
+  },
+  {
+    "id": "QG-BB-095-003",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Endocrinology",
+    "difficulty": "Medium",
+    "question": "A 44-year-old woman with confirmed Cushing's disease (pituitary microadenoma on MRI) has morning cortisol of 890 nmol/L and has failed high-dose dexamethasone suppression. Per NICE CKS and endocrinology guidelines, what is the first-line treatment?",
+    "options": {
+      "A": "Long-term metyrapone — this is the definitive treatment for Cushing's disease",
+      "B": "Transsphenoidal surgical resection of the pituitary adenoma — first-line treatment for Cushing's disease; remission rates 65-90% in expert centres; if surgery fails or is contraindicated: radiotherapy (pituitary-directed stereotactic radiosurgery) and/or cortisol-lowering drugs (metyrapone, ketoconazole, cabergoline, pasireotide); bilateral adrenalectomy as last resort (causes Nelson's syndrome — ACTH-secreting pituitary tumour enlargement)",
+      "C": "Adrenalectomy — remove both adrenal glands as the primary approach",
+      "D": "Oral prednisolone — reduces ACTH feedback",
+      "E": "Spironolactone — manages the mineralocorticoid effects"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Cushing's disease: pituitary-driven Cushing's syndrome from an ACTH-secreting pituitary adenoma. Per NICE CKS and Endocrine Society guidelines: first-line treatment is transsphenoidal surgical resection — neurosurgeon removes the adenoma via the nasal passage and sphenoid sinus; minimally invasive; remission (cortisol normalisation) in 65-90% in experienced pituitary centres. Remission definition: post-operative cortisol <50 nmol/L. If surgical failure or recurrence: repeat surgery, pituitary radiotherapy (Gamma Knife stereotactic radiosurgery), medical therapy (metyrapone — 11-beta-hydroxylase inhibitor; ketoconazole — steroid synthesis inhibitor; cabergoline — reduces ACTH from some adenomas; pasireotide — somatostatin analogue reducing ACTH), or bilateral adrenalectomy. Nelson's syndrome: after bilateral adrenalectomy, removal of negative feedback causes rapid ACTH-secreting pituitary tumour enlargement — hyperpigmentation + mass effects.",
+      "A": "Incorrect — Metyrapone reduces cortisol synthesis and can be used as bridge therapy or second-line, but it is NOT the definitive first-line treatment — surgery is.",
+      "B": "CORRECT — Transsphenoidal surgery is first-line for Cushing's disease (pituitary adenoma) per NICE CKS/Endocrine Society.",
+      "C": "Incorrect — Bilateral adrenalectomy is a last resort option (causes Nelson's syndrome) — not first-line.",
+      "D": "Incorrect — Oral prednisolone would worsen Cushing's syndrome further — it has no role in treating it.",
+      "E": "Incorrect — Spironolactone may manage some mineralocorticoid effects symptomatically but does not treat the underlying cause."
+    },
+    "reference": "NICE CKS — Cushing's syndrome. https://cks.nice.org.uk/topics/cushings-syndrome/",
+    "tags": ["Cushing's disease", "transsphenoidal surgery", "first-line treatment", "NICE CKS", "pituitary adenoma", "Nelson's syndrome"]
+  },
+  {
+    "id": "QG-BB-100-002",
+    "exam": "MRCGP AKT",
+    "domain": "Evidence-Based Medicine",
+    "specialty": "Statistics & EBM",
+    "difficulty": "Hard",
+    "question": "A forest plot from a systematic review on statin therapy shows 8 randomised controlled trials. The overall pooled effect estimate (diamond) shows a relative risk of 0.78 (95% CI 0.65-0.91). The I² statistic is 72%. Per EBM principles, how should this result be interpreted?",
+    "options": {
+      "A": "The result is definitive — RR 0.78 is highly statistically significant so clinical heterogeneity is irrelevant",
+      "B": "The pooled RR of 0.78 (95% CI 0.65-0.91) suggests statins reduce the relative risk by 22% (CI does not cross 1.0 = statistically significant); however I² = 72% indicates HIGH heterogeneity between studies (I² >50% is considered high); this means the studies are not all measuring the same thing — differences in populations, doses, follow-up, or outcomes may explain the variability; a pooled estimate should be interpreted with caution when I² is high; investigate sources of heterogeneity",
+      "C": "I² of 72% means 72% of studies showed benefit — this is a positive finding",
+      "D": "The 95% CI of 0.65-0.91 means the drug is harmful in 9% of patients",
+      "E": "A result is only significant if the 95% CI is entirely below 0.5"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Forest plot and meta-analysis interpretation: RR 0.78 (95% CI 0.65-0.91): statins reduce the risk of the outcome by 22% relative to control; CI does not include 1.0 = statistically significant (p<0.05). I² statistic: measures the proportion of total variation between studies due to heterogeneity (rather than sampling error/chance). Interpretation: I² 0-25%: low heterogeneity; 25-50%: moderate; 50-75%: high; >75%: very high. I² = 72% = HIGH heterogeneity — the studies differ substantially in their results. This does not invalidate the meta-analysis but means: the pooled estimate should be treated cautiously; sources of heterogeneity (populations, doses, outcomes, follow-up duration) should be explored via subgroup analysis; the meta-analysis should ideally use a random-effects model (not fixed-effects) when I² is high.",
+      "A": "Incorrect — Statistical significance (CI not crossing 1.0) and clinical heterogeneity (I²) are independent concerns; high I² raises important questions about whether pooling was appropriate.",
+      "B": "CORRECT — RR 0.78 is significant (CI 0.65-0.91 does not cross 1.0); but I² 72% = high heterogeneity; interpret pooled estimate cautiously and investigate heterogeneity sources.",
+      "C": "Incorrect — I² measures percentage of variability due to heterogeneity between studies — not the proportion of studies showing benefit.",
+      "D": "Incorrect — The 95% CI means if the study were repeated 100 times, 95% of the CIs would contain the true RR. It does not mean the drug harms a proportion of patients.",
+      "E": "Incorrect — Statistical significance requires the 95% CI to not cross the null value (RR=1.0 for relative risk; RR <1.0 = benefit). The threshold is 1.0, not 0.5."
+    },
+    "reference": "BMJ Statistics Notes — Forest plots and meta-analysis. Cochrane Handbook for Systematic Reviews.",
+    "tags": ["forest plot", "I-squared heterogeneity", "meta-analysis", "RR interpretation", "95% CI", "EBM"]
+  },
+  {
+    "id": "QG-BB-100-003",
+    "exam": "MRCGP AKT",
+    "domain": "Evidence-Based Medicine",
+    "specialty": "Statistics & EBM",
+    "difficulty": "Medium",
+    "question": "A GP reads a study showing that a new diabetes drug reduces HbA1c by 8 mmol/mol (SD 4) compared to placebo. The p-value is p=0.04 and the 95% CI is 0.2-15.8 mmol/mol. The study included 45 patients. Per EBM principles, what is the correct interpretation?",
+    "options": {
+      "A": "The result is clinically and statistically significant — this drug should immediately be adopted",
+      "B": "The result is statistically significant (p=0.04; CI does not cross zero) but the wide 95% CI (0.2-15.8) reflects a small sample size and large uncertainty; the minimum clinically important difference (MCID) for HbA1c reduction is approximately 5-6 mmol/mol; the lower confidence bound (0.2) may be below the MCID — meaning a real-world effect could be minimal; the result is preliminary and needs replication in a larger, adequately powered trial before practice change",
+      "C": "p=0.04 is borderline and means there is a 4% chance the treatment works",
+      "D": "The standard deviation of 4 means the result is not significant",
+      "E": "A 95% CI of 0.2-15.8 means the drug works in 95% of patients"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Statistical versus clinical significance: this study is statistically significant (p=0.04; 95% CI does not include zero — positive values only). However: (1) Small sample (n=45) — underpowered studies produce wide CIs; (2) Wide CI (0.2-15.8): the true effect could be anywhere from barely detectable (0.2 mmol/mol) to very large (15.8 mmol/mol); (3) MCID for HbA1c: approximately 5-6 mmol/mol is considered the minimum clinically meaningful change — the lower CI limit of 0.2 is well below this, meaning a real-world effect of marginal benefit is possible; (4) Interpretation of p-value: p=0.04 means 'if the null hypothesis (no difference) were true, there is a 4% probability of obtaining a result this extreme or more extreme by chance' — it does NOT mean there is a 4% chance the drug works or a 96% chance it works. Practice change should await adequately powered trials with consistent results.",
+      "A": "Incorrect — Statistical significance alone (especially in a small study with wide CI) is insufficient to justify immediate adoption into practice.",
+      "B": "CORRECT — Statistically significant but wide CI from small sample; lower bound may be below MCID; needs larger replication trial before practice change.",
+      "C": "Incorrect — p=0.04 means 4% probability of the observed result under the null hypothesis — NOT that the drug has a 4% probability of working.",
+      "D": "Incorrect — Standard deviation describes within-group variability around the mean — it does not by itself determine statistical significance.",
+      "E": "Incorrect — 95% CI means 95% probability that the interval contains the true population mean difference — NOT that the drug works in 95% of patients."
+    },
+    "reference": "BMJ Statistics Notes — Confidence intervals. https://www.bmj.com/about-bmj/resources-readers/publications/statistics-square-one",
+    "tags": ["statistical vs clinical significance", "p-value interpretation", "confidence interval", "MCID", "small sample", "EBM"]
+  },
+  {
+    "id": "QG-BB-101-002",
+    "exam": "MRCGP AKT",
+    "domain": "Evidence-Based Medicine",
+    "specialty": "Statistics & EBM",
+    "difficulty": "Medium",
+    "question": "A GP is calculating statistics from a screening test for coeliac disease. In a population of 1,000: 100 truly have coeliac disease, 900 do not. The test correctly identifies 90 of the 100 with coeliac disease. The test incorrectly identifies 45 of the 900 without coeliac disease as positive. Per EBM, calculate the positive predictive value (PPV) and negative predictive value (NPV).",
+    "options": {
+      "A": "PPV = 90%, NPV = 95% — sensitivity and PPV are the same statistic",
+      "B": "PPV = 67% (90 true positives ÷ 135 total positives × 100); NPV = 98.8% (855 true negatives ÷ 865 total negatives × 100) — PPV and NPV depend on disease prevalence in the tested population, unlike sensitivity and specificity",
+      "C": "PPV = 90%, NPV = 90% — both equal sensitivity",
+      "D": "PPV cannot be calculated without knowing the specificity",
+      "E": "PPV = 45%, NPV = 45% — based on the false positive rate"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "From the data: TP=90 (true positives), FN=10 (missed cases), FP=45 (false positives), TN=855 (true negatives). Totals: Test positive = TP+FP = 90+45 = 135; Test negative = TN+FN = 855+10 = 865. PPV = TP/(TP+FP) = 90/135 = 66.7% ≈ 67%. This means: of all positive tests, 67% are true positives (33% are false positives). NPV = TN/(TN+FN) = 855/865 = 98.8%. This means: of all negative tests, 98.8% are true negatives (1.2% are false negatives — missed cases). Sensitivity = TP/(TP+FN) = 90/100 = 90% (ability to detect true cases). Specificity = TN/(TN+FP) = 855/900 = 95% (ability to correctly exclude non-cases). KEY POINT: PPV and NPV depend on disease prevalence — the same test will have lower PPV in a low-prevalence population and higher PPV in a high-prevalence population. Sensitivity and specificity are inherent test characteristics that do not change with prevalence.",
+      "A": "Incorrect — Sensitivity (90%) and PPV (67%) are different statistics. Sensitivity measures the test's ability to detect disease; PPV measures the probability that a positive test result is truly positive.",
+      "B": "CORRECT — PPV = 90/135 = 67%; NPV = 855/865 = 98.8%. PPV and NPV are prevalence-dependent.",
+      "C": "Incorrect — PPV and NPV are calculated from different 2×2 table denominators and will not equal each other or sensitivity unless under very specific mathematical conditions.",
+      "D": "Incorrect — PPV can be calculated directly from the 2×2 table data given without needing to calculate specificity separately.",
+      "E": "Incorrect — False positive rate (1-specificity) = 45/900 = 5% — not used to calculate PPV or NPV."
+    },
+    "reference": "BMJ Statistics Notes — Sensitivity, specificity, PPV, NPV. https://www.bmj.com/about-bmj/resources-readers/publications/statistics-square-one",
+    "tags": ["PPV NPV calculation", "2x2 table", "sensitivity specificity", "prevalence dependent", "EBM", "screening statistics"]
+  },
+  {
+    "id": "QG-BB-101-003",
+    "exam": "MRCGP AKT",
+    "domain": "Evidence-Based Medicine",
+    "specialty": "Statistics & EBM",
+    "difficulty": "Hard",
+    "question": "A GP reads a cohort study: among 500 smokers, 50 developed lung cancer over 10 years. Among 1,000 non-smokers, 10 developed lung cancer. Per EBM, calculate the relative risk (RR) and absolute risk increase (ARI) for smokers versus non-smokers.",
+    "options": {
+      "A": "RR = 5, ARI = 5% — smoking increases relative risk fivefold and absolute risk by 5%",
+      "B": "RR = 10, ARI = 9% — smokers have 10x the relative risk; the absolute risk increases from 1% (non-smokers) to 10% (smokers), an absolute difference of 9%; NNH = 100/9 = 11 (11 smokers would need to smoke for one additional case of lung cancer compared to non-smokers)",
+      "C": "RR = 2, ARI = 2% — relative risk is doubled",
+      "D": "RR = 0.5, ARI = -5% — non-smokers have lower risk so RR <1",
+      "E": "ARI and RR cannot be calculated from cohort data — only from RCTs"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Calculations: Risk in smokers (exposed) = 50/500 = 0.10 = 10%. Risk in non-smokers (unexposed) = 10/1000 = 0.01 = 1%. Relative Risk (RR) = Risk(exposed) ÷ Risk(unexposed) = 10% ÷ 1% = 10. Interpretation: Smokers have 10 times the risk of lung cancer compared to non-smokers. Absolute Risk Increase (ARI) = Risk(exposed) - Risk(unexposed) = 10% - 1% = 9%. Interpretation: smoking causes 9 additional cases per 100 smokers over 10 years compared to non-smokers. Number Needed to Harm (NNH) = 1/ARI = 1/0.09 = 11. Key teaching point: RR gives the relative scale of risk (impressive-sounding: 10x) while ARI gives the absolute scale (practical: 9% absolute difference); both are essential to present for informed patient decision-making. RR alone without ARI can mislead — a RR of 10 is very different from a baseline risk of 0.0001% vs 0.001% compared to 1% vs 10%.",
+      "A": "Incorrect — RR = 10% ÷ 1% = 10, not 5. ARI = 10% - 1% = 9%, not 5%.",
+      "B": "CORRECT — RR = 10 (10-fold increase); ARI = 9% (9 additional cases per 100); NNH = 11 per EBM calculation.",
+      "C": "Incorrect — RR = 2 would mean risk doubles (e.g. 2% vs 1%). Here risk is 10x higher (10% vs 1%).",
+      "D": "Incorrect — RR is calculated as exposed ÷ unexposed. Smokers have higher risk → RR >1.",
+      "E": "Incorrect — Relative risk and absolute risk increase can be calculated from cohort studies (and RCTs). Odds ratios are used in case-control studies."
+    },
+    "reference": "BMJ Statistics Notes — Risk ratios and absolute risk. https://www.bmj.com/about-bmj/resources-readers/publications/statistics-square-one",
+    "tags": ["relative risk calculation", "absolute risk increase", "NNH", "cohort study", "EBM", "smokers lung cancer"]
+  },
+  {
+    "id": "QG-BB-102-002",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Gastroenterology",
+    "difficulty": "Medium",
+    "question": "A 28-year-old woman is investigated for iron deficiency anaemia with no obvious cause. Anti-tissue transglutaminase IgA antibodies (anti-tTG IgA) are strongly positive (×10 upper limit of normal). Her total IgA is normal. Per NICE NG20, what is the next step to confirm the diagnosis?",
+    "options": {
+      "A": "Start a gluten-free diet immediately — anti-tTG positivity confirms coeliac disease",
+      "B": "Refer for gastroscopy with duodenal biopsy — duodenal biopsy (minimum 4 samples including 1 from the duodenal bulb) is the gold standard for confirming coeliac disease; biopsy shows villous atrophy, crypt hyperplasia and intraepithelial lymphocytosis (Marsh classification); the patient must continue a GLUTEN-CONTAINING diet until after biopsy",
+      "C": "Repeat anti-tTG in 3 months — one positive result is insufficient",
+      "D": "HLA-DQ2/DQ8 genetic testing is needed before biopsy",
+      "E": "Capsule endoscopy is the investigation of choice for coeliac disease confirmation"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per NICE NG20 (Coeliac disease): serology (anti-tTG IgA or anti-endomysial antibodies IgA) is the first-line screening test. A strongly positive anti-tTG (>10× ULN) has a high positive predictive value for coeliac disease but a BIOPSY is still required to confirm the diagnosis in adults (exceptions: adults with strongly positive anti-tTG >10×ULN may be eligible for a non-biopsy diagnosis pathway in some centres if supported by positive HLA-DQ2/DQ8 and symptoms — per updated BSG guidelines). Gastroscopy with duodenal biopsy: minimum 4 biopsies (2 from D1-D2, 1 from duodenal bulb) while on a GLUTEN-CONTAINING diet — if patient has already started GFD, the biopsy will be falsely normal; Marsh grading: Marsh 1 (lymphocytosis only), Marsh 2 (crypt hyperplasia), Marsh 3 (villous atrophy — graded A/B/C). Diagnosis confirmed: histology + serology + clinical response to GFD.",
+      "A": "Incorrect — Starting a GFD before biopsy will cause villous healing and false-negative biopsy. Never start GFD until biopsy is complete per NICE NG20.",
+      "B": "CORRECT — Gastroscopy + duodenal biopsy on gluten-containing diet is the gold standard to confirm coeliac disease per NICE NG20.",
+      "C": "Incorrect — A strongly positive anti-tTG (×10 ULN) is a clear positive result; repeating serology delays diagnosis. Biopsy is the next step.",
+      "D": "Incorrect — HLA-DQ2/DQ8 testing is used to exclude coeliac disease in ambiguous cases (>99% of coeliac patients are HLA-DQ2 or DQ8 positive); it is not routinely required before biopsy.",
+      "E": "Incorrect — Capsule endoscopy is used for refractory coeliac disease or suspected complications — not routine first-line confirmation."
+    },
+    "reference": "NICE NG20 — Coeliac disease. https://www.nice.org.uk/guidance/ng20",
+    "tags": ["coeliac disease diagnosis", "anti-tTG positive", "duodenal biopsy", "gluten-containing diet", "NICE NG20", "Marsh classification"]
+  },
+  {
+    "id": "QG-BB-103-002",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Gastroenterology",
+    "difficulty": "Medium",
+    "question": "A 34-year-old woman with confirmed coeliac disease has been on a strict gluten-free diet for 18 months. Her anti-tTG antibodies have normalised. She asks her GP when she should have a repeat duodenal biopsy to confirm mucosal healing. Per NICE NG20 and BSG guidelines, what is the recommendation?",
+    "options": {
+      "A": "No follow-up biopsy is ever needed once anti-tTG normalises",
+      "B": "A follow-up duodenal biopsy after 12-24 months of strict gluten-free diet is recommended to confirm mucosal healing (villous architecture restored); persistent villous atrophy despite dietary compliance may indicate refractory coeliac disease or inadvertent gluten exposure; anti-tTG normalisation alone does not reliably confirm complete mucosal healing in all patients",
+      "C": "Biopsy should be repeated every 5 years indefinitely",
+      "D": "Biopsy should be performed immediately after starting the GFD (at 3 months)",
+      "E": "Follow-up biopsy is only needed if anti-tTG remains positive at 12 months"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per NICE NG20 and BSG coeliac guidelines: a follow-up duodenal biopsy after 12-24 months of strict gluten-free diet is recommended in most adults to confirm mucosal healing. Why: anti-tTG antibody normalisation is a good marker of dietary compliance and improving disease but does not perfectly correlate with mucosal healing — studies show up to 30-40% of adults with normalised serology still have persistent villous atrophy on biopsy. Identifying persistent atrophy is important: it may indicate refractory coeliac disease (rare but associated with enteropathy-associated T-cell lymphoma risk), ongoing inadvertent gluten exposure, or alternative diagnoses (microscopic colitis, CVID). Response biopsy: same minimum 4 samples from duodenum. However: BSG 2023 update acknowledges that in patients who are asymptomatic with strongly normalised serology, the follow-up biopsy pathway is evolving and not universally mandatory — discuss with individual patients and gastroenterology.",
+      "A": "Incorrect — Anti-tTG normalisation does not guarantee complete mucosal healing; follow-up biopsy is recommended per NICE NG20.",
+      "B": "CORRECT — Follow-up biopsy at 12-24 months of GFD confirms mucosal healing; normalised anti-tTG does not reliably confirm complete villous healing per NICE NG20/BSG.",
+      "C": "Incorrect — 5-yearly biopsy is not the recommended routine follow-up schedule; biopsy at 12-24 months to confirm healing is the key checkpoint.",
+      "D": "Incorrect — Mucosal healing takes 12-24 months on a strict GFD; a biopsy at 3 months would show incomplete healing and be unhelpful.",
+      "E": "Incorrect — Follow-up biopsy is recommended even when anti-tTG has normalised, as mucosal healing cannot be assumed from serology alone."
+    },
+    "reference": "NICE NG20 — Coeliac disease. BSG coeliac guidelines. https://www.nice.org.uk/guidance/ng20",
+    "tags": ["coeliac follow-up biopsy", "mucosal healing", "12-24 months GFD", "NICE NG20", "anti-tTG normalisation", "refractory coeliac"]
+  },
+  {
+    "id": "QG-BB-104-002",
+    "exam": "MRCGP AKT",
+    "domain": "Evidence-Based Medicine",
+    "specialty": "Statistics & EBM",
+    "difficulty": "Medium",
+    "question": "A GP is shown a box and whisker plot of blood pressure measurements from a clinical trial. The box contains a horizontal line in the middle. The box extends from the 25th to 75th percentile. Per EBM and statistical principles, what does the horizontal line in the middle of the box represent?",
+    "options": {
+      "A": "The mean blood pressure",
+      "B": "The median (50th percentile) — the middle horizontal line in a box and whisker plot always represents the median; the box spans the interquartile range (IQR = 25th to 75th percentile); the whiskers extend to the minimum and maximum values (excluding outliers which are shown as individual dots beyond the whiskers)",
+      "C": "The mode — the most frequently occurring value",
+      "D": "The 95th percentile — the upper confidence interval",
+      "E": "The standard deviation of the distribution"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Box and whisker plot anatomy: the horizontal line inside the box = the MEDIAN (50th percentile) — this is the middle value when all observations are ranked from lowest to highest. The box boundaries: lower edge = 25th percentile (Q1); upper edge = 75th percentile (Q3). Box height = IQR (interquartile range = Q3-Q1) — measures the spread of the middle 50% of data. Whiskers: extend to the lowest and highest values within 1.5×IQR from the box edges; data points beyond whiskers = outliers (plotted individually). Mean vs Median in box plots: box plots show the MEDIAN, not the mean; in skewed distributions the mean and median differ; box plots are preferred over histograms for showing distribution skewness and comparing multiple groups. AKT application: the examiner will show a box plot and ask you to identify the median, IQR, or identify an outlier — always remember the middle line = median, NOT mean.",
+      "A": "Incorrect — The mean is not shown directly on a standard box and whisker plot. The middle horizontal line is the MEDIAN.",
+      "B": "CORRECT — Middle line = median (50th percentile). Box = IQR (25th-75th percentile). Whiskers = range excluding outliers.",
+      "C": "Incorrect — Mode (most common value) is not represented on a standard box and whisker plot.",
+      "D": "Incorrect — The 95th percentile is not shown by the middle line of the box. The whisker endpoint may approximate the 5th-95th percentile range but is technically based on 1.5×IQR rule.",
+      "E": "Incorrect — Standard deviation is not depicted in a box and whisker plot; it is used in normally distributed data. Box plots are preferred for non-normally distributed data."
+    },
+    "reference": "BMJ Statistics Notes — Box and whisker plots. https://www.bmj.com/about-bmj/resources-readers/publications/statistics-square-one",
+    "tags": ["box whisker plot", "median", "IQR", "25th 75th percentile", "EBM statistics", "outliers"]
+  },
+  {
+    "id": "QG-BB-104-003",
+    "exam": "MRCGP AKT",
+    "domain": "Evidence-Based Medicine",
+    "specialty": "Statistics & EBM",
+    "difficulty": "Hard",
+    "question": "A clinical trial reports: mean SBP reduction with drug A = 12 mmHg (SD 8, n=100); mean SBP reduction with drug B = 9 mmHg (SD 7, n=100). The difference is 3 mmHg. Per EBM statistical principles, which statistical test is most appropriate to compare these two means?",
+    "options": {
+      "A": "Chi-squared test — compares proportions in two groups",
+      "B": "Independent samples t-test — comparing two means from independent groups with continuous, approximately normally distributed data; appropriate here as: two independent groups (drug A vs drug B), continuous outcome (SBP in mmHg), sample size ≥30 (n=100 each — central limit theorem applies), similar standard deviations; result gives a t-statistic and p-value indicating whether the 3 mmHg difference is statistically significant",
+      "C": "Mann-Whitney U test — always preferred over t-test for any clinical data",
+      "D": "Paired t-test — used when the same patients are measured twice",
+      "E": "ANOVA — required whenever comparing more than two data points"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Statistical test selection: (1) Type of outcome variable: continuous (SBP in mmHg) → parametric tests if normally distributed. (2) Number of groups: two groups (A vs B). (3) Independence: separate patients in each group → unpaired/independent test. (4) Distribution: n=100 → central limit theorem ensures approximate normality → parametric test appropriate. Independent samples t-test (Student's t-test): compares two independent group means; appropriate for continuous, approximately normally distributed data with independent groups. Produces: t-statistic, degrees of freedom, p-value, 95% CI for the mean difference. Alternative if non-normally distributed or small samples: Mann-Whitney U test (non-parametric equivalent). Chi-squared: for comparing proportions/categorical data (e.g. % of patients reaching target BP <130/80). Paired t-test: same patients measured before and after. ANOVA: 3 or more independent groups.",
+      "A": "Incorrect — Chi-squared compares proportions/categorical outcomes (e.g. % patients reaching a threshold). SBP reduction is continuous — chi-squared is not appropriate.",
+      "B": "CORRECT — Independent samples t-test: two independent groups, continuous outcome, large samples (n=100 — normal distribution assumed). Appropriate test for comparing two means.",
+      "C": "Incorrect — Mann-Whitney U (non-parametric) is used when data is not normally distributed or samples are small. With n=100, the independent t-test is appropriate and more powerful.",
+      "D": "Incorrect — Paired t-test is for paired/dependent data (e.g. same patient measured before and after treatment). These are two different patient groups — unpaired.",
+      "E": "Incorrect — ANOVA is used when comparing means across 3 or more groups. Only two groups here."
+    },
+    "reference": "BMJ Statistics Notes — Statistical tests for comparing means. https://www.bmj.com/about-bmj/resources-readers/publications/statistics-square-one",
+    "tags": ["independent t-test", "statistical test selection", "two means", "continuous data", "EBM statistics", "ANOVA chi-squared"]
+  },
+  {
+    "id": "QG-BB-105-002",
+    "exam": "MRCGP AKT",
+    "domain": "Organisational",
+    "specialty": "Ethics & Organisational",
+    "difficulty": "Easy",
+    "question": "A GP is reviewing a newly prescribed drug for a patient. The Patient Information Leaflet (PIL) shows a black inverted triangle symbol (▼) next to the drug name. Per MHRA guidance, what does this symbol indicate?",
+    "options": {
+      "A": "The drug is a controlled drug — special prescription requirements apply",
+      "B": "The black triangle (▼) indicates that the medicine is subject to ADDITIONAL MONITORING by the MHRA; this usually applies to new medicines or those approved under exceptional circumstances where the evidence base is still being established; healthcare professionals and patients are strongly encouraged to report ALL suspected adverse reactions via the Yellow Card scheme (not just serious ones as for established drugs); the symbol appears in PILs and SPCs",
+      "C": "The drug should not be used in patients under 18 — paediatric contraindication",
+      "D": "The drug requires specialist initiation only — GPs cannot prescribe it",
+      "E": "The drug has been withdrawn from the market but stocks are still being used"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per MHRA (Medicines and Healthcare products Regulatory Agency): the black inverted triangle symbol (▼) on a medicine's PIL/SMP indicates it is subject to additional monitoring. Applies to: newly authorised medicines (less post-market safety data); medicines approved under exceptional circumstances; biosimilar medicines (to detect any differences from the reference biologic). Purpose: to facilitate rapid identification of new safety signals. Reporting: healthcare professionals and patients should report ALL suspected adverse reactions (not just serious ones) via the MHRA Yellow Card scheme (yellowcard.mhra.gov.uk or via the Yellow Card app). The symbol is used across the EU/UK since 2013. Medicines retain the ▼ symbol until sufficient post-market safety data has accumulated (typically 5 years). This is distinct from: CD (controlled drug) scheduling, which has different legal requirements; specialist-only prescribing restrictions (NICE/NHS England criteria).",
+      "A": "Incorrect — Controlled drug status is indicated by 'CD' on the prescription and has specific legal requirements (schedule) — not the black triangle symbol.",
+      "B": "CORRECT — Black triangle (▼) = additional monitoring; report ALL suspected ADRs via Yellow Card scheme per MHRA guidance.",
+      "C": "Incorrect — Paediatric contraindications are stated in the prescribing information and PIL text, not indicated by the black triangle symbol.",
+      "D": "Incorrect — Specialist-only prescribing is indicated in NHS England/NICE guidance or SLS endorsements — not the black triangle.",
+      "E": "Incorrect — Withdrawn medicines are not in circulation; the black triangle applies to newly licensed medicines requiring additional surveillance."
+    },
+    "reference": "MHRA — Black triangle scheme. https://www.gov.uk/guidance/the-black-triangle-scheme",
+    "tags": ["black triangle symbol", "MHRA", "additional monitoring", "Yellow Card", "adverse drug reactions", "new medicines"]
+  },
+  {
+    "id": "QG-BB-105-003",
+    "exam": "MRCGP AKT",
+    "domain": "Organisational",
+    "specialty": "Ethics & Organisational",
+    "difficulty": "Medium",
+    "question": "A GP identifies that a patient developed a serious adverse drug reaction (sudden onset hearing loss) from gentamicin prescribed in hospital. Per MHRA Yellow Card guidance, who can report this and what constitutes a reportable reaction?",
+    "options": {
+      "A": "Only hospital doctors can report reactions to drugs first prescribed in hospital",
+      "B": "Any healthcare professional (GP, nurse, pharmacist) AND patients/carers can report suspected adverse drug reactions via the Yellow Card scheme; for established medicines: report serious, unexpected or unlisted reactions; for black triangle medicines: report ALL suspected reactions regardless of severity; for vaccines: report all suspected adverse reactions",
+      "C": "Only serious reactions (ICU admission or death) qualify for Yellow Card reporting",
+      "D": "The Yellow Card scheme is voluntary and rarely checked by the MHRA",
+      "E": "Yellow Cards can only be submitted by the prescribing doctor"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per MHRA Yellow Card scheme guidance: Who can report: any healthcare professional (doctor, dentist, nurse, pharmacist, coroner, etc.) AND patients, carers and members of the public. What to report: established medicines: suspected serious reactions (fatal, life-threatening, requiring hospitalisation, causing disability, congenital abnormality, or medically significant); any reaction considered unexpected or unlisted in the product information; black triangle medicines (▼): ALL suspected adverse reactions regardless of severity (even mild reactions); vaccines: ALL suspected adverse reactions; herbal and complementary products: ALL suspected reactions. Purpose: pharmacovigilance — detecting new safety signals, revising prescribing information, withdrawal of harmful medicines when necessary (e.g. withdrawal of vioxx, thalidomide history). Yellow Cards are taken seriously — they have directly contributed to regulatory action. GP's role: reporting from primary care is particularly valuable as it captures long-term and community adverse effects not seen in clinical trials.",
+      "A": "Incorrect — Any healthcare professional or patient can report reactions via Yellow Card regardless of where the drug was originally prescribed.",
+      "B": "CORRECT — Any HCP or patient can report; for established drugs: serious/unexpected reactions; for black triangle drugs: ALL reactions per MHRA Yellow Card guidance.",
+      "C": "Incorrect — Serious reactions (ICU/death) are always reportable, but the threshold for reporting is broader and includes unexpected reactions and all reactions to black triangle drugs.",
+      "D": "Incorrect — The Yellow Card scheme is actively monitored by the MHRA — it is a key pharmacovigilance tool that has led to regulatory action on multiple medicines.",
+      "E": "Incorrect — The Yellow Card scheme is open to all healthcare professionals and patients, not restricted to the prescriber."
+    },
+    "reference": "MHRA — Yellow Card scheme. https://yellowcard.mhra.gov.uk/",
+    "tags": ["Yellow Card", "MHRA", "adverse drug reaction reporting", "who can report", "black triangle all reactions", "pharmacovigilance"]
+  },
+  {
+    "id": "QG-BB-106-002",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Endocrinology",
+    "difficulty": "Hard",
+    "question": "A patient with confirmed cranial diabetes insipidus is prescribed desmopressin. The GP is deciding between oral desmopressin and intranasal desmopressin. During the water deprivation test, the endocrinologist administered desmopressin 2 mcg IM at t=8 hours. Per BNF and clinical pharmacology, what is the key difference in bioavailability between routes and why does it matter for dosing?",
+    "options": {
+      "A": "All routes are bioequivalent — dose is the same regardless of route",
+      "B": "There is a large difference in bioavailability between routes: intranasal ~3-4% (higher than oral but lower than parenteral); oral tablets ~0.1-0.2%; parenteral/IM/IV ~100%; the oral dose is therefore much higher than the intranasal or parenteral dose for equivalent effect; for example: oral 120-240 mcg BD is roughly equivalent to intranasal 10-20 mcg BD; patients must never switch routes without dose adjustment as underdosing (DI recurrence) or overdosing (hyponatraemia) can result",
+      "C": "Intranasal desmopressin has the same bioavailability as oral",
+      "D": "Parenteral desmopressin cannot be used for DI — only for haemophilia",
+      "E": "Dose adjustment between routes is not clinically significant for desmopressin"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Desmopressin bioavailability by route (per BNF and pharmacology): IV/IM (parenteral): ~100% bioavailability — used for acute testing (water deprivation test) and haemophilia/vWD (2-4 mcg IV/IM). Intranasal spray/drops: approximately 3-4% bioavailability — used for DI maintenance; dose: 10-40 mcg/day in 1-2 doses. Oral tablets: approximately 0.1-0.2% bioavailability — used for DI, nocturia, primary nocturnal enuresis; dose: 100-400 mcg 2-3 times daily. Sublingual (melt): slightly higher than oral tablets (~0.2-0.3%). The markedly lower oral bioavailability means the oral dose must be 50-100× higher than the intranasal dose for equivalent effect. Clinical significance: switching between routes without dose adjustment is DANGEROUS — can cause: under-treatment (recurrence of DI, hypernatraemia) or over-treatment (dilutional hyponatraemia from over-replacement). Always consult BNF/endocrinologist when switching routes.",
+      "A": "Incorrect — Routes are NOT bioequivalent; there are large differences requiring substantial dose adjustments.",
+      "B": "CORRECT — Oral bioavailability ~0.1-0.2% vs intranasal ~3-4% vs parenteral ~100%. Route switching requires dose adjustment; failure risks DI recurrence or hyponatraemia per BNF.",
+      "C": "Incorrect — Intranasal desmopressin has approximately 20-40× higher bioavailability than oral tablets.",
+      "D": "Incorrect — Parenteral desmopressin IS used for acute DI testing (water deprivation test) and for haemophilia A/vWD; both are licensed indications.",
+      "E": "Incorrect — The difference in bioavailability is clinically critical — failure to adjust doses between routes has caused serious patient harm (hyponatraemia, seizures)."
+    },
+    "reference": "BNF — Desmopressin. https://bnf.nice.org.uk/drug/desmopressin.html",
+    "tags": ["desmopressin bioavailability", "oral vs intranasal", "BNF", "route switching", "DI treatment", "hyponatraemia risk"]
+  },
+  {
+    "id": "QG-BB-106-003",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Endocrinology",
+    "difficulty": "Medium",
+    "question": "A 19-year-old student presents with secondary enuresis (bed-wetting) for the past 3 months having previously been dry for years. He has no daytime symptoms. He is drinking 4-5 litres of water per day. Per NICE CKS, what differential diagnoses should be considered and what initial investigations should be requested?",
+    "options": {
+      "A": "This is normal behaviour in a stressed student — reassure without investigation",
+      "B": "Secondary enuresis in a previously dry adult is a red flag — differentials include: cranial diabetes insipidus (polyuria from ADH deficiency), nephrogenic DI, diabetes mellitus (osmotic diuresis), psychogenic polydipsia, UTI; initial investigations: urine dipstick (glucose, protein, blood), fasting glucose/HbA1c, U&E, serum osmolality, urine osmolality (morning sample), TFTs",
+      "C": "UTI only — urine culture and oral trimethoprim",
+      "D": "Bladder overactivity — refer for urodynamics",
+      "E": "Anxiety disorder — CBT referral"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Secondary enuresis (onset after a period of dryness) in an adult is always a red flag for an underlying pathology — unlike primary enuresis (never been dry). The history of polydipsia (4-5 litres/day) suggests a polyuric disorder. Per NICE CKS: differential diagnoses for adult secondary enuresis + polydipsia: Diabetes mellitus: osmotic diuresis from hyperglycaemia — most common cause; Cranial DI: ADH deficiency causing inability to concentrate urine; Nephrogenic DI: renal resistance to ADH; Psychogenic polydipsia: primary polydipsia without organic cause (psychiatric patients); UTI/LUTS: less likely with daytime dryness. First-line investigations: urine dipstick (glycosuria suggests DM; haematuria/proteinuria); random glucose or HbA1c; U&E (hypokalaemia in Conn's, hypernatraemia in DI); serum and urine osmolality (paired samples for DI assessment); TFTs (hyperthyroidism can cause polyuria). If DM excluded and DI suspected: water deprivation test.",
+      "A": "Incorrect — Secondary enuresis in an adult with polydipsia requires investigation for underlying pathology including diabetes mellitus and DI — this cannot be dismissed.",
+      "B": "CORRECT — Secondary enuresis + polydipsia: red flag; investigate DM (most common), DI, electrolytes, urine/serum osmolality per NICE CKS.",
+      "C": "Incorrect — UTI would cause dysuria and daytime frequency — this patient has secondary enuresis with polydipsia suggesting a systemic polyuric disorder.",
+      "D": "Incorrect — Bladder overactivity causes frequency, urgency and nocturia with normal fluid intake — not 4-5 litres/day polydipsia.",
+      "E": "Incorrect — Anxiety may cause increased fluid intake but the degree of polydipsia (4-5 litres/day) and secondary enuresis requires organic exclusion before attributing to anxiety."
+    },
+    "reference": "NICE CKS — Enuresis in adults. Diabetes insipidus. https://cks.nice.org.uk/topics/diabetes-insipidus/",
+    "tags": ["secondary enuresis adult", "polydipsia investigation", "diabetes mellitus exclude", "DI differential", "NICE CKS", "urine osmolality"]
+  },
+  {
+    "id": "QG-BB-107-003",
+    "exam": "MRCGP AKT",
+    "domain": "Organisational",
+    "specialty": "Ethics & Organisational",
+    "difficulty": "Hard",
+    "question": "A GP trainee raises a concern that their educational supervisor (a consultant) appears to be consistently preventing them from attending their mandatory study days by scheduling clinics at the same time. Per GMC and BMA guidance on workplace bullying and educational supervision, what is the appropriate escalation pathway?",
+    "options": {
+      "A": "Accept it — consultants have full authority over trainee schedules",
+      "B": "Raise the concern first informally with the educational supervisor; if unresolved, escalate to the Training Programme Director (TPD)/Head of School; if still unresolved, contact the Foundation Programme Director, responsible officer, or the GMC (if patient safety is affected); document all instances; the BMA is available for support and advice; this constitutes potential bullying and undermining — both GMC-prohibited behaviours",
+      "C": "Report directly to the GMC without speaking to anyone at the practice first",
+      "D": "Submit an FOI request about the consultant's rota decisions",
+      "E": "Take annual leave on the affected days to attend study days"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per GMC guidance (Raising and Acting on Concerns, Good Medical Practice) and BMA guidance on workplace bullying: deliberately preventing a trainee from attending mandatory educational events constitutes potential undermining behaviour. Escalation pathway: (1) Informal resolution: raise directly with the supervisor (non-confrontational, document the conversation); (2) If unresolved: Training Programme Director (TPD) or Head of School for that specialty; (3) Foundation/Core/Higher Training Programme lead; (4) Responsible Officer at the NHS trust/organisation; (5) GMC if patient safety or training integrity is seriously compromised; (6) BMA for employment/contractual support and advice. Documentation is essential: dates, times, evidence that study days were mandatory. The GMC Good Medical Practice (2024) specifically states doctors must support colleagues' professional development and not undermine them. This AKT question tests knowledge of: (a) the concept of workplace undermining as a GMC concern, (b) the correct escalation hierarchy without bypassing steps unnecessarily.",
+      "A": "Incorrect — Systematic prevention of mandatory training is potentially bullying and an educational supervision failure — consultants do not have unchecked authority to prevent mandatory training.",
+      "B": "CORRECT — Informal → TPD/Head of School → responsible officer → GMC if needed. Document all instances. BMA for support per GMC/BMA guidance.",
+      "C": "Incorrect — Going directly to the GMC without attempting local resolution first is disproportionate for this issue and bypasses the recommended escalation pathway.",
+      "D": "Incorrect — FOI requests are not the appropriate tool for individual workplace disputes.",
+      "E": "Incorrect — Annual leave should not be used to cover mandatory educational events that the employer/training programme has an obligation to facilitate."
+    },
+    "reference": "GMC — Good Medical Practice 2024. BMA — Bullying and undermining guidance. https://www.gmc-uk.org/ethical-guidance",
+    "tags": ["workplace bullying", "educational supervisor", "GMC Good Medical Practice", "TPD escalation", "BMA support", "trainee rights"]
+  },
+  {
+    "id": "QG-BB-108-002",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Paediatrics",
+    "difficulty": "Hard",
+    "question": "A 6-month-old infant is brought by her parents. The GP is reviewing for red flag signs warranting immediate paediatric referral. Which combination of features would prompt a same-day emergency referral to paediatrics?",
+    "options": {
+      "A": "Normal weight gain, smiling and responsive, mild rash, no fever",
+      "B": "Fever >38°C with bulging fontanelle, high-pitched cry, purpuric rash non-blanching on glass test, reduced conscious level — these are meningococcal septicaemia/meningitis red flags requiring immediate 999 call and IM benzylpenicillin if not allergic before transfer",
+      "C": "Single episode of vomiting after feed, no fever, normal examination",
+      "D": "Mild eczema on the face and scalp, no secondary infection signs",
+      "E": "Reduced appetite for one day in a well infant with no other symptoms"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per NICE NG51 (Meningitis — bacterial) and NICE NG143 (Sepsis): red flags in a febrile infant requiring immediate emergency response: Non-blanching purpuric rash (does not fade with glass tumbler test) — meningococcal septicaemia until proven otherwise; bulging fontanelle (meningism — raised ICP); high-pitched cry (neurological irritation); reduced conscious level/pallor/mottling; cold extremities with fever (septic shock); poor feeding + drowsiness + no eye contact. Management per NICE NG51: immediate call 999; IM/IV benzylpenicillin 300 mg (1-11 months) if meningococcal disease suspected and no penicillin allergy (do not delay transfer for this — if transfer imminent, give in ambulance); immediate hospital transfer. Per NICE NG51 traffic light system for feverish illness: the non-blanching rash alone mandates urgent admission regardless of how well the child appears.",
+      "A": "Incorrect — Normal development, mild rash and no fever with a well infant are reassuring features requiring standard management.",
+      "B": "CORRECT — Non-blanching purpuric rash + fever + bulging fontanelle + altered consciousness = meningococcal emergency. 999 + benzylpenicillin per NICE NG51.",
+      "C": "Incorrect — A single post-feed vomit in a well infant is very common and does not require emergency referral.",
+      "D": "Incorrect — Mild facial/scalp eczema without secondary infection is a routine management issue.",
+      "E": "Incorrect — Reduced appetite for one day in a well infant with no concerning features does not require same-day emergency referral."
+    },
+    "reference": "NICE NG51 — Meningitis (bacterial) and meningococcal septicaemia. https://www.nice.org.uk/guidance/ng51",
+    "tags": ["meningococcal septicaemia", "non-blanching rash", "bulging fontanelle", "NICE NG51", "benzylpenicillin", "999 emergency"]
+  },
+  {
+    "id": "QG-BB-108-003",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Paediatrics",
+    "difficulty": "Medium",
+    "question": "A 6-month-old infant presents with fever of 38.8°C for 12 hours. Using the NICE NG143 traffic light system for feverish illness in children, which feature would place the infant in the RED (high risk) category requiring immediate assessment?",
+    "options": {
+      "A": "Temperature 38.8°C in a 6-month-old with normal activity and pink colour",
+      "B": "Pallor, reduced activity, not responding normally to social cues, not smiling, and inconsolable high-pitched cry — these are RED category features indicating HIGH risk of serious illness; the infant should be seen and assessed immediately",
+      "C": "Mild nasal congestion with normal activity and wet nappies",
+      "D": "Temperature 38.2°C with runny nose in a 9-month-old who is smiling",
+      "E": "Reduced appetite but alert, pink and interactive"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per NICE NG143 traffic light system for feverish illness in children under 5: RED (high risk) features: Colour — pallor, mottled, ashen or blue skin. Activity — no response to social cues, appears ill to the clinician, does not wake when roused OR if awake does not stay awake; weak/high-pitched/continuous cry. Respiratory — grunting, RR >60 (all ages), moderate/severe chest indrawing. Hydration — reduced skin turgor. Other — non-blanching rash, bulging fontanelle, neck stiffness, status epilepticus. AMBER (intermediate risk): 6-month-old with fever >39°C; temperature ≥38°C in 3-6 month old (fever alone in this age); rigors; swollen limb/joint. GREEN (low risk): Normal colour, normal activity, moist mucous membranes, no amber/red features. This infant (6 months, pallor, no response to social cues, high-pitched cry) has multiple RED features.",
+      "A": "Incorrect — An isolated fever of 38.8°C with normal colour and activity in a 6-month-old would typically be AMBER (age 3-6 months with fever ≥38°C) — not immediately RED without further concerning features.",
+      "B": "CORRECT — Pallor + no social response + high-pitched inconsolable cry = multiple RED features per NICE NG143 traffic light system. Immediate assessment required.",
+      "C": "Incorrect — Mild nasal congestion with normal activity, pink colour and wet nappies is GREEN (low risk).",
+      "D": "Incorrect — Low-grade fever with coryza and normal activity in a 9-month-old who is smiling is GREEN/low risk.",
+      "E": "Incorrect — Reduced appetite alone in an otherwise alert, pink and interactive infant is GREEN (low risk) — watchful waiting appropriate."
+    },
+    "reference": "NICE NG143 — Fever in under 5s. https://www.nice.org.uk/guidance/ng143",
+    "tags": ["traffic light system", "feverish illness", "RED features", "NICE NG143", "high risk infant", "pallor high-pitched cry"]
+  },
+  {
+    "id": "QG-BB-109-002",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Respiratory",
+    "difficulty": "Hard",
+    "question": "A 24-year-old man presents with a 3-month history of progressive dyspnoea, digital clubbing and a productive cough with thick mucous sputum since childhood. Spirometry shows an obstructive pattern with FEV1 45% predicted. A sweat chloride test confirms chloride >60 mmol/L on two occasions. Per NICE NG78, what is the diagnosis and what is the key management principle?",
+    "options": {
+      "A": "COPD — start LABA/LAMA and pulmonary rehabilitation",
+      "B": "Cystic fibrosis — autosomal recessive mutation in CFTR gene (most commonly ΔF508 deletion); impaired chloride channel function → thick viscous secretions → recurrent pulmonary infections, bronchiectasis, pancreatic exocrine insufficiency, infertility; management: specialist CF centre, airway clearance physiotherapy, DNase (dornase alfa), CFTR modulators (ivacaftor/lumacaftor/tezacaftor/elexacaftor — NICE approved based on genotype), antibiotics for infections, nutritional support, annual surveillance",
+      "C": "Bronchiectasis from recurrent infections — refer to respiratory for long-term azithromycin",
+      "D": "Primary ciliary dyskinesia — nasal NO measurement and electron microscopy",
+      "E": "Alpha-1 antitrypsin deficiency — check serum A1AT and phenotype"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Cystic fibrosis (CF): autosomal recessive disorder caused by mutations in the CFTR (cystic fibrosis transmembrane conductance regulator) gene on chromosome 7. Most common mutation: ΔF508 (deletion of phenylalanine at position 508). Sweat chloride >60 mmol/L on two occasions = gold standard diagnostic test. Per NICE NG78 (Cystic fibrosis): management principles: CF specialist centre; airway clearance techniques (twice daily physiotherapy); recombinant human DNase (dornase alfa) — reduces sputum viscosity; antibiotic treatment and prophylaxis for pulmonary infections (Pseudomonas aeruginosa, Staphylococcus aureus); CFTR modulators (approved by NICE based on genotype): ivacaftor alone (for G551D and other gating mutations), lumacaftor/ivacaftor (for ΔF508 homozygous), tezacaftor/ivacaftor, elexacaftor/tezacaftor/ivacaftor (Kaftrio — for ΔF508 — transformative triple therapy); pancreatic enzyme replacement (PERT); fat-soluble vitamin supplementation; annual surveillance: PFTs, sputum cultures, CF-related diabetes screening, bone density, fertility counselling.",
+      "A": "Incorrect — COPD occurs in older smokers with typical history. Childhood cough, clubbing, sweat chloride >60 and obstructive pattern at age 24 is CF.",
+      "B": "CORRECT — CF: sweat chloride >60 mmol/L (×2), obstructive spirometry, childhood symptoms, clubbing. CFTR modulators + specialist centre per NICE NG78.",
+      "C": "Incorrect — Bronchiectasis can occur from CF but CF is the primary diagnosis here; long-term azithromycin alone does not address the underlying CFTR defect.",
+      "D": "Incorrect — Primary ciliary dyskinesia also causes bronchiectasis and clubbing, but the confirmatory test is nasal NO measurement + ciliary biopsy; sweat chloride >60 confirms CF.",
+      "E": "Incorrect — Alpha-1 antitrypsin deficiency causes emphysema (panacinar, lower lobe) in young non-smokers but does not cause thick mucus from childhood or sweat chloride elevation."
+    },
+    "reference": "NICE NG78 — Cystic fibrosis. https://www.nice.org.uk/guidance/ng78",
+    "tags": ["cystic fibrosis", "sweat chloride >60", "CFTR modulators", "NICE NG78", "autosomal recessive", "dornase alfa"]
+  },
+  {
+    "id": "QG-BB-109-003",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Respiratory",
+    "difficulty": "Medium",
+    "question": "A 19-year-old woman with cystic fibrosis attends for a routine review. Her FEV1 has declined from 75% to 62% predicted over the past year. She is homozygous for the ΔF508 CFTR mutation. Per NICE TA766, what CFTR modulator therapy should be considered?",
+    "options": {
+      "A": "Ivacaftor alone — effective for ΔF508 homozygous patients",
+      "B": "Elexacaftor/tezacaftor/ivacaftor (Kaftrio plus ivacaftor — brand name Kaftrio/Kalydeco combination) — the triple modulator therapy approved by NICE TA766 for patients aged ≥6 years with at least one ΔF508 mutation; dramatically improves FEV1, reduces exacerbations and hospitalisations, improves BMI and quality of life; has transformed CF outcomes",
+      "C": "CFTR modulators are only for children — no benefit in adults",
+      "D": "Lumacaftor/ivacaftor (Orkambi) is equally effective as Kaftrio for homozygous ΔF508",
+      "E": "CFTR modulators require gene testing — treat empirically without genotype"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per NICE TA766 (elexacaftor/tezacaftor/ivacaftor for cystic fibrosis): Kaftrio (elexacaftor/tezacaftor) combined with ivacaftor (Kalydeco) is approved for: patients aged ≥6 years with at least ONE ΔF508 mutation (the most common CF mutation). Mechanism: triple combination targets multiple steps in CFTR processing — elexacaftor + tezacaftor stabilise and facilitate CFTR protein folding and trafficking to the cell surface; ivacaftor potentiates the CFTR channel opening (gating corrector + potentiator). Clinical outcomes from AURORA trial: ~14% absolute improvement in FEV1; ~63% reduction in exacerbations; significant improvement in BMI, CFQ-R respiratory domain and sweat chloride levels. Ivacaftor alone is only effective for GATING mutations (G551D etc.) — NOT for ΔF508 (which is a processing/trafficking mutation, not a gating mutation). Lumacaftor/ivacaftor (Orkambi) is less efficacious than Kaftrio for ΔF508 and has been largely superseded.",
+      "A": "Incorrect — Ivacaftor alone is a gating corrector effective ONLY for gating mutations (e.g. G551D). It is NOT effective for ΔF508 (processing mutation) when used alone.",
+      "B": "CORRECT — Kaftrio (elexacaftor/tezacaftor/ivacaftor): approved for ≥1 ΔF508 mutation from age 6; ~14% FEV1 improvement per NICE TA766.",
+      "C": "Incorrect — CFTR modulators are approved and highly effective in adults with CF — age is not a restriction above age 6.",
+      "D": "Incorrect — Lumacaftor/ivacaftor (Orkambi) has modest efficacy for ΔF508 homozygous (~2-4% FEV1 improvement) and has largely been superseded by Kaftrio's superior outcomes.",
+      "E": "Incorrect — CFTR modulator prescribing requires confirmation of CFTR genotype to select the correct therapy — empirical use is inappropriate."
+    },
+    "reference": "NICE TA766 — Elexacaftor/tezacaftor/ivacaftor for cystic fibrosis. https://www.nice.org.uk/guidance/ta766",
+    "tags": ["Kaftrio", "elexacaftor tezacaftor ivacaftor", "ΔF508", "NICE TA766", "CFTR modulator", "cystic fibrosis treatment"]
+  },
+  {
+    "id": "QG-BB-110-002",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Neurology",
+    "difficulty": "Hard",
+    "question": "A 32-year-old woman with relapsing-remitting MS attends for review following her second relapse in 12 months. Her previous relapse caused optic neuritis, which fully recovered. This relapse caused cerebellar ataxia that has partially resolved. Per NICE NG220, what disease-modifying therapy (DMT) should be discussed?",
+    "options": {
+      "A": "Start oral prednisolone long-term to prevent further relapses",
+      "B": "Discuss disease-modifying therapies with her specialist MS team — first-line DMTs include: beta-interferon (Avonex, Rebif, Betaferon), glatiramer acetate, dimethyl fumarate (Tecfidera), teriflunomide; higher efficacy DMTs: natalizumab (for rapidly evolving severe RRMS), alemtuzumab, ocrelizumab, cladribine; NICE NG220 recommends early DMT initiation to reduce relapse rate and delay disability progression",
+      "C": "DMTs are not recommended for RRMS — only for primary progressive MS",
+      "D": "Wait for a third relapse before starting DMT — two relapses are insufficient",
+      "E": "Vitamin D supplementation is the only evidence-based intervention for RRMS"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per NICE NG220 (Multiple sclerosis in adults): DMTs are recommended for active relapsing-remitting MS (RRMS) to reduce relapse frequency and slow disability accumulation. Two relapses in 12 months with new/enlarging MRI lesions = active disease warranting DMT. DMT decision factors: relapse frequency, severity of relapses, MRI disease activity, disability progression, lifestyle, pregnancy plans, side effect profiles. Efficacy tiers: lower-efficacy first-line: beta-interferon 1a/1b, glatiramer acetate (~30% reduction in relapses); moderate efficacy: dimethyl fumarate (~50%), teriflunomide (~31%); high efficacy: natalizumab (~68%), alemtuzumab (~49%), ocrelizumab, cladribine. NICE recommends high-efficacy therapy early for patients with rapidly evolving severe RRMS (2+ relapses in 12 months with significant disability or active MRI) rather than a 'treat-to-target' escalation approach. Relapses are treated with IV/oral methylprednisolone (high-dose, short-course) for functional impairment — not long-term steroids.",
+      "A": "Incorrect — Long-term oral steroids are NOT used as DMT for MS — they cause serious side effects without modifying disease course. Short-course high-dose steroids are for acute relapses only.",
+      "B": "CORRECT — Two relapses in 12 months = active RRMS requiring DMT discussion. Early initiation per NICE NG220. High-efficacy DMT consideration for active disease.",
+      "C": "Incorrect — DMTs are specifically approved and recommended for RRMS. Ocrelizumab is the only DMT with evidence for primary progressive MS.",
+      "D": "Incorrect — NICE NG220 recommends offering DMT after two relapses — waiting for a third is not recommended as it allows continued disease activity and disability accumulation.",
+      "E": "Incorrect — Vitamin D supplementation has insufficient evidence to be classified as the only evidence-based intervention; it is discussed as an adjunct but DMTs are the evidence-based standard of care."
+    },
+    "reference": "NICE NG220 — Multiple sclerosis in adults. https://www.nice.org.uk/guidance/ng220",
+    "tags": ["RRMS DMT", "multiple sclerosis", "NICE NG220", "natalizumab", "dimethyl fumarate", "two relapses"]
+  },
+  {
+    "id": "QG-BB-110-003",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Neurology",
+    "difficulty": "Medium",
+    "question": "A 28-year-old man with multiple sclerosis is seen for his annual review. He asks which investigation is most useful to monitor his MS disease activity and guide treatment decisions. Per NICE NG220, what is the most important monitoring investigation?",
+    "options": {
+      "A": "Annual lumbar puncture for oligoclonal bands",
+      "B": "MRI brain and spine with gadolinium — enhancing lesions indicate active inflammation (new/enlarging); T2 lesion load tracks disease burden; used to detect subclinical disease activity, monitor treatment response, and guide decisions on DMT escalation; VEPs (visual evoked potentials) and neuropsychological testing are additional tools",
+      "C": "Annual PET scan of the brain",
+      "D": "Serum neurofilament light chain (NfL) only — MRI is no longer required",
+      "E": "Annual CSF examination is the gold standard for monitoring MS activity"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per NICE NG220 (Multiple sclerosis in adults): MRI brain (and spine where clinically relevant) with and without gadolinium is the key imaging modality for monitoring MS. MRI findings: T2 hyperintense lesions: established demyelinating plaques; T1 enhancing lesions (after gadolinium): active inflammation/blood-brain barrier breakdown — indicates current disease activity; T1 black holes: areas of irreversible axonal loss. MRI monitoring: used to: detect subclinical disease activity (new lesions despite clinical stability); assess treatment response (if no new T2 lesions + no relapses = 'no evidence of disease activity' — NEDA); guide escalation from lower to higher-efficacy DMT; detect serious DMT complications (e.g. PML — progressive multifocal leukoencephalopathy — on natalizumab). Serum NfL: emerging biomarker for neuroaxonal damage — increasing evidence for monitoring but not yet NICE standard for routine monitoring. Lumbar puncture: diagnostic (oligoclonal bands) — not routine monitoring.",
+      "A": "Incorrect — Lumbar puncture with CSF oligoclonal bands is a diagnostic tool for MS but is not used for routine disease monitoring.",
+      "B": "CORRECT — MRI with gadolinium is the principal investigation for monitoring MS activity and treatment response per NICE NG220.",
+      "C": "Incorrect — PET scanning is a research tool for MS — not part of routine clinical monitoring.",
+      "D": "Incorrect — Serum NfL is an emerging biomarker but MRI remains the gold standard for monitoring; NfL does not replace MRI.",
+      "E": "Incorrect — Annual lumbar puncture is not the monitoring standard — MRI is the key monitoring investigation."
+    },
+    "reference": "NICE NG220 — Multiple sclerosis. https://www.nice.org.uk/guidance/ng220",
+    "tags": ["MS monitoring", "MRI gadolinium", "enhancing lesions", "NICE NG220", "NEDA", "DMT response"]
+  },
+  {
+    "id": "QG-BB-111-002",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Gastroenterology",
+    "difficulty": "Hard",
+    "question": "A 72-year-old man presents with a 3-month history of progressive painless obstructive jaundice, weight loss of 6 kg, and a palpable non-tender gallbladder (Courvoisier's sign). Per NICE NG12, what is the most likely diagnosis and immediate management?",
+    "options": {
+      "A": "Gallstones causing common bile duct obstruction — ERCP and sphincterotomy",
+      "B": "Carcinoma of the head of the pancreas — Courvoisier's law states that in the presence of jaundice, a palpable non-tender gallbladder is unlikely to be due to gallstones (because gallstones cause a fibrotic, shrunken gallbladder); a distended gallbladder with painless obstructive jaundice + weight loss suggests malignant common bile duct obstruction from pancreatic head carcinoma; urgent 2WW CT chest/abdomen/pelvis; refer to HPB surgery; CA 19-9",
+      "C": "Hepatitis — arrange LFTs and viral hepatitis serology",
+      "D": "Primary sclerosing cholangitis — MRCP and colonoscopy",
+      "E": "Cholangiocarcinoma — always the first differential for obstructive jaundice"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Courvoisier's law: 'In the presence of jaundice, a palpable non-tender gallbladder is unlikely to be due to gallstones' — because chronic gallstone disease causes inflammation and fibrosis, making the gallbladder shrunken and non-distensible. A DILATED, palpable, non-tender gallbladder with obstructive jaundice suggests malignant obstruction below the cystic duct insertion (most commonly pancreatic head carcinoma). Pancreatic head carcinoma (ductal adenocarcinoma): painless progressive jaundice (bile duct compression), weight loss, anorexia, dark urine, pale stools, new-onset diabetes. Per NICE NG12: urgent suspected cancer pathway (2WW); investigate with: CT chest/abdomen/pelvis (triple phase — pancreatic protocol); CA 19-9 (marker — elevated in 70-80%); ERCP/EUS for biliary drainage and biopsy if needed. Surgery (Whipple's pancreaticoduodenectomy): only 15-20% are resectable at presentation — 5-year survival <10% for resected cases. Palliative biliary stenting for inoperable disease.",
+      "A": "Incorrect — Courvoisier's law specifically argues AGAINST gallstones as the cause when a palpable non-tender gallbladder is present with jaundice.",
+      "B": "CORRECT — Courvoisier's sign + painless progressive jaundice + weight loss = pancreatic head carcinoma until proven otherwise. Urgent 2WW CT per NICE NG12.",
+      "C": "Incorrect — Hepatitis causes hepatocellular jaundice (not obstructive) and would not produce a palpable distended gallbladder.",
+      "D": "Incorrect — PSC causes cholestatic jaundice in younger patients with IBD; associated with multiple strictures — not typically a palpable gallbladder.",
+      "E": "Incorrect — Cholangiocarcinoma (cancer of the bile duct) is also an important differential but Courvoisier's sign in this clinical context points more specifically to pancreatic head carcinoma."
+    },
+    "reference": "NICE NG12 — Suspected cancer: recognition and referral. https://www.nice.org.uk/guidance/ng12",
+    "tags": ["Courvoisier's sign", "pancreatic head carcinoma", "painless obstructive jaundice", "NICE NG12", "Courvoisier's law", "2WW referral"]
+  },
+  {
+    "id": "QG-BB-111-003",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Gastroenterology",
+    "difficulty": "Medium",
+    "question": "A 68-year-old woman presents with a 2-month history of epigastric pain radiating to the back, new-onset type 2 diabetes, pale stools, and 8 kg weight loss. Her serum amylase is normal. Per NICE NG12, which investigation is most appropriate?",
+    "options": {
+      "A": "Repeat serum amylase — normal result excludes pancreatic pathology",
+      "B": "Urgent CT chest/abdomen/pelvis with pancreatic protocol (triple phase) — new-onset diabetes in an older adult with weight loss, back pain and pale stools (steatorrhoea from exocrine insufficiency) is a red flag combination for pancreatic carcinoma; normal amylase does not exclude it (pancreatic cancer rarely causes acute pancreatitis); 2WW cancer referral is appropriate",
+      "C": "Upper GI endoscopy — to exclude peptic ulcer disease",
+      "D": "Abdominal USS only — sufficient to visualise the pancreas",
+      "E": "Stool elastase — diagnoses pancreatic exocrine insufficiency and confirms cancer"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per NICE NG12: red flag features for pancreatic cancer: unexplained weight loss + upper abdominal or back pain; new-onset diabetes in a person over 60 (diabetes can be the presenting symptom of pancreatic adenocarcinoma — cancer destroys islet cells); obstructive jaundice; pale/fatty stools (steatorrhoea from pancreatic exocrine insufficiency). Investigation: CT abdomen/pelvis with pancreatic protocol (triple phase arterial/portal/delayed) — most sensitive for detecting pancreatic tumour and local/vascular involvement. Why normal amylase does not exclude cancer: pancreatic adenocarcinoma does not typically cause duct obstruction producing acute pancreatitis (elevated amylase) — it grows silently causing weight loss and diabetes. USS abdomen: less sensitive for pancreatic tail lesions and can miss small tumours (>20% pancreatic cancers missed on USS). EUS + FNA: biopsy for tissue diagnosis once CT confirms a mass. CA 19-9: raised in 70-80% but non-specific.",
+      "A": "Incorrect — Normal serum amylase DOES NOT exclude pancreatic carcinoma. Amylase is elevated in acute pancreatitis — not in pancreatic cancer.",
+      "B": "CORRECT — Red flag combination (new diabetes + weight loss + back pain + steatorrhoea) = urgent CT pancreatic protocol + 2WW cancer referral per NICE NG12.",
+      "C": "Incorrect — Upper GI endoscopy assesses oesophageal, gastric and duodenal pathology but cannot adequately visualise the pancreas.",
+      "D": "Incorrect — USS has limited sensitivity for pancreatic pathology, particularly the body/tail, and is not adequate as the only investigation for suspected pancreatic cancer.",
+      "E": "Incorrect — Stool elastase diagnoses exocrine insufficiency but cannot diagnose pancreatic cancer or exclude malignancy."
+    },
+    "reference": "NICE NG12 — Suspected cancer. https://www.nice.org.uk/guidance/ng12",
+    "tags": ["pancreatic cancer", "new-onset diabetes weight loss", "CT pancreatic protocol", "NICE NG12", "normal amylase", "2WW"]
+  },
+  {
+    "id": "QG-BB-112-002",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Gastroenterology",
+    "difficulty": "Hard",
+    "question": "A 58-year-old man presents with a 6-week history of epigastric pain, reflux symptoms and is found to have a platelet count of 680 × 10⁹/L (thrombocytosis) with a normal FBC otherwise. Per NICE NG12 and NG2, what investigation must be done next to exclude serious pathology?",
+    "options": {
+      "A": "Start PPI and review in 8 weeks — thrombocytosis is a reactive finding",
+      "B": "Urgent upper GI endoscopy — new dyspeptic symptoms in a patient over 55 (alarm feature) combined with thrombocytosis (which can be reactive to occult malignancy or iron deficiency from GI bleeding) requires urgent 2WW endoscopy referral to exclude gastric cancer or oesophageal cancer per NICE NG12 and NG2 (dyspepsia guidelines)",
+      "C": "Bone marrow biopsy — thrombocytosis always indicates haematological malignancy",
+      "D": "Anti-Helicobacter pylori antibody test and treat — standard first-line for dyspepsia",
+      "E": "Abdominal ultrasound to exclude splenomegaly"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per NICE NG12 (Suspected cancer) and NICE NG2 (Dyspepsia and GORD): Alarm features in dyspepsia requiring urgent (2WW) upper GI endoscopy: age ≥55 with unexplained weight loss AND one of: upper abdominal pain, reflux, or dyspepsia; dysphagia; upper abdominal mass; treatment-resistant dyspepsia; iron deficiency anaemia; progressive difficulty swallowing; unexplained weight loss. Additionally: per NICE NG12, thrombocytosis combined with dyspeptic symptoms (especially in patients over 55) is a red flag combination — thrombocytosis can be reactive to occult GI malignancy (from chronic blood loss causing iron deficiency, or direct tumour-stimulated thrombopoiesis via IL-6). Therefore: urgent 2WW upper GI endoscopy is required. H. pylori test and treat is first-line for UNCOMPLICATED dyspepsia in under 55s without alarm features — NOT for this alarm feature presentation.",
+      "A": "Incorrect — Starting PPI without investigating alarm features (age + thrombocytosis) delays diagnosis of potentially resectable upper GI cancer.",
+      "B": "CORRECT — Dyspepsia + age ≥55 + thrombocytosis = alarm features requiring urgent 2WW upper GI endoscopy to exclude gastric/oesophageal cancer per NICE NG12.",
+      "C": "Incorrect — Reactive thrombocytosis is more common than primary haematological causes; bone marrow biopsy is not first-line. Investigate GI malignancy (a common cause of reactive thrombocytosis) first.",
+      "D": "Incorrect — H. pylori test and treat is appropriate for UNCOMPLICATED dyspepsia in patients under 55 without alarm features. Alarm features mandate urgent endoscopy first.",
+      "E": "Incorrect — Abdominal USS can be useful but does not visualise the gastric/oesophageal mucosa and cannot exclude upper GI cancer — endoscopy is required."
+    },
+    "reference": "NICE NG12 — Suspected cancer. NICE NG2 — Dyspepsia and GORD. https://www.nice.org.uk/guidance/ng12",
+    "tags": ["thrombocytosis dyspepsia", "upper GI endoscopy 2WW", "alarm features", "NICE NG12", "NICE NG2", "gastric cancer"]
+  },
+  {
+    "id": "QG-BB-112-003",
+    "exam": "MRCGP AKT",
+    "domain": "Clinical Medicine",
+    "specialty": "Gastroenterology",
+    "difficulty": "Medium",
+    "question": "A 42-year-old woman presents with epigastric pain and nausea for 3 months. She is an otherwise well non-smoker with no alarm features. She is not on NSAIDs. Per NICE NG2, what is the recommended first-line management in primary care?",
+    "options": {
+      "A": "Urgent upper GI endoscopy — all dyspepsia requires endoscopy",
+      "B": "H. pylori test (urea breath test or stool antigen test — NOT serology) and treat if positive; if H. pylori negative or symptoms persist after successful eradication: full-dose PPI for 4-8 weeks; review and step down to lowest effective maintenance dose if required",
+      "C": "Empirical PPI trial only — H. pylori testing is not recommended in primary care",
+      "D": "Ranitidine (H2 blocker) — first-line per NICE NG2",
+      "E": "Immediate referral to gastroenterology for all dyspepsia lasting more than 4 weeks"
+    },
+    "correct_answer": "B",
+    "explanation": {
+      "correct": "Per NICE NG2 (Dyspepsia and GORD): for uncomplicated dyspepsia in adults <55 without alarm features: H. pylori test and treat is the recommended first-line strategy. Why: H. pylori causes peptic ulcer disease and can cause dyspepsia — eradication achieves long-term symptom resolution in H. pylori-positive patients (superior to just treating with a PPI). Testing method: urea breath test (UBT) or stool antigen test — NOT serology (serology detects past exposure, not current active infection and cannot confirm eradication). Before testing: stop PPIs for 2 weeks, antibiotics for 4 weeks (to avoid false negatives). Eradication therapy: 7-day triple therapy: PPI + amoxicillin + clarithromycin (first-line); PPI + metronidazole + clarithromycin if penicillin allergic; confirm eradication: repeat UBT or stool antigen ≥4 weeks after completing treatment. If H. pylori negative or refractory: PPI 4-8 weeks.",
+      "A": "Incorrect — Endoscopy is NOT required for uncomplicated dyspepsia without alarm features in patients under 55 per NICE NG2.",
+      "B": "CORRECT — H. pylori UBT or stool antigen test first (not serology); treat if positive; PPI if negative or refractory per NICE NG2.",
+      "C": "Incorrect — H. pylori testing IS recommended in primary care for uncomplicated dyspepsia — empirical PPI alone is a second-line approach after H. pylori strategy.",
+      "D": "Incorrect — Ranitidine (H2 blocker) was withdrawn from the UK market in 2020 due to NDMA contamination concerns. PPIs are the recommended acid suppression therapy per NICE NG2.",
+      "E": "Incorrect — Uncomplicated dyspepsia without alarm features is managed in primary care per NICE NG2; gastroenterology referral is for alarm features or refractory cases."
+    },
+    "reference": "NICE NG2 — Dyspepsia and GORD. https://www.nice.org.uk/guidance/ng2",
+    "tags": ["dyspepsia management", "H pylori test and treat", "urea breath test", "NICE NG2", "not serology", "first-line primary care"]
+  }
+]

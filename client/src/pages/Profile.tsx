@@ -162,7 +162,7 @@ export default function Profile() {
       <main className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         {profileLoading ? (
           <div className="flex items-center justify-center py-12">
-            <Loader2 className="w-8 h-8 text-teal-600 animate-spin" />
+            <Loader2 className="w-8 h-8 text-green-600 animate-spin" />
           </div>
         ) : (
           <form onSubmit={handleSubmit} className="space-y-8">
@@ -322,7 +322,7 @@ export default function Profile() {
                   id="leaderboardOptIn"
                   checked={formData.leaderboardOptIn}
                   onChange={(e) => setFormData({ ...formData, leaderboardOptIn: e.target.checked })}
-                  className="w-4 h-4 rounded border-slate-300 text-teal-600 cursor-pointer"
+                  className="w-4 h-4 rounded border-slate-300 text-green-600 cursor-pointer"
                 />
                 <Label htmlFor="leaderboardOptIn" className="text-slate-700 font-medium cursor-pointer">
                   Opt in to leaderboard (show my performance anonymously)
@@ -335,7 +335,7 @@ export default function Profile() {
               <Button
                 type="submit"
                 disabled={updateProfileMutation.isPending}
-                className="bg-teal-600 hover:bg-teal-700 text-white gap-2"
+                className="bg-green-600 hover:bg-green-700 text-gray-900 gap-2"
               >
                 {updateProfileMutation.isPending ? (
                   <>
