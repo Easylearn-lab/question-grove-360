@@ -278,13 +278,9 @@ export const appRouter = router({
       )
       .query(async ({ input }) => {
         try {
-          // Load questions from storage URLs
-          const [batchA, batchB] = await Promise.all([
-            fetch("/manus-storage/batch_a_df83341a.json").then((r) => r.json()),
-            fetch("/manus-storage/batch_b_8d0e71ec.json").then((r) => r.json()),
-          ]);
-
-          const allQuestions = [...batchA, ...batchB];
+          // Load all 430 questions from batch C
+          const batchC = await fetch("/manus-storage/completion_batch_c_f78133c3.json").then((r) => r.json());
+          const allQuestions = batchC;
           
           // Filter by specialty if provided
           if (input.specialty) {
