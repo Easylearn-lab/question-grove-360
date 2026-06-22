@@ -434,14 +434,13 @@
 
 
 ## Enhanced Reset Feature - Specialty-Specific (June 17, 2026)
-
-- [ ] Update resetUserQuestionAttempts to accept optional specialty parameter
-- [ ] Create resetUserQuestionAttemptsBySpecialty function in db.ts
-- [ ] Add new tRPC procedure for specialty-specific reset
-- [ ] Create specialty selection modal/dialog component
-- [ ] Update QuestionBank.tsx to show specialty selector in reset dialog
-- [ ] Wire reset button to new specialty-specific mutation
-- [ ] Test reset for individual specialties
+- [x] Update resetUserQuestionAttempts to accept optional specialty parameter
+- [x] Create resetUserQuestionAttemptsBySpecialty function in db.ts
+- [x] Add new tRPC procedure for specialty-specific reset
+- [x] Create specialty selection modal/dialog component
+- [x] Update QuestionBank.tsx to show specialty selector in reset dialog
+- [x] Wire reset button to new specialty-specific mutation
+- [x] Test reset for individual specialties
 
 
 ## Enhanced Reset Feature - June 17, 2026
@@ -496,3 +495,14 @@
 - [x] Verify specialty breakdown matches expected (Neurology 102, Endocrinology 71, Cardiovascular 70, etc.)
 - [x] Verify pasted_content.txt Cardiovascular questions already exist in examId=1 (no duplicates needed)
 - [x] Final DB state: examId=1: 793 questions, examId=30001: 845 questions, Grand total: 1,638 all complete
+
+
+## MRCGP AKT Page Fix + Specialty Normalisation (June 19, 2026)
+- [x] Part 1: Normalise specialty names in database (merge Renal, Urology, Psychiatry, Sexual Health, Musculoskeletal Surgery)
+- [x] Part 2: Merge examId=30001 into examId=1 so all 1,638 questions accessible from Question Bank
+- [x] Part 3: Wire passwordRouter into appRouter and fix import paths
+- [x] Part 4: Add SecuritySettings component to Profile page with password change/reset functionality
+- [x] Part 5: Confirm password reset button is on user profile settings page (SecuritySettings component)
+- [x] Part 6: Update SPECIALTIES_MAP in MRCGPAKTPractice.tsx with all 17 specialties
+- [x] Part 7: Add getMrcgpAktSpecialties and getMrcgpAktQuestionsBySpecialty functions to db.ts
+- [x] Part 8: Update MRCGPAKTSpecialties.tsx to use database-driven specialty counts via tRPC

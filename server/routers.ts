@@ -10,6 +10,7 @@ import { aiCoachRouter } from "./aiCoachRouter";
 import { twoFactorRouter } from "./twoFactorRouter";
 import { voiceRouter } from "./voiceRouter";
 import { adaptiveRouter } from "./adaptiveAlgorithm";
+import { passwordRouter } from "./passwordRouter";
 
 export const appRouter = router({
   system: systemRouter,
@@ -268,30 +269,25 @@ export const appRouter = router({
   // Adaptive Learning Router
   adaptive: adaptiveRouter,
 
+  // Password Management Router
+  password: passwordRouter,
+
   // MRCGP AKT Router
   mrcgpAkt: router({
-    getQuestions: publicProcedure
+    getSpecialties: publicProcedure.query(async () => {
+      const { getMrcgpAktSpecialties } = await import("./db");
+      return await getMrcgpAktSpecialties();
+    }),
+    getQuestions: protectedProcedure
       .input(
         z.object({
           specialty: z.string().optional(),
+          limit: z.number().default(50),
         })
       )
       .query(async ({ input }) => {
-        try {
-          // Load all 430 questions from batch C
-          const batchC = await fetch("/manus-storage/completion_batch_c_f78133c3.json").then((r) => r.json());
-          const allQuestions = batchC;
-          
-          // Filter by specialty if provided
-          if (input.specialty) {
-            return allQuestions.filter((q: any) => q.specialty === input.specialty);
-          }
-          
-          return allQuestions;
-        } catch (error) {
-          console.error("Failed to load MRCGP questions:", error);
-          throw new Error("Failed to load questions");
-        }
+        const { getMrcgpAktQuestionsBySpecialty } = await import("./db");
+        return await getMrcgpAktQuestionsBySpecialty(input.specialty, input.limit);
       }),
   }),
 });

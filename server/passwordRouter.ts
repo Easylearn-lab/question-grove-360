@@ -1,11 +1,11 @@
 import { z } from "zod";
-import { protectedProcedure, publicProcedure, router } from "./trpc";
+import { protectedProcedure, publicProcedure, router } from "./_core/trpc";
 import { TRPCError } from "@trpc/server";
 import bcrypt from "bcryptjs";
 import crypto from "crypto";
 import { getDb } from "./db";
 import { users, passwordResetTokens } from "../drizzle/schema";
-import { eq, and } from "drizzle-orm";
+import { eq, and, isNull } from "drizzle-orm";
 import { notifyOwner } from "./_core/notification";
 
 // Password validation regex: at least 8 chars, 1 number, 1 special char
@@ -45,9 +45,8 @@ export const passwordRouter = router({
       if (!db) throw new TRPCError({ code: "INTERNAL_SERVER_ERROR" });
 
       // Get user with password hash
-      const user = await db.query.users.findFirst({
-        where: eq(users.id, ctx.user.id),
-      });
+      const userResult = await db.select().from(users).where(eq(users.id, ctx.user.id)).limit(1);
+      const user = userResult.length > 0 ? userResult[0] : null;
 
       if (!user || !user.passwordHash) {
         throw new TRPCError({
@@ -107,23 +106,20 @@ export const passwordRouter = router({
     const db = await getDb();
     if (!db) throw new TRPCError({ code: "INTERNAL_SERVER_ERROR" });
 
-    const user = await db.query.users.findFirst({
-      where: eq(users.id, ctx.user.id),
-    });
+    const userResult = await db.select().from(users).where(eq(users.id, ctx.user.id)).limit(1);
+    const user = userResult.length > 0 ? userResult[0] : null;
 
     if (!user || !user.email) {
       throw new TRPCError({ code: "NOT_FOUND", message: "User not found" });
     }
 
     // Check rate limit: 3 requests per hour per user
-    const oneHourAgo = new Date(Date.now() - 60 * 60 * 1000);
-    const recentTokens = await db.query.passwordResetTokens.findMany({
-      where: and(
+    const recentTokens = await db.select().from(passwordResetTokens).where(
+      and(
         eq(passwordResetTokens.userId, ctx.user.id),
-        eq(passwordResetTokens.usedAt, null),
-        // This is a simplified check - in production, use proper timestamp comparison
-      ),
-    });
+        isNull(passwordResetTokens.usedAt)
+      )
+    );
 
     if (recentTokens.length >= 3) {
       throw new TRPCError({
@@ -188,12 +184,13 @@ export const passwordRouter = router({
       }
 
       // Find valid token
-      const resetToken = await db.query.passwordResetTokens.findFirst({
-        where: and(
+      const resetTokenResult = await db.select().from(passwordResetTokens).where(
+        and(
           eq(passwordResetTokens.token, input.token),
-          eq(passwordResetTokens.usedAt, null)
-        ),
-      });
+          isNull(passwordResetTokens.usedAt)
+        )
+      ).limit(1);
+      const resetToken = resetTokenResult.length > 0 ? resetTokenResult[0] : null;
 
       if (!resetToken) {
         throw new TRPCError({
@@ -211,9 +208,8 @@ export const passwordRouter = router({
       }
 
       // Get user
-      const user = await db.query.users.findFirst({
-        where: eq(users.id, resetToken.userId),
-      });
+      const userResult = await db.select().from(users).where(eq(users.id, resetToken.userId)).limit(1);
+      const user = userResult.length > 0 ? userResult[0] : null;
 
       if (!user) {
         throw new TRPCError({ code: "NOT_FOUND", message: "User not found" });
@@ -235,7 +231,7 @@ export const passwordRouter = router({
         .update(users)
         .set({
           passwordHash,
-          loginMethods: JSON.stringify(currentLoginMethods),
+          loginMethods: currentLoginMethods as any,
         })
         .where(eq(users.id, resetToken.userId));
 
@@ -269,9 +265,8 @@ export const passwordRouter = router({
       if (!db) throw new TRPCError({ code: "INTERNAL_SERVER_ERROR" });
 
       // Find user by email (don't reveal if user exists)
-      const user = await db.query.users.findFirst({
-        where: eq(users.email, input.email),
-      });
+      const userResult = await db.select().from(users).where(eq(users.email, input.email)).limit(1);
+      const user = userResult.length > 0 ? userResult[0] : null;
 
       if (!user) {
         // Return success anyway to prevent user enumeration
@@ -333,12 +328,13 @@ export const passwordRouter = router({
       }
 
       // Find valid token
-      const resetToken = await db.query.passwordResetTokens.findFirst({
-        where: and(
+      const resetTokenResult = await db.select().from(passwordResetTokens).where(
+        and(
           eq(passwordResetTokens.token, input.token),
-          eq(passwordResetTokens.usedAt, null)
-        ),
-      });
+          isNull(passwordResetTokens.usedAt)
+        )
+      ).limit(1);
+      const resetToken = resetTokenResult.length > 0 ? resetTokenResult[0] : null;
 
       if (!resetToken) {
         throw new TRPCError({
@@ -391,9 +387,8 @@ export const passwordRouter = router({
     const db = await getDb();
     if (!db) throw new TRPCError({ code: "INTERNAL_SERVER_ERROR" });
 
-    const user = await db.query.users.findFirst({
-      where: eq(users.id, ctx.user.id),
-    });
+    const result = await db.select().from(users).where(eq(users.id, ctx.user.id)).limit(1);
+    const user = result.length > 0 ? result[0] : null;
 
     if (!user) {
       throw new TRPCError({ code: "NOT_FOUND", message: "User not found" });

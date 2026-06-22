@@ -1,61 +1,66 @@
-import { useState, useEffect } from "react";
+import { useState, useMemo } from "react";
 import { useLocation } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { ArrowLeft, BookOpen, BarChart3, Lock } from "lucide-react";
 import { useProtectedRoute } from "@/hooks/useProtectedRoute";
 import { useSubscription } from "@/hooks/useSubscription";
+import { trpc } from "@/lib/trpc";
 
-interface SpecialtyData {
-  name: string;
-  icon: string;
-  questionCount: number;
-  attempted: number;
-  correct: number;
-  slug: string;
+const SPECIALTY_ICONS: Record<string, string> = {
+  "Neurology": "🧠",
+  "Endocrinology": "🔬",
+  "Dermatology": "🩹",
+  "Renal & Urology": "🫘",
+  "Cardiovascular": "❤️",
+  "Respiratory": "💨",
+  "Gastroenterology": "🍽️",
+  "Musculoskeletal": "🦴",
+  "Obstetrics & Gynaecology": "🤰",
+  "Ethics & Organisational": "⚖️",
+  "Paediatrics": "👶",
+  "Haematology": "🩸",
+  "Pharmacology & Prescribing": "💊",
+  "Statistics & EBM": "📊",
+  "Ophthalmology & ENT": "👁️",
+  "Infectious Disease": "🦠",
+  "General Practice": "🏥",
+};
+
+function slugify(name: string): string {
+  return name.toLowerCase().replace(/[&]/g, "").replace(/\s+/g, "-").replace(/--+/g, "-");
 }
-
-const SPECIALTIES: SpecialtyData[] = [
-  { name: "Ethics & Organisational", icon: "⚖️", questionCount: 7, attempted: 0, correct: 0, slug: "ethics-organisational" },
-  { name: "Endocrinology", icon: "🔬", questionCount: 6, attempted: 0, correct: 0, slug: "endocrinology" },
-  { name: "Paediatrics", icon: "👶", questionCount: 6, attempted: 0, correct: 0, slug: "paediatrics" },
-  { name: "Cardiovascular", icon: "❤️", questionCount: 6, attempted: 0, correct: 0, slug: "cardiovascular" },
-  { name: "Statistics & EBM", icon: "📊", questionCount: 6, attempted: 0, correct: 0, slug: "statistics-ebm" },
-  { name: "Gastroenterology", icon: "🍽️", questionCount: 6, attempted: 0, correct: 0, slug: "gastroenterology" },
-  { name: "Haematology", icon: "🩸", questionCount: 5, attempted: 0, correct: 0, slug: "haematology" },
-  { name: "General Practice", icon: "🏥", questionCount: 4, attempted: 0, correct: 0, slug: "general-practice" },
-  { name: "Respiratory", icon: "💨", questionCount: 4, attempted: 0, correct: 0, slug: "respiratory" },
-  { name: "Pharmacology & Prescribing", icon: "💊", questionCount: 2, attempted: 0, correct: 0, slug: "pharmacology-prescribing" },
-  { name: "Ophthalmology & ENT", icon: "👁️", questionCount: 2, attempted: 0, correct: 0, slug: "ophthalmology-ent" },
-  { name: "Musculoskeletal", icon: "🦴", questionCount: 2, attempted: 0, correct: 0, slug: "musculoskeletal" },
-  { name: "Neurology", icon: "🧠", questionCount: 2, attempted: 0, correct: 0, slug: "neurology" },
-  { name: "Dermatology", icon: "🩹", questionCount: 1, attempted: 0, correct: 0, slug: "dermatology" },
-  { name: "Obstetrics & Gynaecology", icon: "🤰", questionCount: 1, attempted: 0, correct: 0, slug: "obstetrics-gynaecology" },
-];
-
-const DIFFICULTY_FILTERS = ["All", "Easy", "Medium", "Hard"];
 
 export default function MRCGPAKTSpecialties() {
   const [, navigate] = useLocation();
   const { user, isAuthenticated, loading } = useProtectedRoute();
   const { isPremium } = useSubscription();
-  const [selectedDifficulty, setSelectedDifficulty] = useState("All");
 
-  useEffect(() => {
-    if (!loading && !isAuthenticated) {
-      navigate("/");
-    }
-  }, [loading, isAuthenticated, navigate]);
+  const specialtiesQuery = trpc.mrcgpAkt.getSpecialties.useQuery();
 
-  const handleSpecialtyClick = (specialty: SpecialtyData) => {
-    if (!isPremium && specialty.questionCount > 3) {
+  const specialties = useMemo(() => {
+    if (!specialtiesQuery.data) return [];
+    return specialtiesQuery.data.map((s) => ({
+      name: s.specialty,
+      icon: SPECIALTY_ICONS[s.specialty] || "📋",
+      questionCount: s.count,
+      slug: slugify(s.specialty),
+    }));
+  }, [specialtiesQuery.data]);
+
+  const totalQuestions = useMemo(() => {
+    return specialties.reduce((sum, s) => sum + s.questionCount, 0);
+  }, [specialties]);
+
+  const handleSpecialtyClick = (specialty: { name: string; slug: string }) => {
+    if (!isPremium) {
       navigate("/pricing");
       return;
     }
     navigate(`/practice/mrcgp-akt/${specialty.slug}`);
   };
 
-  if (loading) {
+  if (loading || specialtiesQuery.isLoading) {
     return (
       <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 flex items-center justify-center">
         <div className="text-center">
@@ -82,7 +87,7 @@ export default function MRCGPAKTSpecialties() {
             </Button>
             <div>
               <h1 className="text-2xl font-bold text-slate-900">MRCGP AKT</h1>
-              <p className="text-sm text-slate-600">60 questions across 15 specialties</p>
+              <p className="text-sm text-slate-600">{totalQuestions.toLocaleString()} questions across {specialties.length} specialties</p>
             </div>
           </div>
         </div>
@@ -90,28 +95,10 @@ export default function MRCGPAKTSpecialties() {
 
       {/* Main Content */}
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        {/* Difficulty Filter */}
-        <div className="mb-8">
-          <h2 className="text-lg font-semibold text-slate-900 mb-4">Filter by Difficulty</h2>
-          <div className="flex gap-3 flex-wrap">
-            {DIFFICULTY_FILTERS.map((difficulty) => (
-              <Button
-                key={difficulty}
-                variant={selectedDifficulty === difficulty ? "default" : "outline"}
-                onClick={() => setSelectedDifficulty(difficulty)}
-                className={selectedDifficulty === difficulty ? "bg-green-600 hover:bg-green-700 text-gray-900" : ""}
-              >
-                {difficulty}
-              </Button>
-            ))}
-          </div>
-        </div>
-
         {/* Specialties Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {SPECIALTIES.map((specialty) => {
-            const progress = specialty.attempted > 0 ? (specialty.correct / specialty.attempted) * 100 : 0;
-            const isLocked = !isPremium && specialty.questionCount > 3;
+          {specialties.map((specialty) => {
+            const isLocked = !isPremium;
 
             return (
               <Card
@@ -139,36 +126,6 @@ export default function MRCGPAKTSpecialties() {
                   {specialty.name}
                 </h3>
 
-                {/* Progress Bar */}
-                {specialty.attempted > 0 && (
-                  <div className="mb-4">
-                    <div className="flex items-center justify-between mb-2">
-                      <span className="text-xs text-slate-600">Progress</span>
-                      <span className="text-xs font-semibold text-slate-900">
-                        {Math.round(progress)}%
-                      </span>
-                    </div>
-                    <div className="w-full h-2 bg-slate-200 rounded-full overflow-hidden">
-                      <div
-                        className="h-full bg-gradient-to-r from-green-500 to-green-600 transition-all"
-                        style={{ width: `${progress}%` }}
-                      />
-                    </div>
-                  </div>
-                )}
-
-                {/* Stats */}
-                <div className="grid grid-cols-2 gap-2 mb-4 text-xs">
-                  <div className="bg-slate-50 p-2 rounded">
-                    <p className="text-slate-600">Attempted</p>
-                    <p className="font-bold text-slate-900">{specialty.attempted}</p>
-                  </div>
-                  <div className="bg-slate-50 p-2 rounded">
-                    <p className="text-slate-600">Correct</p>
-                    <p className="font-bold text-green-600">{specialty.correct}</p>
-                  </div>
-                </div>
-
                 <Button className="w-full bg-green-600 hover:bg-green-700 text-gray-900 group-hover:shadow-lg transition-all">
                   Practice Now
                   <BookOpen className="w-4 h-4 ml-2" />
@@ -184,7 +141,7 @@ export default function MRCGPAKTSpecialties() {
             <div className="flex items-center justify-between">
               <div>
                 <p className="text-sm text-slate-600 mb-1">Total Questions</p>
-                <p className="text-3xl font-bold text-slate-900">60</p>
+                <p className="text-3xl font-bold text-slate-900">{totalQuestions.toLocaleString()}</p>
               </div>
               <BookOpen className="w-10 h-10 text-green-600 opacity-20" />
             </div>
@@ -194,7 +151,7 @@ export default function MRCGPAKTSpecialties() {
             <div className="flex items-center justify-between">
               <div>
                 <p className="text-sm text-slate-600 mb-1">Specialties</p>
-                <p className="text-3xl font-bold text-slate-900">{SPECIALTIES.length}</p>
+                <p className="text-3xl font-bold text-slate-900">{specialties.length}</p>
               </div>
               <BarChart3 className="w-10 h-10 text-blue-600 opacity-20" />
             </div>
@@ -203,16 +160,14 @@ export default function MRCGPAKTSpecialties() {
           <Card className="p-6 border-slate-200 bg-gradient-to-br from-purple-50 to-purple-100">
             <div className="flex items-center justify-between">
               <div>
-                <p className="text-sm text-slate-600 mb-1">Your Progress</p>
-                <p className="text-3xl font-bold text-slate-900">0%</p>
+                <p className="text-sm text-slate-600 mb-1">Exam Format</p>
+                <p className="text-3xl font-bold text-slate-900">AKT</p>
               </div>
               <BarChart3 className="w-10 h-10 text-purple-600 opacity-20" />
             </div>
           </Card>
         </div>
       </main>
-
-
     </div>
   );
 }

@@ -1093,3 +1093,50 @@ export async function isBookmarkedExplanation(
     return false;
   }
 }
+
+
+// MRCGP AKT - Get specialty breakdown with question counts
+export async function getMrcgpAktSpecialties() {
+  const db = await getDb();
+  if (!db) return [];
+
+  try {
+    const result = await db.execute(
+      sql`SELECT specialty, COUNT(*) AS count FROM questions WHERE examId = 1 GROUP BY specialty ORDER BY count DESC`
+    );
+    // mysql2 returns [rows, fields]
+    const rows = Array.isArray(result) && Array.isArray(result[0]) ? result[0] : result;
+    return (rows as any[]).map((r: any) => ({
+      specialty: r.specialty as string,
+      count: Number(r.count),
+    }));
+  } catch (error) {
+    console.error("[Database] Failed to get MRCGP AKT specialties:", error);
+    return [];
+  }
+}
+
+// MRCGP AKT - Get questions by specialty from database
+export async function getMrcgpAktQuestionsBySpecialty(specialty?: string, limit: number = 50) {
+  const db = await getDb();
+  if (!db) return [];
+
+  try {
+    const { questions } = await import("../drizzle/schema");
+
+    if (specialty) {
+      const result = await db.select().from(questions)
+        .where(and(eq(questions.examId, 1), eq(questions.specialty, specialty)))
+        .limit(limit);
+      return result;
+    } else {
+      const result = await db.select().from(questions)
+        .where(eq(questions.examId, 1))
+        .limit(limit);
+      return result;
+    }
+  } catch (error) {
+    console.error("[Database] Failed to get MRCGP AKT questions:", error);
+    return [];
+  }
+}

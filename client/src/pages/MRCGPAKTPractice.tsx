@@ -46,6 +46,8 @@ const SPECIALTIES_MAP: Record<string, string> = {
   "neurology": "Neurology",
   "dermatology": "Dermatology",
   "obstetrics-gynaecology": "Obstetrics & Gynaecology",
+  "renal-urology": "Renal & Urology",
+  "infectious-disease": "Infectious Disease",
 };
 
 export default function MRCGPAKTPractice() {
