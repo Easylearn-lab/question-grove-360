@@ -15,7 +15,7 @@ export default function AICoach() {
   const [selectedSource, setSelectedSource] = useState<any | null>(null);
   const [sourcePreviewContent, setSourcePreviewContent] = useState<string>("");
   const [isLoadingPreview, setIsLoadingPreview] = useState(false);
-  const [messages, setMessages] = useState<Array<{ role: "user" | "assistant"; content: string; sources?: Array<any> }>>([
+  const [messages, setMessages] = useState<Array<{ role: "user" | "assistant"; content: string; sources?: Array<any>; followUpQuestions?: string[] }>>([
     {
       role: "assistant",
       content: `Hello! I'm AI Coach360, your personal study companion. I'm here to help you prepare for your medical exams with personalized guidance.
@@ -90,7 +90,7 @@ Feel free to ask me anything about your exam preparation!`,
       if (!response.ok) throw new Error("Failed to get AI response");
       const data = await response.json();
       
-      setMessages((prev) => [...prev, { role: "assistant", content: data.reply, sources: data.sources }]);
+      setMessages((prev) => [...prev, { role: "assistant", content: data.reply, sources: data.sources, followUpQuestions: data.followUpQuestions }]);
     } catch (error) {
       setMessages((prev) => [
         ...prev,
@@ -186,6 +186,25 @@ Feel free to ask me anything about your exam preparation!`,
                       </div>
                     ))}
                   </div>
+                </div>
+              )}
+              {msg.role === "assistant" && msg.followUpQuestions && msg.followUpQuestions.length > 0 && (
+                <div className="w-full max-w-2xl mx-auto mt-3 flex flex-wrap gap-2">
+                  {msg.followUpQuestions.map((question: string, i: number) => (
+                    <button
+                      key={i}
+                      onClick={() => {
+                        setInput(question);
+                        setTimeout(() => {
+                          const inputEl = document.querySelector('input[placeholder]') as HTMLInputElement;
+                          inputEl?.focus();
+                        }, 100);
+                      }}
+                      className="text-xs px-3 py-2 bg-white border border-green-200 text-green-700 rounded-full hover:bg-green-50 hover:border-green-300 transition-all duration-150 active:scale-95"
+                    >
+                      {question}
+                    </button>
+                  ))}
                 </div>
               )}
             </div>
