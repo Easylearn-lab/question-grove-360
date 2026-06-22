@@ -108,6 +108,12 @@ export default function DashboardRedesigned() {
     enabled: isAuthenticated,
   });
 
+  // Fetch user profile for subscription info
+  const profileQuery = trpc.profile.getProfile.useQuery(undefined, {
+    enabled: isAuthenticated,
+  });
+  const profile = profileQuery.data;
+
   // Fetch real per-user stats based on selected exam
   const statsQuery = trpc.dashboard.getStats.useQuery(
     { examCode: EXAM_CODE_MAP[selectedExam] },
@@ -253,9 +259,6 @@ export default function DashboardRedesigned() {
                   }`}
                 >
                   <span className="block text-sm">{exam.name}</span>
-                  {isMRCGPAKT && (
-                    <span className="block text-[10px] text-green-600 mt-0.5 font-semibold">60 Q</span>
-                  )}
                   {exam.questionCount === 0 && selectedExam !== exam.id && !isMRCGPAKT && (
                     <span className="block text-[10px] text-gray-400 mt-0.5">Coming soon</span>
                   )}
@@ -546,8 +549,8 @@ export default function DashboardRedesigned() {
         {/* Quick Access */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {[
-            { icon: BookOpen, title: "Question Bank", desc: "Continue practicing", color: "teal", action: () => navigate("/questions") },
-            { icon: Zap, title: "Mock Exams", desc: "Take a full-length exam", color: "purple", action: () => navigate("/mocks") },
+            ...(profile?.subscription?.examId === 1 ? [{ icon: BookOpen, title: "Question Bank", desc: "Continue practicing", color: "teal", action: () => navigate("/questions") }] : []),
+            ...(profile?.subscription?.examId === 1 ? [{ icon: Zap, title: "Mock Exams", desc: "Take a full-length exam", color: "purple", action: () => navigate("/mocks") }] : []),
             { icon: Brain, title: "AI Coach360", desc: "Get personalized help", color: "orange", action: () => navigate("/coach") },
           ].map((item, i) => (
             <Card key={i} className="p-6 hover:shadow-lg transition-all cursor-pointer" onClick={item.action}>

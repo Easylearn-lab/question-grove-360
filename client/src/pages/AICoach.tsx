@@ -9,38 +9,22 @@ import { ArrowLeft, Send, Loader2, Sparkles } from "lucide-react";
 import { trpc } from "@/lib/trpc";
 import { Streamdown } from "streamdown";
 
-const SAMPLE_CONTEXT = {
-  totalQuestionsAnswered: 2543,
-  accuracy: 78.5,
-  weakAreas: ["Pharmacology", "Microbiology"],
-  strongAreas: ["Cardiology", "Respiratory"],
-  recentMockScore: 82,
-  studyStreak: 15,
-};
-
 export default function AICoach() {
   const { user, isAuthenticated, loading, isReady } = useProtectedRoute();
   const [, navigate] = useLocation();
   const [messages, setMessages] = useState<Array<{ role: "user" | "assistant"; content: string }>>([
     {
       role: "assistant",
-      content: `Hello! I'm AI Coach360, your personal study companion. I have access to your complete learning profile:
-
-**Your Performance:**
-- Total questions answered: ${SAMPLE_CONTEXT.totalQuestionsAnswered}
-- Overall accuracy: ${SAMPLE_CONTEXT.accuracy}%
-- Recent mock exam score: ${SAMPLE_CONTEXT.recentMockScore}%
-- Study streak: ${SAMPLE_CONTEXT.studyStreak} days 🔥
-
-**Areas to focus on:** ${SAMPLE_CONTEXT.weakAreas.join(", ")}
-**Your strengths:** ${SAMPLE_CONTEXT.strongAreas.join(", ")}
+      content: `Hello! I'm AI Coach360, your personal study companion. I'm here to help you prepare for your medical exams with personalized guidance.
 
 How can I help you today? I can:
-- Explain difficult concepts
+- Explain difficult clinical concepts
 - Create personalized study plans
-- Analyze your performance patterns
-- Suggest high-yield topics
-- Help with exam strategy`,
+- Help with exam strategy and time management
+- Discuss high-yield topics
+- Answer questions about medical knowledge
+
+Feel free to ask me anything about your exam preparation!`,
     },
   ]);
   const [input, setInput] = useState("");
@@ -62,68 +46,29 @@ How can I help you today? I can:
 
     const userMessage = input;
     setInput("");
-    setMessages((prev) => [...prev, { role: "user", content: userMessage }]);
+    const newMessages = [...messages, { role: "user" as const, content: userMessage }];
+    setMessages(newMessages);
     setIsLoading(true);
 
-    // Simulate AI response
-    setTimeout(() => {
-      const responses: Record<string, string> = {
-        pharmacology: `Based on your performance data, I see pharmacology is a weak area (currently ${SAMPLE_CONTEXT.accuracy}% accuracy). Here's a personalized study plan:
+    try {
+      const response = await fetch("/api/ai-coach", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ messages: newMessages }),
+      });
 
-**Week 1-2: Drug Classes**
-- Review beta-blockers, ACE inhibitors, and statins
-- Focus on mechanism of action and clinical applications
-
-**Week 3-4: Drug Interactions**
-- Study common drug-drug interactions
-- Practice case-based questions
-
-**Recommended resources:**
-- Question Bank: Filter by "Pharmacology" and "Hard" difficulty
-- Note360: Review high-yield pharmacology notes
-- Pattern Recognition: Master 50 key drug interactions
-
-You've been doing great with ${SAMPLE_CONTEXT.strongAreas[0]} (${SAMPLE_CONTEXT.accuracy}% accuracy), so apply that same approach here!`,
-        
-        strategy: `Great question! Based on your ${SAMPLE_CONTEXT.recentMockScore}% mock exam score, here's my recommendation:
-
-**Your Strengths to Leverage:**
-- ${SAMPLE_CONTEXT.strongAreas.join(" and ")} - these are your high-confidence areas
-- Time management - you're completing exams efficiently
-
-**Areas for Improvement:**
-- ${SAMPLE_CONTEXT.weakAreas.join(" and ")} - focus 40% of study time here
-- Review explanations for incorrect answers
-
-**Daily Study Plan:**
-- 30 min: Review weak areas
-- 20 min: Practice 20 questions in tutor mode
-- 15 min: SCA simulation for clinical reasoning
-- 10 min: Pattern Recognition flashcards
-
-Your ${SAMPLE_CONTEXT.studyStreak}-day streak shows great consistency! Keep it up! 🚀`,
-
-        default: `That's a great question! Based on your learning profile, I can see you're particularly strong in ${SAMPLE_CONTEXT.strongAreas[0]} but could use more practice in ${SAMPLE_CONTEXT.weakAreas[0]}.
-
-Here's what I recommend:
-1. **Immediate action:** Take a focused mock exam on ${SAMPLE_CONTEXT.weakAreas[0]} topics
-2. **Deep dive:** Review the Note360 materials for this specialty
-3. **Practice:** Complete 50+ questions in tutor mode with explanations
-4. **Reinforce:** Use Pattern Recognition flashcards for key concepts
-
-Your current accuracy of ${SAMPLE_CONTEXT.accuracy}% is solid. With focused effort on these weak areas, you can reach 85%+ within 2 weeks!
-
-Would you like me to create a specific study plan for ${SAMPLE_CONTEXT.weakAreas[0]}?`,
-      };
-
-      const response =
-        Object.entries(responses).find(([key]) =>
-          userMessage.toLowerCase().includes(key)
-        )?.[1] || responses.default;
-
-      setMessages((prev) => [...prev, { role: "assistant", content: response }]);
+      if (!response.ok) throw new Error("Failed to get AI response");
+      const data = await response.json();
+      
+      setMessages((prev) => [...prev, { role: "assistant", content: data.reply }]);
+    } catch (error) {
+      setMessages((prev) => [
+        ...prev,
+        { role: "assistant", content: "Sorry, I'm having trouble connecting. Please try again." },
+      ]);
+    } finally {
       setIsLoading(false);
-    }, 1500);
+    }
   };
 
   if (!isAuthenticated || !user) {

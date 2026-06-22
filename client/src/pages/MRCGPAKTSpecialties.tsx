@@ -135,38 +135,6 @@ export default function MRCGPAKTSpecialties() {
           })}
         </div>
 
-        {/* Summary Stats */}
-        <div className="mt-12 grid md:grid-cols-3 gap-6">
-          <Card className="p-6 border-slate-200 bg-gradient-to-br from-green-50 to-green-100">
-            <div className="flex items-center justify-between">
-              <div>
-                <p className="text-sm text-slate-600 mb-1">Total Questions</p>
-                <p className="text-3xl font-bold text-slate-900">{totalQuestions.toLocaleString()}</p>
-              </div>
-              <BookOpen className="w-10 h-10 text-green-600 opacity-20" />
-            </div>
-          </Card>
-
-          <Card className="p-6 border-slate-200 bg-gradient-to-br from-blue-50 to-blue-100">
-            <div className="flex items-center justify-between">
-              <div>
-                <p className="text-sm text-slate-600 mb-1">Specialties</p>
-                <p className="text-3xl font-bold text-slate-900">{specialties.length}</p>
-              </div>
-              <BarChart3 className="w-10 h-10 text-blue-600 opacity-20" />
-            </div>
-          </Card>
-
-          <Card className="p-6 border-slate-200 bg-gradient-to-br from-purple-50 to-purple-100">
-            <div className="flex items-center justify-between">
-              <div>
-                <p className="text-sm text-slate-600 mb-1">Exam Format</p>
-                <p className="text-3xl font-bold text-slate-900">AKT</p>
-              </div>
-              <BarChart3 className="w-10 h-10 text-purple-600 opacity-20" />
-            </div>
-          </Card>
-        </div>
       </main>
     </div>
   );
