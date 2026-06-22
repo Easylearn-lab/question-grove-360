@@ -8,6 +8,7 @@ import { registerStorageProxy } from "./storageProxy";
 import { appRouter } from "../routers";
 import { createContext } from "./context";
 import { serveStatic, setupVite } from "./vite";
+import { invokeLLM } from "./llm";
 
 function isPortAvailable(port: number): Promise<boolean> {
   return new Promise(resolve => {
@@ -131,28 +132,14 @@ Guidelines:
 - If no sources were retrieved, answer from your medical knowledge and say so
 - Be encouraging and exam-focused`;
 
-      const response = await fetch("https://api.anthropic.com/v1/messages", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          "x-api-key": process.env.ANTHROPIC_API_KEY || "",
-        },
-        body: JSON.stringify({
-          model: "claude-3-5-sonnet-20241022",
-          max_tokens: 1500,
-          system: systemPrompt,
-          messages: messages,
-        }),
-      });
+      // Use built-in LLM helper (platform-managed API key)
+      const llmMessages = [
+        { role: "system" as const, content: systemPrompt },
+        ...messages.map((m: any) => ({ role: m.role as "user" | "assistant", content: m.content }))
+      ];
 
-      if (!response.ok) {
-        const error = await response.text();
-        console.error("Claude API error:", error);
-        return res.status(500).json({ error: "Failed to get AI response" });
-      }
-
-      const data = await response.json();
-      const reply = data.content[0]?.text || "Sorry, I couldn't generate a response.";
+      const llmResponse = await invokeLLM({ messages: llmMessages });
+      const reply = llmResponse.choices?.[0]?.message?.content || "Sorry, I couldn't generate a response.";
       res.json({ reply, sources: allSources });
     } catch (error) {
       console.error("AI Coach error:", error);
