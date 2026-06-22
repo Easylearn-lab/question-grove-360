@@ -4,7 +4,7 @@ import { useEffect, useState, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
-import { ArrowLeft, Send, Loader2, Sparkles, Copy, Check } from "lucide-react";
+import { ArrowLeft, Send, Loader2, Sparkles, Copy, Check, X, ExternalLink } from "lucide-react";
 import { trpc } from "@/lib/trpc";
 import { Streamdown } from "streamdown";
 
@@ -12,6 +12,9 @@ export default function AICoach() {
   const { user, isAuthenticated, loading, isReady } = useProtectedRoute();
   const [, navigate] = useLocation();
   const [copiedIdx, setCopiedIdx] = useState<number | null>(null);
+  const [selectedSource, setSelectedSource] = useState<any | null>(null);
+  const [sourcePreviewContent, setSourcePreviewContent] = useState<string>("");
+  const [isLoadingPreview, setIsLoadingPreview] = useState(false);
   const [messages, setMessages] = useState<Array<{ role: "user" | "assistant"; content: string; sources?: Array<any> }>>([
     {
       role: "assistant",
@@ -45,6 +48,27 @@ Feel free to ask me anything about your exam preparation!`,
     navigator.clipboard.writeText(text);
     setCopiedIdx(idx);
     setTimeout(() => setCopiedIdx(null), 2000);
+  };
+
+  const handleOpenSourcePreview = async (source: any) => {
+    setSelectedSource(source);
+    setIsLoadingPreview(true);
+    try {
+      const response = await fetch(source.url);
+      if (response.ok) {
+        const html = await response.text();
+        const parser = new DOMParser();
+        const doc = parser.parseFromString(html, 'text/html');
+        const text = doc.body.innerText || html.substring(0, 1000);
+        setSourcePreviewContent(text.substring(0, 2000));
+      } else {
+        setSourcePreviewContent("Unable to load preview. Click the link to view in a new tab.");
+      }
+    } catch (error) {
+      setSourcePreviewContent("Unable to load preview. Click the link to view in a new tab.");
+    } finally {
+      setIsLoadingPreview(false);
+    }
   };
 
   const handleSendMessage = async () => {
@@ -140,18 +164,26 @@ Feel free to ask me anything about your exam preparation!`,
               {msg.role === "assistant" && msg.sources && msg.sources.length > 0 && (
                 <div className="w-full max-w-2xl mx-auto mt-3 px-4 py-3 bg-slate-50 border border-slate-200 rounded-lg">
                   <p className="text-xs font-semibold text-slate-600 mb-2">📚 Sources</p>
-                  <div className="space-y-1">
+                  <div className="space-y-2">
                     {msg.sources.map((source: any, i: number) => (
-                      <a
-                        key={i}
-                        href={source.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-xs text-blue-600 hover:text-blue-800 hover:underline block truncate"
-                        title={source.title}
-                      >
-                        [{i + 1}] {source.source} — {source.title}
-                      </a>
+                      <div key={i} className="flex items-center gap-2">
+                        <button
+                          onClick={() => handleOpenSourcePreview(source)}
+                          className="text-xs text-blue-600 hover:text-blue-800 hover:underline text-left flex-1 truncate"
+                          title={source.title}
+                        >
+                          [{i + 1}] {source.source} — {source.title}
+                        </button>
+                        <a
+                          href={source.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex-shrink-0 p-1 text-slate-400 hover:text-slate-600"
+                          title="Open in new tab"
+                        >
+                          <ExternalLink className="w-3 h-3" />
+                        </a>
+                      </div>
                     ))}
                   </div>
                 </div>
@@ -198,6 +230,63 @@ Feel free to ask me anything about your exam preparation!`,
           </p>
         </div>
       </footer>
+
+      {/* Source Preview Modal */}
+      {selectedSource && (
+        <div className="fixed inset-0 bg-black/50 z-50 flex items-end sm:items-center justify-center">
+          <div className="bg-white rounded-t-lg sm:rounded-lg w-full sm:w-2/3 lg:w-1/2 max-h-[80vh] overflow-hidden flex flex-col shadow-xl">
+            {/* Modal Header */}
+            <div className="flex items-start justify-between p-4 border-b border-slate-200 flex-shrink-0">
+              <div className="flex-1 min-w-0">
+                <p className="text-xs font-semibold text-slate-500 mb-1">{selectedSource.source}</p>
+                <h3 className="text-sm font-semibold text-slate-900 truncate">{selectedSource.title}</h3>
+              </div>
+              <button
+                onClick={() => setSelectedSource(null)}
+                className="flex-shrink-0 ml-2 p-1 text-slate-400 hover:text-slate-600"
+              >
+                <X className="w-5 h-5" />
+              </button>
+            </div>
+
+            {/* Modal Content */}
+            <div className="flex-1 overflow-y-auto p-4">
+              {isLoadingPreview ? (
+                <div className="flex items-center justify-center h-32">
+                  <Loader2 className="w-5 h-5 animate-spin text-green-600" />
+                </div>
+              ) : (
+                <div className="text-xs text-slate-700 leading-relaxed whitespace-pre-wrap break-words">
+                  {sourcePreviewContent}
+                </div>
+              )}
+            </div>
+
+            {/* Modal Footer */}
+            <div className="border-t border-slate-200 p-4 flex gap-2 flex-shrink-0">
+              <Button
+                variant="outline"
+                size="sm"
+                onClick={() => setSelectedSource(null)}
+                className="flex-1"
+              >
+                Close
+              </Button>
+              <a
+                href={selectedSource.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex-1"
+              >
+                <Button size="sm" className="w-full bg-green-600 hover:bg-green-700 text-gray-900">
+                  <ExternalLink className="w-4 h-4 mr-2" />
+                  Open Full Page
+                </Button>
+              </a>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
