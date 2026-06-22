@@ -5,13 +5,14 @@ import { useEffect, useState, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
-import { ArrowLeft, Send, Loader2, Sparkles } from "lucide-react";
+import { ArrowLeft, Send, Loader2, Sparkles, Copy, Check } from "lucide-react";
 import { trpc } from "@/lib/trpc";
 import { Streamdown } from "streamdown";
 
 export default function AICoach() {
   const { user, isAuthenticated, loading, isReady } = useProtectedRoute();
   const [, navigate] = useLocation();
+  const [copiedIdx, setCopiedIdx] = useState<number | null>(null);
   const [messages, setMessages] = useState<Array<{ role: "user" | "assistant"; content: string }>>([
     {
       role: "assistant",
@@ -40,6 +41,12 @@ Feel free to ask me anything about your exam preparation!`,
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [messages]);
+
+  const handleCopyMessage = (text: string, idx: number) => {
+    navigator.clipboard.writeText(text);
+    setCopiedIdx(idx);
+    setTimeout(() => setCopiedIdx(null), 2000);
+  };
 
   const handleSendMessage = async () => {
     if (!input.trim()) return;
@@ -102,7 +109,7 @@ Feel free to ask me anything about your exam preparation!`,
       <main className="flex-1 max-w-4xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8 overflow-y-auto">
         <div className="space-y-6">
           {messages.map((msg, idx) => (
-            <div key={idx} className={`flex ${msg.role === "user" ? "justify-end" : "justify-start"}`}>
+            <div key={idx} className={`flex ${msg.role === "user" ? "justify-end" : "justify-start"} gap-3`}>
               <div
                 className={`max-w-2xl px-6 py-4 rounded-lg ${
                   msg.role === "user"
@@ -116,6 +123,19 @@ Feel free to ask me anything about your exam preparation!`,
                   <p className="text-sm">{msg.content}</p>
                 )}
               </div>
+              {msg.role === "assistant" && (
+                <button
+                  onClick={() => handleCopyMessage(msg.content, idx)}
+                  className="self-start mt-1 p-2 rounded hover:bg-slate-100 transition-colors"
+                  title="Copy to clipboard"
+                >
+                  {copiedIdx === idx ? (
+                    <Check className="w-4 h-4 text-green-600" />
+                  ) : (
+                    <Copy className="w-4 h-4 text-slate-400 hover:text-slate-600" />
+                  )}
+                </button>
+              )}
             </div>
           ))}
           {isLoading && (
