@@ -1,4 +1,3 @@
-import { useAuth } from "@/_core/hooks/useAuth";
 import { useProtectedRoute } from "@/hooks/useProtectedRoute";
 import { useLocation } from "wouter";
 import { useEffect, useState, useRef } from "react";
@@ -13,7 +12,7 @@ export default function AICoach() {
   const { user, isAuthenticated, loading, isReady } = useProtectedRoute();
   const [, navigate] = useLocation();
   const [copiedIdx, setCopiedIdx] = useState<number | null>(null);
-  const [messages, setMessages] = useState<Array<{ role: "user" | "assistant"; content: string }>>([
+  const [messages, setMessages] = useState<Array<{ role: "user" | "assistant"; content: string; sources?: Array<any> }>>([
     {
       role: "assistant",
       content: `Hello! I'm AI Coach360, your personal study companion. I'm here to help you prepare for your medical exams with personalized guidance.
@@ -67,7 +66,7 @@ Feel free to ask me anything about your exam preparation!`,
       if (!response.ok) throw new Error("Failed to get AI response");
       const data = await response.json();
       
-      setMessages((prev) => [...prev, { role: "assistant", content: data.reply }]);
+      setMessages((prev) => [...prev, { role: "assistant", content: data.reply, sources: data.sources }]);
     } catch (error) {
       setMessages((prev) => [
         ...prev,
@@ -98,8 +97,8 @@ Feel free to ask me anything about your exam preparation!`,
           <div className="flex items-center gap-2">
             <Sparkles className="w-6 h-6 text-green-600" />
             <div>
-              <h1 className="text-2xl font-bold text-slate-900">AI Coach360</h1>
-              <p className="text-xs text-slate-600">Powered by Claude AI</p>
+              <h1 className="text-lg font-semibold text-slate-900">AI Coach360</h1>
+              <p className="text-xs text-slate-500">Medical exam preparation assistant</p>
             </div>
           </div>
         </div>
@@ -109,32 +108,53 @@ Feel free to ask me anything about your exam preparation!`,
       <main className="flex-1 max-w-4xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8 overflow-y-auto">
         <div className="space-y-6">
           {messages.map((msg, idx) => (
-            <div key={idx} className={`flex ${msg.role === "user" ? "justify-end" : "justify-start"} gap-3`}>
-              <div
-                className={`max-w-2xl px-6 py-4 rounded-lg ${
-                  msg.role === "user"
-                    ? "bg-green-600 text-gray-900"
-                    : "bg-white border border-slate-200 text-slate-900"
-                }`}
-              >
-                {msg.role === "assistant" ? (
-                  <Streamdown>{msg.content}</Streamdown>
-                ) : (
-                  <p className="text-sm">{msg.content}</p>
+            <div key={idx}>
+              <div className={`flex ${msg.role === "user" ? "justify-end" : "justify-start"} gap-3`}>
+                <div
+                  className={`max-w-2xl px-6 py-4 rounded-lg ${
+                    msg.role === "user"
+                      ? "bg-green-600 text-gray-900"
+                      : "bg-white border border-slate-200 text-slate-900"
+                  }`}
+                >
+                  {msg.role === "assistant" ? (
+                    <Streamdown>{msg.content}</Streamdown>
+                  ) : (
+                    <p className="text-sm">{msg.content}</p>
+                  )}
+                </div>
+                {msg.role === "assistant" && (
+                  <button
+                    onClick={() => handleCopyMessage(msg.content, idx)}
+                    className="self-start mt-1 p-2 rounded hover:bg-slate-100 transition-colors"
+                    title="Copy to clipboard"
+                  >
+                    {copiedIdx === idx ? (
+                      <Check className="w-4 h-4 text-green-600" />
+                    ) : (
+                      <Copy className="w-4 h-4 text-slate-400 hover:text-slate-600" />
+                    )}
+                  </button>
                 )}
               </div>
-              {msg.role === "assistant" && (
-                <button
-                  onClick={() => handleCopyMessage(msg.content, idx)}
-                  className="self-start mt-1 p-2 rounded hover:bg-slate-100 transition-colors"
-                  title="Copy to clipboard"
-                >
-                  {copiedIdx === idx ? (
-                    <Check className="w-4 h-4 text-green-600" />
-                  ) : (
-                    <Copy className="w-4 h-4 text-slate-400 hover:text-slate-600" />
-                  )}
-                </button>
+              {msg.role === "assistant" && msg.sources && msg.sources.length > 0 && (
+                <div className="w-full max-w-2xl mx-auto mt-3 px-4 py-3 bg-slate-50 border border-slate-200 rounded-lg">
+                  <p className="text-xs font-semibold text-slate-600 mb-2">📚 Sources</p>
+                  <div className="space-y-1">
+                    {msg.sources.map((source: any, i: number) => (
+                      <a
+                        key={i}
+                        href={source.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-xs text-blue-600 hover:text-blue-800 hover:underline block truncate"
+                        title={source.title}
+                      >
+                        [{i + 1}] {source.source} — {source.title}
+                      </a>
+                    ))}
+                  </div>
+                </div>
               )}
             </div>
           ))}
@@ -174,7 +194,7 @@ Feel free to ask me anything about your exam preparation!`,
             </Button>
           </div>
           <p className="text-xs text-slate-500 mt-2">
-            AI Coach360 has access to your complete learning profile and can provide personalized recommendations.
+            AI Coach360 searches live medical databases (NICE Guidelines, PubMed) to provide accurate, cited answers.
           </p>
         </div>
       </footer>
