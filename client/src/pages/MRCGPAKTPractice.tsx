@@ -73,7 +73,7 @@ export default function MRCGPAKTPractice() {
 
   useEffect(() => {
     if (questionsQuery.data) {
-      setQuestions(questionsQuery.data as Question[]);
+      setQuestions(questionsQuery.data as unknown as Question[]);
       setCurrentIndex(0);
       setSelectedAnswer(null);
       setShowExplanation(false);

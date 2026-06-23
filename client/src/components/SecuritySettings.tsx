@@ -26,7 +26,7 @@ export function SecuritySettings() {
   // Queries and mutations
   const { data: loginMethods, isLoading: isLoadingMethods } = trpc.password.getLoginMethods.useQuery();
   const changePasswordMutation = trpc.password.changePassword.useMutation();
-  const setPasswordMutation = trpc.password.setPasswordForGoogleUser.useMutation();
+  const setPasswordMutation = trpc.password.requestSetPassword.useMutation();
 
   const handleChangePassword = async (e: React.FormEvent) => {
     e.preventDefault();

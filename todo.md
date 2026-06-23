@@ -506,3 +506,18 @@
 - [x] Part 6: Update SPECIALTIES_MAP in MRCGPAKTPractice.tsx with all 17 specialties
 - [x] Part 7: Add getMrcgpAktSpecialties and getMrcgpAktQuestionsBySpecialty functions to db.ts
 - [x] Part 8: Update MRCGPAKTSpecialties.tsx to use database-driven specialty counts via tRPC
+
+
+## Mock Exams Full Build (June 23, 2026)
+- [x] Create mock_results database table with all columns (score, total, percentage, timeTaken, answers, specialtyBreakdown, flaggedQuestions, mockName)
+- [x] Insert 5 mock exams into mocks table (Full Mock 1-5, 160 questions, 155 min, 70% pass)
+- [x] Build mockExams backend router (getMocks, startMock, submitMock, getResult, getHistory, getReview, sendEmailReport, recordAttempt)
+- [x] Build MockExams list page with start/retake buttons and recent results section
+- [x] Build ActiveMockExam page with timer, question navigator, flag, confirm submit, auto-submit on expiry
+- [x] Build MockExamResults page with score, specialty breakdown, email report button
+- [x] Build MockExamReview page with question review and filters (all/incorrect/correct/flagged)
+- [x] Wire email report via Resend with specialty breakdown and NICE guideline focus areas
+- [x] Fix stale closure in timer auto-submit (useRef pattern)
+- [x] Fix email review URL to match app routes (/mock-review/:id)
+- [x] Add /mock-exams and /note360 route aliases in App.tsx
+- [x] Add Mock Exams and Note360 cards to MRCGP AKT page

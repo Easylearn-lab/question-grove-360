@@ -17,6 +17,8 @@ import AdminPanel from "./pages/AdminPanel";
 import AICoach from "./pages/AICoach";
 import Payments from "./pages/Payments";
 import ActiveMockExam from "./pages/ActiveMockExam";
+import MockExamResults from "./pages/MockExamResults";
+import MockExamReview from "./pages/MockExamReview";
 import Onboarding from "./pages/Onboarding";
 import Progress from "./pages/Progress";
 import Bookmarks from "./pages/Bookmarks";
@@ -35,7 +37,9 @@ function Router() {
       <Route path={"/profile"} component={Profile} />
       <Route path={"/questions"} component={QuestionBank} />
       <Route path={"/mocks"} component={MockExams} />
+      <Route path={"/mock-exams"} component={MockExams} />
       <Route path={"/notes"} component={Note360} />
+      <Route path={"/note360"} component={Note360} />
       <Route path={"/flashcards"} component={PatternRecognition} />
       <Route path={"/sca"} component={SCASimulator} />
       <Route path={"/pricing"} component={Pricing} />
@@ -43,6 +47,8 @@ function Router() {
       <Route path={"/coach"} component={AICoach} />
       <Route path={"/payments"} component={Payments} />
       <Route path={"/mock-exam/:id"} component={ActiveMockExam} />
+      <Route path={"/mock-results/:id"} component={MockExamResults} />
+      <Route path={"/mock-review/:id"} component={MockExamReview} />
       <Route path={"/progress"} component={Progress} />
       <Route path={"/bookmarks"} component={Bookmarks} />
       <Route path={"/settings/2fa"} component={TwoFactorSettings} />

@@ -109,7 +109,7 @@ export default function Dashboard() {
         {/* Main Features Grid */}
         <div className="grid md:grid-cols-2 gap-8">
           {/* Question Bank - MRCGP AKT only */}
-          {profile?.subscription?.examId === 1 && (
+          {(profile?.subscriptionPlan === 'mrcgp_akt' || profile?.targetExam === 'MRCGP AKT') && (
             <Card className="p-8 border-slate-200 hover:shadow-lg transition-all cursor-pointer group" onClick={() => navigate("/questions")}>
               <div className="flex items-start justify-between mb-4">
                 <BookOpen className="w-12 h-12 text-green-600 group-hover:scale-110 transition-transform" />
@@ -124,7 +124,7 @@ export default function Dashboard() {
           )}
 
           {/* Mock Exams - MRCGP AKT only */}
-          {profile?.subscription?.examId === 1 && (
+          {(profile?.subscriptionPlan === 'mrcgp_akt' || profile?.targetExam === 'MRCGP AKT') && (
             <Card className="p-8 border-slate-200 hover:shadow-lg transition-all cursor-pointer group" onClick={() => navigate("/mocks")}>
               <div className="flex items-start justify-between mb-4">
                 <BarChart3 className="w-12 h-12 text-blue-600 group-hover:scale-110 transition-transform" />

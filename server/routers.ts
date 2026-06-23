@@ -130,39 +130,230 @@ export const appRouter = router({
 
   // Mock Exams Router
   mockExams: router({
-    create: protectedProcedure
-      .input(
-        z.object({
-          mockId: z.number(),
-          examId: z.number(),
-        })
-      )
+    // Get list of all 5 mocks with user attempt history
+    getMocks: protectedProcedure.query(async ({ ctx }) => {
+      const { getDb } = await import("./db");
+      const db = await getDb();
+      if (!db) return [];
+      const { sql } = await import("drizzle-orm");
+      const mocksResult = await db.execute(sql`SELECT id, name, questionCount, timeLimit, passMark FROM mocks WHERE examId = 1 AND isActive = 1`);
+      const mocksRows = Array.isArray(mocksResult) && Array.isArray(mocksResult[0]) ? mocksResult[0] : mocksResult;
+      const resultsData = await db.execute(sql`SELECT mockId, COUNT(*) as attempts, MAX(score) as bestScore, MAX(percentage) as bestPercentage, MAX(completedAt) as lastAttempt FROM mock_results WHERE userId = ${ctx.user.id} AND examId = 1 GROUP BY mockId`);
+      const resultsRows = Array.isArray(resultsData) && Array.isArray(resultsData[0]) ? resultsData[0] : resultsData;
+      return (mocksRows as any[]).map((m: any) => {
+        const userResult = (resultsRows as any[]).find((r: any) => r.mockId === m.id);
+        return {
+          id: m.id,
+          name: m.name,
+          questionsCount: m.questionCount || 160,
+          timerMinutes: m.timeLimit || 155,
+          passMark: Number(m.passMark) || 70,
+          bestScore: userResult ? Number(userResult.bestScore) : null,
+          bestPercentage: userResult ? Number(userResult.bestPercentage) : null,
+          attempts: userResult ? Number(userResult.attempts) : 0,
+          lastAttempt: userResult?.lastAttempt || null,
+        };
+      });
+    }),
+
+    // Start a mock exam - fetch 160 random questions
+    startMock: protectedProcedure
+      .input(z.object({ mockId: z.number() }))
       .mutation(async ({ ctx, input }) => {
-        const { createMockExam } = await import("./db");
-        return await createMockExam(ctx.user.id, input.mockId, input.examId);
+        const { getDb } = await import("./db");
+        const db = await getDb();
+        if (!db) throw new Error("Database not available");
+        const { sql } = await import("drizzle-orm");
+        const questionsResult = await db.execute(sql`SELECT id, domain, optionA, optionB, optionC, optionD, optionE, specialty, tags FROM questions WHERE examId = 1 AND status = 'active' ORDER BY RAND() LIMIT 160`);
+        const questions = Array.isArray(questionsResult) && Array.isArray(questionsResult[0]) ? questionsResult[0] : questionsResult;
+        if ((questions as any[]).length < 160) throw new Error("Not enough questions available");
+        return {
+          mockId: input.mockId,
+          questions: (questions as any[]).map((q: any) => ({
+            id: q.id,
+            stem: q.domain,
+            optionA: q.optionA,
+            optionB: q.optionB,
+            optionC: q.optionC,
+            optionD: q.optionD,
+            optionE: q.optionE,
+            specialty: q.specialty,
+            tags: q.tags,
+          })),
+          timerMinutes: 155,
+          totalQuestions: 160,
+          passMarkPercentage: 70,
+        };
       }),
-    recordAttempt: protectedProcedure
-      .input(
-        z.object({
-          questionId: z.number(),
-          examId: z.number(),
-          selectedAnswer: z.string(),
-          isCorrect: z.boolean(),
-          timeTaken: z.number(),
-          mode: z.string().default("tutor"),
-        })
-      )
+
+    // Submit mock exam results
+    submitMock: protectedProcedure
+      .input(z.object({
+        mockId: z.number(),
+        mockName: z.string(),
+        answers: z.record(z.string(), z.string()),
+        flaggedQuestions: z.array(z.number()).optional(),
+        timeTaken: z.number(),
+      }))
       .mutation(async ({ ctx, input }) => {
-        const { recordUserAttempt } = await import("./db");
-        return await recordUserAttempt(
-          ctx.user.id,
-          input.questionId,
-          input.examId,
-          input.selectedAnswer,
-          input.isCorrect,
-          input.timeTaken,
-          input.mode
-        );
+        const { getDb } = await import("./db");
+        const db = await getDb();
+        if (!db) throw new Error("Database not available");
+        const { sql } = await import("drizzle-orm");
+        const questionIds = Object.keys(input.answers).map(Number);
+        if (questionIds.length === 0) throw new Error("No answers provided");
+        const questionsResult = await db.execute(sql`SELECT id, correctAnswer, specialty FROM questions WHERE id IN (${sql.raw(questionIds.join(","))})`);
+        const questions = Array.isArray(questionsResult) && Array.isArray(questionsResult[0]) ? questionsResult[0] : questionsResult;
+        let score = 0;
+        const specialtyScores: Record<string, { correct: number; total: number; percentage: number }> = {};
+        (questions as any[]).forEach((q: any) => {
+          const userAnswer = input.answers[q.id.toString()];
+          const isCorrect = userAnswer === q.correctAnswer;
+          if (isCorrect) score++;
+          if (!specialtyScores[q.specialty]) specialtyScores[q.specialty] = { correct: 0, total: 0, percentage: 0 };
+          specialtyScores[q.specialty].total++;
+          if (isCorrect) specialtyScores[q.specialty].correct++;
+        });
+        Object.keys(specialtyScores).forEach(k => {
+          specialtyScores[k].percentage = Math.round((specialtyScores[k].correct / specialtyScores[k].total) * 100);
+        });
+        const percentage = (score / 160) * 100;
+        const passed = percentage >= 70;
+        await db.execute(sql`INSERT INTO mock_results (userId, mockId, mockName, examId, score, totalQuestions, percentage, passed, timeTaken, answers, flaggedQuestions, specialtyBreakdown, completedAt) VALUES (${ctx.user.id}, ${input.mockId}, ${input.mockName}, 1, ${score}, 160, ${percentage.toFixed(2)}, ${passed ? 1 : 0}, ${input.timeTaken}, ${JSON.stringify(input.answers)}, ${JSON.stringify(input.flaggedQuestions || [])}, ${JSON.stringify(specialtyScores)}, NOW())`);
+        const insertResult = await db.execute(sql`SELECT LAST_INSERT_ID() as id`);
+        const insertRows = Array.isArray(insertResult) && Array.isArray(insertResult[0]) ? insertResult[0] : insertResult;
+        const resultId = (insertRows as any[])[0]?.id || 0;
+        return { resultId: Number(resultId), score, percentage: percentage.toFixed(2), passed, specialtyScores, timeTaken: input.timeTaken };
+      }),
+
+    // Get results for a specific attempt
+    getResult: protectedProcedure
+      .input(z.object({ resultId: z.number() }))
+      .query(async ({ ctx, input }) => {
+        const { getDb } = await import("./db");
+        const db = await getDb();
+        if (!db) throw new Error("Database not available");
+        const { sql } = await import("drizzle-orm");
+        const result = await db.execute(sql`SELECT * FROM mock_results WHERE id = ${input.resultId} AND userId = ${ctx.user.id}`);
+        const rows = Array.isArray(result) && Array.isArray(result[0]) ? result[0] : result;
+        if ((rows as any[]).length === 0) throw new Error("Result not found");
+        const r = (rows as any[])[0];
+        return {
+          id: r.id,
+          mockId: r.mockId,
+          mockName: r.mockName,
+          score: r.score,
+          totalQuestions: r.totalQuestions,
+          percentage: Number(r.percentage),
+          passed: Boolean(r.passed),
+          timeTaken: r.timeTaken,
+          specialtyBreakdown: typeof r.specialtyBreakdown === 'string' ? JSON.parse(r.specialtyBreakdown) : r.specialtyBreakdown,
+          answers: typeof r.answers === 'string' ? JSON.parse(r.answers) : r.answers,
+          flaggedQuestions: typeof r.flaggedQuestions === 'string' ? JSON.parse(r.flaggedQuestions) : (r.flaggedQuestions || []),
+          completedAt: r.completedAt,
+        };
+      }),
+
+    // Get attempt history for a specific mock
+    getHistory: protectedProcedure
+      .input(z.object({ mockId: z.number() }))
+      .query(async ({ ctx, input }) => {
+        const { getDb } = await import("./db");
+        const db = await getDb();
+        if (!db) return [];
+        const { sql } = await import("drizzle-orm");
+        const result = await db.execute(sql`SELECT id, score, percentage, passed, timeTaken, completedAt FROM mock_results WHERE userId = ${ctx.user.id} AND mockId = ${input.mockId} ORDER BY completedAt DESC LIMIT 10`);
+        const rows = Array.isArray(result) && Array.isArray(result[0]) ? result[0] : result;
+        return (rows as any[]).map((r: any) => ({
+          id: r.id,
+          score: r.score,
+          percentage: Number(r.percentage),
+          passed: Boolean(r.passed),
+          timeTaken: r.timeTaken,
+          completedAt: r.completedAt,
+        }));
+      }),
+
+    // Get question review for a specific attempt
+    getReview: protectedProcedure
+      .input(z.object({ resultId: z.number() }))
+      .query(async ({ ctx, input }) => {
+        const { getDb } = await import("./db");
+        const db = await getDb();
+        if (!db) throw new Error("Database not available");
+        const { sql } = await import("drizzle-orm");
+        const resultData = await db.execute(sql`SELECT answers, flaggedQuestions FROM mock_results WHERE id = ${input.resultId} AND userId = ${ctx.user.id}`);
+        const resultRows = Array.isArray(resultData) && Array.isArray(resultData[0]) ? resultData[0] : resultData;
+        if ((resultRows as any[]).length === 0) throw new Error("Result not found");
+        const r = (resultRows as any[])[0];
+        const answers = typeof r.answers === 'string' ? JSON.parse(r.answers) : r.answers;
+        const flagged = typeof r.flaggedQuestions === 'string' ? JSON.parse(r.flaggedQuestions) : (r.flaggedQuestions || []);
+        const questionIds = Object.keys(answers).map(Number);
+        if (questionIds.length === 0) return [];
+        const questionsData = await db.execute(sql`SELECT id, domain, optionA, optionB, optionC, optionD, optionE, correctAnswer, explanationCorrect, explanationA, explanationB, explanationC, explanationD, explanationE, niceReference, tags, specialty FROM questions WHERE id IN (${sql.raw(questionIds.join(","))})`);
+        const questions = Array.isArray(questionsData) && Array.isArray(questionsData[0]) ? questionsData[0] : questionsData;
+        return (questions as any[]).map((q: any) => ({
+          id: q.id,
+          stem: q.domain,
+          userAnswer: answers[q.id.toString()],
+          correctAnswer: q.correctAnswer,
+          isCorrect: answers[q.id.toString()] === q.correctAnswer,
+          isFlagged: flagged.includes(q.id),
+          options: { A: q.optionA, B: q.optionB, C: q.optionC, D: q.optionD, E: q.optionE },
+          explanations: { A: q.explanationA || '', B: q.explanationB || '', C: q.explanationC || '', D: q.explanationD || '', E: q.explanationE || '' },
+          correctExplanation: q.explanationCorrect || '',
+          niceReference: q.niceReference || '',
+          tags: q.tags || '',
+          specialty: q.specialty,
+        }));
+      }),
+
+    // Send email report
+    sendEmailReport: protectedProcedure
+      .input(z.object({ resultId: z.number() }))
+      .mutation(async ({ ctx, input }) => {
+        const { getDb } = await import("./db");
+        const db = await getDb();
+        if (!db) throw new Error("Database not available");
+        const { sql } = await import("drizzle-orm");
+        const resultData = await db.execute(sql`SELECT * FROM mock_results WHERE id = ${input.resultId} AND userId = ${ctx.user.id}`);
+        const resultRows = Array.isArray(resultData) && Array.isArray(resultData[0]) ? resultData[0] : resultData;
+        if ((resultRows as any[]).length === 0) throw new Error("Result not found");
+        const r = (resultRows as any[])[0];
+        const specialtyBreakdown = typeof r.specialtyBreakdown === 'string' ? JSON.parse(r.specialtyBreakdown) : r.specialtyBreakdown;
+        const { sendMockExamEmail } = await import("./mockEmail");
+        await sendMockExamEmail({
+          userEmail: ctx.user.email || '',
+          userName: ctx.user.name || 'Student',
+          mockName: r.mockName || 'Mock Exam',
+          score: r.score,
+          totalQuestions: r.totalQuestions,
+          percentage: Number(r.percentage),
+          passed: Boolean(r.passed),
+          timeTaken: r.timeTaken,
+          specialtyBreakdown,
+          resultId: r.id,
+        });
+        await db.execute(sql`UPDATE mock_results SET emailSent = 1 WHERE id = ${input.resultId}`);
+        return { success: true };
+      }),
+    // Record individual question attempt
+    recordAttempt: protectedProcedure
+      .input(z.object({
+        questionId: z.number(),
+        examId: z.number(),
+        selectedAnswer: z.string(),
+        isCorrect: z.boolean(),
+        timeTaken: z.number().optional(),
+        mode: z.string().optional(),
+      }))
+      .mutation(async ({ ctx, input }) => {
+        const { getDb } = await import("./db");
+        const db = await getDb();
+        if (!db) throw new Error("Database not available");
+        const { sql } = await import("drizzle-orm");
+        await db.execute(sql`INSERT INTO user_attempts (userId, questionId, examId, selectedAnswer, isCorrect, timeTaken, mode) VALUES (${ctx.user.id}, ${input.questionId}, ${input.examId}, ${input.selectedAnswer}, ${input.isCorrect}, ${input.timeTaken || 0}, ${input.mode || 'practice'})`);
+        return { success: true };
       }),
   }),
 

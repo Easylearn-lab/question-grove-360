@@ -17,7 +17,7 @@ export const users = mysqlTable("users", {
   email: varchar("email", { length: 320 }),
   loginMethod: varchar("loginMethod", { length: 64 }),
   /** JSON array of active login methods: ["google"], ["email_password"], or ["google", "email_password"] */
-  loginMethods: json("loginMethods").$type<string[]>().default(JSON.stringify(["email_password"])),
+  loginMethods: json("loginMethods").$type<string[]>().default(["email_password"]),
   /** Bcrypt hashed password for email/password login (null if not set) */
   passwordHash: varchar("passwordHash", { length: 255 }),
   role: mysqlEnum("role", ["user", "admin"]).default("user").notNull(),

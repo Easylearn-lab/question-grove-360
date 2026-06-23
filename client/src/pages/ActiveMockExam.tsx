@@ -1,357 +1,369 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef, useCallback, useMemo } from "react";
 import { useLocation, useRoute } from "wouter";
 import { useAuth } from "@/_core/hooks/useAuth";
 import { useProtectedRoute } from "@/hooks/useProtectedRoute";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import ExamTimer from "@/components/ExamTimer";
-import ExamResults from "@/components/ExamResults";
-import { ChevronLeft, ChevronRight, Flag, Bookmark } from "lucide-react";
+import { ArrowLeft, ChevronLeft, ChevronRight, Flag, Timer, AlertTriangle, CheckCircle2, XCircle } from "lucide-react";
+import { trpc } from "@/lib/trpc";
 import { toast } from "sonner";
 
-interface Question {
+interface MockQuestion {
   id: number;
-  text: string;
-  options: string[];
-  correctAnswer: number;
-  explanation: string;
+  stem: string;
+  optionA: string;
+  optionB: string;
+  optionC: string;
+  optionD: string | null;
+  optionE: string | null;
+  specialty: string;
+  tags: string;
 }
 
-interface ExamState {
-  currentQuestionIndex: number;
-  answers: Record<number, number>;
-  flagged: Set<number>;
-  bookmarked: Set<number>;
-  timeSpent: number;
-  isSubmitted: boolean;
-  score: number;
-  results: any;
+interface MockData {
+  mockId: number;
+  questions: MockQuestion[];
+  timerMinutes: number;
+  totalQuestions: number;
+  passMarkPercentage: number;
 }
 
 export default function ActiveMockExam() {
   const { user, isAuthenticated, loading, isReady } = useProtectedRoute();
   const [, navigate] = useLocation();
   const [, params] = useRoute("/mock-exam/:id");
-  const examId = params?.id;
 
-  const [examState, setExamState] = useState<ExamState>({
-    currentQuestionIndex: 0,
-    answers: {},
-    flagged: new Set(),
-    bookmarked: new Set(),
-    timeSpent: 0,
-    isSubmitted: false,
-    score: 0,
-    results: null,
+  const [mockData, setMockData] = useState<MockData | null>(null);
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [answers, setAnswers] = useState<Record<string, string>>({});
+  const [flagged, setFlagged] = useState<Set<number>>(new Set());
+  const [timeRemaining, setTimeRemaining] = useState(0);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [showConfirmSubmit, setShowConfirmSubmit] = useState(false);
+  const timerRef = useRef<NodeJS.Timeout | null>(null);
+
+  const submitMutation = trpc.mockExams.submitMock.useMutation({
+    onSuccess: (data) => {
+      toast.success("Mock exam submitted!");
+      navigate(`/mock-results/${data.resultId}`);
+    },
+    onError: (err) => {
+      toast.error(err.message || "Failed to submit exam");
+      setIsSubmitting(false);
+    },
   });
 
-  // Mock questions data
-  const questions: Question[] = [
-    {
-      id: 1,
-      text: "A 45-year-old man presents with chest pain and dyspnea. What is the most likely diagnosis?",
-      options: ["Myocardial infarction", "Pneumonia", "Anxiety disorder", "Gastroesophageal reflux"],
-      correctAnswer: 0,
-      explanation: "Based on the clinical presentation of chest pain and dyspnea in a 45-year-old, MI is most likely.",
-    },
-    {
-      id: 2,
-      text: "Which of the following is the most common cause of community-acquired pneumonia?",
-      options: ["Staphylococcus aureus", "Streptococcus pneumoniae", "Haemophilus influenzae", "Legionella"],
-      correctAnswer: 1,
-      explanation: "Streptococcus pneumoniae is the most common cause of CAP.",
-    },
-    {
-      id: 3,
-      text: "A patient with type 2 diabetes has an HbA1c of 8.5%. What is the recommended next step?",
-      options: ["Increase metformin dose", "Add insulin", "Continue current therapy", "Switch to GLP-1 agonist"],
-      correctAnswer: 0,
-      explanation: "HbA1c above 7% indicates need for therapy intensification.",
-    },
-  ];
-
-  const totalTime = 180 * 60; // 3 hours in seconds
-  const currentQuestion = questions[examState.currentQuestionIndex];
-  const selectedAnswer = examState.answers[currentQuestion.id];
-
+  // Load mock data from sessionStorage
   useEffect(() => {
-    if (!isAuthenticated) {
-      navigate("/");
+    const stored = sessionStorage.getItem("activeMockData");
+    if (stored) {
+      const data = JSON.parse(stored) as MockData;
+      setMockData(data);
+      setTimeRemaining(data.timerMinutes * 60);
+    } else {
+      toast.error("No exam data found. Please start a new mock.");
+      navigate("/mock-exams");
     }
-  }, [isAuthenticated, navigate]);
+  }, []);
 
-  const handleAnswerSelect = (optionIndex: number) => {
-    setExamState((prev) => ({
-      ...prev,
-      answers: {
-        ...prev.answers,
-        [currentQuestion.id]: optionIndex,
-      },
-    }));
-  };
+  // Use a ref to always have the latest submit function available for the timer
+  const submitRef = useRef<() => void>(() => {});
 
-  const handleToggleFlag = () => {
-    setExamState((prev) => {
-      const newFlagged = new Set(prev.flagged);
-      if (newFlagged.has(currentQuestion.id)) {
-        newFlagged.delete(currentQuestion.id);
-      } else {
-        newFlagged.add(currentQuestion.id);
-      }
-      return { ...prev, flagged: newFlagged };
+  const handleSubmit = useCallback(() => {
+    if (!mockData || isSubmitting) return;
+    setIsSubmitting(true);
+    if (timerRef.current) clearInterval(timerRef.current);
+    const timeTaken = (mockData.timerMinutes * 60) - timeRemaining;
+    submitMutation.mutate({
+      mockId: mockData.mockId,
+      mockName: `MRCGP AKT - Full Mock ${mockData.mockId}`,
+      answers,
+      flaggedQuestions: Array.from(flagged),
+      timeTaken,
     });
-  };
+  }, [mockData, answers, flagged, timeRemaining, isSubmitting]);
 
-  const handleToggleBookmark = () => {
-    setExamState((prev) => {
-      const newBookmarked = new Set(prev.bookmarked);
-      if (newBookmarked.has(currentQuestion.id)) {
-        newBookmarked.delete(currentQuestion.id);
-      } else {
-        newBookmarked.add(currentQuestion.id);
-      }
-      return { ...prev, bookmarked: newBookmarked };
-    });
-  };
+  // Keep submitRef up to date
+  useEffect(() => {
+    submitRef.current = handleSubmit;
+  }, [handleSubmit]);
 
-  const handleNext = () => {
-    if (examState.currentQuestionIndex < questions.length - 1) {
-      setExamState((prev) => ({
-        ...prev,
-        currentQuestionIndex: prev.currentQuestionIndex + 1,
-      }));
-    }
-  };
-
-  const handlePrevious = () => {
-    if (examState.currentQuestionIndex > 0) {
-      setExamState((prev) => ({
-        ...prev,
-        currentQuestionIndex: prev.currentQuestionIndex - 1,
-      }));
-    }
-  };
-
-  const handleTimeExpired = () => {
-    handleSubmitExam();
-  };
-
-  const handleSubmitExam = () => {
-    // Calculate score
-    let score = 0;
-    questions.forEach((q) => {
-      if (examState.answers[q.id] === q.correctAnswer) {
-        score++;
-      }
-    });
-
-    const results = {
-      score,
-      totalQuestions: questions.length,
-      percentage: Math.round((score / questions.length) * 100),
-      specialty: "General Practice",
-      duration: totalTime,
-      specialtyBreakdown: [
-        { specialty: "Cardiology", correct: 2, total: 3 },
-        { specialty: "Respiratory", correct: 1, total: 2 },
-        { specialty: "Endocrinology", correct: 1, total: 2 },
-      ],
-      previousAttempts: [
-        { date: "2026-05-20", score: 75 },
-        { date: "2026-05-15", score: 72 },
-      ],
-      platformAverage: 70,
+  // Timer
+  useEffect(() => {
+    if (!mockData || timeRemaining <= 0) return;
+    timerRef.current = setInterval(() => {
+      setTimeRemaining((prev) => {
+        if (prev <= 1) {
+          clearInterval(timerRef.current!);
+          // Use ref to call the latest handleSubmit
+          submitRef.current();
+          return 0;
+        }
+        return prev - 1;
+      });
+    }, 1000);
+    return () => {
+      if (timerRef.current) clearInterval(timerRef.current);
     };
+  }, [mockData]);
 
-    setExamState((prev) => ({
-      ...prev,
-      isSubmitted: true,
-      score,
-      results,
-    }));
-
-    toast.success("Exam submitted successfully!");
+  const formatTime = (seconds: number) => {
+    const hrs = Math.floor(seconds / 3600);
+    const mins = Math.floor((seconds % 3600) / 60);
+    const secs = seconds % 60;
+    if (hrs > 0) return `${hrs}:${mins.toString().padStart(2, "0")}:${secs.toString().padStart(2, "0")}`;
+    return `${mins}:${secs.toString().padStart(2, "0")}`;
   };
 
-  if (!isAuthenticated || !user) {
-    return null;
-  }
+  const answeredCount = Object.keys(answers).length;
 
-  if (examState.isSubmitted && examState.results) {
+  if (!mockData || loading || !isAuthenticated) {
     return (
-      <ExamResults
-        score={examState.results.score}
-        totalQuestions={examState.results.totalQuestions}
-        specialty={examState.results.specialty}
-        duration={examState.results.duration}
-        specialtyBreakdown={examState.results.specialtyBreakdown}
-        previousAttempts={examState.results.previousAttempts}
-        platformAverage={examState.results.platformAverage}
-        onDownloadPDF={() => toast.success("PDF download started")}
-        onEmailReport={() => toast.success("Report sent to email")}
-        onBack={() => navigate("/mocks")}
-      />
+      <div className="min-h-screen bg-slate-50 flex items-center justify-center">
+        <div className="text-center">
+          <div className="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-green-600"></div>
+          <p className="mt-4 text-slate-600">Loading exam...</p>
+        </div>
+      </div>
     );
   }
 
+  const currentQuestion = mockData.questions[currentIndex];
+  const totalQuestions = mockData.totalQuestions;
+  const selectedAnswer = currentQuestion ? answers[currentQuestion.id.toString()] : null;
+
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100">
-      {/* Header with Timer */}
+    <div className="min-h-screen bg-slate-50">
+      {/* Timer Header */}
       <header className="bg-white border-b border-slate-200 sticky top-0 z-40">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-          <div className="flex items-center justify-between mb-4">
-            <h1 className="text-2xl font-bold text-slate-900">MRCGP AKT - Full Mock</h1>
+        <div className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
+          <div className="flex items-center gap-4">
+            <h1 className="text-lg font-bold text-slate-900 hidden sm:block">MRCGP AKT Mock</h1>
+            <span className="text-sm text-slate-600 font-medium">
+              Q{currentIndex + 1}/{totalQuestions}
+            </span>
+            <span className="text-xs text-slate-500">
+              {answeredCount} answered
+            </span>
+          </div>
+          <div className="flex items-center gap-3">
+            <div className={`flex items-center gap-2 px-3 py-1.5 rounded-lg font-mono font-bold text-sm ${
+              timeRemaining < 300 ? "bg-red-100 text-red-700 animate-pulse" : 
+              timeRemaining < 600 ? "bg-amber-100 text-amber-700" : 
+              "bg-slate-100 text-slate-700"
+            }`}>
+              <Timer className="w-4 h-4" />
+              {formatTime(timeRemaining)}
+            </div>
             <Button
+              onClick={() => setShowConfirmSubmit(true)}
               variant="outline"
-              onClick={() => {
-                if (confirm("Are you sure you want to exit? Your progress will be saved.")) {
-                  navigate("/mocks");
-                }
-              }}
+              size="sm"
+              className="text-red-600 border-red-200 hover:bg-red-50"
             >
-              Exit Exam
+              Finish Exam
             </Button>
           </div>
-          <ExamTimer totalSeconds={totalTime} onTimeExpired={handleTimeExpired} />
+        </div>
+        {/* Progress bar */}
+        <div className="w-full h-1 bg-slate-100">
+          <div
+            className="h-full bg-green-500 transition-all duration-300"
+            style={{ width: `${(answeredCount / totalQuestions) * 100}%` }}
+          />
         </div>
       </header>
 
-      {/* Main Content */}
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <div className="grid lg:grid-cols-4 gap-8">
-          {/* Question Panel */}
-          <div className="lg:col-span-3">
-            <Card className="p-8 border-slate-200">
-              {/* Question Header */}
-              <div className="mb-6 pb-6 border-b border-slate-200">
-                <div className="flex items-center justify-between mb-2">
-                  <span className="text-sm font-semibold text-green-600">
-                    Question {examState.currentQuestionIndex + 1} of {questions.length}
-                  </span>
-                  <div className="flex gap-2">
-                    <Button
-                      variant={examState.flagged.has(currentQuestion.id) ? "default" : "outline"}
-                      size="sm"
-                      onClick={handleToggleFlag}
-                      className="gap-2"
+      <main className="max-w-7xl mx-auto px-4 py-6">
+        <div className="grid lg:grid-cols-4 gap-6">
+          {/* Question Palette - Sidebar */}
+          <div className="lg:col-span-1 order-2 lg:order-1">
+            <Card className="p-4 sticky top-24">
+              <h3 className="text-sm font-bold text-slate-900 mb-3">Question Navigator</h3>
+              <div className="grid grid-cols-8 lg:grid-cols-5 gap-1.5 max-h-[400px] overflow-y-auto">
+                {mockData.questions.map((q, idx) => {
+                  const isAnswered = !!answers[q.id.toString()];
+                  const isCurrent = idx === currentIndex;
+                  const isFlagged = flagged.has(q.id);
+                  return (
+                    <button
+                      key={idx}
+                      onClick={() => setCurrentIndex(idx)}
+                      className={`w-8 h-8 rounded text-xs font-medium transition-all relative ${
+                        isCurrent ? "bg-green-600 text-white ring-2 ring-green-300" :
+                        isAnswered ? "bg-green-100 text-green-700" :
+                        "bg-slate-100 text-slate-600 hover:bg-slate-200"
+                      }`}
                     >
-                      <Flag className="w-4 h-4" />
-                      Flag
-                    </Button>
-                    <Button
-                      variant={examState.bookmarked.has(currentQuestion.id) ? "default" : "outline"}
-                      size="sm"
-                      onClick={handleToggleBookmark}
-                      className="gap-2"
-                    >
-                      <Bookmark className="w-4 h-4" />
-                      Bookmark
-                    </Button>
-                  </div>
+                      {idx + 1}
+                      {isFlagged && (
+                        <span className="absolute -top-0.5 -right-0.5 w-2 h-2 bg-amber-500 rounded-full"></span>
+                      )}
+                    </button>
+                  );
+                })}
+              </div>
+              <div className="mt-4 pt-4 border-t border-slate-200 space-y-2">
+                <div className="flex justify-between text-xs">
+                  <span className="text-slate-600">Answered</span>
+                  <span className="font-bold text-slate-900">{answeredCount}/{totalQuestions}</span>
                 </div>
-              </div>
-
-              {/* Question Text */}
-              <h2 className="text-xl font-bold text-slate-900 mb-6">{currentQuestion.text}</h2>
-
-              {/* Options */}
-              <div className="space-y-3 mb-8">
-                {currentQuestion.options.map((option, idx) => (
-                  <button
-                    key={idx}
-                    onClick={() => handleAnswerSelect(idx)}
-                    className={`w-full p-4 rounded-lg border-2 text-left transition-all ${
-                      selectedAnswer === idx
-                        ? "border-green-600 bg-green-50"
-                        : "border-slate-200 bg-white hover:border-slate-300"
-                    }`}
-                  >
-                    <div className="flex items-center gap-3">
-                      <div
-                        className={`w-6 h-6 rounded-full border-2 flex items-center justify-center ${
-                          selectedAnswer === idx
-                            ? "border-green-600 bg-green-600"
-                            : "border-slate-300"
-                        }`}
-                      >
-                        {selectedAnswer === idx && <span className="text-white text-sm font-bold">✓</span>}
-                      </div>
-                      <span className="font-medium text-slate-900">{option}</span>
-                    </div>
-                  </button>
-                ))}
-              </div>
-
-              {/* Navigation */}
-              <div className="flex gap-4">
-                <Button
-                  onClick={handlePrevious}
-                  disabled={examState.currentQuestionIndex === 0}
-                  variant="outline"
-                  className="gap-2"
-                >
-                  <ChevronLeft className="w-4 h-4" />
-                  Previous
-                </Button>
-                <Button
-                  onClick={handleNext}
-                  disabled={examState.currentQuestionIndex === questions.length - 1}
-                  className="bg-green-600 hover:bg-green-700 text-gray-900 gap-2 flex-1"
-                >
-                  Next
-                  <ChevronRight className="w-4 h-4" />
-                </Button>
+                <div className="w-full bg-slate-200 rounded-full h-1.5">
+                  <div className="bg-green-600 h-1.5 rounded-full transition-all" style={{ width: `${(answeredCount / totalQuestions) * 100}%` }} />
+                </div>
+                <div className="flex justify-between text-xs">
+                  <span className="text-slate-600">Flagged</span>
+                  <span className="font-bold text-amber-600">{flagged.size}</span>
+                </div>
               </div>
             </Card>
           </div>
 
-          {/* Sidebar - Question Navigator */}
-          <div>
-            <Card className="p-4 border-slate-200 sticky top-32">
-              <h3 className="font-bold text-slate-900 mb-4">Questions</h3>
-              <div className="grid grid-cols-5 gap-2">
-                {questions.map((q, idx) => (
-                  <button
-                    key={q.id}
-                    onClick={() => setExamState((prev) => ({ ...prev, currentQuestionIndex: idx }))}
-                    className={`w-8 h-8 rounded text-xs font-semibold transition-all ${
-                      idx === examState.currentQuestionIndex
-                        ? "bg-green-600 text-gray-900"
-                        : examState.answers[q.id] !== undefined
-                        ? "bg-green-100 text-green-700"
-                        : examState.flagged.has(q.id)
-                        ? "bg-red-100 text-red-700"
-                        : "bg-slate-100 text-slate-600"
-                    }`}
+          {/* Question Area */}
+          <div className="lg:col-span-3 order-1 lg:order-2">
+            {currentQuestion && (
+              <Card className="p-6 sm:p-8">
+                {/* Question metadata */}
+                <div className="flex items-center gap-3 mb-6">
+                  <span className="px-3 py-1 bg-slate-100 text-slate-700 rounded-full text-sm font-medium">
+                    {currentQuestion.specialty}
+                  </span>
+                  {flagged.has(currentQuestion.id) && (
+                    <span className="px-2 py-1 bg-amber-100 text-amber-700 rounded-full text-xs font-medium flex items-center gap-1">
+                      <Flag className="w-3 h-3" /> Flagged
+                    </span>
+                  )}
+                </div>
+
+                {/* Question stem */}
+                <h2 className="text-lg sm:text-xl font-bold text-slate-900 mb-8 leading-relaxed">
+                  {currentQuestion.stem}
+                </h2>
+
+                {/* Options */}
+                <div className="space-y-3 mb-8">
+                  {(["A", "B", "C", "D", "E"] as const).map((option) => {
+                    const optionKey = `option${option}` as keyof MockQuestion;
+                    const optionText = currentQuestion[optionKey] as string | null;
+                    if (!optionText) return null;
+                    const isSelected = selectedAnswer === option;
+
+                    return (
+                      <button
+                        key={option}
+                        onClick={() => {
+                          setAnswers((prev) => ({
+                            ...prev,
+                            [currentQuestion.id.toString()]: option,
+                          }));
+                        }}
+                        className={`w-full text-left p-4 rounded-lg border-2 transition-all ${
+                          isSelected
+                            ? "border-green-600 bg-green-50"
+                            : "border-slate-200 bg-white hover:border-slate-300"
+                        }`}
+                      >
+                        <div className="flex items-start gap-3">
+                          <div className={`w-7 h-7 rounded-full border-2 flex items-center justify-center font-medium text-sm flex-shrink-0 mt-0.5 ${
+                            isSelected ? "border-green-600 bg-green-600 text-white" : "border-slate-300 text-slate-500"
+                          }`}>
+                            {option}
+                          </div>
+                          <span className="text-slate-900">{optionText}</span>
+                        </div>
+                      </button>
+                    );
+                  })}
+                </div>
+
+                {/* Navigation */}
+                <div className="flex items-center justify-between pt-4 border-t border-slate-100">
+                  <div className="flex gap-2">
+                    <Button
+                      variant="outline"
+                      onClick={() => setCurrentIndex(Math.max(0, currentIndex - 1))}
+                      disabled={currentIndex === 0}
+                      className="gap-1"
+                    >
+                      <ChevronLeft className="w-4 h-4" />
+                      Prev
+                    </Button>
+                    <Button
+                      variant={flagged.has(currentQuestion.id) ? "default" : "outline"}
+                      onClick={() => {
+                        const newFlagged = new Set(flagged);
+                        if (newFlagged.has(currentQuestion.id)) {
+                          newFlagged.delete(currentQuestion.id);
+                        } else {
+                          newFlagged.add(currentQuestion.id);
+                        }
+                        setFlagged(newFlagged);
+                      }}
+                      className={flagged.has(currentQuestion.id) ? "bg-amber-500 hover:bg-amber-600 text-white" : ""}
+                    >
+                      <Flag className="w-4 h-4" />
+                    </Button>
+                  </div>
+                  <Button
+                    onClick={() => setCurrentIndex(Math.min(totalQuestions - 1, currentIndex + 1))}
+                    disabled={currentIndex === totalQuestions - 1}
+                    className="bg-green-600 hover:bg-green-700 text-white gap-1"
                   >
-                    {idx + 1}
-                  </button>
-                ))}
-              </div>
-
-              {/* Submit Button */}
-              <Button
-                onClick={handleSubmitExam}
-                className="w-full bg-green-600 hover:bg-green-700 text-gray-900 mt-6"
-              >
-                Submit Exam
-              </Button>
-
-              {/* Stats */}
-              <div className="mt-6 pt-6 border-t border-slate-200 space-y-2 text-sm">
-                <div className="flex justify-between">
-                  <span className="text-slate-600">Answered:</span>
-                  <span className="font-bold text-slate-900">{Object.keys(examState.answers).length}</span>
+                    Next
+                    <ChevronRight className="w-4 h-4" />
+                  </Button>
                 </div>
-                <div className="flex justify-between">
-                  <span className="text-slate-600">Flagged:</span>
-                  <span className="font-bold text-slate-900">{examState.flagged.size}</span>
-                </div>
-              </div>
-            </Card>
+              </Card>
+            )}
           </div>
         </div>
       </main>
+
+      {/* Confirm Submit Modal */}
+      {showConfirmSubmit && (
+        <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+          <Card className="p-8 max-w-md w-full">
+            <div className="text-center">
+              <div className="w-16 h-16 mx-auto mb-4 bg-amber-100 rounded-full flex items-center justify-center">
+                <AlertTriangle className="w-8 h-8 text-amber-600" />
+              </div>
+              <h3 className="text-xl font-bold text-slate-900 mb-2">Submit Exam?</h3>
+              <p className="text-slate-600 mb-2">
+                You have answered <strong>{answeredCount}</strong> of <strong>{totalQuestions}</strong> questions.
+              </p>
+              {answeredCount < totalQuestions && (
+                <p className="text-amber-600 text-sm mb-6">
+                  {totalQuestions - answeredCount} questions are unanswered and will be marked incorrect.
+                </p>
+              )}
+              {flagged.size > 0 && (
+                <p className="text-sm text-slate-500 mb-6">
+                  You have {flagged.size} flagged question{flagged.size > 1 ? "s" : ""}.
+                </p>
+              )}
+              <div className="flex gap-3">
+                <Button
+                  variant="outline"
+                  onClick={() => setShowConfirmSubmit(false)}
+                  className="flex-1"
+                >
+                  Continue Exam
+                </Button>
+                <Button
+                  onClick={() => {
+                    setShowConfirmSubmit(false);
+                    handleSubmit();
+                  }}
+                  disabled={isSubmitting}
+                  className="flex-1 bg-red-600 hover:bg-red-700 text-white"
+                >
+                  {isSubmitting ? "Submitting..." : "Submit Now"}
+                </Button>
+              </div>
+            </div>
+          </Card>
+        </div>
+      )}
     </div>
   );
 }

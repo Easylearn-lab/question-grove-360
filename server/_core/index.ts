@@ -139,20 +139,20 @@ Guidelines:
       ];
 
       const llmResponse = await invokeLLM({ messages: llmMessages });
-      const reply = llmResponse.choices?.[0]?.message?.content || "Sorry, I couldn't generate a response.";
+      const reply = (llmResponse.choices?.[0]?.message?.content || "Sorry, I couldn't generate a response.") as string;
 
       // Generate follow-up questions
       const followUpResponse = await invokeLLM({
         messages: [
           { role: "system" as const, content: "You generate exactly 3 short follow-up questions that help a medical student explore the topic further. Each question should be concise (under 60 characters), clinically relevant, and progressively deeper. Return ONLY a JSON array of 3 strings, nothing else. Example: [\"What are the diagnostic criteria?\",\"How does treatment differ in elderly?\",\"What are the key complications?\"]" },
-          { role: "user" as const, content: `Based on this conversation about: ${latestUserMessage}\n\nAI response: ${reply.substring(0, 500)}\n\nGenerate 3 follow-up questions.` }
+          { role: "user" as const, content: `Based on this conversation about: ${latestUserMessage}\n\nAI response: ${(reply as string).substring(0, 500)}\n\nGenerate 3 follow-up questions.` }
         ],
         response_format: { type: "json_object" as any }
       }).catch(() => null);
 
       let followUpQuestions: string[] = [];
       try {
-        const followUpContent = followUpResponse?.choices?.[0]?.message?.content || '[]';
+        const followUpContent = (followUpResponse?.choices?.[0]?.message?.content || '[]') as string;
         const parsed = JSON.parse(followUpContent);
         followUpQuestions = Array.isArray(parsed) ? parsed.slice(0, 3) : (parsed.questions || parsed.follow_ups || []).slice(0, 3);
       } catch {

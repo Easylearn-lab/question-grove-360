@@ -1,143 +1,37 @@
 import { useAuth } from "@/_core/hooks/useAuth";
 import { useLocation } from "wouter";
-import React, { useEffect, useState, useRef, useCallback } from "react";
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { ArrowLeft, Clock, CheckCircle2, AlertCircle, Play, FileText, Timer, BarChart3, Flag } from "lucide-react";
+import { ArrowLeft, Clock, CheckCircle2, AlertCircle, Play, FileText, Timer, BarChart3, Trophy, TrendingUp } from "lucide-react";
 import { trpc } from "@/lib/trpc";
 import { toast } from "sonner";
-import { SubscriptionGate } from "@/components/SubscriptionGate";
-import { useSubscription } from "@/hooks/useSubscription";
 import { useProtectedRoute } from "@/hooks/useProtectedRoute";
-
-const MOCK_EXAMS = [
-  { id: 1, name: "MRCGP AKT - Full Mock 1", exam: "MRCGP AKT", questions: 160, duration: 155, passMark: 72, examId: 1 },
-  { id: 2, name: "MRCGP AKT - Full Mock 2", exam: "MRCGP AKT", questions: 160, duration: 155, passMark: 72, examId: 1 },
-  { id: 3, name: "PLAB 1 - Full Mock 1", exam: "PLAB 1", questions: 160, duration: 155, passMark: 75, examId: 3 },
-  { id: 4, name: "USMLE Step 1 - Full Mock 1", exam: "USMLE Step 1", questions: 160, duration: 155, passMark: 70, examId: 5 },
-];
-
-type MockState = "list" | "active" | "results";
-
-interface MockAnswer {
-  questionId: number;
-  selectedAnswer: string | null;
-  isCorrect: boolean | null;
-  flagged?: boolean;
-}
 
 export default function MockExams() {
   const { user, isAuthenticated, loading, isReady } = useProtectedRoute();
   const [, navigate] = useLocation();
-  const [mockState, setMockState] = useState<MockState>("list");
-  const [activeMock, setActiveMock] = useState<typeof MOCK_EXAMS[0] | null>(null);
-  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
-  const [answers, setAnswers] = useState<MockAnswer[]>([]);
-  const [selectedAnswer, setSelectedAnswer] = useState<string | null>(null);
-  const [flaggedQuestions, setFlaggedQuestions] = useState<Set<number>>(new Set());
-  const [timeRemaining, setTimeRemaining] = useState(0);
-  const [mockScore, setMockScore] = useState({ score: 0, total: 0, percentage: 0, passed: false });
-  const timerRef = useRef<NodeJS.Timeout | null>(null);
 
-  const questionsQuery = trpc.questions.getQuestions.useQuery(
-    { limit: 50, offset: 0 },
-    { enabled: isReady && isAuthenticated && mockState === "active" }
-  );
+  const mocksQuery = trpc.mockExams.getMocks.useQuery(undefined, {
+    enabled: isReady && isAuthenticated,
+  });
 
-  const recordAttempt = trpc.mockExams.recordAttempt.useMutation();
+  const startMockMutation = trpc.mockExams.startMock.useMutation({
+    onSuccess: (data) => {
+      // Store exam data in sessionStorage and navigate to active exam
+      sessionStorage.setItem("activeMockData", JSON.stringify(data));
+      navigate(`/mock-exam/${data.mockId}`);
+    },
+    onError: (err) => {
+      toast.error(err.message || "Failed to start mock exam");
+    },
+  });
 
-  // Timer logic
-  useEffect(() => {
-    if (mockState === "active" && timeRemaining > 0) {
-      timerRef.current = setInterval(() => {
-        setTimeRemaining((prev) => {
-          if (prev <= 1) {
-            clearInterval(timerRef.current!);
-            handleFinishMock();
-            return 0;
-          }
-          return prev - 1;
-        });
-      }, 1000);
-    }
-    return () => {
-      if (timerRef.current) clearInterval(timerRef.current);
-    };
-  }, [mockState]);
-
-  const handleStartMock = (mock: typeof MOCK_EXAMS[0]) => {
-    setActiveMock(mock);
-    setMockState("active");
-    setTimeRemaining(mock.duration * 60);
-    setCurrentQuestionIndex(0);
-    setAnswers([]);
-    setSelectedAnswer(null);
+  const handleStartMock = (mockId: number) => {
+    startMockMutation.mutate({ mockId });
   };
 
-  const handleSubmitAnswer = () => {
-    if (!selectedAnswer || !questionsQuery.data) return;
-    const question = questionsQuery.data[currentQuestionIndex];
-    if (!question) return;
-
-    const isCorrect = selectedAnswer === question.correctAnswer;
-
-    const newAnswer: MockAnswer = {
-      questionId: question.id,
-      selectedAnswer,
-      isCorrect,
-    };
-
-    setAnswers((prev) => {
-      const existing = prev.findIndex((a) => a.questionId === question.id);
-      if (existing >= 0) {
-        const updated = [...prev];
-        updated[existing] = newAnswer;
-        return updated;
-      }
-      return [...prev, newAnswer];
-    });
-
-    // Record attempt in background
-    recordAttempt.mutate({
-      questionId: question.id,
-      examId: activeMock?.examId || 1,
-      selectedAnswer,
-      isCorrect,
-      timeTaken: 0,
-      mode: "exam",
-    });
-
-    // Move to next question
-    if (questionsQuery.data && currentQuestionIndex < questionsQuery.data.length - 1) {
-      setCurrentQuestionIndex(currentQuestionIndex + 1);
-      setSelectedAnswer(null);
-    }
-  };
-
-  const handleFinishMock = useCallback(() => {
-    if (timerRef.current) clearInterval(timerRef.current);
-
-    const totalAnswered = answers.length;
-    const correctAnswers = answers.filter((a) => a.isCorrect).length;
-    const percentage = totalAnswered > 0 ? Math.round((correctAnswers / totalAnswered) * 100) : 0;
-    const passed = percentage >= (activeMock?.passMark || 70);
-
-    setMockScore({ score: correctAnswers, total: totalAnswered, percentage, passed });
-    setMockState("results");
-    toast.success("Mock exam completed!");
-  }, [answers, activeMock]);
-
-  const formatTime = (seconds: number) => {
-    const hrs = Math.floor(seconds / 3600);
-    const mins = Math.floor((seconds % 3600) / 60);
-    const secs = seconds % 60;
-    if (hrs > 0) return `${hrs}:${mins.toString().padStart(2, "0")}:${secs.toString().padStart(2, "0")}`;
-    return `${mins}:${secs.toString().padStart(2, "0")}`;
-  };
-
-  const { isPremium, isLoading: subLoading } = useSubscription();
-
-  if (loading || !isAuthenticated || !user || subLoading) {
+  if (loading || !isAuthenticated || !user) {
     return (
       <div className="min-h-screen bg-slate-50 flex items-center justify-center">
         <div className="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-green-600"></div>
@@ -145,373 +39,133 @@ export default function MockExams() {
     );
   }
 
-  // Results screen
-  if (mockState === "results") {
-    const [showFlaggedOnly, setShowFlaggedOnly] = useState(false);
-    const questions = questionsQuery.data || [];
-    const flaggedQuestionsFiltered = questions.filter(q => flaggedQuestions.has(q.id));
-    const displayQuestions = showFlaggedOnly ? flaggedQuestionsFiltered : questions;
+  const mocks = mocksQuery.data || [];
 
-    return (
-      <div className="min-h-screen bg-slate-50">
-        <header className="bg-white border-b border-slate-200 sticky top-0 z-40">
-          <div className="max-w-7xl mx-auto px-4 py-4 flex items-center gap-4">
-            <Button variant="ghost" size="sm" onClick={() => setMockState("list")}>
-              <ArrowLeft className="w-4 h-4" />
-            </Button>
-            <h1 className="text-2xl font-bold text-slate-900">Mock Exam Results</h1>
-          </div>
-        </header>
-        <main className="max-w-4xl mx-auto px-4 py-12">
-          <Card className="p-8 text-center mb-8">
-            <div className={`w-24 h-24 mx-auto mb-6 rounded-full flex items-center justify-center ${mockScore.passed ? "bg-green-100" : "bg-red-100"}`}>
-              {mockScore.passed ? (
-                <CheckCircle2 className="w-12 h-12 text-green-600" />
-              ) : (
-                <AlertCircle className="w-12 h-12 text-red-600" />
-              )}
-            </div>
-            <h2 className="text-3xl font-bold text-slate-900 mb-2">
-              {mockScore.passed ? "Congratulations!" : "Keep Practising"}
-            </h2>
-            <p className="text-slate-600 mb-8">
-              {mockScore.passed
-                ? `You passed with ${mockScore.percentage}%!`
-                : `You scored ${mockScore.percentage}%. The pass mark is ${activeMock?.passMark}%.`}
-            </p>
-
-            <div className="grid grid-cols-3 gap-6 mb-8">
-              <div className="p-4 bg-slate-50 rounded-lg">
-                <p className="text-sm text-slate-600 mb-1">Score</p>
-                <p className="text-2xl font-bold text-slate-900">{mockScore.score}/{mockScore.total}</p>
-              </div>
-              <div className="p-4 bg-slate-50 rounded-lg">
-                <p className="text-sm text-slate-600 mb-1">Percentage</p>
-                <p className={`text-2xl font-bold ${mockScore.passed ? "text-green-600" : "text-red-600"}`}>{mockScore.percentage}%</p>
-              </div>
-              <div className="p-4 bg-slate-50 rounded-lg">
-                <p className="text-sm text-slate-600 mb-1">Pass Mark</p>
-                <p className="text-2xl font-bold text-slate-900">{activeMock?.passMark}%</p>
-              </div>
-            </div>
-
-            <div className="flex gap-3 justify-center">
-              <Button variant="outline" onClick={() => setMockState("list")}>Back to Mocks</Button>
-              <Button onClick={() => navigate("/dashboard")} className="bg-green-600 hover:bg-green-700 text-gray-900">Dashboard</Button>
-            </div>
-          </Card>
-
-          {/* Review Section */}
-          <Card className="p-6">
-            <div className="flex items-center justify-between mb-6">
-              <h3 className="text-xl font-bold text-slate-900">Review Questions</h3>
-              <Button
-                variant={showFlaggedOnly ? "default" : "outline"}
-                size="sm"
-                onClick={() => setShowFlaggedOnly(!showFlaggedOnly)}
-              >
-                <Flag className="w-4 h-4 mr-2" />
-                {showFlaggedOnly ? `Flagged (${flaggedQuestionsFiltered.length})` : "Show Flagged"}
-              </Button>
-            </div>
-
-            {displayQuestions.length === 0 ? (
-              <div className="text-center py-8">
-                <p className="text-slate-600">
-                  {showFlaggedOnly ? "No flagged questions" : "No questions to review"}
-                </p>
-              </div>
-            ) : (
-              <div className="space-y-4">
-                {displayQuestions.map((q: any, idx: number) => {
-                  const userAnswer = answers.find(a => a.questionId === q.id);
-                  const isCorrect = userAnswer?.selectedAnswer === q.correctAnswer;
-                  const isFlagged = flaggedQuestions.has(q.id);
-
-                  return (
-                    <div key={q.id} className="p-4 border border-slate-200 rounded-lg">
-                      <div className="flex items-start justify-between mb-3">
-                        <div className="flex items-center gap-3">
-                          <span className="text-sm font-semibold text-slate-600">Q{idx + 1}</span>
-                          <div className="flex items-center gap-2">
-                            {isCorrect ? (
-                              <CheckCircle2 className="w-5 h-5 text-green-600" />
-                            ) : (
-                              <AlertCircle className="w-5 h-5 text-red-600" />
-                            )}
-                            {isFlagged && <Flag className="w-4 h-4 text-amber-500" />}
-                          </div>
-                        </div>
-                      </div>
-                      <p className="text-sm text-slate-700 mb-3">{q.question}</p>
-                      <div className="text-xs text-slate-600">
-                        <p>Your answer: {userAnswer?.selectedAnswer || "Not answered"}</p>
-                        <p>Correct answer: {q.correctAnswer}</p>
-                      </div>
-                    </div>
-                  );
-                })}
-              </div>
-            )}
-          </Card>
-        </main>
-      </div>
-    );
-  }
-
-  // Active mock exam
-  if (mockState === "active" && activeMock) {
-    const questions = questionsQuery.data || [];
-    const currentQuestion = questions[currentQuestionIndex];
-    const totalQuestions = Math.min(questions.length, activeMock.questions);
-    const answeredCount = answers.length;
-
-    if (questionsQuery.isLoading) {
-      return (
-        <div className="min-h-screen bg-slate-50 flex items-center justify-center">
-          <div className="text-center">
-            <div className="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-green-600"></div>
-            <p className="mt-4 text-slate-600">Loading exam questions...</p>
-          </div>
-        </div>
-      );
-    }
-
-    if (questions.length === 0) {
-      return (
-        <div className="min-h-screen bg-slate-50">
-          <header className="bg-white border-b border-slate-200 sticky top-0 z-40">
-            <div className="max-w-7xl mx-auto px-4 py-4 flex items-center gap-4">
-              <Button variant="ghost" size="sm" onClick={() => setMockState("list")}>
-                <ArrowLeft className="w-4 h-4" />
-              </Button>
-              <h1 className="text-2xl font-bold text-slate-900">{activeMock.name}</h1>
-            </div>
-          </header>
-          <main className="max-w-3xl mx-auto px-4 py-16 text-center">
-            <div className="w-20 h-20 mx-auto mb-6 bg-green-100 rounded-full flex items-center justify-center">
-              <FileText className="w-10 h-10 text-green-600" />
-            </div>
-            <h2 className="text-2xl font-bold text-slate-900 mb-3">No Questions Available</h2>
-            <p className="text-slate-600 mb-6">Questions haven't been added to this exam yet. Check back soon.</p>
-            <Button onClick={() => setMockState("list")} className="bg-green-600 hover:bg-green-700 text-gray-900">Back to Mocks</Button>
-          </main>
-        </div>
-      );
-    }
-
-    return (
-      <div className="min-h-screen bg-slate-50">
-        {/* Timer Header */}
-        <header className="bg-white border-b border-slate-200 sticky top-0 z-40">
-          <div className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
-            <div className="flex items-center gap-4">
-              <h1 className="text-lg font-bold text-slate-900">{activeMock.name}</h1>
-              <span className="text-sm text-slate-600">Q{currentQuestionIndex + 1}/{totalQuestions}</span>
-            </div>
-            <div className="flex items-center gap-4">
-              <div className={`flex items-center gap-2 px-3 py-1.5 rounded-lg font-mono font-bold ${timeRemaining < 300 ? "bg-red-100 text-red-700" : "bg-slate-100 text-slate-700"}`}>
-                <Timer className="w-4 h-4" />
-                {formatTime(timeRemaining)}
-              </div>
-              <Button onClick={handleFinishMock} variant="outline" size="sm" className="text-red-600 border-red-200 hover:bg-red-50">
-                Finish Exam
-              </Button>
-            </div>
-          </div>
-        </header>
-
-        <main className="max-w-6xl mx-auto px-4 py-6">
-          <div className="grid lg:grid-cols-4 gap-6">
-            {/* Question Palette */}
-            <div className="lg:col-span-1 order-2 lg:order-1">
-              <Card className="p-4 sticky top-20">
-                <h3 className="text-sm font-bold text-slate-900 mb-3">Question Palette</h3>
-                <div className="grid grid-cols-5 gap-1.5">
-                  {questions.slice(0, totalQuestions).map((_, idx) => {
-                    const isAnswered = answers.some((a) => a.questionId === questions[idx]?.id);
-                    const isCurrent = idx === currentQuestionIndex;
-                    return (
-                      <button
-                        key={idx}
-                        onClick={() => { setCurrentQuestionIndex(idx); setSelectedAnswer(null); }}
-                        className={`w-8 h-8 rounded text-xs font-medium transition-all ${
-                          isCurrent ? "bg-green-600 text-gray-900 ring-2 ring-green-300" :
-                          isAnswered ? "bg-green-100 text-green-700" :
-                          "bg-slate-100 text-slate-600 hover:bg-slate-200"
-                        }`}
-                      >
-                        {idx + 1}
-                      </button>
-                    );
-                  })}
-                </div>
-                <div className="mt-4 pt-4 border-t border-slate-200">
-                  <p className="text-xs text-slate-600">Answered: {answeredCount}/{totalQuestions}</p>
-                  <div className="w-full bg-slate-200 rounded-full h-1.5 mt-2">
-                    <div className="bg-green-600 h-1.5 rounded-full" style={{ width: `${(answeredCount / totalQuestions) * 100}%` }} />
-                  </div>
-                </div>
-              </Card>
-            </div>
-
-            {/* Question Area */}
-            <div className="lg:col-span-3 order-1 lg:order-2">
-              {currentQuestion && (
-                <Card className="p-8">
-                  <div className="flex items-center gap-3 mb-6">
-                    {currentQuestion.specialty && (
-                      <span className="px-3 py-1 bg-slate-100 text-slate-700 rounded-full text-sm">{currentQuestion.specialty}</span>
-                    )}
-                    {currentQuestion.difficulty && currentQuestion.difficulty !== "Easy" && (
-                      <span className={`px-3 py-1 rounded-full text-sm ${
-                        currentQuestion.difficulty === "Medium" ? "bg-yellow-100 text-yellow-700" :
-                        "bg-red-100 text-red-700"
-                      }`}>{currentQuestion.difficulty}</span>
-                    )}
-                  </div>
-
-                  <h2 className="text-xl font-bold text-slate-900 mb-8">{currentQuestion.question}</h2>
-
-                  <div className="space-y-3 mb-8">
-                    {["A", "B", "C", "D", "E"].map((option) => {
-                      const optionKey = `option${option}` as keyof typeof currentQuestion;
-                      const optionText = currentQuestion[optionKey] as string | null;
-                      if (!optionText) return null;
-
-                      const isSelected = selectedAnswer === option;
-
-                      return (
-                        <button
-                          key={option}
-                          onClick={() => setSelectedAnswer(option)}
-                          className={`w-full text-left p-4 rounded-lg border-2 transition-all ${
-                            isSelected ? "border-green-600 bg-green-50" : "border-slate-200 bg-white hover:border-slate-300"
-                          }`}
-                        >
-                          <div className="flex items-center gap-3">
-                            <div className={`w-6 h-6 rounded-full border-2 flex items-center justify-center font-medium text-sm ${
-                              isSelected ? "border-green-600 bg-green-600 text-gray-900" : "border-slate-300"
-                            }`}>{option}</div>
-                            <span className="text-slate-900">{optionText}</span>
-                          </div>
-                        </button>
-                      );
-                    })}
-                  </div>
-
-                  <div className="flex items-center justify-between">
-                    <div className="flex gap-2">
-                      <Button
-                        variant="outline"
-                        onClick={() => { if (currentQuestionIndex > 0) { setCurrentQuestionIndex(currentQuestionIndex - 1); setSelectedAnswer(null); } }}
-                        disabled={currentQuestionIndex === 0}
-                      >
-                        Previous
-                      </Button>
-                      <Button
-                        variant={flaggedQuestions.has(currentQuestion.id) ? "default" : "outline"}
-                        onClick={() => {
-                          const newFlagged = new Set(flaggedQuestions);
-                          if (newFlagged.has(currentQuestion.id)) {
-                            newFlagged.delete(currentQuestion.id);
-                          } else {
-                            newFlagged.add(currentQuestion.id);
-                          }
-                          setFlaggedQuestions(newFlagged);
-                        }}
-                        className={flaggedQuestions.has(currentQuestion.id) ? "bg-amber-600 hover:bg-amber-700" : ""}
-                      >
-                        <Flag className="w-4 h-4 mr-2" />
-                        {flaggedQuestions.has(currentQuestion.id) ? "Flagged" : "Flag"}
-                      </Button>
-                    </div>
-                    <Button
-                      onClick={handleSubmitAnswer}
-                      disabled={!selectedAnswer}
-                      className="bg-green-600 hover:bg-green-700 text-gray-900"
-                    >
-                      {currentQuestionIndex === totalQuestions - 1 ? "Submit & Finish" : "Next"}
-                    </Button>
-                  </div>
-                </Card>
-              )}
-            </div>
-          </div>
-        </main>
-      </div>
-    );
-  }
-
-  // Mock Exam List
   return (
     <div className="min-h-screen bg-slate-50">
       <header className="bg-white border-b border-slate-200 sticky top-0 z-40">
         <div className="max-w-7xl mx-auto px-4 py-4 flex items-center gap-4">
-          <Button variant="ghost" size="sm" onClick={() => navigate("/dashboard")}>
+          <Button variant="ghost" size="sm" onClick={() => navigate("/mrcgp-akt")}>
             <ArrowLeft className="w-4 h-4" />
           </Button>
-          <h1 className="text-2xl font-bold text-slate-900">Mock Exams</h1>
+          <div>
+            <h1 className="text-2xl font-bold text-slate-900">Mock Exams</h1>
+            <p className="text-sm text-slate-600">MRCGP AKT — 160 questions, 155 minutes, 70% pass mark</p>
+          </div>
         </div>
       </header>
 
-      <main className="max-w-7xl mx-auto px-4 py-12">
-        <SubscriptionGate isPremium={isPremium} featureName="Mock Exams">
-        {/* Stats */}
-        <div className="grid md:grid-cols-4 gap-6 mb-12">
-          {[
-            { label: "Available Mocks", value: MOCK_EXAMS.length.toString(), icon: FileText },
-            { label: "Questions Ready", value: questionsQuery.data?.length?.toString() || "0", icon: BarChart3 },
-            { label: "Pass Mark Range", value: "70-75%", icon: CheckCircle2 },
-            { label: "Avg Duration", value: "3 hrs", icon: Clock },
-          ].map((stat, idx) => (
-            <Card key={idx} className="p-6 border-slate-200">
-              <div className="flex items-center justify-between">
-                <div>
-                  <p className="text-sm text-slate-600 mb-1">{stat.label}</p>
-                  <p className="text-3xl font-bold text-slate-900">{stat.value}</p>
-                </div>
-                <stat.icon className="w-10 h-10 text-green-600 opacity-20" />
-              </div>
-            </Card>
-          ))}
+      <main className="max-w-5xl mx-auto px-4 py-10">
+        {/* Info Banner */}
+        <div className="bg-gradient-to-r from-green-50 to-emerald-50 border border-green-200 rounded-xl p-6 mb-10">
+          <div className="flex items-start gap-4">
+            <div className="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center flex-shrink-0">
+              <FileText className="w-6 h-6 text-green-700" />
+            </div>
+            <div>
+              <h3 className="font-bold text-green-900 mb-1">Exam Conditions</h3>
+              <p className="text-sm text-green-800">Each mock contains 160 randomised questions drawn from all 17 specialties. Timer runs for 155 minutes. Pass mark is 70%. Results are saved with full specialty breakdown and question review.</p>
+            </div>
+          </div>
         </div>
 
         {/* Mocks List */}
-        <div className="space-y-4">
-          {MOCK_EXAMS.map((mock) => (
-            <Card key={mock.id} className="p-6 border-slate-200 hover:shadow-lg transition-all">
-              <div className="grid md:grid-cols-5 gap-4 items-center">
-                <div>
-                  <h3 className="font-bold text-slate-900 mb-1">{mock.name}</h3>
-                  <p className="text-sm text-slate-600">{mock.exam}</p>
-                </div>
-                <div className="text-center">
-                  <p className="text-sm text-slate-600 mb-1">Questions</p>
-                  <p className="font-bold text-slate-900">{mock.questions}</p>
-                </div>
-                <div className="text-center">
-                  <p className="text-sm text-slate-600 mb-1">Duration</p>
-                  <p className="font-bold text-slate-900">{mock.duration} min</p>
-                </div>
-                <div className="text-center">
-                  <p className="text-sm text-slate-600 mb-1">Pass Mark</p>
-                  <p className="font-bold text-slate-900">{mock.passMark}%</p>
-                </div>
-                <div className="text-right">
+        {mocksQuery.isLoading ? (
+          <div className="space-y-4">
+            {[1, 2, 3, 4, 5].map((i) => (
+              <Card key={i} className="p-6 border-slate-200 animate-pulse">
+                <div className="h-6 bg-slate-200 rounded w-1/3 mb-3"></div>
+                <div className="h-4 bg-slate-100 rounded w-1/4"></div>
+              </Card>
+            ))}
+          </div>
+        ) : (
+          <div className="space-y-4">
+            {mocks.map((mock) => (
+              <Card key={mock.id} className="p-6 border-slate-200 hover:shadow-lg transition-all">
+                <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
+                  <div className="flex-1">
+                    <h3 className="text-lg font-bold text-slate-900 mb-1">{mock.name}</h3>
+                    <div className="flex flex-wrap items-center gap-4 text-sm text-slate-600">
+                      <span className="flex items-center gap-1.5">
+                        <FileText className="w-4 h-4" />
+                        {mock.questionsCount} questions
+                      </span>
+                      <span className="flex items-center gap-1.5">
+                        <Timer className="w-4 h-4" />
+                        {mock.timerMinutes} min
+                      </span>
+                      <span className="flex items-center gap-1.5">
+                        <Trophy className="w-4 h-4" />
+                        Pass: {mock.passMark}%
+                      </span>
+                    </div>
+                  </div>
+
+                  {/* User Stats */}
+                  {mock.attempts > 0 && (
+                    <div className="flex items-center gap-4">
+                      <div className="text-center px-3">
+                        <p className="text-xs text-slate-500">Best</p>
+                        <p className={`text-lg font-bold ${(mock.bestPercentage || 0) >= mock.passMark ? "text-green-600" : "text-red-600"}`}>
+                          {mock.bestPercentage?.toFixed(0)}%
+                        </p>
+                      </div>
+                      <div className="text-center px-3 border-l border-slate-200">
+                        <p className="text-xs text-slate-500">Attempts</p>
+                        <p className="text-lg font-bold text-slate-700">{mock.attempts}</p>
+                      </div>
+                    </div>
+                  )}
+
                   <Button
-                    onClick={() => handleStartMock(mock)}
-                    className="bg-green-600 hover:bg-green-700 text-gray-900 w-full gap-2"
+                    onClick={() => handleStartMock(mock.id)}
+                    disabled={startMockMutation.isPending}
+                    className="bg-green-600 hover:bg-green-700 text-white gap-2 min-w-[140px]"
                   >
-                    <Play className="w-4 h-4" />
-                    Start Exam
+                    {startMockMutation.isPending ? (
+                      <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white"></div>
+                    ) : (
+                      <>
+                        <Play className="w-4 h-4" />
+                        {mock.attempts > 0 ? "Retake" : "Start Exam"}
+                      </>
+                    )}
                   </Button>
                 </div>
-              </div>
-            </Card>
-          ))}
-        </div>
-        </SubscriptionGate>
+              </Card>
+            ))}
+          </div>
+        )}
+
+        {/* Past Results - show last attempt for each mock */}
+        {mocks.some((m) => m.attempts > 0) && (
+          <div className="mt-10">
+            <h2 className="text-lg font-bold text-slate-900 mb-4 flex items-center gap-2">
+              <BarChart3 className="w-5 h-5 text-green-600" />
+              Recent Results
+            </h2>
+            <div className="space-y-3">
+              {mocks.filter((m) => m.attempts > 0 && m.lastAttempt).map((mock) => (
+                <Card key={`result-${mock.id}`} className="p-4 border-slate-200 hover:shadow-md transition-all cursor-pointer" onClick={() => {
+                  // Navigate to the most recent result for this mock
+                  // The getHistory endpoint returns results ordered by completedAt DESC
+                  toast.info("Loading your latest result...");
+                }}>
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <p className="font-medium text-slate-900">{mock.name}</p>
+                      <p className="text-sm text-slate-500">Best: {mock.bestPercentage?.toFixed(0)}% — {mock.attempts} attempt{mock.attempts > 1 ? 's' : ''}</p>
+                    </div>
+                    <div className={`text-lg font-bold ${(mock.bestPercentage || 0) >= mock.passMark ? "text-green-600" : "text-red-600"}`}>
+                      {(mock.bestPercentage || 0) >= mock.passMark ? "PASSED" : "BELOW PASS"}
+                    </div>
+                  </div>
+                </Card>
+              ))}
+            </div>
+          </div>
+        )}
       </main>
     </div>
   );
