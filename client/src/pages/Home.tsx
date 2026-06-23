@@ -11,6 +11,10 @@ export default function Home() {
   const [, navigate] = useLocation();
 
   useEffect(() => {
+    document.title = "Question Grove 360 — Medical Exam Prep Platform";
+  }, []);
+
+  useEffect(() => {
     if (!loading && isAuthenticated && user) {
       navigate("/dashboard");
     }
