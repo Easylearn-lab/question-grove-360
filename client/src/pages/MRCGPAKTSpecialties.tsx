@@ -2,7 +2,7 @@ import { useState, useMemo } from "react";
 import { useLocation } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { ArrowLeft, BookOpen, BarChart3, Lock } from "lucide-react";
+import { ArrowLeft, BookOpen, BarChart3, Lock, FileText, BookMarked } from "lucide-react";
 import { useProtectedRoute } from "@/hooks/useProtectedRoute";
 import { useSubscription } from "@/hooks/useSubscription";
 import { trpc } from "@/lib/trpc";
@@ -95,6 +95,37 @@ export default function MRCGPAKTSpecialties() {
 
       {/* Main Content */}
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        {/* Mock Exams & Note360 Cards */}
+        <div className="grid md:grid-cols-2 gap-6 mb-12">
+          {/* Mock Exams Card */}
+          <Card className="p-8 border-slate-200 hover:shadow-lg transition-all cursor-pointer bg-gradient-to-br from-blue-50 to-blue-100" onClick={() => navigate("/mock-exams")}>
+            <div className="flex items-start justify-between mb-4">
+              <div>
+                <h3 className="text-2xl font-bold text-slate-900 mb-2">Mock Exams</h3>
+                <p className="text-slate-600">Simulate real exam conditions</p>
+              </div>
+              <span className="text-4xl">📝</span>
+            </div>
+            <Button className="w-full mt-6 bg-blue-600 hover:bg-blue-700 text-white">
+              Start Mock Exam →
+            </Button>
+          </Card>
+
+          {/* Note360 Card */}
+          <Card className="p-8 border-slate-200 hover:shadow-lg transition-all cursor-pointer bg-gradient-to-br from-purple-50 to-purple-100" onClick={() => navigate("/note360")}>
+            <div className="flex items-start justify-between mb-4">
+              <div>
+                <h3 className="text-2xl font-bold text-slate-900 mb-2">Note360</h3>
+                <p className="text-slate-600">Your personal study notebook</p>
+              </div>
+              <span className="text-4xl">📓</span>
+            </div>
+            <Button className="w-full mt-6 bg-purple-600 hover:bg-purple-700 text-white">
+              Open Notes →
+            </Button>
+          </Card>
+        </div>
+
         {/* Specialties Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {specialties.map((specialty) => {
