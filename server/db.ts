@@ -1140,3 +1140,138 @@ export async function getMrcgpAktQuestionsBySpecialty(specialty?: string, limit:
     return [];
   }
 }
+
+
+// Note360 - Get all notes for a specialty
+export async function getNote360BySpecialty(specialty: string) {
+  const db = await getDb();
+  if (!db) return [];
+
+  try {
+    const { notes } = await import("../drizzle/schema");
+    const result = await db.select().from(notes)
+      .where(and(eq(notes.examId, 1), eq(notes.specialty, specialty)))
+      .orderBy(notes.title);
+    return result;
+  } catch (error) {
+    console.error("[Database] Failed to get Note360 by specialty:", error);
+    return [];
+  }
+}
+
+// Note360 - Get user progress for a note
+export async function getUserNoteProgress(userId: number, noteId: number) {
+  const db = await getDb();
+  if (!db) return null;
+
+  try {
+    const { userNoteProgress } = await import("../drizzle/schema");
+    const result = await db.select().from(userNoteProgress)
+      .where(and(eq(userNoteProgress.userId, userId), eq(userNoteProgress.noteId, noteId)))
+      .limit(1);
+    return result.length > 0 ? result[0] : null;
+  } catch (error) {
+    console.error("[Database] Failed to get user note progress:", error);
+    return null;
+  }
+}
+
+// Note360 - Get all user progress for a specialty
+export async function getUserNoteProgressBySpecialty(userId: number, specialty: string) {
+  const db = await getDb();
+  if (!db) return [];
+
+  try {
+    const { userNoteProgress, notes } = await import("../drizzle/schema");
+    const result = await db.select({
+      id: userNoteProgress.id,
+      userId: userNoteProgress.userId,
+      noteId: userNoteProgress.noteId,
+      isRead: userNoteProgress.isRead,
+      isBookmarked: userNoteProgress.isBookmarked,
+      createdAt: userNoteProgress.createdAt,
+      updatedAt: userNoteProgress.updatedAt,
+    })
+      .from(userNoteProgress)
+      .innerJoin(notes, eq(userNoteProgress.noteId, notes.id))
+      .where(and(eq(userNoteProgress.userId, userId), eq(notes.specialty, specialty)));
+    return result;
+  } catch (error) {
+    console.error("[Database] Failed to get user note progress by specialty:", error);
+    return [];
+  }
+}
+
+// Note360 - Update user note progress (mark as read or bookmark)
+export async function updateUserNoteProgress(
+  userId: number,
+  noteId: number,
+  isRead?: boolean,
+  isBookmarked?: boolean
+) {
+  const db = await getDb();
+  if (!db) return null;
+
+  try {
+    const { userNoteProgress } = await import("../drizzle/schema");
+    
+    // Check if record exists
+    const existing = await getUserNoteProgress(userId, noteId);
+    
+    if (existing) {
+      // Update existing record
+      const updateData: any = {};
+      if (isRead !== undefined) updateData.isRead = isRead;
+      if (isBookmarked !== undefined) updateData.isBookmarked = isBookmarked;
+      updateData.updatedAt = new Date();
+
+      const result = await db.update(userNoteProgress)
+        .set(updateData)
+        .where(and(eq(userNoteProgress.userId, userId), eq(userNoteProgress.noteId, noteId)));
+      return result;
+    } else {
+      // Create new record
+      const result = await db.insert(userNoteProgress).values({
+        userId,
+        noteId,
+        isRead: isRead ?? false,
+        isBookmarked: isBookmarked ?? false,
+      });
+      return result;
+    }
+  } catch (error) {
+    console.error("[Database] Failed to update user note progress:", error);
+    return null;
+  }
+}
+
+// Note360 - Get progress stats for a specialty
+export async function getNote360ProgressStats(userId: number, specialty: string) {
+  const db = await getDb();
+  if (!db) return { total: 0, read: 0, bookmarked: 0 };
+
+  try {
+    const { userNoteProgress, notes } = await import("../drizzle/schema");
+    
+    // Get total notes in specialty
+    const allNotes = await db.select().from(notes)
+      .where(and(eq(notes.examId, 1), eq(notes.specialty, specialty)));
+    
+    // Get user progress
+    const userProgress = await db.select().from(userNoteProgress)
+      .innerJoin(notes, eq(userNoteProgress.noteId, notes.id))
+      .where(and(eq(userNoteProgress.userId, userId), eq(notes.specialty, specialty)));
+
+    const read = userProgress.filter((p) => p.user_note_progress.isRead).length;
+    const bookmarked = userProgress.filter((p) => p.user_note_progress.isBookmarked).length;
+
+    return {
+      total: allNotes.length,
+      read,
+      bookmarked,
+    };
+  } catch (error) {
+    console.error("[Database] Failed to get Note360 progress stats:", error);
+    return { total: 0, read: 0, bookmarked: 0 };
+  }
+}

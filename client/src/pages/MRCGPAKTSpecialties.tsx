@@ -112,16 +112,16 @@ export default function MRCGPAKTSpecialties() {
           </Card>
 
           {/* Note360 Card */}
-          <Card className="p-8 border-slate-200 hover:shadow-lg transition-all cursor-pointer bg-gradient-to-br from-purple-50 to-purple-100" onClick={() => navigate("/note360")}>
+          <Card className="p-8 border-slate-200 hover:shadow-lg transition-all cursor-pointer bg-gradient-to-br from-green-50 to-green-100" onClick={() => navigate("/mrcgp-akt/note360")}>
             <div className="flex items-start justify-between mb-4">
               <div>
                 <h3 className="text-2xl font-bold text-slate-900 mb-2">Note360</h3>
-                <p className="text-slate-600">Your personal study notebook</p>
+                <p className="text-slate-600">NICE-compliant medical notes</p>
               </div>
               <span className="text-4xl">📓</span>
             </div>
-            <Button className="w-full mt-6 bg-purple-600 hover:bg-purple-700 text-white">
-              Open Notes →
+            <Button className="w-full mt-6 bg-[#32CD32] hover:bg-[#2ab82a] text-[#1A1A1A] font-semibold">
+              Open Note360 →
             </Button>
           </Card>
         </div>

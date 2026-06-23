@@ -50,6 +50,20 @@
       "when": 1781817601064,
       "tag": "0006_unique_terror",
       "breakpoints": true
+    },
+    {
+      "idx": 7,
+      "version": "5",
+      "when": 1782245670620,
+      "tag": "0007_amusing_robbie_robertson",
+      "breakpoints": true
+    },
+    {
+      "idx": 8,
+      "version": "5",
+      "when": 1782246322084,
+      "tag": "0008_smooth_preak",
+      "breakpoints": true
     }
   ]
 }

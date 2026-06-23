@@ -26,6 +26,8 @@ import TwoFactorSettings from "./pages/TwoFactorSettings";
 import { AICoachFloating } from "./components/AICoachFloating";
 import MRCGPAKTSpecialties from "./pages/MRCGPAKTSpecialties";
 import MRCGPAKTPractice from "./pages/MRCGPAKTPractice";
+import Note360List from "./pages/Note360List";
+import Note360Content from "./pages/Note360Content";
 
 function Router() {
   // make sure to consider if you need authentication for certain routes
@@ -52,8 +54,10 @@ function Router() {
       <Route path={"/progress"} component={Progress} />
       <Route path={"/bookmarks"} component={Bookmarks} />
       <Route path={"/settings/2fa"} component={TwoFactorSettings} />
-      <Route path={"/mrcgp-akt"} component={MRCGPAKTSpecialties} />
-      <Route path={"/practice/mrcgp-akt/:specialty"} component={MRCGPAKTPractice} />
+      <Route path={"/:mrcgp-akt"} component={MRCGPAKTSpecialties} />
+      <Route path={"/:practice/mrcgp-akt/:specialty"} component={MRCGPAKTPractice} />
+      <Route path={"/:mrcgp-akt/note360"} component={Note360List} />
+      <Route path={"/:mrcgp-akt/note360/:specialty"} component={Note360Content} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />

@@ -1,4 +1,4 @@
-import { int, mysqlEnum, mysqlTable, text, timestamp, varchar, boolean, decimal, json, date } from "drizzle-orm/mysql-core";
+import { int, mysqlEnum, mysqlTable, text, timestamp, varchar, boolean, decimal, json, date, uniqueIndex } from "drizzle-orm/mysql-core";
 
 /**
  * Core user table backing auth flow.
@@ -195,6 +195,9 @@ export const notes = mysqlTable("notes", {
   specialty: varchar("specialty", { length: 255 }).notNull(),
   title: text("title"),
   content: text("content"),
+  niceGuideline: varchar("niceGuideline", { length: 100 }),
+  niceUrl: text("niceUrl"),
+  examPearl: text("examPearl"),
   highYieldCount: int("highYieldCount").default(0),
   curriculumVersion: varchar("curriculumVersion", { length: 50 }),
   lastUpdated: timestamp("lastUpdated").defaultNow(),
@@ -459,3 +462,19 @@ export const userChatHistory = mysqlTable("user_chat_history", {
 
 export type UserChatHistory = typeof userChatHistory.$inferSelect;
 export type InsertUserChatHistory = typeof userChatHistory.$inferInsert;
+
+// User Note Progress (for Note360 - tracks read status and bookmarks)
+export const userNoteProgress = mysqlTable("user_note_progress", {
+  id: int("id").autoincrement().primaryKey(),
+  userId: int("userId").notNull().references(() => users.id),
+  noteId: int("noteId").notNull().references(() => notes.id),
+  isRead: boolean("isRead").default(false).notNull(),
+  isBookmarked: boolean("isBookmarked").default(false).notNull(),
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+  updatedAt: timestamp("updatedAt").defaultNow().onUpdateNow().notNull(),
+}, (table) => ({
+  userNoteUnique: uniqueIndex("user_note_unique").on(table.userId, table.noteId),
+}));
+
+export type UserNoteProgress = typeof userNoteProgress.$inferSelect;
+export type InsertUserNoteProgress = typeof userNoteProgress.$inferInsert;

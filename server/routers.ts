@@ -481,6 +481,41 @@ export const appRouter = router({
         return await getMrcgpAktQuestionsBySpecialty(input.specialty, input.limit);
       }),
   }),
+
+  // Note360 Router
+  note360: router({
+    getBySpecialty: protectedProcedure
+      .input(z.string())
+      .query(async ({ input }) => {
+        const { getNote360BySpecialty } = await import("./db");
+        return await getNote360BySpecialty(input);
+      }),
+    getUserProgress: protectedProcedure
+      .input(z.object({
+        specialty: z.string(),
+      }))
+      .query(async ({ ctx, input }) => {
+        const { getUserNoteProgressBySpecialty, getNote360ProgressStats } = await import("./db");
+        const progress = await getUserNoteProgressBySpecialty(ctx.user.id, input.specialty);
+        const stats = await getNote360ProgressStats(ctx.user.id, input.specialty);
+        return { progress, stats };
+      }),
+    updateProgress: protectedProcedure
+      .input(z.object({
+        noteId: z.number(),
+        isRead: z.boolean().optional(),
+        isBookmarked: z.boolean().optional(),
+      }))
+      .mutation(async ({ ctx, input }) => {
+        const { updateUserNoteProgress } = await import("./db");
+        return await updateUserNoteProgress(
+          ctx.user.id,
+          input.noteId,
+          input.isRead,
+          input.isBookmarked
+        );
+      }),
+  }),
 });
 
 export type AppRouter = typeof appRouter;
