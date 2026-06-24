@@ -384,11 +384,11 @@ export const appRouter = router({
         const flagged = typeof r.flaggedQuestions === 'string' ? JSON.parse(r.flaggedQuestions) : (r.flaggedQuestions || []);
         const questionIds = Object.keys(answers).map(Number);
         if (questionIds.length === 0) return [];
-        const questionsData = await db.execute(sql`SELECT id, domain, optionA, optionB, optionC, optionD, optionE, correctAnswer, explanationCorrect, explanationA, explanationB, explanationC, explanationD, explanationE, niceReference, tags, specialty FROM questions WHERE id IN (${sql.raw(questionIds.join(","))})`);
+        const questionsData = await db.execute(sql`SELECT id, stem, optionA, optionB, optionC, optionD, optionE, correctAnswer, explanationCorrect, explanationA, explanationB, explanationC, explanationD, explanationE, niceReference, tags, specialty FROM questions WHERE id IN (${sql.raw(questionIds.join(","))})`);
         const questions = Array.isArray(questionsData) && Array.isArray(questionsData[0]) ? questionsData[0] : questionsData;
         return (questions as any[]).map((q: any) => ({
           id: q.id,
-          stem: q.domain,
+          stem: q.stem,
           userAnswer: answers[q.id.toString()],
           correctAnswer: q.correctAnswer,
           isCorrect: answers[q.id.toString()] === q.correctAnswer,
