@@ -70,6 +70,45 @@ export const voiceRouter = router({
     }),
 
   /**
+   * Generate AI patient response for SCA consultation
+   */
+  generatePatientResponse: protectedProcedure
+    .input(
+      z.object({
+        caseScenario: z.string(),
+        userMessage: z.string(),
+        conversationHistory: z.array(z.object({
+          role: z.enum(["user", "assistant"]),
+          content: z.string(),
+        })).optional(),
+      })
+    )
+    .mutation(async ({ input }) => {
+      const { invokeLLM } = await import("./_core/llm");
+      
+      const systemPrompt = `You are a patient in a medical consultation for the following scenario:
+${input.caseScenario}
+
+Respond naturally as a patient would, providing relevant information about your symptoms, medical history, and concerns. Keep responses concise (1-2 sentences) and realistic. Ask clarifying questions if the doctor's questions are unclear.`;
+      
+      const messages = [
+        { role: "system" as const, content: systemPrompt },
+        ...(input.conversationHistory || []),
+        { role: "user" as const, content: input.userMessage },
+      ];
+      
+      const response = await invokeLLM({
+        messages: messages as any,
+      });
+      
+      const patientResponse = response.choices[0]?.message?.content || "I'm not sure I understand. Could you rephrase that?";
+      
+      return {
+        response: patientResponse,
+      };
+    }),
+
+  /**
    * Text-to-speech synthesis using the built-in TTS service
    * Returns a URL to the generated audio file
    */

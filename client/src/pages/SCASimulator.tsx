@@ -52,6 +52,9 @@ export default function SCASimulator() {
   // Voice mutations
   const uploadAudioMutation = trpc.voice.uploadAudio.useMutation();
   const transcribeMutation = trpc.voice.transcribe.useMutation();
+  const generateResponseMutation = trpc.voice.generatePatientResponse.useMutation();
+  const synthesizeMutation = trpc.voice.synthesize.useMutation();
+  const audioRef = useRef<HTMLAudioElement | null>(null);
 
   useEffect(() => {
     if (!isAuthenticated && !subLoading) {
@@ -132,18 +135,46 @@ export default function SCASimulator() {
     setTranscript("");
     setIsLoading(true);
 
-    // Simulate patient response
-    setTimeout(() => {
+    if (!selectedCase) {
+      toast.error("No case selected");
+      setIsLoading(false);
+      return;
+    }
+
+    try {
+      const response = await generateResponseMutation.mutateAsync({
+        caseScenario: selectedCase.scenario,
+        userMessage: messageText,
+        conversationHistory: messages,
+      });
+
       setMessages((prev) => [
         ...prev,
         {
           role: "assistant",
-          content:
-            "Thank you for that information. Let me ask you a follow-up question: How long have you been experiencing this symptom? Any associated symptoms like nausea or shortness of breath?",
+          content: typeof response.response === 'string' ? response.response : JSON.stringify(response.response),
         },
       ]);
+
+      try {
+        const ttsResult = await synthesizeMutation.mutateAsync({
+          text: typeof response.response === 'string' ? response.response : JSON.stringify(response.response),
+          voice: "nova",
+          speed: 1.0,
+        });
+        
+        if (audioRef.current) {
+          audioRef.current.src = ttsResult.url;
+          audioRef.current.play().catch(err => console.error("Audio playback failed:", err));
+        }
+      } catch (err) {
+        console.error("TTS generation failed:", err);
+      }
+    } catch (err: any) {
+      toast.error(err.message || "Failed to generate response");
+    } finally {
       setIsLoading(false);
-    }, 1500);
+    }
   };
 
   if (!isAuthenticated || !user) {

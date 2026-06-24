@@ -88,9 +88,9 @@
 
 ## Phase 10: SCA AI Consultation Simulator
 - [x] Design SCA case selection interface
-- [ ] Implement real-time voice capture with Deepgram STT
+- [x] Implement real-time voice capture with Deepgram STT
 - [x] Integrate ElevenLabs for AI patient voice synthesis (voiceSynthesis.ts)
-- [ ] Build Claude AI patient persona and response generation
+- [x] Build Claude AI patient persona and response generation
 - [x] Create real-time transcript display
 - [ ] Implement domain scoring system (3 domains)
 - [ ] Build consultation feedback with detailed analysis
