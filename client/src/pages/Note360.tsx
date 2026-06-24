@@ -20,6 +20,18 @@ const SPECIALTIES = [
   { id: "Renal", name: "Renal", icon: Pill, color: "bg-amber-100 text-amber-600" },
   { id: "Paediatrics", name: "Paediatrics", icon: Baby, color: "bg-pink-100 text-pink-600" },
   { id: "Orthopaedics", name: "Orthopaedics", icon: Bone, color: "bg-orange-100 text-orange-600" },
+  { id: "Cardiovascular", name: "Cardiovascular", icon: Heart, color: "bg-red-100 text-red-600" },
+  { id: "Musculoskeletal", name: "Musculoskeletal", icon: Bone, color: "bg-orange-100 text-orange-600" },
+  { id: "Endocrinology", name: "Endocrinology", icon: Pill, color: "bg-amber-100 text-amber-600" },
+  { id: "Haematology", name: "Haematology", icon: Activity, color: "bg-blue-100 text-blue-600" },
+  { id: "Infectious Disease", name: "Infectious Disease", icon: Activity, color: "bg-blue-100 text-blue-600" },
+  { id: "Obstetrics & Gynaecology", name: "Obstetrics & Gynaecology", icon: Baby, color: "bg-pink-100 text-pink-600" },
+  { id: "Ophthalmology & ENT", name: "Ophthalmology & ENT", icon: Eye, color: "bg-cyan-100 text-cyan-600" },
+  { id: "General Practice", name: "General Practice", icon: Stethoscope, color: "bg-green-100 text-green-600" },
+  { id: "Pharmacology & Prescribing", name: "Pharmacology & Prescribing", icon: Pill, color: "bg-amber-100 text-amber-600" },
+  { id: "Renal & Urology", name: "Renal & Urology", icon: Pill, color: "bg-amber-100 text-amber-600" },
+  { id: "Statistics & EBM", name: "Statistics & EBM", icon: Activity, color: "bg-blue-100 text-blue-600" },
+  { id: "Ethics & Organisational", name: "Ethics & Organisational", icon: Stethoscope, color: "bg-green-100 text-green-600" },
 ];
 
 export default function Note360() {
