@@ -9,170 +9,25 @@ import { ArrowLeft, Search, BookMarked, Zap, Heart, Brain, Stethoscope, Pill, Ba
 import { Streamdown } from "streamdown";
 import { SubscriptionGate } from "@/components/SubscriptionGate";
 import { useSubscription } from "@/hooks/useSubscription";
+import { trpc } from "@/lib/trpc";
 
 const SPECIALTIES = [
-  { id: "cardiology", name: "Cardiology", icon: Heart, color: "bg-red-100 text-red-600", noteCount: 24 },
-  { id: "neurology", name: "Neurology", icon: Brain, color: "bg-purple-100 text-purple-600", noteCount: 18 },
-  { id: "respiratory", name: "Respiratory", icon: Activity, color: "bg-blue-100 text-blue-600", noteCount: 15 },
-  { id: "renal", name: "Renal", icon: Pill, color: "bg-amber-100 text-amber-600", noteCount: 12 },
-  { id: "gastroenterology", name: "Gastroenterology", icon: Stethoscope, color: "bg-green-100 text-green-600", noteCount: 20 },
-  { id: "paediatrics", name: "Paediatrics", icon: Baby, color: "bg-pink-100 text-pink-600", noteCount: 16 },
-  { id: "orthopaedics", name: "Orthopaedics", icon: Bone, color: "bg-orange-100 text-orange-600", noteCount: 10 },
-  { id: "ophthalmology", name: "Ophthalmology", icon: Eye, color: "bg-cyan-100 text-cyan-600", noteCount: 8 },
+  { id: "Respiratory", name: "Respiratory", icon: Activity, color: "bg-blue-100 text-blue-600" },
+  { id: "Gastroenterology", name: "Gastroenterology", icon: Stethoscope, color: "bg-green-100 text-green-600" },
+  { id: "Dermatology", name: "Dermatology", icon: Eye, color: "bg-cyan-100 text-cyan-600" },
+  { id: "Cardiology", name: "Cardiology", icon: Heart, color: "bg-red-100 text-red-600" },
+  { id: "Neurology", name: "Neurology", icon: Brain, color: "bg-purple-100 text-purple-600" },
+  { id: "Renal", name: "Renal", icon: Pill, color: "bg-amber-100 text-amber-600" },
+  { id: "Paediatrics", name: "Paediatrics", icon: Baby, color: "bg-pink-100 text-pink-600" },
+  { id: "Orthopaedics", name: "Orthopaedics", icon: Bone, color: "bg-orange-100 text-orange-600" },
 ];
-
-const NOTES_DATA: Record<string, Array<{
-  id: number;
-  title: string;
-  specialty: string;
-  exam: string;
-  highYieldCount: number;
-  content: string;
-  lastUpdated: string;
-}>> = {
-  cardiology: [
-    {
-      id: 1,
-      title: "Acute Coronary Syndrome",
-      specialty: "Cardiology",
-      exam: "MRCGP AKT",
-      highYieldCount: 12,
-      content: `# Acute Coronary Syndrome
-
-## Definition
-ACS is a spectrum of acute myocardial ischemia ranging from unstable angina to STEMI.
-
-## Classification
-- **STEMI**: ST elevation MI (>1mm in contiguous leads)
-- **NSTEMI**: Non-ST elevation MI (troponin elevation without ST elevation)
-- **Unstable Angina**: Chest pain without troponin elevation
-
-## Risk Factors
-- Age, male sex, Smoking, Hypertension, Diabetes, Hyperlipidemia, Family history
-
-## Clinical Presentation
-- Central chest pain (crushing, pressure)
-- Radiation to arm, jaw, back
-- Associated dyspnea, nausea, diaphoresis
-- May be silent in elderly/diabetics
-
-## Investigations
-- **ECG**: ST changes, T wave inversion
-- **Troponin**: High sensitivity troponin at 0 and 3 hours
-- **CXR**: Pulmonary edema, cardiomegaly
-
-## Management
-- Aspirin 300mg + P2Y12 inhibitor
-- Beta-blockers, ACE inhibitors, Statins
-- PCI vs thrombolysis depending on presentation`,
-      lastUpdated: "2026-05-20",
-    },
-    {
-      id: 2,
-      title: "Heart Failure",
-      specialty: "Cardiology",
-      exam: "MRCP Part 1",
-      highYieldCount: 10,
-      content: `# Heart Failure
-
-## Definition
-Inability of the heart to pump sufficient blood to meet metabolic demands.
-
-## Types
-- **HFrEF**: Ejection fraction ≤40%
-- **HFmrEF**: Ejection fraction 41-49%
-- **HFpEF**: Ejection fraction ≥50%
-
-## Symptoms (Framingham Criteria)
-**Major**: PND, neck vein distension, rales, cardiomegaly, acute pulmonary oedema, S3 gallop, hepatojugular reflux
-**Minor**: Ankle oedema, night cough, dyspnea on exertion, hepatomegaly, pleural effusion, tachycardia >120
-
-## Management
-- ACE inhibitor/ARB + Beta-blocker + MRA
-- Diuretics for fluid overload
-- Consider SGLT2 inhibitor, sacubitril/valsartan
-- Device therapy: CRT, ICD if indicated`,
-      lastUpdated: "2026-05-22",
-    },
-  ],
-  neurology: [
-    {
-      id: 3,
-      title: "Stroke Management",
-      specialty: "Neurology",
-      exam: "MRCGP AKT",
-      highYieldCount: 14,
-      content: `# Stroke Management
-
-## Types
-- **Ischaemic** (85%): Thrombotic, embolic, lacunar
-- **Haemorrhagic** (15%): Intracerebral, subarachnoid
-
-## FAST Assessment
-- **F**ace drooping
-- **A**rm weakness
-- **S**peech difficulty
-- **T**ime to call emergency services
-
-## Acute Management (Ischaemic)
-- Thrombolysis (alteplase) within 4.5 hours
-- Thrombectomy within 6 hours (up to 24h in selected patients)
-- Aspirin 300mg within 24 hours
-
-## Secondary Prevention
-- Antiplatelet therapy (clopidogrel 75mg)
-- Statin therapy
-- Blood pressure control
-- Anticoagulation if AF (after 2 weeks)`,
-      lastUpdated: "2026-05-25",
-    },
-  ],
-  renal: [
-    {
-      id: 4,
-      title: "Chronic Kidney Disease",
-      specialty: "Renal",
-      exam: "MRCP Part 1",
-      highYieldCount: 8,
-      content: `# Chronic Kidney Disease
-
-## Stages
-- **Stage 1**: eGFR ≥90 (normal kidney function)
-- **Stage 2**: eGFR 60-89 (mild reduction)
-- **Stage 3a**: eGFR 45-59 (mild-moderate reduction)
-- **Stage 3b**: eGFR 30-44 (moderate-severe reduction)
-- **Stage 4**: eGFR 15-29 (severe reduction)
-- **Stage 5**: eGFR <15 (kidney failure)
-
-## Common Causes
-- Diabetes (30-50%)
-- Hypertension (20-30%)
-- Glomerulonephritis, Pyelonephritis
-- Polycystic kidney disease
-
-## Complications
-- Anaemia (EPO deficiency)
-- Bone disease (secondary hyperparathyroidism)
-- Cardiovascular disease
-- Hyperkalaemia, Metabolic acidosis
-
-## Management
-- ACE inhibitor/ARB for proteinuria
-- Blood pressure <130/80
-- SGLT2 inhibitors (dapagliflozin)
-- Phosphate binders, Vitamin D
-- Dialysis or transplant for Stage 5`,
-      lastUpdated: "2026-05-18",
-    },
-  ],
-};
 
 export default function Note360() {
   const { user, isAuthenticated, loading, isReady } = useProtectedRoute();
   const [, navigate] = useLocation();
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedSpecialty, setSelectedSpecialty] = useState<string | null>(null);
-  const [selectedNote, setSelectedNote] = useState<typeof NOTES_DATA["cardiology"][0] | null>(null);
+  const [selectedNote, setSelectedNote] = useState<any | null>(null);
 
   useEffect(() => {
     if (!loading && !isAuthenticated) {
@@ -182,6 +37,12 @@ export default function Note360() {
 
   const { isPremium, isLoading: subLoading } = useSubscription();
 
+  // Fetch notes when specialty is selected
+  const { data: notes = [], isLoading: notesLoading } = trpc.note360.getBySpecialty.useQuery(
+    selectedSpecialty || "",
+    { enabled: !!selectedSpecialty }
+  );
+
   if (loading || !isAuthenticated || !user || subLoading) {
     return (
       <div className="min-h-screen bg-slate-50 flex items-center justify-center">
@@ -190,9 +51,8 @@ export default function Note360() {
     );
   }
 
-  const currentNotes = selectedSpecialty ? (NOTES_DATA[selectedSpecialty] || []) : [];
-  const filteredNotes = currentNotes.filter((note) =>
-    note.title.toLowerCase().includes(searchQuery.toLowerCase())
+  const filteredNotes = notes.filter((note) =>
+    (note.title || "").toLowerCase().includes(searchQuery.toLowerCase())
   );
 
   // Note detail view
@@ -210,19 +70,27 @@ export default function Note360() {
         <main className="max-w-4xl mx-auto px-4 py-8">
           <Card className="p-8 border-slate-200">
             <div className="mb-6 pb-6 border-b border-slate-200">
-              <h1 className="text-3xl font-bold text-slate-900 mb-3">{selectedNote.title}</h1>
-              <div className="flex items-center gap-3 text-sm">
+              <h1 className="text-3xl font-bold text-slate-900 mb-3">{selectedNote.title || "Note"}</h1>
+              <div className="flex items-center gap-3 text-sm flex-wrap">
                 <span className="px-3 py-1 bg-green-100 text-green-700 rounded-full">{selectedNote.specialty}</span>
-                <span className="px-3 py-1 bg-slate-100 text-slate-700 rounded-full">{selectedNote.exam}</span>
-                <span className="flex items-center gap-1 text-yellow-600">
-                  <Zap className="w-4 h-4" />
-                  {selectedNote.highYieldCount} high-yield points
-                </span>
+                <span className="px-3 py-1 bg-slate-100 text-slate-700 rounded-full">{selectedNote.niceGuideline}</span>
               </div>
             </div>
             <div className="prose prose-slate max-w-none">
-              <Streamdown>{selectedNote.content}</Streamdown>
+              <Streamdown>{selectedNote.examPearl || "No additional content available."}</Streamdown>
             </div>
+            {selectedNote.niceUrl && (
+              <div className="mt-8 pt-8 border-t border-slate-200">
+                <a
+                  href={selectedNote.niceUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-green-600 hover:text-green-700 font-semibold"
+                >
+                  View NICE Guideline →
+                </a>
+              </div>
+            )}
           </Card>
         </main>
       </div>
@@ -254,7 +122,11 @@ export default function Note360() {
             />
           </div>
 
-          {filteredNotes.length === 0 ? (
+          {notesLoading ? (
+            <div className="flex items-center justify-center py-16">
+              <div className="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-green-600"></div>
+            </div>
+          ) : filteredNotes.length === 0 ? (
             <div className="text-center py-16">
               <div className="w-16 h-16 mx-auto mb-4 bg-slate-100 rounded-full flex items-center justify-center">
                 <BookMarked className="w-8 h-8 text-slate-400" />
@@ -271,19 +143,15 @@ export default function Note360() {
                   onClick={() => setSelectedNote(note)}
                 >
                   <div className="flex items-start justify-between mb-3">
-                    <h3 className="text-lg font-bold text-slate-900 group-hover:text-green-700 transition-colors">{note.title}</h3>
+                    <h3 className="text-lg font-bold text-slate-900 group-hover:text-green-700 transition-colors">{note.title || "Untitled"}</h3>
                     <BookMarked className="w-5 h-5 text-green-600 flex-shrink-0" />
                   </div>
                   <div className="flex items-center gap-2 mb-4">
-                    <span className="text-xs px-2 py-1 bg-slate-100 text-slate-700 rounded-full">{note.exam}</span>
+                    <span className="text-xs px-2 py-1 bg-slate-100 text-slate-700 rounded-full">{note.niceGuideline}</span>
                   </div>
-                  <div className="pt-4 border-t border-slate-200 flex items-center justify-between">
-                    <div className="flex items-center gap-1 text-sm text-yellow-600">
-                      <Zap className="w-4 h-4" />
-                      <span>{note.highYieldCount} high-yield</span>
-                    </div>
+                  <div className="pt-4 border-t border-slate-200">
                     <span className="text-xs text-slate-500">
-                      {new Date(note.lastUpdated).toLocaleDateString()}
+                      {note.lastUpdated ? new Date(note.lastUpdated).toLocaleDateString() : "N/A"}
                     </span>
                   </div>
                 </Card>
@@ -309,33 +177,33 @@ export default function Note360() {
 
       <main className="max-w-7xl mx-auto px-4 py-12">
         <SubscriptionGate isPremium={isPremium} featureName="Note360 Revision Notes">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-slate-900 mb-3">Choose a Specialty</h2>
-          <p className="text-slate-600 max-w-lg mx-auto">
-            Comprehensive revision notes organised by specialty. Each topic includes high-yield points for exam preparation.
-          </p>
-        </div>
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-slate-900 mb-3">Choose a Specialty</h2>
+            <p className="text-slate-600 max-w-lg mx-auto">
+              Comprehensive revision notes organised by specialty. Each topic includes high-yield exam pearls for exam preparation.
+            </p>
+          </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {SPECIALTIES.map((specialty) => {
-            const Icon = specialty.icon;
-            return (
-              <Card
-                key={specialty.id}
-                className="p-6 border-slate-200 hover:shadow-lg transition-all cursor-pointer group"
-                onClick={() => { setSelectedSpecialty(specialty.id); setSearchQuery(""); }}
-              >
-                <div className={`w-12 h-12 rounded-xl flex items-center justify-center mb-4 ${specialty.color}`}>
-                  <Icon className="w-6 h-6" />
-                </div>
-                <h3 className="text-lg font-bold text-slate-900 mb-1 group-hover:text-green-700 transition-colors">
-                  {specialty.name}
-                </h3>
-                <p className="text-sm text-slate-600">{specialty.noteCount} notes</p>
-              </Card>
-            );
-          })}
-        </div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {SPECIALTIES.map((specialty) => {
+              const Icon = specialty.icon;
+              return (
+                <Card
+                  key={specialty.id}
+                  className="p-6 border-slate-200 hover:shadow-lg transition-all cursor-pointer group"
+                  onClick={() => { setSelectedSpecialty(specialty.id); setSearchQuery(""); }}
+                >
+                  <div className={`w-12 h-12 rounded-xl flex items-center justify-center mb-4 ${specialty.color}`}>
+                    <Icon className="w-6 h-6" />
+                  </div>
+                  <h3 className="text-lg font-bold text-slate-900 mb-1 group-hover:text-green-700 transition-colors">
+                    {specialty.name}
+                  </h3>
+                  <p className="text-sm text-slate-600">Revision notes available</p>
+                </Card>
+              );
+            })}
+          </div>
         </SubscriptionGate>
       </main>
     </div>
