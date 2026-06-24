@@ -261,6 +261,11 @@ export default function PatternRecognition() {
                 <p className="text-xl md:text-2xl font-medium text-white leading-relaxed">
                   {currentCard.back}
                 </p>
+                {currentCard.explanation && (
+                  <p className="text-purple-100 text-sm mt-6 leading-relaxed max-w-md">
+                    {currentCard.explanation}
+                  </p>
+                )}
                 <p className="text-purple-200 text-sm mt-8 opacity-70">Tap to see question</p>
               </div>
             </div>

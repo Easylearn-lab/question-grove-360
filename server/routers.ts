@@ -164,14 +164,14 @@ export const appRouter = router({
         const db = await getDb();
         if (!db) throw new Error("Database not available");
         const { sql } = await import("drizzle-orm");
-        const questionsResult = await db.execute(sql`SELECT id, domain, optionA, optionB, optionC, optionD, optionE, specialty, tags FROM questions WHERE examId = 1 AND status = 'active' ORDER BY RAND() LIMIT 160`);
+        const questionsResult = await db.execute(sql`SELECT id, stem, optionA, optionB, optionC, optionD, optionE, specialty, tags FROM questions WHERE examId = 1 AND status = 'active' ORDER BY RAND() LIMIT 160`);
         const questions = Array.isArray(questionsResult) && Array.isArray(questionsResult[0]) ? questionsResult[0] : questionsResult;
         if ((questions as any[]).length < 160) throw new Error("Not enough questions available");
         return {
           mockId: input.mockId,
           questions: (questions as any[]).map((q: any) => ({
             id: q.id,
-            stem: q.domain,
+            stem: q.stem,
             optionA: q.optionA,
             optionB: q.optionB,
             optionC: q.optionC,
