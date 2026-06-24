@@ -39,20 +39,20 @@
 ## Phase 5: Mock Exams Feature
 - [x] Design mock exam interface with full-screen immersive mode
 - [x] Implement countdown timer with visual urgency indicators (ExamTimer component)
-- [ ] Build question navigation and flagging during exam
+- [x] Build question navigation and flagging during exam
 - [x] Implement auto-submit on time expiry
 - [x] Create post-exam results screen with animated score reveal (ExamResults component)
 - [x] Build score breakdown by specialty/domain (bar chart)
 - [x] Implement comparison to previous attempts (line chart)
 - [x] Add comparison to platform average
-- [ ] Generate and email full PDF report within 5 minutes
-- [ ] Create downloadable PDF score report
+- [x] Generate and email full PDF report within 5 minutes
+- [x] Create downloadable PDF score report
 
 ## Phase 6: Note360 Study Notes Feature
 - [x] Build Note360 landing page with specialty cards and completion tracking
 - [x] Create specialty detail pages with exam-focused revision notes
 - [x] Implement search across all Note360 content
-- [ ] Add bookmark functionality for note sections
+- [x] Add bookmark functionality for note sections
 - [ ] Implement personal annotation system for notes
 - [ ] Add print/PDF export functionality
 - [x] Display last updated date and curriculum version
@@ -61,7 +61,7 @@
 - [x] Design flashcard component with 3D flip animation
 - [ ] Implement swipe gestures (left/right) for mobile
 - [x] Build mastery level tracking (Learning/Reviewing/Mastered)
-- [ ] Add specialty filtering
+- [x] Add specialty filtering
 - [x] Create stats dashboard (total cards, % mastered, daily progress)
 - [x] Implement spaced repetition algorithm (SM-2)
 
