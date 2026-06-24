@@ -36,7 +36,7 @@ const SPECIALTIES = [
 
 export default function Note360() {
   const { user, isAuthenticated, loading, isReady } = useProtectedRoute();
-  const [, navigate] = useLocation();
+  const [location, navigate] = useLocation();
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedSpecialty, setSelectedSpecialty] = useState<string | null>(null);
   const [selectedNote, setSelectedNote] = useState<any | null>(null);
@@ -48,6 +48,28 @@ export default function Note360() {
       navigate("/");
     }
   }, [loading, isAuthenticated, navigate]);
+
+  // Parse URL to set specialty if navigating directly to /note360/:specialty
+  useEffect(() => {
+    if (location && location.includes("/note360/")) {
+      const pathParts = location.split("/");
+      const specialtyFromUrl = pathParts[pathParts.length - 1];
+      if (specialtyFromUrl && specialtyFromUrl !== "note360") {
+        // Capitalize first letter of each word to match SPECIALTIES array
+        const formattedSpecialty = specialtyFromUrl
+          .split("-")
+          .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+          .join(" ");
+        // Find matching specialty in SPECIALTIES array (case-insensitive)
+        const matchingSpecialty = SPECIALTIES.find(
+          s => s.id.toLowerCase() === formattedSpecialty.toLowerCase()
+        );
+        if (matchingSpecialty) {
+          setSelectedSpecialty(matchingSpecialty.id);
+        }
+      }
+    }
+  }, [location]);
 
   const { isPremium, isLoading: subLoading } = useSubscription();
 
