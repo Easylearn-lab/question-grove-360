@@ -10,6 +10,27 @@ import { toast } from "sonner";
 import { SubscriptionGate } from "@/components/SubscriptionGate";
 import { useSubscription } from "@/hooks/useSubscription";
 
+const SPECIALTIES = [
+  "Cardiovascular",
+  "Respiratory",
+  "Gastroenterology",
+  "Neurology",
+  "Paediatrics",
+  "Psychiatry",
+  "Rheumatology",
+  "Dermatology",
+  "Endocrinology",
+  "Nephrology",
+  "Oncology",
+  "Haematology",
+  "Immunology",
+  "Ophthalmology",
+  "Otolaryngology",
+  "Obstetrics & Gynaecology",
+  "Musculoskeletal",
+  "Infectious Diseases",
+];
+
 const FLASHCARDS = [
   {
     id: 1,
@@ -65,6 +86,7 @@ export default function PatternRecognition() {
   const [isFlipped, setIsFlipped] = useState(false);
   const [cardProgress, setCardProgress] = useState<CardProgress>({});
   const [sessionStats, setSessionStats] = useState({ reviewed: 0, mastered: 0, familiar: 0, learning: 0 });
+  const [selectedSpecialty, setSelectedSpecialty] = useState<string | null>(null);
 
   const updateProgress = trpc.flashcards.updateProgress.useMutation();
 
@@ -84,9 +106,32 @@ export default function PatternRecognition() {
     );
   }
 
-  const currentCard = FLASHCARDS[currentCardIndex];
-  const totalCards = FLASHCARDS.length;
+  const filteredCards = selectedSpecialty 
+    ? FLASHCARDS.filter(card => card.specialty === selectedSpecialty)
+    : FLASHCARDS;
+  
+  const currentCard = filteredCards[currentCardIndex];
+  const totalCards = filteredCards.length;
   const progress = ((currentCardIndex + 1) / totalCards) * 100;
+
+  if (totalCards === 0) {
+    return (
+      <div className="min-h-screen bg-slate-50">
+        <header className="bg-white border-b border-slate-200 sticky top-0 z-40">
+          <div className="max-w-7xl mx-auto px-4 py-4 flex items-center gap-4">
+            <Button variant="ghost" size="sm" onClick={() => navigate("/dashboard")}>
+              <ArrowLeft className="w-4 h-4" />
+            </Button>
+            <h1 className="text-2xl font-bold text-slate-900">Pattern Recognition</h1>
+          </div>
+        </header>
+        <main className="max-w-4xl mx-auto px-4 py-12 text-center">
+          <p className="text-slate-600 mb-4">No cards found for this specialty.</p>
+          <Button onClick={() => handleSpecialtyChange(null)}>View All Specialties</Button>
+        </main>
+      </div>
+    );
+  }
 
   const handleFlip = () => setIsFlipped(!isFlipped);
 
@@ -94,6 +139,8 @@ export default function PatternRecognition() {
     if (currentCardIndex < totalCards - 1) {
       setCurrentCardIndex(currentCardIndex + 1);
       setIsFlipped(false);
+    } else {
+      toast.success("You've completed this deck!");
     }
   };
 
@@ -142,19 +189,51 @@ export default function PatternRecognition() {
     toast.info("Deck restarted");
   };
 
+  const handleSpecialtyChange = (specialty: string | null) => {
+    setSelectedSpecialty(specialty);
+    setCurrentCardIndex(0);
+    setIsFlipped(false);
+    setSessionStats({ reviewed: 0, mastered: 0, familiar: 0, learning: 0 });
+    if (specialty) {
+      toast.info(`Studying ${specialty}`);
+    } else {
+      toast.info("Studying all specialties");
+    }
+  };
+
   return (
     <div className="min-h-screen bg-slate-50">
       {/* Header */}
       <header className="bg-white border-b border-slate-200 sticky top-0 z-40">
-        <div className="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
-          <div className="flex items-center gap-4">
-            <Button variant="ghost" size="sm" onClick={() => navigate("/dashboard")}>
-              <ArrowLeft className="w-4 h-4" />
-            </Button>
-            <h1 className="text-2xl font-bold text-slate-900">Pattern Recognition</h1>
+        <div className="max-w-7xl mx-auto px-4 py-4">
+          <div className="flex items-center justify-between mb-4">
+            <div className="flex items-center gap-4">
+              <Button variant="ghost" size="sm" onClick={() => navigate("/dashboard")}>
+                <ArrowLeft className="w-4 h-4" />
+              </Button>
+              <h1 className="text-2xl font-bold text-slate-900">Pattern Recognition</h1>
+            </div>
+            <div className="text-sm text-slate-600">
+              Card {currentCardIndex + 1} of {totalCards}
+            </div>
           </div>
-          <div className="text-sm text-slate-600">
-            Card {currentCardIndex + 1} of {totalCards}
+          <div className="flex items-center gap-3">
+            <label className="text-sm font-medium text-slate-700">Filter by specialty:</label>
+            <select
+              value={selectedSpecialty || ""}
+              onChange={(e) => handleSpecialtyChange(e.target.value || null)}
+              className="px-3 py-2 border border-slate-300 rounded-lg text-sm bg-white hover:border-slate-400 focus:outline-none focus:ring-2 focus:ring-green-600 focus:border-transparent"
+            >
+              <option value="">All Specialties ({FLASHCARDS.length} cards)</option>
+              {SPECIALTIES.map((specialty) => {
+                const count = FLASHCARDS.filter(card => card.specialty === specialty).length;
+                return (
+                  <option key={specialty} value={specialty}>
+                    {specialty} ({count} cards)
+                  </option>
+                );
+              })}
+            </select>
           </div>
         </div>
       </header>
