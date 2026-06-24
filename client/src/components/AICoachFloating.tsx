@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { MessageCircle, X, Send } from "lucide-react";
 import { Streamdown } from "streamdown";
@@ -10,6 +10,11 @@ export function AICoachFloating() {
   ]);
   const [input, setInput] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+  const messagesEndRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
+  }, [messages]);
 
   const handleSend = async () => {
     if (!input.trim()) return;
@@ -20,15 +25,25 @@ export function AICoachFloating() {
     setInput("");
     setIsLoading(true);
 
-    // Simulate Coach360 response
-    setTimeout(() => {
-      const aiResponse = {
-        role: "assistant" as const,
-        content: `I understand you're asking about "${input}". Based on your recent performance, I'd recommend focusing on this area. You've been doing well overall with an 85% accuracy rate. Let me provide some personalized guidance...`,
-      };
-      setMessages((prev) => [...prev, aiResponse]);
+    try {
+      const response = await fetch("/api/ai-coach", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ messages: [...messages, userMessage] }),
+      });
+
+      if (!response.ok) throw new Error("Failed to get AI response");
+      const data = await response.json();
+      
+      setMessages((prev) => [...prev, { role: "assistant", content: data.reply }]);
+    } catch (error) {
+      setMessages((prev) => [
+        ...prev,
+        { role: "assistant", content: "Sorry, I'm having trouble connecting. Please try again." },
+      ]);
+    } finally {
       setIsLoading(false);
-    }, 1000);
+    }
   };
 
   return (
@@ -81,6 +96,7 @@ export function AICoachFloating() {
                 </div>
               </div>
             )}
+            <div ref={messagesEndRef} />
           </div>
 
           {/* Input */}

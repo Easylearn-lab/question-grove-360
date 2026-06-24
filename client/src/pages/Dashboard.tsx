@@ -1,5 +1,6 @@
 import { useAuth } from "@/_core/hooks/useAuth";
 import { useLocation } from "wouter";
+import { useState } from "react";
 import { useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
@@ -8,6 +9,7 @@ import { trpc } from "@/lib/trpc";
 
 export default function Dashboard() {
   const { user, logout, isAuthenticated, loading } = useAuth();
+  const [selectedExam, setSelectedExam] = useState('MRCGP AKT');
   const [, navigate] = useLocation();
   const { data: profile } = trpc.profile.getProfile.useQuery();
 
@@ -109,7 +111,7 @@ export default function Dashboard() {
         {/* Main Features Grid */}
         <div className="grid md:grid-cols-2 gap-8">
           {/* Question Bank - MRCGP AKT only */}
-          {(profile?.subscriptionPlan === 'mrcgp_akt' || profile?.targetExam === 'MRCGP AKT') && (
+          {selectedExam === "MRCGP AKT" && (
             <Card className="p-8 border-slate-200 hover:shadow-lg transition-all cursor-pointer group" onClick={() => navigate("/questions")}>
               <div className="flex items-start justify-between mb-4">
                 <BookOpen className="w-12 h-12 text-green-600 group-hover:scale-110 transition-transform" />
@@ -124,7 +126,7 @@ export default function Dashboard() {
           )}
 
           {/* Mock Exams - MRCGP AKT only */}
-          {(profile?.subscriptionPlan === 'mrcgp_akt' || profile?.targetExam === 'MRCGP AKT') && (
+          {selectedExam === "MRCGP AKT" && (
             <Card className="p-8 border-slate-200 hover:shadow-lg transition-all cursor-pointer group" onClick={() => navigate("/mocks")}>
               <div className="flex items-start justify-between mb-4">
                 <BarChart3 className="w-12 h-12 text-blue-600 group-hover:scale-110 transition-transform" />
