@@ -430,6 +430,13 @@ export const flashcards = mysqlTable("flashcards", {
   front: text("front").notNull(),
   back: text("back").notNull(),
   tags: json("tags"),
+  specialty: varchar("specialty", { length: 255 }),
+  pattern: text("pattern"),
+  answer: text("answer"),
+  explanation: text("explanation"),
+  niceGuideline: varchar("niceGuideline", { length: 255 }),
+  difficulty: varchar("difficulty", { length: 50 }).default("Medium"),
+  status: varchar("status", { length: 50 }).default("active"),
   createdAt: timestamp("createdAt").defaultNow().notNull(),
 });
 

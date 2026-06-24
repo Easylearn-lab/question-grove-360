@@ -31,43 +31,7 @@ const SPECIALTIES = [
   "Infectious Diseases",
 ];
 
-const FLASHCARDS = [
-  {
-    id: 1,
-    front: "What is the classic presentation of acute myocardial infarction?",
-    back: "Central crushing chest pain radiating to the left arm, associated with dyspnea, diaphoresis, and nausea. May present atypically in elderly, diabetics, and women.",
-    specialty: "Cardiology",
-    difficulty: "Medium",
-  },
-  {
-    id: 2,
-    front: "What are the stages of chronic kidney disease?",
-    back: "Stage 1: eGFR ≥90, Stage 2: eGFR 60-89, Stage 3a: eGFR 45-59, Stage 3b: eGFR 30-44, Stage 4: eGFR 15-29, Stage 5: eGFR <15",
-    specialty: "Renal",
-    difficulty: "Easy",
-  },
-  {
-    id: 3,
-    front: "What is the pathophysiology of diabetic ketoacidosis?",
-    back: "Absolute or relative insulin deficiency leads to uncontrolled lipolysis, producing ketone bodies (acetoacetate, beta-hydroxybutyrate, acetone). Results in metabolic acidosis, osmotic diuresis, and electrolyte derangements.",
-    specialty: "Endocrinology",
-    difficulty: "Hard",
-  },
-  {
-    id: 4,
-    front: "What are the red flag symptoms in headache?",
-    back: "Sudden thunderclap onset, papilloedema, focal neurological signs, seizures, meningism, fever, new headache >50 years, worse on lying/coughing/Valsalva, immunocompromised, progressive worsening.",
-    specialty: "Neurology",
-    difficulty: "Medium",
-  },
-  {
-    id: 5,
-    front: "What is the Duke criteria for infective endocarditis?",
-    back: "Major: Positive blood cultures (typical organisms x2 or persistently positive), endocardial involvement on echo. Minor: Predisposition, fever >38°C, vascular phenomena, immunological phenomena, microbiological evidence not meeting major criteria.",
-    specialty: "Cardiology",
-    difficulty: "Hard",
-  },
-];
+// Flashcards will be fetched from database via tRPC
 
 type MasteryLevel = "learning" | "familiar" | "mastered";
 
@@ -89,6 +53,7 @@ export default function PatternRecognition() {
   const [selectedSpecialty, setSelectedSpecialty] = useState<string | null>(null);
 
   const updateProgress = trpc.flashcards.updateProgress.useMutation();
+  const { data: flashcards = [] } = trpc.flashcards.getBySpecialty.useQuery({ specialty: selectedSpecialty || undefined });
 
   useEffect(() => {
     if (!loading && !isAuthenticated) {
@@ -106,9 +71,7 @@ export default function PatternRecognition() {
     );
   }
 
-  const filteredCards = selectedSpecialty 
-    ? FLASHCARDS.filter(card => card.specialty === selectedSpecialty)
-    : FLASHCARDS;
+  const filteredCards = flashcards;
   
   const currentCard = filteredCards[currentCardIndex];
   const totalCards = filteredCards.length;
@@ -224,9 +187,9 @@ export default function PatternRecognition() {
               onChange={(e) => handleSpecialtyChange(e.target.value || null)}
               className="px-3 py-2 border border-slate-300 rounded-lg text-sm bg-white hover:border-slate-400 focus:outline-none focus:ring-2 focus:ring-green-600 focus:border-transparent"
             >
-              <option value="">All Specialties ({FLASHCARDS.length} cards)</option>
+              <option value="">All Specialties ({flashcards.length} cards)</option>
               {SPECIALTIES.map((specialty) => {
-                const count = FLASHCARDS.filter(card => card.specialty === specialty).length;
+                const count = flashcards.filter((card: any) => card.specialty === specialty).length;
                 return (
                   <option key={specialty} value={specialty}>
                     {specialty} ({count} cards)

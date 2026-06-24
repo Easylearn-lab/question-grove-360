@@ -459,6 +459,19 @@ export const appRouter = router({
         const { getOrCreateFlashcard } = await import("./db");
         return await getOrCreateFlashcard(ctx.user.id, input);
       }),
+    getBySpecialty: protectedProcedure
+      .input(z.object({ specialty: z.string().optional() }))
+      .query(async ({ input }) => {
+        const db = await import("./db");
+        const { flashcards } = await import("../drizzle/schema");
+        const { eq, and } = await import("drizzle-orm");
+        const dbInstance = await db.getDb();
+        if (input.specialty) {
+          if (!dbInstance) throw new Error("Database connection failed");
+        return await dbInstance.select().from(flashcards).where(and(eq(flashcards.specialty, input.specialty), eq(flashcards.examId, 1)));
+        }
+        return await dbInstance!.select().from(flashcards).where(eq(flashcards.examId, 1));
+      }),
     updateProgress: protectedProcedure
       .input(
         z.object({
