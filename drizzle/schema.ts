@@ -478,3 +478,20 @@ export const userNoteProgress = mysqlTable("user_note_progress", {
 
 export type UserNoteProgress = typeof userNoteProgress.$inferSelect;
 export type InsertUserNoteProgress = typeof userNoteProgress.$inferInsert;
+
+// Note Annotations (for Note360 - personal annotations on note sections)
+export const noteAnnotations = mysqlTable("note_annotations", {
+  id: int("id").autoincrement().primaryKey(),
+  userId: int("userId").notNull().references(() => users.id),
+  noteId: int("noteId").notNull().references(() => notes.id),
+  sectionId: varchar("sectionId", { length: 100 }).notNull(), // e.g., "diagnosis", "treatment", "referral"
+  annotationText: text("annotationText").notNull(),
+  highlightColor: varchar("highlightColor", { length: 20 }).default("yellow"), // yellow, green, red, blue, purple
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+  updatedAt: timestamp("updatedAt").defaultNow().onUpdateNow().notNull(),
+}, (table) => ({
+  userNoteAnnotationUnique: uniqueIndex("user_note_annotation_unique").on(table.userId, table.noteId, table.sectionId),
+}));
+
+export type NoteAnnotation = typeof noteAnnotations.$inferSelect;
+export type InsertNoteAnnotation = typeof noteAnnotations.$inferInsert;

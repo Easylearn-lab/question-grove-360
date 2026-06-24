@@ -53,7 +53,7 @@
 - [x] Create specialty detail pages with exam-focused revision notes
 - [x] Implement search across all Note360 content
 - [x] Add bookmark functionality for note sections
-- [ ] Implement personal annotation system for notes
+- [x] Implement personal annotation system for notes
 - [ ] Add print/PDF export functionality
 - [x] Display last updated date and curriculum version
 
@@ -92,8 +92,8 @@
 - [x] Integrate ElevenLabs for AI patient voice synthesis (voiceSynthesis.ts)
 - [x] Build Claude AI patient persona and response generation
 - [x] Create real-time transcript display
-- [ ] Implement domain scoring system (3 domains)
-- [ ] Build consultation feedback with detailed analysis
+- [x] Implement domain scoring system (3 domains)
+- [x] Build consultation feedback with detailed analysis
 - [x] Add email report generation for consultations (emailService.ts)
 - [ ] Create SCA mock exam mode with multiple cases
 
