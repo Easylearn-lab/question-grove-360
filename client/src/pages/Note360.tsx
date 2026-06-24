@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
-import { ArrowLeft, Search, BookMarked, Zap, Heart, Brain, Stethoscope, Pill, Baby, Bone, Eye, Activity } from "lucide-react";
+import { ArrowLeft, Search, BookMarked, Heart, Brain, Stethoscope, Pill, Baby, Bone, Eye, Activity, Check, Star } from "lucide-react";
 import { Streamdown } from "streamdown";
 import { SubscriptionGate } from "@/components/SubscriptionGate";
 import { useSubscription } from "@/hooks/useSubscription";
@@ -28,6 +28,8 @@ export default function Note360() {
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedSpecialty, setSelectedSpecialty] = useState<string | null>(null);
   const [selectedNote, setSelectedNote] = useState<any | null>(null);
+  const [readNotes, setReadNotes] = useState<Set<number>>(new Set());
+  const [favoriteNotes, setFavoriteNotes] = useState<Set<number>>(new Set());
 
   useEffect(() => {
     if (!loading && !isAuthenticated) {
@@ -42,6 +44,41 @@ export default function Note360() {
     selectedSpecialty || "",
     { enabled: !!selectedSpecialty }
   );
+
+  // Update progress mutation
+  const updateProgressMutation = trpc.note360.updateProgress.useMutation();
+
+  // Handle mark as read
+  const handleMarkAsRead = (e: React.MouseEvent, noteId: number) => {
+    e.stopPropagation();
+    const isRead = readNotes.has(noteId);
+    setReadNotes((prev) => {
+      const newSet = new Set(prev);
+      if (isRead) {
+        newSet.delete(noteId);
+      } else {
+        newSet.add(noteId);
+      }
+      return newSet;
+    });
+    updateProgressMutation.mutate({ noteId, isRead: !isRead });
+  };
+
+  // Handle favorite toggle
+  const handleToggleFavorite = (e: React.MouseEvent, noteId: number) => {
+    e.stopPropagation();
+    const isFavorited = favoriteNotes.has(noteId);
+    setFavoriteNotes((prev) => {
+      const newSet = new Set(prev);
+      if (isFavorited) {
+        newSet.delete(noteId);
+      } else {
+        newSet.add(noteId);
+      }
+      return newSet;
+    });
+    updateProgressMutation.mutate({ noteId, isBookmarked: !isFavorited });
+  };
 
   if (loading || !isAuthenticated || !user || subLoading) {
     return (
@@ -136,26 +173,67 @@ export default function Note360() {
             </div>
           ) : (
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {filteredNotes.map((note) => (
-                <Card
-                  key={note.id}
-                  className="p-6 border-slate-200 hover:shadow-lg transition-all cursor-pointer group"
-                  onClick={() => setSelectedNote(note)}
-                >
-                  <div className="flex items-start justify-between mb-3">
-                    <h3 className="text-lg font-bold text-slate-900 group-hover:text-green-700 transition-colors">{note.title || "Untitled"}</h3>
-                    <BookMarked className="w-5 h-5 text-green-600 flex-shrink-0" />
-                  </div>
-                  <div className="flex items-center gap-2 mb-4">
-                    <span className="text-xs px-2 py-1 bg-slate-100 text-slate-700 rounded-full">{note.niceGuideline}</span>
-                  </div>
-                  <div className="pt-4 border-t border-slate-200">
-                    <span className="text-xs text-slate-500">
-                      {note.lastUpdated ? new Date(note.lastUpdated).toLocaleDateString() : "N/A"}
-                    </span>
-                  </div>
-                </Card>
-              ))}
+              {filteredNotes.map((note) => {
+                const isRead = readNotes.has(note.id);
+                const isFavorited = favoriteNotes.has(note.id);
+                return (
+                  <Card
+                    key={note.id}
+                    className={`p-6 border-slate-200 hover:shadow-lg transition-all cursor-pointer group ${
+                      isRead ? "bg-slate-50 opacity-75" : ""
+                    }`}
+                    onClick={() => setSelectedNote(note)}
+                  >
+                    <div className="flex items-start justify-between mb-3">
+                      <h3 className={`text-lg font-bold ${
+                        isRead ? "text-slate-600 line-through" : "text-slate-900 group-hover:text-green-700"
+                      } transition-colors`}>{note.title || "Untitled"}</h3>
+                      <div className="flex gap-2 flex-shrink-0">
+                        <button
+                          onClick={(e) => handleToggleFavorite(e, note.id)}
+                          className="p-1 rounded hover:bg-slate-100 transition-colors"
+                          title={isFavorited ? "Remove from favorites" : "Add to favorites"}
+                        >
+                          <Star
+                            className={`w-5 h-5 ${
+                              isFavorited
+                                ? "fill-amber-400 text-amber-400"
+                                : "text-slate-400 group-hover:text-amber-300"
+                            } transition-colors`}
+                          />
+                        </button>
+                        <button
+                          onClick={(e) => handleMarkAsRead(e, note.id)}
+                          className="p-1 rounded hover:bg-slate-100 transition-colors"
+                          title={isRead ? "Mark as unread" : "Mark as read"}
+                        >
+                          <Check
+                            className={`w-5 h-5 ${
+                              isRead
+                                ? "text-green-600"
+                                : "text-slate-400 group-hover:text-green-400"
+                            } transition-colors`}
+                          />
+                        </button>
+                      </div>
+                    </div>
+                    <div className="flex items-center gap-2 mb-4">
+                      <span className="text-xs px-2 py-1 bg-slate-100 text-slate-700 rounded-full">{note.niceGuideline}</span>
+                      {isRead && (
+                        <span className="text-xs px-2 py-1 bg-green-100 text-green-700 rounded-full">Read</span>
+                      )}
+                      {isFavorited && (
+                        <span className="text-xs px-2 py-1 bg-amber-100 text-amber-700 rounded-full">Favorite</span>
+                      )}
+                    </div>
+                    <div className="pt-4 border-t border-slate-200">
+                      <span className="text-xs text-slate-500">
+                        {note.lastUpdated ? new Date(note.lastUpdated).toLocaleDateString() : "N/A"}
+                      </span>
+                    </div>
+                  </Card>
+                );
+              })}
             </div>
           )}
         </main>
