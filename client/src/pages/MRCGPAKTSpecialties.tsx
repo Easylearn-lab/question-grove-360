@@ -95,21 +95,7 @@ export default function MRCGPAKTSpecialties() {
 
       {/* Main Content */}
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        {/* Mock Exams & Note360 Cards */}
-
-          {/* Pattern Recognition Card */}
-          <Card className="p-8 border-slate-200 hover:shadow-lg transition-all cursor-pointer bg-gradient-to-br from-purple-50 to-purple-100" onClick={() => navigate("/mrcgp-akt/flashcards")}>
-            <div className="flex items-start justify-between mb-4">
-              <div>
-                <h3 className="text-2xl font-bold text-slate-900 mb-2">Pattern Recognition</h3>
-                <p className="text-slate-600">510 cards • 17 specialties</p>
-              </div>
-              <span className="text-4xl">🃏</span>
-            </div>
-            <Button className="w-full mt-6 bg-[#32CD32] hover:bg-[#2ab82a] text-[#1A1A1A] font-semibold">
-              Start Drilling →
-            </Button>
-          </Card>
+        {/* Mock Exams, Note360 & Pattern Recognition Cards */}
         <div className="grid md:grid-cols-3 gap-6 mb-12">
           {/* Mock Exams Card */}
           <Card className="p-8 border-slate-200 hover:shadow-lg transition-all cursor-pointer bg-gradient-to-br from-blue-50 to-blue-100" onClick={() => navigate("/mock-exams")}>
@@ -126,6 +112,18 @@ export default function MRCGPAKTSpecialties() {
           </Card>
 
           {/* Note360 Card */}
+          <Card className="p-8 border-slate-200 hover:shadow-lg transition-all cursor-pointer bg-gradient-to-br from-green-50 to-green-100" onClick={() => navigate("/mrcgp-akt/note360")}>
+            <div className="flex items-start justify-between mb-4">
+              <div>
+                <h3 className="text-2xl font-bold text-slate-900 mb-2">Note360</h3>
+                <p className="text-slate-600">NICE-compliant medical notes</p>
+              </div>
+              <span className="text-4xl">📓</span>
+            </div>
+            <Button className="w-full mt-6 bg-[#32CD32] hover:bg-[#2ab82a] text-[#1A1A1A] font-semibold">
+              Open Note360 →
+            </Button>
+          </Card>
 
           {/* Pattern Recognition Card */}
           <Card className="p-8 border-slate-200 hover:shadow-lg transition-all cursor-pointer bg-gradient-to-br from-purple-50 to-purple-100" onClick={() => navigate("/mrcgp-akt/flashcards")}>
@@ -138,18 +136,6 @@ export default function MRCGPAKTSpecialties() {
             </div>
             <Button className="w-full mt-6 bg-[#32CD32] hover:bg-[#2ab82a] text-[#1A1A1A] font-semibold">
               Start Drilling →
-            </Button>
-          </Card>
-          <Card className="p-8 border-slate-200 hover:shadow-lg transition-all cursor-pointer bg-gradient-to-br from-green-50 to-green-100" onClick={() => navigate("/mrcgp-akt/note360")}>
-            <div className="flex items-start justify-between mb-4">
-              <div>
-                <h3 className="text-2xl font-bold text-slate-900 mb-2">Note360</h3>
-                <p className="text-slate-600">NICE-compliant medical notes</p>
-              </div>
-              <span className="text-4xl">📓</span>
-            </div>
-            <Button className="w-full mt-6 bg-[#32CD32] hover:bg-[#2ab82a] text-[#1A1A1A] font-semibold">
-              Open Note360 →
             </Button>
           </Card>
         </div>

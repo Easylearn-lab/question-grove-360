@@ -58,6 +58,7 @@ function Router() {
       <Route path={"/:practice/mrcgp-akt/:specialty"} component={MRCGPAKTPractice} />
       <Route path={"/:mrcgp-akt/note360"} component={Note360List} />
       <Route path={"/:mrcgp-akt/note360/:specialty"} component={Note360Content} />
+      <Route path={"/:mrcgp-akt/flashcards"} component={PatternRecognition} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />
