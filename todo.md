@@ -526,3 +526,17 @@
 - [x] Add SubscriptionGate to MockExams.tsx (was accessible to free users)
 - [x] Add SubscriptionGate to Note360List.tsx (was accessible to free users)
 - [x] Add SubscriptionGate to Note360Content.tsx (was accessible to free users)
+
+## Ophthalmology & ENT Split (June 25, 2026)
+- [x] Split "Ophthalmology & ENT" into "Ophthalmology" (20 questions) and "ENT" (21 questions) in the database
+- [x] Update MRCGPAKTPractice.tsx with separate ophthalmology and ent entries
+- [x] Update MRCGPAKTSpecialties.tsx with separate Ophthalmology and ENT entries
+- [x] Update Note360.tsx SPECIALTIES array with separate entries
+- [x] Update Note360Content.tsx SPECIALTY_MAP with separate entries
+- [x] Update QuestionBank.tsx SPECIALTIES array with separate entries
+- [x] Update Note360List.tsx specialties list and topic counts with separate entries
+- [x] Update mockEmail.ts NICE guideline references with separate entries
+- [x] Update mrcgp-akt.test.ts to reflect 16 specialties (was 15)
+- [x] Update seed-note360.mjs specialty label from combined to Ophthalmology
+- [x] Verify total question count remains 1,638 (ENT: 21, Ophthalmology: 20, Old combined: 0)
+- [x] Clean up temporary audit scripts (audit-ophthalm-ent.mjs, audit-ophthalm-ent2.mjs, verify-split.mjs, ophthalm-ent-classification.md)

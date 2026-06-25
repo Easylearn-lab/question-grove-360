@@ -1,7 +1,7 @@
 import { describe, it, expect } from "vitest";
 
 describe("MRCGPAKTSpecialties", () => {
-  it("should have 15 specialties defined", () => {
+  it("should have 16 specialties defined", () => {
     const SPECIALTIES = [
       { name: "Ethics & Organisational", icon: "⚖️", questionCount: 7, attempted: 0, correct: 0, slug: "ethics-organisational" },
       { name: "Endocrinology", icon: "🔬", questionCount: 6, attempted: 0, correct: 0, slug: "endocrinology" },
@@ -13,14 +13,15 @@ describe("MRCGPAKTSpecialties", () => {
       { name: "General Practice", icon: "🏥", questionCount: 4, attempted: 0, correct: 0, slug: "general-practice" },
       { name: "Respiratory", icon: "💨", questionCount: 4, attempted: 0, correct: 0, slug: "respiratory" },
       { name: "Pharmacology & Prescribing", icon: "💊", questionCount: 2, attempted: 0, correct: 0, slug: "pharmacology-prescribing" },
-      { name: "Ophthalmology & ENT", icon: "👁️", questionCount: 2, attempted: 0, correct: 0, slug: "ophthalmology-ent" },
+      { name: "Ophthalmology", icon: "👁️", questionCount: 1, attempted: 0, correct: 0, slug: "ophthalmology" },
+      { name: "ENT", icon: "👂", questionCount: 1, attempted: 0, correct: 0, slug: "ent" },
       { name: "Musculoskeletal", icon: "🦴", questionCount: 2, attempted: 0, correct: 0, slug: "musculoskeletal" },
       { name: "Neurology", icon: "🧠", questionCount: 2, attempted: 0, correct: 0, slug: "neurology" },
       { name: "Dermatology", icon: "🩹", questionCount: 1, attempted: 0, correct: 0, slug: "dermatology" },
       { name: "Obstetrics & Gynaecology", icon: "🤰", questionCount: 1, attempted: 0, correct: 0, slug: "obstetrics-gynaecology" },
     ];
 
-    expect(SPECIALTIES).toHaveLength(15);
+    expect(SPECIALTIES).toHaveLength(16);
   });
 
   it("should have total of 60 questions across all specialties", () => {
@@ -35,7 +36,8 @@ describe("MRCGPAKTSpecialties", () => {
       { questionCount: 4 },
       { questionCount: 4 },
       { questionCount: 2 },
-      { questionCount: 2 },
+      { questionCount: 1 },
+      { questionCount: 1 },
       { questionCount: 2 },
       { questionCount: 2 },
       { questionCount: 1 },
@@ -58,7 +60,8 @@ describe("MRCGPAKTSpecialties", () => {
       { slug: "general-practice" },
       { slug: "respiratory" },
       { slug: "pharmacology-prescribing" },
-      { slug: "ophthalmology-ent" },
+      { slug: "ophthalmology" },
+      { slug: "ent" },
       { slug: "musculoskeletal" },
       { slug: "neurology" },
       { slug: "dermatology" },

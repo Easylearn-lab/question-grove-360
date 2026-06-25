@@ -551,7 +551,7 @@ Referral criteria:
     ],
   },
   {
-    specialty: "Ophthalmology & ENT",
+    specialty: "Ophthalmology",
     notes: [
       {
         title: "Diabetic Retinopathy",

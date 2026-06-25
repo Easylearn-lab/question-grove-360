@@ -22,7 +22,8 @@ const SPECIALTY_ICONS: Record<string, string> = {
   "Haematology": "🩸",
   "Pharmacology & Prescribing": "💊",
   "Statistics & EBM": "📊",
-  "Ophthalmology & ENT": "👁️",
+  "Ophthalmology": "👁️",
+  "ENT": "👂",
   "Infectious Disease": "🦠",
   "General Practice": "🏥",
 };
