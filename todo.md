@@ -540,3 +540,8 @@
 - [x] Update seed-note360.mjs specialty label from combined to Ophthalmology
 - [x] Verify total question count remains 1,638 (ENT: 21, Ophthalmology: 20, Old combined: 0)
 - [x] Clean up temporary audit scripts (audit-ophthalm-ent.mjs, audit-ophthalm-ent2.mjs, verify-split.mjs, ophthalm-ent-classification.md)
+
+## Question Bank Limit Fix (June 25, 2026)
+- [x] Increased Question Bank practice mode limit from 50 to 500 (QuestionBank.tsx, routers.ts, db.ts)
+- [x] Mock exam query remains unchanged at LIMIT 160
+- [x] Respiratory specialty now returns all 174 questions in practice mode

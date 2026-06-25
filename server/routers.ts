@@ -50,7 +50,7 @@ export const appRouter = router({
       .input(
         z.object({
           specialty: z.string().optional(),
-          limit: z.number().default(20),
+          limit: z.number().default(500),
           offset: z.number().default(0),
         })
       )
@@ -580,7 +580,7 @@ export const appRouter = router({
       .input(
         z.object({
           specialty: z.string().optional(),
-          limit: z.number().default(50),
+          limit: z.number().default(500),
         })
       )
       .query(async ({ input }) => {

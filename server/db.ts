@@ -135,7 +135,7 @@ export async function getProfileByUserId(userId: number) {
 // Question Bank queries
 export async function getQuestionsByFilters(
   specialty?: string,
-  limit: number = 50,
+  limit: number = 500,
   offset: number = 0
 ) {
   const db = await getDb();
@@ -1117,7 +1117,7 @@ export async function getMrcgpAktSpecialties() {
 }
 
 // MRCGP AKT - Get questions by specialty from database
-export async function getMrcgpAktQuestionsBySpecialty(specialty?: string, limit: number = 50) {
+export async function getMrcgpAktQuestionsBySpecialty(specialty?: string, limit: number = 500) {
   const db = await getDb();
   if (!db) return [];
 

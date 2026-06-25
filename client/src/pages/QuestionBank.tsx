@@ -60,7 +60,7 @@ export default function QuestionBank() {
   const questionsQuery = trpc.questions.getQuestions.useQuery(
     {
       specialty: specialty === "All Specialties" ? undefined : specialty,
-      limit: 50,
+      limit: 500,
       offset: 0,
     },
     { enabled: isReady && isAuthenticated }
