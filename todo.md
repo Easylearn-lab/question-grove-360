@@ -550,3 +550,11 @@
 - [x] Seeded 30 hard Respiratory pattern recognition flashcards into flashcards table
 - [x] All 30 cards set to difficulty 'Hard', specialty 'Respiratory', status 'active'
 - [x] Total flashcards now: 540 (was 510)
+
+## Hard Flashcards for 4 Specialties (June 25, 2026)
+- [x] Seeded 30 hard Paediatrics pattern recognition flashcards
+- [x] Seeded 31 hard Psychiatry pattern recognition flashcards
+- [x] Seeded 30 hard Rheumatology pattern recognition flashcards
+- [x] Seeded 30 hard Ophthalmology pattern recognition flashcards
+- [x] All cards: difficulty 'Hard', status 'active', examId 1
+- [x] Total flashcards now: 661 (was 540)
