@@ -573,3 +573,10 @@
 - [x] Total: 20 new hard questions inserted (IDs 330001–330020)
 - [x] Total questions now: 1,698 (was 1,678)
 - [x] Respiratory total: 194
+
+## Gastroenterology Questions Batch 1 (June 25, 2026)
+- [x] Inserted 40 hard AKT-standard Gastroenterology questions
+- [x] Topics: C. diff, Dyspepsia, UC, Coeliac, Colorectal cancer, IBS, Alcohol/liver, Crohn's, Haemochromatosis, Achalasia, Portal HT, Pancreatic cancer, Diverticulitis, Wilson's, NAFLD, AIH, GORD/Barrett's, Carcinoid, H. pylori, IBD EIMs, Pancreatitis, Ascites, SBP, Whipple's, Lynch, PUD, Oesophageal cancer, PSC, Hep B, FAP
+- [x] 2 rows required manual fix (missing explanationC column) — resolved
+- [x] Total questions: 1,738 (was 1,698)
+- [x] Gastroenterology total: 174 (was 134)
