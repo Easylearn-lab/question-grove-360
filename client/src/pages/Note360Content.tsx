@@ -18,27 +18,19 @@ const SPECIALTY_MAP: Record<string, string> = {
   "dermatology": "Dermatology",
   "musculoskeletal": "Musculoskeletal",
   "endocrinology": "Endocrinology",
-  "renal-&-urology": "Renal & Urology",
-  "obstetrics-&-gynaecology": "Obstetrics & Gynaecology",
-  "ophthalmology-&-ent": "Ophthalmology & ENT",
+  "renal-urology": "Renal & Urology",
+  "obstetrics-gynaecology": "Obstetrics & Gynaecology",
+  "ophthalmology-ent": "Ophthalmology & ENT",
   "haematology": "Haematology",
-  "pharmacology-&-prescribing": "Pharmacology & Prescribing",
-  "ethics-&-organisational": "Ethics & Organisational",
+  "pharmacology-prescribing": "Pharmacology & Prescribing",
+  "ethics-organisational": "Ethics & Organisational",
   "general-practice": "General Practice",
-  "statistics-&-ebm": "Statistics & EBM",
+  "statistics-ebm": "Statistics & EBM",
   "infectious-disease": "Infectious Disease",
+  "cardiology": "Cardiology",
+  "renal": "Renal",
+  "orthopaedics": "Orthopaedics",
 };
-
-interface Note {
-  id: number;
-  title: string;
-  content: string;
-  niceGuideline?: string;
-  niceUrl?: string;
-  examPearl?: string;
-  isRead?: boolean;
-  isBookmarked?: boolean;
-}
 
 export default function Note360Content() {
   const [, navigate] = useLocation();
@@ -47,95 +39,65 @@ export default function Note360Content() {
   const specialtyUrl = params.specialty || "";
   const specialtyName = SPECIALTY_MAP[specialtyUrl.toLowerCase()] || specialtyUrl;
 
-  const [notes, setNotes] = useState<Note[]>([]);
-  const [filteredNotes, setFilteredNotes] = useState<Note[]>([]);
   const [searchQuery, setSearchQuery] = useState("");
-  const [isLoading, setIsLoading] = useState(true);
   const [readStatus, setReadStatus] = useState<Record<number, boolean>>({});
   const [bookmarkStatus, setBookmarkStatus] = useState<Record<number, boolean>>({});
 
-  // TODO: Replace with actual tRPC query when backend is ready
+  // Fetch notes from the database using tRPC
+  const { data: notes = [], isLoading } = trpc.note360.getBySpecialty.useQuery(
+    specialtyName,
+    { enabled: !!specialtyName }
+  );
+
+  // Fetch user progress
+  const { data: progressData } = trpc.note360.getUserProgress.useQuery(
+    { specialty: specialtyName },
+    { enabled: !!specialtyName && !!user }
+  );
+
+  // Update progress mutation
+  const updateProgressMutation = trpc.note360.updateProgress.useMutation();
+
+  // Initialize read/bookmark status from progress data
   useEffect(() => {
-    setIsLoading(true);
-    // Simulate loading notes for the specialty
-    setTimeout(() => {
-      const mockNotes: Note[] = [
-        {
-          id: 1,
-          title: "Hypertension Management",
-          content: "Diagnosis / Thresholds:\n- BP ≥140/90 mmHg (NICE NG136)\n\nFirst-line treatment:\n- Lifestyle modifications\n- ACE inhibitor or ARB\n\nSecond-line / escalation:\n- Add calcium channel blocker or thiazide\n\nKey targets:\n- <140/90 mmHg for most patients\n- <130/80 mmHg for high-risk patients\n\nReferral criteria:\n- Resistant hypertension (BP not controlled on 3+ drugs)\n- Secondary hypertension suspected\n\n⭐ AKT Exam Pearl:\nNICE recommends ACE inhibitors as first-line for hypertension in patients <55 years; calcium channel blockers or thiazides for older patients.",
-          niceGuideline: "NG136",
-          niceUrl: "https://www.nice.org.uk/guidance/ng136",
-          examPearl: "ACE inhibitors first-line for <55 years; CCB/thiazide for older patients",
-          isRead: false,
-          isBookmarked: false,
-        },
-        {
-          id: 2,
-          title: "Acute Coronary Syndrome",
-          content: "Diagnosis / Thresholds:\n- Chest pain + troponin elevation or ECG changes\n- STEMI: ST elevation in ≥2 contiguous leads\n- NSTEMI: Troponin elevation without ST elevation\n\nFirst-line treatment:\n- Dual antiplatelet therapy (aspirin + P2Y12 inhibitor)\n- Anticoagulation (LMWH or fondaparinux)\n- Beta-blocker, ACE inhibitor, statin\n- PCI within 120 minutes for STEMI\n\nSecond-line / escalation:\n- Inotropes for cardiogenic shock\n- Mechanical circulatory support if needed\n\nKey targets:\n- Troponin normalization\n- LVEF recovery\n\nReferral criteria:\n- All ACS patients to cardiology\n- Cardiogenic shock to ICU\n\n⭐ AKT Exam Pearl:\nNICE recommends PCI within 120 minutes of first medical contact for STEMI; dual antiplatelet therapy is essential.",
-          niceGuideline: "NG185",
-          niceUrl: "https://www.nice.org.uk/guidance/ng185",
-          examPearl: "PCI within 120 minutes for STEMI; dual antiplatelet therapy mandatory",
-          isRead: false,
-          isBookmarked: false,
-        },
-        {
-          id: 3,
-          title: "Heart Failure with Reduced Ejection Fraction",
-          content: "Diagnosis / Thresholds:\n- LVEF ≤40%\n- Symptoms of heart failure (dyspnea, fatigue, orthopnea)\n- BNP >35 pg/mL or NT-proBNP >125 pg/mL\n\nFirst-line treatment:\n- ACE inhibitor or ARB\n- Beta-blocker (bisoprolol, carvedilol, metoprolol)\n- MRA (spironolactone or eplerenone)\n\nSecond-line / escalation:\n- Add SGLT2 inhibitor (dapagliflozin, empagliflozin)\n- Add hydralazine + nitrate if ACE-I intolerant\n- Ivabradine if HR >70 bpm on beta-blocker\n\nKey targets:\n- LVEF improvement\n- Symptom relief\n- Reduced hospitalization\n\nReferral criteria:\n- Acute decompensation\n- Cardiogenic shock\n- Need for device therapy (CRT, ICD)\n\n⭐ AKT Exam Pearl:\nNICE recommends ACE-I/ARB + beta-blocker + MRA as foundational therapy; SGLT2 inhibitors now added for all HFrEF patients.",
-          niceGuideline: "NG196",
-          niceUrl: "https://www.nice.org.uk/guidance/ng196",
-          examPearl: "ACE-I/ARB + beta-blocker + MRA + SGLT2i is current standard therapy",
-          isRead: false,
-          isBookmarked: false,
-        },
-      ];
-      setNotes(mockNotes);
-      setFilteredNotes(mockNotes);
-      
-      // Initialize read/bookmark status
+    if (progressData?.progress) {
       const readMap: Record<number, boolean> = {};
       const bookmarkMap: Record<number, boolean> = {};
-      mockNotes.forEach((note) => {
-        readMap[note.id] = note.isRead || false;
-        bookmarkMap[note.id] = note.isBookmarked || false;
+      progressData.progress.forEach((p: any) => {
+        readMap[p.noteId] = p.isRead || false;
+        bookmarkMap[p.noteId] = p.isBookmarked || false;
       });
       setReadStatus(readMap);
       setBookmarkStatus(bookmarkMap);
-      setIsLoading(false);
-    }, 500);
-  }, [specialtyName]);
+    }
+  }, [progressData]);
 
   // Filter notes based on search query
-  useEffect(() => {
-    const query = searchQuery.toLowerCase();
-    const filtered = notes.filter(
-      (note) =>
-        note.title.toLowerCase().includes(query) ||
-        note.content.toLowerCase().includes(query)
-    );
-    setFilteredNotes(filtered);
-  }, [searchQuery, notes]);
+  const filteredNotes = notes.filter(
+    (note: any) =>
+      (note.title || "").toLowerCase().includes(searchQuery.toLowerCase()) ||
+      (note.content || "").toLowerCase().includes(searchQuery.toLowerCase())
+  );
 
   const toggleRead = (noteId: number) => {
+    const newValue = !readStatus[noteId];
     setReadStatus((prev) => ({
       ...prev,
-      [noteId]: !prev[noteId],
+      [noteId]: newValue,
     }));
-    // TODO: Call tRPC mutation to update backend
+    updateProgressMutation.mutate({ noteId, isRead: newValue });
   };
 
   const toggleBookmark = (noteId: number) => {
+    const newValue = !bookmarkStatus[noteId];
     setBookmarkStatus((prev) => ({
       ...prev,
-      [noteId]: !prev[noteId],
+      [noteId]: newValue,
     }));
-    // TODO: Call tRPC mutation to update backend
+    updateProgressMutation.mutate({ noteId, isBookmarked: newValue });
   };
 
   const handleExportPDF = () => {
-    // TODO: Implement PDF export
     alert("PDF export coming soon!");
   };
 
@@ -196,7 +158,7 @@ export default function Note360Content() {
               <p className="text-slate-600">No topics found matching your search.</p>
             </Card>
           ) : (
-            filteredNotes.map((note) => (
+            filteredNotes.map((note: any) => (
               <Card key={note.id} className="p-6 border border-slate-200 hover:shadow-lg transition-shadow">
                 <div className="flex items-start justify-between mb-4">
                   <div className="flex-1">
