@@ -521,3 +521,8 @@
 - [x] Fix email review URL to match app routes (/mock-review/:id)
 - [x] Add /mock-exams and /note360 route aliases in App.tsx
 - [x] Add Mock Exams and Note360 cards to MRCGP AKT page
+
+## Access Control Fix (June 25, 2026)
+- [x] Add SubscriptionGate to MockExams.tsx (was accessible to free users)
+- [x] Add SubscriptionGate to Note360List.tsx (was accessible to free users)
+- [x] Add SubscriptionGate to Note360Content.tsx (was accessible to free users)

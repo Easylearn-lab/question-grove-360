@@ -6,6 +6,8 @@ import { Progress } from "@/components/ui/progress";
 import { Spinner } from "@/components/ui/spinner";
 import { trpc } from "@/lib/trpc";
 import { useAuth } from "@/_core/hooks/useAuth";
+import { useSubscription } from "@/hooks/useSubscription";
+import { SubscriptionGate } from "@/components/SubscriptionGate";
 
 // 17 specialties with icons and colors
 const SPECIALTIES = [
@@ -52,6 +54,7 @@ const TOPIC_COUNTS: Record<string, number> = {
 export default function Note360List() {
   const [, navigate] = useLocation();
   const { user } = useAuth();
+  const { isPremium, isLoading: subLoading } = useSubscription();
   const [progressData, setProgressData] = useState<Record<string, { read: number; total: number }>>({});
   const [isLoading, setIsLoading] = useState(true);
 
@@ -73,7 +76,7 @@ export default function Note360List() {
     }, 500);
   }, [user?.id, navigate]);
 
-  if (isLoading) {
+  if (isLoading || subLoading) {
     return (
       <div className="flex items-center justify-center min-h-screen">
         <Spinner />
@@ -91,6 +94,8 @@ export default function Note360List() {
             Comprehensive NICE-compliant medical notes for MRCGP AKT candidates
           </p>
         </div>
+
+        <SubscriptionGate isPremium={isPremium} featureName="Note360 Revision Notes">
 
         {/* Specialty Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -147,6 +152,7 @@ export default function Note360List() {
             );
           })}
         </div>
+        </SubscriptionGate>
       </div>
     </div>
   );

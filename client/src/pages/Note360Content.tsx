@@ -7,6 +7,8 @@ import { Spinner } from "@/components/ui/spinner";
 import { Bookmark, BookmarkCheck, Eye, EyeOff, Download, ArrowLeft } from "lucide-react";
 import { trpc } from "@/lib/trpc";
 import { useAuth } from "@/_core/hooks/useAuth";
+import { useSubscription } from "@/hooks/useSubscription";
+import { SubscriptionGate } from "@/components/SubscriptionGate";
 
 // Specialty name mapping for URL to display name
 const SPECIALTY_MAP: Record<string, string> = {
@@ -36,6 +38,7 @@ export default function Note360Content() {
   const [, navigate] = useLocation();
   const params = useParams();
   const { user } = useAuth();
+  const { isPremium, isLoading: subLoading } = useSubscription();
   const specialtyUrl = params.specialty || "";
   const specialtyName = SPECIALTY_MAP[specialtyUrl.toLowerCase()] || specialtyUrl;
 
@@ -101,7 +104,7 @@ export default function Note360Content() {
     alert("PDF export coming soon!");
   };
 
-  if (isLoading) {
+  if (isLoading || subLoading) {
     return (
       <div className="flex items-center justify-center min-h-screen">
         <Spinner />
@@ -112,6 +115,7 @@ export default function Note360Content() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 p-6">
       <div className="max-w-4xl mx-auto">
+        <SubscriptionGate isPremium={isPremium} featureName="Note360 Revision Notes">
         {/* Header with breadcrumb */}
         <div className="mb-8">
           <button
@@ -228,6 +232,7 @@ export default function Note360Content() {
             ))
           )}
         </div>
+        </SubscriptionGate>
       </div>
     </div>
   );

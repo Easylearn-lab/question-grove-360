@@ -7,9 +7,12 @@ import { ArrowLeft, Clock, CheckCircle2, AlertCircle, Play, FileText, Timer, Bar
 import { trpc } from "@/lib/trpc";
 import { toast } from "sonner";
 import { useProtectedRoute } from "@/hooks/useProtectedRoute";
+import { useSubscription } from "@/hooks/useSubscription";
+import { SubscriptionGate } from "@/components/SubscriptionGate";
 
 export default function MockExams() {
   const { user, isAuthenticated, loading, isReady } = useProtectedRoute();
+  const { isPremium, isLoading: subLoading } = useSubscription();
   const [, navigate] = useLocation();
 
   const mocksQuery = trpc.mockExams.getMocks.useQuery(undefined, {
@@ -31,7 +34,7 @@ export default function MockExams() {
     startMockMutation.mutate({ mockId });
   };
 
-  if (loading || !isAuthenticated || !user) {
+  if (loading || !isAuthenticated || !user || subLoading) {
     return (
       <div className="min-h-screen bg-slate-50 flex items-center justify-center">
         <div className="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-green-600"></div>
@@ -56,6 +59,7 @@ export default function MockExams() {
       </header>
 
       <main className="max-w-5xl mx-auto px-4 py-10">
+        <SubscriptionGate isPremium={isPremium} featureName="Mock Exams">
         {/* Info Banner */}
         <div className="bg-gradient-to-r from-green-50 to-emerald-50 border border-green-200 rounded-xl p-6 mb-10">
           <div className="flex items-start gap-4">
@@ -166,6 +170,7 @@ export default function MockExams() {
             </div>
           </div>
         )}
+        </SubscriptionGate>
       </main>
     </div>
   );
