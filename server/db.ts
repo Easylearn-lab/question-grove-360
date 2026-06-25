@@ -147,11 +147,13 @@ export async function getQuestionsByFilters(
     if (specialty) {
       const result = await db.select().from(questions)
         .where(eq(questions.specialty, specialty))
+        .orderBy(sql`RAND()`)
         .limit(limit)
         .offset(offset);
       return result;
     } else {
       const result = await db.select().from(questions)
+        .orderBy(sql`RAND()`)
         .limit(limit)
         .offset(offset);
       return result;
@@ -1127,11 +1129,13 @@ export async function getMrcgpAktQuestionsBySpecialty(specialty?: string, limit:
     if (specialty) {
       const result = await db.select().from(questions)
         .where(and(eq(questions.examId, 1), eq(questions.specialty, specialty)))
+        .orderBy(sql`RAND()`)
         .limit(limit);
       return result;
     } else {
       const result = await db.select().from(questions)
         .where(eq(questions.examId, 1))
+        .orderBy(sql`RAND()`)
         .limit(limit);
       return result;
     }

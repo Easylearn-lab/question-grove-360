@@ -580,3 +580,9 @@
 - [x] 2 rows required manual fix (missing explanationC column) — resolved
 - [x] Total questions: 1,738 (was 1,698)
 - [x] Gastroenterology total: 174 (was 134)
+
+## Question Bank Randomisation (June 25, 2026)
+- [x] Added ORDER BY RAND() to getQuestionsByFilters (general question bank query)
+- [x] Added ORDER BY RAND() to getMrcgpAktQuestionsBySpecialty (specialty practice query)
+- [x] Mock exam query (startMock) already used ORDER BY RAND() — unchanged
+- [x] TypeScript compiles cleanly, dev server running
