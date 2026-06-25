@@ -56,7 +56,7 @@ export const appRouter = router({
       )
       .query(async ({ ctx, input }) => {
         const { getQuestionsByFilters } = await import("./db");
-        return await getQuestionsByFilters(input.specialty, input.limit, input.offset);
+        return await getQuestionsByFilters(input.specialty, input.limit, input.offset, ctx.user.id);
       }),
     getQuestionById: protectedProcedure
       .input(z.number())
@@ -583,9 +583,9 @@ export const appRouter = router({
           limit: z.number().default(500),
         })
       )
-      .query(async ({ input }) => {
+      .query(async ({ ctx, input }) => {
         const { getMrcgpAktQuestionsBySpecialty } = await import("./db");
-        return await getMrcgpAktQuestionsBySpecialty(input.specialty, input.limit);
+        return await getMrcgpAktQuestionsBySpecialty(input.specialty, input.limit, ctx.user.id);
       }),
   }),
 

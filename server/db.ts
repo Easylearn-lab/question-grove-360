@@ -136,14 +136,52 @@ export async function getProfileByUserId(userId: number) {
 export async function getQuestionsByFilters(
   specialty?: string,
   limit: number = 500,
-  offset: number = 0
+  offset: number = 0,
+  userId?: number
 ) {
   const db = await getDb();
   if (!db) return [];
 
   try {
-    const { questions } = await import("../drizzle/schema");
+    const { questions, userAttempts } = await import("../drizzle/schema");
     
+    // Spaced repetition weighting:
+    // - Questions answered incorrectly get weight 3x
+    // - Questions never attempted get weight 2x
+    // - Questions answered correctly get weight 1x
+    // We use a LEFT JOIN to user_attempts and compute a weight, then ORDER BY weighted random
+    if (userId) {
+      const whereClause = specialty
+        ? sql`q.specialty = ${specialty}`
+        : sql`1=1`;
+      
+      const result = await db.execute(sql`
+        SELECT q.* FROM questions q
+        LEFT JOIN (
+          SELECT questionId,
+            SUM(CASE WHEN isCorrect = 1 THEN 1 ELSE 0 END) as correct_count,
+            SUM(CASE WHEN isCorrect = 0 THEN 1 ELSE 0 END) as incorrect_count,
+            COUNT(*) as total_attempts
+          FROM user_attempts
+          WHERE userId = ${userId}
+          GROUP BY questionId
+        ) ua ON q.id = ua.questionId
+        WHERE ${whereClause}
+        ORDER BY -LOG(RAND()) / (
+          CASE
+            WHEN ua.total_attempts IS NULL THEN 2.0
+            WHEN ua.incorrect_count > ua.correct_count THEN 3.0
+            WHEN ua.incorrect_count = ua.correct_count THEN 2.0
+            ELSE 1.0
+          END
+        )
+        LIMIT ${limit} OFFSET ${offset}
+      `);
+      const rows = Array.isArray(result) && Array.isArray(result[0]) ? result[0] : result;
+      return rows as any[];
+    }
+    
+    // Fallback: pure random if no userId
     if (specialty) {
       const result = await db.select().from(questions)
         .where(eq(questions.specialty, specialty))
@@ -1119,13 +1157,46 @@ export async function getMrcgpAktSpecialties() {
 }
 
 // MRCGP AKT - Get questions by specialty from database
-export async function getMrcgpAktQuestionsBySpecialty(specialty?: string, limit: number = 500) {
+export async function getMrcgpAktQuestionsBySpecialty(specialty?: string, limit: number = 500, userId?: number) {
   const db = await getDb();
   if (!db) return [];
 
   try {
-    const { questions } = await import("../drizzle/schema");
+    const { questions, userAttempts } = await import("../drizzle/schema");
 
+    // Spaced repetition weighting when userId is available
+    if (userId) {
+      const whereClause = specialty
+        ? sql`q.examId = 1 AND q.specialty = ${specialty}`
+        : sql`q.examId = 1`;
+      
+      const result = await db.execute(sql`
+        SELECT q.* FROM questions q
+        LEFT JOIN (
+          SELECT questionId,
+            SUM(CASE WHEN isCorrect = 1 THEN 1 ELSE 0 END) as correct_count,
+            SUM(CASE WHEN isCorrect = 0 THEN 1 ELSE 0 END) as incorrect_count,
+            COUNT(*) as total_attempts
+          FROM user_attempts
+          WHERE userId = ${userId}
+          GROUP BY questionId
+        ) ua ON q.id = ua.questionId
+        WHERE ${whereClause}
+        ORDER BY -LOG(RAND()) / (
+          CASE
+            WHEN ua.total_attempts IS NULL THEN 2.0
+            WHEN ua.incorrect_count > ua.correct_count THEN 3.0
+            WHEN ua.incorrect_count = ua.correct_count THEN 2.0
+            ELSE 1.0
+          END
+        )
+        LIMIT ${limit}
+      `);
+      const rows = Array.isArray(result) && Array.isArray(result[0]) ? result[0] : result;
+      return rows as any[];
+    }
+
+    // Fallback: pure random if no userId
     if (specialty) {
       const result = await db.select().from(questions)
         .where(and(eq(questions.examId, 1), eq(questions.specialty, specialty)))

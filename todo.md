@@ -586,3 +586,12 @@
 - [x] Added ORDER BY RAND() to getMrcgpAktQuestionsBySpecialty (specialty practice query)
 - [x] Mock exam query (startMock) already used ORDER BY RAND() — unchanged
 - [x] TypeScript compiles cleanly, dev server running
+
+## Spaced Repetition Weighting (June 25, 2026)
+- [x] Modified getQuestionsByFilters to accept userId and use weighted random ordering
+- [x] Modified getMrcgpAktQuestionsBySpecialty to accept userId and use weighted random ordering
+- [x] Updated routers.ts to pass ctx.user.id to both functions
+- [x] Weighting: incorrect=3x, never attempted=2x, correct=1x (exponential distribution sampling)
+- [x] Fallback to pure RAND() if no userId available
+- [x] Mock exam query unchanged (uses its own LIMIT 160 with pure RAND())
+- [x] All 7 vitest tests pass
