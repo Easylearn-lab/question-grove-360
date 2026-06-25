@@ -545,3 +545,8 @@
 - [x] Increased Question Bank practice mode limit from 50 to 500 (QuestionBank.tsx, routers.ts, db.ts)
 - [x] Mock exam query remains unchanged at LIMIT 160
 - [x] Respiratory specialty now returns all 174 questions in practice mode
+
+## Respiratory Pattern Recognition Flashcards (June 25, 2026)
+- [x] Seeded 30 hard Respiratory pattern recognition flashcards into flashcards table
+- [x] All 30 cards set to difficulty 'Hard', specialty 'Respiratory', status 'active'
+- [x] Total flashcards now: 540 (was 510)
