@@ -558,3 +558,18 @@
 - [x] Seeded 30 hard Ophthalmology pattern recognition flashcards
 - [x] All cards: difficulty 'Hard', status 'active', examId 1
 - [x] Total flashcards now: 661 (was 540)
+
+## Hard AKT Questions — 10 Respiratory Topics (June 25, 2026)
+- [x] Alpha-1 Antitrypsin Deficiency: 2 hard questions
+- [x] Asbestos-Related Lung Disease: 2 hard questions
+- [x] Asthma (NG245 2024): 2 hard questions
+- [x] Bronchiectasis: 2 hard questions
+- [x] COPD (NG115): 2 hard questions
+- [x] Idiopathic Pulmonary Fibrosis (CG163): 2 hard questions
+- [x] Lung Cancer Referral (NG122): 2 hard questions
+- [x] Obstructive Sleep Apnoea (NG202): 2 hard questions
+- [x] Pneumonia (NG191/NG250): 2 hard questions
+- [x] Sarcoidosis: 2 hard questions
+- [x] Total: 20 new hard questions inserted (IDs 330001–330020)
+- [x] Total questions now: 1,698 (was 1,678)
+- [x] Respiratory total: 194
