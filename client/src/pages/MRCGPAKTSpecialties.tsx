@@ -2,7 +2,7 @@ import { useState, useMemo } from "react";
 import { useLocation } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { ArrowLeft, BookOpen, BarChart3, Lock, FileText, BookMarked } from "lucide-react";
+import { ArrowLeft, BookOpen, BarChart3, Lock, FileText, BookMarked, Shield, Target } from "lucide-react";
 import { useProtectedRoute } from "@/hooks/useProtectedRoute";
 import { useSubscription } from "@/hooks/useSubscription";
 import { trpc } from "@/lib/trpc";
@@ -38,6 +38,8 @@ export default function MRCGPAKTSpecialties() {
   const { isPremium } = useSubscription();
 
   const specialtiesQuery = trpc.mrcgpAkt.getSpecialties.useQuery();
+  const readinessQuery = trpc.dashboard.getReadinessScore.useQuery();
+  const fingerprintQuery = trpc.dashboard.getWeaknessFingerprint.useQuery();
 
   const specialties = useMemo(() => {
     if (!specialtiesQuery.data) return [];
@@ -96,6 +98,118 @@ export default function MRCGPAKTSpecialties() {
 
       {/* Main Content */}
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        {/* Readiness Score & Weakness Fingerprint */}
+        <div className="grid md:grid-cols-2 gap-6 mb-12">
+          {/* Readiness Score Card */}
+          <Card className="p-8 border-slate-200">
+            <div className="flex items-start justify-between mb-4">
+              <div>
+                <h3 className="text-lg font-semibold text-slate-900 mb-1 flex items-center gap-2">
+                  <Shield className="w-5 h-5" />
+                  Exam Readiness
+                </h3>
+                <p className="text-sm text-slate-500">Based on your question bank & mock exam performance</p>
+              </div>
+            </div>
+            {readinessQuery.isLoading ? (
+              <div className="animate-pulse space-y-3">
+                <div className="h-16 bg-slate-200 rounded" />
+                <div className="h-4 bg-slate-200 rounded w-2/3" />
+              </div>
+            ) : readinessQuery.data?.score === null ? (
+              <div className="text-center py-6">
+                <p className="text-3xl font-bold text-slate-300">—</p>
+                <p className="text-sm text-slate-400 mt-2">Start answering questions to see your readiness</p>
+              </div>
+            ) : (
+              <div>
+                <div className="flex items-end gap-3 mb-3">
+                  <span className={`text-5xl font-bold ${
+                    readinessQuery.data?.colour === 'green' ? 'text-green-600' :
+                    readinessQuery.data?.colour === 'amber' ? 'text-amber-500' :
+                    readinessQuery.data?.colour === 'orange' ? 'text-orange-500' :
+                    'text-red-500'
+                  }`}>
+                    {readinessQuery.data?.score}%
+                  </span>
+                  <span className={`text-sm font-semibold px-3 py-1 rounded-full mb-1 ${
+                    readinessQuery.data?.colour === 'green' ? 'bg-green-100 text-green-700' :
+                    readinessQuery.data?.colour === 'amber' ? 'bg-amber-100 text-amber-700' :
+                    readinessQuery.data?.colour === 'orange' ? 'bg-orange-100 text-orange-700' :
+                    'bg-red-100 text-red-700'
+                  }`}>
+                    {readinessQuery.data?.label}
+                  </span>
+                </div>
+                {readinessQuery.data?.weakestSpecialties && readinessQuery.data.weakestSpecialties.length > 0 && (
+                  <div className="mt-4 pt-4 border-t border-slate-100">
+                    <p className="text-xs font-medium text-slate-500 uppercase tracking-wide mb-2">Weakest Areas</p>
+                    <div className="space-y-1.5">
+                      {readinessQuery.data.weakestSpecialties.map((s: { name: string; accuracy: number }) => (
+                        <div key={s.name} className="flex items-center justify-between">
+                          <span className="text-sm text-slate-700">{s.name}</span>
+                          <span className="text-sm font-semibold text-red-500">{s.accuracy}%</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
+              </div>
+            )}
+          </Card>
+
+          {/* Weakness Fingerprint Card */}
+          <Card className="p-8 border-slate-200">
+            <div className="flex items-start justify-between mb-4">
+              <div>
+                <h3 className="text-lg font-semibold text-slate-900 mb-1 flex items-center gap-2">
+                  <Target className="w-5 h-5" />
+                  Weakness Fingerprint
+                </h3>
+                <p className="text-sm text-slate-500">Per-specialty accuracy across all 17 specialties</p>
+              </div>
+            </div>
+            {fingerprintQuery.isLoading ? (
+              <div className="animate-pulse space-y-2">
+                {Array.from({ length: 6 }).map((_, i) => (
+                  <div key={i} className="h-5 bg-slate-200 rounded" />
+                ))}
+              </div>
+            ) : fingerprintQuery.data ? (
+              <div className="space-y-1.5 max-h-[320px] overflow-y-auto pr-1">
+                {fingerprintQuery.data.map((s: { name: string; accuracy: number | null; status: string; label: string; total: number }) => (
+                  <div key={s.name} className="flex items-center gap-3 py-1">
+                    <div className={`w-2.5 h-2.5 rounded-full flex-shrink-0 ${
+                      s.status === 'green' ? 'bg-green-500' :
+                      s.status === 'amber' ? 'bg-amber-400' :
+                      s.status === 'red' ? 'bg-red-500' :
+                      'bg-slate-300'
+                    }`} />
+                    <span className="text-sm text-slate-700 flex-1 truncate">{s.name}</span>
+                    <span className={`text-xs font-medium min-w-[60px] text-right ${
+                      s.status === 'green' ? 'text-green-600' :
+                      s.status === 'amber' ? 'text-amber-600' :
+                      s.status === 'red' ? 'text-red-500' :
+                      'text-slate-400'
+                    }`}>
+                      {s.label}
+                    </span>
+                    {s.total > 0 && (
+                      <span className="text-[10px] text-slate-400 min-w-[30px] text-right">
+                        ({s.total})
+                      </span>
+                    )}
+                  </div>
+                ))}
+              </div>
+            ) : (
+              <div className="text-center py-6">
+                <p className="text-sm text-slate-400">No data available</p>
+              </div>
+            )}
+          </Card>
+        </div>
+
         {/* Mock Exams, Note360 & Pattern Recognition Cards */}
         <div className="grid md:grid-cols-3 gap-6 mb-12">
           {/* Mock Exams Card */}

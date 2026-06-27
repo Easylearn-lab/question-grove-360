@@ -595,3 +595,10 @@
 - [x] Fallback to pure RAND() if no userId available
 - [x] Mock exam query unchanged (uses its own LIMIT 160 with pure RAND())
 - [x] All 7 vitest tests pass
+
+## Dashboard: Readiness Score & Weakness Fingerprint (June 27, 2026)
+- [x] Backend: Create getReadinessScore procedure (accuracy + mock scores → percentage + label)
+- [x] Backend: Create getWeaknessFingerprint procedure (per-specialty accuracy → red/amber/green/grey)
+- [x] Frontend: Add Readiness Score card to MRCGPAKTSpecialties page
+- [x] Frontend: Add Weakness Fingerprint card to MRCGPAKTSpecialties page
+- [x] Test both cards display correctly (14 vitest tests passing)

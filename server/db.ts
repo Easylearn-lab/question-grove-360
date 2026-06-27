@@ -959,6 +959,172 @@ export async function getAvailableExams() {
 }
 
 
+// All 17 MRCGP AKT specialties
+const ALL_SPECIALTIES = [
+  "Neurology", "Endocrinology", "Dermatology", "Renal & Urology",
+  "Cardiovascular", "Respiratory", "Gastroenterology", "Musculoskeletal",
+  "Obstetrics & Gynaecology", "Ethics & Organisational", "Paediatrics",
+  "Haematology", "Pharmacology & Prescribing", "Statistics & EBM",
+  "Ophthalmology", "ENT", "Infectious Disease",
+];
+
+/**
+ * Get the user's exam readiness score based on question bank accuracy and mock exam scores.
+ * Returns a percentage, label, colour, and top 2 weakest specialties.
+ */
+export async function getReadinessScore(userId: number) {
+  const db = await getDb();
+  if (!db) return null;
+
+  try {
+    const { userAttempts, questions, mockResults } = await import("../drizzle/schema");
+
+    // Get question bank accuracy across all specialties (examId=1 for MRCGP AKT)
+    const attempts = await db
+      .select({
+        isCorrect: userAttempts.isCorrect,
+        specialty: questions.specialty,
+      })
+      .from(userAttempts)
+      .innerJoin(questions, eq(userAttempts.questionId, questions.id))
+      .where(and(eq(userAttempts.userId, userId), eq(userAttempts.examId, 1)));
+
+    // Get mock exam scores
+    const mocks = await db
+      .select({
+        percentage: mockResults.percentage,
+        completedAt: mockResults.completedAt,
+      })
+      .from(mockResults)
+      .where(and(eq(mockResults.userId, userId), eq(mockResults.examId, 1)))
+      .orderBy(desc(mockResults.completedAt));
+
+    if (attempts.length === 0 && mocks.length === 0) {
+      return { score: null, label: "No Data", colour: "grey", weakestSpecialties: [] };
+    }
+
+    // Calculate question bank accuracy
+    let qbAccuracy = 0;
+    if (attempts.length > 0) {
+      const correct = attempts.filter((a) => a.isCorrect).length;
+      qbAccuracy = (correct / attempts.length) * 100;
+    }
+
+    // Calculate average mock score (use last 5 mocks max)
+    let mockAvg = 0;
+    let hasMocks = false;
+    if (mocks.length > 0) {
+      hasMocks = true;
+      const recentMocks = mocks.slice(0, 5);
+      mockAvg = recentMocks.reduce((sum, m) => sum + parseFloat(m.percentage || "0"), 0) / recentMocks.length;
+    }
+
+    // Calculate overall readiness: weighted average
+    // If both available: 60% question bank + 40% mock scores
+    // If only question bank: 100% question bank
+    // If only mocks: 100% mock scores
+    let readinessScore: number;
+    if (attempts.length > 0 && hasMocks) {
+      readinessScore = Math.round(qbAccuracy * 0.6 + mockAvg * 0.4);
+    } else if (attempts.length > 0) {
+      readinessScore = Math.round(qbAccuracy);
+    } else {
+      readinessScore = Math.round(mockAvg);
+    }
+
+    // Determine label and colour
+    let label: string;
+    let colour: string;
+    if (readinessScore >= 80) {
+      label = "Exam Ready";
+      colour = "green";
+    } else if (readinessScore >= 66) {
+      label = "Borderline";
+      colour = "amber";
+    } else if (readinessScore >= 50) {
+      label = "High Risk";
+      colour = "orange";
+    } else {
+      label = "Not Ready";
+      colour = "red";
+    }
+
+    // Find top 2 weakest specialties
+    const specialtyMap: Record<string, { correct: number; total: number }> = {};
+    attempts.forEach((a) => {
+      const spec = a.specialty || "General";
+      if (!specialtyMap[spec]) specialtyMap[spec] = { correct: 0, total: 0 };
+      specialtyMap[spec].total++;
+      if (a.isCorrect) specialtyMap[spec].correct++;
+    });
+
+    const weakestSpecialties = Object.entries(specialtyMap)
+      .filter(([, s]) => s.total >= 3) // Minimum 3 attempts to be meaningful
+      .map(([name, s]) => ({ name, accuracy: Math.round((s.correct / s.total) * 100) }))
+      .sort((a, b) => a.accuracy - b.accuracy)
+      .slice(0, 2);
+
+    return { score: readinessScore, label, colour, weakestSpecialties };
+  } catch (error) {
+    console.error("[Database] Failed to get readiness score:", error);
+    return null;
+  }
+}
+
+/**
+ * Get the user's weakness fingerprint — per-specialty accuracy with red/amber/green/grey indicators.
+ */
+export async function getWeaknessFingerprint(userId: number) {
+  const db = await getDb();
+  if (!db) return null;
+
+  try {
+    const { userAttempts, questions } = await import("../drizzle/schema");
+
+    // Get all attempts for MRCGP AKT (examId=1) grouped by specialty
+    const attempts = await db
+      .select({
+        specialty: questions.specialty,
+        isCorrect: userAttempts.isCorrect,
+      })
+      .from(userAttempts)
+      .innerJoin(questions, eq(userAttempts.questionId, questions.id))
+      .where(and(eq(userAttempts.userId, userId), eq(userAttempts.examId, 1)));
+
+    // Build specialty stats
+    const specialtyMap: Record<string, { correct: number; total: number }> = {};
+    attempts.forEach((a) => {
+      const spec = a.specialty || "General";
+      if (!specialtyMap[spec]) specialtyMap[spec] = { correct: 0, total: 0 };
+      specialtyMap[spec].total++;
+      if (a.isCorrect) specialtyMap[spec].correct++;
+    });
+
+    // Map all 17 specialties with their status
+    const fingerprint = ALL_SPECIALTIES.map((name) => {
+      const stats = specialtyMap[name];
+      if (!stats || stats.total === 0) {
+        return { name, accuracy: null, status: "grey" as const, label: "Not started", total: 0 };
+      }
+      const accuracy = Math.round((stats.correct / stats.total) * 100);
+      let status: "red" | "amber" | "green";
+      if (accuracy >= 70) {
+        status = "green";
+      } else if (accuracy >= 50) {
+        status = "amber";
+      } else {
+        status = "red";
+      }
+      return { name, accuracy, status, label: `${accuracy}%`, total: stats.total };
+    });
+
+    return fingerprint;
+  } catch (error) {
+    console.error("[Database] Failed to get weakness fingerprint:", error);
+    return null;
+  }
+}
+
 /**
  * Reset all question attempts for a user (for the question reset feature).
  */

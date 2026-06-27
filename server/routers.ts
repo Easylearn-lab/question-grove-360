@@ -509,6 +509,14 @@ export const appRouter = router({
       const { getAvailableExams } = await import("./db");
       return await getAvailableExams();
     }),
+    getReadinessScore: protectedProcedure.query(async ({ ctx }) => {
+      const { getReadinessScore } = await import("./db");
+      return await getReadinessScore(ctx.user.id);
+    }),
+    getWeaknessFingerprint: protectedProcedure.query(async ({ ctx }) => {
+      const { getWeaknessFingerprint } = await import("./db");
+      return await getWeaknessFingerprint(ctx.user.id);
+    }),
   }),
 
   // Progress Dashboard Router
