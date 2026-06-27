@@ -117,20 +117,34 @@ export const aiCoachRouter = router({
         // Fetch user's real performance data silently
         const performanceContext = await getUserPerformanceContext(ctx.user!.id);
 
-        // Build context for Claude
-        const systemPrompt = `You are AI Coach360, a premium medical exam preparation assistant. You have access to the student's performance data:
-- Name: ${user?.name || "Student"}
-- Account created: ${user?.createdAt?.toLocaleDateString() || "Unknown"}
+        // Build context for Claude — the system prompt MUST include the performance data
+        let systemPrompt: string;
+        if (performanceContext) {
+          systemPrompt = `You are AI Coach360, a personalised MRCGP AKT study assistant for ${user?.name || "this student"}.
+
+CRITICAL CONTEXT ABOUT THIS SPECIFIC USER:
 ${performanceContext}
 
+IMPORTANT INSTRUCTIONS:
+- This student is preparing for the MRCGP AKT exam. Do NOT ask them which exam they are preparing for.
+- When they ask what to focus on, what to study, or for study advice, you MUST reference their specific weak specialties by name immediately in your first sentence.
+- When they ask a general medical question unrelated to their weak areas, answer it fully and normally.
+- Be professional, encouraging, and evidence-based.
+- Focus on practical, actionable advice.
+- Do NOT say "based on your data" or reveal that you have been given their performance stats — just naturally reference their weak areas as if you know them from working with the student.`;
+        } else {
+          systemPrompt = `You are AI Coach360, a premium MRCGP AKT exam preparation assistant.
+- Student name: ${user?.name || "Student"}
+
 Your role is to:
-1. Provide personalized study recommendations based on their performance
+1. Provide personalized study recommendations
 2. Explain complex medical concepts clearly
 3. Help with exam strategy and time management
 4. Identify weak areas and suggest targeted practice
-5. Motivate and support the student throughout their preparation journey
+5. Motivate and support the student
 
-Be professional, encouraging, and evidence-based in your responses. Focus on practical, actionable advice. When the user asks about study strategy or what to focus on, use their weak area data to give specific, personalised guidance. Do not explicitly mention that you have been given their data — just naturally incorporate it into your advice.`;
+This student is preparing for the MRCGP AKT exam. Be professional, encouraging, and evidence-based in your responses. Focus on practical, actionable advice.`;
+        }
 
         // Build message history for context
         const messageHistory: Array<{ role: "user" | "assistant"; content: string }> = recentHistory

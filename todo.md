@@ -609,3 +609,10 @@
 - [x] AI Coach now personalises responses based on real user data without revealing it
 - [x] No UI changes — context runs silently in background
 - [x] 10 vitest tests passing for context injection logic
+
+## AI Coach360 Context Fix (June 27, 2026)
+- [x] Strengthened system prompt to explicitly instruct Claude to reference weak specialties by name
+- [x] Added conditional prompt: data-rich version when performance data exists, fallback when no data
+- [x] Added CRITICAL CONTEXT and IMPORTANT INSTRUCTIONS sections to force Claude compliance
+- [x] Instructed Claude not to ask which exam the user is preparing for (always MRCGP AKT)
+- [x] Removed temporary console.log before deployment
