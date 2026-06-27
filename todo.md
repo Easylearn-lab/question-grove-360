@@ -602,3 +602,10 @@
 - [x] Frontend: Add Readiness Score card to MRCGPAKTSpecialties page
 - [x] Frontend: Add Weakness Fingerprint card to MRCGPAKTSpecialties page
 - [x] Test both cards display correctly (14 vitest tests passing)
+
+## AI Coach360 Performance Context Injection (June 27, 2026)
+- [x] Created getUserPerformanceContext() helper to fetch user's top 3 weakest specialties and readiness score
+- [x] Injected performance data silently into the system prompt sent to Claude
+- [x] AI Coach now personalises responses based on real user data without revealing it
+- [x] No UI changes — context runs silently in background
+- [x] 10 vitest tests passing for context injection logic
