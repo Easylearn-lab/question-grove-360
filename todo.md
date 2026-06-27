@@ -616,3 +616,8 @@
 - [x] Added CRITICAL CONTEXT and IMPORTANT INSTRUCTIONS sections to force Claude compliance
 - [x] Instructed Claude not to ask which exam the user is preparing for (always MRCGP AKT)
 - [x] Removed temporary console.log before deployment
+
+## AI Coach360 Fallback Prompt Fix (June 27, 2026)
+- [x] Fixed fallback system prompt to never ask which exam the user is preparing for
+- [x] Fallback now explicitly states "Do NOT ask them which exam they are preparing for"
+- [x] Fallback provides general MRCGP AKT study guidance when user has no attempt history
