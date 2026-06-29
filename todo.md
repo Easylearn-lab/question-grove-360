@@ -632,5 +632,5 @@
 - [x] Build Picture360 landing page (/picture360) with 6 specialty cards
 - [x] Build specialty page (/picture360/[specialty]) with Learn Mode and Test Yourself Mode
 - [x] Connect to real database queries (fetch images by specialty from picture360_images table)
-- [ ] Add image upload functionality for admins (admin panel integration)
-- [ ] Implement payment gating for Picture360 access (subscription check + locked UI)
+- [x] Add image upload functionality for admins (admin panel integration)
+- [x] Implement payment gating for Picture360 access (subscription check + locked UI)

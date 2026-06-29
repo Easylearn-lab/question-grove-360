@@ -1,10 +1,11 @@
 import { useLocation, useParams } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { ArrowLeft, ChevronLeft, ChevronRight } from "lucide-react";
+import { ArrowLeft, ChevronLeft, ChevronRight, Lock } from "lucide-react";
 import { useProtectedRoute } from "@/hooks/useProtectedRoute";
+import { useSubscription } from "@/hooks/useSubscription";
 import { trpc } from "@/lib/trpc";
-import { useState, useMemo } from "react";
+import { useState } from "react";
 
 const SPECIALTIES: Record<string, string> = {
   dermatology: "Dermatology",
@@ -19,22 +20,21 @@ export default function Picture360Specialty() {
   const { specialty } = useParams<{ specialty: string }>();
   const [, navigate] = useLocation();
   const { user, isAuthenticated, loading } = useProtectedRoute();
+  const { isPremium, isLoading: subLoading } = useSubscription();
   const [mode, setMode] = useState<"select" | "learn" | "test">("select");
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [showAnswer, setShowAnswer] = useState(false);
-  const [userAnswers, setUserAnswers] = useState<Record<number, string>>({});
 
   const specialtyName = specialty ? SPECIALTIES[specialty] : "";
 
   // Fetch images by specialty from database
   const imagesQuery = trpc.picture360.getImagesBySpecialty.useQuery(specialtyName || "", {
-    enabled: !!specialtyName,
+    enabled: !!specialtyName && isPremium,
   });
 
   const images = imagesQuery.data || [];
 
-
-  if (loading) {
+  if (loading || subLoading) {
     return (
       <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 flex items-center justify-center">
         <div className="text-center">
@@ -45,12 +45,51 @@ export default function Picture360Specialty() {
     );
   }
 
+  // Payment gate - redirect non-premium users
+  if (!isPremium) {
+    return (
+      <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100">
+        <header className="bg-white border-b border-slate-200 sticky top-0 z-40">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center gap-4">
+            <Button
+              variant="ghost"
+              size="sm"
+              onClick={() => navigate("/picture360")}
+              className="text-slate-600 hover:text-slate-900"
+            >
+              <ArrowLeft className="w-4 h-4" />
+            </Button>
+            <div>
+              <h1 className="text-2xl font-bold text-slate-900">{specialtyName || "Picture360"}</h1>
+              <p className="text-sm text-slate-600">Visual diagnosis training</p>
+            </div>
+          </div>
+        </header>
+        <main className="max-w-2xl mx-auto px-4 py-16 text-center">
+          <div className="bg-white rounded-xl border border-slate-200 p-12 shadow-sm">
+            <Lock className="w-16 h-16 text-amber-500 mx-auto mb-6" />
+            <h2 className="text-2xl font-bold text-slate-900 mb-3">Premium Feature</h2>
+            <p className="text-slate-600 mb-8">
+              Picture360 visual diagnosis training is available exclusively for premium subscribers. Upgrade your plan to access all images and learning modes.
+            </p>
+            <Button
+              onClick={() => navigate("/pricing")}
+              className="bg-amber-600 hover:bg-amber-700 text-white px-8 py-3"
+            >
+              Upgrade to Premium
+            </Button>
+          </div>
+        </main>
+      </div>
+    );
+  }
+
   if (!specialtyName) {
     return (
       <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 flex items-center justify-center">
         <div className="text-center">
           <p className="text-slate-600 mb-4">Specialty not found</p>
-          <Button onClick={() => navigate("/picture360")}>Back to Picture Album</Button>
+          <Button onClick={() => navigate("/picture360")}>Back to Picture360</Button>
         </div>
       </div>
     );
@@ -83,32 +122,53 @@ export default function Picture360Specialty() {
 
         {/* Mode Selection */}
         <main className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-          <div className="grid md:grid-cols-2 gap-8">
-            {/* Learn Mode */}
-            <Card className="p-8 border-slate-200 hover:shadow-lg transition-all cursor-pointer bg-gradient-to-br from-blue-50 to-blue-100" onClick={() => setMode("learn")}>
-              <div className="text-center">
-                <div className="text-6xl mb-4">📚</div>
-                <h3 className="text-2xl font-bold text-slate-900 mb-2">Learn Mode</h3>
-                <p className="text-slate-600 mb-6">Study images with diagnoses and explanations</p>
-                <Button className="w-full bg-blue-600 hover:bg-blue-700 text-white">
-                  Start Learning →
-                </Button>
-              </div>
+          {images.length === 0 ? (
+            <Card className="p-12 border-slate-200 text-center">
+              <p className="text-slate-600 text-lg">No images available for {specialtyName} yet.</p>
+              <p className="text-sm text-slate-500 mt-2">Check back soon for new content.</p>
+              <Button onClick={() => navigate("/picture360")} className="mt-6" variant="outline">
+                Back to Picture360
+              </Button>
             </Card>
+          ) : (
+            <div className="grid md:grid-cols-2 gap-8">
+              {/* Learn Mode */}
+              <Card className="p-8 border-slate-200 hover:shadow-lg transition-all cursor-pointer bg-gradient-to-br from-blue-50 to-blue-100" onClick={() => setMode("learn")}>
+                <div className="text-center">
+                  <div className="text-6xl mb-4">📚</div>
+                  <h3 className="text-2xl font-bold text-slate-900 mb-2">Learn Mode</h3>
+                  <p className="text-slate-600 mb-6">Study images with diagnoses and explanations</p>
+                  <Button className="w-full bg-blue-600 hover:bg-blue-700 text-white">
+                    Start Learning →
+                  </Button>
+                </div>
+              </Card>
 
-            {/* Test Mode */}
-            <Card className="p-8 border-slate-200 hover:shadow-lg transition-all cursor-pointer bg-gradient-to-br from-green-50 to-green-100" onClick={() => setMode("test")}>
-              <div className="text-center">
-                <div className="text-6xl mb-4">🧪</div>
-                <h3 className="text-2xl font-bold text-slate-900 mb-2">Test Yourself</h3>
-                <p className="text-slate-600 mb-6">Guess the diagnosis before revealing the answer</p>
-                <Button className="w-full bg-green-600 hover:bg-green-700 text-white">
-                  Start Test →
-                </Button>
-              </div>
-            </Card>
-          </div>
+              {/* Test Mode */}
+              <Card className="p-8 border-slate-200 hover:shadow-lg transition-all cursor-pointer bg-gradient-to-br from-green-50 to-green-100" onClick={() => setMode("test")}>
+                <div className="text-center">
+                  <div className="text-6xl mb-4">🧪</div>
+                  <h3 className="text-2xl font-bold text-slate-900 mb-2">Test Yourself</h3>
+                  <p className="text-slate-600 mb-6">Guess the diagnosis before revealing the answer</p>
+                  <Button className="w-full bg-green-600 hover:bg-green-700 text-white">
+                    Start Test →
+                  </Button>
+                </div>
+              </Card>
+            </div>
+          )}
         </main>
+      </div>
+    );
+  }
+
+  if (!currentImage) {
+    return (
+      <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 flex items-center justify-center">
+        <div className="text-center">
+          <p className="text-slate-600 mb-4">No images available</p>
+          <Button onClick={() => setMode("select")}>Back to Mode Selection</Button>
+        </div>
       </div>
     );
   }
@@ -218,7 +278,7 @@ export default function Picture360Specialty() {
               onClick={() => navigate("/picture360")}
               className="w-full mt-6 bg-slate-900 hover:bg-slate-800 text-white"
             >
-              Finish and Return to Picture Album
+              Finish and Return to Picture360
             </Button>
           )}
         </Card>

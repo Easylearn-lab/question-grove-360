@@ -401,4 +401,82 @@ export const adminRouter = router({
       total: questionsData.length,
     };
   }),
+
+  // Picture360 Image Management
+  getPicture360Images: adminProcedure
+    .input(
+      z.object({
+        limit: z.number().default(50),
+        offset: z.number().default(0),
+        specialty: z.string().optional(),
+      })
+    )
+    .query(async ({ input }) => {
+      const { getDb } = await import("./db");
+      const db = await getDb();
+      if (!db) throw new TRPCError({ code: "INTERNAL_SERVER_ERROR" });
+
+      const { sql: sqlFn } = await import("drizzle-orm");
+      let query = `SELECT * FROM picture360_images ORDER BY createdAt DESC LIMIT ${input.limit} OFFSET ${input.offset}`;
+      if (input.specialty) {
+        query = `SELECT * FROM picture360_images WHERE specialty = '${input.specialty}' ORDER BY createdAt DESC LIMIT ${input.limit} OFFSET ${input.offset}`;
+      }
+      const result = await db.execute(sqlFn.raw(query));
+      const rows = Array.isArray(result) && Array.isArray(result[0]) ? result[0] : result;
+      
+      const countQuery = input.specialty 
+        ? `SELECT COUNT(*) as total FROM picture360_images WHERE specialty = '${input.specialty}'`
+        : `SELECT COUNT(*) as total FROM picture360_images`;
+      const countResult = await db.execute(sqlFn.raw(countQuery));
+      const countRows = Array.isArray(countResult) && Array.isArray(countResult[0]) ? countResult[0] : countResult;
+      const total = (countRows as any[])[0]?.total || 0;
+
+      return { images: rows, total };
+    }),
+
+  uploadPicture360Image: adminProcedure
+    .input(
+      z.object({
+        specialty: z.string(),
+        title: z.string().min(3),
+        description: z.string().optional(),
+        diagnosis: z.string().min(3),
+        explanation: z.string().optional(),
+        imageData: z.string(), // base64 encoded image
+        imageMimeType: z.string().default("image/jpeg"),
+      })
+    )
+    .mutation(async ({ input }) => {
+      const { getDb } = await import("./db");
+      const db = await getDb();
+      if (!db) throw new TRPCError({ code: "INTERNAL_SERVER_ERROR" });
+
+      const { storagePut } = await import("./storage");
+      const { sql: sqlFn } = await import("drizzle-orm");
+
+      // Decode base64 and upload to S3
+      const buffer = Buffer.from(input.imageData, "base64");
+      const ext = input.imageMimeType.split("/")[1] || "jpg";
+      const fileKey = `picture360/${input.specialty.toLowerCase().replace(/\s+/g, "-")}/${input.title.toLowerCase().replace(/\s+/g, "-")}.${ext}`;
+      
+      const { url } = await storagePut(fileKey, buffer, input.imageMimeType);
+
+      // Insert into database
+      await db.execute(sqlFn`INSERT INTO picture360_images (specialty, title, description, imageUrl, diagnosis, explanation, status) VALUES (${input.specialty}, ${input.title}, ${input.description || ""}, ${url}, ${input.diagnosis}, ${input.explanation || ""}, 'active')`);
+
+      return { success: true, imageUrl: url };
+    }),
+
+  deletePicture360Image: adminProcedure
+    .input(z.number())
+    .mutation(async ({ input: imageId }) => {
+      const { getDb } = await import("./db");
+      const db = await getDb();
+      if (!db) throw new TRPCError({ code: "INTERNAL_SERVER_ERROR" });
+
+      const { sql: sqlFn } = await import("drizzle-orm");
+      await db.execute(sqlFn`UPDATE picture360_images SET status = 'archived' WHERE id = ${imageId}`);
+      return { success: true };
+    }),
+
 });
