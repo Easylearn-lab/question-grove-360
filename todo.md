@@ -631,6 +631,6 @@
 - [x] Add Picture360 Coming Soon card to MRCGP AKT dashboard
 - [x] Build Picture360 landing page (/picture360) with 6 specialty cards
 - [x] Build specialty page (/picture360/[specialty]) with Learn Mode and Test Yourself Mode
-- [ ] Connect to real database queries (currently using placeholder data)
-- [ ] Add image upload functionality for admins
-- [ ] Implement payment gating for Picture360 access
+- [x] Connect to real database queries (fetch images by specialty from picture360_images table)
+- [ ] Add image upload functionality for admins (admin panel integration)
+- [ ] Implement payment gating for Picture360 access (subscription check + locked UI)

@@ -642,6 +642,25 @@ export const appRouter = router({
       const rows = Array.isArray(result) && Array.isArray(result[0]) ? result[0] : result;
       return (rows as any[]).map((r: any) => ({ specialty: r.specialty, count: r.count }));
     }),
+    getImagesBySpecialty: protectedProcedure
+      .input(z.string())
+      .query(async ({ input: specialty }) => {
+        const { getDb } = await import("./db");
+        const db = await getDb();
+        if (!db) throw new Error("Database not available");
+        const { sql } = await import("drizzle-orm");
+        const result = await db.execute(sql`SELECT id, specialty, title, description, imageUrl, diagnosis, explanation FROM picture360_images WHERE specialty = ${specialty} AND status = 'active' ORDER BY id`);
+        const rows = Array.isArray(result) && Array.isArray(result[0]) ? result[0] : result;
+        return (rows as any[]).map((r: any) => ({
+          id: r.id,
+          specialty: r.specialty,
+          title: r.title,
+          description: r.description,
+          imageUrl: r.imageUrl,
+          diagnosis: r.diagnosis,
+          explanation: r.explanation,
+        }));
+      }),
   }),
 });
 export type AppRouter = typeof appRouter;

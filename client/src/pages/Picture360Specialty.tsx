@@ -26,39 +26,13 @@ export default function Picture360Specialty() {
 
   const specialtyName = specialty ? SPECIALTIES[specialty] : "";
 
-  // TODO: Add query to fetch images by specialty
-  const images = useMemo(() => {
-    // Placeholder data - will be replaced with actual query
-    return [
-      {
-        id: 1,
-        specialty: specialtyName,
-        title: "Acne Vulgaris",
-        description: "Inflammatory acne with comedones and pustules",
-        imageUrl: "https://via.placeholder.com/600x400?text=Acne+Vulgaris",
-        diagnosis: "Acne Vulgaris",
-        explanation: "Characterized by open and closed comedones, papules, and pustules on the face and upper trunk.",
-      },
-      {
-        id: 2,
-        specialty: specialtyName,
-        title: "Psoriasis",
-        description: "Chronic inflammatory skin condition",
-        imageUrl: "https://via.placeholder.com/600x400?text=Psoriasis",
-        diagnosis: "Psoriasis",
-        explanation: "Red, scaly plaques with well-defined borders, often on extensor surfaces.",
-      },
-      {
-        id: 3,
-        specialty: specialtyName,
-        title: "Eczema",
-        description: "Atopic dermatitis",
-        imageUrl: "https://via.placeholder.com/600x400?text=Eczema",
-        diagnosis: "Atopic Dermatitis",
-        explanation: "Pruritic, erythematous patches with lichenification and excoriation.",
-      },
-    ];
-  }, [specialtyName]);
+  // Fetch images by specialty from database
+  const imagesQuery = trpc.picture360.getImagesBySpecialty.useQuery(specialtyName || "", {
+    enabled: !!specialtyName,
+  });
+
+  const images = imagesQuery.data || [];
+
 
   if (loading) {
     return (
