@@ -102,17 +102,16 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Picture Album Card */}
+          {/* Picture360 Card */}
           <div className="max-w-sm mx-auto">
             <div className="bg-white rounded-xl p-8 border-t-4 border-orange-500 shadow-lg hover:shadow-xl transition-all hover:-translate-y-2">
               <div className="text-4xl mb-4 text-center">📸</div>
               <h3 className="text-2xl font-bold text-gray-900 mb-2 text-center">Picture Album</h3>
-              <p className="text-gray-600 mb-4 text-center">Dermatology • Ophthalmology • ECG</p>
-              <p className="text-center text-gray-700 font-semibold mb-6">£9 / 3 months — Standalone product</p>
+              <p className="text-gray-600 mb-4 text-center">Dermatology • Ophthalmology • ECG • ENT • Chest X-ray • Paediatrics</p>
               
-              <a href={getLoginUrl()} className="w-full bg-orange-500 text-white py-3 rounded-lg font-semibold hover:bg-orange-600 text-center block">
-                Browse Albums →
-              </a>
+              <button disabled className="w-full bg-gray-400 text-gray-600 py-3 rounded-lg font-semibold cursor-not-allowed text-center block">
+                Coming Soon
+              </button>
             </div>
           </div>
         </div>

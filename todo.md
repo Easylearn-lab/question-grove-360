@@ -621,3 +621,16 @@
 - [x] Fixed fallback system prompt to never ask which exam the user is preparing for
 - [x] Fallback now explicitly states "Do NOT ask them which exam they are preparing for"
 - [x] Fallback provides general MRCGP AKT study guidance when user has no attempt history
+
+
+## Picture360 Feature (June 2026)
+
+- [x] Create picture360_images and picture360_access tables
+- [x] Seed 3 placeholder Dermatology images
+- [x] Add Picture360 Coming Soon card to homepage
+- [x] Add Picture360 Coming Soon card to MRCGP AKT dashboard
+- [x] Build Picture360 landing page (/picture360) with 6 specialty cards
+- [x] Build specialty page (/picture360/[specialty]) with Learn Mode and Test Yourself Mode
+- [ ] Connect to real database queries (currently using placeholder data)
+- [ ] Add image upload functionality for admins
+- [ ] Implement payment gating for Picture360 access

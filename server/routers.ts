@@ -629,8 +629,19 @@ export const appRouter = router({
           input.isRead,
           input.isBookmarked
         );
-      }),
+            }),
+  }),
+  // Picture360 Router
+  picture360: router({
+    getSpecialtyCounts: protectedProcedure.query(async () => {
+      const { getDb } = await import("./db");
+      const db = await getDb();
+      if (!db) throw new Error("Database not available");
+      const { sql } = await import("drizzle-orm");
+      const result = await db.execute(sql`SELECT specialty, COUNT(*) as count FROM picture360_images WHERE status = 'active' GROUP BY specialty`);
+      const rows = Array.isArray(result) && Array.isArray(result[0]) ? result[0] : result;
+      return (rows as any[]).map((r: any) => ({ specialty: r.specialty, count: r.count }));
+    }),
   }),
 });
-
 export type AppRouter = typeof appRouter;

@@ -210,8 +210,8 @@ export default function MRCGPAKTSpecialties() {
           </Card>
         </div>
 
-        {/* Mock Exams, Note360 & Pattern Recognition Cards */}
-        <div className="grid md:grid-cols-3 gap-6 mb-12">
+        {/* Mock Exams, Note360, Pattern Recognition & Picture360 Cards */}
+        <div className="grid md:grid-cols-4 gap-6 mb-12">
           {/* Mock Exams Card */}
           <Card className="p-8 border-slate-200 hover:shadow-lg transition-all cursor-pointer bg-gradient-to-br from-blue-50 to-blue-100" onClick={() => navigate("/mock-exams")}>
             <div className="flex items-start justify-between mb-4">
@@ -251,6 +251,20 @@ export default function MRCGPAKTSpecialties() {
             </div>
             <Button className="w-full mt-6 bg-[#32CD32] hover:bg-[#2ab82a] text-[#1A1A1A] font-semibold">
               Start Drilling →
+            </Button>
+          </Card>
+
+          {/* Picture360 Card */}
+          <Card className="p-8 border-slate-200 bg-gradient-to-br from-orange-50 to-orange-100">
+            <div className="flex items-start justify-between mb-4">
+              <div>
+                <h3 className="text-2xl font-bold text-slate-900 mb-2">Picture Album</h3>
+                <p className="text-slate-600">Visual diagnosis</p>
+              </div>
+              <span className="text-4xl">📸</span>
+            </div>
+            <Button disabled className="w-full mt-6 bg-gray-400 text-gray-600 cursor-not-allowed font-semibold">
+              Coming Soon
             </Button>
           </Card>
         </div>

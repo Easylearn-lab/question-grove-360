@@ -28,6 +28,8 @@ import MRCGPAKTSpecialties from "./pages/MRCGPAKTSpecialties";
 import MRCGPAKTPractice from "./pages/MRCGPAKTPractice";
 import Note360List from "./pages/Note360List";
 import Note360Content from "./pages/Note360Content";
+import Picture360 from "./pages/Picture360";
+import Picture360Specialty from "./pages/Picture360Specialty";
 
 function Router() {
   // make sure to consider if you need authentication for certain routes
@@ -59,6 +61,8 @@ function Router() {
       <Route path={"/:mrcgp-akt/note360"} component={Note360List} />
       <Route path={"/:mrcgp-akt/note360/:specialty"} component={Note360Content} />
       <Route path={"/:mrcgp-akt/flashcards"} component={PatternRecognition} />
+      <Route path={"/picture360"} component={Picture360} />
+      <Route path={"/picture360/:specialty"} component={Picture360Specialty} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />
