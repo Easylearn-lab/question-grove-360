@@ -634,3 +634,6 @@
 - [x] Connect to real database queries (fetch images by specialty from picture360_images table)
 - [x] Add image upload functionality for admins (admin panel integration)
 - [x] Implement payment gating for Picture360 access (subscription check + locked UI)
+
+## ENT Pattern Recognition Flashcards (June 2026)
+- [x] Seed 44 hard ENT pattern recognition flashcards (Ménière's, BPPV, Epistaxis, Acoustic Neuroma, Otitis Externa, Malignant OE, Cholesteatoma, Facial Nerve, Ramsay Hunt, Hearing Loss, Rinne/Weber, Audiogram, NIHL, Stridor, Vestibular Neuronitis, 2WW, Nystagmus, Hoarseness, Nasal Polyps, Tonsillitis, Quinsy, Sinusitis, Salivary Glands, Ear Wax, Tympanosclerosis, Otitis Media, Mastoiditis, Otosclerosis, Glue Ear, Presbycusis, Hearing Devices, External Ear Lumps, Auricular Haematoma, Vasomotor Rhinitis, Neck Lumps, Tongue, Gingival Hyperplasia, Mouth Ulcers, Ear Discharge, Laryngeal Cancer, Tinnitus, Vertigo)
