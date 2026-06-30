@@ -637,3 +637,21 @@
 
 ## ENT Pattern Recognition Flashcards (June 2026)
 - [x] Seed 44 hard ENT pattern recognition flashcards (Ménière's, BPPV, Epistaxis, Acoustic Neuroma, Otitis Externa, Malignant OE, Cholesteatoma, Facial Nerve, Ramsay Hunt, Hearing Loss, Rinne/Weber, Audiogram, NIHL, Stridor, Vestibular Neuronitis, 2WW, Nystagmus, Hoarseness, Nasal Polyps, Tonsillitis, Quinsy, Sinusitis, Salivary Glands, Ear Wax, Tympanosclerosis, Otitis Media, Mastoiditis, Otosclerosis, Glue Ear, Presbycusis, Hearing Devices, External Ear Lumps, Auricular Haematoma, Vasomotor Rhinitis, Neck Lumps, Tongue, Gingival Hyperplasia, Mouth Ulcers, Ear Discharge, Laryngeal Cancer, Tinnitus, Vertigo)
+
+## Answer Position Shuffle (June 2026)
+- [x] Shuffled correct answer positions across all 1,738 questions (was 83% B, now ~20% each A-E)
+- [x] Distribution after shuffle: A:352, B:370, C:372, D:319, E:325
+
+## ENT → Otolaryngology Rename in Flashcards (June 2026)
+- [x] Renamed specialty from 'ENT' to 'Otolaryngology' in flashcards table (47 cards)
+- [x] Replaced 44 ENT v1 flashcards with 47 Otolaryngology v3 flashcards (plain text, no markdown)
+
+## Geographic Tongue Images for Picture360 (June 2026)
+- [x] Uploaded 5 clinical Geographic Tongue images to S3
+- [x] Linked all 5 images in picture360_images table under Dermatology specialty
+
+## Cardiovascular Hard Flashcards (June 2026)
+- [x] Seeded 20 hard Cardiovascular pattern recognition flashcards
+- [x] Topics: STEMI/LBBB, HFrEF management, AF anticoagulation, Hypertension step therapy, Post-MI, NSTEMI/UA, Aortic stenosis, Mitral stenosis, Aortic dissection, Mitral regurgitation, Primary prevention statins, Ezetimibe add-on, Acute pulmonary oedema, Fast AF rate control, Pulseless VT, Stage 2 HTN, HCM, Posterior STEMI, CRT, AAA repair
+- [x] All cards: difficulty 'Hard', status 'active', examId 1, NICE-aligned (no guideline numbers)
+- [x] Total flashcards: 728 (was 708) | Cardiovascular: 30 (was 10)
