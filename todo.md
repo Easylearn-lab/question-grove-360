@@ -692,3 +692,12 @@
 - [x] Preserved Note360 guideline numbers (no changes to Note360)
 - [x] Verified: 0 guideline numbers remaining in questions and flashcards
 - [x] Temporary script cleaned up
+
+
+## Bug Fix: handleSpecialtyChange Reference Error (July 2026)
+- [x] Fixed ReferenceError: Cannot access 'handleSpecialtyChange' before initialization
+- [x] Moved function definitions before early return in PatternRecognition component
+- [x] Reordered: handleFlip, handleNext, handlePrevious, handleMastery, handleRestart, handleSpecialtyChange defined first
+- [x] Then: filteredCards, currentCard, totalCards, progress calculated
+- [x] Then: early return for empty cards (now has access to handleSpecialtyChange)
+- [x] Verified: TypeScript compilation clean, dev server running with HMR updates

@@ -86,31 +86,6 @@ export default function PatternRecognition() {
     );
   }
 
-  const filteredCards = flashcards;
-  
-  const currentCard = filteredCards[currentCardIndex];
-  const totalCards = filteredCards.length;
-  const progress = ((currentCardIndex + 1) / totalCards) * 100;
-
-  if (totalCards === 0) {
-    return (
-      <div className="min-h-screen bg-slate-50">
-        <header className="bg-white border-b border-slate-200 sticky top-0 z-40">
-          <div className="max-w-7xl mx-auto px-4 py-4 flex items-center gap-4">
-            <Button variant="ghost" size="sm" onClick={() => navigate("/dashboard")}>
-              <ArrowLeft className="w-4 h-4" />
-            </Button>
-            <h1 className="text-2xl font-bold text-slate-900">Pattern Recognition</h1>
-          </div>
-        </header>
-        <main className="max-w-4xl mx-auto px-4 py-12 text-center">
-          <p className="text-slate-600 mb-4">No cards found for this specialty.</p>
-          <Button onClick={() => handleSpecialtyChange(null)}>View All Specialties</Button>
-        </main>
-      </div>
-    );
-  }
-
   const handleFlip = () => setIsFlipped(!isFlipped);
 
   const handleNext = () => {
@@ -178,6 +153,31 @@ export default function PatternRecognition() {
       toast.info("Studying all specialties");
     }
   };
+
+  const filteredCards = flashcards;
+  
+  const currentCard = filteredCards[currentCardIndex];
+  const totalCards = filteredCards.length;
+  const progress = ((currentCardIndex + 1) / totalCards) * 100;
+
+  if (totalCards === 0) {
+    return (
+      <div className="min-h-screen bg-slate-50">
+        <header className="bg-white border-b border-slate-200 sticky top-0 z-40">
+          <div className="max-w-7xl mx-auto px-4 py-4 flex items-center gap-4">
+            <Button variant="ghost" size="sm" onClick={() => navigate("/dashboard")}>
+              <ArrowLeft className="w-4 h-4" />
+            </Button>
+            <h1 className="text-2xl font-bold text-slate-900">Pattern Recognition</h1>
+          </div>
+        </header>
+        <main className="max-w-4xl mx-auto px-4 py-12 text-center">
+          <p className="text-slate-600 mb-4">No cards found for this specialty.</p>
+          <Button onClick={() => handleSpecialtyChange(null)}>View All Specialties</Button>
+        </main>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-slate-50">
