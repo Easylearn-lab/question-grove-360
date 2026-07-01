@@ -655,3 +655,9 @@
 - [x] Topics: STEMI/LBBB, HFrEF management, AF anticoagulation, Hypertension step therapy, Post-MI, NSTEMI/UA, Aortic stenosis, Mitral stenosis, Aortic dissection, Mitral regurgitation, Primary prevention statins, Ezetimibe add-on, Acute pulmonary oedema, Fast AF rate control, Pulseless VT, Stage 2 HTN, HCM, Posterior STEMI, CRT, AAA repair
 - [x] All cards: difficulty 'Hard', status 'active', examId 1, NICE-aligned (no guideline numbers)
 - [x] Total flashcards: 728 (was 708) | Cardiovascular: 30 (was 10)
+
+## Cardiovascular Questions Batch 1 (June 2026)
+- [x] Imported 40 hard AKT-standard Cardiovascular questions from SQL batch file
+- [x] Topics: Hypertension diagnosis/staging, HTN treatment (ethnicity-specific), Heart failure diagnosis, HFrEF management (4-drug therapy), AF stroke risk (CHA₂DS₂-VASc), AF rate vs rhythm control, Aortic stenosis, Mitral stenosis, Mitral regurgitation, Aortic regurgitation, Pulmonary hypertension, Endocarditis, Myocarditis, Pericarditis, Acute coronary syndrome, Stable angina, Arrhythmia management, Syncope, Hypertrophic cardiomyopathy, Dilated cardiomyopathy, Restrictive cardiomyopathy, Peripheral arterial disease, Venous thromboembolism, Aortic aneurysm, Cardiac transplant, Device therapy (pacemakers/ICDs), Anticoagulation in AF, Statin therapy, Lipid management, and more
+- [x] All 40 questions: difficulty 'Hard', status 'active', examId 1, correct answers randomised A–E
+- [x] Total questions: 1,779 (was 1,738) | Cardiovascular: 184 (was 143)
