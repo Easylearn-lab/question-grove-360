@@ -275,17 +275,17 @@ export default function PatternRecognition() {
                 background: `linear-gradient(135deg, ${getCardColor(currentCard.id).from}, ${getCardColor(currentCard.id).to})`
               }}
             >
-              <div className="text-center w-full flex flex-col items-center justify-center">
-                <p className="text-xs text-white/70 mb-6 uppercase tracking-widest font-semibold">Answer</p>
-                <p className="text-2xl md:text-3xl font-bold text-white leading-tight mb-6 max-w-2xl">
+              <div className="text-center w-full flex flex-col items-center justify-center h-full overflow-hidden">
+                <p className="text-xs text-white/70 mb-4 uppercase tracking-widest font-semibold">Answer</p>
+                <p className="text-lg md:text-xl font-bold text-white leading-snug mb-4 max-w-full px-4 line-clamp-4">
                   {currentCard.back}
                 </p>
                 {currentCard.explanation && (
-                  <p className="text-white/80 text-sm leading-relaxed max-w-xl">
+                  <p className="text-white/80 text-xs leading-relaxed max-w-full px-4 line-clamp-6">
                     {currentCard.explanation}
                   </p>
                 )}
-                <p className="text-white/60 text-xs mt-8 opacity-70">Tap to see question</p>
+                <p className="text-white/60 text-xs mt-4 opacity-70">Tap to see question</p>
               </div>
             </div>
           </div>

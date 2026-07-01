@@ -673,3 +673,13 @@
 - [x] Added vitest tests for color randomization logic (7 tests, all passing)
 - [x] Verified TypeScript compilation (no errors)
 - [x] Dev server running with HMR updates applied
+
+## Flashcard Answer Sizing Adjustment (July 2026)
+- [x] Reduced answer text size from text-2xl/3xl to text-lg/xl to fit within card box
+- [x] Reduced explanation text size from text-sm to text-xs
+- [x] Added line clamping (line-clamp-4 for answer, line-clamp-6 for explanation) to prevent overflow
+- [x] Added horizontal padding (px-4) to all text for proper spacing
+- [x] Maintained centered alignment for all text elements
+- [x] Verified no answer clues are shown on question page
+- [x] TypeScript compilation: no errors
+- [x] Dev server running with HMR updates applied
