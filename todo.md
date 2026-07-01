@@ -740,3 +740,11 @@
 - [x] Implemented drag-to-pan when zoomed in
 - [x] Verified dev server running with no TypeScript errors
 - [x] No other pages, features, or tables modified
+
+
+## SEO Keywords Optimization (July 2026)
+- [x] Reduced meta keywords from 9 to 6 focused keywords
+- [x] Removed: PLAB, USMLE, medical revision (less relevant to MRCGP AKT focus)
+- [x] Kept: MRCGP AKT, medical exam preparation, NICE guidelines, question bank, AI coaching, clinical knowledge
+- [x] Updated index.html meta keywords tag
+- [x] Dev server running without errors
