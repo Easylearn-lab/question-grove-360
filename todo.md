@@ -701,3 +701,18 @@
 - [x] Then: filteredCards, currentCard, totalCards, progress calculated
 - [x] Then: early return for empty cards (now has access to handleSpecialtyChange)
 - [x] Verified: TypeScript compilation clean, dev server running with HMR updates
+
+
+## Dermatology Picture360 Images (July 2026)
+- [x] Generated 8 clinical dermatology condition images for AKT exam topics
+- [x] Urticaria (Hives) — acute allergic reaction with wheals
+- [x] Cellulitis — acute bacterial infection with diffuse erythema
+- [x] Bullous Pemphigoid — autoimmune blistering disorder with tense blisters
+- [x] Warts (Verruca Vulgaris) — benign viral lesions with hyperkeratotic surface
+- [x] Erysipelas — superficial streptococcal infection with sharp borders
+- [x] Seborrheic Keratosis — benign waxy lesion with "stuck-on" appearance
+- [x] Lichen Planus — inflammatory condition with flat-topped papules and Wickham striae
+- [x] Scabies — parasitic infestation with burrows and papules
+- [x] Inserted all 8 images into picture360_images table with clinical details and exam pearls
+- [x] Total Dermatology images: 8 (previous) + 8 (new) = 16 images
+- [x] Verified: No other tables modified; questions and flashcards unchanged
