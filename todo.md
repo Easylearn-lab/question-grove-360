@@ -716,3 +716,17 @@
 - [x] Inserted all 8 images into picture360_images table with clinical details and exam pearls
 - [x] Total Dermatology images: 8 (previous) + 8 (new) = 16 images
 - [x] Verified: No other tables modified; questions and flashcards unchanged
+
+
+## Ophthalmology Picture360 Images (July 2026)
+- [x] Generated 7 clinical ophthalmology condition images for AKT exam topics
+- [x] Cataracts — cloudy opaque lens with nuclear sclerosis
+- [x] Diabetic Retinopathy — microaneurysms, hemorrhages, hard exudates
+- [x] Glaucoma (Optic Disc Changes) — increased cup-to-disc ratio with rim thinning
+- [x] Age-Related Macular Degeneration (AMD) — drusen and RPE changes
+- [x] Central Retinal Artery Occlusion (CRAO) — pale retina with cherry-red spot
+- [x] Retinal Detachment — elevated whitened retina with folds
+- [x] Branch Retinal Vein Occlusion (BRVO) — flame-shaped hemorrhages in vein distribution
+- [x] Inserted all 7 images into picture360_images table with clinical details and exam pearls
+- [x] Total Ophthalmology images: 7 images
+- [x] Verified: No other tables modified; questions and flashcards unchanged
