@@ -748,3 +748,12 @@
 - [x] Kept: MRCGP AKT, medical exam preparation, NICE guidelines, question bank, AI coaching, clinical knowledge
 - [x] Updated index.html meta keywords tag
 - [x] Dev server running without errors
+
+
+## Answer Length Optimization (July 2026)
+- [x] Analyzed all 1,819 questions for oversized correct answers
+- [x] Identified 11 questions where correct answer >40% longer than average
+- [x] Generated dry-run sample with proposed shortened versions
+- [x] Applied fixes to all 11 affected questions
+- [x] Verified updates in database
+- [x] Cleaned up temporary analysis scripts
