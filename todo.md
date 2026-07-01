@@ -730,3 +730,13 @@
 - [x] Inserted all 7 images into picture360_images table with clinical details and exam pearls
 - [x] Total Ophthalmology images: 7 images
 - [x] Verified: No other tables modified; questions and flashcards unchanged
+
+
+## Picture360 Image Zoom & Fullscreen (July 2026)
+- [x] Created ImageZoomModal component with zoom (50-300%), pan, and fullscreen support
+- [x] Added keyboard shortcuts: +/- to zoom, 0 to reset, f for fullscreen, Esc to close
+- [x] Integrated zoom modal into Picture360Specialty component
+- [x] Added hover "Zoom" button on images for easy access
+- [x] Implemented drag-to-pan when zoomed in
+- [x] Verified dev server running with no TypeScript errors
+- [x] No other pages, features, or tables modified

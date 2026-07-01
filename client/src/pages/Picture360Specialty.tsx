@@ -1,11 +1,12 @@
 import { useLocation, useParams } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { ArrowLeft, ChevronLeft, ChevronRight, Lock } from "lucide-react";
+import { ArrowLeft, ChevronLeft, ChevronRight, Lock, Maximize } from "lucide-react";
 import { useProtectedRoute } from "@/hooks/useProtectedRoute";
 import { useSubscription } from "@/hooks/useSubscription";
 import { trpc } from "@/lib/trpc";
 import { useState } from "react";
+import { ImageZoomModal } from "@/components/ImageZoomModal";
 
 const SPECIALTIES: Record<string, string> = {
   dermatology: "Dermatology",
@@ -24,6 +25,7 @@ export default function Picture360Specialty() {
   const [mode, setMode] = useState<"select" | "learn" | "test">("select");
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [showAnswer, setShowAnswer] = useState(false);
+  const [zoomModalOpen, setZoomModalOpen] = useState(false);
 
   const specialtyName = specialty ? SPECIALTIES[specialty] : "";
 
@@ -199,12 +201,23 @@ export default function Picture360Specialty() {
       <main className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <Card className="p-8 border-slate-200">
           {/* Image */}
-          <div className="mb-8">
+          <div className="mb-8 relative group">
             <img
               src={currentImage.imageUrl}
               alt={currentImage.title}
-              className="w-full h-96 object-cover rounded-lg border border-slate-200"
+              className="w-full h-96 object-cover rounded-lg border border-slate-200 cursor-pointer transition-opacity group-hover:opacity-90"
+              onClick={() => setZoomModalOpen(true)}
             />
+            <Button
+              size="sm"
+              variant="ghost"
+              onClick={() => setZoomModalOpen(true)}
+              className="absolute top-4 right-4 bg-black/50 hover:bg-black/70 text-white opacity-0 group-hover:opacity-100 transition-opacity"
+              title="Click to zoom"
+            >
+              <Maximize className="w-4 h-4 mr-1" />
+              Zoom
+            </Button>
           </div>
 
           {/* Content */}
@@ -283,6 +296,14 @@ export default function Picture360Specialty() {
           )}
         </Card>
       </main>
+
+      {/* Image Zoom Modal */}
+      <ImageZoomModal
+        isOpen={zoomModalOpen}
+        imageUrl={currentImage.imageUrl}
+        imageTitle={currentImage.diagnosis || currentImage.title || "Clinical Image"}
+        onClose={() => setZoomModalOpen(false)}
+      />
     </div>
   );
 }
