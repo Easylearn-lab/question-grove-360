@@ -43,6 +43,21 @@ interface CardProgress {
   };
 }
 
+const CARD_COLORS = [
+  { from: "#7c3aed", to: "#a855f7" },
+  { from: "#2563eb", to: "#3b82f6" },
+  { from: "#059669", to: "#10b981" },
+  { from: "#dc2626", to: "#ef4444" },
+  { from: "#ea580c", to: "#f97316" },
+  { from: "#0891b2", to: "#06b6d4" },
+  { from: "#7c2d12", to: "#9a3412" },
+  { from: "#6b21a8", to: "#9333ea" },
+];
+
+function getCardColor(cardId: number) {
+  return CARD_COLORS[cardId % CARD_COLORS.length];
+}
+
 export default function PatternRecognition() {
   const { user, isAuthenticated, loading, isReady } = useProtectedRoute();
   const [, navigate] = useLocation();
@@ -253,20 +268,24 @@ export default function PatternRecognition() {
 
             {/* Back */}
             <div
-              className="absolute inset-0 rounded-2xl shadow-2xl flex flex-col items-center justify-center p-8 bg-gradient-to-br from-purple-600 to-purple-700"
-              style={{ backfaceVisibility: "hidden", transform: "rotateY(180deg)" }}
+              className="absolute inset-0 rounded-2xl shadow-2xl flex flex-col items-center justify-center p-8"
+              style={{
+                backfaceVisibility: "hidden",
+                transform: "rotateY(180deg)",
+                background: `linear-gradient(135deg, ${getCardColor(currentCard.id).from}, ${getCardColor(currentCard.id).to})`
+              }}
             >
-              <div className="text-center">
-                <p className="text-sm text-purple-200 mb-4 uppercase tracking-wider font-medium">Answer</p>
-                <p className="text-xl md:text-2xl font-medium text-white leading-relaxed">
+              <div className="text-center w-full flex flex-col items-center justify-center">
+                <p className="text-xs text-white/70 mb-6 uppercase tracking-widest font-semibold">Answer</p>
+                <p className="text-2xl md:text-3xl font-bold text-white leading-tight mb-6 max-w-2xl">
                   {currentCard.back}
                 </p>
                 {currentCard.explanation && (
-                  <p className="text-purple-100 text-sm mt-6 leading-relaxed max-w-md">
+                  <p className="text-white/80 text-sm leading-relaxed max-w-xl">
                     {currentCard.explanation}
                   </p>
                 )}
-                <p className="text-purple-200 text-sm mt-8 opacity-70">Tap to see question</p>
+                <p className="text-white/60 text-xs mt-8 opacity-70">Tap to see question</p>
               </div>
             </div>
           </div>

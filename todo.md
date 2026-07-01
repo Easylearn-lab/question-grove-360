@@ -661,3 +661,15 @@
 - [x] Topics: Hypertension diagnosis/staging, HTN treatment (ethnicity-specific), Heart failure diagnosis, HFrEF management (4-drug therapy), AF stroke risk (CHA₂DS₂-VASc), AF rate vs rhythm control, Aortic stenosis, Mitral stenosis, Mitral regurgitation, Aortic regurgitation, Pulmonary hypertension, Endocarditis, Myocarditis, Pericarditis, Acute coronary syndrome, Stable angina, Arrhythmia management, Syncope, Hypertrophic cardiomyopathy, Dilated cardiomyopathy, Restrictive cardiomyopathy, Peripheral arterial disease, Venous thromboembolism, Aortic aneurysm, Cardiac transplant, Device therapy (pacemakers/ICDs), Anticoagulation in AF, Statin therapy, Lipid management, and more
 - [x] All 40 questions: difficulty 'Hard', status 'active', examId 1, correct answers randomised A–E
 - [x] Total questions: 1,779 (was 1,738) | Cardiovascular: 184 (was 143)
+
+
+## Flashcard Answer Formatting (July 2026)
+- [x] Reformatted all flashcard answer pages with clean centered design
+- [x] "ANSWER" label: small, uppercase, centered at top
+- [x] Main answer: bold, large (text-2xl/3xl), white, centered
+- [x] Explanation: small (text-sm), lighter opacity (80%), centered
+- [x] Implemented randomized background colors (8-color palette)
+- [x] Colors cycle by card ID: Purple → Blue → Green → Red → Orange → Cyan → Brown → Violet
+- [x] Added vitest tests for color randomization logic (7 tests, all passing)
+- [x] Verified TypeScript compilation (no errors)
+- [x] Dev server running with HMR updates applied
