@@ -683,3 +683,12 @@
 - [x] Verified no answer clues are shown on question page
 - [x] TypeScript compilation: no errors
 - [x] Dev server running with HMR updates applied
+
+
+## NICE Guideline Number Removal (July 2026)
+- [x] Removed all NICE guideline numbers (NG, CG, TA codes) from questions table (507 entries)
+- [x] Removed all NICE guideline numbers from flashcards niceGuideline column (151 entries)
+- [x] Replaced with simple "NICE" reference only
+- [x] Preserved Note360 guideline numbers (no changes to Note360)
+- [x] Verified: 0 guideline numbers remaining in questions and flashcards
+- [x] Temporary script cleaned up
