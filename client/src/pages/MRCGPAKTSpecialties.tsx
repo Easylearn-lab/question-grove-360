@@ -26,6 +26,7 @@ const SPECIALTY_ICONS: Record<string, string> = {
   "ENT": "👂",
   "Infectious Disease": "🦠",
   "General Practice": "🏥",
+  "Psychiatry": "💭",
 };
 
 function slugify(name: string): string {

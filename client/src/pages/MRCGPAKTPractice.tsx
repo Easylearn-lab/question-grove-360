@@ -49,6 +49,7 @@ const SPECIALTIES_MAP: Record<string, string> = {
   "obstetrics-gynaecology": "Obstetrics & Gynaecology",
   "renal-urology": "Renal & Urology",
   "infectious-disease": "Infectious Disease",
+  "psychiatry": "Psychiatry",
 };
 
 export default function MRCGPAKTPractice() {

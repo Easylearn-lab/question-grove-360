@@ -777,3 +777,10 @@
 ## Renal & Urology Specialty Dropdown (Jul 2026)
 - [x] Added 'Renal & Urology' to SPECIALTIES array in PatternRecognition.tsx
 - [x] Users can now filter and access the 38 Renal & Urology flashcards from the dropdown
+
+## Psychiatry Questions Re-insertion + Routing Fix (Jul 2026)
+- [x] Fix: Add 'psychiatry' slug mapping to SPECIALTIES_MAP in MRCGPAKTPractice.tsx
+- [x] Fix: Add 'Psychiatry' to SPECIALTY_ICONS in MRCGPAKTSpecialties.tsx
+- [x] Fix: Trim trailing space from 'Psychiatry ' specialty in database
+- [x] Re-insert 40 hard Psychiatry questions (previous batch was lost; total now 44)
+- [x] Verify Psychiatry page loads correctly (API returns 44 questions)
