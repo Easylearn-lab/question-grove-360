@@ -29,6 +29,7 @@ const SPECIALTIES = [
   "Obstetrics & Gynaecology",
   "Musculoskeletal",
   "Infectious Diseases",
+  "Renal & Urology",
 ];
 
 // Flashcards will be fetched from database via tRPC
