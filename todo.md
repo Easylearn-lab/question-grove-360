@@ -764,3 +764,8 @@
 - [x] Topics: first-episode psychosis, lithium toxicity, self-harm in adolescents, sertraline in pregnancy, depression in terminal illness, serotonin syndrome, Mental Capacity Act, bulimia nervosa, panic disorder, antidepressants in older adults, social anxiety disorder, domestic violence, tardive dyskinesia, BII phobia, postnatal psychosis, ME/CFS
 - [x] Total questions: 1,819 → 1,860 (+41)
 - [x] No other tables, pages, or features modified
+
+## Renal & Urology Flashcards Batch (Jul 2026)
+- [x] Inserted 38 hard Renal & Urology flashcards (Total: 769 → 807 | Renal & Urology: 0 → 38)
+- [x] Topics: AKI, glomerulonephritis, nephrotic syndrome, CKD, ADPKD, renal tumours, bladder/prostate cancer, BPH, testicular conditions, renal stones, incontinence, transplant rejection
+- [x] No other tables, pages, or features modified
