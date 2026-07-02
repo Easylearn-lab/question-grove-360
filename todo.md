@@ -757,3 +757,10 @@
 - [x] Applied fixes to all 11 affected questions
 - [x] Verified updates in database
 - [x] Cleaned up temporary analysis scripts
+
+## Psychiatry Questions Batch 1 (July 2026)
+
+- [x] Insert 40 hard Psychiatry questions (Q1-Q40) into questions table
+- [x] Topics: first-episode psychosis, lithium toxicity, self-harm in adolescents, sertraline in pregnancy, depression in terminal illness, serotonin syndrome, Mental Capacity Act, bulimia nervosa, panic disorder, antidepressants in older adults, social anxiety disorder, domestic violence, tardive dyskinesia, BII phobia, postnatal psychosis, ME/CFS
+- [x] Total questions: 1,819 → 1,860 (+41)
+- [x] No other tables, pages, or features modified
