@@ -20,7 +20,6 @@ const SPECIALTIES = [
   "Rheumatology",
   "Dermatology",
   "Endocrinology",
-  "Nephrology",
   "Oncology",
   "Haematology",
   "Immunology",

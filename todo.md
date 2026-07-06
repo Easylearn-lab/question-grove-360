@@ -784,3 +784,6 @@
 - [x] Fix: Trim trailing space from 'Psychiatry ' specialty in database
 - [x] Re-insert 40 hard Psychiatry questions (previous batch was lost; total now 44)
 - [x] Verify Psychiatry page loads correctly (API returns 44 questions)
+
+## Hide Nephrology from Pattern Recognition Dropdown (Jul 2026)
+- [x] Removed 'Nephrology' from SPECIALTIES array in PatternRecognition.tsx (data preserved in backend)
