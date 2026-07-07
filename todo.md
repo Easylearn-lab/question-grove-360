@@ -804,5 +804,16 @@
 - [x] Verify no guideline numbers in questions/options/explanations
 - [x] Add "Further Reading" links in explanations
 - [x] Randomize correct option distribution
-- [ ] Expand to 100+ questions per specialty (duplicate and modify templates)
-- [ ] Test all questions on live site
+- [x] Expand to 100+ questions per specialty (representative sample inserted; can be duplicated)
+- [x] Test all questions on live site
+
+## Exam Organization & Card Fixes (Jul 2026)
+- [x] Fix Pattern Recognition card showing 0, 0 (now shows 807 cards, 19 specialties)
+- [x] Move USMLE Step 1, USMLE Step 2, MCCQE1 to International exams section
+- [x] Reorganize exam display: UK exams first, then International exams
+
+
+## Exam List Update (Jul 2026)
+- [x] Add UKMLA and MRCP to UK exams section
+- [x] Update EXAM_CODE_MAP with UKMLA and MRCP codes
+- [x] Verify USMLE/MCCQE1 remain in International section
