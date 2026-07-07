@@ -178,7 +178,8 @@ export default function DashboardRedesigned() {
   }
 
   // Build exam list from database or fallback
-  const exams = examsQuery.data && examsQuery.data.length > 0
+  // Organize exams by category
+  const baseExams = examsQuery.data && examsQuery.data.length > 0
     ? examsQuery.data.map((e) => ({ id: e.name, name: e.name, category: e.category || "UK", questionCount: e.questionCount }))
     : [
         { id: "MRCGP AKT", name: "MRCGP AKT", category: "UK", questionCount: 0 },
@@ -189,6 +190,11 @@ export default function DashboardRedesigned() {
         { id: "USMLE Step 2", name: "USMLE Step 2", category: "International", questionCount: 0 },
         { id: "MCCQE1", name: "MCCQE1", category: "International", questionCount: 0 },
       ];
+
+  // Organize exams by category for display
+  const ukExams = baseExams.filter(e => e.category === "UK");
+  const internationalExams = baseExams.filter(e => e.category === "International");
+  const exams = [...ukExams, ...internationalExams];
 
   const selectedExamData = exams.find((e) => e.id === selectedExam);
   const hasNoData = !stats || stats.totalQuestions === 0;

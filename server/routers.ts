@@ -454,19 +454,31 @@ export const appRouter = router({
   // Flashcards Router
   flashcards: router({
     getFlashcardCounts: publicProcedure.query(async () => {
-      const db = await import("./db");
-      const { flashcards } = await import("../drizzle/schema");
-      const { eq, sql } = await import("drizzle-orm");
-      const dbInstance = await db.getDb();
-      if (!dbInstance) return { totalCards: 0, distinctSpecialties: 0 };
-      
-      const countResult = await dbInstance.execute(sql`SELECT COUNT(*) as total FROM flashcards WHERE examId = 1`);
-      const specialtyResult = await dbInstance.execute(sql`SELECT COUNT(DISTINCT specialty) as count FROM flashcards WHERE examId = 1`);
-      
-      const totalCards = (countResult as any)[0]?.total || 0;
-      const distinctSpecialties = (specialtyResult as any)[0]?.count || 0;
-      
-      return { totalCards, distinctSpecialties };
+      try {
+        const mysql = await import("mysql2/promise");
+        const url = new URL(process.env.DATABASE_URL || "");
+        const connection = await mysql.createConnection({
+          host: url.hostname,
+          port: url.port ? parseInt(url.port) : 3306,
+          user: url.username,
+          password: url.password,
+          database: url.pathname.slice(1),
+          ssl: {},
+        } as any);
+        
+        const [countRows] = await connection.execute("SELECT COUNT(*) as total FROM flashcards WHERE examId = 1");
+        const [specialtyRows] = await connection.execute("SELECT COUNT(DISTINCT specialty) as count FROM flashcards WHERE examId = 1");
+        
+        await connection.end();
+        
+        const totalCards = (countRows as any)[0]?.total || 0;
+        const distinctSpecialties = (specialtyRows as any)[0]?.count || 0;
+        
+        return { totalCards, distinctSpecialties };
+      } catch (error) {
+        console.error("Error fetching flashcard counts:", error);
+        return { totalCards: 0, distinctSpecialties: 0 };
+      }
     }),
     getFlashcard: protectedProcedure
       .input(z.number())
