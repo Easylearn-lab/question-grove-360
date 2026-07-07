@@ -41,6 +41,7 @@ export default function MRCGPAKTSpecialties() {
   const specialtiesQuery = trpc.mrcgpAkt.getSpecialties.useQuery();
   const readinessQuery = trpc.dashboard.getReadinessScore.useQuery();
   const fingerprintQuery = trpc.dashboard.getWeaknessFingerprint.useQuery();
+  const flashcardCountsQuery = trpc.flashcards.getFlashcardCounts.useQuery();
 
   const specialties = useMemo(() => {
     if (!specialtiesQuery.data) return [];
@@ -214,7 +215,7 @@ export default function MRCGPAKTSpecialties() {
         {/* Mock Exams, Note360, Pattern Recognition & Picture360 Cards */}
         <div className="grid md:grid-cols-4 gap-6 mb-12">
           {/* Mock Exams Card */}
-          <Card className="p-8 border-slate-200 hover:shadow-lg transition-all cursor-pointer bg-gradient-to-br from-blue-50 to-blue-100" onClick={() => navigate("/mock-exams")}>
+          <Card className="p-8 border-slate-200 hover:shadow-lg transition-all cursor-pointer bg-gradient-to-br from-blue-50 to-blue-100 flex flex-col" onClick={() => navigate("/mock-exams")}>
             <div className="flex items-start justify-between mb-4">
               <div>
                 <h3 className="text-2xl font-bold text-slate-900 mb-2">Mock Exams</h3>
@@ -222,13 +223,13 @@ export default function MRCGPAKTSpecialties() {
               </div>
               <span className="text-4xl">📝</span>
             </div>
-            <Button className="w-full mt-6 bg-blue-600 hover:bg-blue-700 text-white">
+            <Button className="w-full mt-auto bg-blue-600 hover:bg-blue-700 text-white">
               Start Mock Exam →
             </Button>
           </Card>
 
           {/* Note360 Card */}
-          <Card className="p-8 border-slate-200 hover:shadow-lg transition-all cursor-pointer bg-gradient-to-br from-green-50 to-green-100" onClick={() => navigate("/mrcgp-akt/note360")}>
+          <Card className="p-8 border-slate-200 hover:shadow-lg transition-all cursor-pointer bg-gradient-to-br from-green-50 to-green-100 flex flex-col" onClick={() => navigate("/mrcgp-akt/note360")}>
             <div className="flex items-start justify-between mb-4">
               <div>
                 <h3 className="text-2xl font-bold text-slate-900 mb-2">Note360</h3>
@@ -236,27 +237,27 @@ export default function MRCGPAKTSpecialties() {
               </div>
               <span className="text-4xl">📓</span>
             </div>
-            <Button className="w-full mt-6 bg-[#32CD32] hover:bg-[#2ab82a] text-[#1A1A1A] font-semibold">
+            <Button className="w-full mt-auto bg-[#32CD32] hover:bg-[#2ab82a] text-[#1A1A1A] font-semibold">
               Open Note360 →
             </Button>
           </Card>
 
           {/* Pattern Recognition Card */}
-          <Card className="p-8 border-slate-200 hover:shadow-lg transition-all cursor-pointer bg-gradient-to-br from-purple-50 to-purple-100" onClick={() => navigate("/mrcgp-akt/flashcards")}>
+          <Card className="p-8 border-slate-200 hover:shadow-lg transition-all cursor-pointer bg-gradient-to-br from-purple-50 to-purple-100 flex flex-col" onClick={() => navigate("/mrcgp-akt/flashcards")}>
             <div className="flex items-start justify-between mb-4">
               <div>
                 <h3 className="text-2xl font-bold text-slate-900 mb-2">Pattern Recognition</h3>
-                <p className="text-slate-600">510 cards • 17 specialties</p>
+                <p className="text-slate-600">{flashcardCountsQuery.data?.totalCards || 0} cards • {flashcardCountsQuery.data?.distinctSpecialties || 0} specialties</p>
               </div>
               <span className="text-4xl">🃏</span>
             </div>
-            <Button className="w-full mt-6 bg-[#32CD32] hover:bg-[#2ab82a] text-[#1A1A1A] font-semibold">
+            <Button className="w-full mt-auto bg-[#32CD32] hover:bg-[#2ab82a] text-[#1A1A1A] font-semibold">
               Start Drilling →
             </Button>
           </Card>
 
           {/* Picture360 Card */}
-          <Card className="p-8 border-slate-200 bg-gradient-to-br from-orange-50 to-orange-100">
+          <Card className="p-8 border-slate-200 bg-gradient-to-br from-orange-50 to-orange-100 flex flex-col">
             <div className="flex items-start justify-between mb-4">
               <div>
                 <h3 className="text-2xl font-bold text-slate-900 mb-2">Picture Album</h3>
@@ -264,7 +265,7 @@ export default function MRCGPAKTSpecialties() {
               </div>
               <span className="text-4xl">📸</span>
             </div>
-            <Button disabled className="w-full mt-6 bg-gray-400 text-gray-600 cursor-not-allowed font-semibold">
+            <Button disabled className="w-full mt-auto bg-gray-400 text-gray-600 cursor-not-allowed font-semibold">
               Coming Soon
             </Button>
           </Card>

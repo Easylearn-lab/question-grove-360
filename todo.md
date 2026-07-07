@@ -787,3 +787,22 @@
 
 ## Hide Nephrology from Pattern Recognition Dropdown (Jul 2026)
 - [x] Removed 'Nephrology' from SPECIALTIES array in PatternRecognition.tsx (data preserved in backend)
+
+
+## Pattern Recognition Card & Dashboard Button Alignment (Jul 2026)
+- [x] Create tRPC procedure to fetch dynamic flashcard counts (total cards + distinct specialties)
+- [x] Update Pattern Recognition card in MRCGPAKTSpecialties.tsx to use dynamic counts
+- [x] Align all dashboard card buttons to the same baseline (flex flex-col + mt-auto)
+- [x] Test on live site (dynamic counts working, buttons aligned)
+
+## Add Hard Questions Per Specialty (Jul 2026)
+- [x] Generate template-based hard questions for Psychiatry (11 questions)
+- [x] Generate template-based hard questions for Statistics & EBM (10 questions)
+- [x] Generate template-based hard questions for Infectious Disease (10 questions)
+- [x] Generate template-based hard questions for Ophthalmology (10 questions)
+- [x] Insert 41 questions with proper formatting
+- [x] Verify no guideline numbers in questions/options/explanations
+- [x] Add "Further Reading" links in explanations
+- [x] Randomize correct option distribution
+- [ ] Expand to 100+ questions per specialty (duplicate and modify templates)
+- [ ] Test all questions on live site
