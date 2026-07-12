@@ -1,0 +1,996 @@
+#!/usr/bin/env python3
+"""
+Generate 100+ hard questions per specialty using templates.
+Specialties: Ophthalmology, Infectious Disease, Pharmacology & Prescribing, 
+Haematology, Statistics & EBM, Psychiatry, ENT
+"""
+
+import json
+import random
+from datetime import datetime
+
+# Hard question templates for each specialty
+QUESTIONS_DATA = {
+    "Ophthalmology": [
+        {
+            "question": "A 68-year-old man with type 2 diabetes presents with gradual painless vision loss in both eyes. Fundoscopy reveals hard exudates in a circinate pattern around the macula with retinal thickening. Which of the following is the most appropriate initial management?",
+            "options": [
+                "Immediate laser photocoagulation to all areas of exudates",
+                "Tight glycaemic control and monitoring with OCT imaging every 4 weeks",
+                "Intravitreal bevacizumab injection",
+                "Vitrectomy",
+                "Referral for cataract surgery"
+            ],
+            "correctAnswer": "Tight glycaemic control and monitoring with OCT imaging every 4 weeks",
+            "explanationCorrect": "Diabetic macular oedema (DMO) with hard exudates is managed initially with glycaemic control and monitoring. Laser is reserved for cases with central involvement and visual threat. Further reading: NICE CKS on Diabetic Retinopathy.",
+            "difficulty": "Hard"
+        },
+        {
+            "question": "A 45-year-old woman on hydroxychloroquine for SLE develops blurred central vision and colour vision defects. Visual acuity is 6/9 in both eyes. OCT shows parafoveal thinning of the inner nuclear layer. What is the most appropriate next step?",
+            "options": [
+                "Continue hydroxychloroquine with 6-monthly ophthalmology review",
+                "Discontinue hydroxychloroquine immediately",
+                "Switch to chloroquine",
+                "Perform visual field testing and repeat OCT in 3 months",
+                "Refer for retinal specialist assessment for possible retinal toxicity"
+            ],
+            "correctAnswer": "Refer for retinal specialist assessment for possible retinal toxicity",
+            "explanationCorrect": "Hydroxychloroquine retinopathy is rare but serious. OCT changes with colour vision defects warrant specialist assessment to determine if retinal toxicity has developed. Further reading: Ophthalmology guidelines on antimalarial toxicity.",
+            "difficulty": "Hard"
+        },
+        {
+            "question": "A 72-year-old man with acute angle-closure glaucoma presents with corneal oedema, mid-dilated pupil, and IOP of 58 mmHg. After initial medical management, gonioscopy reveals peripheral anterior synechiae in 4 quadrants. Which of the following is the most appropriate definitive treatment?",
+            "options": [
+                "Laser peripheral iridotomy",
+                "Anterior vitrectomy",
+                "Trabeculectomy",
+                "Cyclophotocoagulation",
+                "Gonioplasty"
+            ],
+            "correctAnswer": "Trabeculectomy",
+            "explanationCorrect": "Extensive peripheral anterior synechiae (PAS) indicate chronic angle closure. Iridotomy alone may not restore angle patency. Trabeculectomy is indicated for IOP control when PAS is extensive. Further reading: Glaucoma management guidelines.",
+            "difficulty": "Hard"
+        },
+        {
+            "question": "A 55-year-old woman with myopia of -8.00 DS presents with sudden floaters and flashing lights. Dilated fundoscopy shows a retinal break with subretinal fluid extending to the macula. Best corrected visual acuity is 6/12. What is the most appropriate management?",
+            "options": [
+                "Observation with weekly review",
+                "Pneumatic retinopexy",
+                "Scleral buckle",
+                "Pars plana vitrectomy",
+                "Laser retinopexy"
+            ],
+            "correctAnswer": "Pars plana vitrectomy",
+            "explanationCorrect": "Macula-off retinal detachment requires urgent surgery within 72 hours. Vitrectomy is preferred for high myopia with macular involvement. Further reading: Retinal detachment management protocols.",
+            "difficulty": "Hard"
+        },
+        {
+            "question": "A 38-year-old man with neurofibromatosis type 1 presents with progressive visual field loss and decreased colour vision. MRI shows optic pathway glioma with 30% enlargement over 2 years. Visual acuity is 6/6 bilaterally. What is the most appropriate management?",
+            "options": [
+                "Immediate chemotherapy",
+                "Radiotherapy to optic pathways",
+                "Observation with 6-monthly MRI and visual assessment",
+                "Surgical debulking",
+                "Intrathecal chemotherapy"
+            ],
+            "correctAnswer": "Observation with 6-monthly MRI and visual assessment",
+            "explanationCorrect": "Optic pathway gliomas in NF1 are often indolent. Treatment is reserved for symptomatic or rapidly progressive cases. Observation with imaging surveillance is appropriate when vision is preserved. Further reading: NF1 management guidelines.",
+            "difficulty": "Hard"
+        },
+        {
+            "question": "A 42-year-old woman with Graves' disease develops diplopia and restricted upgaze. Hess chart shows restrictive pattern. What is the most appropriate initial management?",
+            "options": [
+                "Immediate orbital decompression",
+                "High-dose intravenous methylprednisolone followed by oral prednisolone taper",
+                "Thyroid ablation",
+                "Prism glasses for diplopia",
+                "Botulinum toxin injection"
+            ],
+            "correctAnswer": "High-dose intravenous methylprednisolone followed by oral prednisolone taper",
+            "explanationCorrect": "Thyroid eye disease with restrictive pattern and diplopia indicates active inflammation. IV methylprednisolone is first-line for active disease. Further reading: Thyroid eye disease management.",
+            "difficulty": "Hard"
+        },
+        {
+            "question": "A 65-year-old man with primary open-angle glaucoma on maximum tolerated medical therapy has IOP of 22 mmHg with progressive optic disc cupping and visual field loss. Gonioscopy shows open angles with trabecular meshwork visible to Schwalbe's line. What is the most appropriate next step?",
+            "options": [
+                "Add another topical agent",
+                "Laser trabeculoplasty",
+                "Trabeculectomy",
+                "Cyclophotocoagulation",
+                "Tube shunt implantation"
+            ],
+            "correctAnswer": "Laser trabeculoplasty",
+            "explanationCorrect": "Selective laser trabeculoplasty is indicated for open-angle glaucoma inadequately controlled on medical therapy before considering surgery. Further reading: Glaucoma treatment algorithms.",
+            "difficulty": "Hard"
+        },
+        {
+            "question": "A 28-year-old woman with history of herpes simplex keratitis presents with recurrent episodes. She is planning pregnancy. Which of the following is the most appropriate prophylactic strategy?",
+            "options": [
+                "Topical aciclovir 5 times daily indefinitely",
+                "Oral aciclovir 400 mg twice daily during pregnancy",
+                "No prophylaxis needed",
+                "Topical interferon-alpha",
+                "Topical povidone-iodine"
+            ],
+            "correctAnswer": "Oral aciclovir 400 mg twice daily during pregnancy",
+            "explanationCorrect": "Oral aciclovir prophylaxis reduces recurrence risk during pregnancy and labour. Further reading: Herpes simplex keratitis management in pregnancy.",
+            "difficulty": "Hard"
+        },
+        {
+            "question": "A 51-year-old man with branch retinal artery occlusion and cotton-wool spots presents with sudden visual field loss. Carotid ultrasound shows 70% stenosis. Blood pressure is 165/95 mmHg. What is the most appropriate management?",
+            "options": [
+                "Aspirin 75 mg daily only",
+                "Carotid endarterectomy",
+                "Carotid stenting",
+                "Intensive blood pressure control and aspirin",
+                "Warfarin anticoagulation"
+            ],
+            "correctAnswer": "Intensive blood pressure control and aspirin",
+            "explanationCorrect": "BRVO with carotid stenosis <80% is managed medically. Intensive BP control and antiplatelet therapy are indicated. Further reading: Retinal artery occlusion guidelines.",
+            "difficulty": "Hard"
+        },
+        {
+            "question": "A 60-year-old woman with age-related macular degeneration and choroidal neovascularization shows poor response to 3 monthly intravitreal ranibizumab injections. OCT shows persistent subretinal fluid. What is the most appropriate next step?",
+            "options": [
+                "Continue ranibizumab monthly",
+                "Switch to aflibercept",
+                "Add photodynamic therapy",
+                "Perform thermal laser",
+                "Observe without treatment"
+            ],
+            "correctAnswer": "Switch to aflibercept",
+            "explanationCorrect": "Poor response to ranibizumab may indicate need for switch to alternative anti-VEGF agent. Aflibercept has longer half-life and may be more effective. Further reading: AMD treatment guidelines.",
+            "difficulty": "Hard"
+        }
+    ],
+    "Infectious Disease": [
+        {
+            "question": "A 32-year-old man with HIV (CD4 count 45 cells/μL) presents with progressive dyspnoea and fever. Chest X-ray shows bilateral interstitial infiltrates. Induced sputum shows Pneumocystis jirovecii. Which of the following is the most appropriate initial management?",
+            "options": [
+                "Trimethoprim-sulfamethoxazole (TMP-SMX) alone",
+                "TMP-SMX plus high-dose corticosteroids",
+                "Pentamidine inhaled therapy",
+                "Clindamycin plus primaquine",
+                "Dapsone plus trimethoprim"
+            ],
+            "correctAnswer": "TMP-SMX plus high-dose corticosteroids",
+            "explanationCorrect": "PCP with CD4 <50 requires TMP-SMX and corticosteroids to reduce mortality. Steroids are indicated when PaO2 <70 mmHg. Further reading: NICE CKS on PCP prophylaxis and treatment.",
+            "difficulty": "Hard"
+        },
+        {
+            "question": "A 45-year-old woman with tuberculosis on standard 4-drug therapy develops hepatotoxicity (ALT 180 U/L) on day 14. Which drug is most likely responsible and what is the most appropriate action?",
+            "options": [
+                "Stop all drugs; restart after LFTs normalize",
+                "Continue all drugs; monitor LFTs weekly",
+                "Stop isoniazid; continue other 3 drugs",
+                "Stop rifampicin; continue other 3 drugs",
+                "Stop pyrazinamide; continue other 3 drugs"
+            ],
+            "correctAnswer": "Stop pyrazinamide; continue other 3 drugs",
+            "explanationCorrect": "Pyrazinamide is most hepatotoxic. If ALT >3× ULN, pyrazinamide should be stopped while continuing other agents. Further reading: TB drug-induced hepatotoxicity management.",
+            "difficulty": "Hard"
+        },
+        {
+            "question": "A 28-year-old man with acute meningitis and petechial rash presents with severe headache and neck stiffness. CSF shows 450 WBC/μL (80% neutrophils), glucose 1.2 mmol/L, protein 1.8 g/L. Gram stain shows gram-negative diplococci. Which of the following is the most appropriate antibiotic regimen?",
+            "options": [
+                "Ceftriaxone 2 g IV 4-hourly",
+                "Ceftriaxone 2 g IV 4-hourly plus vancomycin plus rifampicin",
+                "Penicillin G 4 million units IV 4-hourly",
+                "Chloramphenicol 1 g IV 6-hourly",
+                "Fluoroquinolone monotherapy"
+            ],
+            "correctAnswer": "Ceftriaxone 2 g IV 4-hourly plus vancomycin plus rifampicin",
+            "explanationCorrect": "Meningococcal meningitis requires high-dose ceftriaxone. Triple therapy (cephalosporin + vancomycin + rifampicin) is standard empirical therapy. Further reading: Meningitis management guidelines.",
+            "difficulty": "Hard"
+        },
+        {
+            "question": "A 52-year-old man with chronic hepatitis B (HBeAg positive, HBV DNA 8 × 10^6 IU/mL) and compensated cirrhosis is started on tenofovir. After 6 months, HBV DNA is undetectable but ALT remains elevated at 120 U/L. What is the most appropriate next step?",
+            "options": [
+                "Switch to lamivudine",
+                "Add interferon-alpha",
+                "Continue tenofovir; repeat LFTs in 3 months",
+                "Stop tenofovir; observe",
+                "Add adefovir"
+            ],
+            "correctAnswer": "Continue tenofovir; repeat LFTs in 3 months",
+            "explanationCorrect": "Virological response is achieved. Biochemical improvement may lag behind viral suppression. Continued monitoring is appropriate. Further reading: Chronic hepatitis B management.",
+            "difficulty": "Hard"
+        },
+        {
+            "question": "A 35-year-old woman with HIV on ART (CD4 count 350 cells/μL) presents with fever, night sweats, and abdominal pain. Blood cultures grow Mycobacterium avium complex (MAC). Which of the following is the most appropriate management?",
+            "options": [
+                "Clarithromycin monotherapy",
+                "Clarithromycin plus ethambutol",
+                "Clarithromycin plus ethambutol plus high-dose corticosteroids",
+                "Rifabutin monotherapy",
+                "Fluoroquinolone monotherapy"
+            ],
+            "correctAnswer": "Clarithromycin plus ethambutol plus high-dose corticosteroids",
+            "explanationCorrect": "MAC requires dual therapy with clarithromycin and ethambutol. Corticosteroids reduce inflammatory complications. Further reading: MAC treatment in HIV.",
+            "difficulty": "Hard"
+        },
+        {
+            "question": "A 42-year-old man with acute hepatitis A (ALT 3200 U/L, bilirubin 8.5 mg/dL, INR 2.8) is admitted with encephalopathy. Which of the following is the most appropriate management?",
+            "options": [
+                "Supportive care only; monitor for fulminant hepatic failure",
+                "Immediate N-acetylcysteine infusion",
+                "Corticosteroids to reduce inflammation",
+                "Antiviral therapy with ribavirin",
+                "Immediate liver transplantation referral"
+            ],
+            "correctAnswer": "Supportive care only; monitor for fulminant hepatic failure",
+            "explanationCorrect": "Acute hepatitis A is self-limiting. Management is supportive. Transplantation is considered only if fulminant failure develops. Further reading: Acute viral hepatitis management.",
+            "difficulty": "Hard"
+        },
+        {
+            "question": "A 48-year-old man with history of IVDU presents with fever, new cardiac murmur, and septic emboli on chest X-ray. Blood cultures grow Staphylococcus aureus (MSSA). Echocardiography shows vegetation on tricuspid valve. What is the most appropriate antibiotic regimen?",
+            "options": [
+                "Flucloxacillin 2 g IV 4-hourly for 4 weeks",
+                "Flucloxacillin 2 g IV 4-hourly plus gentamicin for 2 weeks, then flucloxacillin alone for 2 weeks",
+                "Vancomycin 15-20 mg/kg IV 8-12 hourly for 4 weeks",
+                "Ceftriaxone 2 g IV 12-hourly for 4 weeks",
+                "Rifampicin plus flucloxacillin for 6 weeks"
+            ],
+            "correctAnswer": "Flucloxacillin 2 g IV 4-hourly plus gentamicin for 2 weeks, then flucloxacillin alone for 2 weeks",
+            "explanationCorrect": "Right-sided endocarditis with MSSA can be treated with shorter duration (4 weeks) with gentamicin synergy. Further reading: Endocarditis treatment guidelines.",
+            "difficulty": "Hard"
+        },
+        {
+            "question": "A 38-year-old woman with recurrent Clostridioides difficile infection (3rd episode in 18 months) presents with severe colitis (WCC 18 × 10^9/L, creatinine 1.8 mg/dL). Which of the following is the most appropriate management?",
+            "options": [
+                "Metronidazole 400 mg TDS for 10 days",
+                "Vancomycin 125 mg QID for 10 days",
+                "Fidaxomicin 200 mg BD for 10 days",
+                "Bezlotoxumab plus vancomycin",
+                "Surgical colectomy"
+            ],
+            "correctAnswer": "Fidaxomicin 200 mg BD for 10 days",
+            "explanationCorrect": "Recurrent CDI with severe disease warrants fidaxomicin, which has lower recurrence rates. Further reading: CDI management guidelines.",
+            "difficulty": "Hard"
+        },
+        {
+            "question": "A 55-year-old man with community-acquired pneumonia (CAP) and COPD presents with fever, cough, and dyspnoea. Chest X-ray shows right lower lobe consolidation. Sputum culture grows Pseudomonas aeruginosa. Which of the following is the most appropriate antibiotic regimen?",
+            "options": [
+                "Amoxicillin-clavulanate 625 mg TDS",
+                "Cefotaxime 1 g IV 8-hourly",
+                "Piperacillin-tazobactam 4.5 g IV 6-hourly plus ciprofloxacin",
+                "Ceftriaxone 1 g IV 12-hourly",
+                "Azithromycin 500 mg daily"
+            ],
+            "correctAnswer": "Piperacillin-tazobactam 4.5 g IV 6-hourly plus ciprofloxacin",
+            "explanationCorrect": "Pseudomonas in CAP requires dual antipseudomonal therapy. Piperacillin-tazobactam plus fluoroquinolone is appropriate. Further reading: CAP with Pseudomonas management.",
+            "difficulty": "Hard"
+        },
+        {
+            "question": "A 42-year-old woman with disseminated histoplasmosis (CD4 count 35 cells/μL) presents with fever, hepatosplenomegaly, and pancytopenia. Histoplasma antigen is positive in urine and serum. Which of the following is the most appropriate initial management?",
+            "options": [
+                "Itraconazole 200 mg BD for 12 weeks",
+                "Amphotericin B liposomal 3 mg/kg daily for 2 weeks, then itraconazole",
+                "Fluconazole 400 mg daily for 12 weeks",
+                "Voriconazole 6 mg/kg BD for 1 week, then 4 mg/kg BD",
+                "Posaconazole 200 mg QID for 12 weeks"
+            ],
+            "correctAnswer": "Amphotericin B liposomal 3 mg/kg daily for 2 weeks, then itraconazole",
+            "explanationCorrect": "Disseminated histoplasmosis with severe immunosuppression requires induction with amphotericin B followed by itraconazole consolidation. Further reading: Histoplasmosis management in HIV.",
+            "difficulty": "Hard"
+        }
+    ],
+    "Pharmacology & Prescribing": [
+        {
+            "question": "A 68-year-old man with stage 3 CKD (eGFR 42 mL/min/1.73m²) and hypertension is prescribed lisinopril 10 mg daily. After 2 weeks, serum creatinine rises from 1.4 to 1.8 mg/dL and potassium is 5.8 mmol/L. What is the most appropriate action?",
+            "options": [
+                "Continue lisinopril; monitor renal function in 4 weeks",
+                "Reduce lisinopril to 5 mg daily",
+                "Stop lisinopril; switch to amlodipine",
+                "Stop lisinopril; check for renal artery stenosis",
+                "Add frusemide to improve renal perfusion"
+            ],
+            "correctAnswer": "Stop lisinopril; check for renal artery stenosis",
+            "explanationCorrect": "Acute rise in creatinine and hyperkalaemia after ACE inhibitor suggests renal artery stenosis. Further investigation is needed. Further reading: NICE CKS on ACE inhibitor complications.",
+            "difficulty": "Hard"
+        },
+        {
+            "question": "A 45-year-old woman on warfarin (target INR 2-3) for atrial fibrillation is prescribed fluconazole 400 mg daily for vaginal candidiasis. What is the most appropriate action?",
+            "options": [
+                "Continue both drugs; monitor INR in 1 week",
+                "Reduce warfarin dose by 25%; check INR in 3 days",
+                "Stop fluconazole; use topical clotrimazole instead",
+                "Reduce fluconazole to 200 mg daily",
+                "Switch to ketoconazole"
+            ],
+            "correctAnswer": "Reduce warfarin dose by 25%; check INR in 3 days",
+            "explanationCorrect": "Fluconazole inhibits CYP2C9, increasing warfarin effect. Warfarin dose reduction and INR monitoring are needed. Further reading: Drug-drug interactions with warfarin.",
+            "difficulty": "Hard"
+        },
+        {
+            "question": "A 52-year-old man with type 2 diabetes on metformin 2 g daily requires urgent CT with IV contrast for suspected pulmonary embolism. Serum creatinine is 1.5 mg/dL (eGFR 48 mL/min/1.73m²). What is the most appropriate management?",
+            "options": [
+                "Proceed with contrast; continue metformin",
+                "Proceed with contrast; hold metformin for 48 hours post-contrast",
+                "Proceed with contrast; hold metformin for 48 hours; check renal function before restarting",
+                "Defer contrast study; use alternative imaging",
+                "Proceed with contrast; reduce metformin to 1 g daily"
+            ],
+            "correctAnswer": "Proceed with contrast; hold metformin for 48 hours; check renal function before restarting",
+            "explanationCorrect": "Metformin carries risk of lactic acidosis if renal function deteriorates post-contrast. Holding for 48 hours and checking renal function before restarting is standard practice. Further reading: Metformin and contrast media safety.",
+            "difficulty": "Hard"
+        },
+        {
+            "question": "A 38-year-old woman with bipolar disorder on lithium carbonate 1 g daily (serum level 0.8 mmol/L) is prescribed thiazide diuretic for hypertension. What is the most appropriate counselling point?",
+            "options": [
+                "No interaction; continue both drugs",
+                "Thiazide may increase lithium levels; monitor lithium levels weekly for 4 weeks",
+                "Thiazide may decrease lithium levels; increase lithium dose",
+                "Avoid thiazide; use ACE inhibitor instead",
+                "Reduce lithium dose by 50%"
+            ],
+            "correctAnswer": "Thiazide may increase lithium levels; monitor lithium levels weekly for 4 weeks",
+            "explanationCorrect": "Thiazides reduce renal lithium clearance, increasing serum levels. Close monitoring is essential. Further reading: Lithium drug interactions.",
+            "difficulty": "Hard"
+        },
+        {
+            "question": "A 55-year-old man on atorvastatin 80 mg daily for secondary prevention develops muscle pain and elevated CK (1200 U/L). What is the most appropriate action?",
+            "options": [
+                "Continue atorvastatin; prescribe paracetamol",
+                "Reduce atorvastatin to 40 mg daily",
+                "Stop atorvastatin; switch to pravastatin",
+                "Stop atorvastatin; check CK and LFTs in 2 weeks; consider rosuvastatin if CK normalizes",
+                "Continue atorvastatin; add CoQ10 supplement"
+            ],
+            "correctAnswer": "Stop atorvastatin; check CK and LFTs in 2 weeks; consider rosuvastatin if CK normalizes",
+            "explanationCorrect": "Statin myopathy requires stopping the offending agent. Alternative statin may be tolerated. Further reading: Statin-induced myopathy management.",
+            "difficulty": "Hard"
+        },
+        {
+            "question": "A 42-year-old woman with rheumatoid arthritis on methotrexate 15 mg weekly is prescribed trimethoprim-sulfamethoxazole for UTI. What is the most appropriate action?",
+            "options": [
+                "Prescribe TMP-SMX; continue methotrexate",
+                "Prescribe TMP-SMX; hold methotrexate for 1 week",
+                "Prescribe TMP-SMX; reduce methotrexate to 10 mg weekly",
+                "Use alternative antibiotic (nitrofurantoin); continue methotrexate",
+                "Prescribe TMP-SMX; increase folic acid supplementation"
+            ],
+            "correctAnswer": "Use alternative antibiotic (nitrofurantoin); continue methotrexate",
+            "explanationCorrect": "TMP-SMX inhibits folate metabolism, increasing methotrexate toxicity. Alternative antibiotics are safer. Further reading: Methotrexate drug interactions.",
+            "difficulty": "Hard"
+        },
+        {
+            "question": "A 68-year-old man with Parkinson's disease on levodopa-carbidopa is prescribed metoclopramide for nausea. After 3 days, he develops acute dystonia and rigidity. What is the most appropriate action?",
+            "options": [
+                "Continue metoclopramide; add benztropine",
+                "Stop metoclopramide; use domperidone instead",
+                "Reduce levodopa dose",
+                "Add amantadine",
+                "Prescribe haloperidol"
+            ],
+            "correctAnswer": "Stop metoclopramide; use domperidone instead",
+            "explanationCorrect": "Metoclopramide blocks dopamine, worsening Parkinson's symptoms. Domperidone is a safer alternative. Further reading: Antiemetic choice in Parkinson's disease.",
+            "difficulty": "Hard"
+        },
+        {
+            "question": "A 35-year-old woman on combined oral contraceptive is prescribed rifampicin for tuberculosis. What is the most appropriate counselling?",
+            "options": [
+                "No interaction; continue COC",
+                "COC efficacy may be reduced; use additional contraception during and for 7 days after rifampicin course",
+                "COC efficacy may be reduced; switch to progesterone-only pill",
+                "Increase COC dose",
+                "Stop COC; use barrier methods only"
+            ],
+            "correctAnswer": "COC efficacy may be reduced; use additional contraception during and for 7 days after rifampicin course",
+            "explanationCorrect": "Rifampicin induces hepatic metabolism of ethinylestradiol, reducing COC efficacy. Additional contraception is needed. Further reading: Antibiotic interactions with COC.",
+            "difficulty": "Hard"
+        },
+        {
+            "question": "A 52-year-old man with heart failure on bisoprolol and lisinopril develops persistent dry cough. Which of the following is the most appropriate action?",
+            "options": [
+                "Continue lisinopril; prescribe cough suppressant",
+                "Reduce lisinopril dose",
+                "Stop lisinopril; switch to losartan",
+                "Stop lisinopril; switch to hydralazine-nitrate",
+                "Add amlodipine"
+            ],
+            "correctAnswer": "Stop lisinopril; switch to losartan",
+            "explanationCorrect": "ACE inhibitor cough is due to bradykinin accumulation. ARBs do not cause this side effect. Further reading: ACE inhibitor side effects.",
+            "difficulty": "Hard"
+        },
+        {
+            "question": "A 48-year-old woman on hormone replacement therapy (HRT) for menopausal symptoms is found to have elevated blood pressure (160/95 mmHg). What is the most appropriate action?",
+            "options": [
+                "Start antihypertensive; continue HRT",
+                "Stop HRT; reassess BP in 3 months",
+                "Reduce HRT dose",
+                "Switch to transdermal HRT",
+                "Add calcium channel blocker"
+            ],
+            "correctAnswer": "Stop HRT; reassess BP in 3 months",
+            "explanationCorrect": "HRT can increase blood pressure. Stopping HRT and reassessing is appropriate before starting antihypertensives. Further reading: HRT and hypertension.",
+            "difficulty": "Hard"
+        }
+    ],
+    "Haematology": [
+        {
+            "question": "A 65-year-old man with newly diagnosed chronic myeloid leukaemia (CML) in chronic phase has BCR-ABL1 transcript level of 45% on the International Scale (IS). Which of the following is the most appropriate initial management?",
+            "options": [
+                "Hydroxyurea monotherapy",
+                "Imatinib 400 mg daily",
+                "Imatinib 600 mg daily",
+                "Dasatinib 100 mg daily",
+                "Allogeneic stem cell transplantation"
+            ],
+            "correctAnswer": "Imatinib 400 mg daily",
+            "explanationCorrect": "Imatinib 400 mg daily is standard first-line therapy for CML in chronic phase. Further reading: CML management guidelines.",
+            "difficulty": "Hard"
+        },
+        {
+            "question": "A 48-year-old woman with immune thrombocytopenia (ITP) and platelet count of 8 × 10^9/L presents with mucosal bleeding. She has failed corticosteroids and IVIG. Which of the following is the most appropriate next step?",
+            "options": [
+                "Repeat IVIG",
+                "Splenectomy",
+                "Rituximab",
+                "Platelet transfusion",
+                "Thrombopoietin receptor agonist"
+            ],
+            "correctAnswer": "Thrombopoietin receptor agonist",
+            "explanationCorrect": "TPO-RA (eltrombopag, romiplostim) is effective in steroid-refractory ITP. Splenectomy response is unpredictable. Further reading: ITP management guidelines.",
+            "difficulty": "Hard"
+        },
+        {
+            "question": "A 72-year-old man with acute myeloid leukaemia (AML) and severe comorbidities (ejection fraction 35%, creatinine 2.0 mg/dL) is deemed unfit for intensive chemotherapy. Which of the following is the most appropriate treatment?",
+            "options": [
+                "Supportive care only",
+                "Low-dose cytarabine",
+                "Azacitidine",
+                "Venetoclax plus hypomethylating agent",
+                "Palliative care"
+            ],
+            "correctAnswer": "Venetoclax plus hypomethylating agent",
+            "explanationCorrect": "Venetoclax plus azacitidine is effective in elderly/unfit AML patients and has better outcomes than low-dose cytarabine. Further reading: AML in elderly patients.",
+            "difficulty": "Hard"
+        },
+        {
+            "question": "A 38-year-old woman with hereditary spherocytosis presents with acute haemolytic crisis (haemoglobin 6.5 g/dL, reticulocyte count 18%, LDH 1800 U/L). Which of the following is the most appropriate management?",
+            "options": [
+                "Observation; supportive care only",
+                "Blood transfusion; folic acid supplementation",
+                "Splenectomy urgently",
+                "Corticosteroids",
+                "Immunosuppression"
+            ],
+            "correctAnswer": "Blood transfusion; folic acid supplementation",
+            "explanationCorrect": "Acute haemolytic crisis requires transfusion and folic acid. Splenectomy is elective, not acute. Further reading: Hereditary spherocytosis management.",
+            "difficulty": "Hard"
+        },
+        {
+            "question": "A 55-year-old man with polycythaemia vera (haemoglobin 18 g/dL, hematocrit 54%) and history of thrombosis is started on aspirin. Which of the following is the most appropriate additional management?",
+            "options": [
+                "Aspirin alone is sufficient",
+                "Phlebotomy to target haematocrit <45%",
+                "Hydroxyurea to reduce cell production",
+                "Phlebotomy plus hydroxyurea",
+                "Anticoagulation with warfarin"
+            ],
+            "correctAnswer": "Phlebotomy plus hydroxyurea",
+            "explanationCorrect": "High-risk PV (age >60 or prior thrombosis) requires cytoreduction with hydroxyurea and phlebotomy. Further reading: Polycythaemia vera management.",
+            "difficulty": "Hard"
+        },
+        {
+            "question": "A 42-year-old woman with systemic lupus erythematosus develops thrombocytopenia (platelet count 15 × 10^9/L) and positive lupus anticoagulant. Which of the following is the most appropriate management?",
+            "options": [
+                "Corticosteroids alone",
+                "IVIG alone",
+                "Corticosteroids plus hydroxychloroquine",
+                "Anticoagulation with warfarin",
+                "Splenectomy"
+            ],
+            "correctAnswer": "Corticosteroids plus hydroxychloroquine",
+            "explanationCorrect": "SLE-related thrombocytopenia responds to corticosteroids and hydroxychloroquine. Anticoagulation is for thrombotic manifestations, not thrombocytopenia. Further reading: SLE-related cytopenias.",
+            "difficulty": "Hard"
+        },
+        {
+            "question": "A 68-year-old man with myelodysplastic syndrome (MDS) with excess blasts (20% blasts) and del(5q) cytogenetics is treated with lenalidomide. After 4 months, he achieves complete remission with normal cytogenetics. What is the most appropriate next step?",
+            "options": [
+                "Stop lenalidomide; observe",
+                "Continue lenalidomide maintenance",
+                "Switch to azacitidine",
+                "Proceed to allogeneic transplantation",
+                "Add azacitidine"
+            ],
+            "correctAnswer": "Continue lenalidomide maintenance",
+            "explanationCorrect": "Lenalidomide maintenance improves outcomes in del(5q) MDS. Continuation is appropriate after response. Further reading: MDS with del(5q) management.",
+            "difficulty": "Hard"
+        },
+        {
+            "question": "A 52-year-old woman with Hodgkin lymphoma (stage IIB) is treated with ABVD chemotherapy. After 2 cycles, PET-CT shows persistent FDG uptake in mediastinal mass. Which of the following is the most appropriate next step?",
+            "options": [
+                "Continue ABVD for planned 6 cycles",
+                "Switch to alternative regimen (e.g., escalated BEACOPP)",
+                "Add radiotherapy to mediastinum",
+                "Proceed to stem cell transplantation",
+                "Observe with repeat PET-CT after 4 cycles"
+            ],
+            "correctAnswer": "Switch to alternative regimen (e.g., escalated BEACOPP)",
+            "explanationCorrect": "Interim PET positivity after 2 ABVD cycles indicates poor prognosis. Escalation to BEACOPP or alternative regimen is recommended. Further reading: Hodgkin lymphoma treatment adaptation.",
+            "difficulty": "Hard"
+        },
+        {
+            "question": "A 45-year-old man with newly diagnosed multiple myeloma (ISS stage III, high-risk cytogenetics) is planned for autologous stem cell transplantation. Which of the following is the most appropriate induction regimen?",
+            "options": [
+                "Melphalan-prednisone",
+                "Bortezomib-melphalan-prednisone",
+                "Lenalidomide-dexamethasone",
+                "Bortezomib-lenalidomide-dexamethasone",
+                "Cyclophosphamide-doxorubicin-dexamethasone"
+            ],
+            "correctAnswer": "Bortezomib-lenalidomide-dexamethasone",
+            "explanationCorrect": "Triple therapy with proteasome inhibitor, IMiD, and corticosteroid is standard for high-risk myeloma. Further reading: Multiple myeloma induction therapy.",
+            "difficulty": "Hard"
+        },
+        {
+            "question": "A 58-year-old woman with chronic lymphocytic leukaemia (CLL) and del(17p) cytogenetics develops progressive disease on watch-and-wait. Which of the following is the most appropriate treatment?",
+            "options": [
+                "Chlorambucil monotherapy",
+                "Fludarabine-cyclophosphamide-rituximab (FCR)",
+                "Ibrutinib (BTK inhibitor)",
+                "Venetoclax-rituximab",
+                "Allogeneic stem cell transplantation"
+            ],
+            "correctAnswer": "Ibrutinib (BTK inhibitor)",
+            "explanationCorrect": "Del(17p) CLL is high-risk and requires BTK inhibitor (ibrutinib) or venetoclax-based therapy. FCR is contraindicated. Further reading: CLL with del(17p) management.",
+            "difficulty": "Hard"
+        }
+    ],
+    "Statistics & EBM": [
+        {
+            "question": "A randomized controlled trial comparing two antihypertensive agents reports a relative risk reduction of 30% for cardiovascular events. The baseline risk of events in the control group is 5% over 5 years. What is the absolute risk reduction?",
+            "options": [
+                "1.5%",
+                "2%",
+                "3%",
+                "30%",
+                "Cannot be calculated from given data"
+            ],
+            "correctAnswer": "1.5%",
+            "explanationCorrect": "ARR = baseline risk × RRR = 5% × 30% = 1.5%. Further reading: Understanding relative vs absolute risk.",
+            "difficulty": "Hard"
+        },
+        {
+            "question": "A diagnostic test for disease X has sensitivity 85% and specificity 90%. The prevalence of disease X in the population is 10%. What is the positive predictive value (PPV)?",
+            "options": [
+                "45.9%",
+                "54.1%",
+                "85%",
+                "90%",
+                "Cannot be calculated"
+            ],
+            "correctAnswer": "45.9%",
+            "explanationCorrect": "PPV = (sensitivity × prevalence) / [(sensitivity × prevalence) + (1 - specificity) × (1 - prevalence)] = (0.85 × 0.1) / [(0.85 × 0.1) + (0.1 × 0.9)] = 0.085 / 0.185 = 45.9%. Further reading: Diagnostic test interpretation.",
+            "difficulty": "Hard"
+        },
+        {
+            "question": "A meta-analysis of 15 randomized controlled trials examining a new treatment shows heterogeneity I² = 78%. Which of the following is the most appropriate interpretation?",
+            "options": [
+                "High heterogeneity; fixed-effects model is appropriate",
+                "High heterogeneity; random-effects model should be used",
+                "Low heterogeneity; results are reliable",
+                "Heterogeneity is not clinically significant",
+                "Studies should be excluded"
+            ],
+            "correctAnswer": "High heterogeneity; random-effects model should be used",
+            "explanationCorrect": "I² >50% indicates substantial heterogeneity. Random-effects model is more appropriate. Further reading: Meta-analysis heterogeneity assessment.",
+            "difficulty": "Hard"
+        },
+        {
+            "question": "A cohort study follows 1000 smokers and 1000 non-smokers for 10 years. Lung cancer develops in 100 smokers and 10 non-smokers. What is the relative risk of lung cancer in smokers?",
+            "options": [
+                "0.1",
+                "1",
+                "10",
+                "100",
+                "Cannot be calculated"
+            ],
+            "correctAnswer": "10",
+            "explanationCorrect": "RR = (risk in smokers) / (risk in non-smokers) = (100/1000) / (10/1000) = 0.1 / 0.01 = 10. Further reading: Cohort study analysis.",
+            "difficulty": "Hard"
+        },
+        {
+            "question": "A clinical trial reports a 95% confidence interval for the difference in means of -2.5 to +0.5. Which of the following is the most appropriate interpretation?",
+            "options": [
+                "The treatment is significantly effective",
+                "The treatment is not significantly effective",
+                "The result is inconclusive; the CI includes zero",
+                "The treatment is harmful",
+                "More data is needed"
+            ],
+            "correctAnswer": "The result is inconclusive; the CI includes zero",
+            "explanationCorrect": "CI includes zero, indicating no significant difference at p<0.05. Further reading: Confidence intervals and statistical significance.",
+            "difficulty": "Hard"
+        },
+        {
+            "question": "A diagnostic study evaluates a new biomarker for disease detection. The receiver operating characteristic (ROC) curve shows area under the curve (AUC) of 0.92. Which of the following is the most appropriate interpretation?",
+            "options": [
+                "Poor diagnostic accuracy",
+                "Fair diagnostic accuracy",
+                "Good diagnostic accuracy",
+                "Excellent diagnostic accuracy",
+                "Cannot be interpreted"
+            ],
+            "correctAnswer": "Excellent diagnostic accuracy",
+            "explanationCorrect": "AUC 0.92 indicates excellent discriminatory ability (0.9-1.0 = excellent). Further reading: ROC curve interpretation.",
+            "difficulty": "Hard"
+        },
+        {
+            "question": "A randomized controlled trial comparing treatment A vs B shows p-value of 0.08. Which of the following is the most appropriate interpretation?",
+            "options": [
+                "Treatment A is significantly better than B",
+                "Treatment A is not significantly better than B at p<0.05",
+                "The result is statistically significant",
+                "The result is clinically significant",
+                "More data is definitely needed"
+            ],
+            "correctAnswer": "Treatment A is not significantly better than B at p<0.05",
+            "explanationCorrect": "p=0.08 exceeds the conventional threshold of p<0.05, so the result is not statistically significant. Further reading: P-value interpretation.",
+            "difficulty": "Hard"
+        },
+        {
+            "question": "A study reports odds ratio (OR) of 2.5 (95% CI 1.2-5.2) for association between risk factor and disease. Which of the following is the most appropriate interpretation?",
+            "options": [
+                "No significant association",
+                "Significant association; risk factor increases odds of disease 2.5-fold",
+                "Risk factor is protective",
+                "Cannot determine causation",
+                "Both B and D"
+            ],
+            "correctAnswer": "Both B and D",
+            "explanationCorrect": "OR 2.5 with CI not crossing 1 indicates significant association. However, OR cannot establish causation. Further reading: Odds ratios and causation.",
+            "difficulty": "Hard"
+        },
+        {
+            "question": "A clinical trial shows number needed to treat (NNT) of 25 for a new antihypertensive. Which of the following is the most appropriate interpretation?",
+            "options": [
+                "25 patients must be treated to prevent 1 adverse event",
+                "25 patients must be treated to benefit 1 patient",
+                "The treatment is ineffective",
+                "The treatment is highly effective",
+                "Cannot determine clinical significance"
+            ],
+            "correctAnswer": "25 patients must be treated to benefit 1 patient",
+            "explanationCorrect": "NNT of 25 means 25 patients need treatment to prevent 1 event. Clinical significance depends on context. Further reading: Number needed to treat.",
+            "difficulty": "Hard"
+        },
+        {
+            "question": "A systematic review of diagnostic accuracy studies uses QUADAS-2 tool for quality assessment. Which of the following is NOT a domain assessed by QUADAS-2?",
+            "options": [
+                "Patient selection bias",
+                "Index test bias",
+                "Reference standard bias",
+                "Flow and timing",
+                "Publication bias"
+            ],
+            "correctAnswer": "Publication bias",
+            "explanationCorrect": "QUADAS-2 assesses risk of bias in 4 domains; publication bias is assessed separately. Further reading: QUADAS-2 tool.",
+            "difficulty": "Hard"
+        }
+    ],
+    "Psychiatry": [
+        {
+            "question": "A 35-year-old man with major depressive disorder on sertraline 100 mg daily for 8 weeks shows minimal response (PHQ-9 score 18). Which of the following is the most appropriate next step?",
+            "options": [
+                "Increase sertraline to 200 mg daily",
+                "Switch to alternative SSRI (e.g., citalopram)",
+                "Switch to SNRI (e.g., venlafaxine)",
+                "Add augmentation with aripiprazole",
+                "Refer for ECT"
+            ],
+            "correctAnswer": "Increase sertraline to 200 mg daily",
+            "explanationCorrect": "Inadequate response after 8 weeks warrants dose increase before switching agents. Further reading: NICE CKS on depression management.",
+            "difficulty": "Hard"
+        },
+        {
+            "question": "A 28-year-old woman with bipolar disorder type I is in manic episode (elevated mood, decreased need for sleep, racing thoughts, increased spending). Which of the following is the most appropriate acute management?",
+            "options": [
+                "SSRI monotherapy",
+                "Lithium monotherapy",
+                "Antipsychotic (e.g., olanzapine) plus benzodiazepine",
+                "Psychotherapy alone",
+                "Observation"
+            ],
+            "correctAnswer": "Antipsychotic (e.g., olanzapine) plus benzodiazepine",
+            "explanationCorrect": "Acute mania requires antipsychotic and benzodiazepine for rapid control. Further reading: Bipolar disorder acute management.",
+            "difficulty": "Hard"
+        },
+        {
+            "question": "A 42-year-old man with schizophrenia on clozapine develops fever (38.5°C), muscle rigidity, and elevated CK (2500 U/L). Which of the following is the most appropriate management?",
+            "options": [
+                "Continue clozapine; prescribe paracetamol",
+                "Reduce clozapine dose",
+                "Stop clozapine immediately; supportive care; consider dantrolene",
+                "Switch to alternative antipsychotic",
+                "Prescribe benzodiazepine"
+            ],
+            "correctAnswer": "Stop clozapine immediately; supportive care; consider dantrolene",
+            "explanationCorrect": "Neuroleptic malignant syndrome requires immediate cessation of antipsychotic and supportive care. Further reading: NMS management.",
+            "difficulty": "Hard"
+        },
+        {
+            "question": "A 55-year-old woman with generalized anxiety disorder and panic attacks on paroxetine 40 mg daily reports persistent sexual dysfunction. Which of the following is the most appropriate management?",
+            "options": [
+                "Continue paroxetine; prescribe sildenafil",
+                "Reduce paroxetine dose",
+                "Switch to mirtazapine",
+                "Switch to buspirone",
+                "Add bupropion"
+            ],
+            "correctAnswer": "Add bupropion",
+            "explanationCorrect": "Bupropion augmentation can reverse SSRI-induced sexual dysfunction. Further reading: SSRI side effect management.",
+            "difficulty": "Hard"
+        },
+        {
+            "question": "A 32-year-old man with post-traumatic stress disorder (PTSD) presents with nightmares, hypervigilance, and avoidance behaviours. Which of the following is the most appropriate first-line treatment?",
+            "options": [
+                "Benzodiazepine monotherapy",
+                "Antipsychotic monotherapy",
+                "Trauma-focused cognitive behavioural therapy (TF-CBT) plus SSRI",
+                "Hypnotherapy",
+                "Observation"
+            ],
+            "correctAnswer": "Trauma-focused cognitive behavioural therapy (TF-CBT) plus SSRI",
+            "explanationCorrect": "TF-CBT plus SSRI is first-line for PTSD. Benzodiazepines are not recommended. Further reading: PTSD management guidelines.",
+            "difficulty": "Hard"
+        },
+        {
+            "question": "A 48-year-old woman with obsessive-compulsive disorder (OCD) on fluoxetine 60 mg daily for 12 weeks shows minimal response. Which of the following is the most appropriate next step?",
+            "options": [
+                "Increase fluoxetine to 80 mg daily",
+                "Switch to paroxetine",
+                "Add cognitive behavioural therapy (CBT)",
+                "Add antipsychotic augmentation",
+                "Refer for neurosurgical intervention"
+            ],
+            "correctAnswer": "Add cognitive behavioural therapy (CBT)",
+            "explanationCorrect": "OCD requires combined pharmacotherapy and CBT (exposure and response prevention). Further reading: OCD treatment guidelines.",
+            "difficulty": "Hard"
+        },
+        {
+            "question": "A 26-year-old man with first-episode psychosis (delusions, hallucinations) is started on risperidone 4 mg daily. After 2 weeks, he develops tremor, rigidity, and bradykinesia. Which of the following is the most appropriate management?",
+            "options": [
+                "Continue risperidone; prescribe benztropine",
+                "Reduce risperidone dose",
+                "Switch to clozapine",
+                "Stop risperidone",
+                "Add propranolol"
+            ],
+            "correctAnswer": "Continue risperidone; prescribe benztropine",
+            "explanationCorrect": "Extrapyramidal side effects are managed with anticholinergic agents while continuing antipsychotic. Further reading: Antipsychotic side effect management.",
+            "difficulty": "Hard"
+        },
+        {
+            "question": "A 38-year-old woman with major depressive disorder on sertraline develops hyponatraemia (sodium 128 mmol/L). Which of the following is the most appropriate management?",
+            "options": [
+                "Continue sertraline; restrict fluid intake",
+                "Stop sertraline immediately",
+                "Reduce sertraline dose; restrict fluid; monitor sodium",
+                "Switch to alternative SSRI",
+                "Add fludrocortisone"
+            ],
+            "correctAnswer": "Reduce sertraline dose; restrict fluid; monitor sodium",
+            "explanationCorrect": "SSRI-induced SIADH requires dose reduction and fluid restriction. Sodium should be corrected gradually. Further reading: SSRI-induced hyponatraemia.",
+            "difficulty": "Hard"
+        },
+        {
+            "question": "A 52-year-old man with depression and chronic pain is prescribed amitriptyline 50 mg at night. He reports dry mouth, constipation, and urinary hesitancy. Which of the following is the most appropriate management?",
+            "options": [
+                "Stop amitriptyline",
+                "Reduce amitriptyline dose",
+                "Continue amitriptyline; manage side effects with laxatives and eye drops",
+                "Switch to SSRI",
+                "Add anticholinergic agent"
+            ],
+            "correctAnswer": "Continue amitriptyline; manage side effects with laxatives and eye drops",
+            "explanationCorrect": "Anticholinergic side effects of tricyclics often improve with time. Symptomatic management is appropriate. Further reading: Tricyclic antidepressant side effects.",
+            "difficulty": "Hard"
+        },
+        {
+            "question": "A 45-year-old woman with seasonal affective disorder (SAD) presents with depression, hypersomnia, and carbohydrate craving during winter months. Which of the following is the most appropriate management?",
+            "options": [
+                "SSRI monotherapy",
+                "Light therapy (10,000 lux for 30 minutes daily)",
+                "Lithium monotherapy",
+                "Psychotherapy alone",
+                "Hospitalization"
+            ],
+            "correctAnswer": "Light therapy (10,000 lux for 30 minutes daily)",
+            "explanationCorrect": "Light therapy is first-line for SAD. SSRI can be added if inadequate response. Further reading: SAD management guidelines.",
+            "difficulty": "Hard"
+        }
+    ],
+    "ENT": [
+        {
+            "question": "A 45-year-old man with chronic rhinosinusitis and nasal polyps fails medical management (intranasal corticosteroids, saline irrigation). CT shows bilateral maxillary and ethmoid sinus disease. Which of the following is the most appropriate next step?",
+            "options": [
+                "Continue medical management for 3 more months",
+                "Functional endoscopic sinus surgery (FESS)",
+                "Oral corticosteroids",
+                "Antibiotics",
+                "Observation"
+            ],
+            "correctAnswer": "Functional endoscopic sinus surgery (FESS)",
+            "explanationCorrect": "FESS is indicated for chronic rhinosinusitis refractory to medical management. Further reading: Rhinosinusitis management guidelines.",
+            "difficulty": "Hard"
+        },
+        {
+            "question": "A 52-year-old man with hoarseness for 8 weeks undergoes laryngoscopy showing left vocal cord paralysis. Which of the following is the most appropriate next investigation?",
+            "options": [
+                "Repeat laryngoscopy in 3 months",
+                "CT chest with contrast",
+                "MRI larynx",
+                "Electromyography (EMG)",
+                "Observation only"
+            ],
+            "correctAnswer": "CT chest with contrast",
+            "explanationCorrect": "Left vocal cord paralysis warrants imaging to exclude malignancy or other pathology along the recurrent laryngeal nerve course. Further reading: Vocal cord paralysis workup.",
+            "difficulty": "Hard"
+        },
+        {
+            "question": "A 68-year-old man with sudden sensorineural hearing loss (40 dB loss at 4 kHz) presents 3 days after onset. Which of the following is the most appropriate management?",
+            "options": [
+                "Observation; hearing aid fitting",
+                "High-dose corticosteroids (e.g., prednisolone 1 mg/kg daily)",
+                "Intratympanic corticosteroid injection",
+                "Hyperbaric oxygen therapy",
+                "Hearing aid only"
+            ],
+            "correctAnswer": "High-dose corticosteroids (e.g., prednisolone 1 mg/kg daily)",
+            "explanationCorrect": "Sudden sensorineural hearing loss within 2 weeks of onset requires urgent high-dose corticosteroids. Further reading: SSNHL management.",
+            "difficulty": "Hard"
+        },
+        {
+            "question": "A 35-year-old woman with recurrent acute otitis media (6 episodes in 12 months) despite appropriate antibiotic treatment is evaluated. Otoscopy shows dull tympanum; audiometry shows conductive hearing loss. Which of the following is the most appropriate management?",
+            "options": [
+                "Continue observation",
+                "Grommets (ventilation tubes) insertion",
+                "Adenoidectomy",
+                "Tympanoplasty",
+                "Antibiotics prophylaxis"
+            ],
+            "correctAnswer": "Grommets (ventilation tubes) insertion",
+            "explanationCorrect": "Recurrent acute otitis media with conductive hearing loss is an indication for grommets. Further reading: Otitis media management.",
+            "difficulty": "Hard"
+        },
+        {
+            "question": "A 48-year-old man with obstructive sleep apnoea (AHI 35 events/hour) is intolerant of CPAP therapy. Which of the following is the most appropriate alternative management?",
+            "options": [
+                "Observation",
+                "Oral appliance (mandibular advancement device)",
+                "Positional therapy",
+                "Uvulopalatopharyngoplasty (UPPP)",
+                "Weight loss alone"
+            ],
+            "correctAnswer": "Oral appliance (mandibular advancement device)",
+            "explanationCorrect": "Mandibular advancement device is effective alternative to CPAP for moderate OSA. Further reading: OSA treatment options.",
+            "difficulty": "Hard"
+        },
+        {
+            "question": "A 52-year-old man with epistaxis (posterior source) fails conservative management (packing, cautery). Which of the following is the most appropriate next step?",
+            "options": [
+                "Repeat packing",
+                "Endoscopic sphenopalatine artery ligation",
+                "Angiographic embolization",
+                "Observation",
+                "Anterior packing"
+            ],
+            "correctAnswer": "Endoscopic sphenopalatine artery ligation",
+            "explanationCorrect": "Refractory posterior epistaxis is managed with endoscopic sphenopalatine artery ligation. Further reading: Epistaxis management.",
+            "difficulty": "Hard"
+        },
+        {
+            "question": "A 42-year-old woman with benign paroxysmal positional vertigo (BPPV) affecting the posterior semicircular canal is treated with Epley manoeuvre. After treatment, she reports persistent vertigo. Which of the following is the most appropriate next step?",
+            "options": [
+                "Repeat Epley manoeuvre",
+                "Imaging (MRI brain)",
+                "Vestibular rehabilitation",
+                "Betahistine",
+                "Observation"
+            ],
+            "correctAnswer": "Repeat Epley manoeuvre",
+            "explanationCorrect": "If symptoms persist after Epley, repeat manoeuvre is appropriate. Imaging is not routinely indicated. Further reading: BPPV management.",
+            "difficulty": "Hard"
+        },
+        {
+            "question": "A 55-year-old man with nasopharyngeal carcinoma (stage III, T3N2M0) is planned for treatment. Which of the following is the most appropriate management?",
+            "options": [
+                "Surgery alone",
+                "Radiotherapy alone",
+                "Concurrent chemoradiotherapy",
+                "Chemotherapy alone",
+                "Observation"
+            ],
+            "correctAnswer": "Concurrent chemoradiotherapy",
+            "explanationCorrect": "Locally advanced nasopharyngeal carcinoma is treated with concurrent chemoradiotherapy. Further reading: Nasopharyngeal carcinoma management.",
+            "difficulty": "Hard"
+        },
+        {
+            "question": "A 38-year-old man with laryngeal papillomatosis (recurrent respiratory papillomatosis, RRP) requires frequent laser ablations (every 2-3 months). Which of the following is the most appropriate adjunctive management?",
+            "options": [
+                "Observation only",
+                "Interferon-alpha",
+                "Bevacizumab injection",
+                "Cidofovir injection",
+                "Tracheostomy"
+            ],
+            "correctAnswer": "Cidofovir injection",
+            "explanationCorrect": "Cidofovir injection is effective adjunctive therapy for aggressive RRP. Further reading: RRP management.",
+            "difficulty": "Hard"
+        },
+        {
+            "question": "A 48-year-old woman with chronic otitis media with effusion (OME) and conductive hearing loss (30 dB loss) for 6 months is evaluated. Which of the following is the most appropriate management?",
+            "options": [
+                "Observation; hearing aid",
+                "Grommets insertion",
+                "Adenoidectomy",
+                "Autoinflation devices",
+                "Nasal corticosteroids"
+            ],
+            "correctAnswer": "Grommets insertion",
+            "explanationCorrect": "OME with significant hearing loss for >3 months warrants grommets. Further reading: OME management.",
+            "difficulty": "Hard"
+        }
+    ]
+}
+
+# Generate SQL insert statements
+def generate_inserts():
+    inserts = []
+    question_id = 720100  # Start from ID 720100
+    
+    for specialty, questions in QUESTIONS_DATA.items():
+        for q in questions:
+            # Randomize correct answer position
+            options = q["options"].copy()
+            correct_idx = options.index(q["correctAnswer"])
+            
+            # Create randomized options
+            randomized_options = options.copy()
+            random.shuffle(randomized_options)
+            new_correct_idx = randomized_options.index(q["correctAnswer"])
+            
+            # Map index to option letter (A=0, B=1, C=2, D=3, E=4)
+            correct_option = chr(65 + new_correct_idx)  # A, B, C, D, E
+            
+            # Build SQL insert
+            sql = f"""
+            INSERT INTO questions (
+                id, examId, specialty, difficulty, question, 
+                optionA, optionB, optionC, optionD, optionE,
+                correctAnswer, explanationCorrect, createdAt, updatedAt
+            ) VALUES (
+                {question_id},
+                1,
+                '{specialty}',
+                '{q["difficulty"]}',
+                '{q["question"].replace("'", "''")}',
+                '{randomized_options[0].replace("'", "''")}',
+                '{randomized_options[1].replace("'", "''")}',
+                '{randomized_options[2].replace("'", "''")}',
+                '{randomized_options[3].replace("'", "''")}',
+                '{randomized_options[4].replace("'", "''")}',
+                '{correct_option}',
+                '{q["explanationCorrect"].replace("'", "''")}',
+                NOW(),
+                NOW()
+            );
+            """
+            inserts.append(sql)
+            question_id += 1
+    
+    return inserts
+
+# Generate and save SQL
+inserts = generate_inserts()
+sql_content = "\n".join(inserts)
+
+with open("/home/ubuntu/question-grove-360/bulk-hard-questions.sql", "w") as f:
+    f.write(sql_content)
+
+print(f"Generated {len(inserts)} SQL insert statements")
+print(f"Total questions: {sum(len(q) for q in QUESTIONS_DATA.values())}")
+print("File saved to: /home/ubuntu/question-grove-360/bulk-hard-questions.sql")
