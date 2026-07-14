@@ -857,3 +857,10 @@
 - [x] Fix Picture360Specialty.tsx to use conditionName instead of title, remove description references
 - [x] Fix tRPC router to return conditionName field correctly
 - [x] Fix Home.tsx Picture Album card to link to /picture360 for premium users instead of disabled Coming Soon button
+
+## Picture360 Image Content (July 14, 2026)
+- [x] Generate 20 ECG clinical images and insert into picture360_images table
+- [x] Generate 20 ENT clinical images (4 batches of 5 each)
+- [x] Insert all 20 ENT images into picture360_images table (correct column list)
+- [x] Verify total count: 63 images (23 original + 20 ECG + 20 ENT)
+- [x] Add examPearl display to Picture360 Learn Mode
