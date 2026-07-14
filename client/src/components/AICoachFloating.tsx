@@ -21,6 +21,8 @@ export function AICoachFloating() {
   const [input, setInput] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [pendingImage, setPendingImage] = useState<ChatImage | null>(null);
+  const [isDragging, setIsDragging] = useState(false);
+  const dragCounterRef = useRef(0);
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
 
@@ -83,6 +85,51 @@ export function AICoachFloating() {
     }
   };
 
+  const handleDragEnter = (e: React.DragEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    dragCounterRef.current++;
+    if (e.dataTransfer?.types?.includes("Files")) {
+      setIsDragging(true);
+    }
+  };
+
+  const handleDragLeave = (e: React.DragEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    dragCounterRef.current--;
+    if (dragCounterRef.current === 0) {
+      setIsDragging(false);
+    }
+  };
+
+  const handleDragOver = (e: React.DragEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+  };
+
+  const handleDrop = async (e: React.DragEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    setIsDragging(false);
+    dragCounterRef.current = 0;
+
+    const files = e.dataTransfer?.files;
+    if (!files || files.length === 0) return;
+
+    const file = files[0];
+    if (!file.type.startsWith("image/")) {
+      toast.error("Only image files are supported. Please drop a JPEG, PNG, GIF, or WebP image.");
+      return;
+    }
+
+    const image = await processImageFile(file);
+    if (image) {
+      setPendingImage(image);
+      toast.success("Image dropped. Send your message or press Send.");
+    }
+  };
+
   const handleSend = async () => {
     if (!input.trim() && !pendingImage) return;
 
@@ -138,7 +185,23 @@ export function AICoachFloating() {
 
       {/* Slide-in Panel */}
       {isOpen && (
-        <div className="fixed bottom-0 right-0 w-full sm:w-96 h-screen sm:h-[600px] bg-white rounded-t-lg sm:rounded-lg shadow-2xl flex flex-col z-50 animate-in slide-in-from-bottom-4 duration-300">
+        <div
+          className="fixed bottom-0 right-0 w-full sm:w-96 h-screen sm:h-[600px] bg-white rounded-t-lg sm:rounded-lg shadow-2xl flex flex-col z-50 animate-in slide-in-from-bottom-4 duration-300 relative"
+          onDragEnter={handleDragEnter}
+          onDragLeave={handleDragLeave}
+          onDragOver={handleDragOver}
+          onDrop={handleDrop}
+        >
+          {/* Drag-and-drop overlay */}
+          {isDragging && (
+            <div className="absolute inset-0 z-50 bg-green-50/90 border-4 border-dashed border-green-400 rounded-lg flex items-center justify-center pointer-events-none">
+              <div className="text-center">
+                <Paperclip className="w-10 h-10 text-green-600 mx-auto mb-2" />
+                <p className="text-sm font-semibold text-green-700">Drop image here</p>
+                <p className="text-xs text-green-600 mt-1">JPEG, PNG, GIF, WebP (max 5MB)</p>
+              </div>
+            </div>
+          )}
           {/* Header */}
           <div className="bg-gradient-to-r from-green-600 to-green-700 text-gray-900 p-4 rounded-t-lg sm:rounded-t-lg flex items-center justify-between">
             <div>

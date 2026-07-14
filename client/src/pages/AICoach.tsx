@@ -42,6 +42,8 @@ Feel free to ask me anything about your exam preparation!`,
   const [input, setInput] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [pendingImage, setPendingImage] = useState<ChatImage | null>(null);
+  const [isDragging, setIsDragging] = useState(false);
+  const dragCounterRef = useRef(0);
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
@@ -149,6 +151,51 @@ Feel free to ask me anything about your exam preparation!`,
     }
   };
 
+  const handleDragEnter = (e: React.DragEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    dragCounterRef.current++;
+    if (e.dataTransfer?.types?.includes("Files")) {
+      setIsDragging(true);
+    }
+  };
+
+  const handleDragLeave = (e: React.DragEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    dragCounterRef.current--;
+    if (dragCounterRef.current === 0) {
+      setIsDragging(false);
+    }
+  };
+
+  const handleDragOver = (e: React.DragEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+  };
+
+  const handleDrop = async (e: React.DragEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    setIsDragging(false);
+    dragCounterRef.current = 0;
+
+    const files = e.dataTransfer?.files;
+    if (!files || files.length === 0) return;
+
+    const file = files[0];
+    if (!file.type.startsWith("image/")) {
+      toast.error("Only image files are supported. Please drop a JPEG, PNG, GIF, or WebP image.");
+      return;
+    }
+
+    const image = await processImageFile(file);
+    if (image) {
+      setPendingImage(image);
+      toast.success("Image dropped. Send your message or press Send to submit.");
+    }
+  };
+
   const handleSendMessage = async () => {
     if (!input.trim() && !pendingImage) return;
 
@@ -197,7 +244,23 @@ Feel free to ask me anything about your exam preparation!`,
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 flex flex-col">
+    <div
+      className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 flex flex-col relative"
+      onDragEnter={handleDragEnter}
+      onDragLeave={handleDragLeave}
+      onDragOver={handleDragOver}
+      onDrop={handleDrop}
+    >
+      {/* Drag-and-drop overlay */}
+      {isDragging && (
+        <div className="absolute inset-0 z-50 bg-green-50/90 border-4 border-dashed border-green-400 rounded-lg flex items-center justify-center pointer-events-none">
+          <div className="text-center">
+            <Paperclip className="w-12 h-12 text-green-600 mx-auto mb-3" />
+            <p className="text-lg font-semibold text-green-700">Drop image here</p>
+            <p className="text-sm text-green-600 mt-1">JPEG, PNG, GIF, or WebP (max 5MB)</p>
+          </div>
+        </div>
+      )}
       {/* Header */}
       <header className="bg-white border-b border-slate-200 sticky top-0 z-40">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center gap-4">

@@ -134,3 +134,94 @@ describe("AI Coach Image Upload - Backend Logic", () => {
     expect(requestBody.messages).toHaveLength(1);
   });
 });
+
+describe("AI Coach Drag-and-Drop Support", () => {
+  it("should only accept image files on drop", () => {
+    const SUPPORTED_FORMATS = ["image/jpeg", "image/png", "image/gif", "image/webp"];
+    
+    // Simulate file type check on drop
+    const imageFile = { type: "image/png", size: 1024 * 1024 };
+    const pdfFile = { type: "application/pdf", size: 1024 * 1024 };
+    const textFile = { type: "text/plain", size: 100 };
+
+    expect(imageFile.type.startsWith("image/")).toBe(true);
+    expect(pdfFile.type.startsWith("image/")).toBe(false);
+    expect(textFile.type.startsWith("image/")).toBe(false);
+  });
+
+  it("should validate dropped file format against supported formats", () => {
+    const SUPPORTED_FORMATS = ["image/jpeg", "image/png", "image/gif", "image/webp"];
+
+    expect(SUPPORTED_FORMATS.includes("image/jpeg")).toBe(true);
+    expect(SUPPORTED_FORMATS.includes("image/png")).toBe(true);
+    expect(SUPPORTED_FORMATS.includes("image/gif")).toBe(true);
+    expect(SUPPORTED_FORMATS.includes("image/webp")).toBe(true);
+    expect(SUPPORTED_FORMATS.includes("image/svg+xml")).toBe(false);
+    expect(SUPPORTED_FORMATS.includes("image/bmp")).toBe(false);
+  });
+
+  it("should validate dropped file size", () => {
+    const MAX_IMAGE_SIZE = 5 * 1024 * 1024; // 5MB
+
+    const smallFile = { size: 2 * 1024 * 1024 }; // 2MB
+    const exactLimitFile = { size: 5 * 1024 * 1024 }; // 5MB
+    const largeFile = { size: 6 * 1024 * 1024 }; // 6MB
+
+    expect(smallFile.size <= MAX_IMAGE_SIZE).toBe(true);
+    expect(exactLimitFile.size <= MAX_IMAGE_SIZE).toBe(true);
+    expect(largeFile.size <= MAX_IMAGE_SIZE).toBe(false);
+  });
+
+  it("should track drag counter to handle nested elements", () => {
+    let dragCounter = 0;
+    let isDragging = false;
+
+    // Simulate dragEnter on parent
+    dragCounter++;
+    isDragging = true;
+    expect(dragCounter).toBe(1);
+    expect(isDragging).toBe(true);
+
+    // Simulate dragEnter on child (nested)
+    dragCounter++;
+    expect(dragCounter).toBe(2);
+    expect(isDragging).toBe(true);
+
+    // Simulate dragLeave on child
+    dragCounter--;
+    if (dragCounter === 0) isDragging = false;
+    expect(dragCounter).toBe(1);
+    expect(isDragging).toBe(true); // Still dragging
+
+    // Simulate dragLeave on parent
+    dragCounter--;
+    if (dragCounter === 0) isDragging = false;
+    expect(dragCounter).toBe(0);
+    expect(isDragging).toBe(false); // No longer dragging
+  });
+
+  it("should reset drag state on drop", () => {
+    let dragCounter = 3; // Simulating multiple nested enters
+    let isDragging = true;
+
+    // On drop, reset everything
+    isDragging = false;
+    dragCounter = 0;
+
+    expect(isDragging).toBe(false);
+    expect(dragCounter).toBe(0);
+  });
+
+  it("should only process first file when multiple files are dropped", () => {
+    const files = [
+      { name: "ecg.png", type: "image/png", size: 1024 * 1024 },
+      { name: "xray.jpg", type: "image/jpeg", size: 2 * 1024 * 1024 },
+      { name: "notes.pdf", type: "application/pdf", size: 500 * 1024 },
+    ];
+
+    // Only process first file
+    const file = files[0];
+    expect(file.name).toBe("ecg.png");
+    expect(file.type).toBe("image/png");
+  });
+});

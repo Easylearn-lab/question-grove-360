@@ -819,13 +819,13 @@
 - [x] Verify USMLE/MCCQE1 remain in International section
 
 ## AI Coach360 Image Upload Feature (July 14, 2026)
-- [ ] Add image upload button (paperclip icon) to AI Coach360 chat input area
-- [ ] Support image selection from device file system / camera roll
-- [ ] Support clipboard paste (Ctrl+V) for images
-- [ ] Send image as base64 to Claude API alongside text messages
-- [ ] Show thumbnail preview of uploaded image in chat bubble
-- [ ] Enforce 5MB max file size and JPEG/PNG/GIF/WebP format validation
-- [ ] Ensure existing text chat, weakness context injection, and all other features remain unchanged
+- [x] Add image upload button (paperclip icon) to AI Coach360 chat input area
+- [x] Support image selection from device file system / camera roll
+- [x] Support clipboard paste (Ctrl+V) for images
+- [x] Send image as base64 to Claude API alongside text messages
+- [x] Show thumbnail preview of uploaded image in chat bubble
+- [x] Enforce 5MB max file size and JPEG/PNG/GIF/WebP format validation
+- [x] Ensure existing text chat, weakness context injection, and all other features remain unchanged
 
 ## AI Coach360 Image Upload Feature
 - [x] Add image upload button (paperclip icon) to full-page AI Coach360 chat input area
@@ -845,3 +845,10 @@
 - [x] Add model parameter support to invokeLLM helper
 - [x] Add model-appropriate thinking/token params (Claude vs Gemini)
 - [x] Write vitest tests for image upload logic (8 tests passing)
+
+## AI Coach360 Drag-and-Drop Image Upload
+- [x] Add drag-and-drop support to full-page AI Coach360 chat input area
+- [x] Add drag-and-drop support to floating AI Coach widget
+- [x] Show visual drop zone indicator when dragging files over the chat area
+- [x] Validate dropped files (format and size) with error messages
+- [x] Integrate with existing image processing pipeline (base64 encoding, preview)
