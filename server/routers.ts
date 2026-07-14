@@ -676,15 +676,20 @@ export const appRouter = router({
         const db = await getDb();
         if (!db) throw new Error("Database not available");
         const { sql } = await import("drizzle-orm");
-        const result = await db.execute(sql`SELECT id, specialty, title, description, imageUrl, diagnosis, explanation FROM picture360_images WHERE specialty = ${specialty} AND status = 'active' ORDER BY id`);
+        const result = await db.execute(sql`SELECT id, specialty, conditionName, imageUrl, keyFeatures, examPearl, optionA, optionB, optionC, optionD, correctAnswer, explanation FROM picture360_images WHERE specialty = ${specialty} AND status = 'active' ORDER BY id`);
         const rows = Array.isArray(result) && Array.isArray(result[0]) ? result[0] : result;
         return (rows as any[]).map((r: any) => ({
           id: r.id,
           specialty: r.specialty,
-          title: r.title,
-          description: r.description,
+          conditionName: r.conditionName,
           imageUrl: r.imageUrl,
-          diagnosis: r.diagnosis,
+          keyFeatures: r.keyFeatures,
+          examPearl: r.examPearl,
+          optionA: r.optionA,
+          optionB: r.optionB,
+          optionC: r.optionC,
+          optionD: r.optionD,
+          correctAnswer: r.correctAnswer,
           explanation: r.explanation,
         }));
       }),

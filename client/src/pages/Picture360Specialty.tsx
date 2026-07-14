@@ -204,7 +204,7 @@ export default function Picture360Specialty() {
           <div className="mb-8 relative group">
             <img
               src={currentImage.imageUrl}
-              alt={currentImage.title}
+              alt={currentImage.conditionName}
               className="w-full h-96 object-cover rounded-lg border border-slate-200 cursor-pointer transition-opacity group-hover:opacity-90"
               onClick={() => setZoomModalOpen(true)}
             />
@@ -223,8 +223,8 @@ export default function Picture360Specialty() {
           {/* Content */}
           {mode === "learn" ? (
             <div className="mb-8">
-              <h2 className="text-3xl font-bold text-slate-900 mb-2">{currentImage.diagnosis}</h2>
-              <p className="text-slate-600 mb-4">{currentImage.description}</p>
+              <h2 className="text-3xl font-bold text-slate-900 mb-2">{currentImage.conditionName}</h2>
+              {currentImage.keyFeatures && <p className="text-slate-600 mb-4">{currentImage.keyFeatures}</p>}
               <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-6">
                 <p className="text-slate-700">{currentImage.explanation}</p>
               </div>
@@ -243,7 +243,7 @@ export default function Picture360Specialty() {
                 <div className="space-y-4">
                   <div className="bg-green-50 border border-green-200 rounded-lg p-4">
                     <p className="text-sm text-slate-500 mb-1">Diagnosis:</p>
-                    <p className="text-2xl font-bold text-green-700">{currentImage.diagnosis}</p>
+                    <p className="text-2xl font-bold text-green-700">{currentImage.conditionName}</p>
                   </div>
                   <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
                     <p className="text-sm text-slate-500 mb-1">Explanation:</p>
@@ -301,7 +301,7 @@ export default function Picture360Specialty() {
       <ImageZoomModal
         isOpen={zoomModalOpen}
         imageUrl={currentImage.imageUrl}
-        imageTitle={currentImage.diagnosis || currentImage.title || "Clinical Image"}
+        imageTitle={currentImage.conditionName || "Clinical Image"}
         onClose={() => setZoomModalOpen(false)}
       />
     </div>

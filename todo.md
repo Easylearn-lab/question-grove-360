@@ -852,3 +852,8 @@
 - [x] Show visual drop zone indicator when dragging files over the chat area
 - [x] Validate dropped files (format and size) with error messages
 - [x] Integrate with existing image processing pipeline (base64 encoding, preview)
+
+## Picture360 Fixes (July 14, 2026)
+- [x] Fix Picture360Specialty.tsx to use conditionName instead of title, remove description references
+- [x] Fix tRPC router to return conditionName field correctly
+- [x] Fix Home.tsx Picture Album card to link to /picture360 for premium users instead of disabled Coming Soon button

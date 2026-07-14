@@ -109,9 +109,9 @@ export default function Home() {
               <h3 className="text-2xl font-bold text-gray-900 mb-2 text-center">Picture Album</h3>
               <p className="text-gray-600 mb-4 text-center">Dermatology • Ophthalmology • ECG • ENT • Chest X-ray • Paediatrics</p>
               
-              <button disabled className="w-full bg-gray-400 text-gray-600 py-3 rounded-lg font-semibold cursor-not-allowed text-center block">
-                Coming Soon
-              </button>
+              <a href="/picture360" className="w-full bg-orange-500 hover:bg-orange-600 text-white py-3 rounded-lg font-semibold text-center block transition-colors">
+                Explore Now →
+              </a>
             </div>
           </div>
         </div>
