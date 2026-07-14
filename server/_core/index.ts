@@ -99,17 +99,25 @@ async function startServer() {
   // AI Coach RAG endpoint
   app.post("/api/ai-coach", async (req, res) => {
     try {
-      const { messages } = req.body;
+      const { messages, image } = req.body;
       if (!messages || !Array.isArray(messages)) {
         return res.status(400).json({ error: "Invalid messages format" });
       }
 
-      const latestUserMessage = messages[messages.length - 1]?.content || '';
+      // Extract the latest user message text (handle both string and multimodal content)
+      const lastMsg = messages[messages.length - 1];
+      let latestUserMessage = '';
+      if (typeof lastMsg?.content === 'string') {
+        latestUserMessage = lastMsg.content;
+      } else if (lastMsg?.content) {
+        latestUserMessage = lastMsg.content;
+      }
 
-      // Search in parallel
+      // Search in parallel (only for text queries)
+      const searchQuery = typeof latestUserMessage === 'string' ? latestUserMessage : '';
       const [niceResults, pubmedResults] = await Promise.all([
-        searchNICE(latestUserMessage).catch(() => []),
-        searchPubMed(latestUserMessage).catch(() => [])
+        searchQuery ? searchNICE(searchQuery).catch(() => []) : Promise.resolve([]),
+        searchQuery ? searchPubMed(searchQuery).catch(() => []) : Promise.resolve([])
       ]);
 
       const allSources = [...niceResults, ...pubmedResults].slice(0, 4);
@@ -130,22 +138,54 @@ Guidelines:
 - Explain the reasoning behind answers, not just the answer itself
 - If sources were retrieved, end your response with a "Sources:" section listing the URLs
 - If no sources were retrieved, answer from your medical knowledge and say so
-- Be encouraging and exam-focused`;
+- Be encouraging and exam-focused
+- If the user uploads an image, analyse it thoroughly. For clinical images, describe findings and suggest differentials. For question screenshots, read and answer the question. For ECGs/X-rays, provide systematic interpretation.`;
 
-      // Use built-in LLM helper (platform-managed API key)
-      const llmMessages = [
+      // Build LLM messages — handle image in the latest user message
+      const llmMessages: any[] = [
         { role: "system" as const, content: systemPrompt },
-        ...messages.map((m: any) => ({ role: m.role as "user" | "assistant", content: m.content }))
       ];
 
-      const llmResponse = await invokeLLM({ messages: llmMessages });
+      // Add conversation history (all messages except the last one as plain text)
+      for (let i = 0; i < messages.length - 1; i++) {
+        const m = messages[i];
+        llmMessages.push({ role: m.role as "user" | "assistant", content: m.content });
+      }
+
+      // Add the latest user message — with image if provided
+      if (image && image.data && image.mimeType) {
+        // Multimodal message with image
+        const contentParts: any[] = [];
+        contentParts.push({
+          type: "image_url",
+          image_url: {
+            url: `data:${image.mimeType};base64,${image.data}`,
+            detail: "high"
+          }
+        });
+        if (searchQuery) {
+          contentParts.push({ type: "text", text: searchQuery });
+        } else {
+          contentParts.push({ type: "text", text: "Please analyse this image." });
+        }
+        llmMessages.push({ role: "user" as const, content: contentParts });
+      } else {
+        llmMessages.push({ role: "user" as const, content: latestUserMessage });
+      }
+
+      // Use claude-sonnet-4-6 for vision tasks, default model for text-only
+      const useVisionModel = !!(image && image.data);
+      const llmResponse = await invokeLLM({
+        messages: llmMessages,
+        ...(useVisionModel ? { model: "claude-sonnet-4-6" as any } : {})
+      });
       const reply = (llmResponse.choices?.[0]?.message?.content || "Sorry, I couldn't generate a response.") as string;
 
       // Generate follow-up questions
       const followUpResponse = await invokeLLM({
         messages: [
           { role: "system" as const, content: "You generate exactly 3 short follow-up questions that help a medical student explore the topic further. Each question should be concise (under 60 characters), clinically relevant, and progressively deeper. Return ONLY a JSON array of 3 strings, nothing else. Example: [\"What are the diagnostic criteria?\",\"How does treatment differ in elderly?\",\"What are the key complications?\"]" },
-          { role: "user" as const, content: `Based on this conversation about: ${latestUserMessage}\n\nAI response: ${(reply as string).substring(0, 500)}\n\nGenerate 3 follow-up questions.` }
+          { role: "user" as const, content: `Based on this conversation about: ${searchQuery || 'an uploaded clinical image'}\n\nAI response: ${(reply as string).substring(0, 500)}\n\nGenerate 3 follow-up questions.` }
         ],
         response_format: { type: "json_object" as any }
       }).catch(() => null);

@@ -817,3 +817,31 @@
 - [x] Add UKMLA and MRCP to UK exams section
 - [x] Update EXAM_CODE_MAP with UKMLA and MRCP codes
 - [x] Verify USMLE/MCCQE1 remain in International section
+
+## AI Coach360 Image Upload Feature (July 14, 2026)
+- [ ] Add image upload button (paperclip icon) to AI Coach360 chat input area
+- [ ] Support image selection from device file system / camera roll
+- [ ] Support clipboard paste (Ctrl+V) for images
+- [ ] Send image as base64 to Claude API alongside text messages
+- [ ] Show thumbnail preview of uploaded image in chat bubble
+- [ ] Enforce 5MB max file size and JPEG/PNG/GIF/WebP format validation
+- [ ] Ensure existing text chat, weakness context injection, and all other features remain unchanged
+
+## AI Coach360 Image Upload Feature
+- [x] Add image upload button (paperclip icon) to full-page AI Coach360 chat input area
+- [x] Add image upload button to floating AI Coach widget
+- [x] Support clicking button to select image from device (JPEG, PNG, GIF, WebP)
+- [x] Support pasting images directly into chat input (Ctrl+V / clipboard paste)
+- [x] Validate file format (JPEG, PNG, GIF, WebP only) with clear error messages
+- [x] Validate file size (max 5MB) with clear error messages
+- [x] Show pending image thumbnail preview before sending
+- [x] Allow removing pending image before sending
+- [x] Show image thumbnail in user chat bubble after sending
+- [x] Send image as base64 to backend alongside text message
+- [x] Backend constructs multimodal message with image_url format for LLM
+- [x] Use claude-sonnet-4-6 (vision-capable) model for image analysis requests
+- [x] Preserve existing text-only chat flow unchanged
+- [x] Preserve weakness context injection system prompt unchanged
+- [x] Add model parameter support to invokeLLM helper
+- [x] Add model-appropriate thinking/token params (Claude vs Gemini)
+- [x] Write vitest tests for image upload logic (8 tests passing)
