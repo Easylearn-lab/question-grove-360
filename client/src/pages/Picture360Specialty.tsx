@@ -228,6 +228,12 @@ export default function Picture360Specialty() {
               <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-6">
                 <p className="text-slate-700">{currentImage.explanation}</p>
               </div>
+              {currentImage.examPearl && (
+                <div className="bg-amber-50 border border-amber-200 rounded-lg p-4 mb-6">
+                  <p className="text-sm font-semibold text-amber-800 mb-1">Exam Pearl</p>
+                  <p className="text-slate-700">{currentImage.examPearl}</p>
+                </div>
+              )}
             </div>
           ) : (
             <div className="mb-8">
