@@ -864,3 +864,17 @@
 - [x] Insert all 20 ENT images into picture360_images table (correct column list)
 - [x] Verify total count: 63 images (23 original + 20 ECG + 20 ENT)
 - [x] Add examPearl display to Picture360 Learn Mode
+
+## Picture360 Standalone Purchase System (July 15, 2026)
+- [x] Remove Picture360 from AKT premium bundle access
+- [x] Create picture360_access database table (userId, purchasedAt, expiresAt, status)
+- [x] Add PICTURE360 product to products.ts (£9 GBP one-time for 3 months)
+- [x] Create Stripe checkout session endpoint for Picture360
+- [x] Update Stripe webhook to handle Picture360 payment and write to picture360_access
+- [x] Create tRPC procedure to query picture360_access for current user
+- [x] Update Picture360 page gate to check picture360_access instead of isPremium
+- [x] Build Picture360 lock screen with £9 price and Buy Now button
+- [x] Show renewal message for expired access
+- [x] Update homepage Picture360 card (£9 price + Buy Now for non-purchasers, Access Active + Explore Now for purchasers)
+- [x] AKT subscribers without Picture360 purchase cannot access Picture360
+- [x] Verify full purchase flow end to end

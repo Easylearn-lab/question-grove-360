@@ -1,6 +1,6 @@
 import { protectedProcedure, publicProcedure, router } from "./_core/trpc";
 import { z } from "zod";
-import { SUBSCRIPTION_PLANS, PAYMENT_ENABLED, type PlanKey, type ExamTrack } from "./products";
+import { SUBSCRIPTION_PLANS, PAYMENT_ENABLED, type PlanKey, type ExamTrack, PICTURE360_PRODUCT } from "./products";
 import Stripe from "stripe";
 
 // Initialize Stripe with the secret key
@@ -142,6 +142,79 @@ export const stripeRouter = router({
         status: subscription.status,
         cancelAtPeriodEnd: subscription.cancel_at_period_end,
       };
+    }),
+
+  // Create Picture360 checkout session (standalone £9 / 3-month product)
+  createPicture360Checkout: protectedProcedure
+    .mutation(async ({ ctx }) => {
+      const stripe = getStripe();
+      if (!stripe) {
+        throw new Error("Stripe is not configured. Please add your Stripe API keys in Settings → Payment.");
+      }
+
+      const origin = ctx.req.headers.origin || ctx.req.headers.referer?.replace(/\/$/, "") || "";
+
+      const session = await stripe.checkout.sessions.create({
+        customer_email: ctx.user.email || undefined,
+        client_reference_id: ctx.user.id.toString(),
+        line_items: [
+          {
+            price_data: {
+              currency: "gbp",
+              product_data: {
+                name: "Picture360 — Visual Diagnosis Training",
+                description: "3 months access to all Picture360 specialties",
+              },
+              unit_amount: 900, // £9.00 in pence
+            },
+            quantity: 1,
+          },
+        ],
+        mode: "payment",
+        success_url: `${origin}/picture360?payment=success`,
+        cancel_url: `${origin}/picture360?payment=cancelled`,
+        metadata: {
+          user_id: ctx.user.id.toString(),
+          customer_email: ctx.user.email || "",
+          customer_name: ctx.user.name || "",
+          product_type: "PICTURE360",
+        },
+        allow_promotion_codes: true,
+      });
+
+      return {
+        sessionId: session.id,
+        url: session.url,
+      };
+    }),
+
+  // Get Picture360 access status for current user
+  getPicture360Access: protectedProcedure
+    .query(async ({ ctx }) => {
+      const { getDb } = await import("./db");
+      const db = await getDb();
+      if (!db) {
+        return { hasAccess: false, status: "no_purchase" as const, expiresAt: null };
+      }
+      const { sql } = await import("drizzle-orm");
+      const result = await db.execute(
+        sql`SELECT id, purchasedAt, expiresAt, status FROM picture360_access WHERE userId = ${ctx.user.id} ORDER BY expiresAt DESC LIMIT 1`
+      );
+      const rows = Array.isArray(result) && Array.isArray(result[0]) ? result[0] : result;
+      const row = (rows as any[])[0];
+
+      if (!row) {
+        return { hasAccess: false, status: "no_purchase" as const, expiresAt: null };
+      }
+
+      const expiresAt = new Date(row.expiresAt);
+      const now = new Date();
+
+      if (expiresAt > now && row.status === "active") {
+        return { hasAccess: true, status: "active" as const, expiresAt };
+      }
+
+      return { hasAccess: false, status: "expired" as const, expiresAt };
     }),
 
   // Get payment history

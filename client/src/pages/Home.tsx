@@ -104,13 +104,14 @@ export default function Home() {
 
           {/* Picture360 Card */}
           <div className="max-w-sm mx-auto">
-            <div className="bg-white rounded-xl p-8 border-t-4 border-orange-500 shadow-lg hover:shadow-xl transition-all hover:-translate-y-2">
+            <div className="bg-white rounded-xl p-8 border-t-4 border-emerald-500 shadow-lg hover:shadow-xl transition-all hover:-translate-y-2">
               <div className="text-4xl mb-4 text-center">📸</div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-2 text-center">Picture Album</h3>
+              <h3 className="text-2xl font-bold text-gray-900 mb-2 text-center">Picture360</h3>
               <p className="text-gray-600 mb-4 text-center">Dermatology • Ophthalmology • ECG • ENT • Chest X-ray • Paediatrics</p>
+              <p className="text-center mb-4"><span className="text-2xl font-bold text-emerald-600">£9</span> <span className="text-gray-500 text-sm">for 3 months</span></p>
               
-              <a href="/picture360" className="w-full bg-orange-500 hover:bg-orange-600 text-white py-3 rounded-lg font-semibold text-center block transition-colors">
-                Explore Now →
+              <a href="/picture360" className="w-full bg-emerald-600 hover:bg-emerald-700 text-white py-3 rounded-lg font-semibold text-center block transition-colors">
+                Buy Now →
               </a>
             </div>
           </div>

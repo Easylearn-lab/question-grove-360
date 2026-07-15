@@ -57,6 +57,10 @@ const PRICE_IDS = {
     test: "price_1Tj1eqIVrH3MHAvaSeVG3yMu",
     live: "price_1Tj1ctIVrH3MHAvaDMZPapav",
   },
+  PICTURE360: {
+    test: "price_picture360_test",
+    live: "price_picture360_live",
+  },
 };
 
 function getPriceId(planKey: keyof typeof PRICE_IDS): string {
@@ -143,3 +147,17 @@ export function getAllPlans() {
     ...plan,
   }));
 }
+
+/**
+ * Picture360 Standalone Product
+ * One-time payment of £9 GBP for 3 months access.
+ * NOT included in any AKT/SCA subscription bundle.
+ */
+export const PICTURE360_PRODUCT = {
+  name: "Picture360",
+  description: "Visual Diagnosis Training — 3 months access",
+  price: 9, // £9 GBP
+  currency: "gbp",
+  durationMonths: 3,
+  get stripePriceId() { return getPriceId("PICTURE360"); },
+};

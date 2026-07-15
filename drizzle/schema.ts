@@ -502,3 +502,17 @@ export const noteAnnotations = mysqlTable("note_annotations", {
 
 export type NoteAnnotation = typeof noteAnnotations.$inferSelect;
 export type InsertNoteAnnotation = typeof noteAnnotations.$inferInsert;
+
+// Picture360 Access (standalone £9 / 3-month product)
+export const picture360Access = mysqlTable("picture360_access", {
+  id: int("id").autoincrement().primaryKey(),
+  userId: int("userId").notNull().references(() => users.id),
+  purchasedAt: timestamp("purchasedAt").defaultNow().notNull(),
+  expiresAt: timestamp("expiresAt").notNull(),
+  status: varchar("status", { length: 20 }).default("active").notNull(), // active, expired
+  stripeSessionId: varchar("stripeSessionId", { length: 255 }),
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+});
+
+export type Picture360Access = typeof picture360Access.$inferSelect;
+export type InsertPicture360Access = typeof picture360Access.$inferInsert;

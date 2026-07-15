@@ -5,6 +5,7 @@ import { Card } from "@/components/ui/card";
 import { ArrowLeft, BookOpen, BarChart3, Lock, FileText, BookMarked, Shield, Target } from "lucide-react";
 import { useProtectedRoute } from "@/hooks/useProtectedRoute";
 import { useSubscription } from "@/hooks/useSubscription";
+import { usePicture360Access } from "@/hooks/usePicture360Access";
 import { trpc } from "@/lib/trpc";
 
 const SPECIALTY_ICONS: Record<string, string> = {
@@ -257,18 +258,7 @@ export default function MRCGPAKTSpecialties() {
           </Card>
 
           {/* Picture360 Card */}
-          <Card className="p-8 border-slate-200 bg-gradient-to-br from-orange-50 to-orange-100 flex flex-col">
-            <div className="flex items-start justify-between mb-4">
-              <div>
-                <h3 className="text-2xl font-bold text-slate-900 mb-2">Picture Album</h3>
-                <p className="text-slate-600">Visual diagnosis</p>
-              </div>
-              <span className="text-4xl">📸</span>
-            </div>
-            <Button disabled className="w-full mt-auto bg-gray-400 text-gray-600 cursor-not-allowed font-semibold">
-              Coming Soon
-            </Button>
-          </Card>
+          <Picture360DashboardCard />
         </div>
 
         {/* Specialties Grid */}
@@ -313,5 +303,46 @@ export default function MRCGPAKTSpecialties() {
 
       </main>
     </div>
+  );
+}
+
+function Picture360DashboardCard() {
+  const [, navigate] = useLocation();
+  const { hasAccess } = usePicture360Access();
+
+  return (
+    <Card className="p-8 border-slate-200 bg-gradient-to-br from-emerald-50 to-teal-50 flex flex-col">
+      <div className="flex items-start justify-between mb-4">
+        <div>
+          <h3 className="text-2xl font-bold text-slate-900 mb-2">Picture360</h3>
+          <p className="text-slate-600">Visual diagnosis training</p>
+        </div>
+        <span className="text-4xl">📸</span>
+      </div>
+      {hasAccess ? (
+        <>
+          <p className="text-sm text-green-700 font-medium mb-3">✓ Access Active</p>
+          <Button
+            onClick={() => navigate("/picture360")}
+            className="w-full mt-auto bg-emerald-600 hover:bg-emerald-700 text-white font-semibold"
+          >
+            Explore Now →
+          </Button>
+        </>
+      ) : (
+        <>
+          <p className="text-sm text-slate-700 mb-3">
+            <span className="text-xl font-bold text-emerald-600">£9</span>{" "}
+            <span className="text-slate-500">for 3 months</span>
+          </p>
+          <Button
+            onClick={() => navigate("/picture360")}
+            className="w-full mt-auto bg-emerald-600 hover:bg-emerald-700 text-white font-semibold"
+          >
+            Buy Now →
+          </Button>
+        </>
+      )}
+    </Card>
   );
 }

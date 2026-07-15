@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { ArrowLeft, ChevronLeft, ChevronRight, Lock, Maximize } from "lucide-react";
 import { useProtectedRoute } from "@/hooks/useProtectedRoute";
-import { useSubscription } from "@/hooks/useSubscription";
+import { usePicture360Access } from "@/hooks/usePicture360Access";
 import { trpc } from "@/lib/trpc";
 import { useState } from "react";
 import { ImageZoomModal } from "@/components/ImageZoomModal";
@@ -21,7 +21,7 @@ export default function Picture360Specialty() {
   const { specialty } = useParams<{ specialty: string }>();
   const [, navigate] = useLocation();
   const { user, isAuthenticated, loading } = useProtectedRoute();
-  const { isPremium, isLoading: subLoading } = useSubscription();
+  const { hasAccess: isPremium, isLoading: subLoading } = usePicture360Access();
   const [mode, setMode] = useState<"select" | "learn" | "test">("select");
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [showAnswer, setShowAnswer] = useState(false);
@@ -47,7 +47,7 @@ export default function Picture360Specialty() {
     );
   }
 
-  // Payment gate - redirect non-premium users
+  // Payment gate - redirect users without Picture360 access
   if (!isPremium) {
     return (
       <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100">
@@ -69,16 +69,16 @@ export default function Picture360Specialty() {
         </header>
         <main className="max-w-2xl mx-auto px-4 py-16 text-center">
           <div className="bg-white rounded-xl border border-slate-200 p-12 shadow-sm">
-            <Lock className="w-16 h-16 text-amber-500 mx-auto mb-6" />
-            <h2 className="text-2xl font-bold text-slate-900 mb-3">Premium Feature</h2>
+            <Lock className="w-16 h-16 text-emerald-500 mx-auto mb-6" />
+            <h2 className="text-2xl font-bold text-slate-900 mb-3">Picture360 Access Required</h2>
             <p className="text-slate-600 mb-8">
-              Picture360 visual diagnosis training is available exclusively for premium subscribers. Upgrade your plan to access all images and learning modes.
+              Purchase Picture360 for £9 to access visual diagnosis training across all specialties for 3 months.
             </p>
             <Button
-              onClick={() => navigate("/pricing")}
-              className="bg-amber-600 hover:bg-amber-700 text-white px-8 py-3"
+              onClick={() => navigate("/picture360")}
+              className="bg-emerald-600 hover:bg-emerald-700 text-white px-8 py-3"
             >
-              Upgrade to Premium
+              View Picture360 →
             </Button>
           </div>
         </main>

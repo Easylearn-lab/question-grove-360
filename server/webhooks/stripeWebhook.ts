@@ -86,13 +86,21 @@ export async function handleStripeWebhook(req: Request, res: Response) {
 async function handleCheckoutSessionCompleted(session: any) {
   console.log("[Webhook] Checkout session completed:", session.id);
 
-  const { getProfileByUserId, updateProfile, getOrCreateProfile } = await import("../db");
   const userId = parseInt(session.metadata?.user_id);
 
   if (!userId) {
     console.error("[Webhook] No user_id in session metadata");
     return;
   }
+
+  // Check if this is a Picture360 purchase
+  if (session.metadata?.product_type === "PICTURE360") {
+    await handlePicture360Purchase(userId, session.id);
+    return;
+  }
+
+  // Otherwise, handle as AKT/SCA subscription
+  const { getProfileByUserId, updateProfile, getOrCreateProfile } = await import("../db");
 
   // Ensure profile exists
   await getOrCreateProfile(userId);
@@ -106,6 +114,30 @@ async function handleCheckoutSessionCompleted(session: any) {
   });
 
   console.log("[Webhook] Profile updated with subscription info for user:", userId);
+}
+
+async function handlePicture360Purchase(userId: number, sessionId: string) {
+  console.log("[Webhook] Picture360 purchase for user:", userId);
+
+  const { getDb } = await import("../db");
+  const db = await getDb();
+  if (!db) {
+    console.error("[Webhook] Database not available for Picture360 purchase");
+    return;
+  }
+
+  const { sql } = await import("drizzle-orm");
+
+  // Calculate expiry: now + 3 months
+  const now = new Date();
+  const expiresAt = new Date(now);
+  expiresAt.setMonth(expiresAt.getMonth() + 3);
+
+  await db.execute(
+    sql`INSERT INTO picture360_access (userId, purchasedAt, expiresAt, status, stripeSessionId) VALUES (${userId}, ${now}, ${expiresAt}, 'active', ${sessionId})`
+  );
+
+  console.log("[Webhook] Picture360 access granted until:", expiresAt.toISOString());
 }
 
 async function handleSubscriptionUpdated(subscription: any) {
