@@ -12,7 +12,7 @@ export type ExamTrack = "AKT" | "SCA";
 
 export const PAYMENT_ENABLED: Record<ExamTrack, boolean> = {
   AKT: true,   // Live and active
-  SCA: false,  // Coming soon — do not activate until content is ready
+  SCA: true,   // Live — 30 cases available
 };
 
 export const AKT_FEATURES = [

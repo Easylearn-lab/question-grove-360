@@ -11,6 +11,7 @@ import { twoFactorRouter } from "./twoFactorRouter";
 import { voiceRouter } from "./voiceRouter";
 import { adaptiveRouter } from "./adaptiveAlgorithm";
 import { passwordRouter } from "./passwordRouter";
+import { scaRouter } from "./scaRouter";
 
 export const appRouter = router({
   system: systemRouter,
@@ -595,6 +596,9 @@ export const appRouter = router({
 
   // Two-Factor Authentication Router
   twoFactor: twoFactorRouter,
+
+  // SCA Simulator Router
+  sca: scaRouter,
 
   // Voice Router (SCA voice integration)
   voice: voiceRouter,

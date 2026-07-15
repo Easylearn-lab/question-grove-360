@@ -903,5 +903,18 @@
 ## Picture360 Webhook 500 Error Fix (July 15, 2026)
 - [x] Investigate production webhook 500 errors on checkout.session.completed
 - [x] Fix the root cause: missing stripeSessionId column in picture360_access table (also added createdAt)
-- [ ] Confirm webhook returns 200 after fix
-- [ ] Verify picture360_access table has rows for the 2 payments after Stripe resend
+- [x] Confirm webhook returns 200 after fix
+- [x] Verify picture360_access table has rows for the 2 payments after Stripe resend (2 rows for userId 2130006, expiring Oct 15 2026)
+
+## SCA Simulator Full Build (Jul 15 2026)
+
+- [x] Replace hardcoded cases with tRPC query fetching from sca_cases table
+- [x] Build browseable case grid organised by category
+- [x] Build 5-tab case interface (Doctor Briefing, Patient Script, Mark Scheme, Key Issues, Management)
+- [x] Wire AI patient to aiPatientPersona JSON (openingSentence, character, howToReact, historyIfAsked, ICE)
+- [x] Build structured domain scoring with Done Well / Partially / Poorly buttons per competency
+- [x] Add 12-minute floating countdown timer with pause/restart
+- [x] Create 4 voice profiles assigned by patientAge/patientGender
+- [x] Build post-consultation debrief with radar chart and highlighted poor scores
+- [x] Enable PAYMENT_ENABLED.SCA = true
+- [x] Update homepage SCA card from Coming Soon to active with pricing

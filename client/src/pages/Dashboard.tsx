@@ -173,7 +173,7 @@ export default function Dashboard() {
                 <span className="text-xs font-semibold text-green-600 bg-green-100 px-3 py-1 rounded-full">PREMIUM</span>
               </div>
               <h3 className="text-2xl font-bold text-slate-900 mb-2">SCA Consultation Simulator</h3>
-              <p className="text-slate-600 mb-4">Experience real-time voice-based patient consultations with instant feedback</p>
+              <p className="text-slate-600 mb-4">30 RCGP-mapped cases with AI patient roleplay, voice interaction, structured scoring &amp; debrief</p>
               <Button className="bg-green-600 hover:bg-green-700 text-gray-900">
                 Start Simulation
               </Button>
