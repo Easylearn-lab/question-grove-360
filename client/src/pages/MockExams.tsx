@@ -7,12 +7,12 @@ import { ArrowLeft, Clock, CheckCircle2, AlertCircle, Play, FileText, Timer, Bar
 import { trpc } from "@/lib/trpc";
 import { toast } from "sonner";
 import { useProtectedRoute } from "@/hooks/useProtectedRoute";
-import { useSubscription } from "@/hooks/useSubscription";
+import { useExamAccess } from "@/hooks/useExamAccess";
 import { SubscriptionGate } from "@/components/SubscriptionGate";
 
 export default function MockExams() {
   const { user, isAuthenticated, loading, isReady } = useProtectedRoute();
-  const { isPremium, isLoading: subLoading } = useSubscription();
+  const { hasAccess: isPremium, isLoading: subLoading } = useExamAccess("AKT");
   const [, navigate] = useLocation();
 
   const mocksQuery = trpc.mockExams.getMocks.useQuery(undefined, {

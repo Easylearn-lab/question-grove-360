@@ -6,7 +6,7 @@ import { Progress } from "@/components/ui/progress";
 import { Spinner } from "@/components/ui/spinner";
 import { trpc } from "@/lib/trpc";
 import { useAuth } from "@/_core/hooks/useAuth";
-import { useSubscription } from "@/hooks/useSubscription";
+import { useExamAccess } from "@/hooks/useExamAccess";
 import { SubscriptionGate } from "@/components/SubscriptionGate";
 
 // 17 specialties with icons and colors
@@ -56,7 +56,7 @@ const TOPIC_COUNTS: Record<string, number> = {
 export default function Note360List() {
   const [, navigate] = useLocation();
   const { user } = useAuth();
-  const { isPremium, isLoading: subLoading } = useSubscription();
+  const { hasAccess: isPremium, isLoading: subLoading } = useExamAccess("AKT");
   const [progressData, setProgressData] = useState<Record<string, { read: number; total: number }>>({});
   const [isLoading, setIsLoading] = useState(true);
 

@@ -10,7 +10,7 @@ import { ArrowLeft, Mic, MicOff, Send, Loader2, Play, Pause, RotateCcw, CheckCir
 import { trpc } from "@/lib/trpc";
 import { toast } from "sonner";
 import { SubscriptionGate } from "@/components/SubscriptionGate";
-import { useSubscription } from "@/hooks/useSubscription";
+import { useExamAccess } from "@/hooks/useExamAccess";
 
 // ============================================================
 // TYPES
@@ -88,7 +88,7 @@ const DIFFICULTY_COLORS: Record<string, string> = {
 // ============================================================
 export default function SCASimulator() {
   const { user, isAuthenticated } = useAuth();
-  const { isPremium, isLoading: subLoading } = useSubscription();
+  const { hasAccess: isPremium, isLoading: subLoading } = useExamAccess("SCA");
   const [, navigate] = useLocation();
   const [selectedCaseId, setSelectedCaseId] = useState<number | null>(null);
   const [phase, setPhase] = useState<"browse" | "case" | "consultation" | "scoring" | "debrief">("browse");

@@ -7,7 +7,7 @@ import { Spinner } from "@/components/ui/spinner";
 import { Bookmark, BookmarkCheck, Eye, EyeOff, Download, ArrowLeft } from "lucide-react";
 import { trpc } from "@/lib/trpc";
 import { useAuth } from "@/_core/hooks/useAuth";
-import { useSubscription } from "@/hooks/useSubscription";
+import { useExamAccess } from "@/hooks/useExamAccess";
 import { SubscriptionGate } from "@/components/SubscriptionGate";
 
 // Specialty name mapping for URL to display name
@@ -39,7 +39,7 @@ export default function Note360Content() {
   const [, navigate] = useLocation();
   const params = useParams();
   const { user } = useAuth();
-  const { isPremium, isLoading: subLoading } = useSubscription();
+  const { hasAccess: isPremium, isLoading: subLoading } = useExamAccess("AKT");
   const specialtyUrl = params.specialty || "";
   const specialtyName = SPECIALTY_MAP[specialtyUrl.toLowerCase()] || specialtyUrl;
 

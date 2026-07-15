@@ -10,7 +10,7 @@ import { useAuth } from "@/_core/hooks/useAuth";
 import { useProtectedRoute } from "@/hooks/useProtectedRoute";
 import { toast } from "sonner";
 import { SubscriptionGate } from "@/components/SubscriptionGate";
-import { useSubscription } from "@/hooks/useSubscription";
+import { useExamAccess } from "@/hooks/useExamAccess";
 
 const DIFFICULTIES = ["All Levels", "Medium", "Hard"];
 
@@ -26,7 +26,7 @@ export default function Bookmarks() {
   const [specialty, setSpecialty] = useState("All Specialties");
   const [difficulty, setDifficulty] = useState("All Levels");
 
-  const { isPremium } = useSubscription();
+  const { hasAccess: isPremium } = useExamAccess("AKT");
 
   // Fetch bookmarks
   const { data: bookmarks = [], isLoading, refetch } = trpc.questions.getBookmarks.useQuery({

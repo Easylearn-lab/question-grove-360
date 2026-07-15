@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { ArrowLeft, BookOpen, BarChart3, Lock, FileText, BookMarked, Shield, Target } from "lucide-react";
 import { useProtectedRoute } from "@/hooks/useProtectedRoute";
-import { useSubscription } from "@/hooks/useSubscription";
+import { useExamAccess } from "@/hooks/useExamAccess";
 import { usePicture360Access } from "@/hooks/usePicture360Access";
 import { trpc } from "@/lib/trpc";
 
@@ -37,7 +37,7 @@ function slugify(name: string): string {
 export default function MRCGPAKTSpecialties() {
   const [, navigate] = useLocation();
   const { user, isAuthenticated, loading } = useProtectedRoute();
-  const { isPremium } = useSubscription();
+  const { hasAccess: isPremium } = useExamAccess("AKT");
 
   const specialtiesQuery = trpc.mrcgpAkt.getSpecialties.useQuery();
   const readinessQuery = trpc.dashboard.getReadinessScore.useQuery();

@@ -8,7 +8,7 @@ import { ArrowLeft, ChevronLeft, ChevronRight, RotateCcw, CheckCircle2, AlertCir
 import { trpc } from "@/lib/trpc";
 import { toast } from "sonner";
 import { SubscriptionGate } from "@/components/SubscriptionGate";
-import { useSubscription } from "@/hooks/useSubscription";
+import { useExamAccess } from "@/hooks/useExamAccess";
 
 const SPECIALTIES = [
   "Cardiovascular",
@@ -77,7 +77,7 @@ export default function PatternRecognition() {
     }
   }, [loading, isAuthenticated, navigate]);
 
-  const { isPremium, isLoading: subLoading } = useSubscription();
+  const { hasAccess: isPremium, isLoading: subLoading } = useExamAccess("AKT");
 
   if (loading || !isAuthenticated || !user || subLoading) {
     return (

@@ -8,7 +8,7 @@ import { Input } from "@/components/ui/input";
 import { ArrowLeft, Search, BookMarked, Heart, Brain, Stethoscope, Pill, Baby, Bone, Eye, Activity, Check, Star } from "lucide-react";
 import { Streamdown } from "streamdown";
 import { SubscriptionGate } from "@/components/SubscriptionGate";
-import { useSubscription } from "@/hooks/useSubscription";
+import { useExamAccess } from "@/hooks/useExamAccess";
 import { trpc } from "@/lib/trpc";
 
 const SPECIALTIES = [
@@ -72,7 +72,7 @@ export default function Note360() {
     }
   }, [location]);
 
-  const { isPremium, isLoading: subLoading } = useSubscription();
+  const { hasAccess: isPremium, isLoading: subLoading } = useExamAccess("AKT");
 
   // Fetch notes when specialty is selected
   const { data: notes = [], isLoading: notesLoading } = trpc.note360.getBySpecialty.useQuery(

@@ -9,7 +9,7 @@ import { ArrowLeft, Bookmark, Flag, ChevronRight, ChevronLeft, BookOpen, Search 
 import { trpc } from "@/lib/trpc";
 import { toast } from "sonner";
 import { SubscriptionGate } from "@/components/SubscriptionGate";
-import { useSubscription } from "@/hooks/useSubscription";
+import { useExamAccess } from "@/hooks/useExamAccess";
 import { useAuth } from "@/_core/hooks/useAuth";
 import { useProtectedRoute } from "@/hooks/useProtectedRoute";
 
@@ -126,7 +126,7 @@ export default function QuestionBank() {
     return filtered;
   }, [questionsQuery.data, difficulty, searchQuery]);
 
-  const { isPremium, isLoading: subLoading } = useSubscription();
+  const { hasAccess: isPremium, isLoading: subLoading } = useExamAccess("AKT");
 
   const currentQuestion = filteredQuestions[currentQuestionIndex];
   const totalQuestions = filteredQuestions.length;

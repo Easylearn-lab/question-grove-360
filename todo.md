@@ -926,3 +926,14 @@
 - [x] SCA page: after login, check localStorage for sca_pending_purchase → auto-trigger Stripe Checkout
 - [x] Confirm Scenario A: logged-in → direct to Stripe (code verified, test passes)
 - [x] Confirm Scenario B: logged-out → login → auto-trigger Stripe → payment → /sca with access (code verified, test passes)
+
+## Access Control Separation Fix (Jul 16 2026)
+
+- [x] Backend: getSubscriptionStatus already returns plan field (e.g. AKT_3MONTH) — no change needed
+- [x] Frontend: Created useExamAccess hook that checks specific exam track instead of generic isPremium
+- [x] SCA: Gate access to SCA_3MONTH or SCA_6MONTH plans only
+- [x] AKT: Gate access to AKT_3MONTH or AKT_6MONTH plans only
+- [x] Picture360: Confirmed still uses its own picture360_access table (unaffected)
+- [x] Test: AKT subscriber cannot access SCA (20 tests pass)
+- [x] Test: SCA subscriber cannot access AKT (20 tests pass)
+- [x] Test: Picture360 buyer cannot access AKT or SCA without separate subscriptions (20 tests pass)
