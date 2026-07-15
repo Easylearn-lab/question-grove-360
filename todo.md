@@ -899,3 +899,9 @@
 - [x] Update webhook handler to try both secrets (existing STRIPE_WEBHOOK_SECRET for AKT, new one for Picture360)
 - [x] Ensure existing AKT subscription webhooks continue working unchanged
 - [x] Add test coverage for dual-secret verification
+
+## Picture360 Webhook 500 Error Fix (July 15, 2026)
+- [x] Investigate production webhook 500 errors on checkout.session.completed
+- [x] Fix the root cause: missing stripeSessionId column in picture360_access table (also added createdAt)
+- [ ] Confirm webhook returns 200 after fix
+- [ ] Verify picture360_access table has rows for the 2 payments after Stripe resend
