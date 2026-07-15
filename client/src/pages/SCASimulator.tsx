@@ -94,6 +94,16 @@ export default function SCASimulator() {
   const [phase, setPhase] = useState<"browse" | "case" | "consultation" | "scoring" | "debrief">("browse");
   const [categoryFilter, setCategoryFilter] = useState<string>("all");
 
+  // Show success toast when returning from Stripe payment
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    if (params.get("payment") === "success") {
+      toast.success("Welcome to SCA Simulator — your subscription is active. Start practising now.");
+      // Clean up the URL without triggering a reload
+      window.history.replaceState({}, "", window.location.pathname);
+    }
+  }, []);
+
   // Auto-trigger Stripe checkout if returning from login with pending purchase
   const createCheckout = trpc.stripe.createCheckoutSession.useMutation();
   useEffect(() => {

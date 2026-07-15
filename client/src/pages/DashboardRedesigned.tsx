@@ -129,18 +129,22 @@ export default function DashboardRedesigned() {
           <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-2 mb-6">
             {exams.map((exam: any) => {
               const isMRCGPAKT = exam.id === "MRCGP AKT";
+              const isMRCGPSCA = exam.id === "MRCGP SCA";
+              const isActiveExam = isMRCGPAKT || isMRCGPSCA;
               return (
                 <button
                   key={exam.id}
                   onClick={() => {
                     if (isMRCGPAKT) {
                       navigate("/mrcgp-akt");
+                    } else if (isMRCGPSCA) {
+                      navigate("/sca");
                     } else {
                       setSelectedExam(exam.id);
                     }
                   }}
                   className={`p-3 rounded-lg font-medium transition-all ${
-                    selectedExam === exam.id && !isMRCGPAKT
+                    selectedExam === exam.id && !isActiveExam
                       ? "bg-green-600 text-gray-900 shadow-lg"
                       : "bg-white text-gray-700 border border-green-300 hover:border-green-400 hover:bg-green-50"
                   }`}
@@ -148,7 +152,7 @@ export default function DashboardRedesigned() {
                   <span className="block text-sm">{exam.name}</span>
                   {exam.questionCount === 0 &&
                     selectedExam !== exam.id &&
-                    !isMRCGPAKT && (
+                    !isActiveExam && (
                       <span className="block text-[10px] text-gray-400 mt-0.5">
                         Coming soon
                       </span>
