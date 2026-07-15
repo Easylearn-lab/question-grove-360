@@ -98,7 +98,7 @@ export default function Pricing() {
       const result = await createCheckout.mutateAsync({ planKey });
       if (result.url) {
         toast.info("Redirecting to checkout...");
-        window.open(result.url, "_blank");
+        window.location.href = result.url;
       }
     } catch (error: any) {
       console.error("Checkout error:", error);

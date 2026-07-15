@@ -152,7 +152,17 @@ export const stripeRouter = router({
         throw new Error("Stripe is not configured. Please add your Stripe API keys in Settings → Payment.");
       }
 
-      const origin = ctx.req.headers.origin || ctx.req.headers.referer?.replace(/\/$/, "") || "";
+      // Extract origin from headers, falling back to referer origin
+      let origin = ctx.req.headers.origin || "";
+      if (!origin && ctx.req.headers.referer) {
+        try {
+          const refUrl = new URL(ctx.req.headers.referer as string);
+          origin = refUrl.origin;
+        } catch {}
+      }
+      if (!origin) {
+        origin = "https://questiongrove360.com";
+      }
 
       const session = await stripe.checkout.sessions.create({
         customer_email: ctx.user.email || undefined,

@@ -30,12 +30,13 @@ export default function Picture360() {
   const purchaseMutation = trpc.stripe.createPicture360Checkout.useMutation({
     onSuccess: (data) => {
       if (data.url) {
-        toast.info("Redirecting to checkout...");
-        window.open(data.url, "_blank");
+        toast.info("Redirecting to Stripe checkout...");
+        window.location.href = data.url;
       }
     },
     onError: (error) => {
-      toast.error(error.message || "Failed to create checkout session");
+      console.error("[Picture360] Checkout error:", error);
+      toast.error(error.message || "Failed to create checkout session. Please try again.");
     },
   });
 
