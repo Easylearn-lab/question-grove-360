@@ -9,6 +9,34 @@ function getQueryParam(req: Request, key: string): string | undefined {
   return typeof value === "string" ? value : undefined;
 }
 
+/**
+ * Parse the OAuth state parameter to extract redirectUri and optional returnPath.
+ * Supports two formats:
+ * 1. Legacy: base64(redirectUri) — just the redirect URI string
+ * 2. New: base64(JSON({ redirectUri, returnPath })) — with return path
+ */
+function parseState(state: string): { redirectUri: string; returnPath: string } {
+  try {
+    const decoded = atob(state);
+    // Try to parse as JSON first (new format)
+    try {
+      const parsed = JSON.parse(decoded);
+      if (parsed && typeof parsed === "object" && parsed.redirectUri) {
+        return {
+          redirectUri: parsed.redirectUri,
+          returnPath: parsed.returnPath || "/dashboard",
+        };
+      }
+    } catch {
+      // Not JSON — legacy format (plain redirectUri string)
+    }
+    // Legacy format: decoded string is the redirectUri itself
+    return { redirectUri: decoded, returnPath: "/dashboard" };
+  } catch {
+    return { redirectUri: "", returnPath: "/dashboard" };
+  }
+}
+
 export function registerOAuthRoutes(app: Express) {
   app.get("/api/oauth/callback", async (req: Request, res: Response) => {
     const code = getQueryParam(req, "code");
@@ -20,6 +48,10 @@ export function registerOAuthRoutes(app: Express) {
       res.status(400).json({ error: "code and state are required" });
       return;
     }
+
+    // Parse state to get returnPath for post-login redirect
+    const { returnPath } = parseState(state);
+    console.log("[OAuth] Parsed returnPath from state:", returnPath);
 
     try {
       console.log("[OAuth] Exchanging code for token...");
@@ -57,8 +89,11 @@ export function registerOAuthRoutes(app: Express) {
       console.log("[OAuth] Cookie options:", JSON.stringify(cookieOptions));
 
       res.cookie(COOKIE_NAME, sessionToken, { ...cookieOptions, maxAge: ONE_YEAR_MS });
-      console.log("[OAuth] Cookie set, redirecting to /dashboard");
-      res.redirect(302, "/dashboard");
+
+      // Redirect to the returnPath from state (defaults to /dashboard)
+      const safeReturnPath = returnPath.startsWith("/") ? returnPath : "/dashboard";
+      console.log("[OAuth] Cookie set, redirecting to", safeReturnPath);
+      res.redirect(302, safeReturnPath);
     } catch (error: any) {
       console.error("[OAuth] Callback FAILED:", error?.message || error);
       console.error("[OAuth] Error stack:", error?.stack);

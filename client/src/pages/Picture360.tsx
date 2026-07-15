@@ -2,11 +2,14 @@ import { useLocation } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { ArrowLeft, Lock, CheckCircle, Clock } from "lucide-react";
-import { useProtectedRoute } from "@/hooks/useProtectedRoute";
+import { useAuth } from "@/_core/hooks/useAuth";
 import { usePicture360Access } from "@/hooks/usePicture360Access";
 import { trpc } from "@/lib/trpc";
-import { useMemo, useEffect } from "react";
+import { useMemo, useEffect, useRef } from "react";
 import { toast } from "sonner";
+import { getLoginUrl } from "@/const";
+
+const PENDING_PURCHASE_KEY = "picture360_pending_purchase";
 
 const SPECIALTIES = [
   { name: "Dermatology", icon: "🩹" },
@@ -23,8 +26,9 @@ function slugify(name: string): string {
 
 export default function Picture360() {
   const [, navigate] = useLocation();
-  const { user, isAuthenticated, loading } = useProtectedRoute();
+  const { user, isAuthenticated, loading } = useAuth();
   const { hasAccess, status, expiresAt, isLoading: accessLoading, refetch } = usePicture360Access();
+  const pendingPurchaseTriggered = useRef(false);
 
   const pictureCountsQuery = trpc.picture360.getSpecialtyCounts.useQuery();
   const purchaseMutation = trpc.stripe.createPicture360Checkout.useMutation({
@@ -54,6 +58,39 @@ export default function Picture360() {
     }
   }, []);
 
+  // Auto-trigger checkout after login if pending purchase exists in localStorage
+  useEffect(() => {
+    if (loading) return; // Wait for auth to resolve
+    if (!isAuthenticated) return; // Only trigger for logged-in users
+    if (pendingPurchaseTriggered.current) return; // Prevent double-trigger
+
+    const pendingPurchase = localStorage.getItem(PENDING_PURCHASE_KEY);
+    if (pendingPurchase === "true") {
+      pendingPurchaseTriggered.current = true;
+      localStorage.removeItem(PENDING_PURCHASE_KEY);
+      console.log("[Picture360] Pending purchase detected after login, auto-triggering checkout...");
+      toast.info("Resuming your purchase...");
+      // Small delay to ensure the page is fully rendered and auth context is stable
+      setTimeout(() => {
+        purchaseMutation.mutate();
+      }, 500);
+    }
+  }, [loading, isAuthenticated]);
+
+  // Handle Buy Now click
+  const handleBuyNow = () => {
+    if (isAuthenticated) {
+      // User is logged in — proceed directly to Stripe checkout
+      purchaseMutation.mutate();
+    } else {
+      // User is NOT logged in — store pending purchase and redirect to login
+      localStorage.setItem(PENDING_PURCHASE_KEY, "true");
+      toast.info("Please sign in to complete your purchase.");
+      // Redirect to login with returnPath=/picture360 so they come back here after login
+      window.location.href = getLoginUrl("/picture360");
+    }
+  };
+
   const specialtiesWithCounts = useMemo(() => {
     if (!pictureCountsQuery.data) {
       return SPECIALTIES.map((s) => ({ ...s, count: 0, slug: slugify(s.name) }));
@@ -67,7 +104,7 @@ export default function Picture360() {
     }));
   }, [pictureCountsQuery.data]);
 
-  if (loading || pictureCountsQuery.isLoading || accessLoading) {
+  if (loading || pictureCountsQuery.isLoading || (isAuthenticated && accessLoading)) {
     return (
       <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 flex items-center justify-center">
         <div className="text-center">
@@ -87,7 +124,7 @@ export default function Picture360() {
             <Button
               variant="ghost"
               size="sm"
-              onClick={() => navigate("/dashboard")}
+              onClick={() => navigate(isAuthenticated ? "/dashboard" : "/")}
               className="text-slate-600 hover:text-slate-900"
             >
               <ArrowLeft className="w-4 h-4" />
@@ -141,7 +178,7 @@ export default function Picture360() {
                 <li className="flex items-center gap-2"><CheckCircle className="w-4 h-4 text-green-600 shrink-0" /> Test mode with MCQ practice</li>
               </ul>
               <Button
-                onClick={() => purchaseMutation.mutate()}
+                onClick={handleBuyNow}
                 disabled={purchaseMutation.isPending}
                 className="w-full bg-emerald-600 hover:bg-emerald-700 text-white py-3 text-lg font-semibold"
               >

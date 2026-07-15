@@ -660,7 +660,7 @@ export const appRouter = router({
   }),
   // Picture360 Router
   picture360: router({
-    getSpecialtyCounts: protectedProcedure.query(async () => {
+    getSpecialtyCounts: publicProcedure.query(async () => {
       const { getDb } = await import("./db");
       const db = await getDb();
       if (!db) throw new Error("Database not available");

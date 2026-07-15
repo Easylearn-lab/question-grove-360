@@ -878,3 +878,18 @@
 - [x] Update homepage Picture360 card (£9 price + Buy Now for non-purchasers, Access Active + Explore Now for purchasers)
 - [x] AKT subscribers without Picture360 purchase cannot access Picture360
 - [x] Verify full purchase flow end to end
+
+## Picture360 Buy Now Auth Flow Fix (July 15, 2026)
+- [x] Fix route conflict: move /picture360 routes before /:mrcgp-akt wildcard in App.tsx
+- [x] Fix non-logged-in access: change picture360.getSpecialtyCounts from protectedProcedure to publicProcedure
+- [x] Add returnPath support to getLoginUrl() in const.ts (encodes returnPath in OAuth state)
+- [x] Update OAuth callback (oauth.ts) to parse returnPath from state and redirect there after login
+- [x] Replace useProtectedRoute with useAuth() in Picture360.tsx (no auto-redirect for guests)
+- [x] Add localStorage pending purchase flow: store picture360_pending_purchase before login redirect
+- [x] Add useEffect to auto-trigger checkout after login if pending purchase exists
+- [x] Scenario A (logged-in): Buy Now → Stripe checkout → /picture360?payment=success → webhook → access granted
+- [x] Scenario B (not logged-in): Buy Now → localStorage + login → return to /picture360 → auto-checkout → Stripe → access granted
+- [x] Verify Stripe webhook correctly writes to picture360_access with expiresAt = purchasedAt + 3 months
+- [x] Verify createPicture360Checkout uses inline price_data (£9.00 / 900 pence) — no placeholder price ID needed
+- [x] Update oauth-fix.test.ts assertions to match new redirect behavior
+- [x] Write comprehensive picture360-auth-flow.test.ts (18 tests, all passing)

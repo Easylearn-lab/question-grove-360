@@ -56,13 +56,13 @@ function Router() {
       <Route path={"/progress"} component={Progress} />
       <Route path={"/bookmarks"} component={Bookmarks} />
       <Route path={"/settings/2fa"} component={TwoFactorSettings} />
+      <Route path={"/picture360"} component={Picture360} />
+      <Route path={"/picture360/:specialty"} component={Picture360Specialty} />
       <Route path={"/:mrcgp-akt"} component={MRCGPAKTSpecialties} />
       <Route path={"/:practice/mrcgp-akt/:specialty"} component={MRCGPAKTPractice} />
       <Route path={"/:mrcgp-akt/note360"} component={Note360List} />
       <Route path={"/:mrcgp-akt/note360/:specialty"} component={Note360Content} />
       <Route path={"/:mrcgp-akt/flashcards"} component={PatternRecognition} />
-      <Route path={"/picture360"} component={Picture360} />
-      <Route path={"/picture360/:specialty"} component={Picture360Specialty} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />

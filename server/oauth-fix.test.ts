@@ -96,7 +96,7 @@ describe("OAuth Session Fix", () => {
   });
 
   describe("OAuth callback redirect behavior", () => {
-    it("should redirect to /dashboard after successful OAuth (not /)", async () => {
+    it("should redirect to safeReturnPath after successful OAuth (defaults to /dashboard)", async () => {
       // Read the oauth.ts file to verify the redirect target
       const fs = await import("fs");
       const oauthContent = fs.readFileSync(
@@ -104,21 +104,23 @@ describe("OAuth Session Fix", () => {
         "utf-8"
       );
       
-      // Verify redirect goes to /dashboard
-      expect(oauthContent).toContain('res.redirect(302, "/dashboard")');
+      // Verify redirect uses safeReturnPath (which defaults to /dashboard)
+      expect(oauthContent).toContain('res.redirect(302, safeReturnPath)');
+      // Verify safeReturnPath defaults to /dashboard
+      expect(oauthContent).toContain('returnPath.startsWith("/") ? returnPath : "/dashboard"');
       // Verify it does NOT redirect to just "/"
       expect(oauthContent).not.toContain('res.redirect(302, "/")');
     });
 
-    it("should use email as fallback name when name is missing", async () => {
+    it("should use email prefix as fallback name when name is missing", async () => {
       const fs = await import("fs");
       const oauthContent = fs.readFileSync(
         "/home/ubuntu/question-grove-360/server/_core/oauth.ts",
         "utf-8"
       );
       
-      // Verify fallback name logic exists
-      expect(oauthContent).toContain('userInfo.name || userInfo.email || "User"');
+      // Verify fallback name logic exists (uses email prefix or "User")
+      expect(oauthContent).toContain('userInfo.name || (userInfo.email');
     });
   });
 
