@@ -9,6 +9,13 @@ import Stripe from "stripe";
  * - customer.subscription.deleted
  * - invoice.paid
  * - invoice.payment_failed
+ *
+ * Supports TWO webhook endpoints with separate signing secrets:
+ * 1. STRIPE_WEBHOOK_SECRET — existing endpoint at questgrove-ghmhikmd.manus.space (AKT subscriptions)
+ * 2. STRIPE_PICTURE360_WEBHOOK_SECRET — new endpoint at questiongrove360.com (Picture360 purchases)
+ *
+ * The handler tries both secrets in order. If the first fails signature verification,
+ * it tries the second. This ensures both endpoints can share the same handler code.
  */
 
 function getStripe(): Stripe | null {
@@ -19,6 +26,27 @@ function getStripe(): Stripe | null {
   return new Stripe(key, { apiVersion: "2025-04-30.basil" as any });
 }
 
+/**
+ * Attempt to verify the webhook signature against multiple secrets.
+ * Returns the verified event on success, or null if all secrets fail.
+ */
+function verifyWebhookSignature(
+  stripe: Stripe,
+  payload: Buffer | string,
+  signature: string,
+  secrets: string[]
+): Stripe.Event | null {
+  for (const secret of secrets) {
+    try {
+      return stripe.webhooks.constructEvent(payload, signature, secret);
+    } catch {
+      // Signature didn't match this secret, try the next one
+      continue;
+    }
+  }
+  return null;
+}
+
 export async function handleStripeWebhook(req: Request, res: Response) {
   const stripe = getStripe();
   if (!stripe) {
@@ -26,21 +54,37 @@ export async function handleStripeWebhook(req: Request, res: Response) {
   }
 
   const sig = req.headers["stripe-signature"] as string;
-  const webhookSecret = process.env.STRIPE_WEBHOOK_SECRET;
+  if (!sig) {
+    console.error("[Webhook] Missing stripe-signature header");
+    return res.status(400).json({ error: "Missing stripe-signature header" });
+  }
 
-  if (!webhookSecret) {
-    console.error("[Webhook] STRIPE_WEBHOOK_SECRET not configured");
+  // Collect all available webhook secrets
+  const secrets: string[] = [];
+  const existingSecret = process.env.STRIPE_WEBHOOK_SECRET;
+  const picture360Secret = process.env.STRIPE_PICTURE360_WEBHOOK_SECRET;
+
+  if (existingSecret && existingSecret !== "placeholder") {
+    secrets.push(existingSecret);
+  }
+  if (picture360Secret && picture360Secret !== "placeholder") {
+    secrets.push(picture360Secret);
+  }
+
+  if (secrets.length === 0) {
+    console.error("[Webhook] No webhook secrets configured");
     return res.status(500).json({ error: "Webhook secret not configured" });
   }
 
-  let event: Stripe.Event;
+  // Try to verify against all available secrets
+  const event = verifyWebhookSignature(stripe, req.body, sig, secrets);
 
-  try {
-    event = stripe.webhooks.constructEvent(req.body, sig, webhookSecret);
-  } catch (err: any) {
-    console.error("[Webhook] Signature verification failed:", err.message);
-    return res.status(400).json({ error: `Webhook Error: ${err.message}` });
+  if (!event) {
+    console.error("[Webhook] Signature verification failed against all configured secrets");
+    return res.status(400).json({ error: "Webhook signature verification failed" });
   }
+
+  console.log(`[Webhook] Event verified: ${event.type} (id: ${event.id})`);
 
   // Handle test events for verification
   if (event.id.startsWith("evt_test_")) {

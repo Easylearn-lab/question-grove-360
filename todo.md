@@ -893,3 +893,9 @@
 - [x] Verify createPicture360Checkout uses inline price_data (£9.00 / 900 pence) — no placeholder price ID needed
 - [x] Update oauth-fix.test.ts assertions to match new redirect behavior
 - [x] Write comprehensive picture360-auth-flow.test.ts (18 tests, all passing)
+
+## Dual Stripe Webhook Secrets (July 15, 2026)
+- [x] Add STRIPE_PICTURE360_WEBHOOK_SECRET env var for the new Picture360 webhook endpoint
+- [x] Update webhook handler to try both secrets (existing STRIPE_WEBHOOK_SECRET for AKT, new one for Picture360)
+- [x] Ensure existing AKT subscription webhooks continue working unchanged
+- [x] Add test coverage for dual-secret verification
