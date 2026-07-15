@@ -9,6 +9,8 @@ import { useMemo, useEffect, useRef } from "react";
 import { toast } from "sonner";
 import { getLoginUrl } from "@/const";
 
+// [DEPLOY FIX] Picture360 Buy Now auth flow — July 15 2026 16:20 UTC
+// Fixes: route ordering, publicProcedure, returnPath OAuth, localStorage pending purchase
 const PENDING_PURCHASE_KEY = "picture360_pending_purchase";
 
 const SPECIALTIES = [
