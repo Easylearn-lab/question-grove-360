@@ -94,6 +94,26 @@ export default function SCASimulator() {
   const [phase, setPhase] = useState<"browse" | "case" | "consultation" | "scoring" | "debrief">("browse");
   const [categoryFilter, setCategoryFilter] = useState<string>("all");
 
+  // Auto-trigger Stripe checkout if returning from login with pending purchase
+  const createCheckout = trpc.stripe.createCheckoutSession.useMutation();
+  useEffect(() => {
+    const pendingPlan = localStorage.getItem("sca_pending_purchase");
+    if (pendingPlan && isAuthenticated && !subLoading) {
+      localStorage.removeItem("sca_pending_purchase");
+      toast.info("Resuming your purchase...");
+      createCheckout.mutateAsync({ planKey: pendingPlan })
+        .then((result) => {
+          if (result.url) {
+            window.location.href = result.url;
+          }
+        })
+        .catch((err) => {
+          console.error("Auto-checkout failed:", err);
+          toast.error("Failed to resume checkout. Please try subscribing again from the Pricing page.");
+        });
+    }
+  }, [isAuthenticated, subLoading]);
+
   // Fetch all cases
   const casesQuery = trpc.sca.getCases.useQuery();
 

@@ -50,7 +50,7 @@ export const stripeRouter = router({
           },
         ],
         mode: "subscription",
-        success_url: `${origin}/dashboard?payment=success`,
+        success_url: plan.examTrack === "SCA" ? `${origin}/sca?payment=success` : `${origin}/dashboard?payment=success`,
         cancel_url: `${origin}/pricing?payment=cancelled`,
         metadata: {
           user_id: ctx.user.id.toString(),

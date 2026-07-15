@@ -918,3 +918,11 @@
 - [x] Build post-consultation debrief with radar chart and highlighted poor scores
 - [x] Enable PAYMENT_ENABLED.SCA = true
 - [x] Update homepage SCA card from Coming Soon to active with pricing
+
+## SCA Purchase Flow Fix (Jul 16 2026)
+
+- [x] Pricing page: non-logged-in user clicks Subscribe → store sca_pending_purchase in localStorage → redirect to login with returnPath=/sca
+- [x] Pricing page: logged-in user clicks Subscribe → go directly to Stripe Checkout
+- [x] SCA page: after login, check localStorage for sca_pending_purchase → auto-trigger Stripe Checkout
+- [x] Confirm Scenario A: logged-in → direct to Stripe (code verified, test passes)
+- [x] Confirm Scenario B: logged-out → login → auto-trigger Stripe → payment → /sca with access (code verified, test passes)

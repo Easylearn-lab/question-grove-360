@@ -89,7 +89,14 @@ export default function Pricing() {
 
   const handleCheckout = async (planKey: string) => {
     if (!isAuthenticated) {
-      window.location.href = getLoginUrl();
+      // Store the pending purchase intent so we can resume after login
+      if (planKey.startsWith("SCA")) {
+        localStorage.setItem("sca_pending_purchase", planKey);
+        window.location.href = getLoginUrl("/sca");
+      } else {
+        localStorage.setItem("akt_pending_purchase", planKey);
+        window.location.href = getLoginUrl("/pricing");
+      }
       return;
     }
 
@@ -110,7 +117,7 @@ export default function Pricing() {
 
   const plans = activeTrack === "AKT" ? AKT_PLANS : SCA_PLANS;
   const features = activeTrack === "AKT" ? AKT_FEATURES : SCA_FEATURES;
-  const isTrackDisabled = activeTrack === "SCA";
+  const isTrackDisabled = false; // SCA payments now enabled
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100">
