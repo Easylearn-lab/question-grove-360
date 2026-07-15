@@ -937,3 +937,12 @@
 - [x] Test: AKT subscriber cannot access SCA (20 tests pass)
 - [x] Test: SCA subscriber cannot access AKT (20 tests pass)
 - [x] Test: Picture360 buyer cannot access AKT or SCA without separate subscriptions (20 tests pass)
+
+## Cross-Sell Prompts for Existing Subscribers (Jul 16 2026)
+
+- [x] SCA page: Show targeted upsell for AKT subscribers instead of generic gate
+- [x] AKT pages: Show targeted upsell for SCA subscribers instead of generic gate
+- [x] Subscribe button goes directly to Stripe checkout for the other product
+- [x] Created CrossSellGate component with 3 states: pass-through, cross-sell, generic gate
+- [x] Updated all 8 pages: SCASimulator, QuestionBank, MockExams, PatternRecognition, Note360, Note360Content, Note360List, Bookmarks
+- [x] 23 vitest tests passing for CrossSellGate logic

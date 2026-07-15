@@ -9,7 +9,7 @@ import { Badge } from "@/components/ui/badge";
 import { ArrowLeft, Mic, MicOff, Send, Loader2, Play, Pause, RotateCcw, CheckCircle2, XCircle, MinusCircle, Clock, Volume2 } from "lucide-react";
 import { trpc } from "@/lib/trpc";
 import { toast } from "sonner";
-import { SubscriptionGate } from "@/components/SubscriptionGate";
+import { CrossSellGate } from "@/components/CrossSellGate";
 import { useExamAccess } from "@/hooks/useExamAccess";
 
 // ============================================================
@@ -190,7 +190,7 @@ export default function SCASimulator() {
         </header>
 
         <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-          <SubscriptionGate isPremium={isPremium} featureName="SCA Consultation Simulator">
+          <CrossSellGate hasAccess={isPremium} requiredTrack="SCA" featureName="SCA Consultation Simulator">
             {/* Category Filter */}
             <div className="flex flex-wrap gap-2 mb-8">
               <Button
@@ -251,7 +251,7 @@ export default function SCASimulator() {
                 ))}
               </div>
             )}
-          </SubscriptionGate>
+          </CrossSellGate>
         </main>
       </div>
     );

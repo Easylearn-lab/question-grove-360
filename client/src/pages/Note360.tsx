@@ -7,7 +7,7 @@ import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { ArrowLeft, Search, BookMarked, Heart, Brain, Stethoscope, Pill, Baby, Bone, Eye, Activity, Check, Star } from "lucide-react";
 import { Streamdown } from "streamdown";
-import { SubscriptionGate } from "@/components/SubscriptionGate";
+import { CrossSellGate } from "@/components/CrossSellGate";
 import { useExamAccess } from "@/hooks/useExamAccess";
 import { trpc } from "@/lib/trpc";
 
@@ -289,7 +289,7 @@ export default function Note360() {
       </header>
 
       <main className="max-w-7xl mx-auto px-4 py-12">
-        <SubscriptionGate isPremium={isPremium} featureName="Note360 Revision Notes">
+        <CrossSellGate hasAccess={isPremium} requiredTrack="AKT" featureName="Note360 Revision Notes">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-slate-900 mb-3">Choose a Specialty</h2>
             <p className="text-slate-600 max-w-lg mx-auto">
@@ -317,7 +317,7 @@ export default function Note360() {
               );
             })}
           </div>
-        </SubscriptionGate>
+        </CrossSellGate>
       </main>
     </div>
   );

@@ -8,7 +8,7 @@ import { Bookmark, BookmarkCheck, Eye, EyeOff, Download, ArrowLeft } from "lucid
 import { trpc } from "@/lib/trpc";
 import { useAuth } from "@/_core/hooks/useAuth";
 import { useExamAccess } from "@/hooks/useExamAccess";
-import { SubscriptionGate } from "@/components/SubscriptionGate";
+import { CrossSellGate } from "@/components/CrossSellGate";
 
 // Specialty name mapping for URL to display name
 const SPECIALTY_MAP: Record<string, string> = {
@@ -116,7 +116,7 @@ export default function Note360Content() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 p-6">
       <div className="max-w-4xl mx-auto">
-        <SubscriptionGate isPremium={isPremium} featureName="Note360 Revision Notes">
+        <CrossSellGate hasAccess={isPremium} requiredTrack="AKT" featureName="Note360 Revision Notes">
         {/* Header with breadcrumb */}
         <div className="mb-8">
           <button
@@ -233,7 +233,7 @@ export default function Note360Content() {
             ))
           )}
         </div>
-        </SubscriptionGate>
+        </CrossSellGate>
       </div>
     </div>
   );

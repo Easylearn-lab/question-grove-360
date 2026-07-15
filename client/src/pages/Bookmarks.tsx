@@ -9,7 +9,7 @@ import { trpc } from "@/lib/trpc";
 import { useAuth } from "@/_core/hooks/useAuth";
 import { useProtectedRoute } from "@/hooks/useProtectedRoute";
 import { toast } from "sonner";
-import { SubscriptionGate } from "@/components/SubscriptionGate";
+import { CrossSellGate } from "@/components/CrossSellGate";
 import { useExamAccess } from "@/hooks/useExamAccess";
 
 const DIFFICULTIES = ["All Levels", "Medium", "Hard"];
@@ -146,7 +146,7 @@ export default function Bookmarks() {
   };
 
   return (
-    <SubscriptionGate isPremium={isPremium} featureName="Bookmarks">
+    <CrossSellGate hasAccess={isPremium} requiredTrack="AKT" featureName="Bookmarks">
       <main className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 p-4">
         <div className="max-w-4xl mx-auto">
           {/* Header */}
@@ -373,6 +373,6 @@ export default function Bookmarks() {
           )}
         </div>
       </main>
-    </SubscriptionGate>
+    </CrossSellGate>
   );
 }

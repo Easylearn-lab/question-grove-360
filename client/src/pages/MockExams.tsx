@@ -8,7 +8,7 @@ import { trpc } from "@/lib/trpc";
 import { toast } from "sonner";
 import { useProtectedRoute } from "@/hooks/useProtectedRoute";
 import { useExamAccess } from "@/hooks/useExamAccess";
-import { SubscriptionGate } from "@/components/SubscriptionGate";
+import { CrossSellGate } from "@/components/CrossSellGate";
 
 export default function MockExams() {
   const { user, isAuthenticated, loading, isReady } = useProtectedRoute();
@@ -59,7 +59,7 @@ export default function MockExams() {
       </header>
 
       <main className="max-w-5xl mx-auto px-4 py-10">
-        <SubscriptionGate isPremium={isPremium} featureName="Mock Exams">
+        <CrossSellGate hasAccess={isPremium} requiredTrack="AKT" featureName="Mock Exams">
         {/* Info Banner */}
         <div className="bg-gradient-to-r from-green-50 to-emerald-50 border border-green-200 rounded-xl p-6 mb-10">
           <div className="flex items-start gap-4">
@@ -170,7 +170,7 @@ export default function MockExams() {
             </div>
           </div>
         )}
-        </SubscriptionGate>
+        </CrossSellGate>
       </main>
     </div>
   );

@@ -7,7 +7,7 @@ import { Card } from "@/components/ui/card";
 import { ArrowLeft, ChevronLeft, ChevronRight, RotateCcw, CheckCircle2, AlertCircle, Brain } from "lucide-react";
 import { trpc } from "@/lib/trpc";
 import { toast } from "sonner";
-import { SubscriptionGate } from "@/components/SubscriptionGate";
+import { CrossSellGate } from "@/components/CrossSellGate";
 import { useExamAccess } from "@/hooks/useExamAccess";
 
 const SPECIALTIES = [
@@ -218,7 +218,7 @@ export default function PatternRecognition() {
       </header>
 
       <main className="max-w-4xl mx-auto px-4 py-12">
-        <SubscriptionGate isPremium={isPremium} featureName="Pattern Recognition Flashcards">
+        <CrossSellGate hasAccess={isPremium} requiredTrack="AKT" featureName="Pattern Recognition Flashcards">
         {/* Progress Bar */}
         <div className="mb-8">
           <div className="flex justify-between items-center mb-2">
@@ -353,7 +353,7 @@ export default function PatternRecognition() {
             </Card>
           ))}
         </div>
-        </SubscriptionGate>
+        </CrossSellGate>
       </main>
     </div>
   );

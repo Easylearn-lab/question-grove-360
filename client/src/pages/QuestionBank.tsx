@@ -8,7 +8,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { ArrowLeft, Bookmark, Flag, ChevronRight, ChevronLeft, BookOpen, Search } from "lucide-react";
 import { trpc } from "@/lib/trpc";
 import { toast } from "sonner";
-import { SubscriptionGate } from "@/components/SubscriptionGate";
+import { CrossSellGate } from "@/components/CrossSellGate";
 import { useExamAccess } from "@/hooks/useExamAccess";
 import { useAuth } from "@/_core/hooks/useAuth";
 import { useProtectedRoute } from "@/hooks/useProtectedRoute";
@@ -291,7 +291,7 @@ export default function QuestionBank() {
 
       {/* Main Content */}
       <main className="max-w-7xl mx-auto px-4 py-8">
-        <SubscriptionGate isPremium={isPremium} featureName="Question Bank">
+        <CrossSellGate hasAccess={isPremium} requiredTrack="AKT" featureName="Question Bank">
         <div className="grid lg:grid-cols-4 gap-8">
           {/* Sidebar Filters */}
           <div className="lg:col-span-1">
@@ -513,7 +513,7 @@ export default function QuestionBank() {
             ) : null}
           </div>
         </div>
-        </SubscriptionGate>
+        </CrossSellGate>
       </main>
 
       {/* Reset Modal */}
