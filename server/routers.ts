@@ -658,7 +658,7 @@ export const appRouter = router({
         );
             }),
   }),
-  // Picture360 Router
+  // Picture360 Router — auth flow fix applied July 15 2026
   picture360: router({
     getSpecialtyCounts: publicProcedure.query(async () => {
       const { getDb } = await import("./db");
