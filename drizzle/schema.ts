@@ -324,6 +324,7 @@ export const scaCases = mysqlTable("sca_cases", {
   examinationFindings: text("examinationFindings"),
   investigationResults: json("investigationResults"),
   isActive: boolean("isActive").default(true),
+  isFreeTrialCase: boolean("isFreeTrialCase").default(false),
   createdAt: timestamp("createdAt").defaultNow().notNull(),
 });
 

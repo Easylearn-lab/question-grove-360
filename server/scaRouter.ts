@@ -18,7 +18,7 @@ export const scaRouter = router({
     if (!db) throw new TRPCError({ code: "INTERNAL_SERVER_ERROR", message: "Database unavailable" });
 
     const result = await db.execute(
-      sql`SELECT id, title, category, difficulty, patientName, patientAge, patientGender, presentingComplaint FROM sca_cases WHERE isActive = 1 ORDER BY id`
+      sql`SELECT id, title, category, difficulty, patientName, patientAge, patientGender, presentingComplaint, isFreeTrialCase FROM sca_cases WHERE isActive = 1 ORDER BY id`
     );
     return (result as any)[0] as any[];
   }),
@@ -27,7 +27,7 @@ export const scaRouter = router({
    * Get full case details (protected - requires subscription)
    */
   getCaseById: protectedProcedure
-    .input(z.object({ caseId: z.number() }))
+    .input(z.object({ caseId: z.number(), isFreeTrial: z.boolean().optional().default(false) }))
     .query(async ({ input }) => {
       const { getDb } = await import("./db");
       const db = await getDb();
@@ -39,6 +39,10 @@ export const scaRouter = router({
       const cases = (result as any)[0] as any[];
       if (cases.length === 0) {
         throw new TRPCError({ code: "NOT_FOUND", message: "Case not found" });
+      }
+      // If requesting as free trial, verify the case is actually a free trial case
+      if (input.isFreeTrial && !cases[0].isFreeTrialCase) {
+        throw new TRPCError({ code: "FORBIDDEN", message: "This case is not available for free trial" });
       }
 
       const c = cases[0];
@@ -188,8 +192,14 @@ CRITICAL RULES:
       totalScore: z.number(),
       passed: z.boolean(),
       competencyScores: z.record(z.string(), z.enum(["well", "partial", "poor"])).optional(),
+      isFreeTrial: z.boolean().optional().default(false),
     }))
     .mutation(async ({ ctx, input }) => {
+      // Free trial consultations are not saved to history
+      if (input.isFreeTrial) {
+        return { success: true, id: 0, freeTrial: true };
+      }
+
       const { getDb } = await import("./db");
       const db = await getDb();
       if (!db) throw new TRPCError({ code: "INTERNAL_SERVER_ERROR", message: "Database unavailable" });

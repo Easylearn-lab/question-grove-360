@@ -963,3 +963,16 @@
 - [x] Add Retry button next to View button in history table (opens case in SCA Simulator)
 - [x] Add Export Progress Report PDF button (radar chart description, trend data, consultation table, weakest domain summary)
 - [x] 30 vitest tests passing for SCA history logic
+
+## SCA Free Trial Case (Jul 16 2026)
+
+- [x] Add isFreeTrialCase boolean column to sca_cases table (default false)
+- [x] Set case ID 1 (The Weight I Cannot Shift) as free trial case
+- [x] Update getCases router to return all cases to logged-in users (with isFreeTrialCase flag)
+- [x] Update getCaseById to allow free trial case access without subscription
+- [x] Update consultation save logic to skip saving for non-subscribers
+- [x] Grey out locked cases in UI, show "Try Free" badge on trial case
+- [x] Show preview banner above greyed-out cases for non-subscribers
+- [x] After debrief, show subscribe prompt with score and pricing for non-subscribers
+- [x] Hide Retry/My Progress buttons for free trial users, show Subscribe to Save button
+- [x] Write tests for free trial logic (18 tests passing)

@@ -6,7 +6,7 @@ import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Badge } from "@/components/ui/badge";
-import { ArrowLeft, Mic, MicOff, Send, Loader2, Play, Pause, RotateCcw, CheckCircle2, XCircle, MinusCircle, Clock, Volume2, BarChart3 } from "lucide-react";
+import { ArrowLeft, Mic, MicOff, Send, Loader2, Play, Pause, RotateCcw, CheckCircle2, XCircle, MinusCircle, Clock, Volume2, BarChart3, Lock, Zap, Sparkles } from "lucide-react";
 import { trpc } from "@/lib/trpc";
 import { toast } from "sonner";
 import { CrossSellGate } from "@/components/CrossSellGate";
@@ -24,6 +24,7 @@ interface ScaCase {
   patientAge: number;
   patientGender: string;
   presentingComplaint: string;
+  isFreeTrialCase?: boolean;
 }
 
 interface FullCase extends ScaCase {
@@ -93,6 +94,8 @@ export default function SCASimulator() {
   const [selectedCaseId, setSelectedCaseId] = useState<number | null>(null);
   const [phase, setPhase] = useState<"browse" | "case" | "consultation" | "scoring" | "debrief">("browse");
   const [categoryFilter, setCategoryFilter] = useState<string>("all");
+  const [isFreeTrial, setIsFreeTrial] = useState(false);
+  const [loadingPlan, setLoadingPlan] = useState<string | null>(null);
 
   // Show success toast when returning from Stripe payment
   useEffect(() => {
@@ -138,7 +141,7 @@ export default function SCASimulator() {
 
   // Fetch full case when selected
   const fullCaseQuery = trpc.sca.getCaseById.useQuery(
-    { caseId: selectedCaseId! },
+    { caseId: selectedCaseId!, isFreeTrial },
     { enabled: !!selectedCaseId && isAuthenticated }
   );
 
@@ -154,11 +157,17 @@ export default function SCASimulator() {
     return casesQuery.data.filter((c: ScaCase) => c.category === categoryFilter);
   }, [casesQuery.data, categoryFilter]);
 
-  const handleSelectCase = (caseId: number) => {
+  const handleSelectCase = (caseId: number, freeTrialCase?: boolean) => {
     if (!isAuthenticated) {
       toast.error("Please log in to access SCA cases");
       return;
     }
+    // If user doesn't have premium and this isn't a free trial case, block
+    if (!isPremium && !freeTrialCase) {
+      toast.error("Subscribe to unlock all cases");
+      return;
+    }
+    setIsFreeTrial(!isPremium && !!freeTrialCase);
     setSelectedCaseId(caseId);
     setPhase("case");
   };
@@ -184,6 +193,9 @@ export default function SCASimulator() {
   // BROWSE PHASE - Case Grid
   // ============================================================
   if (phase === "browse") {
+    // Determine if user is in "free trial preview" mode (logged in, no SCA subscription)
+    const isFreeTrialPreview = isAuthenticated && !isPremium && !subLoading;
+
     return (
       <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100">
         <header className="bg-white border-b border-slate-200 sticky top-0 z-40">
@@ -197,76 +209,173 @@ export default function SCASimulator() {
                 <p className="text-sm text-slate-500">30 RCGP-mapped cases with AI patient roleplay</p>
               </div>
             </div>
-            <Button variant="outline" size="sm" onClick={() => navigate("/sca/history")} className="gap-1.5 text-slate-700">
-              <BarChart3 className="w-4 h-4" />
-              My Progress
-            </Button>
+            {isPremium ? (
+              <Button variant="outline" size="sm" onClick={() => navigate("/sca/history")} className="gap-1.5 text-slate-700">
+                <BarChart3 className="w-4 h-4" />
+                My Progress
+              </Button>
+            ) : (
+              <FreeTrialSubscribeButtons />
+            )}
           </div>
         </header>
 
         <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-          <CrossSellGate hasAccess={isPremium} requiredTrack="SCA" featureName="SCA Consultation Simulator">
-            {/* Category Filter */}
-            <div className="flex flex-wrap gap-2 mb-8">
-              <Button
-                variant={categoryFilter === "all" ? "default" : "outline"}
-                size="sm"
-                onClick={() => setCategoryFilter("all")}
-                className={categoryFilter === "all" ? "bg-green-600 hover:bg-green-700" : ""}
-              >
-                All ({casesQuery.data?.length || 0})
-              </Button>
-              {categories.map((cat) => (
-                <Button
-                  key={cat}
-                  variant={categoryFilter === cat ? "default" : "outline"}
-                  size="sm"
-                  onClick={() => setCategoryFilter(cat)}
-                  className={categoryFilter === cat ? "bg-green-600 hover:bg-green-700" : ""}
-                >
-                  {cat} ({casesQuery.data?.filter((c: ScaCase) => c.category === cat).length})
-                </Button>
-              ))}
-            </div>
-
-            {/* Cases Grid */}
-            {casesQuery.isLoading ? (
-              <div className="flex items-center justify-center py-20">
-                <Loader2 className="w-8 h-8 animate-spin text-green-600" />
+          {/* For non-subscribers who are logged in: show the case grid with free trial logic */}
+          {isFreeTrialPreview ? (
+            <>
+              {/* Preview banner */}
+              <div className="mb-6 p-4 bg-gradient-to-r from-green-50 to-emerald-50 border border-green-200 rounded-lg flex items-center gap-3">
+                <Sparkles className="w-5 h-5 text-green-600 flex-shrink-0" />
+                <p className="text-sm text-green-800">
+                  You are previewing the free trial case. Subscribe to unlock all 30 cases and track your progress.
+                </p>
               </div>
-            ) : (
-              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {filteredCases.map((caseItem: ScaCase) => (
-                  <Card
-                    key={caseItem.id}
-                    className="p-6 border-slate-200 hover:shadow-lg hover:border-green-200 transition-all cursor-pointer group"
-                    onClick={() => handleSelectCase(caseItem.id)}
+
+              {/* Category Filter */}
+              <div className="flex flex-wrap gap-2 mb-8">
+                <Button
+                  variant={categoryFilter === "all" ? "default" : "outline"}
+                  size="sm"
+                  onClick={() => setCategoryFilter("all")}
+                  className={categoryFilter === "all" ? "bg-green-600 hover:bg-green-700" : ""}
+                >
+                  All ({casesQuery.data?.length || 0})
+                </Button>
+                {categories.map((cat) => (
+                  <Button
+                    key={cat}
+                    variant={categoryFilter === cat ? "default" : "outline"}
+                    size="sm"
+                    onClick={() => setCategoryFilter(cat)}
+                    className={categoryFilter === cat ? "bg-green-600 hover:bg-green-700" : ""}
                   >
-                    <div className="mb-4">
-                      <div className="flex items-center gap-2 mb-3">
-                        <span className="text-xs font-mono text-slate-400">#{caseItem.id}</span>
-                        <Badge variant="outline" className={DIFFICULTY_COLORS[caseItem.difficulty] || ""}>
-                          {caseItem.difficulty}
-                        </Badge>
-                      </div>
-                      <h3 className="text-lg font-bold text-slate-900 mb-2 group-hover:text-green-700 transition-colors">
-                        {caseItem.title}
-                      </h3>
-                      <Badge variant="outline" className={CATEGORY_COLORS[caseItem.category] || "bg-slate-100 text-slate-700"}>
-                        {caseItem.category}
-                      </Badge>
-                    </div>
-                    <p className="text-sm text-slate-600 mb-4 line-clamp-2">{caseItem.presentingComplaint}</p>
-                    <div className="flex items-center gap-2 text-xs text-slate-500">
-                      <span>{caseItem.patientName}</span>
-                      <span>•</span>
-                      <span>{caseItem.patientAge}y {caseItem.patientGender}</span>
-                    </div>
-                  </Card>
+                    {cat} ({casesQuery.data?.filter((c: ScaCase) => c.category === cat).length})
+                  </Button>
                 ))}
               </div>
-            )}
-          </CrossSellGate>
+
+              {/* Cases Grid with free trial logic */}
+              {casesQuery.isLoading ? (
+                <div className="flex items-center justify-center py-20">
+                  <Loader2 className="w-8 h-8 animate-spin text-green-600" />
+                </div>
+              ) : (
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                  {filteredCases.map((caseItem: ScaCase) => {
+                    const isTrial = !!caseItem.isFreeTrialCase;
+                    return (
+                      <Card
+                        key={caseItem.id}
+                        className={`p-6 transition-all ${
+                          isTrial
+                            ? "border-green-300 hover:shadow-lg hover:border-green-400 cursor-pointer group bg-white"
+                            : "border-slate-200 opacity-60 cursor-not-allowed bg-slate-50"
+                        }`}
+                        onClick={() => isTrial ? handleSelectCase(caseItem.id, true) : toast.error("Subscribe to unlock this case")}
+                      >
+                        <div className="mb-4">
+                          <div className="flex items-center gap-2 mb-3">
+                            <span className="text-xs font-mono text-slate-400">#{caseItem.id}</span>
+                            <Badge variant="outline" className={DIFFICULTY_COLORS[caseItem.difficulty] || ""}>
+                              {caseItem.difficulty}
+                            </Badge>
+                            {isTrial ? (
+                              <Badge className="bg-green-100 text-green-700 border-green-200">
+                                <Sparkles className="w-3 h-3 mr-1" /> Try Free
+                              </Badge>
+                            ) : (
+                              <Lock className="w-3.5 h-3.5 text-slate-400" />
+                            )}
+                          </div>
+                          <h3 className={`text-lg font-bold mb-2 transition-colors ${
+                            isTrial ? "text-slate-900 group-hover:text-green-700" : "text-slate-500"
+                          }`}>
+                            {caseItem.title}
+                          </h3>
+                          <Badge variant="outline" className={CATEGORY_COLORS[caseItem.category] || "bg-slate-100 text-slate-700"}>
+                            {caseItem.category}
+                          </Badge>
+                        </div>
+                        <p className={`text-sm mb-4 line-clamp-2 ${isTrial ? "text-slate-600" : "text-slate-400"}`}>
+                          {caseItem.presentingComplaint}
+                        </p>
+                        <div className={`flex items-center gap-2 text-xs ${isTrial ? "text-slate-500" : "text-slate-400"}`}>
+                          <span>{caseItem.patientName}</span>
+                          <span>•</span>
+                          <span>{caseItem.patientAge}y {caseItem.patientGender}</span>
+                        </div>
+                      </Card>
+                    );
+                  })}
+                </div>
+              )}
+            </>
+          ) : (
+            /* For subscribers: full access grid wrapped in CrossSellGate (handles AKT-only users) */
+            <CrossSellGate hasAccess={isPremium} requiredTrack="SCA" featureName="SCA Consultation Simulator">
+              {/* Category Filter */}
+              <div className="flex flex-wrap gap-2 mb-8">
+                <Button
+                  variant={categoryFilter === "all" ? "default" : "outline"}
+                  size="sm"
+                  onClick={() => setCategoryFilter("all")}
+                  className={categoryFilter === "all" ? "bg-green-600 hover:bg-green-700" : ""}
+                >
+                  All ({casesQuery.data?.length || 0})
+                </Button>
+                {categories.map((cat) => (
+                  <Button
+                    key={cat}
+                    variant={categoryFilter === cat ? "default" : "outline"}
+                    size="sm"
+                    onClick={() => setCategoryFilter(cat)}
+                    className={categoryFilter === cat ? "bg-green-600 hover:bg-green-700" : ""}
+                  >
+                    {cat} ({casesQuery.data?.filter((c: ScaCase) => c.category === cat).length})
+                  </Button>
+                ))}
+              </div>
+
+              {/* Cases Grid */}
+              {casesQuery.isLoading ? (
+                <div className="flex items-center justify-center py-20">
+                  <Loader2 className="w-8 h-8 animate-spin text-green-600" />
+                </div>
+              ) : (
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                  {filteredCases.map((caseItem: ScaCase) => (
+                    <Card
+                      key={caseItem.id}
+                      className="p-6 border-slate-200 hover:shadow-lg hover:border-green-200 transition-all cursor-pointer group"
+                      onClick={() => handleSelectCase(caseItem.id)}
+                    >
+                      <div className="mb-4">
+                        <div className="flex items-center gap-2 mb-3">
+                          <span className="text-xs font-mono text-slate-400">#{caseItem.id}</span>
+                          <Badge variant="outline" className={DIFFICULTY_COLORS[caseItem.difficulty] || ""}>
+                            {caseItem.difficulty}
+                          </Badge>
+                        </div>
+                        <h3 className="text-lg font-bold text-slate-900 mb-2 group-hover:text-green-700 transition-colors">
+                          {caseItem.title}
+                        </h3>
+                        <Badge variant="outline" className={CATEGORY_COLORS[caseItem.category] || "bg-slate-100 text-slate-700"}>
+                          {caseItem.category}
+                        </Badge>
+                      </div>
+                      <p className="text-sm text-slate-600 mb-4 line-clamp-2">{caseItem.presentingComplaint}</p>
+                      <div className="flex items-center gap-2 text-xs text-slate-500">
+                        <span>{caseItem.patientName}</span>
+                        <span>•</span>
+                        <span>{caseItem.patientAge}y {caseItem.patientGender}</span>
+                      </div>
+                    </Card>
+                  ))}
+                </div>
+              )}
+            </CrossSellGate>
+          )}
         </main>
       </div>
     );
@@ -292,6 +401,7 @@ export default function SCASimulator() {
       onFinishScoring={handleFinishScoring}
       onBack={handleBackToBrowse}
       userId={user?.id}
+      isFreeTrial={isFreeTrial}
     />
   );
 }
@@ -307,6 +417,7 @@ function CaseView({
   onFinishScoring,
   onBack,
   userId,
+  isFreeTrial = false,
 }: {
   caseData: FullCase;
   phase: "case" | "consultation" | "scoring" | "debrief";
@@ -315,6 +426,7 @@ function CaseView({
   onFinishScoring: () => void;
   onBack: () => void;
   userId?: number;
+  isFreeTrial?: boolean;
 }) {
   const [activeTab, setActiveTab] = useState("briefing");
   const [messages, setMessages] = useState<Message[]>([]);
@@ -471,6 +583,7 @@ function CaseView({
       messages={messages}
       duration={consultationDuration}
       userId={userId}
+      isFreeTrial={isFreeTrial}
       onBack={onBack}
     />
   );
@@ -1170,12 +1283,73 @@ function ScoringView({
 // ============================================================
 // DEBRIEF VIEW
 // ============================================================
+// ============================================================
+// FREE TRIAL SUBSCRIBE BUTTONS
+// ============================================================
+function FreeTrialSubscribeButtons() {
+  const [loadingPlan, setLoadingPlan] = useState<string | null>(null);
+  const createCheckout = trpc.stripe.createCheckoutSession.useMutation();
+  const { isAuthenticated } = useAuth();
+  const [, navigate] = useLocation();
+
+  const handleCheckout = async (planKey: string) => {
+    if (!isAuthenticated) {
+      navigate("/pricing");
+      return;
+    }
+    setLoadingPlan(planKey);
+    try {
+      const result = await createCheckout.mutateAsync({ planKey });
+      if (result.url) {
+        toast.info("Redirecting to checkout...");
+        window.location.href = result.url;
+      }
+    } catch (error: any) {
+      console.error("Checkout error:", error);
+      toast.error(error?.message || "Failed to start checkout. Please try again.");
+    } finally {
+      setLoadingPlan(null);
+    }
+  };
+
+  return (
+    <div className="flex flex-col sm:flex-row gap-3 justify-center">
+      <Button
+        onClick={() => handleCheckout("SCA_3MONTH")}
+        disabled={!!loadingPlan}
+        className="bg-green-600 hover:bg-green-700 text-white gap-2"
+      >
+        {loadingPlan === "SCA_3MONTH" ? (
+          <Loader2 className="w-4 h-4 animate-spin" />
+        ) : (
+          <Zap className="w-4 h-4" />
+        )}
+        Subscribe — £20 / 3 months
+      </Button>
+      <Button
+        onClick={() => handleCheckout("SCA_6MONTH")}
+        disabled={!!loadingPlan}
+        variant="outline"
+        className="border-green-300 text-green-700 hover:bg-green-50 gap-2"
+      >
+        {loadingPlan === "SCA_6MONTH" ? (
+          <Loader2 className="w-4 h-4 animate-spin" />
+        ) : (
+          <Zap className="w-4 h-4" />
+        )}
+        Subscribe — £35 / 6 months
+      </Button>
+    </div>
+  );
+}
+
 function DebriefView({
   caseData,
   competencyScores,
   messages,
   duration,
   userId,
+  isFreeTrial = false,
   onBack,
 }: {
   caseData: FullCase;
@@ -1183,6 +1357,7 @@ function DebriefView({
   messages: Message[];
   duration: number;
   userId?: number;
+  isFreeTrial?: boolean;
   onBack: () => void;
 }) {
   const markSheet = caseData.markSheet;
@@ -1223,9 +1398,9 @@ function DebriefView({
     })
     .filter(Boolean);
 
-  // Save consultation
+  // Save consultation (skip for free trial users)
   useEffect(() => {
-    if (!saved && userId) {
+    if (!saved && userId && !isFreeTrial) {
       saveConsultation.mutateAsync({
         caseId: caseData.id,
         caseTitle: caseData.title,
@@ -1238,6 +1413,7 @@ function DebriefView({
         totalScore: totalPercentage,
         passed,
         competencyScores,
+        isFreeTrial,
       }).then(() => setSaved(true)).catch(() => {});
     }
   }, []);
@@ -1416,12 +1592,32 @@ function DebriefView({
           </Card>
         )}
 
-        {/* Back to Cases */}
-        <div className="text-center pt-4">
-          <Button onClick={onBack} className="bg-green-600 hover:bg-green-700 text-white">
-            Back to Case Browser
-          </Button>
-        </div>
+        {/* Footer: Subscribe prompt for free trial OR back button for subscribers */}
+        {isFreeTrial ? (
+          <Card className="p-8 border-green-200 bg-gradient-to-br from-green-50 to-emerald-50 text-center">
+            <div className="w-14 h-14 mx-auto mb-4 bg-green-100 rounded-full flex items-center justify-center">
+              <Sparkles className="w-7 h-7 text-green-600" />
+            </div>
+            <h3 className="text-xl font-bold text-slate-900 mb-2">
+              You scored {totalPercentage}%{passed ? " — Pass!" : " — Keep practising"}
+            </h3>
+            <p className="text-slate-600 mb-6 max-w-lg mx-auto">
+              Subscribe to SCA Simulator to access all 30 cases, save your progress and export your portfolio PDF. From £20 for 3 months.
+            </p>
+            <FreeTrialSubscribeButtons />
+            <div className="mt-4">
+              <Button variant="ghost" size="sm" onClick={onBack} className="text-slate-500">
+                Back to Case Browser
+              </Button>
+            </div>
+          </Card>
+        ) : (
+          <div className="text-center pt-4">
+            <Button onClick={onBack} className="bg-green-600 hover:bg-green-700 text-white">
+              Back to Case Browser
+            </Button>
+          </div>
+        )}
       </main>
     </div>
   );
