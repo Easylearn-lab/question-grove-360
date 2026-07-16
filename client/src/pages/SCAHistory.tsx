@@ -3,11 +3,12 @@ import { useState, useMemo } from "react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { ArrowLeft, Eye, TrendingUp, CheckCircle2, XCircle, BarChart3, Clock } from "lucide-react";
+import { ArrowLeft, Eye, TrendingUp, CheckCircle2, XCircle, BarChart3, Clock, RotateCcw, Download, Loader2 } from "lucide-react";
 import { trpc } from "@/lib/trpc";
 import { useProtectedRoute } from "@/hooks/useProtectedRoute";
 import { useExamAccess } from "@/hooks/useExamAccess";
 import { CrossSellGate } from "@/components/CrossSellGate";
+import { toast } from "sonner";
 import {
   RadarChart,
   PolarGrid,
@@ -16,6 +17,11 @@ import {
   Radar,
   ResponsiveContainer,
   Tooltip,
+  LineChart,
+  Line,
+  XAxis,
+  YAxis,
+  CartesianGrid,
 } from "recharts";
 
 export default function SCAHistory() {
@@ -23,6 +29,7 @@ export default function SCAHistory() {
   const [, navigate] = useLocation();
   const { hasAccess: isPremium, isLoading: subLoading } = useExamAccess("SCA");
   const [selectedConsultation, setSelectedConsultation] = useState<number | null>(null);
+  const [exportingPdf, setExportingPdf] = useState(false);
 
   // Fetch consultation history
   const historyQuery = trpc.sca.getHistory.useQuery(undefined, {
@@ -34,6 +41,9 @@ export default function SCAHistory() {
     { consultationId: selectedConsultation! },
     { enabled: !!selectedConsultation }
   );
+
+  // PDF export mutation
+  const exportPdf = trpc.sca.exportProgressPDF.useMutation();
 
   // Compute average scores for radar chart
   const averageScores = useMemo(() => {
@@ -56,6 +66,51 @@ export default function SCAHistory() {
       { domain: "Interpersonal Skills", score: averageScores.avgD3, fullMark: 3 },
     ];
   }, [averageScores]);
+
+  // Trend line chart data (chronological order)
+  const trendData = useMemo(() => {
+    if (!historyQuery.data || historyQuery.data.length === 0) return [];
+    // Reverse to get chronological order (oldest first)
+    return [...historyQuery.data].reverse().map((c: any) => ({
+      date: formatShortDate(c.completedAt),
+      totalScore: c.totalScore || 0,
+      caseTitle: c.caseTitle || `Case #${c.caseId}`,
+    }));
+  }, [historyQuery.data]);
+
+  // Handle PDF export
+  const handleExportPdf = async () => {
+    setExportingPdf(true);
+    try {
+      const result = await exportPdf.mutateAsync();
+      // Convert base64 to blob and download
+      const byteCharacters = atob(result.pdfBase64);
+      const byteNumbers = new Array(byteCharacters.length);
+      for (let i = 0; i < byteCharacters.length; i++) {
+        byteNumbers[i] = byteCharacters.charCodeAt(i);
+      }
+      const byteArray = new Uint8Array(byteNumbers);
+      const blob = new Blob([byteArray], { type: "application/pdf" });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = result.filename;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+      toast.success("Progress report downloaded successfully");
+    } catch (err) {
+      toast.error("Failed to generate progress report");
+    } finally {
+      setExportingPdf(false);
+    }
+  };
+
+  // Handle retry - navigate to SCA simulator with caseId param
+  const handleRetry = (caseId: number) => {
+    navigate(`/sca?retry=${caseId}`);
+  };
 
   if (loading || !isAuthenticated || !user || subLoading) {
     return (
@@ -98,14 +153,28 @@ export default function SCAHistory() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100">
       <header className="bg-white border-b border-slate-200 sticky top-0 z-40">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center gap-4">
-          <Button variant="ghost" size="sm" onClick={() => navigate("/sca")} className="text-slate-600 hover:text-slate-900">
-            <ArrowLeft className="w-4 h-4" />
-          </Button>
-          <div>
-            <h1 className="text-2xl font-bold text-slate-900">My SCA Progress</h1>
-            <p className="text-sm text-slate-500">Track your consultation performance over time</p>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
+          <div className="flex items-center gap-4">
+            <Button variant="ghost" size="sm" onClick={() => navigate("/sca")} className="text-slate-600 hover:text-slate-900">
+              <ArrowLeft className="w-4 h-4" />
+            </Button>
+            <div>
+              <h1 className="text-2xl font-bold text-slate-900">My SCA Progress</h1>
+              <p className="text-sm text-slate-500">Track your consultation performance over time</p>
+            </div>
           </div>
+          {historyQuery.data && historyQuery.data.length > 0 && (
+            <Button
+              variant="outline"
+              size="sm"
+              onClick={handleExportPdf}
+              disabled={exportingPdf}
+              className="gap-1.5 text-slate-700"
+            >
+              {exportingPdf ? <Loader2 className="w-4 h-4 animate-spin" /> : <Download className="w-4 h-4" />}
+              Export Progress Report
+            </Button>
+          )}
         </div>
       </header>
 
@@ -218,6 +287,46 @@ export default function SCAHistory() {
                 </div>
               </div>
 
+              {/* Score Trend Line Chart */}
+              <Card className="p-6 border-slate-200 mb-8">
+                <h2 className="text-lg font-bold text-slate-900 mb-1">Score Trend</h2>
+                <p className="text-sm text-slate-500 mb-4">Total score over time — track your improvement trajectory</p>
+                <div className="h-56">
+                  <ResponsiveContainer width="100%" height="100%">
+                    <LineChart data={trendData} margin={{ top: 5, right: 20, left: 0, bottom: 5 }}>
+                      <CartesianGrid strokeDasharray="3 3" stroke="#e2e8f0" />
+                      <XAxis
+                        dataKey="date"
+                        tick={{ fill: "#64748b", fontSize: 11 }}
+                        tickLine={false}
+                        axisLine={{ stroke: "#e2e8f0" }}
+                      />
+                      <YAxis
+                        domain={[0, 9]}
+                        ticks={[0, 3, 6, 9]}
+                        tick={{ fill: "#64748b", fontSize: 11 }}
+                        tickLine={false}
+                        axisLine={{ stroke: "#e2e8f0" }}
+                        label={{ value: "Total Score", angle: -90, position: "insideLeft", style: { fill: "#94a3b8", fontSize: 11 } }}
+                      />
+                      <Tooltip
+                        contentStyle={{ borderRadius: "8px", border: "1px solid #e2e8f0", fontSize: "12px" }}
+                        formatter={(value: number, _name: string, props: any) => [`${value}/9`, props.payload.caseTitle]}
+                        labelFormatter={(label: string) => `Date: ${label}`}
+                      />
+                      <Line
+                        type="monotone"
+                        dataKey="totalScore"
+                        stroke="#16a34a"
+                        strokeWidth={2.5}
+                        dot={{ fill: "#16a34a", strokeWidth: 2, r: 4 }}
+                        activeDot={{ r: 6, fill: "#16a34a" }}
+                      />
+                    </LineChart>
+                  </ResponsiveContainer>
+                </div>
+              </Card>
+
               {/* Consultation History Table */}
               <Card className="border-slate-200 overflow-hidden">
                 <div className="p-5 border-b border-slate-100">
@@ -229,13 +338,13 @@ export default function SCAHistory() {
                     <thead className="bg-slate-50 border-b border-slate-100">
                       <tr>
                         <th className="text-left px-5 py-3 font-medium text-slate-600">Case</th>
-                        <th className="text-left px-5 py-3 font-medium text-slate-600">Date</th>
-                        <th className="text-center px-3 py-3 font-medium text-slate-600">D1</th>
-                        <th className="text-center px-3 py-3 font-medium text-slate-600">D2</th>
-                        <th className="text-center px-3 py-3 font-medium text-slate-600">D3</th>
-                        <th className="text-center px-3 py-3 font-medium text-slate-600">Total</th>
-                        <th className="text-center px-3 py-3 font-medium text-slate-600">Result</th>
-                        <th className="text-right px-5 py-3 font-medium text-slate-600">Action</th>
+                        <th className="text-left px-4 py-3 font-medium text-slate-600">Date</th>
+                        <th className="text-center px-2 py-3 font-medium text-slate-600">D1</th>
+                        <th className="text-center px-2 py-3 font-medium text-slate-600">D2</th>
+                        <th className="text-center px-2 py-3 font-medium text-slate-600">D3</th>
+                        <th className="text-center px-2 py-3 font-medium text-slate-600">Total</th>
+                        <th className="text-center px-2 py-3 font-medium text-slate-600">Result</th>
+                        <th className="text-right px-5 py-3 font-medium text-slate-600">Actions</th>
                       </tr>
                     </thead>
                     <tbody className="divide-y divide-slate-100">
@@ -244,25 +353,25 @@ export default function SCAHistory() {
                           <td className="px-5 py-4">
                             <span className="font-medium text-slate-900 line-clamp-1">{consultation.caseTitle || `Case #${consultation.caseId}`}</span>
                           </td>
-                          <td className="px-5 py-4 text-slate-600">
+                          <td className="px-4 py-4 text-slate-600">
                             <div className="flex items-center gap-1.5">
-                              <Clock className="w-3.5 h-3.5 text-slate-400" />
-                              {formatDate(consultation.completedAt)}
+                              <Clock className="w-3.5 h-3.5 text-slate-400 shrink-0" />
+                              <span className="whitespace-nowrap">{formatDate(consultation.completedAt)}</span>
                             </div>
                           </td>
-                          <td className="text-center px-3 py-4">
+                          <td className="text-center px-2 py-4">
                             <ScoreBadge score={consultation.domain1Score} />
                           </td>
-                          <td className="text-center px-3 py-4">
+                          <td className="text-center px-2 py-4">
                             <ScoreBadge score={consultation.domain2Score} />
                           </td>
-                          <td className="text-center px-3 py-4">
+                          <td className="text-center px-2 py-4">
                             <ScoreBadge score={consultation.domain3Score} />
                           </td>
-                          <td className="text-center px-3 py-4">
+                          <td className="text-center px-2 py-4">
                             <span className="font-semibold text-slate-900">{consultation.totalScore}/9</span>
                           </td>
-                          <td className="text-center px-3 py-4">
+                          <td className="text-center px-2 py-4">
                             {consultation.passed ? (
                               <Badge className="bg-green-100 text-green-700 border-green-200">Pass</Badge>
                             ) : (
@@ -270,15 +379,26 @@ export default function SCAHistory() {
                             )}
                           </td>
                           <td className="text-right px-5 py-4">
-                            <Button
-                              variant="outline"
-                              size="sm"
-                              onClick={() => setSelectedConsultation(consultation.id)}
-                              className="gap-1.5"
-                            >
-                              <Eye className="w-3.5 h-3.5" />
-                              View
-                            </Button>
+                            <div className="flex items-center justify-end gap-2">
+                              <Button
+                                variant="outline"
+                                size="sm"
+                                onClick={() => setSelectedConsultation(consultation.id)}
+                                className="gap-1"
+                              >
+                                <Eye className="w-3.5 h-3.5" />
+                                View
+                              </Button>
+                              <Button
+                                variant="outline"
+                                size="sm"
+                                onClick={() => handleRetry(consultation.caseId)}
+                                className="gap-1 text-green-700 border-green-200 hover:bg-green-50"
+                              >
+                                <RotateCcw className="w-3.5 h-3.5" />
+                                Retry
+                              </Button>
+                            </div>
                           </td>
                         </tr>
                       ))}
@@ -406,6 +526,12 @@ function formatDate(dateStr: string | null): string {
   if (!dateStr) return "—";
   const date = new Date(dateStr);
   return date.toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric" });
+}
+
+function formatShortDate(dateStr: string | null): string {
+  if (!dateStr) return "—";
+  const date = new Date(dateStr);
+  return date.toLocaleDateString("en-GB", { day: "numeric", month: "short" });
 }
 
 function formatDuration(seconds: number | null): string {

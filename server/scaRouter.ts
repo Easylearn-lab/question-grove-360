@@ -241,4 +241,155 @@ CRITICAL RULES:
         aiFeedback: typeof c.aiFeedback === "string" ? JSON.parse(c.aiFeedback) : c.aiFeedback,
       };
     }),
+
+  /**
+   * Export SCA Progress Report as PDF
+   * Includes: domain averages (radar summary), score trend, consultation table, weakest domain analysis
+   */
+  exportProgressPDF: protectedProcedure.mutation(async ({ ctx }) => {
+    const { getDb } = await import("./db");
+    const db = await getDb();
+    if (!db) throw new TRPCError({ code: "INTERNAL_SERVER_ERROR", message: "Database unavailable" });
+
+    const result = await db.execute(
+      sql`SELECT id, caseId, caseTitle, mode, duration, domain1Score, domain2Score, domain3Score, totalScore, passed, completedAt FROM sca_consultations WHERE userId = ${ctx.user.id} ORDER BY completedAt DESC LIMIT 50`
+    );
+    const consultations = (result as any)[0] as any[];
+
+    if (consultations.length === 0) {
+      throw new TRPCError({ code: "NOT_FOUND", message: "No consultations found" });
+    }
+
+    // Compute averages
+    const total = consultations.length;
+    const avgD1 = consultations.reduce((sum: number, c: any) => sum + (c.domain1Score || 0), 0) / total;
+    const avgD2 = consultations.reduce((sum: number, c: any) => sum + (c.domain2Score || 0), 0) / total;
+    const avgD3 = consultations.reduce((sum: number, c: any) => sum + (c.domain3Score || 0), 0) / total;
+    const passRate = (consultations.filter((c: any) => c.passed).length / total) * 100;
+    const avgTotal = (avgD1 + avgD2 + avgD3);
+
+    // Weakest domain
+    const minScore = Math.min(avgD1, avgD2, avgD3);
+    let weakestDomain = "Data Gathering";
+    if (minScore === avgD2) weakestDomain = "Clinical Management";
+    else if (minScore === avgD3) weakestDomain = "Interpersonal Skills";
+
+    // Generate PDF
+    const { PDFDocument, rgb } = await import("pdf-lib");
+    const pdfDoc = await PDFDocument.create();
+    const boldFont = await pdfDoc.embedFont("Helvetica-Bold");
+    const regularFont = await pdfDoc.embedFont("Helvetica");
+
+    // Page 1: Summary
+    const page1 = pdfDoc.addPage([612, 792]);
+    const { width } = page1.getSize();
+    let y = 750;
+    const margin = 45;
+    const teal = rgb(0.09, 0.55, 0.55);
+    const dark = rgb(0.1, 0.1, 0.1);
+    const green = rgb(0.09, 0.64, 0.26);
+    const red = rgb(0.8, 0.15, 0.15);
+    const grey = rgb(0.5, 0.5, 0.5);
+
+    // Header
+    page1.drawText("Question Grove 360", { x: margin, y, size: 22, color: teal, font: boldFont });
+    y -= 28;
+    page1.drawText("SCA Progress Report", { x: margin, y, size: 14, color: dark, font: regularFont });
+    y -= 20;
+    page1.drawText(`Candidate: ${ctx.user.name || ctx.user.email || "Unknown"}`, { x: margin, y, size: 10, color: grey, font: regularFont });
+    y -= 16;
+    page1.drawText(`Generated: ${new Date().toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" })}`, { x: margin, y, size: 10, color: grey, font: regularFont });
+    y -= 35;
+
+    // Domain Performance Summary Box
+    page1.drawRectangle({ x: margin, y: y - 100, width: width - margin * 2, height: 100, borderColor: teal, borderWidth: 1.5, color: rgb(0.96, 0.99, 0.99) });
+    page1.drawText("Domain Performance (Average Scores)", { x: margin + 15, y: y - 20, size: 12, color: teal, font: boldFont });
+    page1.drawText(`Data Gathering: ${avgD1.toFixed(2)} / 3`, { x: margin + 15, y: y - 42, size: 11, color: dark, font: regularFont });
+    page1.drawText(`Clinical Management: ${avgD2.toFixed(2)} / 3`, { x: margin + 15, y: y - 58, size: 11, color: dark, font: regularFont });
+    page1.drawText(`Interpersonal Skills: ${avgD3.toFixed(2)} / 3`, { x: margin + 15, y: y - 74, size: 11, color: dark, font: regularFont });
+    page1.drawText(`Average Total: ${avgTotal.toFixed(1)} / 9`, { x: width - 200, y: y - 42, size: 12, color: teal, font: boldFont });
+    page1.drawText(`Pass Rate: ${passRate.toFixed(0)}%`, { x: width - 200, y: y - 60, size: 11, color: passRate >= 50 ? green : red, font: boldFont });
+    y -= 125;
+
+    // Score Trend Section
+    page1.drawText("Score Trend (Chronological)", { x: margin, y, size: 12, color: teal, font: boldFont });
+    y -= 20;
+
+    // Draw a simple text-based trend showing scores over time
+    const chronological = [...consultations].reverse();
+    const trendEntries = chronological.slice(0, 20); // Show last 20
+    trendEntries.forEach((c: any, idx: number) => {
+      if (y < 120) return; // Don't overflow page
+      const dateStr = c.completedAt ? new Date(c.completedAt).toLocaleDateString("en-GB", { day: "numeric", month: "short" }) : "—";
+      const scoreBar = "\u2588".repeat(c.totalScore || 0) + "\u2591".repeat(9 - (c.totalScore || 0));
+      const passText = c.passed ? "Pass" : "Fail";
+      page1.drawText(`${dateStr}  ${scoreBar}  ${c.totalScore}/9 (${passText})`, { x: margin + 10, y, size: 9, color: c.passed ? green : red, font: regularFont });
+      y -= 15;
+    });
+    y -= 20;
+
+    // Weakest Domain Analysis
+    if (y > 100) {
+      page1.drawText("Weakness Analysis", { x: margin, y, size: 12, color: teal, font: boldFont });
+      y -= 20;
+      page1.drawText(
+        `Your weakest domain is ${weakestDomain} (avg ${minScore.toFixed(2)}/3). Focus your revision on improving `,
+        { x: margin, y, size: 10, color: dark, font: regularFont }
+      );
+      y -= 14;
+      page1.drawText(
+        `this area to raise your overall SCA performance. ${total} consultation(s) completed to date.`,
+        { x: margin, y, size: 10, color: dark, font: regularFont }
+      );
+    }
+
+    // Footer
+    page1.drawText("Generated by Question Grove 360 — MRCGP SCA Training Platform", { x: margin, y: 25, size: 8, color: grey, font: regularFont });
+
+    // Page 2: Consultation Table
+    const page2 = pdfDoc.addPage([612, 792]);
+    let y2 = 750;
+    page2.drawText("Consultation History", { x: margin, y: y2, size: 14, color: teal, font: boldFont });
+    y2 -= 30;
+
+    // Table header
+    page2.drawText("Case", { x: margin, y: y2, size: 9, color: grey, font: boldFont });
+    page2.drawText("Date", { x: 230, y: y2, size: 9, color: grey, font: boldFont });
+    page2.drawText("D1", { x: 320, y: y2, size: 9, color: grey, font: boldFont });
+    page2.drawText("D2", { x: 360, y: y2, size: 9, color: grey, font: boldFont });
+    page2.drawText("D3", { x: 400, y: y2, size: 9, color: grey, font: boldFont });
+    page2.drawText("Total", { x: 440, y: y2, size: 9, color: grey, font: boldFont });
+    page2.drawText("Result", { x: 500, y: y2, size: 9, color: grey, font: boldFont });
+    y2 -= 5;
+    page2.drawLine({ start: { x: margin, y: y2 }, end: { x: width - margin, y: y2 }, thickness: 0.5, color: grey });
+    y2 -= 15;
+
+    // Table rows
+    consultations.forEach((c: any) => {
+      if (y2 < 50) {
+        // Would need new page for very long lists
+        return;
+      }
+      const title = (c.caseTitle || `Case #${c.caseId}`).substring(0, 28);
+      const dateStr = c.completedAt ? new Date(c.completedAt).toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric" }) : "—";
+      const rowColor = c.passed ? green : red;
+      page2.drawText(title, { x: margin, y: y2, size: 9, color: dark, font: regularFont });
+      page2.drawText(dateStr, { x: 230, y: y2, size: 9, color: dark, font: regularFont });
+      page2.drawText(String(c.domain1Score || 0), { x: 325, y: y2, size: 9, color: dark, font: regularFont });
+      page2.drawText(String(c.domain2Score || 0), { x: 365, y: y2, size: 9, color: dark, font: regularFont });
+      page2.drawText(String(c.domain3Score || 0), { x: 405, y: y2, size: 9, color: dark, font: regularFont });
+      page2.drawText(`${c.totalScore || 0}/9`, { x: 440, y: y2, size: 9, color: dark, font: regularFont });
+      page2.drawText(c.passed ? "Pass" : "Fail", { x: 500, y: y2, size: 9, color: rowColor, font: boldFont });
+      y2 -= 16;
+    });
+
+    // Footer page 2
+    page2.drawText("Generated by Question Grove 360 — MRCGP SCA Training Platform", { x: margin, y: 25, size: 8, color: grey, font: regularFont });
+
+    const pdfBytes = await pdfDoc.save();
+    return {
+      pdfBase64: Buffer.from(pdfBytes).toString("base64"),
+      filename: `sca-progress-report-${new Date().toISOString().slice(0, 10)}.pdf`,
+    };
+  }),
 });

@@ -956,3 +956,10 @@
 - [x] Add "My Progress" link on /sca page header
 - [x] Register /sca/history route in App.tsx
 - [x] Write tests for the page logic (21 tests passing)
+
+## SCA History Enhancements (Jul 16 2026)
+
+- [x] Add score trend line chart below radar chart (date x-axis, total score y-axis)
+- [x] Add Retry button next to View button in history table (opens case in SCA Simulator)
+- [x] Add Export Progress Report PDF button (radar chart description, trend data, consultation table, weakest domain summary)
+- [x] 30 vitest tests passing for SCA history logic

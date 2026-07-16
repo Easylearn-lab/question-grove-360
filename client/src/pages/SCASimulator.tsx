@@ -99,8 +99,17 @@ export default function SCASimulator() {
     const params = new URLSearchParams(window.location.search);
     if (params.get("payment") === "success") {
       toast.success("Welcome to SCA Simulator — your subscription is active. Start practising now.");
-      // Clean up the URL without triggering a reload
       window.history.replaceState({}, "", window.location.pathname);
+    }
+    // Handle retry deep-link from history page
+    const retryCaseId = params.get("retry");
+    if (retryCaseId) {
+      const caseId = parseInt(retryCaseId, 10);
+      if (!isNaN(caseId)) {
+        setSelectedCaseId(caseId);
+        setPhase("case");
+        window.history.replaceState({}, "", window.location.pathname);
+      }
     }
   }, []);
 

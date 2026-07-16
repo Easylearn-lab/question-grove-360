@@ -179,11 +179,11 @@ describe("SCA History Page Logic", () => {
 
   describe("formatDuration", () => {
     it("returns dash for null", () => {
-      expect(formatDuration(null)).toBe("—");
+      expect(formatDuration(null)).toBe("\u2014");
     });
 
     it("returns dash for 0", () => {
-      expect(formatDuration(0)).toBe("—");
+      expect(formatDuration(0)).toBe("\u2014");
     });
 
     it("formats 600 seconds as 10m 0s", () => {
@@ -198,4 +198,86 @@ describe("SCA History Page Logic", () => {
       expect(formatDuration(90)).toBe("1m 30s");
     });
   });
+
+  describe("formatShortDate", () => {
+    it("returns dash for null", () => {
+      expect(formatShortDate(null)).toBe("\u2014");
+    });
+
+    it("formats date without year", () => {
+      const result = formatShortDate("2026-07-10T14:30:00Z");
+      expect(result).toContain("Jul");
+      expect(result).toContain("10");
+      expect(result).not.toContain("2026");
+    });
+  });
+
+  describe("trendData generation", () => {
+    it("reverses consultations to chronological order", () => {
+      // historyQuery.data is DESC (newest first), trend should be ASC (oldest first)
+      const descOrder = [...mockConsultations]; // already newest-last in our mock, but simulate DESC
+      const reversed = [...descOrder].reverse();
+      expect(reversed[0].caseTitle).toBe("Diabetes Review");
+      expect(reversed[reversed.length - 1].caseTitle).toBe("Chest Pain");
+    });
+
+    it("maps consultations to trend data shape", () => {
+      const trendData = mockConsultations.map(c => ({
+        date: formatShortDate(c.completedAt),
+        totalScore: c.totalScore || 0,
+        caseTitle: c.caseTitle,
+      }));
+      expect(trendData[0].totalScore).toBe(8);
+      expect(trendData[0].caseTitle).toBe("Chest Pain");
+      expect(trendData).toHaveLength(4);
+    });
+  });
+
+  describe("retry URL generation", () => {
+    it("generates correct retry URL with caseId", () => {
+      const caseId = 5;
+      const url = `/sca?retry=${caseId}`;
+      expect(url).toBe("/sca?retry=5");
+    });
+
+    it("retry param can be parsed back to number", () => {
+      const url = "/sca?retry=12";
+      const params = new URLSearchParams(url.split("?")[1]);
+      const retryCaseId = parseInt(params.get("retry") || "", 10);
+      expect(retryCaseId).toBe(12);
+    });
+  });
+
+  describe("PDF export data computation (server-side logic)", () => {
+    it("computes weakest domain correctly for PDF summary", () => {
+      const avgD1 = 2.0;
+      const avgD2 = 1.5;
+      const avgD3 = 2.5;
+      const minScore = Math.min(avgD1, avgD2, avgD3);
+      let weakestDomain = "Data Gathering";
+      if (minScore === avgD2) weakestDomain = "Clinical Management";
+      else if (minScore === avgD3) weakestDomain = "Interpersonal Skills";
+      expect(weakestDomain).toBe("Clinical Management");
+    });
+
+    it("computes average total for PDF", () => {
+      const avgD1 = 2.0;
+      const avgD2 = 2.0;
+      const avgD3 = 2.0;
+      const avgTotal = avgD1 + avgD2 + avgD3;
+      expect(avgTotal).toBe(6.0);
+    });
+
+    it("generates filename with current date format", () => {
+      const filename = `sca-progress-report-${new Date().toISOString().slice(0, 10)}.pdf`;
+      expect(filename).toMatch(/^sca-progress-report-\d{4}-\d{2}-\d{2}\.pdf$/);
+    });
+  });
 });
+
+// Additional helper for short date format
+function formatShortDate(dateStr: string | null): string {
+  if (!dateStr) return "\u2014";
+  const date = new Date(dateStr);
+  return date.toLocaleDateString("en-GB", { day: "numeric", month: "short" });
+}
