@@ -976,3 +976,13 @@
 - [x] After debrief, show subscribe prompt with score and pricing for non-subscribers
 - [x] Hide Retry/My Progress buttons for free trial users, show Subscribe to Save button
 - [x] Write tests for free trial logic (18 tests passing)
+
+## Voice Roleplay Fixes (Jul 16 2026)
+
+- [x] Fix mobile audio autoplay (silent buffer unlock on first touch/click)
+- [x] Add Web Speech API (browser-native) as primary STT for faster real-time transcription, with Whisper as fallback
+- [x] Add visual recording indicator (pulse animation + live transcript preview)
+- [x] Fix voice profile for elderly female cases (added shimmer voice for 60+ female)
+- [x] Add "Replay last response" button for patient audio in timer bar
+- [x] Ensure proper cleanup of audio resources on unmount
+- [x] 23 vitest tests passing for voice roleplay logic

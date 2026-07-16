@@ -47,13 +47,22 @@ type CompetencyScore = "well" | "partial" | "poor";
 // VOICE PROFILE MAPPING
 // ============================================================
 function getVoiceProfile(age: number, gender: string): { voice: "alloy" | "echo" | "fable" | "onyx" | "nova" | "shimmer"; label: string } {
-  if (gender?.toLowerCase() === "female") {
+  const isFemale = gender?.toLowerCase() === "female";
+  const isElderly = age >= 60;
+  const isYoung = age <= 30;
+
+  // Female profiles
+  if (isFemale && isElderly) {
+    return { voice: "shimmer", label: "Elderly female (concerned, gentle)" };
+  }
+  if (isFemale) {
     return { voice: "nova", label: "Middle-aged female (anxious, emotional)" };
   }
-  if (age >= 60) {
+  // Male profiles
+  if (isElderly) {
     return { voice: "onyx", label: "Elderly male (calm, stoic)" };
   }
-  if (age <= 30) {
+  if (isYoung) {
     return { voice: "echo", label: "Young adult male (guarded, embarrassed)" };
   }
   return { voice: "alloy", label: "Middle-aged male (practical, direct)" };
@@ -880,20 +889,69 @@ function ConsultationView({
   const [isLoading, setIsLoading] = useState(false);
   const [isRecording, setIsRecording] = useState(false);
   const [isSpeaking, setIsSpeaking] = useState(false);
+  const [isTranscribing, setIsTranscribing] = useState(false);
+  const [liveTranscript, setLiveTranscript] = useState("");
+  const [lastAudioUrl, setLastAudioUrl] = useState<string | null>(null);
+  const [audioUnlocked, setAudioUnlocked] = useState(false);
   const mediaRecorderRef = useRef<MediaRecorder | null>(null);
   const audioChunksRef = useRef<Blob[]>([]);
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const messagesEndRef = useRef<HTMLDivElement | null>(null);
+  const recognitionRef = useRef<any>(null);
+  const webSpeechSupported = useRef<boolean>(false);
 
   const generateResponseMutation = trpc.sca.generatePatientResponse.useMutation();
   const uploadAudioMutation = trpc.voice.uploadAudio.useMutation();
   const transcribeMutation = trpc.voice.transcribe.useMutation();
   const synthesizeMutation = trpc.voice.synthesize.useMutation();
 
+  // Check Web Speech API support
+  useEffect(() => {
+    const SpeechRecognition = (window as any).SpeechRecognition || (window as any).webkitSpeechRecognition;
+    webSpeechSupported.current = !!SpeechRecognition;
+  }, []);
+
+  // Unlock audio on first user interaction (mobile requirement)
+  useEffect(() => {
+    const unlock = () => {
+      if (audioRef.current && !audioUnlocked) {
+        // Play a silent buffer to unlock audio context on mobile
+        audioRef.current.src = "data:audio/mp3;base64,SUQzBAAAAAAAI1RTU0UAAAAPAAADTGF2ZjU4Ljc2LjEwMAAAAAAAAAAAAAAA//tQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAWGluZwAAAA8AAAACAAABhgC7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7u7//////////////////////////////////////////////////////////////////8AAAAATGF2YzU4LjEzAAAAAAAAAAAAAAAAJAAAAAAAAAAAAYYoRwmHAAAAAAD/+1DEAAAB8ANoAAAAACIADSAAAAETEFNRTMuMTAwVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVX/+1DEQQAADIAAAAAAAAADIAAAAAAAVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVQ==";
+        audioRef.current.play().then(() => {
+          audioRef.current!.pause();
+          audioRef.current!.currentTime = 0;
+          setAudioUnlocked(true);
+        }).catch(() => {});
+      }
+    };
+    document.addEventListener("touchstart", unlock, { once: true });
+    document.addEventListener("click", unlock, { once: true });
+    return () => {
+      document.removeEventListener("touchstart", unlock);
+      document.removeEventListener("click", unlock);
+    };
+  }, [audioUnlocked]);
+
   // Auto-scroll messages
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [messages]);
+
+  // Cleanup on unmount
+  useEffect(() => {
+    return () => {
+      if (recognitionRef.current) {
+        try { recognitionRef.current.stop(); } catch {}
+      }
+      if (mediaRecorderRef.current && mediaRecorderRef.current.state !== "inactive") {
+        try { mediaRecorderRef.current.stop(); } catch {}
+      }
+      if (audioRef.current) {
+        audioRef.current.pause();
+        audioRef.current.src = "";
+      }
+    };
+  }, []);
 
   // Get opening statement on first render
   useEffect(() => {
@@ -912,9 +970,7 @@ function ConsultationView({
         isFirstMessage: true,
       });
       setMessages([{ role: "assistant", content: response.response, timestamp: Date.now() }]);
-      // Start timer automatically
       onTimerStart();
-      // Speak the opening
       speakText(response.response);
     } catch (err) {
       toast.error("Failed to start consultation");
@@ -931,15 +987,33 @@ function ConsultationView({
         voice: voiceProfile.voice as any,
         speed: 1.0,
       });
+      setLastAudioUrl(result.url);
       if (audioRef.current) {
         audioRef.current.src = result.url;
         audioRef.current.onended = () => setIsSpeaking(false);
-        audioRef.current.play().catch(() => setIsSpeaking(false));
+        audioRef.current.onerror = () => setIsSpeaking(false);
+        const playPromise = audioRef.current.play();
+        if (playPromise) {
+          playPromise.catch(() => {
+            // Auto-play blocked (mobile) — show replay button
+            setIsSpeaking(false);
+            toast.info("Tap the speaker icon to hear the patient's response");
+          });
+        }
       } else {
         setIsSpeaking(false);
       }
     } catch {
       setIsSpeaking(false);
+    }
+  };
+
+  const replayLastAudio = () => {
+    if (audioRef.current && lastAudioUrl) {
+      audioRef.current.src = lastAudioUrl;
+      audioRef.current.onended = () => setIsSpeaking(false);
+      setIsSpeaking(true);
+      audioRef.current.play().catch(() => setIsSpeaking(false));
     }
   };
 
@@ -950,6 +1024,7 @@ function ConsultationView({
     const userMsg: Message = { role: "user", content: messageText.trim(), timestamp: Date.now() };
     setMessages((prev) => [...prev, userMsg]);
     setManualInput("");
+    setLiveTranscript("");
     setIsLoading(true);
 
     try {
@@ -969,7 +1044,64 @@ function ConsultationView({
     }
   };
 
-  const startRecording = async () => {
+  // ---- Web Speech API (browser-native, real-time) ----
+  const startWebSpeechRecording = () => {
+    const SpeechRecognition = (window as any).SpeechRecognition || (window as any).webkitSpeechRecognition;
+    if (!SpeechRecognition) return false;
+
+    const recognition = new SpeechRecognition();
+    recognition.continuous = true;
+    recognition.interimResults = true;
+    recognition.lang = "en-GB";
+
+    let finalTranscript = "";
+
+    recognition.onresult = (event: any) => {
+      let interim = "";
+      for (let i = event.resultIndex; i < event.results.length; i++) {
+        const transcript = event.results[i][0].transcript;
+        if (event.results[i].isFinal) {
+          finalTranscript += transcript + " ";
+        } else {
+          interim += transcript;
+        }
+      }
+      setLiveTranscript(finalTranscript + interim);
+    };
+
+    recognition.onerror = (event: any) => {
+      console.warn("[WebSpeech] Error:", event.error);
+      if (event.error === "not-allowed") {
+        toast.error("Microphone access denied. Please allow microphone permissions.");
+      }
+      setIsRecording(false);
+      setLiveTranscript("");
+    };
+
+    recognition.onend = () => {
+      // Only send if we have a final transcript and recording was intentionally stopped
+      if (finalTranscript.trim() && !isRecording) {
+        handleSendMessage(finalTranscript.trim());
+      }
+      setLiveTranscript("");
+    };
+
+    recognitionRef.current = recognition;
+    recognition.start();
+    setIsRecording(true);
+    return true;
+  };
+
+  const stopWebSpeechRecording = () => {
+    if (recognitionRef.current) {
+      setIsRecording(false); // Set before stop so onend knows it was intentional
+      recognitionRef.current.stop();
+      recognitionRef.current = null;
+    }
+  };
+
+  // ---- Whisper fallback (MediaRecorder → upload → transcribe) ----
+  const startWhisperRecording = async () => {
     try {
       const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
       const mediaRecorder = new MediaRecorder(stream);
@@ -979,33 +1111,61 @@ function ConsultationView({
       mediaRecorder.onstop = async () => {
         const audioBlob = new Blob(audioChunksRef.current, { type: "audio/webm" });
         stream.getTracks().forEach((t) => t.stop());
-        const reader = new FileReader();
-        reader.onloadend = async () => {
-          const base64 = (reader.result as string).split(",")[1];
-          if (!base64) return;
-          try {
-            const upload = await uploadAudioMutation.mutateAsync({ audioBase64: base64, mimeType: "audio/webm" });
-            const transcription = await transcribeMutation.mutateAsync({ audioUrl: upload.url, language: "en" });
-            if (transcription.text) {
-              handleSendMessage(transcription.text);
+        setIsTranscribing(true);
+        try {
+          const reader = new FileReader();
+          reader.onloadend = async () => {
+            const base64 = (reader.result as string).split(",")[1];
+            if (!base64) { setIsTranscribing(false); return; }
+            try {
+              const upload = await uploadAudioMutation.mutateAsync({ audioBase64: base64, mimeType: "audio/webm" });
+              const transcription = await transcribeMutation.mutateAsync({ audioUrl: upload.url, language: "en" });
+              if (transcription.text) {
+                handleSendMessage(transcription.text);
+              } else {
+                toast.error("No speech detected. Please try again.");
+              }
+            } catch (err: any) {
+              toast.error(err.message || "Transcription failed");
+            } finally {
+              setIsTranscribing(false);
             }
-          } catch (err: any) {
-            toast.error(err.message || "Transcription failed");
-          }
-        };
-        reader.readAsDataURL(audioBlob);
+          };
+          reader.readAsDataURL(audioBlob);
+        } catch {
+          setIsTranscribing(false);
+        }
       };
       mediaRecorder.start();
       setIsRecording(true);
     } catch {
-      toast.error("Unable to access microphone");
+      toast.error("Unable to access microphone. Please check permissions.");
     }
   };
 
-  const stopRecording = () => {
-    if (mediaRecorderRef.current) {
+  const stopWhisperRecording = () => {
+    if (mediaRecorderRef.current && mediaRecorderRef.current.state !== "inactive") {
       mediaRecorderRef.current.stop();
       setIsRecording(false);
+    }
+  };
+
+  // ---- Unified start/stop recording ----
+  const startRecording = () => {
+    // Try Web Speech API first (faster, real-time)
+    if (webSpeechSupported.current) {
+      const started = startWebSpeechRecording();
+      if (started) return;
+    }
+    // Fallback to Whisper
+    startWhisperRecording();
+  };
+
+  const stopRecording = () => {
+    if (recognitionRef.current) {
+      stopWebSpeechRecording();
+    } else {
+      stopWhisperRecording();
     }
   };
 
@@ -1058,20 +1218,37 @@ function ConsultationView({
 
       {/* Input Area */}
       <div className="fixed bottom-16 left-0 right-0 bg-white border-t border-slate-200 px-4 py-3 z-30">
+        {/* Live transcript preview */}
+        {(liveTranscript || isTranscribing) && (
+          <div className="max-w-4xl mx-auto mb-2">
+            <div className="bg-green-50 border border-green-200 rounded-lg px-3 py-2 text-sm text-green-800">
+              {isTranscribing ? (
+                <span className="flex items-center gap-2">
+                  <Loader2 className="w-3 h-3 animate-spin" />
+                  Transcribing your speech...
+                </span>
+              ) : (
+                <span className="italic">{liveTranscript}</span>
+              )}
+            </div>
+          </div>
+        )}
         <div className="max-w-4xl mx-auto flex gap-2">
           <Input
-            placeholder="Type your response..."
+            placeholder="Type your response or tap the mic..."
             value={manualInput}
             onChange={(e) => setManualInput(e.target.value)}
             onKeyDown={(e) => { if (e.key === "Enter" && !isLoading) handleSendMessage(); }}
-            disabled={isLoading}
+            disabled={isLoading || isRecording}
             className="flex-1"
           />
           <Button
             onClick={isRecording ? stopRecording : startRecording}
             variant="outline"
             size="icon"
-            className={isRecording ? "bg-red-50 border-red-300 text-red-600" : ""}
+            disabled={isLoading || isTranscribing}
+            className={isRecording ? "bg-red-50 border-red-300 text-red-600 animate-pulse" : ""}
+            title={isRecording ? "Stop recording" : "Start voice input"}
           >
             {isRecording ? <MicOff className="w-4 h-4" /> : <Mic className="w-4 h-4" />}
           </Button>
@@ -1108,11 +1285,21 @@ function ConsultationView({
             <Button size="sm" variant="ghost" onClick={onTimerReset} className="text-white hover:text-slate-300 hover:bg-slate-800">
               <RotateCcw className="w-4 h-4" />
             </Button>
-            {isSpeaking && (
+            {isSpeaking ? (
               <span className="text-xs text-green-400 flex items-center gap-1">
-                <Volume2 className="w-3 h-3 animate-pulse" /> Speaking
+                <Volume2 className="w-3 h-3 animate-pulse" /> Patient speaking...
               </span>
-            )}
+            ) : lastAudioUrl ? (
+              <Button
+                size="sm"
+                variant="ghost"
+                onClick={replayLastAudio}
+                className="text-white hover:text-green-400 hover:bg-slate-800 gap-1 text-xs"
+                title="Replay last patient response"
+              >
+                <Volume2 className="w-3 h-3" /> Replay
+              </Button>
+            ) : null}
           </div>
         </div>
       </div>
