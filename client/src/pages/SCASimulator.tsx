@@ -6,7 +6,7 @@ import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Badge } from "@/components/ui/badge";
-import { ArrowLeft, Mic, MicOff, Send, Loader2, Play, Pause, RotateCcw, CheckCircle2, XCircle, MinusCircle, Clock, Volume2, BarChart3, Lock, Zap, Sparkles } from "lucide-react";
+import { ArrowLeft, Mic, MicOff, Send, Loader2, Play, Pause, RotateCcw, CheckCircle2, XCircle, MinusCircle, Clock, Volume2, BarChart3, Lock, Zap, Sparkles, MessageSquare } from "lucide-react";
 import { trpc } from "@/lib/trpc";
 import { toast } from "sonner";
 import { CrossSellGate } from "@/components/CrossSellGate";
@@ -893,6 +893,15 @@ function ConsultationView({
   const [liveTranscript, setLiveTranscript] = useState("");
   const [lastAudioUrl, setLastAudioUrl] = useState<string | null>(null);
   const [audioUnlocked, setAudioUnlocked] = useState(false);
+  const [voiceMode, setVoiceMode] = useState<boolean>(() => {
+    try { return localStorage.getItem("sca-voice-mode") === "true"; } catch { return false; }
+  });
+
+  const toggleMode = () => {
+    const newMode = !voiceMode;
+    setVoiceMode(newMode);
+    try { localStorage.setItem("sca-voice-mode", String(newMode)); } catch {}
+  };
   const mediaRecorderRef = useRef<MediaRecorder | null>(null);
   const audioChunksRef = useRef<Blob[]>([]);
   const audioRef = useRef<HTMLAudioElement | null>(null);
@@ -1169,6 +1178,166 @@ function ConsultationView({
     }
   };
 
+  // Last assistant message for Voice Mode display
+  const lastAssistantMessage = [...messages].reverse().find(m => m.role === "assistant");
+  const lastUserMessage = [...messages].reverse().find(m => m.role === "user");
+
+  // Voice Mode UI
+  if (voiceMode) {
+    return (
+      <div className="min-h-screen bg-gradient-to-b from-slate-900 via-slate-800 to-slate-900 flex flex-col">
+        {/* Voice Mode Header */}
+        <header className="px-4 py-4 flex items-center justify-between z-40">
+          <div>
+            <h1 className="text-lg font-bold text-white">{caseData.title}</h1>
+            <p className="text-sm text-slate-400">{caseData.patientName} • {voiceProfile.label}</p>
+          </div>
+          <div className="flex items-center gap-2">
+            <Button
+              onClick={toggleMode}
+              variant="ghost"
+              size="sm"
+              className="text-slate-300 hover:text-white hover:bg-slate-700 gap-1.5"
+              title="Switch to Chat Mode"
+            >
+              <MessageSquare className="w-4 h-4" /> Chat
+            </Button>
+            <Button onClick={onFinish} size="sm" className="bg-green-600 hover:bg-green-700 text-white">
+              End & Score
+            </Button>
+          </div>
+        </header>
+
+        {/* Timer */}
+        <div className="px-4 flex items-center justify-center gap-3 py-2">
+          <Clock className="w-4 h-4 text-slate-500" />
+          <span className={`font-mono text-2xl font-bold ${timerSeconds <= 60 ? "text-red-400" : timerSeconds <= 180 ? "text-yellow-400" : "text-white"}`}>
+            {formatTime(timerSeconds)}
+          </span>
+          <div className="flex items-center gap-1">
+            {!timerRunning ? (
+              <Button size="sm" variant="ghost" onClick={onTimerStart} className="text-slate-400 hover:text-green-400 hover:bg-slate-700">
+                <Play className="w-4 h-4" />
+              </Button>
+            ) : (
+              <Button size="sm" variant="ghost" onClick={onTimerPause} className="text-slate-400 hover:text-yellow-400 hover:bg-slate-700">
+                <Pause className="w-4 h-4" />
+              </Button>
+            )}
+          </div>
+        </div>
+
+        {/* Main Voice Area */}
+        <div className="flex-1 flex flex-col items-center justify-center px-6 gap-8">
+          {/* Patient speaking waveform / last message */}
+          <div className="text-center max-w-md">
+            {isSpeaking ? (
+              <div className="flex flex-col items-center gap-4">
+                {/* Animated waveform */}
+                <div className="flex items-center justify-center gap-1 h-16">
+                  {Array.from({ length: 12 }).map((_, i) => (
+                    <div
+                      key={i}
+                      className="w-1 bg-green-400 rounded-full"
+                      style={{
+                        animation: `voiceWave 1.2s ease-in-out infinite`,
+                        animationDelay: `${i * 0.08}s`,
+                        height: "8px",
+                      }}
+                    />
+                  ))}
+                </div>
+                <p className="text-green-400 text-sm font-medium">Patient speaking...</p>
+                {lastAssistantMessage && (
+                  <p className="text-slate-300 text-base leading-relaxed mt-2">{lastAssistantMessage.content}</p>
+                )}
+              </div>
+            ) : isLoading ? (
+              <div className="flex flex-col items-center gap-4">
+                <Loader2 className="w-8 h-8 text-slate-400 animate-spin" />
+                <p className="text-slate-400 text-sm">Patient is thinking...</p>
+              </div>
+            ) : (
+              <div className="flex flex-col items-center gap-3">
+                {lastAssistantMessage && (
+                  <p className="text-slate-200 text-base leading-relaxed">{lastAssistantMessage.content}</p>
+                )}
+                {lastAudioUrl && !isSpeaking && (
+                  <Button
+                    onClick={replayLastAudio}
+                    variant="ghost"
+                    size="sm"
+                    className="text-slate-400 hover:text-green-400 hover:bg-slate-700 gap-1.5 mt-2"
+                  >
+                    <Volume2 className="w-4 h-4" /> Replay
+                  </Button>
+                )}
+              </div>
+            )}
+          </div>
+
+          {/* Live transcript while recording */}
+          {(liveTranscript || isTranscribing) && (
+            <div className="bg-slate-700/50 border border-slate-600 rounded-xl px-4 py-3 max-w-sm text-center">
+              {isTranscribing ? (
+                <span className="flex items-center justify-center gap-2 text-slate-300 text-sm">
+                  <Loader2 className="w-3 h-3 animate-spin" />
+                  Transcribing...
+                </span>
+              ) : (
+                <span className="text-slate-200 text-sm italic">{liveTranscript}</span>
+              )}
+            </div>
+          )}
+
+          {/* Your last message */}
+          {lastUserMessage && !isRecording && !liveTranscript && (
+            <div className="bg-green-600/20 border border-green-500/30 rounded-xl px-4 py-2 max-w-sm text-center">
+              <p className="text-green-300 text-sm">You: {lastUserMessage.content}</p>
+            </div>
+          )}
+        </div>
+
+        {/* Large Mic Button */}
+        <div className="pb-12 pt-6 flex flex-col items-center gap-4">
+          <button
+            onClick={isRecording ? stopRecording : startRecording}
+            disabled={isLoading || isTranscribing}
+            className={`w-24 h-24 rounded-full flex items-center justify-center transition-all duration-200 ${
+              isRecording
+                ? "bg-red-500 shadow-[0_0_40px_rgba(239,68,68,0.4)] scale-110"
+                : "bg-white shadow-[0_0_30px_rgba(255,255,255,0.15)] hover:scale-105 active:scale-95"
+            } ${(isLoading || isTranscribing) ? "opacity-50 cursor-not-allowed" : ""}`}
+          >
+            {isRecording ? (
+              <MicOff className="w-10 h-10 text-white" />
+            ) : (
+              <Mic className="w-10 h-10 text-slate-900" />
+            )}
+          </button>
+          <p className="text-slate-400 text-sm">
+            {isRecording ? "Tap to stop" : isTranscribing ? "Processing..." : "Tap to speak"}
+          </p>
+          {/* Message count indicator */}
+          <p className="text-slate-500 text-xs">{messages.length} messages in this consultation</p>
+        </div>
+
+        <audio ref={audioRef} className="hidden" />
+
+        {/* Voice waveform animation keyframes */}
+        <style>{`
+          @keyframes voiceWave {
+            0%, 100% { height: 8px; }
+            25% { height: ${Math.random() * 20 + 24}px; }
+            50% { height: ${Math.random() * 30 + 40}px; }
+            75% { height: ${Math.random() * 20 + 20}px; }
+          }
+        `}</style>
+      </div>
+    );
+  }
+
+  // Chat Mode UI (existing)
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 pb-24">
       {/* Header */}
@@ -1181,9 +1350,20 @@ function ConsultationView({
               <span>{voiceProfile.label}</span>
             </div>
           </div>
-          <Button onClick={onFinish} variant="outline" className="border-green-300 text-green-700 hover:bg-green-50">
-            End & Score
-          </Button>
+          <div className="flex items-center gap-2">
+            <Button
+              onClick={toggleMode}
+              variant="outline"
+              size="sm"
+              className="gap-1.5"
+              title="Switch to Voice Mode"
+            >
+              <Mic className="w-4 h-4" /> Voice
+            </Button>
+            <Button onClick={onFinish} variant="outline" className="border-green-300 text-green-700 hover:bg-green-50">
+              End & Score
+            </Button>
+          </div>
         </div>
       </header>
 

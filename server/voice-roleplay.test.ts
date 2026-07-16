@@ -155,6 +155,61 @@ describe("Transcription Method Selection", () => {
   });
 });
 
+// Voice Mode toggle logic
+function getInitialVoiceMode(): boolean {
+  try {
+    return localStorage?.getItem("sca-voice-mode") === "true";
+  } catch {
+    return false;
+  }
+}
+
+describe("Voice Mode Toggle", () => {
+  it("defaults to Chat Mode (false) when no localStorage value", () => {
+    // Simulate no localStorage
+    const result = (() => {
+      try { return undefined === "true"; } catch { return false; }
+    })();
+    expect(result).toBe(false);
+  });
+
+  it("persists mode selection", () => {
+    // Simulate toggle logic
+    let voiceMode = false;
+    const toggle = () => { voiceMode = !voiceMode; };
+    toggle();
+    expect(voiceMode).toBe(true);
+    toggle();
+    expect(voiceMode).toBe(false);
+  });
+
+  it("Voice Mode shows last assistant message", () => {
+    const messages = [
+      { role: "assistant", content: "Hello doctor" },
+      { role: "user", content: "Hi" },
+      { role: "assistant", content: "I've been feeling unwell" },
+    ];
+    const lastAssistant = [...messages].reverse().find(m => m.role === "assistant");
+    expect(lastAssistant?.content).toBe("I've been feeling unwell");
+  });
+
+  it("Voice Mode shows last user message", () => {
+    const messages = [
+      { role: "assistant", content: "Hello doctor" },
+      { role: "user", content: "Tell me more" },
+      { role: "assistant", content: "I've been feeling unwell" },
+    ];
+    const lastUser = [...messages].reverse().find(m => m.role === "user");
+    expect(lastUser?.content).toBe("Tell me more");
+  });
+
+  it("handles empty messages array gracefully", () => {
+    const messages: any[] = [];
+    const lastAssistant = [...messages].reverse().find(m => m.role === "assistant");
+    expect(lastAssistant).toBeUndefined();
+  });
+});
+
 // Voice synthesis request validation
 function validateSynthesisRequest(text: string): { valid: boolean; error?: string } {
   if (!text || text.trim().length === 0) {

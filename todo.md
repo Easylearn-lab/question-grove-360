@@ -986,3 +986,13 @@
 - [x] Add "Replay last response" button for patient audio in timer bar
 - [x] Ensure proper cleanup of audio resources on unmount
 - [x] 23 vitest tests passing for voice roleplay logic
+
+## Voice Mode Toggle (Jul 16 2026)
+
+- [x] Add Voice/Chat mode toggle button in consultation header
+- [x] Build full-screen Voice Mode UI: large mic button, patient name, case title, timer
+- [x] Add animated waveform visualization when patient is speaking
+- [x] Persist mode selection across the session (localStorage)
+- [x] Default to Chat Mode
+- [x] Both modes share the same message/recording/synthesis logic
+- [x] Write tests for mode toggle logic (28 tests passing)
