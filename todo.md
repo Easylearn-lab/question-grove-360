@@ -946,3 +946,13 @@
 - [x] Created CrossSellGate component with 3 states: pass-through, cross-sell, generic gate
 - [x] Updated all 8 pages: SCASimulator, QuestionBank, MockExams, PatternRecognition, Note360, Note360Content, Note360List, Bookmarks
 - [x] 23 vitest tests passing for CrossSellGate logic
+
+## SCA History / My Progress Page (Jul 16 2026)
+
+- [x] Create /sca/history page component with radar chart summary and consultation list
+- [x] Show for each consultation: case title, date, domain 1/2/3 scores, total score, pass/fail, View button
+- [x] Summary radar chart at top showing average scores across all three domains
+- [x] View button opens full transcript and AI feedback for that consultation
+- [x] Add "My Progress" link on /sca page header
+- [x] Register /sca/history route in App.tsx
+- [x] Write tests for the page logic (21 tests passing)

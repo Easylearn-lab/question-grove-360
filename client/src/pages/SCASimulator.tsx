@@ -6,7 +6,7 @@ import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Badge } from "@/components/ui/badge";
-import { ArrowLeft, Mic, MicOff, Send, Loader2, Play, Pause, RotateCcw, CheckCircle2, XCircle, MinusCircle, Clock, Volume2 } from "lucide-react";
+import { ArrowLeft, Mic, MicOff, Send, Loader2, Play, Pause, RotateCcw, CheckCircle2, XCircle, MinusCircle, Clock, Volume2, BarChart3 } from "lucide-react";
 import { trpc } from "@/lib/trpc";
 import { toast } from "sonner";
 import { CrossSellGate } from "@/components/CrossSellGate";
@@ -178,14 +178,20 @@ export default function SCASimulator() {
     return (
       <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100">
         <header className="bg-white border-b border-slate-200 sticky top-0 z-40">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center gap-4">
-            <Button variant="ghost" size="sm" onClick={() => navigate("/dashboard")} className="text-slate-600 hover:text-slate-900">
-              <ArrowLeft className="w-4 h-4" />
-            </Button>
-            <div>
-              <h1 className="text-2xl font-bold text-slate-900">SCA Consultation Simulator</h1>
-              <p className="text-sm text-slate-500">30 RCGP-mapped cases with AI patient roleplay</p>
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
+            <div className="flex items-center gap-4">
+              <Button variant="ghost" size="sm" onClick={() => navigate("/dashboard")} className="text-slate-600 hover:text-slate-900">
+                <ArrowLeft className="w-4 h-4" />
+              </Button>
+              <div>
+                <h1 className="text-2xl font-bold text-slate-900">SCA Consultation Simulator</h1>
+                <p className="text-sm text-slate-500">30 RCGP-mapped cases with AI patient roleplay</p>
+              </div>
             </div>
+            <Button variant="outline" size="sm" onClick={() => navigate("/sca/history")} className="gap-1.5 text-slate-700">
+              <BarChart3 className="w-4 h-4" />
+              My Progress
+            </Button>
           </div>
         </header>
 
