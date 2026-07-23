@@ -346,6 +346,7 @@ export const scaConsultations = mysqlTable("sca_consultations", {
   domain3Score: int("domain3Score"),
   totalScore: int("totalScore"),
   passed: boolean("passed"),
+  empathyScore: int("empathyScore"),
   aiFeedback: json("aiFeedback"),
   completedAt: timestamp("completedAt").defaultNow(),
   emailSent: boolean("emailSent").default(false),

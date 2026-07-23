@@ -344,6 +344,7 @@ export default function SCAHistory() {
                         <th className="text-center px-2 py-3 font-medium text-slate-600">D3</th>
                         <th className="text-center px-2 py-3 font-medium text-slate-600">Total</th>
                         <th className="text-center px-2 py-3 font-medium text-slate-600">Result</th>
+                        <th className="text-center px-2 py-3 font-medium text-slate-600">Empathy</th>
                         <th className="text-right px-5 py-3 font-medium text-slate-600">Actions</th>
                       </tr>
                     </thead>
@@ -376,6 +377,15 @@ export default function SCAHistory() {
                               <Badge className="bg-green-100 text-green-700 border-green-200">Pass</Badge>
                             ) : (
                               <Badge className="bg-red-100 text-red-700 border-red-200">Fail</Badge>
+                            )}
+                          </td>
+                          <td className="text-center px-2 py-4">
+                            {consultation.empathyScore != null ? (
+                              <span className={`font-semibold text-sm ${consultation.empathyScore >= 70 ? 'text-green-600' : consultation.empathyScore >= 50 ? 'text-amber-600' : 'text-red-600'}`}>
+                                {consultation.empathyScore}%
+                              </span>
+                            ) : (
+                              <span className="text-slate-400 text-sm">—</span>
                             )}
                           </td>
                           <td className="text-right px-5 py-4">

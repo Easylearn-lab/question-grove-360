@@ -192,6 +192,7 @@ CRITICAL RULES:
       totalScore: z.number(),
       passed: z.boolean(),
       competencyScores: z.record(z.string(), z.enum(["well", "partial", "poor"])).optional(),
+      empathyScore: z.number().optional(),
       isFreeTrial: z.boolean().optional().default(false),
     }))
     .mutation(async ({ ctx, input }) => {
@@ -205,8 +206,8 @@ CRITICAL RULES:
       if (!db) throw new TRPCError({ code: "INTERNAL_SERVER_ERROR", message: "Database unavailable" });
 
       const result = await db.execute(
-        sql`INSERT INTO sca_consultations (userId, caseId, caseTitle, mode, transcript, duration, domain1Score, domain2Score, domain3Score, totalScore, passed, aiFeedback)
-            VALUES (${ctx.user.id}, ${input.caseId}, ${input.caseTitle}, ${input.mode}, ${JSON.stringify(input.transcript)}, ${input.duration}, ${input.domain1Score}, ${input.domain2Score}, ${input.domain3Score}, ${input.totalScore}, ${input.passed}, ${JSON.stringify(input.competencyScores || {})})`
+        sql`INSERT INTO sca_consultations (userId, caseId, caseTitle, mode, transcript, duration, domain1Score, domain2Score, domain3Score, totalScore, passed, empathyScore, aiFeedback)
+            VALUES (${ctx.user.id}, ${input.caseId}, ${input.caseTitle}, ${input.mode}, ${JSON.stringify(input.transcript)}, ${input.duration}, ${input.domain1Score}, ${input.domain2Score}, ${input.domain3Score}, ${input.totalScore}, ${input.passed}, ${input.empathyScore ?? null}, ${JSON.stringify(input.competencyScores || {})})`
       );
 
       return { success: true, id: (result as any)[0]?.insertId || 0 };
@@ -221,7 +222,7 @@ CRITICAL RULES:
     if (!db) throw new TRPCError({ code: "INTERNAL_SERVER_ERROR", message: "Database unavailable" });
 
       const result = await db.execute(
-        sql`SELECT id, caseId, caseTitle, mode, duration, domain1Score, domain2Score, domain3Score, totalScore, passed, completedAt FROM sca_consultations WHERE userId = ${ctx.user.id} ORDER BY completedAt DESC LIMIT 50`
+        sql`SELECT id, caseId, caseTitle, mode, duration, domain1Score, domain2Score, domain3Score, totalScore, passed, empathyScore, completedAt FROM sca_consultations WHERE userId = ${ctx.user.id} ORDER BY completedAt DESC LIMIT 50`
       );
       return (result as any)[0] as any[];
   }),

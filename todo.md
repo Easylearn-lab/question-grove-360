@@ -1022,3 +1022,11 @@
 - [x] Empathy Score in debrief: percentage based on resolution speed, final state, and distress count
 - [x] Include Empathy Score in the portfolio PDF export
 - [x] Write tests for Empathy Score calculation (43 tests passing)
+
+## Empathy Score in History + Tips (Jul 23 2026)
+
+- [x] Add Empathy Score column to /sca/history table alongside domain scores
+- [x] Show actionable tips in debrief when Empathy Score < 60% based on lowest breakdown component
+- [x] Added empathyScore column to sca_consultations DB table
+- [x] Save empathyScore when consultation is saved
+- [x] 43 tests passing

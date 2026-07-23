@@ -1845,6 +1845,7 @@ function DebriefView({
         totalScore: totalPercentage,
         passed,
         competencyScores,
+        empathyScore: empathyResult.score,
         isFreeTrial,
       }).then(() => setSaved(true)).catch(() => {});
     }
@@ -2007,6 +2008,43 @@ function DebriefView({
             </div>
           </div>
         </Card>
+
+        {/* Empathy Tips (shown when score < 60%) */}
+        {empathyResult.score < 60 && (
+          <Card className="p-6 border-amber-200 bg-amber-50">
+            <h3 className="text-lg font-bold text-amber-900 mb-3">Empathy Improvement Tips</h3>
+            <p className="text-sm text-amber-700 mb-4">Based on your lowest-scoring empathy components, here are specific actions to improve:</p>
+            <div className="space-y-3">
+              {empathyResult.breakdown.resolutionSpeed <= empathyResult.breakdown.finalState && empathyResult.breakdown.resolutionSpeed <= empathyResult.breakdown.distressEscalation && (
+                <div className="flex items-start gap-3 bg-white p-3 rounded-lg border border-amber-100">
+                  <span className="text-amber-500 mt-0.5 shrink-0">💡</span>
+                  <div>
+                    <p className="font-medium text-amber-900 text-sm">Acknowledge feelings earlier</p>
+                    <p className="text-xs text-amber-700 mt-1">Try acknowledging the patient's feelings before moving to clinical questions. Phrases like "I can see this is really worrying you" help the patient feel heard and reduce distress faster.</p>
+                  </div>
+                </div>
+              )}
+              {empathyResult.breakdown.finalState <= empathyResult.breakdown.resolutionSpeed && empathyResult.breakdown.finalState <= empathyResult.breakdown.distressEscalation && (
+                <div className="flex items-start gap-3 bg-white p-3 rounded-lg border border-amber-100">
+                  <span className="text-amber-500 mt-0.5 shrink-0">💡</span>
+                  <div>
+                    <p className="font-medium text-amber-900 text-sm">Check in before closing</p>
+                    <p className="text-xs text-amber-700 mt-1">Check in with how the patient is feeling before closing the consultation. Ask "How are you feeling about what we've discussed?" to ensure they leave reassured rather than still anxious.</p>
+                  </div>
+                </div>
+              )}
+              {empathyResult.breakdown.distressEscalation <= empathyResult.breakdown.resolutionSpeed && empathyResult.breakdown.distressEscalation <= empathyResult.breakdown.finalState && (
+                <div className="flex items-start gap-3 bg-white p-3 rounded-lg border border-amber-100">
+                  <span className="text-amber-500 mt-0.5 shrink-0">💡</span>
+                  <div>
+                    <p className="font-medium text-amber-900 text-sm">Pause and reflect during distress</p>
+                    <p className="text-xs text-amber-700 mt-1">When the patient becomes distressed, pause and reflect their emotion before continuing. Say "I can hear that's really upsetting for you" rather than immediately moving to the next question.</p>
+                  </div>
+                </div>
+              )}
+            </div>
+          </Card>
+        )}
 
         {/* Poorly Scored Competencies */}
         {poorCompetencies.length > 0 && (
