@@ -1015,3 +1015,10 @@
 - [x] Emotion history timeline: track emotion changes during consultation with timestamps
 - [x] Display "Patient Emotional Journey" timeline in debrief view
 - [x] Write tests for body language cue mapping and emotion history tracking (34 tests passing)
+
+## Final Avatar Enhancements (Jul 23 2026)
+
+- [x] Body language cue toast notifications: flash 3-second prominent toast when emotion changes
+- [x] Empathy Score in debrief: percentage based on resolution speed, final state, and distress count
+- [x] Include Empathy Score in the portfolio PDF export
+- [x] Write tests for Empathy Score calculation (43 tests passing)

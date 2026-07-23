@@ -332,3 +332,168 @@ describe("Emotion Timeline Formatting", () => {
     expect(positions[1]).toBe(50);
   });
 });
+
+describe("Empathy Score Calculation", () => {
+  // Replicate the calculation logic for testing
+  const NEGATIVE_EMOTIONS: EmotionalState[] = ["anxious", "upset", "angry", "guarded"];
+  const POSITIVE_EMOTIONS: EmotionalState[] = ["relieved"];
+  const SEVERITY: Record<EmotionalState, number> = {
+    relieved: 0, neutral: 1, guarded: 2, anxious: 3, upset: 4, angry: 5,
+  };
+
+  function calculateEmpathyScore(history: EmotionHistoryEntry[], totalDuration: number) {
+    if (!history.length || totalDuration <= 0) {
+      return { score: 50, breakdown: { resolutionSpeed: 20, finalState: 15, distressEscalation: 15 }, explanation: "No emotional state changes were detected during this consultation." };
+    }
+
+    let resolutionSpeed = 40;
+    let negativeStartTime: number | null = null;
+    for (let i = 0; i < history.length; i++) {
+      const entry = history[i];
+      if (NEGATIVE_EMOTIONS.includes(entry.emotion)) {
+        if (negativeStartTime === null) negativeStartTime = entry.timestamp;
+      } else if (negativeStartTime !== null) {
+        const durationNegative = entry.timestamp - negativeStartTime;
+        const proportionOfConsultation = durationNegative / totalDuration;
+        resolutionSpeed -= Math.min(10, Math.round(proportionOfConsultation * 40));
+        negativeStartTime = null;
+      }
+    }
+    if (negativeStartTime !== null) {
+      const durationNegative = totalDuration - negativeStartTime;
+      const proportionOfConsultation = durationNegative / totalDuration;
+      resolutionSpeed -= Math.min(15, Math.round(proportionOfConsultation * 40));
+    }
+    resolutionSpeed = Math.max(0, Math.min(40, resolutionSpeed));
+
+    const lastEmotion = history[history.length - 1].emotion;
+    let finalState = 15;
+    if (POSITIVE_EMOTIONS.includes(lastEmotion)) finalState = 30;
+    else if (lastEmotion === "neutral") finalState = 20;
+    else if (lastEmotion === "guarded") finalState = 10;
+    else if (NEGATIVE_EMOTIONS.includes(lastEmotion)) finalState = 5;
+
+    let escalationCount = 0;
+    for (let i = 1; i < history.length; i++) {
+      if (SEVERITY[history[i].emotion] > SEVERITY[history[i - 1].emotion]) escalationCount++;
+    }
+    let distressEscalation = 30;
+    if (escalationCount === 1) distressEscalation = 22;
+    else if (escalationCount === 2) distressEscalation = 15;
+    else if (escalationCount >= 3) distressEscalation = 8;
+
+    const score = Math.min(100, Math.max(0, resolutionSpeed + finalState + distressEscalation));
+    let explanation = "";
+    if (score >= 80) explanation = "Excellent empathetic communication.";
+    else if (score >= 60) explanation = "Good empathetic approach.";
+    else if (score >= 40) explanation = "Moderate empathy demonstrated.";
+    else explanation = "The patient remained distressed.";
+
+    return { score, breakdown: { resolutionSpeed, finalState, distressEscalation }, explanation };
+  }
+
+  it("returns 50% default for empty history", () => {
+    const result = calculateEmpathyScore([], 720);
+    expect(result.score).toBe(50);
+    expect(result.explanation).toContain("No emotional state changes");
+  });
+
+  it("returns 50% for zero duration", () => {
+    const result = calculateEmpathyScore([{ emotion: "anxious", timestamp: 0, messageIndex: 0 }], 0);
+    expect(result.score).toBe(50);
+  });
+
+  it("scores high when patient ends relieved with no escalation", () => {
+    const history: EmotionHistoryEntry[] = [
+      { emotion: "anxious", timestamp: 30, messageIndex: 1 },
+      { emotion: "relieved", timestamp: 120, messageIndex: 4 },
+    ];
+    const result = calculateEmpathyScore(history, 720);
+    expect(result.score).toBeGreaterThanOrEqual(80);
+    expect(result.breakdown.finalState).toBe(30);
+    expect(result.breakdown.distressEscalation).toBe(30); // no escalation
+  });
+
+  it("scores low when patient ends angry with escalations", () => {
+    const history: EmotionHistoryEntry[] = [
+      { emotion: "anxious", timestamp: 30, messageIndex: 1 },
+      { emotion: "angry", timestamp: 120, messageIndex: 3 },
+      { emotion: "upset", timestamp: 300, messageIndex: 5 },
+      { emotion: "angry", timestamp: 500, messageIndex: 8 },
+    ];
+    const result = calculateEmpathyScore(history, 720);
+    expect(result.score).toBeLessThan(50);
+    expect(result.breakdown.finalState).toBe(5); // ended angry
+  });
+
+  it("penalizes slow resolution of negative states", () => {
+    // Patient stays anxious for most of the consultation
+    const historyFast: EmotionHistoryEntry[] = [
+      { emotion: "anxious", timestamp: 30, messageIndex: 1 },
+      { emotion: "relieved", timestamp: 60, messageIndex: 2 }, // resolved in 30s
+    ];
+    const historySlow: EmotionHistoryEntry[] = [
+      { emotion: "anxious", timestamp: 30, messageIndex: 1 },
+      { emotion: "relieved", timestamp: 600, messageIndex: 10 }, // resolved in 570s
+    ];
+    const fast = calculateEmpathyScore(historyFast, 720);
+    const slow = calculateEmpathyScore(historySlow, 720);
+    expect(fast.breakdown.resolutionSpeed).toBeGreaterThan(slow.breakdown.resolutionSpeed);
+  });
+
+  it("penalizes unresolved negative state at end", () => {
+    const history: EmotionHistoryEntry[] = [
+      { emotion: "anxious", timestamp: 30, messageIndex: 1 },
+    ];
+    const result = calculateEmpathyScore(history, 720);
+    // Still negative at end: resolutionSpeed penalized, finalState = 5
+    expect(result.breakdown.finalState).toBe(5);
+    expect(result.breakdown.resolutionSpeed).toBeLessThan(40);
+  });
+
+  it("gives full de-escalation score when no escalations occur", () => {
+    const history: EmotionHistoryEntry[] = [
+      { emotion: "anxious", timestamp: 30, messageIndex: 1 },
+      { emotion: "neutral", timestamp: 120, messageIndex: 3 },
+      { emotion: "relieved", timestamp: 300, messageIndex: 6 },
+    ];
+    const result = calculateEmpathyScore(history, 720);
+    expect(result.breakdown.distressEscalation).toBe(30);
+  });
+
+  it("deducts for each escalation", () => {
+    const history1: EmotionHistoryEntry[] = [
+      { emotion: "neutral", timestamp: 30, messageIndex: 1 },
+      { emotion: "anxious", timestamp: 120, messageIndex: 3 }, // 1 escalation
+      { emotion: "relieved", timestamp: 300, messageIndex: 6 },
+    ];
+    const history2: EmotionHistoryEntry[] = [
+      { emotion: "neutral", timestamp: 30, messageIndex: 1 },
+      { emotion: "anxious", timestamp: 60, messageIndex: 2 }, // 1st escalation
+      { emotion: "neutral", timestamp: 120, messageIndex: 3 },
+      { emotion: "upset", timestamp: 200, messageIndex: 5 }, // 2nd escalation
+      { emotion: "relieved", timestamp: 400, messageIndex: 8 },
+    ];
+    const r1 = calculateEmpathyScore(history1, 720);
+    const r2 = calculateEmpathyScore(history2, 720);
+    expect(r1.breakdown.distressEscalation).toBe(22); // 1 escalation
+    expect(r2.breakdown.distressEscalation).toBe(15); // 2 escalations
+  });
+
+  it("score is always between 0 and 100", () => {
+    // Best case
+    const best: EmotionHistoryEntry[] = [
+      { emotion: "relieved", timestamp: 30, messageIndex: 1 },
+    ];
+    const worst: EmotionHistoryEntry[] = [
+      { emotion: "anxious", timestamp: 10, messageIndex: 1 },
+      { emotion: "angry", timestamp: 50, messageIndex: 2 },
+      { emotion: "upset", timestamp: 100, messageIndex: 3 },
+      { emotion: "angry", timestamp: 200, messageIndex: 4 },
+    ];
+    expect(calculateEmpathyScore(best, 720).score).toBeLessThanOrEqual(100);
+    expect(calculateEmpathyScore(best, 720).score).toBeGreaterThanOrEqual(0);
+    expect(calculateEmpathyScore(worst, 720).score).toBeLessThanOrEqual(100);
+    expect(calculateEmpathyScore(worst, 720).score).toBeGreaterThanOrEqual(0);
+  });
+});

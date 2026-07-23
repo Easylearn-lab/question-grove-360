@@ -199,3 +199,113 @@ export function EmotionTimeline({ history, totalDuration }: EmotionTimelineProps
     </div>
   );
 }
+
+// ============================================================
+// EMPATHY SCORE CALCULATION
+// ============================================================
+const NEGATIVE_EMOTIONS: EmotionalState[] = ["anxious", "upset", "angry", "guarded"];
+const POSITIVE_EMOTIONS: EmotionalState[] = ["relieved"];
+
+export interface EmpathyScoreResult {
+  score: number; // 0-100 percentage
+  breakdown: {
+    resolutionSpeed: number; // 0-40 points: how quickly negative states were resolved
+    finalState: number; // 0-30 points: whether patient ended relieved/neutral
+    distressEscalation: number; // 0-30 points: fewer distress escalations = higher score
+  };
+  explanation: string;
+}
+
+export function calculateEmpathyScore(history: EmotionHistoryEntry[], totalDuration: number): EmpathyScoreResult {
+  if (!history.length || totalDuration <= 0) {
+    return {
+      score: 50,
+      breakdown: { resolutionSpeed: 20, finalState: 15, distressEscalation: 15 },
+      explanation: "No emotional state changes were detected during this consultation.",
+    };
+  }
+
+  // 1. Resolution Speed (0-40 points)
+  // Measure how quickly negative emotions transition to neutral/positive
+  let resolutionSpeed = 40; // Start at max, deduct for slow resolutions
+  let negativeStartTime: number | null = null;
+
+  for (let i = 0; i < history.length; i++) {
+    const entry = history[i];
+    if (NEGATIVE_EMOTIONS.includes(entry.emotion)) {
+      if (negativeStartTime === null) {
+        negativeStartTime = entry.timestamp;
+      }
+    } else if (negativeStartTime !== null) {
+      // Resolved: calculate time spent negative
+      const durationNegative = entry.timestamp - negativeStartTime;
+      const proportionOfConsultation = durationNegative / totalDuration;
+      // Deduct up to 10 points per unresolved stretch
+      resolutionSpeed -= Math.min(10, Math.round(proportionOfConsultation * 40));
+      negativeStartTime = null;
+    }
+  }
+  // If still negative at end, deduct more
+  if (negativeStartTime !== null) {
+    const durationNegative = totalDuration - negativeStartTime;
+    const proportionOfConsultation = durationNegative / totalDuration;
+    resolutionSpeed -= Math.min(15, Math.round(proportionOfConsultation * 40));
+  }
+  resolutionSpeed = Math.max(0, Math.min(40, resolutionSpeed));
+
+  // 2. Final State (0-30 points)
+  const lastEmotion = history[history.length - 1].emotion;
+  let finalState = 15; // neutral default
+  if (POSITIVE_EMOTIONS.includes(lastEmotion)) {
+    finalState = 30; // ended relieved/reassured
+  } else if (lastEmotion === "neutral") {
+    finalState = 20; // ended calm
+  } else if (lastEmotion === "guarded") {
+    finalState = 10; // still guarded
+  } else if (NEGATIVE_EMOTIONS.includes(lastEmotion)) {
+    finalState = 5; // ended distressed
+  }
+
+  // 3. Distress Escalation (0-30 points)
+  // Count how many times the patient became MORE distressed (moved to a worse state)
+  const SEVERITY: Record<EmotionalState, number> = {
+    relieved: 0,
+    neutral: 1,
+    guarded: 2,
+    anxious: 3,
+    upset: 4,
+    angry: 5,
+  };
+
+  let escalationCount = 0;
+  for (let i = 1; i < history.length; i++) {
+    if (SEVERITY[history[i].emotion] > SEVERITY[history[i - 1].emotion]) {
+      escalationCount++;
+    }
+  }
+  // 0 escalations = 30pts, 1 = 22pts, 2 = 15pts, 3+ = 8pts
+  let distressEscalation = 30;
+  if (escalationCount === 1) distressEscalation = 22;
+  else if (escalationCount === 2) distressEscalation = 15;
+  else if (escalationCount >= 3) distressEscalation = 8;
+
+  const score = Math.min(100, Math.max(0, resolutionSpeed + finalState + distressEscalation));
+
+  // Generate explanation
+  let explanation = "";
+  if (score >= 80) {
+    explanation = "Excellent empathetic communication. You resolved the patient's concerns effectively and they felt reassured by the end of the consultation.";
+  } else if (score >= 60) {
+    explanation = "Good empathetic approach. The patient's emotional state improved during the consultation, though there is room to address concerns more promptly.";
+  } else if (score >= 40) {
+    explanation = "Moderate empathy demonstrated. Consider acknowledging the patient's emotions earlier and using more reassurance techniques to prevent distress escalation.";
+  } else {
+    explanation = "The patient remained distressed throughout the consultation. Focus on active listening, validating emotions, and providing clear reassurance earlier in the conversation.";
+  }
+
+  return {
+    score,
+    breakdown: { resolutionSpeed, finalState, distressEscalation },
+    explanation,
+  };
+}

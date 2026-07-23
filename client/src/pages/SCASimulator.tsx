@@ -11,7 +11,7 @@ import { trpc } from "@/lib/trpc";
 import { toast } from "sonner";
 import { CrossSellGate } from "@/components/CrossSellGate";
 import { useExamAccess } from "@/hooks/useExamAccess";
-import { PatientAvatar, detectEmotion, getEmotionConfig, EmotionTimeline, type EmotionalState, type EmotionHistoryEntry } from "@/components/PatientAvatar";
+import { PatientAvatar, detectEmotion, getEmotionConfig, EmotionTimeline, calculateEmpathyScore, type EmotionalState, type EmotionHistoryEntry } from "@/components/PatientAvatar";
 
 // ============================================================
 // TYPES
@@ -926,6 +926,13 @@ function ConsultationView({
           ...prev,
           { emotion: newEmotion, timestamp: elapsedSeconds, messageIndex: messages.length - 1 }
         ]);
+        // Show body language cue as a 3-second toast notification
+        const newConfig = getEmotionConfig(newEmotion);
+        toast(newConfig.bodyLanguage, {
+          duration: 3000,
+          icon: "👁️",
+          style: { borderLeft: `4px solid ${newConfig.color}` },
+        });
       }
       setCurrentEmotion(newEmotion);
     }
@@ -1808,6 +1815,9 @@ function DebriefView({
   const totalPercentage = totalMax > 0 ? Math.round((totalScore / totalMax) * 100) : 0;
   const passed = domainScores.every(d => d.percentage >= 50);
 
+  // Empathy Score
+  const empathyResult = calculateEmpathyScore(emotionHistory, duration);
+
   // Poorly scored competencies
   const poorCompetencies = Object.entries(competencyScores)
     .filter(([, score]) => score === "poor")
@@ -1952,6 +1962,51 @@ function DebriefView({
         {emotionHistory.length > 0 && (
           <EmotionTimeline history={emotionHistory} totalDuration={duration} />
         )}
+
+        {/* Empathy Score */}
+        <Card className="p-6 border-purple-200 bg-purple-50">
+          <h3 className="text-lg font-bold text-purple-900 mb-4">Empathy Score</h3>
+          <div className="flex items-center gap-6 mb-4">
+            <div className="relative w-24 h-24">
+              <svg className="w-24 h-24 -rotate-90" viewBox="0 0 36 36">
+                <path
+                  d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
+                  fill="none"
+                  stroke="#e9d5ff"
+                  strokeWidth="3"
+                />
+                <path
+                  d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
+                  fill="none"
+                  stroke={empathyResult.score >= 70 ? "#10B981" : empathyResult.score >= 50 ? "#F59E0B" : "#EF4444"}
+                  strokeWidth="3"
+                  strokeDasharray={`${empathyResult.score}, 100`}
+                  strokeLinecap="round"
+                />
+              </svg>
+              <div className="absolute inset-0 flex items-center justify-center">
+                <span className="text-2xl font-bold text-purple-900">{empathyResult.score}%</span>
+              </div>
+            </div>
+            <div className="flex-1">
+              <p className="text-sm text-purple-800 mb-3">{empathyResult.explanation}</p>
+              <div className="grid grid-cols-3 gap-2 text-xs">
+                <div className="bg-white p-2 rounded border border-purple-100 text-center">
+                  <p className="text-purple-500">Resolution</p>
+                  <p className="font-bold text-purple-900">{empathyResult.breakdown.resolutionSpeed}/40</p>
+                </div>
+                <div className="bg-white p-2 rounded border border-purple-100 text-center">
+                  <p className="text-purple-500">Final State</p>
+                  <p className="font-bold text-purple-900">{empathyResult.breakdown.finalState}/30</p>
+                </div>
+                <div className="bg-white p-2 rounded border border-purple-100 text-center">
+                  <p className="text-purple-500">De-escalation</p>
+                  <p className="font-bold text-purple-900">{empathyResult.breakdown.distressEscalation}/30</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </Card>
 
         {/* Poorly Scored Competencies */}
         {poorCompetencies.length > 0 && (
