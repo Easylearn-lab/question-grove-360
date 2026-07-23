@@ -1037,3 +1037,11 @@
 - [x] Update UI copy from '30 cases' to '40 cases' where referenced
 - [x] Add category badge colours for new categories: Urgent and Unscheduled Care (rose), Metabolic Problems and Endocrinology (emerald)
 - [x] Verify total case count is 40 in database
+
+## SCA Case Grid Enhancements (Jul 23 2026)
+
+- [x] Difficulty filtering: All/Foundation/Standard/Advanced buttons above case grid, combinable with category filter
+- [x] New badge: green "New" badge on cases created in last 14 days (from createdAt column)
+- [x] Completion tracking: green checkmark on attempted cases, progress counter "X of 40 cases attempted" (subscribers only)
+- [x] Backend procedure to fetch user's attempted case IDs
+- [x] 21 vitest tests passing for grid enhancements

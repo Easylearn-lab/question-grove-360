@@ -18,9 +18,22 @@ export const scaRouter = router({
     if (!db) throw new TRPCError({ code: "INTERNAL_SERVER_ERROR", message: "Database unavailable" });
 
     const result = await db.execute(
-      sql`SELECT id, title, category, difficulty, patientName, patientAge, patientGender, presentingComplaint, isFreeTrialCase FROM sca_cases WHERE isActive = 1 ORDER BY id`
+      sql`SELECT id, title, category, difficulty, patientName, patientAge, patientGender, presentingComplaint, isFreeTrialCase, createdAt FROM sca_cases WHERE isActive = 1 ORDER BY id`
     );
     return (result as any)[0] as any[];
+  }),
+
+  /**
+   * Get case IDs that the user has attempted (for completion tracking)
+   */
+  getAttemptedCaseIds: protectedProcedure.query(async ({ ctx }) => {
+    const { getDb } = await import("./db");
+    const db = await getDb();
+    if (!db) throw new TRPCError({ code: "INTERNAL_SERVER_ERROR", message: "Database unavailable" });
+    const result = await db.execute(
+      sql`SELECT DISTINCT caseId FROM sca_consultations WHERE userId = ${ctx.user.id}`
+    );
+    return ((result as any)[0] as any[]).map((r: any) => r.caseId as number);
   }),
 
   /**

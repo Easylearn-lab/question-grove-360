@@ -26,7 +26,16 @@ interface ScaCase {
   patientGender: string;
   presentingComplaint: string;
   isFreeTrialCase?: boolean;
+  createdAt?: string;
 }
+
+// Difficulty filter labels mapped to DB values
+const DIFFICULTY_LABELS: Record<string, string> = {
+  all: "All",
+  Easy: "Foundation",
+  Medium: "Standard",
+  Hard: "Advanced",
+};
 
 interface FullCase extends ScaCase {
   backgroundContext: string;
@@ -106,6 +115,7 @@ export default function SCASimulator() {
   const [selectedCaseId, setSelectedCaseId] = useState<number | null>(null);
   const [phase, setPhase] = useState<"browse" | "case" | "consultation" | "scoring" | "debrief">("browse");
   const [categoryFilter, setCategoryFilter] = useState<string>("all");
+  const [difficultyFilter, setDifficultyFilter] = useState<string>("all");
   const [isFreeTrial, setIsFreeTrial] = useState(false);
   const [loadingPlan, setLoadingPlan] = useState<string | null>(null);
 
@@ -151,6 +161,12 @@ export default function SCASimulator() {
   // Fetch all cases
   const casesQuery = trpc.sca.getCases.useQuery();
 
+  // Fetch attempted case IDs for completion tracking (subscribers only)
+  const attemptedQuery = trpc.sca.getAttemptedCaseIds.useQuery(undefined, {
+    enabled: isPremium && isAuthenticated,
+  });
+  const attemptedCaseIds = useMemo(() => new Set(attemptedQuery.data || []), [attemptedQuery.data]);
+
   // Fetch full case when selected
   const fullCaseQuery = trpc.sca.getCaseById.useQuery(
     { caseId: selectedCaseId!, isFreeTrial },
@@ -165,9 +181,24 @@ export default function SCASimulator() {
 
   const filteredCases = useMemo(() => {
     if (!casesQuery.data) return [];
-    if (categoryFilter === "all") return casesQuery.data;
-    return casesQuery.data.filter((c: ScaCase) => c.category === categoryFilter);
-  }, [casesQuery.data, categoryFilter]);
+    let cases = casesQuery.data;
+    if (categoryFilter !== "all") {
+      cases = cases.filter((c: ScaCase) => c.category === categoryFilter);
+    }
+    if (difficultyFilter !== "all") {
+      cases = cases.filter((c: ScaCase) => c.difficulty === difficultyFilter);
+    }
+    return cases;
+  }, [casesQuery.data, categoryFilter, difficultyFilter]);
+
+  // Check if a case is "new" (created in last 14 days)
+  const isNewCase = useCallback((createdAt?: string) => {
+    if (!createdAt) return false;
+    const created = new Date(createdAt);
+    const fourteenDaysAgo = new Date();
+    fourteenDaysAgo.setDate(fourteenDaysAgo.getDate() - 14);
+    return created > fourteenDaysAgo;
+  }, []);
 
   const handleSelectCase = (caseId: number, freeTrialCase?: boolean) => {
     if (!isAuthenticated) {
@@ -244,6 +275,21 @@ export default function SCASimulator() {
                 </p>
               </div>
 
+              {/* Difficulty Filter */}
+              <div className="flex flex-wrap gap-2 mb-4">
+                {Object.entries(DIFFICULTY_LABELS).map(([key, label]) => (
+                  <Button
+                    key={key}
+                    variant={difficultyFilter === key ? "default" : "outline"}
+                    size="sm"
+                    onClick={() => setDifficultyFilter(key)}
+                    className={difficultyFilter === key ? "bg-green-600 hover:bg-green-700" : ""}
+                  >
+                    {label}
+                  </Button>
+                ))}
+              </div>
+
               {/* Category Filter */}
               <div className="flex flex-wrap gap-2 mb-8">
                 <Button
@@ -276,16 +322,22 @@ export default function SCASimulator() {
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                   {filteredCases.map((caseItem: ScaCase) => {
                     const isTrial = !!caseItem.isFreeTrialCase;
+                    const isNew = isNewCase(caseItem.createdAt);
                     return (
                       <Card
                         key={caseItem.id}
-                        className={`p-6 transition-all ${
+                        className={`p-6 transition-all relative ${
                           isTrial
                             ? "border-green-300 hover:shadow-lg hover:border-green-400 cursor-pointer group bg-white"
                             : "border-slate-200 opacity-60 cursor-not-allowed bg-slate-50"
                         }`}
                         onClick={() => isTrial ? handleSelectCase(caseItem.id, true) : toast.error("Subscribe to unlock this case")}
                       >
+                        {isNew && (
+                          <div className="absolute top-3 right-3">
+                            <Badge className="bg-green-500 text-white text-[10px] px-1.5 py-0.5">New</Badge>
+                          </div>
+                        )}
                         <div className="mb-4">
                           <div className="flex items-center gap-2 mb-3">
                             <span className="text-xs font-mono text-slate-400">#{caseItem.id}</span>
@@ -326,6 +378,29 @@ export default function SCASimulator() {
           ) : (
             /* For subscribers: full access grid wrapped in CrossSellGate (handles AKT-only users) */
             <CrossSellGate hasAccess={isPremium} requiredTrack="SCA" featureName="SCA Consultation Simulator">
+              {/* Progress Counter */}
+              {isPremium && casesQuery.data && (
+                <div className="mb-4 flex items-center gap-2 text-sm text-slate-600">
+                  <CheckCircle2 className="w-4 h-4 text-green-600" />
+                  <span className="font-medium">{attemptedCaseIds.size} of {casesQuery.data.length} cases attempted</span>
+                </div>
+              )}
+
+              {/* Difficulty Filter */}
+              <div className="flex flex-wrap gap-2 mb-4">
+                {Object.entries(DIFFICULTY_LABELS).map(([key, label]) => (
+                  <Button
+                    key={key}
+                    variant={difficultyFilter === key ? "default" : "outline"}
+                    size="sm"
+                    onClick={() => setDifficultyFilter(key)}
+                    className={difficultyFilter === key ? "bg-green-600 hover:bg-green-700" : ""}
+                  >
+                    {label}
+                  </Button>
+                ))}
+              </div>
+
               {/* Category Filter */}
               <div className="flex flex-wrap gap-2 mb-8">
                 <Button
@@ -356,34 +431,52 @@ export default function SCASimulator() {
                 </div>
               ) : (
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                  {filteredCases.map((caseItem: ScaCase) => (
-                    <Card
-                      key={caseItem.id}
-                      className="p-6 border-slate-200 hover:shadow-lg hover:border-green-200 transition-all cursor-pointer group"
-                      onClick={() => handleSelectCase(caseItem.id)}
-                    >
-                      <div className="mb-4">
-                        <div className="flex items-center gap-2 mb-3">
-                          <span className="text-xs font-mono text-slate-400">#{caseItem.id}</span>
-                          <Badge variant="outline" className={DIFFICULTY_COLORS[caseItem.difficulty] || ""}>
-                            {caseItem.difficulty}
+                  {filteredCases.map((caseItem: ScaCase) => {
+                    const isAttempted = attemptedCaseIds.has(caseItem.id);
+                    const isNew = isNewCase(caseItem.createdAt);
+                    return (
+                      <Card
+                        key={caseItem.id}
+                        className={`p-6 border-slate-200 hover:shadow-lg hover:border-green-200 transition-all cursor-pointer group relative ${
+                          isAttempted ? "border-green-100 bg-green-50/30" : ""
+                        }`}
+                        onClick={() => handleSelectCase(caseItem.id)}
+                      >
+                        {/* New badge */}
+                        {isNew && (
+                          <div className="absolute top-3 right-3">
+                            <Badge className="bg-green-500 text-white text-[10px] px-1.5 py-0.5">New</Badge>
+                          </div>
+                        )}
+                        {/* Completion checkmark */}
+                        {isAttempted && !isNew && (
+                          <div className="absolute top-3 right-3">
+                            <CheckCircle2 className="w-5 h-5 text-green-500" />
+                          </div>
+                        )}
+                        <div className="mb-4">
+                          <div className="flex items-center gap-2 mb-3">
+                            <span className="text-xs font-mono text-slate-400">#{caseItem.id}</span>
+                            <Badge variant="outline" className={DIFFICULTY_COLORS[caseItem.difficulty] || ""}>
+                              {caseItem.difficulty}
+                            </Badge>
+                          </div>
+                          <h3 className="text-lg font-bold text-slate-900 mb-2 group-hover:text-green-700 transition-colors">
+                            {caseItem.title}
+                          </h3>
+                          <Badge variant="outline" className={CATEGORY_COLORS[caseItem.category] || "bg-slate-100 text-slate-700"}>
+                            {caseItem.category}
                           </Badge>
                         </div>
-                        <h3 className="text-lg font-bold text-slate-900 mb-2 group-hover:text-green-700 transition-colors">
-                          {caseItem.title}
-                        </h3>
-                        <Badge variant="outline" className={CATEGORY_COLORS[caseItem.category] || "bg-slate-100 text-slate-700"}>
-                          {caseItem.category}
-                        </Badge>
-                      </div>
-                      <p className="text-sm text-slate-600 mb-4 line-clamp-2">{caseItem.presentingComplaint}</p>
-                      <div className="flex items-center gap-2 text-xs text-slate-500">
-                        <span>{caseItem.patientName}</span>
-                        <span>•</span>
-                        <span>{caseItem.patientAge}y {caseItem.patientGender}</span>
-                      </div>
-                    </Card>
-                  ))}
+                        <p className="text-sm text-slate-600 mb-4 line-clamp-2">{caseItem.presentingComplaint}</p>
+                        <div className="flex items-center gap-2 text-xs text-slate-500">
+                          <span>{caseItem.patientName}</span>
+                          <span>•</span>
+                          <span>{caseItem.patientAge}y {caseItem.patientGender}</span>
+                        </div>
+                      </Card>
+                    );
+                  })}
                 </div>
               )}
             </CrossSellGate>
