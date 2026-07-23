@@ -1007,3 +1007,11 @@
 - [x] Pulse animations for emotional states (subtle/slow/fast based on emotion)
 - [x] Accessibility: aria-label on avatar, emotional state text below patient name
 - [x] Write tests for emotion detection logic (20 tests passing)
+
+## Avatar Enhancements (Jul 23 2026)
+
+- [x] Smooth emotion transition: 0.6s ease-in-out CSS transition on border color changes
+- [x] Body language cues: italicised text below avatar updating with emotional state
+- [x] Emotion history timeline: track emotion changes during consultation with timestamps
+- [x] Display "Patient Emotional Journey" timeline in debrief view
+- [x] Write tests for body language cue mapping and emotion history tracking (34 tests passing)

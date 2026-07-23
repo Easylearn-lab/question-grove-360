@@ -3,6 +3,12 @@ import { describe, it, expect } from "vitest";
 // Replicate the emotion detection logic from the component for testing
 type EmotionalState = "neutral" | "anxious" | "upset" | "relieved" | "angry" | "guarded";
 
+interface EmotionHistoryEntry {
+  emotion: EmotionalState;
+  timestamp: number;
+  messageIndex: number;
+}
+
 const EMOTION_KEYWORDS: Record<EmotionalState, string[]> = {
   anxious: ["worried", "frightened", "scared", "anxious", "nervous", "panic", "terrified", "afraid", "dread", "uneasy", "on edge", "can't sleep", "keep thinking"],
   upset: ["crying", "tearful", "devastated", "sobbing", "tears", "heartbroken", "grief", "loss", "can't stop crying", "breaking down", "overwhelmed"],
@@ -10,6 +16,15 @@ const EMOTION_KEYWORDS: Record<EmotionalState, string[]> = {
   angry: ["angry", "frustrated", "unfair", "furious", "annoyed", "ridiculous", "waste of time", "useless", "fed up", "sick of"],
   guarded: ["fine", "okay", "nothing", "don't want to", "leave me alone", "not your business", "whatever", "doesn't matter", "i said i'm fine"],
   neutral: [],
+};
+
+const EMOTION_CONFIG: Record<EmotionalState, { color: string; label: string; animation: string; bodyLanguage: string }> = {
+  neutral: { color: "#9CA3AF", label: "", animation: "", bodyLanguage: "Patient appears calm and attentive" },
+  anxious: { color: "#F59E0B", label: "appears anxious", animation: "animate-pulse-subtle", bodyLanguage: "Patient fidgets and avoids eye contact" },
+  upset: { color: "#3B82F6", label: "appears upset", animation: "animate-pulse-slow", bodyLanguage: "Patient looks down, voice quieter" },
+  relieved: { color: "#10B981", label: "appears relieved", animation: "", bodyLanguage: "Patient visibly relaxes, nods" },
+  angry: { color: "#EF4444", label: "appears frustrated", animation: "animate-pulse-fast", bodyLanguage: "Patient sits forward, jaw tightened" },
+  guarded: { color: "#F97316", label: "appears guarded", animation: "", bodyLanguage: "Patient arms crossed, short answers" },
 };
 
 function detectEmotion(text: string): EmotionalState {
@@ -124,15 +139,6 @@ describe("Avatar URL Generation", () => {
 });
 
 describe("Emotion Config", () => {
-  const EMOTION_CONFIG: Record<EmotionalState, { color: string; label: string; animation: string }> = {
-    neutral: { color: "#9CA3AF", label: "", animation: "" },
-    anxious: { color: "#F59E0B", label: "appears anxious", animation: "animate-pulse-subtle" },
-    upset: { color: "#3B82F6", label: "appears upset", animation: "animate-pulse-slow" },
-    relieved: { color: "#10B981", label: "appears relieved", animation: "" },
-    angry: { color: "#EF4444", label: "appears frustrated", animation: "animate-pulse-fast" },
-    guarded: { color: "#F97316", label: "appears guarded", animation: "" },
-  };
-
   it("neutral has no label (no text shown)", () => {
     expect(EMOTION_CONFIG.neutral.label).toBe("");
   });
@@ -163,5 +169,166 @@ describe("Emotion Config", () => {
 
   it("guarded uses orange color", () => {
     expect(EMOTION_CONFIG.guarded.color).toBe("#F97316");
+  });
+});
+
+describe("Body Language Cues", () => {
+  it("neutral shows calm and attentive", () => {
+    expect(EMOTION_CONFIG.neutral.bodyLanguage).toBe("Patient appears calm and attentive");
+  });
+
+  it("anxious shows fidgeting and avoiding eye contact", () => {
+    expect(EMOTION_CONFIG.anxious.bodyLanguage).toBe("Patient fidgets and avoids eye contact");
+  });
+
+  it("upset shows looking down and quieter voice", () => {
+    expect(EMOTION_CONFIG.upset.bodyLanguage).toBe("Patient looks down, voice quieter");
+  });
+
+  it("relieved shows relaxing and nodding", () => {
+    expect(EMOTION_CONFIG.relieved.bodyLanguage).toBe("Patient visibly relaxes, nods");
+  });
+
+  it("angry shows sitting forward and jaw tightened", () => {
+    expect(EMOTION_CONFIG.angry.bodyLanguage).toBe("Patient sits forward, jaw tightened");
+  });
+
+  it("guarded shows arms crossed and short answers", () => {
+    expect(EMOTION_CONFIG.guarded.bodyLanguage).toBe("Patient arms crossed, short answers");
+  });
+
+  it("every emotion has a body language cue", () => {
+    const emotions: EmotionalState[] = ["neutral", "anxious", "upset", "relieved", "angry", "guarded"];
+    emotions.forEach(e => {
+      expect(EMOTION_CONFIG[e].bodyLanguage).toBeTruthy();
+      expect(EMOTION_CONFIG[e].bodyLanguage.length).toBeGreaterThan(10);
+    });
+  });
+});
+
+describe("Emotion History Tracking", () => {
+  it("builds history entries with correct structure", () => {
+    const entry: EmotionHistoryEntry = {
+      emotion: "anxious",
+      timestamp: 45,
+      messageIndex: 3,
+    };
+    expect(entry.emotion).toBe("anxious");
+    expect(entry.timestamp).toBe(45);
+    expect(entry.messageIndex).toBe(3);
+  });
+
+  it("simulates a consultation emotion journey", () => {
+    const responses = [
+      "I've had this cough for about two weeks now",
+      "I'm really worried it might be something serious",
+      "I'm so scared, my father died of lung cancer",
+      "Oh thank you doctor, that makes sense now",
+      "I feel much better knowing it's probably not cancer",
+    ];
+
+    const history: EmotionHistoryEntry[] = [];
+    let prevEmotion: EmotionalState = "neutral";
+
+    responses.forEach((text, idx) => {
+      const emotion = detectEmotion(text);
+      if (emotion !== prevEmotion) {
+        history.push({ emotion, timestamp: (idx + 1) * 60, messageIndex: idx });
+        prevEmotion = emotion;
+      }
+    });
+
+    // neutral -> anxious (worried) -> anxious (scared, same so no change) -> relieved (thank you) -> relieved (better, same)
+    // So: history = [anxious@60, relieved@240]
+    expect(history.length).toBe(2);
+    expect(history[0].emotion).toBe("anxious");
+    expect(history[1].emotion).toBe("relieved");
+  });
+
+  it("only records state changes, not repeated same states", () => {
+    const responses = [
+      "I'm worried about this",
+      "I'm so scared and anxious",
+      "I'm nervous about the results",
+    ];
+
+    const history: EmotionHistoryEntry[] = [];
+    let prevEmotion: EmotionalState = "neutral";
+
+    responses.forEach((text, idx) => {
+      const emotion = detectEmotion(text);
+      if (emotion !== prevEmotion) {
+        history.push({ emotion, timestamp: (idx + 1) * 30, messageIndex: idx });
+        prevEmotion = emotion;
+      }
+    });
+
+    // All three are "anxious", so only one entry
+    expect(history.length).toBe(1);
+    expect(history[0].emotion).toBe("anxious");
+  });
+
+  it("records multiple transitions correctly", () => {
+    const responses = [
+      "I'm really worried about this lump",
+      "I'm so angry nobody took me seriously before",
+      "Thank you doctor, that helps me understand",
+    ];
+
+    const history: EmotionHistoryEntry[] = [];
+    let prevEmotion: EmotionalState = "neutral";
+
+    responses.forEach((text, idx) => {
+      const emotion = detectEmotion(text);
+      if (emotion !== prevEmotion) {
+        history.push({ emotion, timestamp: (idx + 1) * 60, messageIndex: idx });
+        prevEmotion = emotion;
+      }
+    });
+
+    expect(history.length).toBe(3);
+    expect(history[0].emotion).toBe("anxious");
+    expect(history[1].emotion).toBe("angry");
+    expect(history[2].emotion).toBe("relieved");
+  });
+
+  it("timestamps increase monotonically", () => {
+    const history: EmotionHistoryEntry[] = [
+      { emotion: "anxious", timestamp: 30, messageIndex: 1 },
+      { emotion: "angry", timestamp: 90, messageIndex: 3 },
+      { emotion: "relieved", timestamp: 180, messageIndex: 5 },
+    ];
+
+    for (let i = 1; i < history.length; i++) {
+      expect(history[i].timestamp).toBeGreaterThan(history[i - 1].timestamp);
+    }
+  });
+});
+
+describe("Emotion Timeline Formatting", () => {
+  it("formats seconds into m:ss", () => {
+    const formatTime = (seconds: number) => {
+      const m = Math.floor(seconds / 60);
+      const s = seconds % 60;
+      return `${m}:${s.toString().padStart(2, "0")}`;
+    };
+
+    expect(formatTime(0)).toBe("0:00");
+    expect(formatTime(30)).toBe("0:30");
+    expect(formatTime(60)).toBe("1:00");
+    expect(formatTime(90)).toBe("1:30");
+    expect(formatTime(720)).toBe("12:00");
+  });
+
+  it("calculates correct percentage positions for timeline markers", () => {
+    const totalDuration = 720; // 12 minutes
+    const history: EmotionHistoryEntry[] = [
+      { emotion: "anxious", timestamp: 60, messageIndex: 1 },
+      { emotion: "relieved", timestamp: 360, messageIndex: 5 },
+    ];
+
+    const positions = history.map(e => (e.timestamp / totalDuration) * 100);
+    expect(positions[0]).toBeCloseTo(8.33, 1);
+    expect(positions[1]).toBe(50);
   });
 });

@@ -11,7 +11,7 @@ import { trpc } from "@/lib/trpc";
 import { toast } from "sonner";
 import { CrossSellGate } from "@/components/CrossSellGate";
 import { useExamAccess } from "@/hooks/useExamAccess";
-import { PatientAvatar, detectEmotion, getEmotionConfig, type EmotionalState } from "@/components/PatientAvatar";
+import { PatientAvatar, detectEmotion, getEmotionConfig, EmotionTimeline, type EmotionalState, type EmotionHistoryEntry } from "@/components/PatientAvatar";
 
 // ============================================================
 // TYPES
@@ -442,6 +442,7 @@ function CaseView({
   const [messages, setMessages] = useState<Message[]>([]);
   const [competencyScores, setCompetencyScores] = useState<Record<string, CompetencyScore>>({});
   const [consultationDuration, setConsultationDuration] = useState(0);
+  const [emotionHistory, setEmotionHistory] = useState<EmotionHistoryEntry[]>([]);
 
   // Timer state
   const [timerSeconds, setTimerSeconds] = useState(720); // 12 minutes
@@ -560,6 +561,8 @@ function CaseView({
         onTimerPause={handleTimerPause}
         onTimerReset={handleTimerReset}
         formatTime={formatTime}
+        emotionHistory={emotionHistory}
+        setEmotionHistory={setEmotionHistory}
         onFinish={() => {
           setConsultationDuration(720 - timerSeconds);
           onFinishConsultation();
@@ -594,6 +597,7 @@ function CaseView({
       duration={consultationDuration}
       userId={userId}
       isFreeTrial={isFreeTrial}
+      emotionHistory={emotionHistory}
       onBack={onBack}
     />
   );
@@ -872,6 +876,8 @@ function ConsultationView({
   onTimerPause,
   onTimerReset,
   formatTime,
+  emotionHistory,
+  setEmotionHistory,
   onFinish,
 }: {
   caseData: FullCase;
@@ -884,6 +890,8 @@ function ConsultationView({
   onTimerPause: () => void;
   onTimerReset: () => void;
   formatTime: (s: number) => string;
+  emotionHistory: EmotionHistoryEntry[];
+  setEmotionHistory: React.Dispatch<React.SetStateAction<EmotionHistoryEntry[]>>;
   onFinish: () => void;
 }) {
   const [manualInput, setManualInput] = useState("");
@@ -906,10 +914,20 @@ function ConsultationView({
 
   // Detect emotional state from last assistant message
   const [currentEmotion, setCurrentEmotion] = useState<EmotionalState>("neutral");
+  const consultationStartRef = useRef<number>(Date.now());
+
   useEffect(() => {
     const lastAssistant = [...messages].reverse().find(m => m.role === "assistant");
     if (lastAssistant) {
-      setCurrentEmotion(detectEmotion(lastAssistant.content));
+      const newEmotion = detectEmotion(lastAssistant.content);
+      if (newEmotion !== currentEmotion) {
+        const elapsedSeconds = Math.floor((Date.now() - consultationStartRef.current) / 1000);
+        setEmotionHistory(prev => [
+          ...prev,
+          { emotion: newEmotion, timestamp: elapsedSeconds, messageIndex: messages.length - 1 }
+        ]);
+      }
+      setCurrentEmotion(newEmotion);
     }
   }, [messages]);
   const emotionConfig = getEmotionConfig(currentEmotion);
@@ -1205,6 +1223,7 @@ function ConsultationView({
             {emotionConfig.label && (
               <p className="text-xs mt-0.5" style={{ color: emotionConfig.color }}>{caseData.patientName} — {emotionConfig.label}</p>
             )}
+            <p className="text-xs italic text-slate-400 mt-0.5 transition-all duration-[600ms] ease-in-out">{emotionConfig.bodyLanguage}</p>
           </div>
           <div className="flex items-center gap-2">
             <Button
@@ -1381,6 +1400,7 @@ function ConsultationView({
               {emotionConfig.label && (
                 <p className="text-xs mt-0.5" style={{ color: emotionConfig.color }}>{caseData.patientName} — {emotionConfig.label}</p>
               )}
+              <p className="text-xs italic text-slate-400 mt-0.5 transition-all duration-[600ms] ease-in-out">{emotionConfig.bodyLanguage}</p>
             </div>
           </div>
           <div className="flex items-center gap-2">
@@ -1750,6 +1770,7 @@ function DebriefView({
   duration,
   userId,
   isFreeTrial = false,
+  emotionHistory = [],
   onBack,
 }: {
   caseData: FullCase;
@@ -1758,6 +1779,7 @@ function DebriefView({
   duration: number;
   userId?: number;
   isFreeTrial?: boolean;
+  emotionHistory?: EmotionHistoryEntry[];
   onBack: () => void;
 }) {
   const markSheet = caseData.markSheet;
@@ -1925,6 +1947,11 @@ function DebriefView({
             </div>
           </Card>
         </div>
+
+        {/* Patient Emotional Journey Timeline */}
+        {emotionHistory.length > 0 && (
+          <EmotionTimeline history={emotionHistory} totalDuration={duration} />
+        )}
 
         {/* Poorly Scored Competencies */}
         {poorCompetencies.length > 0 && (
