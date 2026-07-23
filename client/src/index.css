@@ -192,3 +192,37 @@
     }
   }
 }
+
+/* Patient Avatar Animations */
+@keyframes pulse-subtle {
+  0%, 100% { box-shadow: 0 0 0 0 currentColor; }
+  50% { box-shadow: 0 0 0 4px currentColor; }
+}
+@keyframes pulse-slow {
+  0%, 100% { box-shadow: 0 0 0 0 currentColor; }
+  50% { box-shadow: 0 0 0 5px currentColor; }
+}
+@keyframes pulse-fast {
+  0%, 100% { box-shadow: 0 0 0 0 currentColor; }
+  50% { box-shadow: 0 0 0 4px currentColor; }
+}
+@keyframes breathe {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.03); }
+}
+
+.animate-pulse-subtle {
+  animation: pulse-subtle 2.5s ease-in-out infinite;
+  color: #F59E0B;
+}
+.animate-pulse-slow {
+  animation: pulse-slow 3s ease-in-out infinite;
+  color: #3B82F6;
+}
+.animate-pulse-fast {
+  animation: pulse-fast 1.2s ease-in-out infinite;
+  color: #EF4444;
+}
+.animate-breathe {
+  animation: breathe 2s ease-in-out infinite;
+}

@@ -996,3 +996,14 @@
 - [x] Default to Chat Mode
 - [x] Both modes share the same message/recording/synthesis logic
 - [x] Write tests for mode toggle logic (28 tests passing)
+
+## Patient Avatar with Emotional State (Jul 23 2026)
+
+- [x] Create emotion detection utility (keyword-based parsing of AI responses)
+- [x] Create PatientAvatar component with DiceBear API (personas style, seed=patientName)
+- [x] Chat Mode: 80px circular avatar in top-left of consultation header next to patient name
+- [x] Voice Mode: 200px centered avatar above patient name with breathing animation when speaking
+- [x] Emotional state border colors: neutral grey, anxious amber, upset blue, relieved green, angry red, guarded orange
+- [x] Pulse animations for emotional states (subtle/slow/fast based on emotion)
+- [x] Accessibility: aria-label on avatar, emotional state text below patient name
+- [x] Write tests for emotion detection logic (20 tests passing)

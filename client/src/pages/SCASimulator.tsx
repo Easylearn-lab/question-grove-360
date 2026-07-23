@@ -11,6 +11,7 @@ import { trpc } from "@/lib/trpc";
 import { toast } from "sonner";
 import { CrossSellGate } from "@/components/CrossSellGate";
 import { useExamAccess } from "@/hooks/useExamAccess";
+import { PatientAvatar, detectEmotion, getEmotionConfig, type EmotionalState } from "@/components/PatientAvatar";
 
 // ============================================================
 // TYPES
@@ -902,6 +903,16 @@ function ConsultationView({
     setVoiceMode(newMode);
     try { localStorage.setItem("sca-voice-mode", String(newMode)); } catch {}
   };
+
+  // Detect emotional state from last assistant message
+  const [currentEmotion, setCurrentEmotion] = useState<EmotionalState>("neutral");
+  useEffect(() => {
+    const lastAssistant = [...messages].reverse().find(m => m.role === "assistant");
+    if (lastAssistant) {
+      setCurrentEmotion(detectEmotion(lastAssistant.content));
+    }
+  }, [messages]);
+  const emotionConfig = getEmotionConfig(currentEmotion);
   const mediaRecorderRef = useRef<MediaRecorder | null>(null);
   const audioChunksRef = useRef<Blob[]>([]);
   const audioRef = useRef<HTMLAudioElement | null>(null);
@@ -1191,6 +1202,9 @@ function ConsultationView({
           <div>
             <h1 className="text-lg font-bold text-white">{caseData.title}</h1>
             <p className="text-sm text-slate-400">{caseData.patientName} • {voiceProfile.label}</p>
+            {emotionConfig.label && (
+              <p className="text-xs mt-0.5" style={{ color: emotionConfig.color }}>{caseData.patientName} — {emotionConfig.label}</p>
+            )}
           </div>
           <div className="flex items-center gap-2">
             <Button
@@ -1228,7 +1242,15 @@ function ConsultationView({
         </div>
 
         {/* Main Voice Area */}
-        <div className="flex-1 flex flex-col items-center justify-center px-6 gap-8">
+        <div className="flex-1 flex flex-col items-center justify-center px-6 gap-6">
+          {/* Large centered avatar */}
+          <PatientAvatar
+            patientName={caseData.patientName}
+            emotion={currentEmotion}
+            size="lg"
+            isSpeaking={isSpeaking}
+          />
+
           {/* Patient speaking waveform / last message */}
           <div className="text-center max-w-md">
             {isSpeaking ? (
@@ -1343,11 +1365,22 @@ function ConsultationView({
       {/* Header */}
       <header className="bg-white border-b border-slate-200 sticky top-0 z-40">
         <div className="max-w-4xl mx-auto px-4 py-3 flex items-center justify-between">
-          <div>
-            <h1 className="text-lg font-bold text-slate-900">{caseData.title}</h1>
-            <div className="flex items-center gap-2 text-sm text-slate-500">
-              <Volume2 className="w-3 h-3" />
-              <span>{voiceProfile.label}</span>
+          <div className="flex items-center gap-3">
+            <PatientAvatar
+              patientName={caseData.patientName}
+              emotion={currentEmotion}
+              size="sm"
+              isSpeaking={isSpeaking}
+            />
+            <div>
+              <h1 className="text-lg font-bold text-slate-900">{caseData.title}</h1>
+              <div className="flex items-center gap-2 text-sm text-slate-500">
+                <Volume2 className="w-3 h-3" />
+                <span>{voiceProfile.label}</span>
+              </div>
+              {emotionConfig.label && (
+                <p className="text-xs mt-0.5" style={{ color: emotionConfig.color }}>{caseData.patientName} — {emotionConfig.label}</p>
+              )}
             </div>
           </div>
           <div className="flex items-center gap-2">
