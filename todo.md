@@ -1045,3 +1045,9 @@
 - [x] Completion tracking: green checkmark on attempted cases, progress counter "X of 40 cases attempted" (subscribers only)
 - [x] Backend procedure to fetch user's attempted case IDs
 - [x] 21 vitest tests passing for grid enhancements
+
+## SCA Cases 41-50 Import (Jul 23, 2026)
+- [x] Insert SCA cases 41-50 from uploaded SQL file (10 cases inserted)
+- [x] Verify row count: before 40, after 50
+- [x] Update UI copy from "40 cases" to "50 cases" everywhere
+- [x] Add badge colours for new categories: Smoking/Substance Misuse, Allergy, ENT, Eyes, Genomic Medicine, Haematology, Infectious Diseases, Learning Disability, Maternity, Neurodevelopmental, Sexual Health

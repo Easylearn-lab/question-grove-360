@@ -97,6 +97,17 @@ const CATEGORY_COLORS: Record<string, string> = {
   "Renal and Urology": "bg-lime-100 text-lime-700 border-lime-200",
   "Urgent and Unscheduled Care": "bg-rose-100 text-rose-700 border-rose-200",
   "Metabolic Problems and Endocrinology": "bg-emerald-100 text-emerald-700 border-emerald-200",
+  "Smoking, Alcohol and Substance Misuse": "bg-slate-100 text-slate-700 border-slate-200",
+  "Allergy and Clinical Immunology": "bg-fuchsia-100 text-fuchsia-700 border-fuchsia-200",
+  "Ear, Nose and Throat, Speech and Hearing": "bg-cyan-100 text-cyan-700 border-cyan-200",
+  "Eyes and Vision": "bg-sky-100 text-sky-700 border-sky-200",
+  "Genomic Medicine": "bg-violet-100 text-violet-700 border-violet-200",
+  "Haematology": "bg-red-100 text-red-700 border-red-200",
+  "Infectious Diseases and Travel Health": "bg-amber-100 text-amber-700 border-amber-200",
+  "Learning Disability": "bg-teal-100 text-teal-700 border-teal-200",
+  "Maternity and Reproductive Health": "bg-pink-100 text-pink-700 border-pink-200",
+  "Neurodevelopmental Conditions and Neurodiversity": "bg-indigo-100 text-indigo-700 border-indigo-200",
+  "Sexual Health": "bg-rose-100 text-rose-700 border-rose-200",
 };
 
 const DIFFICULTY_COLORS: Record<string, string> = {
@@ -249,7 +260,7 @@ export default function SCASimulator() {
               </Button>
               <div>
                 <h1 className="text-2xl font-bold text-slate-900">SCA Consultation Simulator</h1>
-                <p className="text-sm text-slate-500">40 RCGP-mapped cases with AI patient roleplay</p>
+                <p className="text-sm text-slate-500">50 RCGP-mapped cases with AI patient roleplay</p>
               </div>
             </div>
             {isPremium ? (
@@ -271,7 +282,7 @@ export default function SCASimulator() {
               <div className="mb-6 p-4 bg-gradient-to-r from-green-50 to-emerald-50 border border-green-200 rounded-lg flex items-center gap-3">
                 <Sparkles className="w-5 h-5 text-green-600 flex-shrink-0" />
                 <p className="text-sm text-green-800">
-                  You are previewing the free trial case. Subscribe to unlock all 40 cases and track your progress.
+                  You are previewing the free trial case. Subscribe to unlock all 50 cases and track your progress.
                 </p>
               </div>
 
@@ -2217,7 +2228,7 @@ function DebriefView({
               You scored {totalPercentage}%{passed ? " — Pass!" : " — Keep practising"}
             </h3>
             <p className="text-slate-600 mb-6 max-w-lg mx-auto">
-              Subscribe to SCA Simulator to access all 40 cases, save your progress and export your portfolio PDF. From £20 for 3 months.
+              Subscribe to SCA Simulator to access all 50 cases, save your progress and export your portfolio PDF. From £20 for 3 months.
             </p>
             <FreeTrialSubscribeButtons />
             <div className="mt-4">
