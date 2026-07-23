@@ -1030,3 +1030,10 @@
 - [x] Added empathyScore column to sca_consultations DB table
 - [x] Save empathyScore when consultation is saved
 - [x] 43 tests passing
+
+## SCA Cases 31-40 Import (Jul 23 2026)
+
+- [x] Insert cases 31-40 into sca_cases table from uploaded SQL (10 cases inserted, total 40)
+- [x] Update UI copy from '30 cases' to '40 cases' where referenced
+- [x] Add category badge colours for new categories: Urgent and Unscheduled Care (rose), Metabolic Problems and Endocrinology (emerald)
+- [x] Verify total case count is 40 in database
