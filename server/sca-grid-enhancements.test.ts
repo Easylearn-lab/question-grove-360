@@ -154,8 +154,8 @@ describe("Completion Tracking", () => {
 
   it("shows correct progress count", () => {
     const attemptedCaseIds = new Set([1, 5, 12, 20]);
-    const totalCases = 40;
-    expect(`${attemptedCaseIds.size} of ${totalCases} cases attempted`).toBe("4 of 50 cases attempted");
+    const totalCases = 60;
+    expect(`${attemptedCaseIds.size} of ${totalCases} cases attempted`).toBe("4 of 60 cases attempted");
   });
 
   it("handles empty attempted set", () => {
@@ -165,10 +165,10 @@ describe("Completion Tracking", () => {
   });
 
   it("handles all cases attempted", () => {
-    const allIds = Array.from({ length: 40 }, (_, i) => i + 1);
+    const allIds = Array.from({ length: 60 }, (_, i) => i + 1);
     const attemptedCaseIds = new Set(allIds);
-    expect(attemptedCaseIds.size).toBe(40);
-    expect(`${attemptedCaseIds.size} of 50 cases attempted`).toBe("40 of 50 cases attempted");
+    expect(attemptedCaseIds.size).toBe(60);
+    expect(`${attemptedCaseIds.size} of 60 cases attempted`).toBe("60 of 60 cases attempted");
   });
 
   it("new badge takes priority over checkmark when both apply", () => {

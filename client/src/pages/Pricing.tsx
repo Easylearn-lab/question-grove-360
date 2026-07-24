@@ -21,7 +21,7 @@ const AKT_FEATURES = [
 
 // SCA-specific features
 const SCA_FEATURES = [
-  "Full SCA case bank access",
+  "60 SCA consultation cases",
   "Note360 study notes (SCA)",
   "SCA consultation simulator",
   "AI Coach360 assistant",

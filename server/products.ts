@@ -12,7 +12,7 @@ export type ExamTrack = "AKT" | "SCA";
 
 export const PAYMENT_ENABLED: Record<ExamTrack, boolean> = {
   AKT: true,   // Live and active
-  SCA: true,   // Live — 50 cases available
+  SCA: true,   // Live — 60 cases available
 };
 
 export const AKT_FEATURES = [
@@ -25,7 +25,7 @@ export const AKT_FEATURES = [
 ];
 
 export const SCA_FEATURES = [
-  "Full SCA case bank access",
+  "60 SCA consultation cases",
   "Note360 study notes (SCA)",
   "SCA consultation simulator",
   "AI Coach360 assistant",

@@ -1042,7 +1042,7 @@
 
 - [x] Difficulty filtering: All/Foundation/Standard/Advanced buttons above case grid, combinable with category filter
 - [x] New badge: green "New" badge on cases created in last 14 days (from createdAt column)
-- [x] Completion tracking: green checkmark on attempted cases, progress counter "X of 40 cases attempted" (subscribers only)
+- [x] Completion tracking: green checkmark on attempted cases, progress counter "X of 60 cases attempted" (subscribers only)
 - [x] Backend procedure to fetch user's attempted case IDs
 - [x] 21 vitest tests passing for grid enhancements
 
@@ -1051,3 +1051,13 @@
 - [x] Verify row count: before 40, after 50
 - [x] Update UI copy from "40 cases" to "50 cases" everywhere
 - [x] Add badge colours for new categories: Smoking/Substance Misuse, Allergy, ENT, Eyes, Genomic Medicine, Haematology, Infectious Diseases, Learning Disability, Maternity, Neurodevelopmental, Sexual Health
+
+## SCA Cases 51-60 Import (Jul 24, 2026)
+- [x] Insert SCA cases 51-60 into database (10 cases inserted, total 60)
+- [x] Verify row count: before 50, after 60
+- [x] Update UI copy from "50 cases" to "60 cases" in SCASimulator.tsx (subtitle, free trial banner, debrief subscribe prompt)
+- [x] Update UI copy from "50 cases" to "60 cases" in server/products.ts
+- [x] Update UI copy in Pricing.tsx: "Full SCA case bank access" → "60 SCA consultation cases"
+- [x] Add 5 new category badge colours: LGBTQ+ Health (violet), Long COVID (orange), Transgender Health (fuchsia), Refugee Health (amber), Occupational Health (lime)
+- [x] Update test file to reference 60 cases instead of 50
+- [x] TypeScript compiles cleanly, 122 SCA-related tests passing

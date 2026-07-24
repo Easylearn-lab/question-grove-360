@@ -108,6 +108,11 @@ const CATEGORY_COLORS: Record<string, string> = {
   "Maternity and Reproductive Health": "bg-pink-100 text-pink-700 border-pink-200",
   "Neurodevelopmental Conditions and Neurodiversity": "bg-indigo-100 text-indigo-700 border-indigo-200",
   "Sexual Health": "bg-rose-100 text-rose-700 border-rose-200",
+  "LGBTQ+ Health": "bg-violet-100 text-violet-700 border-violet-200",
+  "Long COVID": "bg-orange-100 text-orange-700 border-orange-200",
+  "Transgender Health": "bg-fuchsia-100 text-fuchsia-700 border-fuchsia-200",
+  "Refugee Health": "bg-amber-100 text-amber-700 border-amber-200",
+  "Occupational Health": "bg-lime-100 text-lime-700 border-lime-200",
 };
 
 const DIFFICULTY_COLORS: Record<string, string> = {
@@ -260,7 +265,7 @@ export default function SCASimulator() {
               </Button>
               <div>
                 <h1 className="text-2xl font-bold text-slate-900">SCA Consultation Simulator</h1>
-                <p className="text-sm text-slate-500">50 RCGP-mapped cases with AI patient roleplay</p>
+                <p className="text-sm text-slate-500">60 RCGP-mapped cases with AI patient roleplay</p>
               </div>
             </div>
             {isPremium ? (
@@ -282,7 +287,7 @@ export default function SCASimulator() {
               <div className="mb-6 p-4 bg-gradient-to-r from-green-50 to-emerald-50 border border-green-200 rounded-lg flex items-center gap-3">
                 <Sparkles className="w-5 h-5 text-green-600 flex-shrink-0" />
                 <p className="text-sm text-green-800">
-                  You are previewing the free trial case. Subscribe to unlock all 50 cases and track your progress.
+                  You are previewing the free trial case. Subscribe to unlock all 60 cases and track your progress.
                 </p>
               </div>
 
@@ -2228,7 +2233,7 @@ function DebriefView({
               You scored {totalPercentage}%{passed ? " — Pass!" : " — Keep practising"}
             </h3>
             <p className="text-slate-600 mb-6 max-w-lg mx-auto">
-              Subscribe to SCA Simulator to access all 50 cases, save your progress and export your portfolio PDF. From £20 for 3 months.
+              Subscribe to SCA Simulator to access all 60 cases, save your progress and export your portfolio PDF. From £20 for 3 months.
             </p>
             <FreeTrialSubscribeButtons />
             <div className="mt-4">
