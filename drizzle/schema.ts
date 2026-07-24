@@ -518,3 +518,104 @@ export const picture360Access = mysqlTable("picture360_access", {
 
 export type Picture360Access = typeof picture360Access.$inferSelect;
 export type InsertPicture360Access = typeof picture360Access.$inferInsert;
+
+// ============================================================
+// MSRA (Multi-Specialty Recruitment Assessment) Tables
+// ============================================================
+
+// MSRA Clinical Problem Solving Questions (SBA + EMQ)
+export const msraCpsQuestions = mysqlTable("msra_cps_questions", {
+  id: int("id").autoincrement().primaryKey(),
+  examYear: varchar("examYear", { length: 10 }),
+  questionType: mysqlEnum("questionType", ["SBA", "EMQ"]).notNull(),
+  specialty: varchar("specialty", { length: 255 }),
+  subSpecialty: varchar("subSpecialty", { length: 255 }),
+  topic: varchar("topic", { length: 255 }),
+  difficulty: mysqlEnum("difficulty", ["Easy", "Medium", "Hard"]),
+  // SBA fields
+  question: text("question"),
+  optionA: text("optionA"),
+  optionB: text("optionB"),
+  optionC: text("optionC"),
+  optionD: text("optionD"),
+  optionE: text("optionE"),
+  correctAnswer: varchar("correctAnswer", { length: 10 }),
+  explanationCorrect: text("explanationCorrect"),
+  explanationA: text("explanationA"),
+  explanationB: text("explanationB"),
+  explanationC: text("explanationC"),
+  explanationD: text("explanationD"),
+  explanationE: text("explanationE"),
+  // EMQ fields
+  emqTheme: text("emqTheme"),
+  emqLeadStatement: text("emqLeadStatement"),
+  emqOptions: json("emqOptions").$type<string[]>(),
+  emqItems: json("emqItems").$type<{ stem: string; correctAnswer: string }[]>(),
+  // Common fields
+  reference: text("reference"),
+  tags: json("tags"),
+  status: varchar("status", { length: 50 }).default("active"),
+  attemptCount: int("attemptCount").default(0),
+  correctCount: int("correctCount").default(0),
+  flagCount: int("flagCount").default(0),
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+  updatedAt: timestamp("updatedAt").defaultNow().onUpdateNow().notNull(),
+});
+export type MsraCpsQuestion = typeof msraCpsQuestions.$inferSelect;
+export type InsertMsraCpsQuestion = typeof msraCpsQuestions.$inferInsert;
+
+// MSRA Professional Dilemmas Questions (RANKING + PICK3)
+export const msraPdQuestions = mysqlTable("msra_pd_questions", {
+  id: int("id").autoincrement().primaryKey(),
+  questionType: mysqlEnum("questionType", ["RANKING", "PICK3"]).notNull(),
+  domain: varchar("domain", { length: 255 }),
+  scenario: text("scenario"),
+  // RANKING fields: rank 4-5 actions from most to least appropriate
+  actionA: text("actionA"),
+  actionB: text("actionB"),
+  actionC: text("actionC"),
+  actionD: text("actionD"),
+  actionE: text("actionE"),
+  correctRanking: json("correctRanking").$type<string[]>(),
+  explanationRanking: text("explanationRanking"),
+  // PICK3 fields: choose 3 most appropriate from 5
+  optionA: text("optionA"),
+  optionB: text("optionB"),
+  optionC: text("optionC"),
+  optionD: text("optionD"),
+  optionE: text("optionE"),
+  correctOptions: json("correctOptions").$type<string[]>(),
+  explanationOptions: text("explanationOptions"),
+  // Common fields
+  reference: text("reference"),
+  tags: json("tags"),
+  status: varchar("status", { length: 50 }).default("active"),
+  attemptCount: int("attemptCount").default(0),
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+  updatedAt: timestamp("updatedAt").defaultNow().onUpdateNow().notNull(),
+});
+export type MsraPdQuestion = typeof msraPdQuestions.$inferSelect;
+export type InsertMsraPdQuestion = typeof msraPdQuestions.$inferInsert;
+
+// MSRA Flashcards (spaced repetition)
+export const msraFlashcards = mysqlTable("msra_flashcards", {
+  id: int("id").autoincrement().primaryKey(),
+  specialty: varchar("specialty", { length: 255 }),
+  topic: varchar("topic", { length: 255 }),
+  front: text("front").notNull(),
+  back: text("back").notNull(),
+  status: varchar("status", { length: 50 }).default("active"),
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+  updatedAt: timestamp("updatedAt").defaultNow().onUpdateNow().notNull(),
+});
+export type MsraFlashcard = typeof msraFlashcards.$inferSelect;
+export type InsertMsraFlashcard = typeof msraFlashcards.$inferInsert;
+
+// MSRA Waitlist (email capture for Coming Soon)
+export const msraWaitlist = mysqlTable("msra_waitlist", {
+  id: int("id").autoincrement().primaryKey(),
+  email: varchar("email", { length: 320 }).notNull(),
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+});
+export type MsraWaitlistEntry = typeof msraWaitlist.$inferSelect;
+export type InsertMsraWaitlistEntry = typeof msraWaitlist.$inferInsert;

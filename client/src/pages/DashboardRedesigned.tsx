@@ -31,6 +31,7 @@ export default function DashboardRedesigned() {
   const allExamsDefinition = [
     { id: "MRCGP AKT", name: "MRCGP AKT", category: "UK" },
     { id: "MRCGP SCA", name: "MRCGP SCA", category: "UK" },
+    { id: "MSRA", name: "MSRA", category: "UK" },
     { id: "PLAB 1", name: "PLAB 1", category: "UK" },
     { id: "PLAB 2", name: "PLAB 2", category: "UK" },
     { id: "UKMLA", name: "UKMLA", category: "UK" },
@@ -130,7 +131,8 @@ export default function DashboardRedesigned() {
             {exams.map((exam: any) => {
               const isMRCGPAKT = exam.id === "MRCGP AKT";
               const isMRCGPSCA = exam.id === "MRCGP SCA";
-              const isActiveExam = isMRCGPAKT || isMRCGPSCA;
+              const isMSRA = exam.id === "MSRA";
+              const isActiveExam = isMRCGPAKT || isMRCGPSCA || isMSRA;
               return (
                 <button
                   key={exam.id}
@@ -139,6 +141,8 @@ export default function DashboardRedesigned() {
                       navigate("/mrcgp-akt");
                     } else if (isMRCGPSCA) {
                       navigate("/sca");
+                    } else if (isMSRA) {
+                      navigate("/msra");
                     } else {
                       setSelectedExam(exam.id);
                     }
@@ -157,6 +161,11 @@ export default function DashboardRedesigned() {
                         Coming soon
                       </span>
                     )}
+                  {isMSRA && (
+                    <span className="block text-[10px] text-gray-400 mt-0.5">
+                      Coming soon
+                    </span>
+                  )}
                 </button>
               );
             })}

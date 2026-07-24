@@ -8,11 +8,12 @@
  * The correct ID is selected at runtime based on the STRIPE_SECRET_KEY prefix.
  */
 
-export type ExamTrack = "AKT" | "SCA";
+export type ExamTrack = "AKT" | "SCA" | "MSRA";
 
 export const PAYMENT_ENABLED: Record<ExamTrack, boolean> = {
   AKT: true,   // Live and active
   SCA: true,   // Live — 60 cases available
+  MSRA: false, // Coming soon
 };
 
 export const AKT_FEATURES = [
@@ -30,6 +31,15 @@ export const SCA_FEATURES = [
   "SCA consultation simulator",
   "AI Coach360 assistant",
   "Unlimited mock SCA consultations",
+  "Priority support",
+];
+
+export const MSRA_FEATURES = [
+  "Clinical Problem Solving question bank (SBA + EMQ)",
+  "Professional Dilemmas practice (Ranking + Pick 3)",
+  "MSRA flashcards with spaced repetition",
+  "AI Coach360 assistant",
+  "Full mock MSRA exams",
   "Priority support",
 ];
 
@@ -60,6 +70,14 @@ const PRICE_IDS = {
   PICTURE360: {
     test: "price_picture360_test",
     live: "price_picture360_live",
+  },
+  MSRA_3MONTH: {
+    test: "price_msra_3month_test",
+    live: "price_msra_3month_live",
+  },
+  MSRA_6MONTH: {
+    test: "price_msra_6month_test",
+    live: "price_msra_6month_live",
   },
 };
 
@@ -123,6 +141,33 @@ export const SUBSCRIPTION_PLANS = {
     get stripePriceId() { return getPriceId("SCA_6MONTH"); },
     popular: true,
   },
+  MSRA_3MONTH: {
+    name: "MSRA 3-Month Access",
+    description: "Great for focused exam sprints",
+    price: 25,
+    monthlyEquivalent: 8.33,
+    monthlyReference: 9.99,
+    fullPrice: 29.97, // £9.99 × 3
+    savings: 4.97,
+    interval: "3 months" as const,
+    intervalCount: 3,
+    examTrack: "MSRA" as ExamTrack,
+    get stripePriceId() { return getPriceId("MSRA_3MONTH"); },
+  },
+  MSRA_6MONTH: {
+    name: "MSRA 6-Month Access",
+    description: "Ideal study timeline — best value",
+    price: 40,
+    monthlyEquivalent: 6.67,
+    monthlyReference: 9.99,
+    fullPrice: 59.94, // £9.99 × 6
+    savings: 19.94,
+    interval: "6 months" as const,
+    intervalCount: 6,
+    examTrack: "MSRA" as ExamTrack,
+    get stripePriceId() { return getPriceId("MSRA_6MONTH"); },
+    popular: true,
+  },
 };
 
 export type PlanKey = keyof typeof SUBSCRIPTION_PLANS;
@@ -138,7 +183,9 @@ export function getPlansForTrack(track: ExamTrack) {
 }
 
 export function getFeaturesForTrack(track: ExamTrack) {
-  return track === "AKT" ? AKT_FEATURES : SCA_FEATURES;
+  if (track === "AKT") return AKT_FEATURES;
+  if (track === "MSRA") return MSRA_FEATURES;
+  return SCA_FEATURES;
 }
 
 export function getAllPlans() {

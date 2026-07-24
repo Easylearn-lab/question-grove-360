@@ -1061,3 +1061,14 @@
 - [x] Add 5 new category badge colours: LGBTQ+ Health (violet), Long COVID (orange), Transgender Health (fuchsia), Refugee Health (amber), Occupational Health (lime)
 - [x] Update test file to reference 60 cases instead of 50
 - [x] TypeScript compiles cleanly, 122 SCA-related tests passing
+
+## MSRA Section Build (Jul 24, 2026)
+- [x] Create msra_cps_questions table (Clinical Problem Solving: SBA + EMQ)
+- [x] Create msra_pd_questions table (Professional Dilemmas: RANKING + PICK3)
+- [x] Create msra_flashcards table (spaced repetition)
+- [x] Create msra_waitlist table (email capture)
+- [x] Add MSRA_3MONTH and MSRA_6MONTH Stripe products to products.ts
+- [x] Add useExamAccess("MSRA") to access control hook
+- [x] Build /msra landing page with Coming Soon banner and email capture
+- [x] Add MSRA card to dashboard exam selector (Coming Soon status)
+- [x] Verify no changes to AKT, SCA, Picture360 features (145 existing tests passing)

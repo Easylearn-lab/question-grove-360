@@ -12,6 +12,7 @@ import { voiceRouter } from "./voiceRouter";
 import { adaptiveRouter } from "./adaptiveAlgorithm";
 import { passwordRouter } from "./passwordRouter";
 import { scaRouter } from "./scaRouter";
+import { msraRouter } from "./msraRouter";
 
 export const appRouter = router({
   system: systemRouter,
@@ -599,6 +600,7 @@ export const appRouter = router({
 
   // SCA Simulator Router
   sca: scaRouter,
+  msra: msraRouter,
 
   // Voice Router (SCA voice integration)
   voice: voiceRouter,

@@ -31,6 +31,7 @@ import Note360Content from "./pages/Note360Content";
 import Picture360 from "./pages/Picture360";
 import Picture360Specialty from "./pages/Picture360Specialty";
 import SCAHistory from "./pages/SCAHistory";
+import MSRA from "./pages/MSRA";
 
 function Router() {
   // make sure to consider if you need authentication for certain routes
@@ -48,6 +49,7 @@ function Router() {
       <Route path={"/flashcards"} component={PatternRecognition} />
       <Route path={"/sca/history"} component={SCAHistory} />
       <Route path={"/sca"} component={SCASimulator} />
+      <Route path={"/msra"} component={MSRA} />
       <Route path={"/pricing"} component={Pricing} />
       <Route path={"/admin"} component={AdminPanel} />
       <Route path={"/coach"} component={AICoach} />
