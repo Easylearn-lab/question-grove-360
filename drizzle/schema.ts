@@ -553,7 +553,7 @@ export const msraCpsQuestions = mysqlTable("msra_cps_questions", {
   emqItems: json("emqItems").$type<{ stem: string; correctAnswer: string }[]>(),
   // Common fields
   reference: text("reference"),
-  tags: json("tags"),
+  tags: text("tags"),
   status: varchar("status", { length: 50 }).default("active"),
   attemptCount: int("attemptCount").default(0),
   correctCount: int("correctCount").default(0),

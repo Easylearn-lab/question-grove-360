@@ -9,6 +9,7 @@ import { Badge } from "@/components/ui/badge";
 import { ArrowLeft, Mic, MicOff, Send, Loader2, Play, Pause, RotateCcw, CheckCircle2, XCircle, MinusCircle, Clock, Volume2, BarChart3, Lock, Zap, Sparkles, MessageSquare } from "lucide-react";
 import { trpc } from "@/lib/trpc";
 import { toast } from "sonner";
+import { useStudySession } from "@/contexts/StudySessionContext";
 import { CrossSellGate } from "@/components/CrossSellGate";
 import { useExamAccess } from "@/hooks/useExamAccess";
 import { PatientAvatar, detectEmotion, getEmotionConfig, EmotionTimeline, calculateEmpathyScore, type EmotionalState, type EmotionHistoryEntry } from "@/components/PatientAvatar";
@@ -128,6 +129,13 @@ export default function SCASimulator() {
   const { user, isAuthenticated } = useAuth();
   const { hasAccess: isPremium, isLoading: subLoading } = useExamAccess("SCA");
   const [, navigate] = useLocation();
+  const { startStudySession, endStudySession } = useStudySession();
+
+  // Register study session to prevent auth redirects during consultation
+  useEffect(() => {
+    startStudySession("sca-simulator");
+    return () => { endStudySession(); };
+  }, []);
   const [selectedCaseId, setSelectedCaseId] = useState<number | null>(null);
   const [phase, setPhase] = useState<"browse" | "case" | "consultation" | "scoring" | "debrief">("browse");
   const [categoryFilter, setCategoryFilter] = useState<string>("all");

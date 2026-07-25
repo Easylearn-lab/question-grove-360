@@ -32,6 +32,7 @@ import Picture360 from "./pages/Picture360";
 import Picture360Specialty from "./pages/Picture360Specialty";
 import SCAHistory from "./pages/SCAHistory";
 import MSRA from "./pages/MSRA";
+import { useGracefulFetch } from "./hooks/useGracefulFetch";
 
 function Router() {
   // make sure to consider if you need authentication for certain routes
@@ -80,6 +81,9 @@ function Router() {
 // - If you want to make theme switchable, pass `switchable` ThemeProvider and use `useTheme` hook
 
 function App() {
+  // Intercept fetch to handle cold-start errors gracefully during study sessions
+  useGracefulFetch();
+
   return (
     <ErrorBoundary>
       <ThemeProvider

@@ -12,6 +12,7 @@ import { CrossSellGate } from "@/components/CrossSellGate";
 import { useExamAccess } from "@/hooks/useExamAccess";
 import { useAuth } from "@/_core/hooks/useAuth";
 import { useProtectedRoute } from "@/hooks/useProtectedRoute";
+import { useStudySession } from "@/contexts/StudySessionContext";
 
 const SPECIALTIES = [
   "All Specialties",
@@ -42,6 +43,13 @@ const DIFFICULTIES = ["All Levels", "Medium", "Hard"];
 export default function QuestionBank() {
   const { user, isAuthenticated, loading, isReady } = useProtectedRoute();
   const [, navigate] = useLocation();
+  const { startStudySession, endStudySession } = useStudySession();
+
+  // Register study session on mount to prevent auth redirects
+  useEffect(() => {
+    startStudySession("question-bank");
+    return () => { endStudySession(); };
+  }, []);
   const [mode, setMode] = useState<"tutor" | "exam">("tutor");
   const [specialty, setSpecialty] = useState("All Specialties");
   const [difficulty, setDifficulty] = useState("All Levels");

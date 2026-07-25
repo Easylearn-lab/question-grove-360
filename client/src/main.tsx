@@ -6,17 +6,46 @@ import { createRoot } from "react-dom/client";
 import superjson from "superjson";
 import App from "./App";
 import { getLoginUrl } from "./const";
+import { StudySessionProvider, hasActiveStudySession } from "./contexts/StudySessionContext";
 import "./index.css";
 
-const queryClient = new QueryClient();
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      retry: (failureCount, error) => {
+        if (error instanceof TRPCClientError && error.message === UNAUTHED_ERR_MSG) {
+          return hasActiveStudySession() && failureCount < 2;
+        }
+        return failureCount < 3;
+      },
+      retryDelay: (attemptIndex) => Math.min(1000 * 2 ** attemptIndex, 10000),
+      refetchOnWindowFocus: false,
+      staleTime: 30 * 1000,
+    },
+    mutations: {
+      retry: (failureCount, error) => {
+        if (error instanceof TRPCClientError && error.message === UNAUTHED_ERR_MSG) {
+          return hasActiveStudySession() && failureCount < 1;
+        }
+        return failureCount < 1;
+      },
+      retryDelay: 1000,
+    },
+  },
+});
 
 const redirectToLoginIfUnauthorized = (error: unknown) => {
   if (!(error instanceof TRPCClientError)) return;
   if (typeof window === "undefined") return;
 
   const isUnauthorized = error.message === UNAUTHED_ERR_MSG;
-
   if (!isUnauthorized) return;
+
+  // CRITICAL: Do NOT redirect if user is in an active study session
+  if (hasActiveStudySession()) {
+    console.warn("[Auth] Suppressed login redirect during active study session.");
+    return;
+  }
 
   window.location.href = getLoginUrl();
 };
@@ -55,7 +84,9 @@ const trpcClient = trpc.createClient({
 createRoot(document.getElementById("root")!).render(
   <trpc.Provider client={trpcClient} queryClient={queryClient}>
     <QueryClientProvider client={queryClient}>
-      <App />
+      <StudySessionProvider>
+        <App />
+      </StudySessionProvider>
     </QueryClientProvider>
   </trpc.Provider>
 );

@@ -4,9 +4,11 @@ import { useAuth } from "@/_core/hooks/useAuth";
 import { useProtectedRoute } from "@/hooks/useProtectedRoute";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { ArrowLeft, ChevronLeft, ChevronRight, Flag, Timer, AlertTriangle, CheckCircle2, XCircle } from "lucide-react";
+import { ArrowLeft, ChevronLeft, ChevronRight, Flag, Timer, AlertTriangle, CheckCircle2, XCircle, RotateCcw } from "lucide-react";
 import { trpc } from "@/lib/trpc";
 import { toast } from "sonner";
+import { useStudySession } from "@/contexts/StudySessionContext";
+import { useQuizPersistence, loadQuizProgress, clearQuizProgress } from "@/hooks/useQuizPersistence";
 
 interface MockQuestion {
   id: number;
@@ -32,6 +34,7 @@ export default function ActiveMockExam() {
   const { user, isAuthenticated, loading, isReady } = useProtectedRoute();
   const [, navigate] = useLocation();
   const [, params] = useRoute("/mock-exam/:id");
+  const { startStudySession, endStudySession } = useStudySession();
 
   const [mockData, setMockData] = useState<MockData | null>(null);
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -40,31 +43,97 @@ export default function ActiveMockExam() {
   const [timeRemaining, setTimeRemaining] = useState(0);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [showConfirmSubmit, setShowConfirmSubmit] = useState(false);
+  const [showResumePrompt, setShowResumePrompt] = useState(false);
   const timerRef = useRef<NodeJS.Timeout | null>(null);
+  const sessionKeyRef = useRef<string | null>(null);
 
   const submitMutation = trpc.mockExams.submitMock.useMutation({
     onSuccess: (data) => {
+      // Clear saved progress on successful submission
+      clearProgress();
+      endStudySession();
       toast.success("Mock exam submitted!");
       navigate(`/mock-results/${data.resultId}`);
     },
     onError: (err) => {
-      toast.error(err.message || "Failed to submit exam");
+      toast.error(err.message || "Failed to submit exam. Your progress is saved — please try again.");
       setIsSubmitting(false);
     },
   });
 
-  // Load mock data from sessionStorage
+  // Resume from saved progress
+  const handleResume = useCallback(() => {
+    if (!sessionKeyRef.current) return;
+    const savedProgress = loadQuizProgress(sessionKeyRef.current);
+    if (savedProgress) {
+      setCurrentIndex(savedProgress.currentIndex);
+      setAnswers(savedProgress.answers);
+      setFlagged(new Set(savedProgress.flaggedIds));
+      if (savedProgress.timeRemaining !== null) {
+        setTimeRemaining(savedProgress.timeRemaining);
+      }
+      toast.success(`Resumed from question ${savedProgress.currentIndex + 1}`);
+    }
+    setShowResumePrompt(false);
+  }, []);
+
+  const handleStartFresh = useCallback(() => {
+    if (sessionKeyRef.current) {
+      clearQuizProgress(sessionKeyRef.current);
+    }
+    if (mockData) {
+      setTimeRemaining(mockData.timerMinutes * 60);
+    }
+    setShowResumePrompt(false);
+  }, [mockData]);
+
+  // Register study session on mount, deregister on unmount
+  useEffect(() => {
+    startStudySession("mock-exam");
+    return () => {
+      endStudySession();
+    };
+  }, []);
+
+  // Load mock data from sessionStorage, check for saved progress
   useEffect(() => {
     const stored = sessionStorage.getItem("activeMockData");
     if (stored) {
       const data = JSON.parse(stored) as MockData;
       setMockData(data);
-      setTimeRemaining(data.timerMinutes * 60);
+      const key = `mock-${data.mockId}`;
+      sessionKeyRef.current = key;
+
+      // Check if there's saved progress to resume
+      const savedProgress = loadQuizProgress(key);
+      if (savedProgress && savedProgress.currentIndex > 0) {
+        setShowResumePrompt(true);
+        // Pre-load the saved state (user can choose to resume or start fresh)
+        setTimeRemaining(savedProgress.timeRemaining ?? data.timerMinutes * 60);
+      } else {
+        setTimeRemaining(data.timerMinutes * 60);
+      }
     } else {
       toast.error("No exam data found. Please start a new mock.");
       navigate("/mock-exams");
     }
   }, []);
+
+  // Auto-save quiz progress using the persistence hook
+  const persistenceData = useMemo(() => {
+    if (!mockData) return null;
+    return {
+      currentIndex,
+      answers,
+      flaggedIds: Array.from(flagged),
+      timeRemaining,
+      totalQuestions: mockData.totalQuestions,
+      examId: mockData.mockId,
+      metadata: { examName: `MRCGP AKT - Full Mock ${mockData.mockId}` },
+    };
+  }, [currentIndex, answers, flagged, timeRemaining, mockData]);
+
+  const { clear: clearProgress } = useQuizPersistence(sessionKeyRef.current, persistenceData);
 
   // Use a ref to always have the latest submit function available for the timer
   const submitRef = useRef<() => void>(() => {});
@@ -318,6 +387,38 @@ export default function ActiveMockExam() {
           </div>
         </div>
       </main>
+
+      {/* Resume Prompt Modal */}
+      {showResumePrompt && (
+        <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+          <Card className="p-8 max-w-md w-full">
+            <div className="text-center">
+              <div className="w-16 h-16 mx-auto mb-4 bg-green-100 rounded-full flex items-center justify-center">
+                <RotateCcw className="w-8 h-8 text-green-600" />
+              </div>
+              <h3 className="text-xl font-bold text-slate-900 mb-2">Resume Previous Attempt?</h3>
+              <p className="text-slate-600 mb-6">
+                You have a saved session for this mock exam. Would you like to resume where you left off?
+              </p>
+              <div className="flex gap-3">
+                <Button
+                  variant="outline"
+                  onClick={handleStartFresh}
+                  className="flex-1"
+                >
+                  Start Fresh
+                </Button>
+                <Button
+                  onClick={handleResume}
+                  className="flex-1 bg-green-600 hover:bg-green-700 text-white"
+                >
+                  Resume
+                </Button>
+              </div>
+            </div>
+          </Card>
+        </div>
+      )}
 
       {/* Confirm Submit Modal */}
       {showConfirmSubmit && (

@@ -1072,3 +1072,12 @@
 - [x] Build /msra landing page with Coming Soon banner and email capture
 - [x] Add MSRA card to dashboard exam selector (Coming Soon status)
 - [x] Verify no changes to AKT, SCA, Picture360 features (145 existing tests passing)
+
+## URGENT: Platform Restart Fix (Jul 25, 2026)
+- [x] Investigate root cause of page restarts during study sessions
+- [x] Disable any auto-refresh/session timeout during active quiz/mock/flashcard sessions
+- [x] Implement localStorage quiz progress persistence (question number, answers, time remaining)
+- [x] Add resume-from-localStorage on page reload
+- [x] Fix API timeout handling to retry gracefully instead of full page reload
+- [x] Check hosting plan for hibernation/timeout issues (Autoscale serverless — cold starts cause transient UNAUTHORIZED)
+- [x] Verify fix with full 40-question mock exam without interruption (TypeScript clean, 410 tests pass)
