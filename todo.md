@@ -1087,3 +1087,8 @@
 - [x] Show when server connection is lost or cold-starting
 - [x] Auto-dismiss when connection is restored
 - [x] Add to QuestionBank, ActiveMockExam, SCASimulator study pages
+
+## Reconnecting Banner + Auto-Save Indicator Extension (Jul 25, 2026)
+- [x] Add ReconnectingBanner to Flashcards/Pattern Recognition page
+- [x] Add study session tracking to Flashcards/Pattern Recognition page
+- [x] Add cloud checkmark auto-save indicator to mock exam header with last save timestamp

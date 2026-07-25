@@ -9,6 +9,8 @@ import { trpc } from "@/lib/trpc";
 import { toast } from "sonner";
 import { CrossSellGate } from "@/components/CrossSellGate";
 import { useExamAccess } from "@/hooks/useExamAccess";
+import { useStudySession } from "@/contexts/StudySessionContext";
+import { ReconnectingBanner } from "@/components/ReconnectingBanner";
 
 const SPECIALTIES = [
   "Cardiovascular",
@@ -67,6 +69,14 @@ export default function PatternRecognition() {
   const [cardProgress, setCardProgress] = useState<CardProgress>({});
   const [sessionStats, setSessionStats] = useState({ reviewed: 0, mastered: 0, familiar: 0, learning: 0 });
   const [selectedSpecialty, setSelectedSpecialty] = useState<string | null>(null);
+
+  const { startStudySession, endStudySession } = useStudySession();
+
+  // Register study session to prevent auth redirects during flashcard review
+  useEffect(() => {
+    startStudySession("pattern-recognition");
+    return () => { endStudySession(); };
+  }, []);
 
   const updateProgress = trpc.flashcards.updateProgress.useMutation();
   const { data: flashcards = [] } = trpc.flashcards.getBySpecialty.useQuery({ specialty: selectedSpecialty || undefined });
@@ -182,6 +192,7 @@ export default function PatternRecognition() {
 
   return (
     <div className="min-h-screen bg-slate-50">
+      <ReconnectingBanner />
       {/* Header */}
       <header className="bg-white border-b border-slate-200 sticky top-0 z-40">
         <div className="max-w-7xl mx-auto px-4 py-4">

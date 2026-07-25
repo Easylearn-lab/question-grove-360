@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useRef } from "react";
+import { useRef, useCallback, useEffect, useState } from "react";
 
 /**
  * Quiz progress data saved to localStorage on every question change.
@@ -119,10 +119,13 @@ export function useQuizPersistence(
   data: Omit<QuizProgressData, "sessionKey" | "savedAt"> | null
 ) {
   const saveTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const [lastSavedAt, setLastSavedAt] = useState<number | null>(null);
 
   const save = useCallback(() => {
     if (!sessionKey || !data) return;
-    saveQuizProgress({ ...data, sessionKey, savedAt: Date.now() });
+    const now = Date.now();
+    saveQuizProgress({ ...data, sessionKey, savedAt: now });
+    setLastSavedAt(now);
   }, [sessionKey, data]);
 
   // Auto-save on every data change (debounced to 500ms)
@@ -174,5 +177,5 @@ export function useQuizPersistence(
     };
   }, [sessionKey, data, save]);
 
-  return { save, clear: () => sessionKey && clearQuizProgress(sessionKey) };
+  return { save, clear: () => sessionKey && clearQuizProgress(sessionKey), lastSavedAt };
 }

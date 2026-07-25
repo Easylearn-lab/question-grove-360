@@ -4,7 +4,7 @@ import { useAuth } from "@/_core/hooks/useAuth";
 import { useProtectedRoute } from "@/hooks/useProtectedRoute";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { ArrowLeft, ChevronLeft, ChevronRight, Flag, Timer, AlertTriangle, CheckCircle2, XCircle, RotateCcw } from "lucide-react";
+import { ArrowLeft, ChevronLeft, ChevronRight, Flag, Timer, AlertTriangle, CheckCircle2, XCircle, RotateCcw, CloudUpload } from "lucide-react";
 import { trpc } from "@/lib/trpc";
 import { toast } from "sonner";
 import { useStudySession } from "@/contexts/StudySessionContext";
@@ -134,7 +134,7 @@ export default function ActiveMockExam() {
     };
   }, [currentIndex, answers, flagged, timeRemaining, mockData]);
 
-  const { clear: clearProgress } = useQuizPersistence(sessionKeyRef.current, persistenceData);
+  const { clear: clearProgress, lastSavedAt } = useQuizPersistence(sessionKeyRef.current, persistenceData);
 
   // Use a ref to always have the latest submit function available for the timer
   const submitRef = useRef<() => void>(() => {});
@@ -218,6 +218,13 @@ export default function ActiveMockExam() {
             </span>
           </div>
           <div className="flex items-center gap-3">
+            {/* Auto-save indicator */}
+            {lastSavedAt && (
+              <div className="flex items-center gap-1.5 text-xs text-green-600" title={`Progress saved at ${new Date(lastSavedAt).toLocaleTimeString()}`}>
+                <CloudUpload className="w-3.5 h-3.5" />
+                <span className="hidden sm:inline">Saved {new Date(lastSavedAt).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}</span>
+              </div>
+            )}
             <div className={`flex items-center gap-2 px-3 py-1.5 rounded-lg font-mono font-bold text-sm ${
               timeRemaining < 300 ? "bg-red-100 text-red-700 animate-pulse" : 
               timeRemaining < 600 ? "bg-amber-100 text-amber-700" : 
