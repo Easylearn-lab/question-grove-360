@@ -1081,3 +1081,9 @@
 - [x] Fix API timeout handling to retry gracefully instead of full page reload
 - [x] Check hosting plan for hibernation/timeout issues (Autoscale serverless — cold starts cause transient UNAUTHORIZED)
 - [x] Verify fix with full 40-question mock exam without interruption (TypeScript clean, 410 tests pass)
+
+## Reconnecting Banner (Jul 25, 2026)
+- [x] Create ReconnectingBanner component (yellow, non-intrusive, top of page)
+- [x] Show when server connection is lost or cold-starting
+- [x] Auto-dismiss when connection is restored
+- [x] Add to QuestionBank, ActiveMockExam, SCASimulator study pages

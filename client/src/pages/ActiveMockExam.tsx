@@ -9,6 +9,7 @@ import { trpc } from "@/lib/trpc";
 import { toast } from "sonner";
 import { useStudySession } from "@/contexts/StudySessionContext";
 import { useQuizPersistence, loadQuizProgress, clearQuizProgress } from "@/hooks/useQuizPersistence";
+import { ReconnectingBanner } from "@/components/ReconnectingBanner";
 
 interface MockQuestion {
   id: number;
@@ -203,6 +204,7 @@ export default function ActiveMockExam() {
 
   return (
     <div className="min-h-screen bg-slate-50">
+      <ReconnectingBanner />
       {/* Timer Header */}
       <header className="bg-white border-b border-slate-200 sticky top-0 z-40">
         <div className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">

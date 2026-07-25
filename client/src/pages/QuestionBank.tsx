@@ -13,6 +13,7 @@ import { useExamAccess } from "@/hooks/useExamAccess";
 import { useAuth } from "@/_core/hooks/useAuth";
 import { useProtectedRoute } from "@/hooks/useProtectedRoute";
 import { useStudySession } from "@/contexts/StudySessionContext";
+import { ReconnectingBanner } from "@/components/ReconnectingBanner";
 
 const SPECIALTIES = [
   "All Specialties",
@@ -271,6 +272,7 @@ export default function QuestionBank() {
 
   return (
     <div className="min-h-screen bg-slate-50">
+      <ReconnectingBanner />
       {/* Header */}
       <header className="bg-white border-b border-slate-200 sticky top-0 z-40">
         <div className="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
