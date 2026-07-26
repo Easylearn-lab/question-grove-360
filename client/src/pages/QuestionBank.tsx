@@ -1,11 +1,11 @@
 import { useLocation } from "wouter";
-import { useEffect, useState, useMemo } from "react";
+import { useEffect, useState, useMemo, useRef, useCallback } from "react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { ArrowLeft, Bookmark, Flag, ChevronRight, ChevronLeft, BookOpen, Search } from "lucide-react";
+import { ArrowLeft, Bookmark, Flag, ChevronRight, ChevronLeft, BookOpen, Search, CloudUpload } from "lucide-react";
 import { trpc } from "@/lib/trpc";
 import { toast } from "sonner";
 import { CrossSellGate } from "@/components/CrossSellGate";
@@ -41,6 +41,44 @@ const SPECIALTIES = [
 
 const DIFFICULTIES = ["All Levels", "Medium", "Hard"];
 
+// localStorage keys for session persistence
+const QBANK_SESSION_KEY = "qg360_qbank_session";
+
+interface QBankSession {
+  questionIds: number[];
+  specialty: string;
+  difficulty: string;
+  currentIndex: number;
+  answers: Record<number, { selectedAnswer: string; isCorrect: boolean }>;
+  savedAt: number;
+}
+
+function saveQBankSession(session: QBankSession) {
+  try {
+    localStorage.setItem(QBANK_SESSION_KEY, JSON.stringify({ ...session, savedAt: Date.now() }));
+  } catch { /* ignore */ }
+}
+
+function loadQBankSession(): QBankSession | null {
+  try {
+    const stored = localStorage.getItem(QBANK_SESSION_KEY);
+    if (!stored) return null;
+    const data: QBankSession = JSON.parse(stored);
+    // Discard if older than 4 hours
+    if (Date.now() - data.savedAt > 4 * 60 * 60 * 1000) {
+      localStorage.removeItem(QBANK_SESSION_KEY);
+      return null;
+    }
+    return data;
+  } catch {
+    return null;
+  }
+}
+
+function clearQBankSession() {
+  try { localStorage.removeItem(QBANK_SESSION_KEY); } catch { /* ignore */ }
+}
+
 export default function QuestionBank() {
   const { user, isAuthenticated, loading, isReady } = useProtectedRoute();
   const [, navigate] = useLocation();
@@ -51,6 +89,7 @@ export default function QuestionBank() {
     startStudySession("question-bank");
     return () => { endStudySession(); };
   }, []);
+
   const [mode, setMode] = useState<"tutor" | "exam">("tutor");
   const [specialty, setSpecialty] = useState("All Specialties");
   const [difficulty, setDifficulty] = useState("All Levels");
@@ -64,16 +103,111 @@ export default function QuestionBank() {
   const [showResetModal, setShowResetModal] = useState(false);
   const [resetMode, setResetMode] = useState<"all" | "specialty">("all");
   const [selectedResetSpecialty, setSelectedResetSpecialty] = useState(specialty);
+  const [lastSavedAt, setLastSavedAt] = useState<number | null>(null);
 
-  // Fetch questions from server
+  // BUG FIX 1 & 2: Lock questions in state once loaded to prevent refetch from changing order
+  const [lockedQuestions, setLockedQuestions] = useState<any[] | null>(null);
+  // BUG FIX 2: Track answers per question in session (persisted to localStorage + DB)
+  const [sessionAnswers, setSessionAnswers] = useState<Record<number, { selectedAnswer: string; isCorrect: boolean }>>({});
+  // Track whether we've loaded from a saved session
+  const [restoredFromSession, setRestoredFromSession] = useState(false);
+  const sessionRestoredRef = useRef(false);
+
+  // Fetch questions from server - only when we don't have locked questions
   const questionsQuery = trpc.questions.getQuestions.useQuery(
     {
       specialty: specialty === "All Specialties" ? undefined : specialty,
       limit: 500,
       offset: 0,
     },
-    { enabled: isReady && isAuthenticated }
+    {
+      enabled: isReady && isAuthenticated && lockedQuestions === null,
+      // BUG FIX 1: Never refetch on reconnect - use locked state
+      refetchOnReconnect: false,
+      refetchOnWindowFocus: false,
+      staleTime: Infinity,
+    }
   );
+
+  // BUG FIX 2: Fetch user's previous attempts for the current question set
+  const questionIds = useMemo(() => {
+    return (lockedQuestions || []).map((q: any) => q.id);
+  }, [lockedQuestions]);
+
+  const userAttemptsQuery = trpc.questions.getUserAttempts.useQuery(
+    { questionIds },
+    {
+      enabled: questionIds.length > 0 && isReady && isAuthenticated,
+      refetchOnReconnect: false,
+      refetchOnWindowFocus: false,
+      staleTime: Infinity,
+    }
+  );
+
+  // BUG FIX 1: Lock questions once loaded from server
+  useEffect(() => {
+    if (questionsQuery.data && questionsQuery.data.length > 0 && lockedQuestions === null) {
+      // Check if we have a saved session with matching filters
+      const saved = loadQBankSession();
+      if (saved && saved.specialty === specialty && saved.difficulty === difficulty && !sessionRestoredRef.current) {
+        // Restore from saved session - match question IDs to server data
+        const serverMap = new Map(questionsQuery.data.map((q: any) => [q.id, q]));
+        const restoredQuestions = saved.questionIds
+          .map(id => serverMap.get(id))
+          .filter(Boolean);
+
+        if (restoredQuestions.length > 0) {
+          setLockedQuestions(restoredQuestions);
+          setCurrentQuestionIndex(Math.min(saved.currentIndex, restoredQuestions.length - 1));
+          setSessionAnswers(saved.answers || {});
+          setRestoredFromSession(true);
+          sessionRestoredRef.current = true;
+          toast.info("Session restored — continuing where you left off");
+          return;
+        }
+      }
+      // No saved session or mismatch - use fresh data
+      setLockedQuestions(questionsQuery.data);
+    }
+  }, [questionsQuery.data, lockedQuestions, specialty, difficulty]);
+
+  // BUG FIX 2: Load previous attempts from DB into sessionAnswers (only for questions not already in session)
+  useEffect(() => {
+    if (userAttemptsQuery.data && userAttemptsQuery.data.length > 0 && !restoredFromSession) {
+      setSessionAnswers(prev => {
+        const merged = { ...prev };
+        for (const attempt of userAttemptsQuery.data) {
+          if (!merged[attempt.questionId]) {
+            merged[attempt.questionId] = {
+              selectedAnswer: attempt.selectedAnswer,
+              isCorrect: attempt.isCorrect,
+            };
+          }
+        }
+        return merged;
+      });
+    }
+  }, [userAttemptsQuery.data, restoredFromSession]);
+
+  // Save session to localStorage on every meaningful state change
+  const saveSessionRef = useRef<NodeJS.Timeout | null>(null);
+  useEffect(() => {
+    if (!lockedQuestions || lockedQuestions.length === 0) return;
+    if (saveSessionRef.current) clearTimeout(saveSessionRef.current);
+    saveSessionRef.current = setTimeout(() => {
+      const session: QBankSession = {
+        questionIds: lockedQuestions.map((q: any) => q.id),
+        specialty,
+        difficulty,
+        currentIndex: currentQuestionIndex,
+        answers: sessionAnswers,
+        savedAt: Date.now(),
+      };
+      saveQBankSession(session);
+      setLastSavedAt(Date.now());
+    }, 500);
+    return () => { if (saveSessionRef.current) clearTimeout(saveSessionRef.current); };
+  }, [lockedQuestions, currentQuestionIndex, sessionAnswers, specialty, difficulty]);
 
   const recordAttempt = trpc.mockExams.recordAttempt.useMutation();
   const bookmarkMutation = trpc.questions.bookmarkQuestion.useMutation();
@@ -91,7 +225,10 @@ export default function QuestionBank() {
         onSuccess: () => {
           toast.success("All question attempts have been reset");
           setShowResetModal(false);
-          window.location.reload();
+          setSessionAnswers({});
+          clearQBankSession();
+          setLockedQuestions(null);
+          setCurrentQuestionIndex(0);
         },
         onError: (error) => {
           toast.error("Failed to reset attempts: " + (error?.message || "Unknown error"));
@@ -104,7 +241,20 @@ export default function QuestionBank() {
           onSuccess: () => {
             toast.success(`Progress reset for ${selectedResetSpecialty}`);
             setShowResetModal(false);
-            window.location.reload();
+            // Clear answers for questions in that specialty
+            if (lockedQuestions) {
+              const specialtyQIds = lockedQuestions
+                .filter((q: any) => q.specialty === selectedResetSpecialty)
+                .map((q: any) => q.id);
+              setSessionAnswers(prev => {
+                const updated = { ...prev };
+                specialtyQIds.forEach((id: number) => { delete updated[id]; });
+                return updated;
+              });
+            }
+            clearQBankSession();
+            setLockedQuestions(null);
+            setCurrentQuestionIndex(0);
           },
           onError: (error) => {
             toast.error("Failed to reset attempts: " + (error?.message || "Unknown error"));
@@ -116,30 +266,32 @@ export default function QuestionBank() {
 
   // Filter questions client-side for difficulty and search
   const filteredQuestions = useMemo(() => {
-    if (!questionsQuery.data) return [];
-    let filtered = [...questionsQuery.data];
+    const source = lockedQuestions || [];
+    if (source.length === 0) return [];
+    let filtered = [...source];
 
     if (difficulty !== "All Levels") {
-      filtered = filtered.filter((q) => q.difficulty === difficulty);
+      filtered = filtered.filter((q: any) => q.difficulty === difficulty);
     }
 
     if (searchQuery.trim()) {
       const query = searchQuery.toLowerCase();
       filtered = filtered.filter(
-        (q) =>
+        (q: any) =>
           q.question.toLowerCase().includes(query) ||
           (q.specialty && q.specialty.toLowerCase().includes(query))
       );
     }
 
     return filtered;
-  }, [questionsQuery.data, difficulty, searchQuery]);
+  }, [lockedQuestions, difficulty, searchQuery]);
 
   const { hasAccess: isPremium, isLoading: subLoading } = useExamAccess("AKT");
 
   const currentQuestion = filteredQuestions[currentQuestionIndex];
   const totalQuestions = filteredQuestions.length;
-  const progress = totalQuestions > 0 ? ((currentQuestionIndex + 1) / totalQuestions) * 100 : 0;
+  const answeredCount = Object.keys(sessionAnswers).length;
+  const progress = totalQuestions > 0 ? (answeredCount / totalQuestions) * 100 : 0;
 
   // Query bookmark status for current question (must be above early returns to maintain hook order)
   const isBookmarkedQuery = trpc.questions.isBookmarked.useQuery(
@@ -154,6 +306,21 @@ export default function QuestionBank() {
     }
   }, [isBookmarkedQuery.data]);
 
+  // BUG FIX 2: When navigating to a question, restore previous answer if it exists
+  useEffect(() => {
+    if (!currentQuestion) return;
+    const prevAnswer = sessionAnswers[currentQuestion.id];
+    if (prevAnswer) {
+      setSelectedAnswer(prevAnswer.selectedAnswer);
+      setShowExplanation(true);
+    } else {
+      setSelectedAnswer(null);
+      setShowExplanation(false);
+    }
+    setFlagged(false);
+    setNotes("");
+  }, [currentQuestion?.id]);
+
   if (loading || !isAuthenticated || !user || subLoading) {
     return (
       <div className="min-h-screen bg-slate-50 flex items-center justify-center">
@@ -165,10 +332,6 @@ export default function QuestionBank() {
   const handleNext = () => {
     if (currentQuestionIndex < totalQuestions - 1) {
       setCurrentQuestionIndex(currentQuestionIndex + 1);
-      setSelectedAnswer(null);
-      setShowExplanation(false);
-      setFlagged(false);
-      setNotes("");
       setBookmarked(false);
     }
   };
@@ -176,10 +339,6 @@ export default function QuestionBank() {
   const handlePrevious = () => {
     if (currentQuestionIndex > 0) {
       setCurrentQuestionIndex(currentQuestionIndex - 1);
-      setSelectedAnswer(null);
-      setShowExplanation(false);
-      setFlagged(false);
-      setNotes("");
       setBookmarked(false);
     }
   };
@@ -190,7 +349,13 @@ export default function QuestionBank() {
     const isCorrect = selectedAnswer === currentQuestion.correctAnswer;
     setShowExplanation(true);
 
-    // Record the attempt
+    // BUG FIX 2: Save answer to session state (persisted to localStorage automatically)
+    setSessionAnswers(prev => ({
+      ...prev,
+      [currentQuestion.id]: { selectedAnswer, isCorrect },
+    }));
+
+    // Record the attempt to the database
     recordAttempt.mutate({
       questionId: currentQuestion.id,
       examId: currentQuestion.examId,
@@ -211,7 +376,6 @@ export default function QuestionBank() {
     if (!currentQuestion) return;
 
     if (bookmarked) {
-      // Remove bookmark
       removeBookmarkMutation.mutate(currentQuestion.id, {
         onSuccess: () => {
           setBookmarked(false);
@@ -222,7 +386,6 @@ export default function QuestionBank() {
         },
       });
     } else {
-      // Add bookmark
       bookmarkMutation.mutate(currentQuestion.id, {
         onSuccess: () => {
           setBookmarked(true);
@@ -235,8 +398,17 @@ export default function QuestionBank() {
     }
   };
 
+  // Handle specialty change: unlock questions so a new fetch happens
+  const handleSpecialtyChange = (v: string) => {
+    setSpecialty(v);
+    setCurrentQuestionIndex(0);
+    setLockedQuestions(null); // Allow new fetch for new specialty
+    setSessionAnswers({});
+    clearQBankSession();
+  };
+
   // Empty state when no questions are available
-  if (!questionsQuery.isLoading && totalQuestions === 0) {
+  if (!questionsQuery.isLoading && lockedQuestions !== null && totalQuestions === 0) {
     return (
       <div className="min-h-screen bg-slate-50">
         <header className="bg-white border-b border-slate-200 sticky top-0 z-40">
@@ -253,12 +425,10 @@ export default function QuestionBank() {
           </div>
           <h2 className="text-2xl font-bold text-slate-900 mb-3">No Questions Available</h2>
           <p className="text-slate-600 mb-6 max-w-md mx-auto">
-            {questionsQuery.data?.length === 0
-              ? "Questions haven't been added to the database yet. Check back soon or contact your administrator."
-              : "No questions match your current filters. Try adjusting your specialty or difficulty settings."}
+            No questions match your current filters. Try adjusting your specialty or difficulty settings.
           </p>
           <div className="flex gap-3 justify-center">
-            <Button variant="outline" onClick={() => { setSpecialty("All Specialties"); setDifficulty("All Levels"); setSearchQuery(""); }}>
+            <Button variant="outline" onClick={() => { handleSpecialtyChange("All Specialties"); setDifficulty("All Levels"); setSearchQuery(""); }}>
               Reset Filters
             </Button>
             <Button onClick={() => navigate("/dashboard")} className="bg-green-600 hover:bg-green-700 text-gray-900">
@@ -283,8 +453,15 @@ export default function QuestionBank() {
             <h1 className="text-2xl font-bold text-slate-900">Question Bank</h1>
           </div>
           <div className="flex items-center gap-4">
+            {/* Auto-save indicator */}
+            {lastSavedAt && (
+              <div className="flex items-center gap-1.5 text-xs text-green-600">
+                <CloudUpload className="w-3.5 h-3.5" />
+                <span>Saved {new Date(lastSavedAt).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}</span>
+              </div>
+            )}
             <span className="text-sm text-slate-600">
-              {totalQuestions > 0 ? `Question ${currentQuestionIndex + 1} of ${totalQuestions}` : "Loading..."}
+              {totalQuestions > 0 ? `${answeredCount} of ${totalQuestions} answered` : "Loading..."}
             </span>
             <Button
               variant="outline"
@@ -335,7 +512,7 @@ export default function QuestionBank() {
                 {/* Specialty Filter */}
                 <div>
                   <Label className="text-slate-700 font-medium">Specialty</Label>
-                  <Select value={specialty} onValueChange={(v) => { setSpecialty(v); setCurrentQuestionIndex(0); }}>
+                  <Select value={specialty} onValueChange={handleSpecialtyChange}>
                     <SelectTrigger className="mt-2">
                       <SelectValue />
                     </SelectTrigger>
@@ -381,7 +558,7 @@ export default function QuestionBank() {
 
           {/* Question Display */}
           <div className="lg:col-span-3">
-            {questionsQuery.isLoading ? (
+            {(questionsQuery.isLoading || lockedQuestions === null) ? (
               <div className="flex items-center justify-center py-16">
                 <div className="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-green-600"></div>
               </div>
@@ -391,7 +568,7 @@ export default function QuestionBank() {
                 <div className="mb-8">
                   <div className="flex justify-between items-center mb-2">
                     <span className="text-sm font-medium text-slate-700">Progress</span>
-                    <span className="text-sm text-slate-600">{Math.round(progress)}%</span>
+                    <span className="text-sm text-slate-600">{answeredCount} of {totalQuestions} answered ({Math.round(progress)}%)</span>
                   </div>
                   <div className="w-full bg-slate-200 rounded-full h-2">
                     <div className="bg-green-600 h-2 rounded-full transition-all duration-300" style={{ width: `${progress}%` }} />

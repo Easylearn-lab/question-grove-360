@@ -119,7 +119,7 @@ export const appRouter = router({
         const { resetUserQuestionAttempts } = await import("./db");
         return await resetUserQuestionAttempts(ctx.user.id);
       }),
-    resetAttemptsBySpecialty: protectedProcedure
+        resetAttemptsBySpecialty: protectedProcedure
       .input(z.object({
         specialty: z.string().min(1),
       }))
@@ -127,7 +127,33 @@ export const appRouter = router({
         const { resetUserQuestionAttemptsBySpecialty } = await import("./db");
         return await resetUserQuestionAttemptsBySpecialty(ctx.user.id, input.specialty);
       }),
-
+    getUserAttempts: protectedProcedure
+      .input(z.object({
+        questionIds: z.array(z.number()),
+      }))
+      .query(async ({ ctx, input }) => {
+        const { getDb } = await import("./db");
+        const db = await getDb();
+        if (!db) throw new Error("Database not available");
+        const { sql } = await import("drizzle-orm");
+        if (input.questionIds.length === 0) return [];
+        // Get the most recent attempt for each question
+        const placeholders = input.questionIds.map(() => '?').join(',');
+        const result = await db.execute(sql.raw(
+          `SELECT questionId, selectedAnswer, isCorrect FROM user_attempts WHERE userId = ${ctx.user.id} AND questionId IN (${input.questionIds.join(',')}) ORDER BY createdAt DESC`
+        ));
+        const rows = Array.isArray(result) && Array.isArray(result[0]) ? result[0] : result;
+        // Deduplicate: keep only the most recent attempt per question
+        const seen = new Set<number>();
+        const unique: Array<{questionId: number; selectedAnswer: string; isCorrect: boolean}> = [];
+        for (const row of rows as any[]) {
+          if (!seen.has(row.questionId)) {
+            seen.add(row.questionId);
+            unique.push({ questionId: row.questionId, selectedAnswer: row.selectedAnswer, isCorrect: !!row.isCorrect });
+          }
+        }
+        return unique;
+      }),
   }),
 
   // Mock Exams Router

@@ -1092,3 +1092,13 @@
 - [x] Add ReconnectingBanner to Flashcards/Pattern Recognition page
 - [x] Add study session tracking to Flashcards/Pattern Recognition page
 - [x] Add cloud checkmark auto-save indicator to mock exam header with last save timestamp
+
+## Session Resilience Enhancements (Jul 25, 2026)
+- [x] Add auto-save cloud indicator to Question Bank untimed practice mode
+- [x] Add green "Session restored successfully" toast when cold-start retry succeeds
+- [ ] Extend SCA transcript persistence to localStorage for voice consultation resume
+
+## Bug Fixes (Jul 26, 2026)
+- [x] Bug 1: Question bank resets on network reconnection — locked questions in state, disabled refetchOnReconnect, persist to localStorage
+- [x] Bug 2: Question bank progress not persisted across sessions — getUserAttempts procedure loads previous answers from DB, answers shown on navigate back
+- [x] Bug 3: Ethics & Organisational specialty not loading — normalized DB from 'Ethics and Organisational' to 'Ethics & Organisational' (127 rows fixed)
