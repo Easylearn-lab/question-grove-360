@@ -559,6 +559,8 @@ function CaseView({
   userId?: number;
   isFreeTrial?: boolean;
 }) {
+  const SCA_STORAGE_KEY = `sca-consultation-${caseData.id}`;
+  const [showResumePrompt, setShowResumePrompt] = useState(false);
   const [activeTab, setActiveTab] = useState("briefing");
   const [messages, setMessages] = useState<Message[]>([]);
   const [competencyScores, setCompetencyScores] = useState<Record<string, CompetencyScore>>({});
@@ -569,6 +571,91 @@ function CaseView({
   const [timerSeconds, setTimerSeconds] = useState(720); // 12 minutes
   const [timerRunning, setTimerRunning] = useState(false);
   const timerRef = useRef<NodeJS.Timeout | null>(null);
+  const [resumedFromStorage, setResumedFromStorage] = useState(false);
+
+  // ---- SCA TRANSCRIPT PERSISTENCE ----
+  // Check for saved consultation on mount
+  useEffect(() => {
+    try {
+      const saved = localStorage.getItem(SCA_STORAGE_KEY);
+      if (saved) {
+        const data = JSON.parse(saved);
+        // Only offer resume if there are actual messages and it's less than 4 hours old
+        if (data.messages?.length > 0 && Date.now() - (data.savedAt || 0) < 4 * 60 * 60 * 1000) {
+          setShowResumePrompt(true);
+        } else {
+          localStorage.removeItem(SCA_STORAGE_KEY);
+        }
+      }
+    } catch {}
+  }, []);
+
+  // Save consultation state to localStorage on every message change
+  useEffect(() => {
+    if (messages.length > 0 && (phase === "consultation" || phase === "scoring")) {
+      try {
+        localStorage.setItem(SCA_STORAGE_KEY, JSON.stringify({
+          messages,
+          timerSeconds,
+          emotionHistory,
+          consultationDuration,
+          phase,
+          savedAt: Date.now(),
+        }));
+      } catch {}
+    }
+  }, [messages, timerSeconds, emotionHistory, phase]);
+
+  // Also save on beforeunload
+  useEffect(() => {
+    const handleUnload = () => {
+      if (messages.length > 0 && (phase === "consultation" || phase === "scoring")) {
+        try {
+          localStorage.setItem(SCA_STORAGE_KEY, JSON.stringify({
+            messages,
+            timerSeconds,
+            emotionHistory,
+            consultationDuration,
+            phase,
+            savedAt: Date.now(),
+          }));
+        } catch {}
+      }
+    };
+    window.addEventListener("beforeunload", handleUnload);
+    return () => window.removeEventListener("beforeunload", handleUnload);
+  }, [messages, timerSeconds, emotionHistory, phase]);
+
+  // Clear saved state when debrief is reached (consultation completed)
+  useEffect(() => {
+    if (phase === "debrief") {
+      try { localStorage.removeItem(SCA_STORAGE_KEY); } catch {}
+    }
+  }, [phase]);
+
+  const handleResumeSCA = () => {
+    try {
+      const saved = localStorage.getItem(SCA_STORAGE_KEY);
+      if (saved) {
+        const data = JSON.parse(saved);
+        setMessages(data.messages || []);
+        setTimerSeconds(data.timerSeconds ?? 720);
+        setEmotionHistory(data.emotionHistory || []);
+        setConsultationDuration(data.consultationDuration || 0);
+        setResumedFromStorage(true);
+        // Move to consultation phase if we were mid-consultation
+        if (data.phase === "consultation" || data.phase === "scoring") {
+          onStartConsultation();
+        }
+      }
+    } catch {}
+    setShowResumePrompt(false);
+  };
+
+  const handleStartFreshSCA = () => {
+    try { localStorage.removeItem(SCA_STORAGE_KEY); } catch {}
+    setShowResumePrompt(false);
+  };
 
   // Voice state
   const voiceProfile = getVoiceProfile(caseData.patientAge, caseData.patientGender);
@@ -662,6 +749,38 @@ function CaseView({
             </TabsContent>
           </Tabs>
         </main>
+
+        {/* Resume prompt for interrupted SCA consultations */}
+        {showResumePrompt && (
+          <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+            <Card className="p-8 max-w-md w-full">
+              <div className="text-center">
+                <div className="w-16 h-16 mx-auto mb-4 bg-green-100 rounded-full flex items-center justify-center">
+                  <RotateCcw className="w-8 h-8 text-green-600" />
+                </div>
+                <h3 className="text-xl font-bold text-slate-900 mb-2">Resume Previous Consultation?</h3>
+                <p className="text-slate-600 mb-6">
+                  You have a saved consultation for this case. Would you like to resume where you left off?
+                </p>
+                <div className="flex gap-3">
+                  <Button
+                    variant="outline"
+                    onClick={handleStartFreshSCA}
+                    className="flex-1"
+                  >
+                    Start Fresh
+                  </Button>
+                  <Button
+                    onClick={handleResumeSCA}
+                    className="flex-1 bg-green-600 hover:bg-green-700 text-white"
+                  >
+                    Resume
+                  </Button>
+                </div>
+              </div>
+            </Card>
+          </div>
+        )}
       </div>
     );
   }
@@ -1119,7 +1238,7 @@ function ConsultationView({
     };
   }, []);
 
-  // Get opening statement on first render
+  // Get opening statement on first render (skip if resumed from localStorage)
   useEffect(() => {
     if (messages.length === 0) {
       getOpeningStatement();

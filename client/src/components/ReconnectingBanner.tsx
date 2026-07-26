@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { Wifi, WifiOff } from "lucide-react";
+import { toast } from "sonner";
 
 /**
  * A small, non-intrusive banner that appears at the top of study pages
@@ -21,6 +22,7 @@ export function ReconnectingBanner() {
 
     const handleOnline = () => {
       setIsRestoring(true);
+      toast.success("Session restored successfully", { duration: 3000 });
       // Give a brief moment to confirm connection, then hide
       hideTimeoutRef.current = setTimeout(() => {
         setIsDisconnected(false);
@@ -48,6 +50,7 @@ export function ReconnectingBanner() {
           if (consecutiveFailures > 0 && isDisconnected) {
             // Connection restored
             setIsRestoring(true);
+            toast.success("Session restored successfully", { duration: 3000 });
             hideTimeoutRef.current = setTimeout(() => {
               setIsDisconnected(false);
               setIsRestoring(false);

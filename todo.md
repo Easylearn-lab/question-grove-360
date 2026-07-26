@@ -1096,7 +1096,7 @@
 ## Session Resilience Enhancements (Jul 25, 2026)
 - [x] Add auto-save cloud indicator to Question Bank untimed practice mode
 - [x] Add green "Session restored successfully" toast when cold-start retry succeeds
-- [ ] Extend SCA transcript persistence to localStorage for voice consultation resume
+- [x] Extend SCA transcript persistence to localStorage for voice consultation resume
 
 ## Bug Fixes (Jul 26, 2026)
 - [x] Bug 1: Question bank resets on network reconnection — locked questions in state, disabled refetchOnReconnect, persist to localStorage
