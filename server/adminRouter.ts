@@ -296,11 +296,12 @@ export const adminRouter = router({
     const [totalAttempts] = await db.select({ total: count() }).from(userAttempts);
     const [totalMocks] = await db.select({ total: count() }).from(mockResults);
 
-    // Active subscribers
+    // Active subscribers (count from subscriptions table for accuracy)
+    const { subscriptions } = await import("../drizzle/schema");
     const [activeSubscribers] = await db
       .select({ total: count() })
-      .from(profiles)
-      .where(eq(profiles.subscriptionStatus, "active"));
+      .from(subscriptions)
+      .where(eq(subscriptions.status, "active"));
 
     return {
       totalUsers: totalUsers?.total || 0,

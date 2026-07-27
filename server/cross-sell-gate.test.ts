@@ -5,11 +5,20 @@ import { describe, it, expect } from "vitest";
  * 
  * Tests the decision logic of the CrossSellGate component:
  * 1. If user has access → show children (pass-through)
- * 2. If user has the OTHER subscription → show cross-sell with direct checkout buttons
+ * 2. If user has the OTHER subscription but NOT the required one → show cross-sell
  * 3. If user has no subscription → show generic gate with "View Plans & Subscribe"
+ * 
+ * MULTI-SUBSCRIPTION FIX (July 2026):
+ * Added tests for dual-subscriber scenario where user has BOTH AKT and SCA.
+ * In that case, hasAccess=true for both tracks, so CrossSellGate always shows children.
  */
 
-type ExamTrack = "AKT" | "SCA";
+type ExamTrack = "AKT" | "SCA" | "MSRA";
+
+interface SubscriptionEntry {
+  plan: string;
+  status: string;
+}
 
 // Simulate the getTrackFromPlan logic used in CrossSellGate
 function getTrackFromPlan(plan: string | null): ExamTrack | null {
@@ -17,29 +26,51 @@ function getTrackFromPlan(plan: string | null): ExamTrack | null {
   const upper = plan.toUpperCase();
   if (upper.startsWith("AKT")) return "AKT";
   if (upper.startsWith("SCA")) return "SCA";
+  if (upper.startsWith("MSRA")) return "MSRA";
   return null;
 }
 
-// Simulate the CrossSellGate decision logic
+// NEW multi-subscription decision logic (matches the actual CrossSellGate component)
 type GateDecision = "show_children" | "cross_sell" | "generic_gate";
 
+function getCrossSellDecisionMulti(
+  hasAccess: boolean,
+  subscriptions: SubscriptionEntry[],
+  requiredTrack: ExamTrack
+): GateDecision {
+  if (hasAccess) return "show_children";
+
+  // Check if user has ANY other active subscription
+  const activeSubscriptions = subscriptions.filter(
+    (sub) => sub.status === "active" || sub.status === "trialing"
+  );
+  const userTracks = activeSubscriptions
+    .map((sub) => getTrackFromPlan(sub.plan))
+    .filter((track): track is ExamTrack => track !== null);
+
+  const isPremium = userTracks.length > 0;
+  const hasOtherSubscription = isPremium && !userTracks.includes(requiredTrack);
+
+  if (hasOtherSubscription) return "cross_sell";
+  return "generic_gate";
+}
+
+// Legacy helper for backward-compat tests
 function getCrossSellDecision(
   hasAccess: boolean,
   isPremium: boolean,
   plan: string | null,
   requiredTrack: ExamTrack
 ): GateDecision {
-  if (hasAccess) return "show_children";
-
-  const userTrack = getTrackFromPlan(plan);
-  const hasOtherSubscription = isPremium && userTrack !== null && userTrack !== requiredTrack;
-
-  if (hasOtherSubscription) return "cross_sell";
-  return "generic_gate";
+  const subscriptions: SubscriptionEntry[] = plan && isPremium
+    ? [{ plan, status: "active" }]
+    : [];
+  return getCrossSellDecisionMulti(hasAccess, subscriptions, requiredTrack);
 }
 
 // Simulate the plan keys that would be shown in cross-sell
 function getCrossSellPlanKeys(requiredTrack: ExamTrack): { plan3mo: string; plan6mo: string } {
+  if (requiredTrack === "MSRA") return { plan3mo: "MSRA_3MONTH", plan6mo: "MSRA_6MONTH" };
   return {
     plan3mo: requiredTrack === "SCA" ? "SCA_3MONTH" : "AKT_3MONTH",
     plan6mo: requiredTrack === "SCA" ? "SCA_6MONTH" : "AKT_6MONTH",
@@ -59,7 +90,6 @@ describe("CrossSellGate Logic", () => {
 
   describe("Decision: cross-sell (user has OTHER subscription)", () => {
     it("shows cross-sell when AKT subscriber visits SCA page", () => {
-      // User has AKT_3MONTH, visiting SCA page (hasAccess=false because useExamAccess('SCA') returns false)
       expect(getCrossSellDecision(false, true, "AKT_3MONTH", "SCA")).toBe("cross_sell");
     });
 
@@ -68,7 +98,6 @@ describe("CrossSellGate Logic", () => {
     });
 
     it("shows cross-sell when SCA subscriber visits AKT page", () => {
-      // User has SCA_3MONTH, visiting AKT page
       expect(getCrossSellDecision(false, true, "SCA_3MONTH", "AKT")).toBe("cross_sell");
     });
 
@@ -87,12 +116,63 @@ describe("CrossSellGate Logic", () => {
     });
 
     it("shows generic gate when user has expired subscription", () => {
-      // isPremium is false even though plan might still be set
       expect(getCrossSellDecision(false, false, "AKT_3MONTH", "AKT")).toBe("generic_gate");
     });
 
     it("shows generic gate when plan is unknown", () => {
       expect(getCrossSellDecision(false, false, "UNKNOWN", "AKT")).toBe("generic_gate");
+    });
+  });
+
+  describe("MULTI-SUBSCRIPTION: Dual subscriber (AKT + SCA)", () => {
+    const dualSubscriptions: SubscriptionEntry[] = [
+      { plan: "AKT_3MONTH", status: "active" },
+      { plan: "SCA_3MONTH", status: "active" },
+    ];
+
+    it("shows children on AKT page (has AKT access)", () => {
+      // hasAccess=true because useExamAccess("AKT") checks all subscriptions
+      expect(getCrossSellDecisionMulti(true, dualSubscriptions, "AKT")).toBe("show_children");
+    });
+
+    it("shows children on SCA page (has SCA access)", () => {
+      expect(getCrossSellDecisionMulti(true, dualSubscriptions, "SCA")).toBe("show_children");
+    });
+
+    it("shows cross-sell on MSRA page (does not have MSRA)", () => {
+      // hasAccess=false for MSRA, but user has other active subscriptions
+      expect(getCrossSellDecisionMulti(false, dualSubscriptions, "MSRA")).toBe("cross_sell");
+    });
+  });
+
+  describe("MULTI-SUBSCRIPTION: One active, one cancelled", () => {
+    const mixedSubscriptions: SubscriptionEntry[] = [
+      { plan: "AKT_3MONTH", status: "active" },
+      { plan: "SCA_3MONTH", status: "cancelled" },
+    ];
+
+    it("shows children on AKT page (AKT still active)", () => {
+      expect(getCrossSellDecisionMulti(true, mixedSubscriptions, "AKT")).toBe("show_children");
+    });
+
+    it("shows cross-sell on SCA page (SCA cancelled, but user has active AKT)", () => {
+      // hasAccess=false for SCA (cancelled), but user has active AKT → cross-sell
+      expect(getCrossSellDecisionMulti(false, mixedSubscriptions, "SCA")).toBe("cross_sell");
+    });
+  });
+
+  describe("MULTI-SUBSCRIPTION: All cancelled", () => {
+    const allCancelled: SubscriptionEntry[] = [
+      { plan: "AKT_3MONTH", status: "cancelled" },
+      { plan: "SCA_3MONTH", status: "cancelled" },
+    ];
+
+    it("shows generic gate on AKT page (all cancelled)", () => {
+      expect(getCrossSellDecisionMulti(false, allCancelled, "AKT")).toBe("generic_gate");
+    });
+
+    it("shows generic gate on SCA page (all cancelled)", () => {
+      expect(getCrossSellDecisionMulti(false, allCancelled, "SCA")).toBe("generic_gate");
     });
   });
 
@@ -107,6 +187,12 @@ describe("CrossSellGate Logic", () => {
       const keys = getCrossSellPlanKeys("AKT");
       expect(keys.plan3mo).toBe("AKT_3MONTH");
       expect(keys.plan6mo).toBe("AKT_6MONTH");
+    });
+
+    it("returns MSRA plan keys when requiredTrack is MSRA", () => {
+      const keys = getCrossSellPlanKeys("MSRA");
+      expect(keys.plan3mo).toBe("MSRA_3MONTH");
+      expect(keys.plan6mo).toBe("MSRA_6MONTH");
     });
   });
 
@@ -125,6 +211,10 @@ describe("CrossSellGate Logic", () => {
 
     it("maps SCA_6MONTH to SCA", () => {
       expect(getTrackFromPlan("SCA_6MONTH")).toBe("SCA");
+    });
+
+    it("maps MSRA_3MONTH to MSRA", () => {
+      expect(getTrackFromPlan("MSRA_3MONTH")).toBe("MSRA");
     });
 
     it("returns null for null plan", () => {
@@ -147,17 +237,14 @@ describe("CrossSellGate Logic", () => {
 
   describe("Edge cases", () => {
     it("does not show cross-sell for same track (AKT on AKT) when not premium", () => {
-      // hasAccess=false, isPremium=false, plan=AKT → generic gate (not cross-sell)
       expect(getCrossSellDecision(false, false, "AKT_3MONTH", "AKT")).toBe("generic_gate");
     });
 
     it("does not show cross-sell when isPremium is true but plan is null", () => {
-      // Edge case: isPremium=true but plan is null (shouldn't happen in practice)
       expect(getCrossSellDecision(false, true, null, "AKT")).toBe("generic_gate");
     });
 
     it("does not show cross-sell when isPremium is true but plan is unknown", () => {
-      // Edge case: isPremium=true but plan doesn't map to a track
       expect(getCrossSellDecision(false, true, "PICTURE360", "AKT")).toBe("generic_gate");
     });
   });
