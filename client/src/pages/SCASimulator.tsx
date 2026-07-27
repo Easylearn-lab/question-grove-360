@@ -7,7 +7,7 @@ import { Input } from "@/components/ui/input";
 import { Slider } from "@/components/ui/slider";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Badge } from "@/components/ui/badge";
-import { ArrowLeft, Mic, MicOff, Send, Loader2, Play, Pause, RotateCcw, CheckCircle2, XCircle, MinusCircle, Clock, Volume2, BarChart3, Lock, Zap, Sparkles, MessageSquare } from "lucide-react";
+import { ArrowLeft, Mic, MicOff, Send, Loader2, Play, Pause, RotateCcw, CheckCircle2, XCircle, MinusCircle, Clock, Volume2, BarChart3, Lock, Zap, Sparkles, MessageSquare, Square } from "lucide-react";
 import { trpc } from "@/lib/trpc";
 import { toast } from "sonner";
 import { useStudySession } from "@/contexts/StudySessionContext";
@@ -1188,6 +1188,7 @@ function ConsultationView({
   const audioChunksRef = useRef<Blob[]>([]);
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const messagesEndRef = useRef<HTMLDivElement | null>(null);
+  const messageRefsMap = useRef<Map<number, HTMLDivElement>>(new Map());
   const recognitionRef = useRef<any>(null);
   const webSpeechSupported = useRef<boolean>(false);
 
@@ -1325,6 +1326,22 @@ function ConsultationView({
       audioRef.current.onerror = () => { setIsSpeaking(false); setPlayingMessageIndex(null); };
       setIsSpeaking(true);
       audioRef.current.play().catch(() => { setIsSpeaking(false); setPlayingMessageIndex(null); });
+    }
+  };
+
+  const stopPlayback = () => {
+    if (audioRef.current) {
+      audioRef.current.pause();
+      audioRef.current.currentTime = 0;
+    }
+    setIsSpeaking(false);
+    setPlayingMessageIndex(null);
+  };
+
+  const scrollToMessage = (idx: number) => {
+    const el = messageRefsMap.current.get(idx);
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth", block: "center" });
     }
   };
 
@@ -1536,6 +1553,24 @@ function ConsultationView({
         {/* Speech Speed Control */}
         <div className="px-6 flex items-center justify-center gap-3 py-1">
           <span className="text-xs text-slate-400 whitespace-nowrap">Speech Speed</span>
+          <div className="flex items-center gap-1">
+            {[0.75, 1, 1.25].map((preset) => (
+              <button
+                key={preset}
+                onClick={() => {
+                  setSpeechSpeed(preset);
+                  try { localStorage.setItem("sca-speech-speed", String(preset)); } catch {}
+                }}
+                className={`px-2 py-0.5 rounded text-xs font-mono transition-colors ${
+                  speechSpeed === preset
+                    ? "bg-green-500 text-white"
+                    : "bg-slate-700 text-slate-300 hover:bg-slate-600"
+                }`}
+              >
+                {preset}x
+              </button>
+            ))}
+          </div>
           <Slider
             value={[speechSpeed]}
             min={0.75}
@@ -1546,7 +1581,7 @@ function ConsultationView({
               setSpeechSpeed(newSpeed);
               try { localStorage.setItem("sca-speech-speed", String(newSpeed)); } catch {}
             }}
-            className="w-28 [&_[data-slot=slider-track]]:bg-slate-700 [&_[data-slot=slider-range]]:bg-green-500 [&_[data-slot=slider-thumb]]:border-green-500"
+            className="w-24 [&_[data-slot=slider-track]]:bg-slate-700 [&_[data-slot=slider-range]]:bg-green-500 [&_[data-slot=slider-thumb]]:border-green-500"
           />
           <span className="text-xs text-slate-300 font-mono w-8">{speechSpeed}x</span>
         </div>
@@ -1714,6 +1749,24 @@ function ConsultationView({
       {/* Speech Speed Control (Chat Mode) */}
       <div className="max-w-4xl mx-auto px-4 pt-3 pb-1 flex items-center gap-3">
         <span className="text-xs text-slate-500 whitespace-nowrap">Speech Speed</span>
+        <div className="flex items-center gap-1">
+          {[0.75, 1, 1.25].map((preset) => (
+            <button
+              key={preset}
+              onClick={() => {
+                setSpeechSpeed(preset);
+                try { localStorage.setItem("sca-speech-speed", String(preset)); } catch {}
+              }}
+              className={`px-2 py-0.5 rounded text-xs font-mono transition-colors ${
+                speechSpeed === preset
+                  ? "bg-green-600 text-white"
+                  : "bg-slate-100 text-slate-600 hover:bg-slate-200"
+              }`}
+            >
+              {preset}x
+            </button>
+          ))}
+        </div>
         <Slider
           value={[speechSpeed]}
           min={0.75}
@@ -1724,7 +1777,7 @@ function ConsultationView({
             setSpeechSpeed(newSpeed);
             try { localStorage.setItem("sca-speech-speed", String(newSpeed)); } catch {}
           }}
-          className="w-28 [&_[data-slot=slider-range]]:bg-green-500 [&_[data-slot=slider-thumb]]:border-green-500"
+          className="w-24 [&_[data-slot=slider-range]]:bg-green-500 [&_[data-slot=slider-thumb]]:border-green-500"
         />
         <span className="text-xs text-slate-600 font-mono w-8">{speechSpeed}x</span>
       </div>
@@ -1733,7 +1786,11 @@ function ConsultationView({
       <main className="max-w-4xl mx-auto px-4 py-6">
         <div className="space-y-4 min-h-[60vh]">
           {messages.map((msg, idx) => (
-            <div key={idx} className={`flex ${msg.role === "user" ? "justify-end" : "justify-start"}`}>
+            <div
+              key={idx}
+              ref={(el) => { if (el) messageRefsMap.current.set(idx, el); }}
+              className={`flex ${msg.role === "user" ? "justify-end" : "justify-start"}`}
+            >
               <div className={`max-w-[75%] px-4 py-3 rounded-2xl transition-all duration-300 ${
                 msg.role === "user"
                   ? "bg-green-600 text-white rounded-br-md"
@@ -1745,33 +1802,44 @@ function ConsultationView({
               }`}>
                 <p className="text-sm leading-relaxed">{msg.content}</p>
                 {msg.role === "assistant" && (
-                  <button
-                    onClick={() => {
-                      if (msg.audioUrl) {
-                        // Replay from stored audio URL
-                        if (audioRef.current) {
-                          setPlayingMessageIndex(idx);
-                          setIsSpeaking(true);
-                          audioRef.current.src = msg.audioUrl;
-                          audioRef.current.onended = () => { setIsSpeaking(false); setPlayingMessageIndex(null); };
-                          audioRef.current.onerror = () => { setIsSpeaking(false); setPlayingMessageIndex(null); };
-                          audioRef.current.play().catch(() => { setIsSpeaking(false); setPlayingMessageIndex(null); });
-                        }
-                      } else {
-                        // Re-synthesize if no stored audio
-                        speakText(msg.content, idx);
-                      }
-                    }}
-                    className={`mt-1.5 flex items-center gap-1 text-xs transition-colors ${
-                      playingMessageIndex === idx
-                        ? "text-[#32CD32] font-medium"
-                        : "text-slate-400 hover:text-green-600"
-                    }`}
-                    title="Replay this response"
-                  >
-                    <Volume2 className={`w-3.5 h-3.5 ${playingMessageIndex === idx ? "animate-pulse" : ""}`} />
-                    <span>{playingMessageIndex === idx ? "Playing..." : "Replay"}</span>
-                  </button>
+                  <div className="mt-1.5 flex items-center gap-2">
+                    {playingMessageIndex === idx ? (
+                      <button
+                        onClick={stopPlayback}
+                        className="flex items-center gap-1 text-xs text-red-500 hover:text-red-600 transition-colors font-medium"
+                        title="Stop playback"
+                      >
+                        <Square className="w-3 h-3 fill-current" />
+                        <span>Stop</span>
+                      </button>
+                    ) : (
+                      <button
+                        onClick={() => {
+                          scrollToMessage(idx);
+                          if (msg.audioUrl) {
+                            if (audioRef.current) {
+                              setPlayingMessageIndex(idx);
+                              setIsSpeaking(true);
+                              audioRef.current.src = msg.audioUrl;
+                              audioRef.current.onended = () => { setIsSpeaking(false); setPlayingMessageIndex(null); };
+                              audioRef.current.onerror = () => { setIsSpeaking(false); setPlayingMessageIndex(null); };
+                              audioRef.current.play().catch(() => { setIsSpeaking(false); setPlayingMessageIndex(null); });
+                            }
+                          } else {
+                            speakText(msg.content, idx);
+                          }
+                        }}
+                        className="flex items-center gap-1 text-xs text-slate-400 hover:text-green-600 transition-colors"
+                        title="Replay this response"
+                      >
+                        <Volume2 className="w-3.5 h-3.5" />
+                        <span>Replay</span>
+                      </button>
+                    )}
+                    {playingMessageIndex === idx && (
+                      <span className="text-xs text-[#32CD32] font-medium animate-pulse">Playing...</span>
+                    )}
+                  </div>
                 )}
               </div>
             </div>

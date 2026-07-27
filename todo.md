@@ -1122,3 +1122,8 @@
 - [x] Add speech speed slider to Chat Mode (shared state with Voice Mode)
 - [x] Active message highlight during playback (green glow #32CD32 on the playing message bubble)
 - [x] Remove highlight when playback finishes (onended/onerror clears playingMessageIndex)
+
+## SCA Voice Enhancements Part 3 (Jul 27, 2026)
+- [x] Stop/pause button on active message bubble during playback
+- [x] Speed preset buttons (0.75x, 1x, 1.25x) alongside slider in both modes
+- [x] Auto-scroll to highlighted message on manual replay (not during normal conversation)
