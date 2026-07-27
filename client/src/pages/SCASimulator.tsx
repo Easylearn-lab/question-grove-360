@@ -7,7 +7,7 @@ import { Input } from "@/components/ui/input";
 import { Slider } from "@/components/ui/slider";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Badge } from "@/components/ui/badge";
-import { ArrowLeft, Mic, MicOff, Send, Loader2, Play, Pause, RotateCcw, CheckCircle2, XCircle, MinusCircle, Clock, Volume2, BarChart3, Lock, Zap, Sparkles, MessageSquare, Square } from "lucide-react";
+import { ArrowLeft, Mic, MicOff, Send, Loader2, Play, Pause, RotateCcw, CheckCircle2, XCircle, MinusCircle, Clock, Volume2, BarChart3, Lock, Zap, Sparkles, MessageSquare, Square, Wifi, WifiOff } from "lucide-react";
 import { trpc } from "@/lib/trpc";
 import { toast } from "sonner";
 import { useStudySession } from "@/contexts/StudySessionContext";
@@ -1148,6 +1148,9 @@ function ConsultationView({
   });
   const [audioUnlocked, setAudioUnlocked] = useState(false);
   const [playingMessageIndex, setPlayingMessageIndex] = useState<number | null>(null);
+  const [ttsTier, setTtsTier] = useState<"elevenlabs" | "webspeech" | "text">("elevenlabs");
+  const [elevenLabsFailCount, setElevenLabsFailCount] = useState(0);
+  const [lowNetworkMode, setLowNetworkMode] = useState(false);
   const [voiceMode, setVoiceMode] = useState<boolean>(() => {
     try { return localStorage.getItem("sca-voice-mode") === "true"; } catch { return false; }
   });
@@ -1271,7 +1274,61 @@ function ConsultationView({
     }
   };
 
+  /**
+   * Three-tier TTS fallback:
+   * Tier 1: ElevenLabs API (full quality)
+   * Tier 2: Web Speech API (browser-native, works offline)
+   * Tier 3: Text-only with visual indicator
+   */
+  const speakWithWebSpeech = (text: string, messageIndex?: number): boolean => {
+    const synth = window.speechSynthesis;
+    if (!synth) return false;
+    try {
+      const utterance = new SpeechSynthesisUtterance(text);
+      utterance.rate = speechSpeed;
+      utterance.lang = "en-GB";
+      // Try to pick a natural-sounding voice
+      const voices = synth.getVoices();
+      const preferred = voices.find(v => v.lang.startsWith("en") && v.name.toLowerCase().includes("female"));
+      if (preferred) utterance.voice = preferred;
+      utterance.onstart = () => {
+        setIsSpeaking(true);
+        if (messageIndex !== undefined) setPlayingMessageIndex(messageIndex);
+      };
+      utterance.onend = () => { setIsSpeaking(false); setPlayingMessageIndex(null); };
+      utterance.onerror = () => { setIsSpeaking(false); setPlayingMessageIndex(null); };
+      synth.speak(utterance);
+      return true;
+    } catch {
+      return false;
+    }
+  };
+
   const speakText = async (text: string, messageIndex?: number) => {
+    // If session has failed 3+ times, skip straight to Web Speech API
+    const currentTier = elevenLabsFailCount >= 3 ? "webspeech" : ttsTier;
+
+    if (currentTier === "text") {
+      // Tier 3: text only — just set the message index for highlight
+      if (messageIndex !== undefined) setPlayingMessageIndex(messageIndex);
+      setTimeout(() => setPlayingMessageIndex(null), 2000);
+      return;
+    }
+
+    if (currentTier === "webspeech") {
+      // Tier 2: Web Speech API
+      setLowNetworkMode(true);
+      const success = speakWithWebSpeech(text, messageIndex);
+      if (!success) {
+        // Tier 3 fallback: text only
+        setTtsTier("text");
+        if (messageIndex !== undefined) setPlayingMessageIndex(messageIndex);
+        setTimeout(() => setPlayingMessageIndex(null), 2000);
+      }
+      return;
+    }
+
+    // Tier 1: ElevenLabs API
     try {
       setIsSpeaking(true);
       if (messageIndex !== undefined) setPlayingMessageIndex(messageIndex);
@@ -1280,6 +1337,9 @@ function ConsultationView({
         voice: voiceProfile.voice as any,
         speed: speechSpeed,
       });
+      // Success — reset failure count
+      setElevenLabsFailCount(0);
+      setLowNetworkMode(false);
       setLastAudioUrl(result.url);
       // Store audioUrl on the last assistant message for replay
       setMessages((prev) => {
@@ -1297,22 +1357,54 @@ function ConsultationView({
         audioRef.current.src = result.url;
         audioRef.current.onended = () => { setIsSpeaking(false); setPlayingMessageIndex(null); };
         audioRef.current.onerror = () => { setIsSpeaking(false); setPlayingMessageIndex(null); };
-        const playPromise = audioRef.current.play();
-        if (playPromise) {
-          playPromise.catch(() => {
-            // Auto-play blocked (mobile) — show replay button
-            setIsSpeaking(false);
-            setPlayingMessageIndex(null);
-            toast.info("Tap the speaker icon to hear the patient's response");
-          });
-        }
+        // Pre-buffer: wait for enough data before playing
+        audioRef.current.preload = "auto";
+        audioRef.current.oncanplaythrough = () => {
+          audioRef.current!.oncanplaythrough = null;
+          const playPromise = audioRef.current!.play();
+          if (playPromise) {
+            playPromise.catch(() => {
+              setIsSpeaking(false);
+              setPlayingMessageIndex(null);
+              toast.info("Tap the speaker icon to hear the patient's response");
+            });
+          }
+        };
+        // Fallback: if canplaythrough doesn't fire in 3s, play anyway
+        setTimeout(() => {
+          if (audioRef.current && audioRef.current.paused && audioRef.current.src) {
+            audioRef.current.play().catch(() => {
+              setIsSpeaking(false);
+              setPlayingMessageIndex(null);
+            });
+          }
+        }, 3000);
       } else {
         setIsSpeaking(false);
         setPlayingMessageIndex(null);
       }
-    } catch {
+    } catch (err: any) {
+      // ElevenLabs failed — increment failure count and fall back
+      const newFailCount = elevenLabsFailCount + 1;
+      setElevenLabsFailCount(newFailCount);
+      console.error(`[TTS Fallback] ElevenLabs failure #${newFailCount}: ${err?.message || "unknown"}`);
+
+      if (newFailCount >= 3) {
+        console.error(`[TTS Fallback] ${new Date().toISOString()} Switching session to Web Speech API after 3 consecutive ElevenLabs failures`);
+        setTtsTier("webspeech");
+        setLowNetworkMode(true);
+      }
+
+      // Try Tier 2: Web Speech API
       setIsSpeaking(false);
       setPlayingMessageIndex(null);
+      const webSpeechSuccess = speakWithWebSpeech(text, messageIndex);
+      if (!webSpeechSuccess) {
+        // Tier 3: text only
+        setTtsTier("text");
+        if (messageIndex !== undefined) setPlayingMessageIndex(messageIndex);
+        setTimeout(() => setPlayingMessageIndex(null), 2000);
+      }
     }
   };
 
@@ -1333,6 +1425,10 @@ function ConsultationView({
     if (audioRef.current) {
       audioRef.current.pause();
       audioRef.current.currentTime = 0;
+    }
+    // Also stop Web Speech API if active
+    if (window.speechSynthesis) {
+      window.speechSynthesis.cancel();
     }
     setIsSpeaking(false);
     setPlayingMessageIndex(null);
@@ -1550,6 +1646,14 @@ function ConsultationView({
           </div>
         </div>
 
+        {/* Low Network Mode Indicator */}
+        {lowNetworkMode && (
+          <div className="px-4 flex items-center justify-center gap-2 py-1">
+            <WifiOff className="w-3.5 h-3.5 text-amber-400" />
+            <span className="text-xs text-amber-400">Low network — using browser voice</span>
+          </div>
+        )}
+
         {/* Speech Speed Control */}
         <div className="px-6 flex items-center justify-center gap-3 py-1">
           <span className="text-xs text-slate-400 whitespace-nowrap">Speech Speed</span>
@@ -1746,6 +1850,14 @@ function ConsultationView({
         </div>
       </header>
 
+      {/* Low Network Mode Indicator (Chat Mode) */}
+      {lowNetworkMode && (
+        <div className="max-w-4xl mx-auto px-4 pt-2 flex items-center gap-2">
+          <WifiOff className="w-3.5 h-3.5 text-amber-500" />
+          <span className="text-xs text-amber-600">Low network — using browser voice</span>
+        </div>
+      )}
+
       {/* Speech Speed Control (Chat Mode) */}
       <div className="max-w-4xl mx-auto px-4 pt-3 pb-1 flex items-center gap-3">
         <span className="text-xs text-slate-500 whitespace-nowrap">Speech Speed</span>
@@ -1816,14 +1928,24 @@ function ConsultationView({
                       <button
                         onClick={() => {
                           scrollToMessage(idx);
-                          if (msg.audioUrl) {
+                          if (msg.audioUrl && !lowNetworkMode && ttsTier === "elevenlabs") {
+                            // Use cached audio URL if available and not in fallback mode
                             if (audioRef.current) {
                               setPlayingMessageIndex(idx);
                               setIsSpeaking(true);
                               audioRef.current.src = msg.audioUrl;
                               audioRef.current.onended = () => { setIsSpeaking(false); setPlayingMessageIndex(null); };
-                              audioRef.current.onerror = () => { setIsSpeaking(false); setPlayingMessageIndex(null); };
-                              audioRef.current.play().catch(() => { setIsSpeaking(false); setPlayingMessageIndex(null); });
+                              audioRef.current.onerror = () => {
+                                // Cached URL failed, fall back to speakText
+                                setIsSpeaking(false);
+                                setPlayingMessageIndex(null);
+                                speakText(msg.content, idx);
+                              };
+                              audioRef.current.play().catch(() => {
+                                setIsSpeaking(false);
+                                setPlayingMessageIndex(null);
+                                speakText(msg.content, idx);
+                              });
                             }
                           } else {
                             speakText(msg.content, idx);

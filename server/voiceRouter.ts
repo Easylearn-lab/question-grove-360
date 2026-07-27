@@ -127,8 +127,10 @@ Respond naturally as a patient would, providing relevant information about your 
     }),
 
   /**
-   * Text-to-speech synthesis using ElevenLabs API
-   * Returns a URL to the generated audio file stored in S3
+   * Text-to-speech synthesis using ElevenLabs API with robust error handling.
+   * Returns a URL to the generated audio file stored in S3.
+   * On failure, returns a structured error with fallback indicator so the frontend
+   * can switch to Web Speech API (Tier 2) or text-only (Tier 3).
    */
   synthesize: protectedProcedure
     .input(
@@ -142,51 +144,81 @@ Respond naturally as a patient would, providing relevant information about your 
       const { ENV } = await import("./_core/env");
 
       if (!ENV.elevenLabsApiKey) {
+        console.error(`[TTS] ${new Date().toISOString()} ElevenLabs API key not configured — fallback required`);
         throw new TRPCError({
-          code: "INTERNAL_SERVER_ERROR",
-          message: "TTS service not configured (missing ElevenLabs API key)",
+          code: "PRECONDITION_FAILED",
+          message: "TTS_FALLBACK_REQUIRED:API key not configured",
         });
       }
 
       // Map the OpenAI-style voice name to an ElevenLabs voice ID
       const elevenLabsVoiceId = ELEVENLABS_VOICE_MAP[input.voice] || ELEVENLABS_VOICE_MAP["alloy"];
 
-      const response = await fetch(
-        `https://api.elevenlabs.io/v1/text-to-speech/${elevenLabsVoiceId}`,
-        {
-          method: "POST",
-          headers: {
-            "xi-api-key": ENV.elevenLabsApiKey,
-            "Content-Type": "application/json",
-            "Accept": "audio/mpeg",
-          },
-          body: JSON.stringify({
-            text: input.text,
-            model_id: "eleven_flash_v2_5",
-            voice_settings: {
-              stability: 0.6,
-              similarity_boost: 0.75,
-              style: 0.3,
-              use_speaker_boost: true,
-              speed: Math.max(0.7, Math.min(1.2, input.speed)),
-            },
-          }),
-        }
-      );
+      // Use AbortController for 4-second timeout
+      const controller = new AbortController();
+      const timeoutId = setTimeout(() => controller.abort(), 4000);
 
-      if (!response.ok) {
-        const errorText = await response.text().catch(() => "");
-        console.error(`[TTS] ElevenLabs error: ${response.status} ${errorText}`);
+      try {
+        const startTime = Date.now();
+        const response = await fetch(
+          `https://api.elevenlabs.io/v1/text-to-speech/${elevenLabsVoiceId}`,
+          {
+            method: "POST",
+            headers: {
+              "xi-api-key": ENV.elevenLabsApiKey,
+              "Content-Type": "application/json",
+              "Accept": "audio/mpeg",
+            },
+            body: JSON.stringify({
+              text: input.text,
+              model_id: "eleven_flash_v2_5",
+              voice_settings: {
+                stability: 0.6,
+                similarity_boost: 0.75,
+                style: 0.3,
+                use_speaker_boost: true,
+                speed: Math.max(0.7, Math.min(1.2, input.speed)),
+              },
+            }),
+            signal: controller.signal,
+          }
+        );
+
+        clearTimeout(timeoutId);
+        const latencyMs = Date.now() - startTime;
+
+        if (!response.ok) {
+          const errorText = await response.text().catch(() => "");
+          console.error(`[TTS] ${new Date().toISOString()} ElevenLabs error: ${response.status} ${errorText} (latency: ${latencyMs}ms)`);
+          throw new TRPCError({
+            code: "PRECONDITION_FAILED",
+            message: `TTS_FALLBACK_REQUIRED:ElevenLabs ${response.status} - ${response.statusText}`,
+          });
+        }
+
+        const audioBuffer = Buffer.from(await response.arrayBuffer());
+        const key = `tts/${ctx.user.id}-${Date.now()}.mp3`;
+        const { url } = await storagePut(key, audioBuffer, "audio/mpeg");
+
+        console.log(`[TTS] ${new Date().toISOString()} ElevenLabs success: ${audioBuffer.length} bytes, ${latencyMs}ms latency`);
+
+        return { url, key, tier: "elevenlabs" as const, latencyMs };
+      } catch (err: any) {
+        clearTimeout(timeoutId);
+        
+        // If it's already a TRPCError, rethrow
+        if (err.code === "PRECONDITION_FAILED") throw err;
+
+        // Timeout or network error
+        const reason = err.name === "AbortError" 
+          ? "Network timeout (>4s)" 
+          : err.message || "Unknown error";
+        
+        console.error(`[TTS] ${new Date().toISOString()} ElevenLabs failure: ${reason}`);
         throw new TRPCError({
-          code: "INTERNAL_SERVER_ERROR",
-          message: `TTS service failed: ${response.status} ${response.statusText}`,
+          code: "PRECONDITION_FAILED",
+          message: `TTS_FALLBACK_REQUIRED:${reason}`,
         });
       }
-
-      const audioBuffer = Buffer.from(await response.arrayBuffer());
-      const key = `tts/${ctx.user.id}-${Date.now()}.mp3`;
-      const { url } = await storagePut(key, audioBuffer, "audio/mpeg");
-
-      return { url, key };
     }),
 });

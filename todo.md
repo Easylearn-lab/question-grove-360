@@ -1155,3 +1155,14 @@
 ## Configurable Timer Duration (Jul 27, 2026)
 - [x] Add 60s/90s/120s preset buttons for timer duration in Exam Mode sidebar
 - [x] Save selected duration to localStorage for persistence between sessions
+
+## SCA Voice Fix & Fallback System (Jul 27, 2026)
+- [x] Diagnose current voice breakage — ElevenLabs 401 payment_required (billing issue)
+- [x] Implement three-tier fallback: ElevenLabs → Web Speech API → text-only with indicator
+- [x] Pre-buffer audio (canplaythrough event + 3s fallback timeout) before playback
+- [x] Auto-switch to Web Speech API if network latency exceeds 4 seconds (AbortController timeout)
+- [x] Show subtle WifiOff icon when in low-network mode (both Voice and Chat modes)
+- [x] Log ElevenLabs API failures to production error log with timestamps
+- [x] Auto-switch session to Web Speech API after 3 consecutive ElevenLabs failures
+- [x] Replay button uses fallback chain when in low-network mode
+- [x] stopPlayback cancels Web Speech API synthesis
