@@ -1147,6 +1147,7 @@ function ConsultationView({
     try { return parseFloat(localStorage.getItem("sca-speech-speed") || "1.0") || 1.0; } catch { return 1.0; }
   });
   const [audioUnlocked, setAudioUnlocked] = useState(false);
+  const [playingMessageIndex, setPlayingMessageIndex] = useState<number | null>(null);
   const [voiceMode, setVoiceMode] = useState<boolean>(() => {
     try { return localStorage.getItem("sca-voice-mode") === "true"; } catch { return false; }
   });
@@ -1269,9 +1270,10 @@ function ConsultationView({
     }
   };
 
-  const speakText = async (text: string) => {
+  const speakText = async (text: string, messageIndex?: number) => {
     try {
       setIsSpeaking(true);
+      if (messageIndex !== undefined) setPlayingMessageIndex(messageIndex);
       const result = await synthesizeMutation.mutateAsync({
         text,
         voice: voiceProfile.voice as any,
@@ -1284,6 +1286,7 @@ function ConsultationView({
         for (let i = updated.length - 1; i >= 0; i--) {
           if (updated[i].role === "assistant" && updated[i].content === text) {
             updated[i] = { ...updated[i], audioUrl: result.url };
+            if (messageIndex === undefined) setPlayingMessageIndex(i);
             break;
           }
         }
@@ -1291,30 +1294,37 @@ function ConsultationView({
       });
       if (audioRef.current) {
         audioRef.current.src = result.url;
-        audioRef.current.onended = () => setIsSpeaking(false);
-        audioRef.current.onerror = () => setIsSpeaking(false);
+        audioRef.current.onended = () => { setIsSpeaking(false); setPlayingMessageIndex(null); };
+        audioRef.current.onerror = () => { setIsSpeaking(false); setPlayingMessageIndex(null); };
         const playPromise = audioRef.current.play();
         if (playPromise) {
           playPromise.catch(() => {
             // Auto-play blocked (mobile) — show replay button
             setIsSpeaking(false);
+            setPlayingMessageIndex(null);
             toast.info("Tap the speaker icon to hear the patient's response");
           });
         }
       } else {
         setIsSpeaking(false);
+        setPlayingMessageIndex(null);
       }
     } catch {
       setIsSpeaking(false);
+      setPlayingMessageIndex(null);
     }
   };
 
   const replayLastAudio = () => {
     if (audioRef.current && lastAudioUrl) {
+      // Find the last assistant message index for highlight
+      const lastAssistantIdx = messages.reduce((acc, m, i) => m.role === "assistant" ? i : acc, -1);
+      if (lastAssistantIdx >= 0) setPlayingMessageIndex(lastAssistantIdx);
       audioRef.current.src = lastAudioUrl;
-      audioRef.current.onended = () => setIsSpeaking(false);
+      audioRef.current.onended = () => { setIsSpeaking(false); setPlayingMessageIndex(null); };
+      audioRef.current.onerror = () => { setIsSpeaking(false); setPlayingMessageIndex(null); };
       setIsSpeaking(true);
-      audioRef.current.play().catch(() => setIsSpeaking(false));
+      audioRef.current.play().catch(() => { setIsSpeaking(false); setPlayingMessageIndex(null); });
     }
   };
 
@@ -1701,15 +1711,37 @@ function ConsultationView({
         </div>
       </header>
 
+      {/* Speech Speed Control (Chat Mode) */}
+      <div className="max-w-4xl mx-auto px-4 pt-3 pb-1 flex items-center gap-3">
+        <span className="text-xs text-slate-500 whitespace-nowrap">Speech Speed</span>
+        <Slider
+          value={[speechSpeed]}
+          min={0.75}
+          max={1.5}
+          step={0.25}
+          onValueChange={(val) => {
+            const newSpeed = val[0];
+            setSpeechSpeed(newSpeed);
+            try { localStorage.setItem("sca-speech-speed", String(newSpeed)); } catch {}
+          }}
+          className="w-28 [&_[data-slot=slider-range]]:bg-green-500 [&_[data-slot=slider-thumb]]:border-green-500"
+        />
+        <span className="text-xs text-slate-600 font-mono w-8">{speechSpeed}x</span>
+      </div>
+
       {/* Messages */}
       <main className="max-w-4xl mx-auto px-4 py-6">
         <div className="space-y-4 min-h-[60vh]">
           {messages.map((msg, idx) => (
             <div key={idx} className={`flex ${msg.role === "user" ? "justify-end" : "justify-start"}`}>
-              <div className={`max-w-[75%] px-4 py-3 rounded-2xl ${
+              <div className={`max-w-[75%] px-4 py-3 rounded-2xl transition-all duration-300 ${
                 msg.role === "user"
                   ? "bg-green-600 text-white rounded-br-md"
-                  : "bg-white border border-slate-200 text-slate-900 rounded-bl-md shadow-sm"
+                  : `bg-white border text-slate-900 rounded-bl-md shadow-sm ${
+                      playingMessageIndex === idx
+                        ? "border-[#32CD32] shadow-[0_0_12px_rgba(50,205,50,0.4)]"
+                        : "border-slate-200"
+                    }`
               }`}>
                 <p className="text-sm leading-relaxed">{msg.content}</p>
                 {msg.role === "assistant" && (
@@ -1718,22 +1750,27 @@ function ConsultationView({
                       if (msg.audioUrl) {
                         // Replay from stored audio URL
                         if (audioRef.current) {
+                          setPlayingMessageIndex(idx);
                           setIsSpeaking(true);
                           audioRef.current.src = msg.audioUrl;
-                          audioRef.current.onended = () => setIsSpeaking(false);
-                          audioRef.current.onerror = () => setIsSpeaking(false);
-                          audioRef.current.play().catch(() => setIsSpeaking(false));
+                          audioRef.current.onended = () => { setIsSpeaking(false); setPlayingMessageIndex(null); };
+                          audioRef.current.onerror = () => { setIsSpeaking(false); setPlayingMessageIndex(null); };
+                          audioRef.current.play().catch(() => { setIsSpeaking(false); setPlayingMessageIndex(null); });
                         }
                       } else {
                         // Re-synthesize if no stored audio
-                        speakText(msg.content);
+                        speakText(msg.content, idx);
                       }
                     }}
-                    className="mt-1.5 flex items-center gap-1 text-xs text-slate-400 hover:text-green-600 transition-colors"
+                    className={`mt-1.5 flex items-center gap-1 text-xs transition-colors ${
+                      playingMessageIndex === idx
+                        ? "text-[#32CD32] font-medium"
+                        : "text-slate-400 hover:text-green-600"
+                    }`}
                     title="Replay this response"
                   >
-                    <Volume2 className="w-3.5 h-3.5" />
-                    <span>Replay</span>
+                    <Volume2 className={`w-3.5 h-3.5 ${playingMessageIndex === idx ? "animate-pulse" : ""}`} />
+                    <span>{playingMessageIndex === idx ? "Playing..." : "Replay"}</span>
                   </button>
                 )}
               </div>

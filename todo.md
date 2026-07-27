@@ -1117,3 +1117,8 @@
 - [x] Add replay/speaker icon on every AI patient message bubble (chat mode)
 - [x] Clicking replay plays stored audioUrl or re-synthesizes via ElevenLabs TTS
 - [x] Store audioUrl on each assistant message after synthesis for instant replay
+
+## SCA Voice Enhancements Part 2 (Jul 27, 2026)
+- [x] Add speech speed slider to Chat Mode (shared state with Voice Mode)
+- [x] Active message highlight during playback (green glow #32CD32 on the playing message bubble)
+- [x] Remove highlight when playback finishes (onended/onerror clears playingMessageIndex)
