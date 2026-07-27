@@ -5,26 +5,55 @@ import { describe, it, expect } from "vitest";
  * 
  * Verifies that each product (AKT, SCA, Picture360) has its own
  * independent access check and paying for one does NOT grant access to another.
+ * 
+ * MULTI-SUBSCRIPTION FIX (July 2026):
+ * Added Scenario 5 to verify that a user with BOTH AKT and SCA subscriptions
+ * gets access to both tracks simultaneously. This was the root cause of the bug
+ * where subscribing to SCA overwrote the AKT subscription.
  */
 
+type ExamTrack = "AKT" | "SCA" | "MSRA";
+
+interface SubscriptionEntry {
+  plan: string;
+  status: string;
+}
+
 // Simulate the getExamTrackFromPlan logic used in the frontend hook
-function getExamTrackFromPlan(plan: string | null): "AKT" | "SCA" | null {
+function getExamTrackFromPlan(plan: string | null): ExamTrack | null {
   if (!plan) return null;
   const upperPlan = plan.toUpperCase();
   if (upperPlan.startsWith("AKT")) return "AKT";
   if (upperPlan.startsWith("SCA")) return "SCA";
+  if (upperPlan.startsWith("MSRA")) return "MSRA";
   return null;
 }
 
-// Simulate the hasAccess logic
+/**
+ * NEW multi-subscription access check.
+ * Checks if ANY subscription in the array matches the required track AND is active/trialing.
+ */
+function checkExamAccessMulti(
+  subscriptions: SubscriptionEntry[],
+  requiredTrack: ExamTrack
+): boolean {
+  return subscriptions.some((sub) => {
+    const isActive = sub.status === "active" || sub.status === "trialing";
+    const matchesTrack = getExamTrackFromPlan(sub.plan) === requiredTrack;
+    return isActive && matchesTrack;
+  });
+}
+
+// Legacy single-subscription check (kept for backward compatibility tests)
 function checkExamAccess(
   subscriptionStatus: string,
   plan: string | null,
-  requiredTrack: "AKT" | "SCA"
+  requiredTrack: ExamTrack
 ): boolean {
-  const isPremium = subscriptionStatus === "active" || subscriptionStatus === "trialing";
-  const userExamTrack = getExamTrackFromPlan(plan);
-  return isPremium && userExamTrack === requiredTrack;
+  return checkExamAccessMulti(
+    plan ? [{ plan, status: subscriptionStatus }] : [],
+    requiredTrack
+  );
 }
 
 describe("Access Control Separation", () => {
@@ -45,6 +74,14 @@ describe("Access Control Separation", () => {
       expect(getExamTrackFromPlan("SCA_6MONTH")).toBe("SCA");
     });
 
+    it("maps MSRA_3MONTH to MSRA track", () => {
+      expect(getExamTrackFromPlan("MSRA_3MONTH")).toBe("MSRA");
+    });
+
+    it("maps MSRA_6MONTH to MSRA track", () => {
+      expect(getExamTrackFromPlan("MSRA_6MONTH")).toBe("MSRA");
+    });
+
     it("returns null for null plan", () => {
       expect(getExamTrackFromPlan(null)).toBeNull();
     });
@@ -54,57 +91,119 @@ describe("Access Control Separation", () => {
     });
   });
 
-  describe("Scenario 1: AKT subscriber", () => {
-    const status = "active";
-    const plan = "AKT_6MONTH";
+  describe("Scenario 1: AKT subscriber only", () => {
+    const subscriptions: SubscriptionEntry[] = [
+      { plan: "AKT_6MONTH", status: "active" },
+    ];
 
     it("CAN access AKT features", () => {
-      expect(checkExamAccess(status, plan, "AKT")).toBe(true);
+      expect(checkExamAccessMulti(subscriptions, "AKT")).toBe(true);
     });
 
     it("CANNOT access SCA features", () => {
-      expect(checkExamAccess(status, plan, "SCA")).toBe(false);
+      expect(checkExamAccessMulti(subscriptions, "SCA")).toBe(false);
+    });
+
+    it("CANNOT access MSRA features", () => {
+      expect(checkExamAccessMulti(subscriptions, "MSRA")).toBe(false);
     });
   });
 
-  describe("Scenario 2: SCA subscriber", () => {
-    const status = "active";
-    const plan = "SCA_3MONTH";
+  describe("Scenario 2: SCA subscriber only", () => {
+    const subscriptions: SubscriptionEntry[] = [
+      { plan: "SCA_3MONTH", status: "active" },
+    ];
 
     it("CAN access SCA features", () => {
-      expect(checkExamAccess(status, plan, "SCA")).toBe(true);
+      expect(checkExamAccessMulti(subscriptions, "SCA")).toBe(true);
     });
 
     it("CANNOT access AKT features", () => {
-      expect(checkExamAccess(status, plan, "AKT")).toBe(false);
+      expect(checkExamAccessMulti(subscriptions, "AKT")).toBe(false);
     });
   });
 
   describe("Scenario 3: No subscription", () => {
-    it("CANNOT access AKT with inactive status", () => {
-      expect(checkExamAccess("inactive", null, "AKT")).toBe(false);
+    const subscriptions: SubscriptionEntry[] = [];
+
+    it("CANNOT access AKT with no subscriptions", () => {
+      expect(checkExamAccessMulti(subscriptions, "AKT")).toBe(false);
     });
 
-    it("CANNOT access SCA with inactive status", () => {
-      expect(checkExamAccess("inactive", null, "SCA")).toBe(false);
+    it("CANNOT access SCA with no subscriptions", () => {
+      expect(checkExamAccessMulti(subscriptions, "SCA")).toBe(false);
     });
   });
 
   describe("Scenario 4: Trialing status (admin coupon)", () => {
     it("AKT trialing CAN access AKT", () => {
-      expect(checkExamAccess("trialing", "AKT_3MONTH", "AKT")).toBe(true);
+      expect(checkExamAccessMulti([{ plan: "AKT_3MONTH", status: "trialing" }], "AKT")).toBe(true);
     });
 
     it("AKT trialing CANNOT access SCA", () => {
-      expect(checkExamAccess("trialing", "AKT_3MONTH", "SCA")).toBe(false);
+      expect(checkExamAccessMulti([{ plan: "AKT_3MONTH", status: "trialing" }], "SCA")).toBe(false);
     });
 
     it("SCA trialing CAN access SCA", () => {
-      expect(checkExamAccess("trialing", "SCA_6MONTH", "SCA")).toBe(true);
+      expect(checkExamAccessMulti([{ plan: "SCA_6MONTH", status: "trialing" }], "SCA")).toBe(true);
     });
 
     it("SCA trialing CANNOT access AKT", () => {
-      expect(checkExamAccess("trialing", "SCA_6MONTH", "AKT")).toBe(false);
+      expect(checkExamAccessMulti([{ plan: "SCA_6MONTH", status: "trialing" }], "AKT")).toBe(false);
+    });
+  });
+
+  describe("Scenario 5: DUAL subscriber (AKT + SCA) — THE BUG FIX", () => {
+    const subscriptions: SubscriptionEntry[] = [
+      { plan: "AKT_3MONTH", status: "active" },
+      { plan: "SCA_3MONTH", status: "active" },
+    ];
+
+    it("CAN access AKT features", () => {
+      expect(checkExamAccessMulti(subscriptions, "AKT")).toBe(true);
+    });
+
+    it("CAN access SCA features", () => {
+      expect(checkExamAccessMulti(subscriptions, "SCA")).toBe(true);
+    });
+
+    it("CANNOT access MSRA features (not subscribed)", () => {
+      expect(checkExamAccessMulti(subscriptions, "MSRA")).toBe(false);
+    });
+  });
+
+  describe("Scenario 6: One active, one cancelled", () => {
+    const subscriptions: SubscriptionEntry[] = [
+      { plan: "AKT_3MONTH", status: "active" },
+      { plan: "SCA_3MONTH", status: "cancelled" },
+    ];
+
+    it("CAN access AKT (still active)", () => {
+      expect(checkExamAccessMulti(subscriptions, "AKT")).toBe(true);
+    });
+
+    it("CANNOT access SCA (cancelled)", () => {
+      expect(checkExamAccessMulti(subscriptions, "SCA")).toBe(false);
+    });
+  });
+
+  describe("Scenario 7: Triple subscriber (AKT + SCA + MSRA)", () => {
+    const subscriptions: SubscriptionEntry[] = [
+      { plan: "AKT_6MONTH", status: "active" },
+      { plan: "SCA_6MONTH", status: "active" },
+      { plan: "MSRA_3MONTH", status: "active" },
+    ];
+
+    it("CAN access AKT", () => {
+      expect(checkExamAccessMulti(subscriptions, "AKT")).toBe(true);
+    });
+
+    it("CAN access SCA", () => {
+      expect(checkExamAccessMulti(subscriptions, "SCA")).toBe(true);
+    });
+
+    it("CAN access MSRA", () => {
+      expect(checkExamAccessMulti(subscriptions, "MSRA")).toBe(true);
     });
   });
 
@@ -113,29 +212,49 @@ describe("Access Control Separation", () => {
       // Picture360 access is checked via a separate table and hook (usePicture360Access)
       // It does NOT use useExamAccess or useSubscription
       // This test documents the architectural separation
-      const aktSubscriber = checkExamAccess("active", "AKT_6MONTH", "AKT");
-      const scaSubscriber = checkExamAccess("active", "SCA_3MONTH", "SCA");
+      const dualSubscriber: SubscriptionEntry[] = [
+        { plan: "AKT_6MONTH", status: "active" },
+        { plan: "SCA_3MONTH", status: "active" },
+      ];
       
-      // Neither AKT nor SCA subscription grants Picture360 access
+      // Having AKT+SCA does NOT grant Picture360 access
       // Picture360 requires its own purchase recorded in picture360_access table
-      expect(aktSubscriber).toBe(true); // AKT access only
-      expect(scaSubscriber).toBe(true); // SCA access only
+      expect(checkExamAccessMulti(dualSubscriber, "AKT")).toBe(true);
+      expect(checkExamAccessMulti(dualSubscriber, "SCA")).toBe(true);
       // Picture360 access would be: SELECT * FROM picture360_access WHERE userId = ? AND status = 'active'
     });
   });
 
   describe("Edge cases", () => {
-    it("canceled subscription (status=canceled) has no access", () => {
-      expect(checkExamAccess("canceled", "AKT_6MONTH", "AKT")).toBe(false);
+    it("canceled subscription has no access", () => {
+      expect(checkExamAccessMulti([{ plan: "AKT_6MONTH", status: "canceled" }], "AKT")).toBe(false);
     });
 
     it("past_due subscription has no access", () => {
-      expect(checkExamAccess("past_due", "SCA_3MONTH", "SCA")).toBe(false);
+      expect(checkExamAccessMulti([{ plan: "SCA_3MONTH", status: "past_due" }], "SCA")).toBe(false);
     });
 
-    it("active status but null plan has no access", () => {
-      expect(checkExamAccess("active", null, "AKT")).toBe(false);
-      expect(checkExamAccess("active", null, "SCA")).toBe(false);
+    it("empty subscriptions array has no access", () => {
+      expect(checkExamAccessMulti([], "AKT")).toBe(false);
+      expect(checkExamAccessMulti([], "SCA")).toBe(false);
+    });
+
+    it("subscription with null-like plan has no access", () => {
+      expect(checkExamAccessMulti([{ plan: "", status: "active" }], "AKT")).toBe(false);
+    });
+  });
+
+  describe("Legacy single-subscription helper (backward compat)", () => {
+    it("active AKT can access AKT", () => {
+      expect(checkExamAccess("active", "AKT_6MONTH", "AKT")).toBe(true);
+    });
+
+    it("active AKT cannot access SCA", () => {
+      expect(checkExamAccess("active", "AKT_6MONTH", "SCA")).toBe(false);
+    });
+
+    it("inactive with null plan has no access", () => {
+      expect(checkExamAccess("inactive", null, "AKT")).toBe(false);
     });
   });
 });

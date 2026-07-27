@@ -1580,3 +1580,116 @@ export async function getUserFlaggedQuestionIds(userId: number) {
     return [];
   }
 }
+
+
+// ============================================================
+// Multi-Subscription Helpers (subscriptions table)
+// ============================================================
+
+/**
+ * Insert or update a subscription record in the subscriptions table.
+ * Uses stripeSubscriptionId as the unique key for upsert.
+ */
+export async function upsertSubscription(data: {
+  userId: number;
+  planType: string;
+  examId?: number | null;
+  status: string;
+  paymentProvider?: string;
+  stripeSubscriptionId: string;
+  currentPeriodStart?: Date | null;
+  currentPeriodEnd?: Date | null;
+}) {
+  const db = await getDb();
+  if (!db) return undefined;
+
+  try {
+    const { subscriptions } = await import("../drizzle/schema");
+
+    // Check if subscription already exists
+    const existing = await db
+      .select()
+      .from(subscriptions)
+      .where(eq(subscriptions.stripeSubscriptionId, data.stripeSubscriptionId))
+      .limit(1);
+
+    if (existing.length > 0) {
+      // Update existing subscription
+      await db
+        .update(subscriptions)
+        .set({
+          status: data.status,
+          planType: data.planType,
+          currentPeriodStart: data.currentPeriodStart || undefined,
+          currentPeriodEnd: data.currentPeriodEnd || undefined,
+        })
+        .where(eq(subscriptions.stripeSubscriptionId, data.stripeSubscriptionId));
+      return existing[0];
+    }
+
+    // Insert new subscription
+    await db.insert(subscriptions).values({
+      userId: data.userId,
+      planType: data.planType,
+      examId: data.examId || null,
+      status: data.status,
+      paymentProvider: data.paymentProvider || "stripe",
+      stripeSubscriptionId: data.stripeSubscriptionId,
+      currentPeriodStart: data.currentPeriodStart || null,
+      currentPeriodEnd: data.currentPeriodEnd || null,
+    });
+
+    const inserted = await db
+      .select()
+      .from(subscriptions)
+      .where(eq(subscriptions.stripeSubscriptionId, data.stripeSubscriptionId))
+      .limit(1);
+    return inserted.length > 0 ? inserted[0] : undefined;
+  } catch (error) {
+    console.error("[Database] Failed to upsert subscription:", error);
+    return undefined;
+  }
+}
+
+/**
+ * Get all subscriptions for a user (active, trialing, past_due).
+ */
+export async function getSubscriptionsByUserId(userId: number) {
+  const db = await getDb();
+  if (!db) return [];
+
+  try {
+    const { subscriptions } = await import("../drizzle/schema");
+    const results = await db
+      .select()
+      .from(subscriptions)
+      .where(eq(subscriptions.userId, userId));
+    return results;
+  } catch (error) {
+    console.error("[Database] Failed to get subscriptions by userId:", error);
+    return [];
+  }
+}
+
+/**
+ * Update a subscription by its Stripe subscription ID.
+ */
+export async function updateSubscriptionByStripeId(
+  stripeSubscriptionId: string,
+  data: Record<string, any>
+) {
+  const db = await getDb();
+  if (!db) return false;
+
+  try {
+    const { subscriptions } = await import("../drizzle/schema");
+    await db
+      .update(subscriptions)
+      .set(data)
+      .where(eq(subscriptions.stripeSubscriptionId, stripeSubscriptionId));
+    return true;
+  } catch (error) {
+    console.error("[Database] Failed to update subscription by stripeId:", error);
+    return false;
+  }
+}

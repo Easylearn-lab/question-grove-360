@@ -1166,3 +1166,20 @@
 - [x] Auto-switch session to Web Speech API after 3 consecutive ElevenLabs failures
 - [x] Replay button uses fallback chain when in low-network mode
 - [x] stopPlayback cancels Web Speech API synthesis
+
+
+## CRITICAL FIX: Subscription Overwrite Bug (Jul 27, 2026)
+- [x] Root cause identified: profiles table has SINGLE subscription columns, webhook overwrites previous subscription
+- [x] Added multi-subscription DB helpers (upsertSubscription, getSubscriptionsByUserId, updateSubscriptionByStripeId) to server/db.ts
+- [x] Updated webhook handler (stripeWebhook.ts) to ALSO write to subscriptions table on checkout.session.completed
+- [x] Updated webhook handler to update subscriptions table on subscription.updated and subscription.deleted
+- [x] Updated getSubscriptionStatus API to return ALL subscriptions from subscriptions table (array)
+- [x] Updated useSubscription hook to return subscriptions[] array
+- [x] Updated useExamAccess hook to check if ANY subscription matches required track
+- [x] Updated CrossSellGate component to use subscriptions array for cross-sell logic
+- [x] Backfilled subscriptions table from profiles (8 existing active users)
+- [x] Restored AKT access for userId 1560001 (owner) and userId 2130006 (manually inserted AKT_3MONTH records)
+- [x] All 428 tests passing, TypeScript clean
+- [x] Update access-control.test.ts to cover multi-subscription scenarios (35 tests passing)
+- [ ] Update cross-sell-gate.test.ts to cover dual-subscriber case
+- [ ] Update adminRouter.ts to show all subscriptions in admin panel (non-critical, cosmetic)

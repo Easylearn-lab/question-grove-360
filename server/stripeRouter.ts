@@ -68,7 +68,16 @@ export const stripeRouter = router({
       };
     }),
 
-  // Get subscription status from local DB (no Stripe API call needed)
+  /**
+   * Get subscription status — returns ALL active subscriptions for the user.
+   * 
+   * MULTI-SUBSCRIPTION FIX (July 2026):
+   * Previously returned a single { status, plan } from the profiles table.
+   * Now returns an array of ALL subscriptions from the subscriptions table,
+   * so a user with both AKT and SCA subscriptions gets access to both.
+   * 
+   * Also returns a legacy single-subscription shape for backward compatibility.
+   */
   getSubscriptionStatus: publicProcedure
     .query(async ({ ctx }) => {
       // Return inactive for unauthenticated users (prevents UNAUTHORIZED error
@@ -79,62 +88,135 @@ export const stripeRouter = router({
           plan: null,
           currentPeriodEnd: null,
           cancelAtPeriodEnd: false,
-        };
-      }
-      const { getProfileByUserId } = await import("./db");
-      const profile = await getProfileByUserId(ctx.user.id);
-
-      if (!profile) {
-        return {
-          status: "inactive" as const,
-          plan: null,
-          currentPeriodEnd: null,
-          cancelAtPeriodEnd: false,
+          subscriptions: [] as Array<{
+            plan: string;
+            status: string;
+            currentPeriodEnd: Date | null;
+            cancelAtPeriodEnd: boolean;
+            stripeSubscriptionId: string | null;
+          }>,
         };
       }
 
-      // If we have a stripe subscription ID, try to get live status
+      const { getProfileByUserId, getSubscriptionsByUserId } = await import("./db");
       const stripe = getStripe();
-      if (stripe && profile.stripeSubscriptionId) {
-        try {
-          const subscription = await stripe.subscriptions.retrieve(profile.stripeSubscriptionId) as any;
-          return {
-            status: subscription.status,
+
+      // Get ALL subscriptions from the subscriptions table
+      const allSubscriptions = await getSubscriptionsByUserId(ctx.user.id);
+
+      // Build the subscriptions array with live Stripe data where possible
+      const subscriptionsResult: Array<{
+        plan: string;
+        status: string;
+        currentPeriodEnd: Date | null;
+        cancelAtPeriodEnd: boolean;
+        stripeSubscriptionId: string | null;
+      }> = [];
+
+      for (const sub of allSubscriptions) {
+        // Skip cancelled subscriptions
+        if (sub.status === "cancelled") continue;
+
+        let status = sub.status;
+        let currentPeriodEnd = sub.currentPeriodEnd;
+        let cancelAtPeriodEnd = false;
+
+        // Try to get live status from Stripe
+        if (stripe && sub.stripeSubscriptionId) {
+          try {
+            const stripeSub = await stripe.subscriptions.retrieve(sub.stripeSubscriptionId) as any;
+            status = stripeSub.status;
+            currentPeriodEnd = new Date(stripeSub.current_period_end * 1000);
+            cancelAtPeriodEnd = stripeSub.cancel_at_period_end;
+          } catch (error) {
+            // Use local data if Stripe call fails
+            console.warn(`[Stripe] Could not retrieve subscription ${sub.stripeSubscriptionId}:`, error);
+          }
+        }
+
+        subscriptionsResult.push({
+          plan: sub.planType,
+          status,
+          currentPeriodEnd,
+          cancelAtPeriodEnd,
+          stripeSubscriptionId: sub.stripeSubscriptionId,
+        });
+      }
+
+      // If subscriptions table is empty, fall back to profiles table (migration period)
+      if (subscriptionsResult.length === 0) {
+        const profile = await getProfileByUserId(ctx.user.id);
+        if (profile && profile.subscriptionPlan && profile.subscriptionStatus !== "inactive") {
+          let status = profile.subscriptionStatus || "inactive";
+          let currentPeriodEnd: Date | null = null;
+          let cancelAtPeriodEnd = false;
+
+          if (stripe && profile.stripeSubscriptionId) {
+            try {
+              const subscription = await stripe.subscriptions.retrieve(profile.stripeSubscriptionId) as any;
+              status = subscription.status;
+              currentPeriodEnd = new Date(subscription.current_period_end * 1000);
+              cancelAtPeriodEnd = subscription.cancel_at_period_end;
+            } catch (error) {
+              console.warn("[Stripe] Could not retrieve subscription, using local data:", error);
+            }
+          }
+
+          subscriptionsResult.push({
             plan: profile.subscriptionPlan,
-            currentPeriodEnd: new Date(subscription.current_period_end * 1000),
-            cancelAtPeriodEnd: subscription.cancel_at_period_end,
-          };
-        } catch (error) {
-          console.warn("[Stripe] Could not retrieve subscription, using local data:", error);
+            status,
+            currentPeriodEnd,
+            cancelAtPeriodEnd,
+            stripeSubscriptionId: profile.stripeSubscriptionId,
+          });
         }
       }
 
-      // Fallback to local profile data
+      // Legacy single-subscription response (use the first active one or the first one)
+      const activeSubs = subscriptionsResult.filter(s => s.status === "active" || s.status === "trialing");
+      const primarySub = activeSubs.length > 0 ? activeSubs[0] : subscriptionsResult[0];
+
       return {
-        status: profile.subscriptionStatus || "inactive",
-        plan: profile.subscriptionPlan || null,
-        currentPeriodEnd: null,
-        cancelAtPeriodEnd: false,
+        status: primarySub?.status || "inactive",
+        plan: primarySub?.plan || null,
+        currentPeriodEnd: primarySub?.currentPeriodEnd || null,
+        cancelAtPeriodEnd: primarySub?.cancelAtPeriodEnd || false,
+        subscriptions: subscriptionsResult,
       };
     }),
 
   // Cancel subscription
   cancelSubscription: protectedProcedure
-    .mutation(async ({ ctx }) => {
+    .input(z.object({
+      stripeSubscriptionId: z.string().optional(),
+    }).optional())
+    .mutation(async ({ ctx, input }) => {
       const stripe = getStripe();
       if (!stripe) {
         throw new Error("Stripe is not configured");
       }
 
-      const { getProfileByUserId } = await import("./db");
-      const profile = await getProfileByUserId(ctx.user.id);
+      let subscriptionId: string | undefined;
 
-      if (!profile || !profile.stripeSubscriptionId) {
-        throw new Error("No active subscription found");
+      // If a specific subscription ID is provided, use it
+      if (input?.stripeSubscriptionId) {
+        subscriptionId = input.stripeSubscriptionId;
+      } else {
+        // Fall back to the profile's subscription ID
+        const { getProfileByUserId } = await import("./db");
+        const profile = await getProfileByUserId(ctx.user.id);
+        if (!profile || !profile.stripeSubscriptionId) {
+          throw new Error("No active subscription found");
+        }
+        subscriptionId = profile.stripeSubscriptionId;
+      }
+
+      if (!subscriptionId) {
+        throw new Error("No subscription ID provided");
       }
 
       const subscription = await stripe.subscriptions.update(
-        profile.stripeSubscriptionId,
+        subscriptionId,
         { cancel_at_period_end: true }
       );
 

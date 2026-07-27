@@ -16,6 +16,12 @@ import Stripe from "stripe";
  *
  * The handler tries both secrets in order. If the first fails signature verification,
  * it tries the second. This ensures both endpoints can share the same handler code.
+ *
+ * MULTI-SUBSCRIPTION FIX (July 2026):
+ * Previously, handleCheckoutSessionCompleted only updated the profiles table (single subscription columns),
+ * which caused the overwrite bug when a user subscribed to a second product.
+ * Now we ALSO write to the `subscriptions` table so each subscription is tracked independently.
+ * The profiles table is still updated for backward compatibility (stores the LATEST subscription).
  */
 
 function getStripe(): Stripe | null {
@@ -44,6 +50,20 @@ function verifyWebhookSignature(
       continue;
     }
   }
+  return null;
+}
+
+/**
+ * Map a plan_key to an examId for the subscriptions table.
+ * AKT plans → examId 1
+ * SCA plans → examId 30001 (first SCA case)
+ * MSRA plans → null (no specific exam)
+ */
+function getExamIdFromPlanKey(planKey: string): number | null {
+  const upper = (planKey || "").toUpperCase();
+  if (upper.startsWith("AKT")) return 1;
+  if (upper.startsWith("SCA")) return 30001;
+  if (upper.startsWith("MSRA")) return null;
   return null;
 }
 
@@ -143,19 +163,59 @@ async function handleCheckoutSessionCompleted(session: any) {
     return;
   }
 
-  // Otherwise, handle as AKT/SCA subscription
-  const { getProfileByUserId, updateProfile, getOrCreateProfile } = await import("../db");
+  // Otherwise, handle as AKT/SCA/MSRA subscription
+  const { getProfileByUserId, updateProfile, getOrCreateProfile, upsertSubscription } = await import("../db");
 
   // Ensure profile exists
   await getOrCreateProfile(userId);
 
-  // Update profile with Stripe customer and subscription info
+  const planKey = session.metadata?.plan_key || "AKT_3MONTH";
+  const stripeSubscriptionId = session.subscription;
+
+  // 1. Update profiles table (backward compat — stores the LATEST subscription)
   await updateProfile(userId, {
     stripeCustomerId: session.customer,
-    stripeSubscriptionId: session.subscription,
+    stripeSubscriptionId: stripeSubscriptionId,
     subscriptionStatus: "active",
-    subscriptionPlan: session.metadata?.plan_key || "AKT_3MONTH",
+    subscriptionPlan: planKey,
   });
+
+  // 2. ALSO insert/upsert into the subscriptions table (multi-subscription support)
+  if (stripeSubscriptionId) {
+    const examId = getExamIdFromPlanKey(planKey);
+
+    // Try to get period dates from Stripe
+    let currentPeriodStart: Date | null = null;
+    let currentPeriodEnd: Date | null = null;
+
+    try {
+      const stripe = getStripe();
+      if (stripe) {
+        const sub = await stripe.subscriptions.retrieve(stripeSubscriptionId) as any;
+        if (sub.current_period_start) {
+          currentPeriodStart = new Date(sub.current_period_start * 1000);
+        }
+        if (sub.current_period_end) {
+          currentPeriodEnd = new Date(sub.current_period_end * 1000);
+        }
+      }
+    } catch (err) {
+      console.warn("[Webhook] Could not retrieve subscription period dates:", err);
+    }
+
+    await upsertSubscription({
+      userId,
+      planType: planKey,
+      examId,
+      status: "active",
+      paymentProvider: "stripe",
+      stripeSubscriptionId,
+      currentPeriodStart,
+      currentPeriodEnd,
+    });
+
+    console.log(`[Webhook] Subscription upserted in subscriptions table: userId=${userId}, plan=${planKey}, stripeSubId=${stripeSubscriptionId}`);
+  }
 
   console.log("[Webhook] Profile updated with subscription info for user:", userId);
 }
@@ -187,21 +247,45 @@ async function handlePicture360Purchase(userId: number, sessionId: string) {
 async function handleSubscriptionUpdated(subscription: any) {
   console.log("[Webhook] Subscription updated:", subscription.id, "status:", subscription.status);
 
-  const { updateProfileByStripeSubscriptionId } = await import("../db");
+  const { updateProfileByStripeSubscriptionId, updateSubscriptionByStripeId } = await import("../db");
 
+  // Update profiles table (backward compat)
   await updateProfileByStripeSubscriptionId(subscription.id, {
     subscriptionStatus: subscription.status,
   });
+
+  // Also update the subscriptions table
+  const updateData: Record<string, any> = {
+    status: subscription.status,
+  };
+  if (subscription.current_period_start) {
+    updateData.currentPeriodStart = new Date(subscription.current_period_start * 1000);
+  }
+  if (subscription.current_period_end) {
+    updateData.currentPeriodEnd = new Date(subscription.current_period_end * 1000);
+  }
+  if (subscription.canceled_at) {
+    updateData.cancelledAt = new Date(subscription.canceled_at * 1000);
+  }
+
+  await updateSubscriptionByStripeId(subscription.id, updateData);
 }
 
 async function handleSubscriptionDeleted(subscription: any) {
   console.log("[Webhook] Subscription deleted:", subscription.id);
 
-  const { updateProfileByStripeSubscriptionId } = await import("../db");
+  const { updateProfileByStripeSubscriptionId, updateSubscriptionByStripeId } = await import("../db");
 
+  // Update profiles table (backward compat)
   await updateProfileByStripeSubscriptionId(subscription.id, {
     subscriptionStatus: "cancelled",
     stripeSubscriptionId: null,
+  });
+
+  // Also update the subscriptions table
+  await updateSubscriptionByStripeId(subscription.id, {
+    status: "cancelled",
+    cancelledAt: new Date(),
   });
 }
 
@@ -214,9 +298,16 @@ async function handleInvoicePaymentFailed(invoice: any) {
 
   // If subscription payment fails, we could downgrade access
   if (invoice.subscription) {
-    const { updateProfileByStripeSubscriptionId } = await import("../db");
+    const { updateProfileByStripeSubscriptionId, updateSubscriptionByStripeId } = await import("../db");
+
+    // Update profiles table
     await updateProfileByStripeSubscriptionId(invoice.subscription, {
       subscriptionStatus: "past_due",
+    });
+
+    // Also update subscriptions table
+    await updateSubscriptionByStripeId(invoice.subscription, {
+      status: "past_due",
     });
   }
 }

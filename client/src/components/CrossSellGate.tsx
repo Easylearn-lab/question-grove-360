@@ -7,7 +7,7 @@ import { useSubscription } from "@/hooks/useSubscription";
 import { useAuth } from "@/_core/hooks/useAuth";
 import { trpc } from "@/lib/trpc";
 import { toast } from "sonner";
-import { ExamTrack } from "@/hooks/useExamAccess";
+import { ExamTrack, getExamTrackFromPlan } from "@/hooks/useExamAccess";
 
 interface CrossSellGateProps {
   hasAccess: boolean;
@@ -20,6 +20,10 @@ interface CrossSellGateProps {
  * A subscription gate that shows targeted cross-sell messages for users
  * who have the OTHER exam subscription. For users with no subscription,
  * it shows the generic upgrade prompt.
+ *
+ * MULTI-SUBSCRIPTION FIX (July 2026):
+ * Now uses the subscriptions array to determine which tracks the user has,
+ * instead of a single plan string.
  */
 export function CrossSellGate({
   hasAccess,
@@ -28,7 +32,7 @@ export function CrossSellGate({
   featureName,
 }: CrossSellGateProps) {
   const [, navigate] = useLocation();
-  const { isPremium, plan } = useSubscription();
+  const { isPremium, subscriptions } = useSubscription();
   const { isAuthenticated } = useAuth();
   const [loadingPlan, setLoadingPlan] = useState<string | null>(null);
   const createCheckout = trpc.stripe.createCheckoutSession.useMutation();
@@ -38,9 +42,15 @@ export function CrossSellGate({
     return <>{children}</>;
   }
 
-  // Determine if user has the OTHER subscription
-  const userTrack = getTrackFromPlan(plan);
-  const hasOtherSubscription = isPremium && userTrack !== null && userTrack !== requiredTrack;
+  // Determine if user has ANY other active subscription (for cross-sell)
+  const activeSubscriptions = subscriptions.filter(
+    (sub) => sub.status === "active" || sub.status === "trialing"
+  );
+  const userTracks = activeSubscriptions
+    .map((sub) => getExamTrackFromPlan(sub.plan))
+    .filter((track): track is ExamTrack => track !== null);
+
+  const hasOtherSubscription = isPremium && userTracks.length > 0 && !userTracks.includes(requiredTrack);
 
   const handleCheckout = async (planKey: string) => {
     if (!isAuthenticated) {
@@ -64,10 +74,10 @@ export function CrossSellGate({
 
   // Cross-sell: user has the other subscription
   if (hasOtherSubscription) {
-    const otherTrackName = userTrack === "AKT" ? "AKT" : "SCA";
-    const targetTrackName = requiredTrack === "AKT" ? "MRCGP AKT" : "SCA Simulator";
-    const plan3mo = requiredTrack === "SCA" ? "SCA_3MONTH" : "AKT_3MONTH";
-    const plan6mo = requiredTrack === "SCA" ? "SCA_6MONTH" : "AKT_6MONTH";
+    const otherTrackNames = userTracks.join(" & ");
+    const targetTrackName = requiredTrack === "AKT" ? "MRCGP AKT" : requiredTrack === "SCA" ? "SCA Simulator" : "MSRA";
+    const plan3mo = requiredTrack === "SCA" ? "SCA_3MONTH" : requiredTrack === "AKT" ? "AKT_3MONTH" : "MSRA_3MONTH";
+    const plan6mo = requiredTrack === "SCA" ? "SCA_6MONTH" : requiredTrack === "AKT" ? "AKT_6MONTH" : "MSRA_6MONTH";
 
     return (
       <Card className="p-12 border-slate-200 text-center">
@@ -76,7 +86,7 @@ export function CrossSellGate({
         </div>
         <h3 className="text-xl font-bold text-slate-900 mb-2">Add {targetTrackName}</h3>
         <p className="text-slate-600 mb-6 max-w-md mx-auto">
-          You have an active {otherTrackName} subscription. Add {targetTrackName} for{" "}
+          You have an active {otherTrackNames} subscription. Add {targetTrackName} for{" "}
           <span className="font-semibold">£20 for 3 months</span> or{" "}
           <span className="font-semibold">£35 for 6 months</span>.
         </p>
@@ -130,12 +140,4 @@ export function CrossSellGate({
       </Button>
     </Card>
   );
-}
-
-function getTrackFromPlan(plan: string | null): ExamTrack | null {
-  if (!plan) return null;
-  const upper = plan.toUpperCase();
-  if (upper.startsWith("AKT")) return "AKT";
-  if (upper.startsWith("SCA")) return "SCA";
-  return null;
 }

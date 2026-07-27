@@ -1,4 +1,4 @@
-import { useSubscription } from "./useSubscription";
+import { useSubscription, SubscriptionEntry } from "./useSubscription";
 
 export type ExamTrack = "AKT" | "SCA" | "MSRA";
 
@@ -7,21 +7,35 @@ export type ExamTrack = "AKT" | "SCA" | "MSRA";
  * Each exam product (AKT, SCA, MSRA) requires its own subscription — paying for one
  * does NOT grant access to any other.
  *
+ * MULTI-SUBSCRIPTION FIX (July 2026):
+ * Previously checked a SINGLE plan from the profiles table, which broke when a user
+ * had multiple subscriptions (the second overwrote the first).
+ * Now checks ALL subscriptions — access is granted if ANY active/trialing subscription
+ * matches the required track.
+ *
  * Plan key → ExamTrack mapping:
  * - AKT_3MONTH, AKT_6MONTH → "AKT"
  * - SCA_3MONTH, SCA_6MONTH → "SCA"
  * - MSRA_3MONTH, MSRA_6MONTH → "MSRA"
  */
 export function useExamAccess(requiredTrack: ExamTrack) {
-  const { isPremium, isLoading, status, plan } = useSubscription();
+  const { isPremium, isLoading, status, plan, subscriptions } = useSubscription();
 
-  // Derive the exam track from the plan key
-  const userExamTrack = getExamTrackFromPlan(plan);
+  // Check if ANY subscription matches the required track AND is active/trialing
+  const hasAccess = subscriptions.some((sub) => {
+    const isActive = sub.status === "active" || sub.status === "trialing";
+    const matchesTrack = getExamTrackFromPlan(sub.plan) === requiredTrack;
+    return isActive && matchesTrack;
+  });
 
-  // Access is granted only if:
-  // 1. The subscription is active/trialing (isPremium)
-  // 2. The subscription plan matches the required exam track
-  const hasAccess = isPremium && userExamTrack === requiredTrack;
+  // Get the user's active tracks (for cross-sell logic)
+  const userExamTracks = subscriptions
+    .filter((sub) => sub.status === "active" || sub.status === "trialing")
+    .map((sub) => getExamTrackFromPlan(sub.plan))
+    .filter((track): track is ExamTrack => track !== null);
+
+  // Legacy single-track field (first active track)
+  const userExamTrack = userExamTracks.length > 0 ? userExamTracks[0] : getExamTrackFromPlan(plan);
 
   return {
     hasAccess,
@@ -29,6 +43,8 @@ export function useExamAccess(requiredTrack: ExamTrack) {
     status,
     plan,
     userExamTrack,
+    userExamTracks,
+    subscriptions,
   };
 }
 
@@ -36,7 +52,7 @@ export function useExamAccess(requiredTrack: ExamTrack) {
  * Extract the exam track from a plan key string.
  * Returns null if the plan is not recognized.
  */
-function getExamTrackFromPlan(plan: string | null): ExamTrack | null {
+export function getExamTrackFromPlan(plan: string | null): ExamTrack | null {
   if (!plan) return null;
   const upperPlan = plan.toUpperCase();
   if (upperPlan.startsWith("AKT")) return "AKT";
