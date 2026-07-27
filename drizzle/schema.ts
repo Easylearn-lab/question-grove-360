@@ -619,3 +619,13 @@ export const msraWaitlist = mysqlTable("msra_waitlist", {
 });
 export type MsraWaitlistEntry = typeof msraWaitlist.$inferSelect;
 export type InsertMsraWaitlistEntry = typeof msraWaitlist.$inferInsert;
+
+// Question Flags (persistent per-user flagged questions)
+export const questionFlags = mysqlTable("question_flags", {
+  id: int("id").autoincrement().primaryKey(),
+  userId: int("userId").notNull().references(() => users.id),
+  questionId: int("questionId").notNull(),
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+});
+export type QuestionFlag = typeof questionFlags.$inferSelect;
+export type InsertQuestionFlag = typeof questionFlags.$inferInsert;

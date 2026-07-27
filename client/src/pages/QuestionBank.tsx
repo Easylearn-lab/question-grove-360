@@ -5,7 +5,7 @@ import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { ArrowLeft, Bookmark, Flag, ChevronRight, ChevronLeft, BookOpen, Search, CloudUpload, Cloud, Keyboard, X } from "lucide-react";
+import { ArrowLeft, Bookmark, Flag, ChevronRight, ChevronLeft, BookOpen, Search, CloudUpload, Cloud, Keyboard, X, Timer } from "lucide-react";
 import { HoverCard, HoverCardTrigger, HoverCardContent } from "@/components/ui/hover-card";
 import { trpc } from "@/lib/trpc";
 import { toast } from "sonner";
@@ -132,6 +132,19 @@ export default function QuestionBank() {
   const [showResumeBanner, setShowResumeBanner] = useState(false);
   const resumeBannerShownRef = useRef(false);
 
+  // Streak animation state
+  const [streak, setStreak] = useState(0);
+  const [showStreakAnimation, setShowStreakAnimation] = useState(false);
+
+  // Flagged filter state
+  const [showFlaggedOnly, setShowFlaggedOnly] = useState(false);
+  const [flaggedIds, setFlaggedIds] = useState<Set<number>>(new Set());
+
+  // Exam mode countdown timer
+  const [timerEnabled, setTimerEnabled] = useState(false);
+  const [timeRemaining, setTimeRemaining] = useState(90);
+  const timerRef = useRef<NodeJS.Timeout | null>(null);
+
   // BUG FIX 1: Initialize from localStorage immediately to survive reconnections/remounts
   const [lockedQuestions, setLockedQuestions] = useState<any[] | null>(() => {
     const saved = loadQBankSession();
@@ -200,6 +213,20 @@ export default function QuestionBank() {
       staleTime: Infinity,
     }
   );
+
+  // Fetch user's flagged question IDs
+  const flaggedIdsQuery = trpc.questions.getUserFlaggedIds.useQuery(undefined, {
+    enabled: isReady && isAuthenticated,
+    refetchOnReconnect: false,
+    staleTime: Infinity,
+  });
+
+  // Sync flagged IDs from server
+  useEffect(() => {
+    if (flaggedIdsQuery.data) {
+      setFlaggedIds(new Set(flaggedIdsQuery.data));
+    }
+  }, [flaggedIdsQuery.data]);
 
   // BUG FIX 1 & 3: Lock questions once loaded from server (only if not already restored from localStorage)
   useEffect(() => {
@@ -342,7 +369,7 @@ export default function QuestionBank() {
     }
   };
 
-  // Filter questions client-side for difficulty and search
+  // Filter questions client-side for difficulty, search, and flagged
   const filteredQuestions = useMemo(() => {
     const source = lockedQuestions || [];
     if (source.length === 0) return [];
@@ -361,8 +388,12 @@ export default function QuestionBank() {
       );
     }
 
+    if (showFlaggedOnly) {
+      filtered = filtered.filter((q: any) => flaggedIds.has(q.id));
+    }
+
     return filtered;
-  }, [lockedQuestions, difficulty, searchQuery]);
+  }, [lockedQuestions, difficulty, searchQuery, showFlaggedOnly, flaggedIds]);
 
   const { hasAccess: isPremium, isLoading: subLoading } = useExamAccess("AKT");
 
@@ -399,9 +430,44 @@ export default function QuestionBank() {
       setSelectedAnswer(null);
       setShowExplanation(false);
     }
-    setFlagged(false);
+    // Set flagged state from persistent flaggedIds
+    setFlagged(flaggedIds.has(currentQuestion.id));
     setNotes("");
-  }, [currentQuestion?.id]);
+
+    // Reset countdown timer for new question (exam mode with timer)
+    if (mode === "exam" && timerEnabled && !prevAnswer) {
+      setTimeRemaining(90);
+      if (timerRef.current) clearInterval(timerRef.current);
+      timerRef.current = setInterval(() => {
+        setTimeRemaining(prev => {
+          if (prev <= 1) {
+            // Time's up - auto-submit with no answer
+            if (timerRef.current) clearInterval(timerRef.current);
+            timerRef.current = null;
+            // Mark as incorrect with no answer
+            setShowExplanation(true);
+            setSessionAnswers(sa => ({
+              ...sa,
+              [currentQuestion.id]: { selectedAnswer: "__timeout__", isCorrect: false },
+            }));
+            setStreak(0);
+            toast.error("Time's up! Moving to next question.");
+            return 0;
+          }
+          return prev - 1;
+        });
+      }, 1000);
+    } else if (prevAnswer) {
+      // Already answered - stop timer
+      if (timerRef.current) clearInterval(timerRef.current);
+      timerRef.current = null;
+    }
+
+    return () => {
+      if (timerRef.current) clearInterval(timerRef.current);
+      timerRef.current = null;
+    };
+  }, [currentQuestion?.id, mode, timerEnabled]);
 
   if (loading || !isAuthenticated || !user || subLoading) {
     return (
@@ -457,6 +523,24 @@ export default function QuestionBank() {
       },
     });
 
+    // Streak tracking
+    if (isCorrect) {
+      const newStreak = streak + 1;
+      setStreak(newStreak);
+      if (newStreak >= 3) {
+        setShowStreakAnimation(true);
+        setTimeout(() => setShowStreakAnimation(false), 2000);
+      }
+    } else {
+      setStreak(0);
+    }
+
+    // Stop countdown timer on submit
+    if (timerRef.current) {
+      clearInterval(timerRef.current);
+      timerRef.current = null;
+    }
+
     if (mode === "tutor") {
       toast[isCorrect ? "success" : "error"](
         isCorrect ? "Correct! Well done." : "Incorrect. Review the explanation below."
@@ -485,6 +569,31 @@ export default function QuestionBank() {
         },
         onError: () => {
           toast.error("Failed to bookmark question");
+        },
+      });
+    }
+  };
+
+  // Flag mutation handlers
+  const flagMutation = trpc.questions.flagQuestion.useMutation();
+  const unflagMutation = trpc.questions.unflagQuestion.useMutation();
+
+  const handleFlag = () => {
+    if (!currentQuestion) return;
+    if (flagged) {
+      unflagMutation.mutate(currentQuestion.id, {
+        onSuccess: () => {
+          setFlagged(false);
+          setFlaggedIds(prev => { const next = new Set(prev); next.delete(currentQuestion.id); return next; });
+          toast.success("Flag removed");
+        },
+      });
+    } else {
+      flagMutation.mutate(currentQuestion.id, {
+        onSuccess: () => {
+          setFlagged(true);
+          setFlaggedIds(prev => new Set(prev).add(currentQuestion.id));
+          toast.success("Question flagged");
         },
       });
     }
@@ -702,6 +811,35 @@ export default function QuestionBank() {
                     />
                   </div>
                 </div>
+
+                {/* Flagged Only Filter */}
+                <div>
+                  <button
+                    onClick={() => { setShowFlaggedOnly(!showFlaggedOnly); setCurrentQuestionIndex(0); }}
+                    className={`w-full flex items-center gap-2 px-4 py-2 rounded-lg transition-colors ${
+                      showFlaggedOnly ? "bg-orange-100 text-orange-700 border border-orange-300" : "bg-slate-100 text-slate-700 hover:bg-slate-200"
+                    }`}
+                  >
+                    <Flag className={`w-4 h-4 ${showFlaggedOnly ? "fill-orange-500" : ""}`} />
+                    <span className="text-sm font-medium">Flagged Only ({flaggedIds.size})</span>
+                  </button>
+                </div>
+
+                {/* Timer Toggle (Exam Mode) */}
+                {mode === "exam" && (
+                  <div>
+                    <Label className="text-slate-700 font-medium mb-2 block">Countdown Timer</Label>
+                    <button
+                      onClick={() => setTimerEnabled(!timerEnabled)}
+                      className={`w-full flex items-center gap-2 px-4 py-2 rounded-lg transition-colors ${
+                        timerEnabled ? "bg-blue-100 text-blue-700 border border-blue-300" : "bg-slate-100 text-slate-700 hover:bg-slate-200"
+                      }`}
+                    >
+                      <Timer className="w-4 h-4" />
+                      <span className="text-sm font-medium">{timerEnabled ? "90s Timer ON" : "Timer OFF"}</span>
+                    </button>
+                  </div>
+                )}
               </div>
             </Card>
           </div>
@@ -714,6 +852,28 @@ export default function QuestionBank() {
               </div>
             ) : currentQuestion ? (
               <>
+                {/* Streak Animation */}
+                {showStreakAnimation && (
+                  <div className="flex items-center justify-center mb-4 animate-in fade-in zoom-in duration-300">
+                    <div className="flex items-center gap-2 px-4 py-2 bg-orange-50 border border-orange-200 rounded-full">
+                      <span className="text-xl">🔥</span>
+                      <span className="text-sm font-bold text-orange-700">{streak} in a row!</span>
+                    </div>
+                  </div>
+                )}
+
+                {/* Countdown Timer (Exam Mode) */}
+                {mode === "exam" && timerEnabled && !showExplanation && (
+                  <div className="mb-4 flex justify-center">
+                    <div className={`flex items-center gap-2 px-5 py-2 rounded-full font-mono text-lg font-bold transition-colors ${
+                      timeRemaining <= 15 ? "bg-red-100 text-red-700 border border-red-300 animate-pulse" : "bg-slate-100 text-slate-700 border border-slate-200"
+                    }`}>
+                      <Timer className="w-5 h-5" />
+                      <span>{Math.floor(timeRemaining / 60)}:{(timeRemaining % 60).toString().padStart(2, "0")}</span>
+                    </div>
+                  </div>
+                )}
+
                 {/* Progress Bar */}
                 <div className="mb-8">
                   <div className="flex justify-between items-center mb-2">
@@ -768,7 +928,7 @@ export default function QuestionBank() {
                         <Button variant="ghost" size="sm" onClick={handleBookmark} className={bookmarked ? "text-green-600" : "text-slate-400"}>
                           <Bookmark className="w-5 h-5" fill={bookmarked ? "currentColor" : "none"} />
                         </Button>
-                        <Button variant="ghost" size="sm" onClick={() => setFlagged(!flagged)} className={flagged ? "text-orange-600" : "text-slate-400"}>
+                        <Button variant="ghost" size="sm" onClick={handleFlag} className={flagged ? "text-orange-600" : "text-slate-400"}>
                           <Flag className="w-5 h-5" fill={flagged ? "currentColor" : "none"} />
                         </Button>
                       </div>

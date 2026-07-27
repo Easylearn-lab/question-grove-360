@@ -1516,3 +1516,67 @@ export async function getNote360ProgressStats(userId: number, specialty: string)
     return { total: 0, read: 0, bookmarked: 0 };
   }
 }
+
+// Question Flags - persistent per-user flagged questions
+export async function flagQuestion(userId: number, questionId: number) {
+  const db = await getDb();
+  if (!db) return false;
+  try {
+    const { questionFlags } = await import("../drizzle/schema");
+    await db.insert(questionFlags).values({
+      userId,
+      questionId,
+      createdAt: new Date(),
+    }).onDuplicateKeyUpdate({ set: { createdAt: new Date() } });
+    return true;
+  } catch (error) {
+    console.error("[DB] flagQuestion error:", error);
+    return false;
+  }
+}
+
+export async function unflagQuestion(userId: number, questionId: number) {
+  const db = await getDb();
+  if (!db) return false;
+  try {
+    const { questionFlags } = await import("../drizzle/schema");
+    await db.delete(questionFlags).where(and(eq(questionFlags.userId, userId), eq(questionFlags.questionId, questionId)));
+    return true;
+  } catch (error) {
+    console.error("[DB] unflagQuestion error:", error);
+    return false;
+  }
+}
+
+export async function isQuestionFlagged(userId: number, questionId: number) {
+  const db = await getDb();
+  if (!db) return false;
+  try {
+    const { questionFlags } = await import("../drizzle/schema");
+    const result = await db
+      .select()
+      .from(questionFlags)
+      .where(and(eq(questionFlags.userId, userId), eq(questionFlags.questionId, questionId)))
+      .limit(1);
+    return result.length > 0;
+  } catch (error) {
+    console.error("[DB] isQuestionFlagged error:", error);
+    return false;
+  }
+}
+
+export async function getUserFlaggedQuestionIds(userId: number) {
+  const db = await getDb();
+  if (!db) return [];
+  try {
+    const { questionFlags } = await import("../drizzle/schema");
+    const results = await db
+      .select({ questionId: questionFlags.questionId })
+      .from(questionFlags)
+      .where(eq(questionFlags.userId, userId));
+    return results.map(r => r.questionId);
+  } catch (error) {
+    console.error("[DB] getUserFlaggedQuestionIds error:", error);
+    return [];
+  }
+}

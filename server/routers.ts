@@ -114,6 +114,29 @@ export const appRouter = router({
         const { isQuestionBookmarked } = await import("./db");
         return await isQuestionBookmarked(ctx.user.id, input);
       }),
+    flagQuestion: protectedProcedure
+      .input(z.number())
+      .mutation(async ({ ctx, input }) => {
+        const { flagQuestion } = await import("./db");
+        return await flagQuestion(ctx.user.id, input);
+      }),
+    unflagQuestion: protectedProcedure
+      .input(z.number())
+      .mutation(async ({ ctx, input }) => {
+        const { unflagQuestion } = await import("./db");
+        return await unflagQuestion(ctx.user.id, input);
+      }),
+    isQuestionFlagged: protectedProcedure
+      .input(z.number())
+      .query(async ({ ctx, input }) => {
+        const { isQuestionFlagged } = await import("./db");
+        return await isQuestionFlagged(ctx.user.id, input);
+      }),
+    getUserFlaggedIds: protectedProcedure
+      .query(async ({ ctx }) => {
+        const { getUserFlaggedQuestionIds } = await import("./db");
+        return await getUserFlaggedQuestionIds(ctx.user.id);
+      }),
     resetAttempts: protectedProcedure
       .mutation(async ({ ctx }) => {
         const { resetUserQuestionAttempts } = await import("./db");

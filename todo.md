@@ -1142,3 +1142,12 @@
 - [x] Keyboard shortcuts: A/B/C/D/E select answer, Enter submit, Left/Right navigate
 - [x] Keyboard shortcuts hint in bottom corner with hover tooltip showing full list
 - [x] "Resume where you left off" banner when progress restored from server after login
+
+## Question Bank Improvements Part 2 (Jul 27, 2026)
+- [x] Streak animation: flame icon + "X in a row!" on 3+ correct answers, 2s fade, reset on wrong
+- [x] Flagged questions persistence: save to DB per user/question via question_flags table, persist across logout
+- [x] Flagged filter: add "Flagged Only" toggle in filter sidebar to view only flagged questions
+- [x] Flag icon reflects saved state on load (filled orange if flagged, outline if not)
+- [x] Per-question countdown timer in Exam Mode (90s default, auto-submit on timeout)
+- [x] Timer toggle in exam settings sidebar to enable/disable
+- [x] Timer turns red + pulses under 15 seconds
