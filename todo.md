@@ -1102,3 +1102,10 @@
 - [x] Bug 1: Question bank resets on network reconnection — locked questions in state, disabled refetchOnReconnect, persist to localStorage
 - [x] Bug 2: Question bank progress not persisted across sessions — getUserAttempts procedure loads previous answers from DB, answers shown on navigate back
 - [x] Bug 3: Ethics & Organisational specialty not loading — normalized DB from 'Ethics and Organisational' to 'Ethics & Organisational' (127 rows fixed)
+
+## Bug Fix: SCA TTS Not Speaking (Jul 27, 2026)
+- [x] Fix AI patient TTS — rewired synthesize endpoint from broken Forge API to ElevenLabs
+- [x] Verify speakText() is called after every AI response (unconditionally in both voice/chat mode)
+- [x] Verify voiceSynthesis tRPC mutation works — ElevenLabs eleven_flash_v2_5 returns valid MP3
+- [x] Mapped 5 voice profiles to ElevenLabs voices: shimmer→Sarah, nova→Alice, onyx→George, echo→Liam, alloy→River
+- [x] Audio element plays returned /manus-storage/ URL via signed redirect

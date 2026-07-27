@@ -4,6 +4,24 @@ import { TRPCError } from "@trpc/server";
 import { transcribeAudio } from "./_core/voiceTranscription";
 import { storagePut } from "./storage";
 
+/**
+ * Map OpenAI-style voice names to ElevenLabs voice IDs.
+ * These are carefully chosen to match the patient demographics:
+ * - shimmer → Sarah (mature female, reassuring) — older female patients
+ * - nova → Alice (clear, engaging) — younger female patients
+ * - onyx → George (warm, captivating) — older male patients
+ * - echo → Liam (energetic) — younger male patients
+ * - alloy → River (relaxed, neutral) — gender-neutral/default
+ */
+const ELEVENLABS_VOICE_MAP: Record<string, string> = {
+  shimmer: "EXAVITQu4vr4xnSDxMaL", // Sarah - Mature, Reassuring
+  nova: "Xb7hH8MSUJpSbSDYk0k2",    // Alice - Clear, Engaging
+  onyx: "JBFqnCBsd6RMkjVDRZzb",    // George - Warm, Captivating
+  echo: "TX3LPaxmHKxFdv7VOQHJ",    // Liam - Energetic
+  alloy: "SAz9YHcvj6GT2YYXdXww",   // River - Relaxed, Neutral
+  fable: "pFZP5JQG7iQjIQuC4Bku",   // Adam - Dominant, Firm (fallback)
+};
+
 export const voiceRouter = router({
   /**
    * Transcribe audio from a URL (after frontend uploads to storage)
@@ -109,8 +127,8 @@ Respond naturally as a patient would, providing relevant information about your 
     }),
 
   /**
-   * Text-to-speech synthesis using the built-in TTS service
-   * Returns a URL to the generated audio file
+   * Text-to-speech synthesis using ElevenLabs API
+   * Returns a URL to the generated audio file stored in S3
    */
   synthesize: protectedProcedure
     .input(
@@ -123,31 +141,44 @@ Respond naturally as a patient would, providing relevant information about your 
     .mutation(async ({ ctx, input }) => {
       const { ENV } = await import("./_core/env");
 
-      const baseUrl = ENV.forgeApiUrl.endsWith("/")
-        ? ENV.forgeApiUrl
-        : `${ENV.forgeApiUrl}/`;
-      const fullUrl = new URL("v1/audio/speech", baseUrl).toString();
+      if (!ENV.elevenLabsApiKey) {
+        throw new TRPCError({
+          code: "INTERNAL_SERVER_ERROR",
+          message: "TTS service not configured (missing ElevenLabs API key)",
+        });
+      }
 
-      const response = await fetch(fullUrl, {
-        method: "POST",
-        headers: {
-          authorization: `Bearer ${ENV.forgeApiKey}`,
-          "content-type": "application/json",
-        },
-        body: JSON.stringify({
-          model: "tts-1",
-          input: input.text,
-          voice: input.voice,
-          speed: input.speed,
-          response_format: "mp3",
-        }),
-      });
+      // Map the OpenAI-style voice name to an ElevenLabs voice ID
+      const elevenLabsVoiceId = ELEVENLABS_VOICE_MAP[input.voice] || ELEVENLABS_VOICE_MAP["alloy"];
+
+      const response = await fetch(
+        `https://api.elevenlabs.io/v1/text-to-speech/${elevenLabsVoiceId}`,
+        {
+          method: "POST",
+          headers: {
+            "xi-api-key": ENV.elevenLabsApiKey,
+            "Content-Type": "application/json",
+            "Accept": "audio/mpeg",
+          },
+          body: JSON.stringify({
+            text: input.text,
+            model_id: "eleven_flash_v2_5",
+            voice_settings: {
+              stability: 0.6,
+              similarity_boost: 0.75,
+              style: 0.3,
+              use_speaker_boost: true,
+            },
+          }),
+        }
+      );
 
       if (!response.ok) {
         const errorText = await response.text().catch(() => "");
+        console.error(`[TTS] ElevenLabs error: ${response.status} ${errorText}`);
         throw new TRPCError({
           code: "INTERNAL_SERVER_ERROR",
-          message: `TTS service failed: ${response.status} ${response.statusText}${errorText ? `: ${errorText}` : ""}`,
+          message: `TTS service failed: ${response.status} ${response.statusText}`,
         });
       }
 
