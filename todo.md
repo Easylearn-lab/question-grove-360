@@ -1136,3 +1136,9 @@
 ## Test Fixes & Saved Indicator (Jul 27, 2026)
 - [x] Fix pre-existing test failures in features.test.ts (updated all procedure names: questions.list→getQuestions, bookmark→bookmarkQuestion, getBookmarks needs input, createAttempt→recordAttempt, getDashboardStats→getAnalytics, listUsers→getUsers)
 - [x] Add "Saved" indicator after each answer in Question Bank (green checkmark + "Saved" text, fades in/out over 2.5s)
+
+## Question Bank UX Improvements (Jul 27, 2026)
+- [x] Cloud icon on progress bar fill when answer is saved (2s fade)
+- [x] Keyboard shortcuts: A/B/C/D/E select answer, Enter submit, Left/Right navigate
+- [x] Keyboard shortcuts hint in bottom corner with hover tooltip showing full list
+- [x] "Resume where you left off" banner when progress restored from server after login

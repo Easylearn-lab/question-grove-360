@@ -5,7 +5,8 @@ import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { ArrowLeft, Bookmark, Flag, ChevronRight, ChevronLeft, BookOpen, Search, CloudUpload } from "lucide-react";
+import { ArrowLeft, Bookmark, Flag, ChevronRight, ChevronLeft, BookOpen, Search, CloudUpload, Cloud, Keyboard, X } from "lucide-react";
+import { HoverCard, HoverCardTrigger, HoverCardContent } from "@/components/ui/hover-card";
 import { trpc } from "@/lib/trpc";
 import { toast } from "sonner";
 import { CrossSellGate } from "@/components/CrossSellGate";
@@ -127,6 +128,9 @@ export default function QuestionBank() {
   const [selectedResetSpecialty, setSelectedResetSpecialty] = useState(specialty);
   const [lastSavedAt, setLastSavedAt] = useState<number | null>(null);
   const [showSavedIndicator, setShowSavedIndicator] = useState(false);
+  const [showCloudIcon, setShowCloudIcon] = useState(false);
+  const [showResumeBanner, setShowResumeBanner] = useState(false);
+  const resumeBannerShownRef = useRef(false);
 
   // BUG FIX 1: Initialize from localStorage immediately to survive reconnections/remounts
   const [lockedQuestions, setLockedQuestions] = useState<any[] | null>(() => {
@@ -237,6 +241,7 @@ export default function QuestionBank() {
   // DB is the source of truth - merge DB data regardless of whether session was restored from localStorage
   useEffect(() => {
     if (userAttemptsQuery.data && userAttemptsQuery.data.length > 0) {
+      let newFromServer = 0;
       setSessionAnswers(prev => {
         const merged = { ...prev };
         for (const attempt of userAttemptsQuery.data) {
@@ -246,10 +251,17 @@ export default function QuestionBank() {
               selectedAnswer: attempt.selectedAnswer,
               isCorrect: attempt.isCorrect,
             };
+            newFromServer++;
           }
         }
         return merged;
       });
+      // Show resume banner if progress was restored from server (not already shown)
+      if (newFromServer > 0 && !resumeBannerShownRef.current) {
+        resumeBannerShownRef.current = true;
+        setShowResumeBanner(true);
+        setTimeout(() => setShowResumeBanner(false), 4000);
+      }
     }
   }, [userAttemptsQuery.data]);
 
@@ -439,6 +451,9 @@ export default function QuestionBank() {
         // Show "Saved" indicator briefly
         setShowSavedIndicator(true);
         setTimeout(() => setShowSavedIndicator(false), 2500);
+        // Show cloud icon on progress bar
+        setShowCloudIcon(true);
+        setTimeout(() => setShowCloudIcon(false), 2000);
       },
     });
 
@@ -474,6 +489,47 @@ export default function QuestionBank() {
       });
     }
   };
+
+  // Keyboard shortcuts
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      // Don't fire shortcuts when modal is open or when typing in an input/textarea
+      if (showResetModal) return;
+      const target = e.target as HTMLElement;
+      if (target.tagName === "INPUT" || target.tagName === "TEXTAREA" || target.tagName === "SELECT") return;
+      if (!currentQuestion) return;
+
+      const key = e.key.toUpperCase();
+
+      // A/B/C/D/E to select answer
+      if (["A", "B", "C", "D", "E"].includes(key) && !showExplanation) {
+        const optionKey = `option${key}` as keyof typeof currentQuestion;
+        if (currentQuestion[optionKey]) {
+          setSelectedAnswer(key);
+          e.preventDefault();
+        }
+      }
+
+      // Enter to submit
+      if (e.key === "Enter" && selectedAnswer && !showExplanation) {
+        handleSubmitAnswer();
+        e.preventDefault();
+      }
+
+      // Left/Right arrow to navigate
+      if (e.key === "ArrowLeft") {
+        handlePrevious();
+        e.preventDefault();
+      }
+      if (e.key === "ArrowRight") {
+        handleNext();
+        e.preventDefault();
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [showResetModal, currentQuestion, showExplanation, selectedAnswer, currentQuestionIndex, totalQuestions]);
 
   // Handle specialty change: unlock questions so a new fetch happens
   const handleSpecialtyChange = (v: string) => {
@@ -552,6 +608,23 @@ export default function QuestionBank() {
           </div>
         </div>
       </header>
+
+      {/* Resume Banner */}
+      {showResumeBanner && (
+        <div className="bg-[#32CD32]/10 border-b border-[#32CD32]/30 transition-all duration-500 animate-in slide-in-from-top-2">
+          <div className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
+            <div className="flex items-center gap-2">
+              <Cloud className="w-4 h-4 text-[#32CD32]" />
+              <span className="text-sm font-medium text-slate-800">
+                Welcome back! Your progress ({answeredCount} of {totalQuestions} answered) has been restored.
+              </span>
+            </div>
+            <button onClick={() => setShowResumeBanner(false)} className="text-slate-500 hover:text-slate-700 transition-colors">
+              <X className="w-4 h-4" />
+            </button>
+          </div>
+        </div>
+      )}
 
       {/* Main Content */}
       <main className="max-w-7xl mx-auto px-4 py-8">
@@ -660,8 +733,15 @@ export default function QuestionBank() {
                       <span className="text-sm text-slate-600">{answeredCount} of {totalQuestions} answered ({Math.round(progress)}%)</span>
                     </div>
                   </div>
-                  <div className="w-full bg-slate-200 rounded-full h-2">
+                  <div className="w-full bg-slate-200 rounded-full h-2 relative">
                     <div className="bg-green-600 h-2 rounded-full transition-all duration-300" style={{ width: `${progress}%` }} />
+                    {/* Cloud icon on progress bar fill */}
+                    <div
+                      className={`absolute top-1/2 -translate-y-1/2 transition-all duration-500 ${showCloudIcon ? "opacity-100 scale-100" : "opacity-0 scale-75"}`}
+                      style={{ left: `calc(${Math.min(progress, 97)}% - 6px)` }}
+                    >
+                      <Cloud className="w-4 h-4 text-green-700 fill-green-200" />
+                    </div>
                   </div>
                 </div>
 
@@ -785,6 +865,27 @@ export default function QuestionBank() {
                     Next
                     <ChevronRight className="w-4 h-4" />
                   </Button>
+                </div>
+
+                {/* Keyboard shortcuts hint */}
+                <div className="mt-4 flex justify-end">
+                  <HoverCard>
+                    <HoverCardTrigger asChild>
+                      <button className="flex items-center gap-1.5 text-xs text-slate-400 hover:text-slate-600 transition-colors">
+                        <Keyboard className="w-3.5 h-3.5" />
+                        <span>Keyboard shortcuts</span>
+                      </button>
+                    </HoverCardTrigger>
+                    <HoverCardContent align="end" className="w-56 p-3">
+                      <div className="space-y-2 text-xs">
+                        <p className="font-semibold text-slate-700 mb-2">Keyboard Shortcuts</p>
+                        <div className="flex justify-between"><span className="text-slate-600">Select answer</span><span className="font-mono bg-slate-100 px-1.5 py-0.5 rounded text-slate-700">A B C D E</span></div>
+                        <div className="flex justify-between"><span className="text-slate-600">Submit answer</span><span className="font-mono bg-slate-100 px-1.5 py-0.5 rounded text-slate-700">Enter</span></div>
+                        <div className="flex justify-between"><span className="text-slate-600">Previous</span><span className="font-mono bg-slate-100 px-1.5 py-0.5 rounded text-slate-700">&larr;</span></div>
+                        <div className="flex justify-between"><span className="text-slate-600">Next</span><span className="font-mono bg-slate-100 px-1.5 py-0.5 rounded text-slate-700">&rarr;</span></div>
+                      </div>
+                    </HoverCardContent>
+                  </HoverCard>
                 </div>
               </>
             ) : null}
