@@ -126,6 +126,7 @@ export default function QuestionBank() {
   const [resetMode, setResetMode] = useState<"all" | "specialty">("all");
   const [selectedResetSpecialty, setSelectedResetSpecialty] = useState(specialty);
   const [lastSavedAt, setLastSavedAt] = useState<number | null>(null);
+  const [showSavedIndicator, setShowSavedIndicator] = useState(false);
 
   // BUG FIX 1: Initialize from localStorage immediately to survive reconnections/remounts
   const [lockedQuestions, setLockedQuestions] = useState<any[] | null>(() => {
@@ -433,6 +434,12 @@ export default function QuestionBank() {
       isCorrect,
       timeTaken: 0,
       mode,
+    }, {
+      onSuccess: () => {
+        // Show "Saved" indicator briefly
+        setShowSavedIndicator(true);
+        setTimeout(() => setShowSavedIndicator(false), 2500);
+      },
     });
 
     if (mode === "tutor") {
@@ -638,7 +645,20 @@ export default function QuestionBank() {
                 <div className="mb-8">
                   <div className="flex justify-between items-center mb-2">
                     <span className="text-sm font-medium text-slate-700">Progress</span>
-                    <span className="text-sm text-slate-600">{answeredCount} of {totalQuestions} answered ({Math.round(progress)}%)</span>
+                    <div className="flex items-center gap-3">
+                      {/* Saved indicator */}
+                      <span
+                        className={`flex items-center gap-1 text-xs font-medium text-green-600 transition-all duration-500 ${
+                          showSavedIndicator ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-1"
+                        }`}
+                      >
+                        <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
+                        </svg>
+                        Saved
+                      </span>
+                      <span className="text-sm text-slate-600">{answeredCount} of {totalQuestions} answered ({Math.round(progress)}%)</span>
+                    </div>
                   </div>
                   <div className="w-full bg-slate-200 rounded-full h-2">
                     <div className="bg-green-600 h-2 rounded-full transition-all duration-300" style={{ width: `${progress}%` }} />

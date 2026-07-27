@@ -1132,3 +1132,7 @@
 - [x] Bug 1: Question resets on network reconnection — locked full question data in localStorage, disabled refetchOnReconnect, restore on remount
 - [x] Bug 2: Progress not saved across logout/login — records every answer to DB via recordAttempt in real time, loads from getUserAttempts on return, merges DB data into sessionAnswers
 - [x] Bug 3: Ethics & Organisational specialty infinite spinning — fixed operator precedence bug in localStorage restore, added error handling + 15s timeout fallback, added DB indexes on questions.specialty and user_attempts(userId, questionId)
+
+## Test Fixes & Saved Indicator (Jul 27, 2026)
+- [x] Fix pre-existing test failures in features.test.ts (updated all procedure names: questions.list→getQuestions, bookmark→bookmarkQuestion, getBookmarks needs input, createAttempt→recordAttempt, getDashboardStats→getAnalytics, listUsers→getUsers)
+- [x] Add "Saved" indicator after each answer in Question Bank (green checkmark + "Saved" text, fades in/out over 2.5s)
