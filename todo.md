@@ -1151,3 +1151,7 @@
 - [x] Per-question countdown timer in Exam Mode (90s default, auto-submit on timeout)
 - [x] Timer toggle in exam settings sidebar to enable/disable
 - [x] Timer turns red + pulses under 15 seconds
+
+## Configurable Timer Duration (Jul 27, 2026)
+- [x] Add 60s/90s/120s preset buttons for timer duration in Exam Mode sidebar
+- [x] Save selected duration to localStorage for persistence between sessions

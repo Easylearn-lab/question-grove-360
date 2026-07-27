@@ -142,6 +142,10 @@ export default function QuestionBank() {
 
   // Exam mode countdown timer
   const [timerEnabled, setTimerEnabled] = useState(false);
+  const [timerDuration, setTimerDuration] = useState(() => {
+    const saved = localStorage.getItem("qbank_timer_duration");
+    return saved ? Number(saved) : 90;
+  });
   const [timeRemaining, setTimeRemaining] = useState(90);
   const timerRef = useRef<NodeJS.Timeout | null>(null);
 
@@ -436,7 +440,7 @@ export default function QuestionBank() {
 
     // Reset countdown timer for new question (exam mode with timer)
     if (mode === "exam" && timerEnabled && !prevAnswer) {
-      setTimeRemaining(90);
+      setTimeRemaining(timerDuration);
       if (timerRef.current) clearInterval(timerRef.current);
       timerRef.current = setInterval(() => {
         setTimeRemaining(prev => {
@@ -467,7 +471,7 @@ export default function QuestionBank() {
       if (timerRef.current) clearInterval(timerRef.current);
       timerRef.current = null;
     };
-  }, [currentQuestion?.id, mode, timerEnabled]);
+  }, [currentQuestion?.id, mode, timerEnabled, timerDuration]);
 
   if (loading || !isAuthenticated || !user || subLoading) {
     return (
@@ -836,8 +840,29 @@ export default function QuestionBank() {
                       }`}
                     >
                       <Timer className="w-4 h-4" />
-                      <span className="text-sm font-medium">{timerEnabled ? "90s Timer ON" : "Timer OFF"}</span>
+                      <span className="text-sm font-medium">{timerEnabled ? `${timerDuration}s Timer ON` : "Timer OFF"}</span>
                     </button>
+                    {timerEnabled && (
+                      <div className="flex gap-2 mt-2">
+                        {[60, 90, 120].map((dur) => (
+                          <button
+                            key={dur}
+                            onClick={() => {
+                              setTimerDuration(dur);
+                              setTimeRemaining(dur);
+                              localStorage.setItem("qbank_timer_duration", String(dur));
+                            }}
+                            className={`flex-1 px-2 py-1.5 rounded-md text-xs font-bold transition-colors ${
+                              timerDuration === dur
+                                ? "bg-blue-600 text-white"
+                                : "bg-slate-100 text-slate-600 hover:bg-slate-200"
+                            }`}
+                          >
+                            {dur}s
+                          </button>
+                        ))}
+                      </div>
+                    )}
                   </div>
                 )}
               </div>
