@@ -1109,3 +1109,11 @@
 - [x] Verify voiceSynthesis tRPC mutation works — ElevenLabs eleven_flash_v2_5 returns valid MP3
 - [x] Mapped 5 voice profiles to ElevenLabs voices: shimmer→Sarah, nova→Alice, onyx→George, echo→Liam, alloy→River
 - [x] Audio element plays returned /manus-storage/ URL via signed redirect
+
+## SCA Voice Enhancements (Jul 27, 2026)
+- [x] Add speech speed control (0.75x–1.5x slider) to voice mode UI
+- [x] Persist selected speed in localStorage for duration of consultation
+- [x] Forward speed parameter to ElevenLabs API (clamped 0.7–1.2)
+- [x] Add replay/speaker icon on every AI patient message bubble (chat mode)
+- [x] Clicking replay plays stored audioUrl or re-synthesizes via ElevenLabs TTS
+- [x] Store audioUrl on each assistant message after synthesis for instant replay

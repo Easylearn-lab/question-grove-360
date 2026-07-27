@@ -4,6 +4,7 @@ import { useEffect, useState, useRef, useMemo, useCallback } from "react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
+import { Slider } from "@/components/ui/slider";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Badge } from "@/components/ui/badge";
 import { ArrowLeft, Mic, MicOff, Send, Loader2, Play, Pause, RotateCcw, CheckCircle2, XCircle, MinusCircle, Clock, Volume2, BarChart3, Lock, Zap, Sparkles, MessageSquare } from "lucide-react";
@@ -51,6 +52,7 @@ interface Message {
   role: "user" | "assistant";
   content: string;
   timestamp?: number;
+  audioUrl?: string;
 }
 
 type CompetencyScore = "well" | "partial" | "poor";
@@ -1141,6 +1143,9 @@ function ConsultationView({
   const [isTranscribing, setIsTranscribing] = useState(false);
   const [liveTranscript, setLiveTranscript] = useState("");
   const [lastAudioUrl, setLastAudioUrl] = useState<string | null>(null);
+  const [speechSpeed, setSpeechSpeed] = useState<number>(() => {
+    try { return parseFloat(localStorage.getItem("sca-speech-speed") || "1.0") || 1.0; } catch { return 1.0; }
+  });
   const [audioUnlocked, setAudioUnlocked] = useState(false);
   const [voiceMode, setVoiceMode] = useState<boolean>(() => {
     try { return localStorage.getItem("sca-voice-mode") === "true"; } catch { return false; }
@@ -1270,9 +1275,20 @@ function ConsultationView({
       const result = await synthesizeMutation.mutateAsync({
         text,
         voice: voiceProfile.voice as any,
-        speed: 1.0,
+        speed: speechSpeed,
       });
       setLastAudioUrl(result.url);
+      // Store audioUrl on the last assistant message for replay
+      setMessages((prev) => {
+        const updated = [...prev];
+        for (let i = updated.length - 1; i >= 0; i--) {
+          if (updated[i].role === "assistant" && updated[i].content === text) {
+            updated[i] = { ...updated[i], audioUrl: result.url };
+            break;
+          }
+        }
+        return updated;
+      });
       if (audioRef.current) {
         audioRef.current.src = result.url;
         audioRef.current.onended = () => setIsSpeaking(false);
@@ -1507,6 +1523,24 @@ function ConsultationView({
           </div>
         </div>
 
+        {/* Speech Speed Control */}
+        <div className="px-6 flex items-center justify-center gap-3 py-1">
+          <span className="text-xs text-slate-400 whitespace-nowrap">Speech Speed</span>
+          <Slider
+            value={[speechSpeed]}
+            min={0.75}
+            max={1.5}
+            step={0.25}
+            onValueChange={(val) => {
+              const newSpeed = val[0];
+              setSpeechSpeed(newSpeed);
+              try { localStorage.setItem("sca-speech-speed", String(newSpeed)); } catch {}
+            }}
+            className="w-28 [&_[data-slot=slider-track]]:bg-slate-700 [&_[data-slot=slider-range]]:bg-green-500 [&_[data-slot=slider-thumb]]:border-green-500"
+          />
+          <span className="text-xs text-slate-300 font-mono w-8">{speechSpeed}x</span>
+        </div>
+
         {/* Main Voice Area */}
         <div className="flex-1 flex flex-col items-center justify-center px-6 gap-6">
           {/* Large centered avatar */}
@@ -1678,6 +1712,30 @@ function ConsultationView({
                   : "bg-white border border-slate-200 text-slate-900 rounded-bl-md shadow-sm"
               }`}>
                 <p className="text-sm leading-relaxed">{msg.content}</p>
+                {msg.role === "assistant" && (
+                  <button
+                    onClick={() => {
+                      if (msg.audioUrl) {
+                        // Replay from stored audio URL
+                        if (audioRef.current) {
+                          setIsSpeaking(true);
+                          audioRef.current.src = msg.audioUrl;
+                          audioRef.current.onended = () => setIsSpeaking(false);
+                          audioRef.current.onerror = () => setIsSpeaking(false);
+                          audioRef.current.play().catch(() => setIsSpeaking(false));
+                        }
+                      } else {
+                        // Re-synthesize if no stored audio
+                        speakText(msg.content);
+                      }
+                    }}
+                    className="mt-1.5 flex items-center gap-1 text-xs text-slate-400 hover:text-green-600 transition-colors"
+                    title="Replay this response"
+                  >
+                    <Volume2 className="w-3.5 h-3.5" />
+                    <span>Replay</span>
+                  </button>
+                )}
               </div>
             </div>
           ))}

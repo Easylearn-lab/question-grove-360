@@ -168,6 +168,7 @@ Respond naturally as a patient would, providing relevant information about your 
               similarity_boost: 0.75,
               style: 0.3,
               use_speaker_boost: true,
+              speed: Math.max(0.7, Math.min(1.2, input.speed)),
             },
           }),
         }
