@@ -43,6 +43,7 @@ const DIFFICULTIES = ["All Levels", "Medium", "Hard"];
 
 // localStorage keys for session persistence
 const QBANK_SESSION_KEY = "qg360_qbank_session";
+const QBANK_QUESTIONS_KEY = "qg360_qbank_questions";
 
 interface QBankSession {
   questionIds: number[];
@@ -59,6 +60,23 @@ function saveQBankSession(session: QBankSession) {
   } catch { /* ignore */ }
 }
 
+function saveQBankQuestions(questions: any[]) {
+  try {
+    // Store full question data so we can restore without a server fetch
+    localStorage.setItem(QBANK_QUESTIONS_KEY, JSON.stringify(questions));
+  } catch { /* ignore - may exceed quota for large sets */ }
+}
+
+function loadQBankQuestions(): any[] | null {
+  try {
+    const stored = localStorage.getItem(QBANK_QUESTIONS_KEY);
+    if (!stored) return null;
+    return JSON.parse(stored);
+  } catch {
+    return null;
+  }
+}
+
 function loadQBankSession(): QBankSession | null {
   try {
     const stored = localStorage.getItem(QBANK_SESSION_KEY);
@@ -67,6 +85,7 @@ function loadQBankSession(): QBankSession | null {
     // Discard if older than 4 hours
     if (Date.now() - data.savedAt > 4 * 60 * 60 * 1000) {
       localStorage.removeItem(QBANK_SESSION_KEY);
+      localStorage.removeItem(QBANK_QUESTIONS_KEY);
       return null;
     }
     return data;
@@ -76,7 +95,10 @@ function loadQBankSession(): QBankSession | null {
 }
 
 function clearQBankSession() {
-  try { localStorage.removeItem(QBANK_SESSION_KEY); } catch { /* ignore */ }
+  try {
+    localStorage.removeItem(QBANK_SESSION_KEY);
+    localStorage.removeItem(QBANK_QUESTIONS_KEY);
+  } catch { /* ignore */ }
 }
 
 export default function QuestionBank() {
@@ -105,13 +127,43 @@ export default function QuestionBank() {
   const [selectedResetSpecialty, setSelectedResetSpecialty] = useState(specialty);
   const [lastSavedAt, setLastSavedAt] = useState<number | null>(null);
 
-  // BUG FIX 1 & 2: Lock questions in state once loaded to prevent refetch from changing order
-  const [lockedQuestions, setLockedQuestions] = useState<any[] | null>(null);
+  // BUG FIX 1: Initialize from localStorage immediately to survive reconnections/remounts
+  const [lockedQuestions, setLockedQuestions] = useState<any[] | null>(() => {
+    const saved = loadQBankSession();
+    if (saved && (saved.specialty === "All Specialties" || saved.specialty === specialty)) {
+      const storedQuestions = loadQBankQuestions();
+      if (storedQuestions && storedQuestions.length > 0) {
+        return storedQuestions;
+      }
+    }
+    return null;
+  });
+  // BUG FIX 1: Initialize currentQuestionIndex from localStorage
+  const [initialSession] = useState<QBankSession | null>(() => loadQBankSession());
   // BUG FIX 2: Track answers per question in session (persisted to localStorage + DB)
-  const [sessionAnswers, setSessionAnswers] = useState<Record<number, { selectedAnswer: string; isCorrect: boolean }>>({});
+  const [sessionAnswers, setSessionAnswers] = useState<Record<number, { selectedAnswer: string; isCorrect: boolean }>>(
+    () => initialSession?.answers || {}
+  );
   // Track whether we've loaded from a saved session
-  const [restoredFromSession, setRestoredFromSession] = useState(false);
-  const sessionRestoredRef = useRef(false);
+  const [restoredFromSession, setRestoredFromSession] = useState(() => {
+    const saved = loadQBankSession();
+    const storedQuestions = loadQBankQuestions();
+    return !!(saved && storedQuestions && storedQuestions.length > 0);
+  });
+  const sessionRestoredRef = useRef(restoredFromSession);
+
+  // BUG FIX 1: Restore currentQuestionIndex from saved session on mount
+  useEffect(() => {
+    if (initialSession && lockedQuestions) {
+      setCurrentQuestionIndex(Math.min(initialSession.currentIndex, lockedQuestions.length - 1));
+      if (initialSession.specialty && initialSession.specialty !== "All Specialties") {
+        setSpecialty(initialSession.specialty);
+      }
+      if (initialSession.difficulty && initialSession.difficulty !== "All Levels") {
+        setDifficulty(initialSession.difficulty);
+      }
+    }
+  }, []); // Only on mount
 
   // Fetch questions from server - only when we don't have locked questions
   const questionsQuery = trpc.questions.getQuestions.useQuery(
@@ -144,39 +196,50 @@ export default function QuestionBank() {
     }
   );
 
-  // BUG FIX 1: Lock questions once loaded from server
+  // BUG FIX 1 & 3: Lock questions once loaded from server (only if not already restored from localStorage)
   useEffect(() => {
-    if (questionsQuery.data && questionsQuery.data.length > 0 && lockedQuestions === null) {
-      // Check if we have a saved session with matching filters
-      const saved = loadQBankSession();
-      if (saved && saved.specialty === specialty && saved.difficulty === difficulty && !sessionRestoredRef.current) {
-        // Restore from saved session - match question IDs to server data
-        const serverMap = new Map(questionsQuery.data.map((q: any) => [q.id, q]));
-        const restoredQuestions = saved.questionIds
-          .map(id => serverMap.get(id))
-          .filter(Boolean);
-
-        if (restoredQuestions.length > 0) {
-          setLockedQuestions(restoredQuestions);
-          setCurrentQuestionIndex(Math.min(saved.currentIndex, restoredQuestions.length - 1));
-          setSessionAnswers(saved.answers || {});
-          setRestoredFromSession(true);
-          sessionRestoredRef.current = true;
-          toast.info("Session restored — continuing where you left off");
-          return;
-        }
+    if (questionsQuery.data && lockedQuestions === null) {
+      if (questionsQuery.data.length > 0) {
+        setLockedQuestions(questionsQuery.data);
+        // Save full question data to localStorage for reconnection resilience
+        saveQBankQuestions(questionsQuery.data);
+      } else {
+        // BUG FIX 3: Even if empty, lock to empty array to stop spinner
+        setLockedQuestions([]);
       }
-      // No saved session or mismatch - use fresh data
-      setLockedQuestions(questionsQuery.data);
     }
-  }, [questionsQuery.data, lockedQuestions, specialty, difficulty]);
+  }, [questionsQuery.data, lockedQuestions]);
 
-  // BUG FIX 2: Load previous attempts from DB into sessionAnswers (only for questions not already in session)
+  // BUG FIX 3: Handle query error - stop infinite spinner
   useEffect(() => {
-    if (userAttemptsQuery.data && userAttemptsQuery.data.length > 0 && !restoredFromSession) {
+    if (questionsQuery.error && lockedQuestions === null) {
+      console.error("[QuestionBank] Failed to fetch questions:", questionsQuery.error);
+      toast.error("Failed to load questions. Please try again.");
+      setLockedQuestions([]); // Stop spinner
+    }
+  }, [questionsQuery.error, lockedQuestions]);
+
+  // BUG FIX 3: Timeout fallback - if questions haven't loaded after 15s, stop spinner
+  useEffect(() => {
+    if (lockedQuestions !== null) return;
+    const timeout = setTimeout(() => {
+      if (lockedQuestions === null) {
+        console.warn("[QuestionBank] Question loading timed out after 15s");
+        toast.error("Loading timed out. Please try selecting the specialty again.");
+        setLockedQuestions([]);
+      }
+    }, 15000);
+    return () => clearTimeout(timeout);
+  }, [lockedQuestions]);
+
+  // BUG FIX 2: Always load previous attempts from DB into sessionAnswers
+  // DB is the source of truth - merge DB data regardless of whether session was restored from localStorage
+  useEffect(() => {
+    if (userAttemptsQuery.data && userAttemptsQuery.data.length > 0) {
       setSessionAnswers(prev => {
         const merged = { ...prev };
         for (const attempt of userAttemptsQuery.data) {
+          // DB data fills in any gaps (questions answered in previous sessions)
           if (!merged[attempt.questionId]) {
             merged[attempt.questionId] = {
               selectedAnswer: attempt.selectedAnswer,
@@ -187,7 +250,7 @@ export default function QuestionBank() {
         return merged;
       });
     }
-  }, [userAttemptsQuery.data, restoredFromSession]);
+  }, [userAttemptsQuery.data]);
 
   // Save session to localStorage on every meaningful state change
   const saveSessionRef = useRef<NodeJS.Timeout | null>(null);
@@ -204,6 +267,8 @@ export default function QuestionBank() {
         savedAt: Date.now(),
       };
       saveQBankSession(session);
+      // BUG FIX 1: Also persist full question data for reconnection resilience
+      saveQBankQuestions(lockedQuestions);
       setLastSavedAt(Date.now());
     }, 500);
     return () => { if (saveSessionRef.current) clearTimeout(saveSessionRef.current); };
@@ -290,7 +355,11 @@ export default function QuestionBank() {
 
   const currentQuestion = filteredQuestions[currentQuestionIndex];
   const totalQuestions = filteredQuestions.length;
-  const answeredCount = Object.keys(sessionAnswers).length;
+  // BUG FIX 2: Count only answers for questions in the current filtered set
+  const answeredCount = useMemo(() => {
+    const filteredIds = new Set(filteredQuestions.map((q: any) => q.id));
+    return Object.keys(sessionAnswers).filter(id => filteredIds.has(Number(id))).length;
+  }, [sessionAnswers, filteredQuestions]);
   const progress = totalQuestions > 0 ? (answeredCount / totalQuestions) * 100 : 0;
 
   // Query bookmark status for current question (must be above early returns to maintain hook order)
@@ -355,10 +424,11 @@ export default function QuestionBank() {
       [currentQuestion.id]: { selectedAnswer, isCorrect },
     }));
 
-    // Record the attempt to the database
+    // BUG FIX 2: Record the attempt to the database in real time
+    // Ensure examId is always valid (default to 1 = AKT)
     recordAttempt.mutate({
       questionId: currentQuestion.id,
-      examId: currentQuestion.examId,
+      examId: currentQuestion.examId || 1,
       selectedAnswer,
       isCorrect,
       timeTaken: 0,

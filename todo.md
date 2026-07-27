@@ -1127,3 +1127,8 @@
 - [x] Stop/pause button on active message bubble during playback
 - [x] Speed preset buttons (0.75x, 1x, 1.25x) alongside slider in both modes
 - [x] Auto-scroll to highlighted message on manual replay (not during normal conversation)
+
+## Critical Question Bank Bug Fixes (Jul 27, 2026)
+- [x] Bug 1: Question resets on network reconnection — locked full question data in localStorage, disabled refetchOnReconnect, restore on remount
+- [x] Bug 2: Progress not saved across logout/login — records every answer to DB via recordAttempt in real time, loads from getUserAttempts on return, merges DB data into sessionAnswers
+- [x] Bug 3: Ethics & Organisational specialty infinite spinning — fixed operator precedence bug in localStorage restore, added error handling + 15s timeout fallback, added DB indexes on questions.specialty and user_attempts(userId, questionId)
