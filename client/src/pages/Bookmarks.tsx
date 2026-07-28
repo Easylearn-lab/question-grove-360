@@ -11,6 +11,7 @@ import { useProtectedRoute } from "@/hooks/useProtectedRoute";
 import { toast } from "sonner";
 import { CrossSellGate } from "@/components/CrossSellGate";
 import { useExamAccess } from "@/hooks/useExamAccess";
+import { useShuffledOptions, getOrCreateSessionSeed } from "@/hooks/useShuffledOptions";
 
 const DIFFICULTIES = ["All Levels", "Medium", "Hard"];
 
@@ -108,6 +109,19 @@ export default function Bookmarks() {
 
   const currentQuestion = filteredBookmarks[currentQuestionIndex];
   const totalQuestions = filteredBookmarks.length;
+
+  // Shuffle options per question per session (same seed as main question bank)
+  const [sessionSeed] = useState(() => getOrCreateSessionSeed());
+  const shuffleQuestion = currentQuestion ? {
+    id: currentQuestion.questionId ?? currentQuestion.id,
+    optionA: currentQuestion.optionA,
+    optionB: currentQuestion.optionB,
+    optionC: currentQuestion.optionC,
+    optionD: currentQuestion.optionD,
+    optionE: currentQuestion.optionE,
+    correctAnswer: currentQuestion.correctAnswer,
+  } : null;
+  const { options: shuffledOptions } = useShuffledOptions(shuffleQuestion, sessionSeed);
 
   const handleRemoveBookmark = () => {
     if (!currentQuestion || currentQuestion.questionId === null) return;
@@ -288,20 +302,16 @@ export default function Bookmarks() {
                   <h2 className="text-xl font-bold text-slate-900 mb-4">{currentQuestion?.question}</h2>
                 </div>
 
-                {/* Options */}
+                {/* Options (shuffled per session) */}
                 <div className="space-y-3 mb-6">
-                  {["A", "B", "C", "D", "E"].map((letter) => {
-                    const optionKey = `option${letter}` as keyof typeof currentQuestion;
-                    const optionText = currentQuestion?.[optionKey];
-                    if (!optionText) return null;
-
-                    const isCorrect = currentQuestion?.correctAnswer === letter;
-                    const isSelected = selectedAnswer === letter;
+                  {shuffledOptions.map((opt) => {
+                    const isCorrect = opt.originalKey === currentQuestion?.correctAnswer;
+                    const isSelected = selectedAnswer === opt.originalKey;
 
                     return (
                       <button
-                        key={letter}
-                        onClick={() => handleSelectAnswer(letter)}
+                        key={opt.displayLabel}
+                        onClick={() => handleSelectAnswer(opt.originalKey)}
                         className={`w-full p-3 text-left rounded-lg border-2 transition-colors min-h-[3.5rem] ${
                           isSelected
                             ? isCorrect
@@ -313,8 +323,8 @@ export default function Bookmarks() {
                         }`}
                       >
                         <div className="flex items-start gap-3">
-                          <span className="font-semibold text-slate-500 flex-shrink-0">{letter}.</span>
-                          <span className="text-slate-900 leading-snug">{String(optionText)}</span>
+                          <span className="font-semibold text-slate-500 flex-shrink-0">{opt.displayLabel}.</span>
+                          <span className="text-slate-900 leading-snug">{opt.text}</span>
                         </div>
                       </button>
                     );

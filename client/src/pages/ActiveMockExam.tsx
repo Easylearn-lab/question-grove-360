@@ -10,6 +10,7 @@ import { toast } from "sonner";
 import { useStudySession } from "@/contexts/StudySessionContext";
 import { useQuizPersistence, loadQuizProgress, clearQuizProgress } from "@/hooks/useQuizPersistence";
 import { ReconnectingBanner } from "@/components/ReconnectingBanner";
+import { useShuffledOptions, getOrCreateSessionSeed, mapDisplayToOriginal } from "@/hooks/useShuffledOptions";
 
 interface MockQuestion {
   id: number;
@@ -202,6 +203,18 @@ export default function ActiveMockExam() {
   const totalQuestions = mockData.totalQuestions;
   const selectedAnswer = currentQuestion ? answers[currentQuestion.id.toString()] : null;
 
+  // Shuffle options per question per session (same seed as main question bank)
+  const [sessionSeed] = useState(() => getOrCreateSessionSeed());
+  const shuffleQuestion = currentQuestion ? {
+    id: currentQuestion.id,
+    optionA: currentQuestion.optionA,
+    optionB: currentQuestion.optionB,
+    optionC: currentQuestion.optionC,
+    optionD: currentQuestion.optionD,
+    optionE: currentQuestion.optionE,
+  } : null;
+  const { options: shuffledOptions } = useShuffledOptions(shuffleQuestion, sessionSeed);
+
   return (
     <div className="min-h-screen bg-slate-50">
       <ReconnectingBanner />
@@ -318,21 +331,18 @@ export default function ActiveMockExam() {
                   {currentQuestion.stem}
                 </h2>
 
-                {/* Options */}
+                {/* Options (shuffled per session) */}
                 <div className="space-y-3 mb-8">
-                  {(["A", "B", "C", "D", "E"] as const).map((option) => {
-                    const optionKey = `option${option}` as keyof MockQuestion;
-                    const optionText = currentQuestion[optionKey] as string | null;
-                    if (!optionText) return null;
-                    const isSelected = selectedAnswer === option;
+                  {shuffledOptions.map((opt) => {
+                    const isSelected = selectedAnswer === opt.originalKey;
 
                     return (
                       <button
-                        key={option}
+                        key={opt.displayLabel}
                         onClick={() => {
                           setAnswers((prev) => ({
                             ...prev,
-                            [currentQuestion.id.toString()]: option,
+                            [currentQuestion.id.toString()]: opt.originalKey,
                           }));
                         }}
                         className={`w-full text-left p-4 rounded-lg border-2 transition-all min-h-[3.5rem] ${
@@ -345,9 +355,9 @@ export default function ActiveMockExam() {
                           <div className={`w-7 h-7 rounded-full border-2 flex items-center justify-center font-medium text-sm flex-shrink-0 mt-0.5 ${
                             isSelected ? "border-green-600 bg-green-600 text-white" : "border-slate-300 text-slate-500"
                           }`}>
-                            {option}
+                            {opt.displayLabel}
                           </div>
-                          <span className="text-slate-900 leading-snug">{optionText}</span>
+                          <span className="text-slate-900 leading-snug">{opt.text}</span>
                         </div>
                       </button>
                     );

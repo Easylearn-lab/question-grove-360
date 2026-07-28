@@ -1196,3 +1196,8 @@
 - [x] Integrate into QuestionBank.tsx option rendering
 - [x] Ensure correct answer tracking still works after shuffle (map back to original letter)
 - [x] Deploy
+
+## Apply Shuffle to Mock Exams & Bookmarks (Jul 28, 2026)
+- [x] Apply useShuffledOptions to ActiveMockExam.tsx (option rendering)
+- [x] Apply useShuffledOptions to Bookmarks.tsx (option rendering)
+- [x] Deploy
