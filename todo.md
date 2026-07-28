@@ -1190,3 +1190,9 @@
 - [x] Frontend fix: apply uniform option card sizing so no option visually stands out due to length
 - [x] Flag worst offender question IDs for content review (156 IDs in audit-answer-length-findings.md)
 - [x] Deploy fix
+
+## Randomise Option Order (Jul 28, 2026)
+- [x] Create useShuffledOptions hook that deterministically shuffles A-E per question per session
+- [x] Integrate into QuestionBank.tsx option rendering
+- [x] Ensure correct answer tracking still works after shuffle (map back to original letter)
+- [x] Deploy

@@ -15,6 +15,7 @@ import { useAuth } from "@/_core/hooks/useAuth";
 import { useProtectedRoute } from "@/hooks/useProtectedRoute";
 import { useStudySession } from "@/contexts/StudySessionContext";
 import { ReconnectingBanner } from "@/components/ReconnectingBanner";
+import { useShuffledOptions, getOrCreateSessionSeed, clearSessionSeed, mapDisplayToOriginal } from "@/hooks/useShuffledOptions";
 
 const SPECIALTIES = [
   "All Specialties",
@@ -148,6 +149,9 @@ export default function QuestionBank() {
   });
   const [timeRemaining, setTimeRemaining] = useState(90);
   const timerRef = useRef<NodeJS.Timeout | null>(null);
+
+  // Option shuffle seed - stable per session, changes on new session
+  const [sessionSeed] = useState(() => getOrCreateSessionSeed());
 
   // BUG FIX 1: Initialize from localStorage immediately to survive reconnections/remounts
   const [lockedQuestions, setLockedQuestions] = useState<any[] | null>(() => {
@@ -336,6 +340,7 @@ export default function QuestionBank() {
           setShowResetModal(false);
           setSessionAnswers({});
           clearQBankSession();
+          clearSessionSeed(); // New session = new shuffle order
           setLockedQuestions(null);
           setCurrentQuestionIndex(0);
         },
@@ -362,6 +367,7 @@ export default function QuestionBank() {
               });
             }
             clearQBankSession();
+            clearSessionSeed(); // New session = new shuffle order
             setLockedQuestions(null);
             setCurrentQuestionIndex(0);
           },
@@ -403,6 +409,9 @@ export default function QuestionBank() {
 
   const currentQuestion = filteredQuestions[currentQuestionIndex];
   const totalQuestions = filteredQuestions.length;
+
+  // Shuffle options per question per session
+  const { options: shuffledOptions, correctDisplayLabel } = useShuffledOptions(currentQuestion, sessionSeed);
   // BUG FIX 2: Count only answers for questions in the current filtered set
   const answeredCount = useMemo(() => {
     const filteredIds = new Set(filteredQuestions.map((q: any) => q.id));
@@ -614,11 +623,11 @@ export default function QuestionBank() {
 
       const key = e.key.toUpperCase();
 
-      // A/B/C/D/E to select answer
+      // A/B/C/D/E to select answer (mapped through shuffled order)
       if (["A", "B", "C", "D", "E"].includes(key) && !showExplanation) {
-        const optionKey = `option${key}` as keyof typeof currentQuestion;
-        if (currentQuestion[optionKey]) {
-          setSelectedAnswer(key);
+        const originalKey = mapDisplayToOriginal(key, shuffledOptions);
+        if (originalKey) {
+          setSelectedAnswer(originalKey);
           e.preventDefault();
         }
       }
@@ -642,7 +651,7 @@ export default function QuestionBank() {
 
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [showResetModal, currentQuestion, showExplanation, selectedAnswer, currentQuestionIndex, totalQuestions]);
+  }, [showResetModal, currentQuestion, showExplanation, selectedAnswer, currentQuestionIndex, totalQuestions, shuffledOptions]);
 
   // Handle specialty change: unlock questions so a new fetch happens
   const handleSpecialtyChange = (v: string) => {
@@ -651,6 +660,7 @@ export default function QuestionBank() {
     setLockedQuestions(null); // Allow new fetch for new specialty
     setSessionAnswers({});
     clearQBankSession();
+    clearSessionSeed(); // New session = new shuffle order
   };
 
   // Empty state when no questions are available
@@ -962,22 +972,18 @@ export default function QuestionBank() {
                     <h2 className="text-xl font-bold text-slate-900 mb-6">{currentQuestion.question}</h2>
                   </div>
 
-                  {/* Answer Options */}
+                  {/* Answer Options (shuffled per session) */}
                   <div className="space-y-3 mb-8">
-                    {["A", "B", "C", "D", "E"].map((option) => {
-                      const optionKey = `option${option}` as keyof typeof currentQuestion;
-                      const optionText = currentQuestion[optionKey] as string | null;
-                      if (!optionText) return null;
-
-                      const isSelected = selectedAnswer === option;
-                      const isCorrect = option === currentQuestion.correctAnswer;
+                    {shuffledOptions.map((opt) => {
+                      const isSelected = selectedAnswer === opt.originalKey;
+                      const isCorrect = opt.originalKey === currentQuestion.correctAnswer;
                       const showCorrect = showExplanation && isCorrect;
                       const showIncorrect = showExplanation && isSelected && !isCorrect;
 
                       return (
                         <button
-                          key={option}
-                          onClick={() => !showExplanation && setSelectedAnswer(option)}
+                          key={opt.displayLabel}
+                          onClick={() => !showExplanation && setSelectedAnswer(opt.originalKey)}
                           disabled={showExplanation}
                           className={`w-full text-left p-4 rounded-lg border-2 transition-all min-h-[3.5rem] ${
                             showCorrect ? "border-green-500 bg-green-50" :
@@ -993,9 +999,9 @@ export default function QuestionBank() {
                               isSelected ? "border-green-600 bg-green-600 text-gray-900" :
                               "border-slate-300"
                             }`}>
-                              {option}
+                              {opt.displayLabel}
                             </div>
-                            <span className="text-slate-900 leading-snug">{optionText}</span>
+                            <span className="text-slate-900 leading-snug">{opt.text}</span>
                           </div>
                         </button>
                       );
