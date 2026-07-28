@@ -979,15 +979,15 @@ export default function QuestionBank() {
                           key={option}
                           onClick={() => !showExplanation && setSelectedAnswer(option)}
                           disabled={showExplanation}
-                          className={`w-full text-left p-4 rounded-lg border-2 transition-all ${
+                          className={`w-full text-left p-4 rounded-lg border-2 transition-all min-h-[3.5rem] ${
                             showCorrect ? "border-green-500 bg-green-50" :
                             showIncorrect ? "border-red-500 bg-red-50" :
                             isSelected ? "border-green-600 bg-green-50" :
                             "border-slate-200 bg-white hover:border-slate-300"
                           }`}
                         >
-                          <div className="flex items-center gap-3">
-                            <div className={`w-6 h-6 rounded-full border-2 flex items-center justify-center font-medium text-sm ${
+                          <div className="flex items-start gap-3">
+                            <div className={`w-6 h-6 rounded-full border-2 flex items-center justify-center font-medium text-sm flex-shrink-0 mt-0.5 ${
                               showCorrect ? "border-green-500 bg-green-500 text-white" :
                               showIncorrect ? "border-red-500 bg-red-500 text-white" :
                               isSelected ? "border-green-600 bg-green-600 text-gray-900" :
@@ -995,7 +995,7 @@ export default function QuestionBank() {
                             }`}>
                               {option}
                             </div>
-                            <span className="text-slate-900">{optionText}</span>
+                            <span className="text-slate-900 leading-snug">{optionText}</span>
                           </div>
                         </button>
                       );

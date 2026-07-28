@@ -302,7 +302,7 @@ export default function Bookmarks() {
                       <button
                         key={letter}
                         onClick={() => handleSelectAnswer(letter)}
-                        className={`w-full p-3 text-left rounded-lg border-2 transition-colors ${
+                        className={`w-full p-3 text-left rounded-lg border-2 transition-colors min-h-[3.5rem] ${
                           isSelected
                             ? isCorrect
                               ? "border-green-500 bg-green-50"
@@ -312,7 +312,10 @@ export default function Bookmarks() {
                               : "border-slate-200 hover:border-slate-300 hover:bg-slate-50"
                         }`}
                       >
-                        <div className="font-semibold text-slate-900">{letter}. {String(optionText)}</div>
+                        <div className="flex items-start gap-3">
+                          <span className="font-semibold text-slate-500 flex-shrink-0">{letter}.</span>
+                          <span className="text-slate-900 leading-snug">{String(optionText)}</span>
+                        </div>
                       </button>
                     );
                   })}

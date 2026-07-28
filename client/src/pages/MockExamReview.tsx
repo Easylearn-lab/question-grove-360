@@ -198,7 +198,7 @@ export default function MockExamReview() {
                 return (
                   <div
                     key={option}
-                    className={`w-full text-left p-4 rounded-lg border-2 ${borderClass}`}
+                    className={`w-full text-left p-4 rounded-lg border-2 min-h-[3.5rem] ${borderClass}`}
                   >
                     <div className="flex items-start gap-3">
                       <div className={`w-7 h-7 rounded-full border-2 flex items-center justify-center font-medium text-sm flex-shrink-0 mt-0.5 ${
@@ -209,7 +209,7 @@ export default function MockExamReview() {
                         {isCorrectAnswer ? "✓" : isWrongSelection ? "✗" : option}
                       </div>
                       <div className="flex-1">
-                        <span className="text-slate-900">{optionText}</span>
+                        <span className="text-slate-900 leading-snug">{optionText}</span>
                         {showExplanation && currentQuestion.explanations[option] && (
                           <p className="text-sm text-slate-600 mt-2 italic">
                             {currentQuestion.explanations[option]}

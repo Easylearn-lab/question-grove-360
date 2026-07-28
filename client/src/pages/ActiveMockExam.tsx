@@ -335,7 +335,7 @@ export default function ActiveMockExam() {
                             [currentQuestion.id.toString()]: option,
                           }));
                         }}
-                        className={`w-full text-left p-4 rounded-lg border-2 transition-all ${
+                        className={`w-full text-left p-4 rounded-lg border-2 transition-all min-h-[3.5rem] ${
                           isSelected
                             ? "border-green-600 bg-green-50"
                             : "border-slate-200 bg-white hover:border-slate-300"
@@ -347,7 +347,7 @@ export default function ActiveMockExam() {
                           }`}>
                             {option}
                           </div>
-                          <span className="text-slate-900">{optionText}</span>
+                          <span className="text-slate-900 leading-snug">{optionText}</span>
                         </div>
                       </button>
                     );

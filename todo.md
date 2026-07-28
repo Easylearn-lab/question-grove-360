@@ -1183,3 +1183,10 @@
 - [x] Update access-control.test.ts to cover multi-subscription scenarios (35 tests passing)
 - [x] Update cross-sell-gate.test.ts to cover dual-subscriber case (32 tests passing)
 - [x] Update adminRouter.ts to count active subscribers from subscriptions table (non-critical, cosmetic)
+
+## Answer Option Length Imbalance Fix (Jul 28, 2026)
+- [x] Audit questions: identify all where one option is >40% longer than average of other options (509 questions)
+- [x] Audit questions: identify worst offenders where one option is >100% (double) the length of others (156 questions)
+- [x] Frontend fix: apply uniform option card sizing so no option visually stands out due to length
+- [x] Flag worst offender question IDs for content review (156 IDs in audit-answer-length-findings.md)
+- [x] Deploy fix
