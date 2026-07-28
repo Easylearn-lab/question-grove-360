@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { ArrowLeft, CheckCircle2, XCircle, Flag, ChevronLeft, ChevronRight, Filter } from "lucide-react";
 import { trpc } from "@/lib/trpc";
+import { useShuffledOptions, getOrCreateSessionSeed } from "@/hooks/useShuffledOptions";
 
 type FilterMode = "all" | "incorrect" | "flagged" | "correct";
 
@@ -82,6 +83,19 @@ export default function MockExamReview() {
   const totalFiltered = filteredQuestions.length;
   const incorrectCount = questions.filter((q) => !q.isCorrect).length;
   const flaggedCount = questions.filter((q) => q.isFlagged).length;
+
+  // Use the same session seed as the exam — produces identical shuffle order
+  const [sessionSeed] = useState(() => getOrCreateSessionSeed());
+  const shuffleQuestion = currentQuestion ? {
+    id: currentQuestion.id,
+    optionA: currentQuestion.options.A || null,
+    optionB: currentQuestion.options.B || null,
+    optionC: currentQuestion.options.C || null,
+    optionD: currentQuestion.options.D || null,
+    optionE: currentQuestion.options.E || null,
+    correctAnswer: currentQuestion.correctAnswer,
+  } : null;
+  const { options: shuffledOptions } = useShuffledOptions(shuffleQuestion, sessionSeed);
 
   return (
     <div className="min-h-screen bg-slate-50">
@@ -182,13 +196,11 @@ export default function MockExamReview() {
               {currentQuestion.stem}
             </h2>
 
-            {/* Options with correct/incorrect highlighting */}
+            {/* Options with correct/incorrect highlighting (shuffled to match exam order) */}
             <div className="space-y-3 mb-8">
-              {(["A", "B", "C", "D", "E"] as const).map((option) => {
-                const optionText = currentQuestion.options[option];
-                if (!optionText) return null;
-                const isUserAnswer = currentQuestion.userAnswer === option;
-                const isCorrectAnswer = currentQuestion.correctAnswer === option;
+              {shuffledOptions.map((opt) => {
+                const isUserAnswer = currentQuestion.userAnswer === opt.originalKey;
+                const isCorrectAnswer = currentQuestion.correctAnswer === opt.originalKey;
                 const isWrongSelection = isUserAnswer && !isCorrectAnswer;
 
                 let borderClass = "border-slate-200 bg-white";
@@ -197,7 +209,7 @@ export default function MockExamReview() {
 
                 return (
                   <div
-                    key={option}
+                    key={opt.displayLabel}
                     className={`w-full text-left p-4 rounded-lg border-2 min-h-[3.5rem] ${borderClass}`}
                   >
                     <div className="flex items-start gap-3">
@@ -206,13 +218,13 @@ export default function MockExamReview() {
                         isWrongSelection ? "border-red-500 bg-red-500 text-white" :
                         "border-slate-300 text-slate-500"
                       }`}>
-                        {isCorrectAnswer ? "✓" : isWrongSelection ? "✗" : option}
+                        {isCorrectAnswer ? "✓" : isWrongSelection ? "✗" : opt.displayLabel}
                       </div>
                       <div className="flex-1">
-                        <span className="text-slate-900 leading-snug">{optionText}</span>
-                        {showExplanation && currentQuestion.explanations[option] && (
+                        <span className="text-slate-900 leading-snug">{opt.text}</span>
+                        {showExplanation && currentQuestion.explanations[opt.originalKey as keyof typeof currentQuestion.explanations] && (
                           <p className="text-sm text-slate-600 mt-2 italic">
-                            {currentQuestion.explanations[option]}
+                            {currentQuestion.explanations[opt.originalKey as keyof typeof currentQuestion.explanations]}
                           </p>
                         )}
                       </div>

@@ -1201,3 +1201,11 @@
 - [x] Apply useShuffledOptions to ActiveMockExam.tsx (option rendering)
 - [x] Apply useShuffledOptions to Bookmarks.tsx (option rendering)
 - [x] Deploy
+
+## Apply Shuffle to MockExamReview (Jul 28, 2026)
+- [x] Apply useShuffledOptions to MockExamReview.tsx using same session seed
+- [x] Comparisons use originalKey (userAnswer, correctAnswer) — display only layer changed
+- [x] Green/red highlighting appears on correct shuffled display position
+- [x] Per-option explanations keyed by originalKey
+- [x] TypeScript clean, all 452 tests passing
+- [x] Deploy
