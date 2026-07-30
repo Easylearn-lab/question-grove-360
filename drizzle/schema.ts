@@ -49,6 +49,7 @@ export const profiles = mysqlTable("profiles", {
   subscriptionStatus: varchar("subscriptionStatus", { length: 50 }).default("inactive"),
   subscriptionPlan: varchar("subscriptionPlan", { length: 50 }),
   trialEndsAt: timestamp("trialEndsAt"),
+  digestUnsubscribed: boolean("digestUnsubscribed").default(false),
   createdAt: timestamp("createdAt").defaultNow().notNull(),
   updatedAt: timestamp("updatedAt").defaultNow().onUpdateNow().notNull(),
 });

@@ -1,4 +1,4 @@
-import { eq, and, lte, gte, asc, desc, sql } from "drizzle-orm";
+import { eq, and, lte, gte, asc, desc, sql, inArray, isNull } from "drizzle-orm";
 import { drizzle } from "drizzle-orm/mysql2";
 import { InsertUser, users } from "../drizzle/schema";
 import { ENV } from './_core/env';
@@ -1787,5 +1787,88 @@ export async function getTopicBreakdown(userId: number, days: number = 30) {
   } catch (error) {
     console.error("[Database] Failed to get topic breakdown:", error);
     return [];
+  }
+}
+
+
+/**
+ * Get users eligible for the weekly digest email.
+ * Criteria:
+ * - Has at least one active subscription (subscriptions.status = 'active')
+ * - Has answered at least 1 question in the last 30 days
+ * - Has not unsubscribed from digest (profiles.digestUnsubscribed != true)
+ * - Has an email address
+ */
+export async function getWeeklyDigestUsers() {
+  const db = await getDb();
+  if (!db) return [];
+
+  try {
+    const { subscriptions, userAttempts, profiles } = await import("../drizzle/schema");
+    const cutoffDate = new Date();
+    cutoffDate.setDate(cutoffDate.getDate() - 30);
+
+    // Get users with active subscriptions
+    const activeSubUsers = await db
+      .selectDistinct({ userId: subscriptions.userId })
+      .from(subscriptions)
+      .where(eq(subscriptions.status, "active"));
+
+    if (activeSubUsers.length === 0) return [];
+
+    const activeUserIds = activeSubUsers.map((u) => u.userId);
+
+    // Get users who have answered at least 1 question in last 30 days
+    const recentlyActiveUsers = await db
+      .selectDistinct({ userId: userAttempts.userId })
+      .from(userAttempts)
+      .where(and(
+        inArray(userAttempts.userId, activeUserIds),
+        gte(userAttempts.createdAt, cutoffDate)
+      ));
+
+    if (recentlyActiveUsers.length === 0) return [];
+
+    const recentUserIds = recentlyActiveUsers.map((u) => u.userId);
+
+    // Get user details + check unsubscribe status
+    const eligibleUsers = await db
+      .select({
+        id: users.id,
+        name: users.name,
+        email: users.email,
+        digestUnsubscribed: profiles.digestUnsubscribed,
+      })
+      .from(users)
+      .leftJoin(profiles, eq(profiles.userId, users.id))
+      .where(inArray(users.id, recentUserIds));
+
+    // Filter: has email, not unsubscribed
+    return eligibleUsers.filter(
+      (u) => u.email && !u.digestUnsubscribed
+    );
+  } catch (error) {
+    console.error("[Database] Failed to get weekly digest users:", error);
+    return [];
+  }
+}
+
+/**
+ * Set digestUnsubscribed = true for a user (opt out of weekly digest).
+ */
+export async function setDigestUnsubscribed(userId: number, unsubscribed: boolean = true) {
+  const db = await getDb();
+  if (!db) return false;
+
+  try {
+    const { profiles } = await import("../drizzle/schema");
+    await db
+      .update(profiles)
+      .set({ digestUnsubscribed: unsubscribed })
+      .where(eq(profiles.userId, userId));
+    return true;
+  } catch (error) {
+    console.error("[Database] Failed to set digest unsubscribed:", error);
+    return false;
   }
 }

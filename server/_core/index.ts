@@ -206,6 +206,18 @@ Guidelines:
     }
   });
 
+  // Weekly digest cron handler
+  app.post("/api/scheduled/weeklyDigest", async (req, res) => {
+    const { weeklyDigestHandler } = await import("../weeklyDigestJob");
+    return weeklyDigestHandler(req, res);
+  });
+
+  // Digest unsubscribe (one-click from email)
+  app.get("/api/unsubscribe/digest", async (req, res) => {
+    const { unsubscribeDigestHandler } = await import("../unsubscribeHandler");
+    return unsubscribeDigestHandler(req, res);
+  });
+
   registerStorageProxy(app);
   registerOAuthRoutes(app);
   // tRPC API

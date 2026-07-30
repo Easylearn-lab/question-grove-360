@@ -1244,3 +1244,15 @@
 - [x] QuestionBank reads URL params to pre-populate specialty and topic filters (skips session cache)
 - [x] All 452 tests passing, TypeScript clean
 - [x] Deploy
+
+## Weekly Progress Email Digest (Jul 30, 2026)
+- [x] Add digestUnsubscribed column to profiles table (schema + SQL)
+- [x] Add getWeeklyDigestUsers() query in server/db.ts
+- [x] Build HTML email template with brand colour #32CD32, 3 weakest topics, deep links
+- [x] Create server/weeklyDigestJob.ts handler (authenticates cron, fetches users, sends emails)
+- [x] Create /api/unsubscribe/digest endpoint (token-based, sets digestUnsubscribed = true)
+- [x] Mount both routes in server/_core/index.ts before Vite fallthrough
+- [x] Write vitest tests for digest query and unsubscribe logic (464 tests passing)
+- [ ] Show email template preview to user
+- [ ] Save checkpoint and deploy
+- [ ] Schedule Heartbeat cron: Monday 8am UTC (0 0 8 * * 1)
