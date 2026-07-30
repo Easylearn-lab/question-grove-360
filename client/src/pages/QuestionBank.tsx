@@ -115,9 +115,14 @@ export default function QuestionBank() {
     return () => { endStudySession(); };
   }, []);
 
+  // Read URL params for deep-linking (e.g., from Progress Dashboard "Practise" button)
+  const urlParams = useMemo(() => new URLSearchParams(window.location.search), []);
+  const urlSpecialty = urlParams.get("specialty");
+  const urlTopic = urlParams.get("topic");
+
   const [mode, setMode] = useState<"tutor" | "exam">("tutor");
-  const [specialty, setSpecialty] = useState("All Specialties");
-  const [selectedTopic, setSelectedTopic] = useState<string | null>(null);
+  const [specialty, setSpecialty] = useState(urlSpecialty || "All Specialties");
+  const [selectedTopic, setSelectedTopic] = useState<string | null>(urlTopic || null);
   const [difficulty, setDifficulty] = useState("All Levels");
   const [searchQuery, setSearchQuery] = useState("");
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
@@ -157,6 +162,8 @@ export default function QuestionBank() {
 
   // BUG FIX 1: Initialize from localStorage immediately to survive reconnections/remounts
   const [lockedQuestions, setLockedQuestions] = useState<any[] | null>(() => {
+    // When deep-linking from Progress Dashboard, always fetch fresh questions
+    if (urlSpecialty || urlTopic) return null;
     const saved = loadQBankSession();
     if (saved && (saved.specialty === "All Specialties" || saved.specialty === specialty)) {
       const storedQuestions = loadQBankQuestions();
@@ -181,7 +188,12 @@ export default function QuestionBank() {
   const sessionRestoredRef = useRef(restoredFromSession);
 
   // BUG FIX 1: Restore currentQuestionIndex from saved session on mount
+  // URL params take priority over saved session (deep-link from Progress Dashboard)
   useEffect(() => {
+    if (urlSpecialty || urlTopic) {
+      // Deep-link mode: URL params already set in useState initializers, skip session restore
+      return;
+    }
     if (initialSession && lockedQuestions) {
       setCurrentQuestionIndex(Math.min(initialSession.currentIndex, lockedQuestions.length - 1));
       if (initialSession.specialty && initialSession.specialty !== "All Specialties") {

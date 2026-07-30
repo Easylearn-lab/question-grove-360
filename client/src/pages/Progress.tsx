@@ -593,6 +593,17 @@ export default function Progress() {
                               <span className="text-xs text-gray-400 w-10 text-right">
                                 {topic.total} Qs
                               </span>
+                              <Button
+                                variant="ghost"
+                                size="sm"
+                                className="h-6 px-2 text-xs text-blue-600 hover:text-blue-800 hover:bg-blue-50"
+                                onClick={(e) => {
+                                  e.stopPropagation();
+                                  navigate(`/questions?specialty=${encodeURIComponent(spec.specialty)}&topic=${encodeURIComponent(topic.topic)}`);
+                                }}
+                              >
+                                Practise
+                              </Button>
                             </div>
                           ))}
                         </div>

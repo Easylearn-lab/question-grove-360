@@ -1237,3 +1237,10 @@
 - [x] Mobile-friendly: collapsed by default, expand on tap
 - [x] All 452 tests passing, TypeScript clean
 - [x] Deploy
+
+## Practise Weak Topic Button (Jul 30, 2026)
+- [x] Add "Practise" button to each topic row in Progress Dashboard expanded breakdown
+- [x] Clicking navigates to QuestionBank with specialty + topic pre-selected
+- [x] QuestionBank reads URL params to pre-populate specialty and topic filters (skips session cache)
+- [x] All 452 tests passing, TypeScript clean
+- [x] Deploy
