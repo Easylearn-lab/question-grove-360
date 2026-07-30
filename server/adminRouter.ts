@@ -257,6 +257,7 @@ export const adminRouter = router({
           explanationCorrect: z.string().optional(),
           difficulty: z.enum(["Easy", "Medium", "Hard"]).optional(),
           specialty: z.string().optional(),
+          topic: z.string().optional(),
           status: z.string().optional(),
         }),
       })

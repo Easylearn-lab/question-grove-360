@@ -137,7 +137,8 @@ export async function getQuestionsByFilters(
   specialty?: string,
   limit: number = 500,
   offset: number = 0,
-  userId?: number
+  userId?: number,
+  topic?: string
 ) {
   const db = await getDb();
   if (!db) return [];
@@ -151,9 +152,14 @@ export async function getQuestionsByFilters(
     // - Questions answered correctly get weight 1x
     // We use a LEFT JOIN to user_attempts and compute a weight, then ORDER BY weighted random
     if (userId) {
-      const whereClause = specialty
+      let whereClause = specialty
         ? sql`q.specialty = ${specialty}`
         : sql`1=1`;
+      if (topic) {
+        whereClause = specialty
+          ? sql`q.specialty = ${specialty} AND q.topic = ${topic}`
+          : sql`q.topic = ${topic}`;
+      }
       
       const result = await db.execute(sql`
         SELECT q.* FROM questions q
@@ -182,9 +188,13 @@ export async function getQuestionsByFilters(
     }
     
     // Fallback: pure random if no userId
-    if (specialty) {
+    const conditions = [];
+    if (specialty) conditions.push(eq(questions.specialty, specialty));
+    if (topic) conditions.push(eq(questions.topic, topic));
+    
+    if (conditions.length > 0) {
       const result = await db.select().from(questions)
-        .where(eq(questions.specialty, specialty))
+        .where(and(...conditions))
         .orderBy(sql`RAND()`)
         .limit(limit)
         .offset(offset);
@@ -198,6 +208,25 @@ export async function getQuestionsByFilters(
     }
   } catch (error) {
     console.error("[Database] Failed to get questions:", error);
+    return [];
+  }
+}
+
+export async function getTopicsBySpecialty(specialty: string) {
+  const db = await getDb();
+  if (!db) return [];
+
+  try {
+    const result = await db.execute(
+      sql`SELECT topic, COUNT(*) as count FROM questions WHERE specialty = ${specialty} AND topic IS NOT NULL AND topic != '' GROUP BY topic ORDER BY count DESC`
+    );
+    const rows = Array.isArray(result) && Array.isArray(result[0]) ? result[0] : result;
+    return (rows as any[]).map((r: any) => ({
+      topic: r.topic as string,
+      count: Number(r.count),
+    }));
+  } catch (error) {
+    console.error("[Database] Failed to get topics by specialty:", error);
     return [];
   }
 }
@@ -660,6 +689,7 @@ export async function getBookmarks(userId: number, limit: number = 20, offset: n
         optionD: questions.optionD,
         optionE: questions.optionE,
         correctAnswer: questions.correctAnswer,
+        topic: questions.topic,
         bookmarkedAt: bookmarks.createdAt,
       })
       .from(bookmarks)

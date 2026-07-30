@@ -50,6 +50,7 @@ const QBANK_QUESTIONS_KEY = "qg360_qbank_questions";
 interface QBankSession {
   questionIds: number[];
   specialty: string;
+  topic?: string | null;
   difficulty: string;
   currentIndex: number;
   answers: Record<number, { selectedAnswer: string; isCorrect: boolean }>;
@@ -116,6 +117,7 @@ export default function QuestionBank() {
 
   const [mode, setMode] = useState<"tutor" | "exam">("tutor");
   const [specialty, setSpecialty] = useState("All Specialties");
+  const [selectedTopic, setSelectedTopic] = useState<string | null>(null);
   const [difficulty, setDifficulty] = useState("All Levels");
   const [searchQuery, setSearchQuery] = useState("");
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
@@ -187,6 +189,9 @@ export default function QuestionBank() {
       }
       if (initialSession.difficulty && initialSession.difficulty !== "All Levels") {
         setDifficulty(initialSession.difficulty);
+      }
+      if (initialSession.topic) {
+        setSelectedTopic(initialSession.topic);
       }
     }
   }, []); // Only on mount
@@ -309,6 +314,7 @@ export default function QuestionBank() {
       const session: QBankSession = {
         questionIds: lockedQuestions.map((q: any) => q.id),
         specialty,
+        topic: selectedTopic,
         difficulty,
         currentIndex: currentQuestionIndex,
         answers: sessionAnswers,
@@ -320,7 +326,7 @@ export default function QuestionBank() {
       setLastSavedAt(Date.now());
     }, 500);
     return () => { if (saveSessionRef.current) clearTimeout(saveSessionRef.current); };
-  }, [lockedQuestions, currentQuestionIndex, sessionAnswers, specialty, difficulty]);
+  }, [lockedQuestions, currentQuestionIndex, sessionAnswers, specialty, selectedTopic, difficulty]);
 
   const recordAttempt = trpc.mockExams.recordAttempt.useMutation();
   const bookmarkMutation = trpc.questions.bookmarkQuestion.useMutation();
@@ -380,10 +386,28 @@ export default function QuestionBank() {
   };
 
   // Filter questions client-side for difficulty, search, and flagged
+  // Derive available topics from the current locked questions for the selected specialty
+  const availableTopics = useMemo(() => {
+    const source = lockedQuestions || [];
+    const topicCounts = new Map<string, number>();
+    source.forEach((q: any) => {
+      if (q.topic) {
+        topicCounts.set(q.topic, (topicCounts.get(q.topic) || 0) + 1);
+      }
+    });
+    return Array.from(topicCounts.entries())
+      .sort((a, b) => b[1] - a[1])
+      .map(([topic, count]) => ({ topic, count }));
+  }, [lockedQuestions]);
+
   const filteredQuestions = useMemo(() => {
     const source = lockedQuestions || [];
     if (source.length === 0) return [];
     let filtered = [...source];
+
+    if (selectedTopic) {
+      filtered = filtered.filter((q: any) => q.topic === selectedTopic);
+    }
 
     if (difficulty !== "All Levels") {
       filtered = filtered.filter((q: any) => q.difficulty === difficulty);
@@ -403,7 +427,7 @@ export default function QuestionBank() {
     }
 
     return filtered;
-  }, [lockedQuestions, difficulty, searchQuery, showFlaggedOnly, flaggedIds]);
+  }, [lockedQuestions, selectedTopic, difficulty, searchQuery, showFlaggedOnly, flaggedIds]);
 
   const { hasAccess: isPremium, isLoading: subLoading } = useExamAccess("AKT");
 
@@ -656,6 +680,7 @@ export default function QuestionBank() {
   // Handle specialty change: unlock questions so a new fetch happens
   const handleSpecialtyChange = (v: string) => {
     setSpecialty(v);
+    setSelectedTopic(null); // Clear topic filter when specialty changes
     setCurrentQuestionIndex(0);
     setLockedQuestions(null); // Allow new fetch for new specialty
     setSessionAnswers({});
@@ -719,6 +744,12 @@ export default function QuestionBank() {
             <span className="text-sm text-slate-600">
               {totalQuestions > 0 ? `${answeredCount} of ${totalQuestions} answered` : "Loading..."}
             </span>
+            {selectedTopic && (
+              <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-700">
+                {selectedTopic}
+                <button onClick={() => { setSelectedTopic(null); setCurrentQuestionIndex(0); }} className="ml-0.5 hover:text-green-900">&times;</button>
+              </span>
+            )}
             <Button
               variant="outline"
               size="sm"
@@ -796,6 +827,36 @@ export default function QuestionBank() {
                     </SelectContent>
                   </Select>
                 </div>
+
+                {/* Topic Filter - only shown when a specific specialty is selected */}
+                {specialty !== "All Specialties" && availableTopics.length > 0 && (
+                  <div>
+                    <Label className="text-slate-700 font-medium">Topic <span className="text-slate-400 font-normal text-xs">(optional)</span></Label>
+                    <div className="mt-2 flex flex-wrap gap-1.5 max-h-32 overflow-y-auto">
+                      {selectedTopic && (
+                        <button
+                          onClick={() => { setSelectedTopic(null); setCurrentQuestionIndex(0); }}
+                          className="px-2.5 py-1 rounded-full text-xs font-medium bg-slate-200 text-slate-700 hover:bg-slate-300 transition-colors"
+                        >
+                          All Topics
+                        </button>
+                      )}
+                      {availableTopics.map(({ topic, count }) => (
+                        <button
+                          key={topic}
+                          onClick={() => { setSelectedTopic(selectedTopic === topic ? null : topic); setCurrentQuestionIndex(0); }}
+                          className={`px-2.5 py-1 rounded-full text-xs font-medium transition-colors ${
+                            selectedTopic === topic
+                              ? "bg-green-600 text-white"
+                              : "bg-slate-100 text-slate-600 hover:bg-slate-200"
+                          }`}
+                        >
+                          {topic} ({count})
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+                )}
 
                 {/* Difficulty Filter */}
                 <div>

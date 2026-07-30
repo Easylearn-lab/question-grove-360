@@ -52,13 +52,20 @@ export const appRouter = router({
       .input(
         z.object({
           specialty: z.string().optional(),
+          topic: z.string().optional(),
           limit: z.number().default(500),
           offset: z.number().default(0),
         })
       )
       .query(async ({ ctx, input }) => {
         const { getQuestionsByFilters } = await import("./db");
-        return await getQuestionsByFilters(input.specialty, input.limit, input.offset, ctx.user.id);
+        return await getQuestionsByFilters(input.specialty, input.limit, input.offset, ctx.user.id, input.topic);
+      }),
+    getTopicsBySpecialty: protectedProcedure
+      .input(z.string())
+      .query(async ({ input }) => {
+        const { getTopicsBySpecialty } = await import("./db");
+        return await getTopicsBySpecialty(input);
       }),
     getQuestionById: protectedProcedure
       .input(z.number())

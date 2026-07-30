@@ -125,6 +125,7 @@ export const questions = mysqlTable("questions", {
   correctCount: int("correctCount").default(0),
   flagCount: int("flagCount").default(0),
   reportCount: int("reportCount").default(0),
+  topic: varchar("topic", { length: 100 }),
   createdAt: timestamp("createdAt").defaultNow().notNull(),
   updatedAt: timestamp("updatedAt").defaultNow().onUpdateNow().notNull(),
 });

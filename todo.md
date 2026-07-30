@@ -1209,3 +1209,21 @@
 - [x] Per-option explanations keyed by originalKey
 - [x] TypeScript clean, all 452 tests passing
 - [x] Deploy
+
+## Topic-Level Filtering (Jul 30, 2026)
+- [x] Add topic column to questions table
+- [x] Auto-tag all 2265 questions with topics using LLM (consolidated to ~10-15 per specialty)
+- [x] Show sample topics for user review before deploying
+- [x] Clean up cross-contamination: remove "Psychiatry" from Neurology, re-tag as Neuropsychiatry
+- [x] Clean up cross-contamination: remove "Acute Respiratory Emergencies" from Cardiovascular, re-tag
+- [x] Check all specialties for similar bleed-over and clean up
+- [x] Consolidate Neurology from 29 topics down to 12
+- [x] Consolidate Cardiovascular from 22 topics down to 11
+- [x] Consolidate Pharmacology & Prescribing from 26 topics down to 10
+- [x] Show revised topic lists for user approval
+- [x] Add optional topic filter UI to QuestionBank (secondary chips below specialty)
+- [x] Apply topic filter to bookmarks (client-side chip filter)
+- [x] Mock exam builder: not feasible (mock exams are fixed 160 random questions, no builder UI)
+- [x] Add admin topic editing capability (QuestionsAdmin component with real data + edit dialog)
+- [x] All 452 tests passing, TypeScript clean
+- [x] Deploy

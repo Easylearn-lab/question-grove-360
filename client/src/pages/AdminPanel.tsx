@@ -8,6 +8,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { ArrowLeft, Users, BookOpen, BarChart3, Settings, Edit2, Trash2, Plus, Image, Upload } from "lucide-react";
 import { trpc } from "@/lib/trpc";
 import { toast } from "sonner";
+import { QuestionsAdmin } from "@/components/QuestionsAdmin";
 
 const MOCK_USERS = [
   { id: 1, name: "John Doe", email: "john@example.com", role: "user", joinDate: "2026-01-15", status: "active" },
@@ -15,11 +16,6 @@ const MOCK_USERS = [
   { id: 3, name: "Admin User", email: "admin@example.com", role: "admin", joinDate: "2025-12-01", status: "active" },
 ];
 
-const MOCK_QUESTIONS = [
-  { id: 1, text: "What is the classic presentation of AMI?", specialty: "Cardiology", difficulty: "Medium" },
-  { id: 2, text: "What are the stages of CKD?", specialty: "Renal", difficulty: "Easy" },
-  { id: 3, text: "Pathophysiology of DKA?", specialty: "Endocrinology", difficulty: "Hard" },
-];
 
 const ANALYTICS = {
   totalUsers: 2543,
@@ -356,57 +352,7 @@ export default function AdminPanel() {
 
           {/* Questions Tab */}
           <TabsContent value="questions">
-            <div className="mb-6">
-              <Button className="bg-green-600 hover:bg-green-700 text-gray-900 gap-2">
-                <Plus className="w-4 h-4" />
-                Add Question
-              </Button>
-            </div>
-
-            <Card className="border-slate-200 overflow-hidden">
-              <div className="overflow-x-auto">
-                <table className="w-full">
-                  <thead className="bg-slate-50 border-b border-slate-200">
-                    <tr>
-                      <th className="px-6 py-3 text-left text-sm font-medium text-slate-700">Question</th>
-                      <th className="px-6 py-3 text-left text-sm font-medium text-slate-700">Specialty</th>
-                      <th className="px-6 py-3 text-left text-sm font-medium text-slate-700">Difficulty</th>
-                      <th className="px-6 py-3 text-left text-sm font-medium text-slate-700">Actions</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {MOCK_QUESTIONS.map((q) => (
-                      <tr key={q.id} className="border-b border-slate-200 hover:bg-slate-50">
-                        <td className="px-6 py-3 text-sm text-slate-900">{q.text}</td>
-                        <td className="px-6 py-3 text-sm text-slate-600">{q.specialty}</td>
-                        <td className="px-6 py-3 text-sm">
-                          {q.difficulty !== "Easy" ? (
-                            <span className={`px-2 py-1 rounded-full text-xs font-medium ${
-                              q.difficulty === "Medium" ? "bg-yellow-100 text-yellow-700" :
-                              "bg-red-100 text-red-700"
-                            }`}>
-                              {q.difficulty}
-                            </span>
-                          ) : (
-                            <span className="px-2 py-1 rounded-full text-xs font-medium bg-slate-100 text-slate-600">—</span>
-                          )}
-                        </td>
-                        <td className="px-6 py-3 text-sm">
-                          <div className="flex gap-2">
-                            <Button variant="ghost" size="sm">
-                              <Edit2 className="w-4 h-4" />
-                            </Button>
-                            <Button variant="ghost" size="sm" className="text-red-600 hover:text-red-700">
-                              <Trash2 className="w-4 h-4" />
-                            </Button>
-                          </div>
-                        </td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
-            </Card>
+            <QuestionsAdmin />
           </TabsContent>
 
           {/* Settings Tab */}

@@ -25,6 +25,7 @@ export default function Bookmarks() {
   // Filter states
   const [searchQuery, setSearchQuery] = useState("");
   const [specialty, setSpecialty] = useState("All Specialties");
+  const [selectedTopic, setSelectedTopic] = useState<string | null>(null);
   const [difficulty, setDifficulty] = useState("All Levels");
 
   const { hasAccess: isPremium } = useExamAccess("AKT");
@@ -54,11 +55,32 @@ export default function Bookmarks() {
   }, [loading, isAuthenticated, navigate]);
 
   // Filter bookmarks based on search, specialty, and difficulty
+  // Derive available topics from bookmarks for the selected specialty
+  const availableTopics = useMemo(() => {
+    let source = [...bookmarks];
+    if (specialty !== "All Specialties") {
+      source = source.filter((b) => b.specialty === specialty);
+    }
+    const topicCounts = new Map<string, number>();
+    source.forEach((b: any) => {
+      if (b.topic) {
+        topicCounts.set(b.topic, (topicCounts.get(b.topic) || 0) + 1);
+      }
+    });
+    return Array.from(topicCounts.entries())
+      .sort((a, b) => b[1] - a[1])
+      .map(([topic, count]) => ({ topic, count }));
+  }, [bookmarks, specialty]);
+
   const filteredBookmarks = useMemo(() => {
     let filtered = [...bookmarks];
 
     if (specialty !== "All Specialties") {
       filtered = filtered.filter((b) => b.specialty === specialty);
+    }
+
+    if (selectedTopic) {
+      filtered = filtered.filter((b: any) => b.topic === selectedTopic);
     }
 
     if (difficulty !== "All Levels") {
@@ -76,19 +98,20 @@ export default function Bookmarks() {
     }
 
     return filtered;
-  }, [bookmarks, specialty, difficulty, searchQuery]);
+  }, [bookmarks, specialty, selectedTopic, difficulty, searchQuery]);
 
   // Reset question index when filters change
   useEffect(() => {
     setCurrentQuestionIndex(0);
     setSelectedAnswer(null);
     setShowExplanation(false);
-  }, [specialty, difficulty, searchQuery]);
+  }, [specialty, selectedTopic, difficulty, searchQuery]);
 
-  const hasActiveFilters = specialty !== "All Specialties" || difficulty !== "All Levels" || searchQuery.trim() !== "";
+  const hasActiveFilters = specialty !== "All Specialties" || selectedTopic !== null || difficulty !== "All Levels" || searchQuery.trim() !== "";
 
   const clearFilters = () => {
     setSpecialty("All Specialties");
+    setSelectedTopic(null);
     setDifficulty("All Levels");
     setSearchQuery("");
   };
@@ -234,6 +257,36 @@ export default function Bookmarks() {
                 </SelectContent>
               </Select>
             </div>
+
+            {/* Topic Filter Chips - shown when specialty is selected and topics exist */}
+            {specialty !== "All Specialties" && availableTopics.length > 0 && (
+              <div className="mt-3">
+                <span className="text-xs font-medium text-slate-500 mr-2">Topic:</span>
+                <div className="inline-flex flex-wrap gap-1.5 mt-1">
+                  {selectedTopic && (
+                    <button
+                      onClick={() => setSelectedTopic(null)}
+                      className="px-2.5 py-1 rounded-full text-xs font-medium bg-slate-200 text-slate-700 hover:bg-slate-300 transition-colors"
+                    >
+                      All Topics
+                    </button>
+                  )}
+                  {availableTopics.map(({ topic, count }) => (
+                    <button
+                      key={topic}
+                      onClick={() => setSelectedTopic(selectedTopic === topic ? null : topic)}
+                      className={`px-2.5 py-1 rounded-full text-xs font-medium transition-colors ${
+                        selectedTopic === topic
+                          ? "bg-green-600 text-white"
+                          : "bg-slate-100 text-slate-600 hover:bg-slate-200"
+                      }`}
+                    >
+                      {topic} ({count})
+                    </button>
+                  ))}
+                </div>
+              </div>
+            )}
 
             {/* Active filter summary */}
             {hasActiveFilters && (
