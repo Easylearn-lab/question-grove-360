@@ -1227,3 +1227,13 @@
 - [x] Add admin topic editing capability (QuestionsAdmin component with real data + edit dialog)
 - [x] All 452 tests passing, TypeScript clean
 - [x] Deploy
+
+## Topic-Level Performance Analytics (Jul 30, 2026)
+- [x] Add backend query: getTopicBreakdown (group user_answers by topic within specialty)
+- [x] Add tRPC procedure: progress.getTopicBreakdown
+- [x] Build frontend: collapsible accordion per specialty showing topic breakdown
+- [x] Sort topics by accuracy ascending (weakest first)
+- [x] Show accuracy % + questions attempted count + colour progress bar
+- [x] Mobile-friendly: collapsed by default, expand on tap
+- [x] All 452 tests passing, TypeScript clean
+- [x] Deploy

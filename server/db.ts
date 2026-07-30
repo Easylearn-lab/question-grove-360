@@ -1723,3 +1723,69 @@ export async function updateSubscriptionByStripeId(
     return false;
   }
 }
+
+
+/**
+ * Get topic-level accuracy breakdown for a user, grouped by specialty.
+ * Returns only topics the user has attempted at least one question in.
+ * Sorted by accuracy ascending (weakest first) within each specialty.
+ */
+export async function getTopicBreakdown(userId: number, days: number = 30) {
+  const db = await getDb();
+  if (!db) return [];
+
+  try {
+    const { userAttempts, questions } = await import("../drizzle/schema");
+    const cutoffDate = new Date();
+    cutoffDate.setDate(cutoffDate.getDate() - days);
+
+    const attempts = await db
+      .select({
+        specialty: questions.specialty,
+        topic: questions.topic,
+        isCorrect: userAttempts.isCorrect,
+      })
+      .from(userAttempts)
+      .innerJoin(questions, eq(userAttempts.questionId, questions.id))
+      .where(and(
+        eq(userAttempts.userId, userId),
+        gte(userAttempts.createdAt, cutoffDate)
+      ));
+
+    // Group by specialty -> topic
+    const specialtyTopicMap: Record<string, Record<string, { total: number; correct: number }>> = {};
+
+    attempts.forEach((a) => {
+      const specialty = a.specialty || "Unknown";
+      const topic = a.topic || "Uncategorised";
+
+      if (!specialtyTopicMap[specialty]) {
+        specialtyTopicMap[specialty] = {};
+      }
+      if (!specialtyTopicMap[specialty][topic]) {
+        specialtyTopicMap[specialty][topic] = { total: 0, correct: 0 };
+      }
+      specialtyTopicMap[specialty][topic].total += 1;
+      if (a.isCorrect) {
+        specialtyTopicMap[specialty][topic].correct += 1;
+      }
+    });
+
+    // Convert to array format, sorted by accuracy ascending (weakest first) within each specialty
+    return Object.entries(specialtyTopicMap).map(([specialty, topics]) => ({
+      specialty,
+      topics: Object.entries(topics)
+        .filter(([, stats]) => stats.total > 0)
+        .map(([topic, stats]) => ({
+          topic,
+          total: stats.total,
+          correct: stats.correct,
+          accuracy: Math.round((stats.correct / stats.total) * 100),
+        }))
+        .sort((a, b) => a.accuracy - b.accuracy), // weakest first
+    }));
+  } catch (error) {
+    console.error("[Database] Failed to get topic breakdown:", error);
+    return [];
+  }
+}

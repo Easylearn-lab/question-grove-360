@@ -640,6 +640,16 @@ export const appRouter = router({
         const { getSpecialtyBreakdown } = await import("./db");
         return await getSpecialtyBreakdown(ctx.user.id, input.days);
       }),
+    getTopicBreakdown: protectedProcedure
+      .input(
+        z.object({
+          days: z.number().default(30),
+        })
+      )
+      .query(async ({ ctx, input }) => {
+        const { getTopicBreakdown } = await import("./db");
+        return await getTopicBreakdown(ctx.user.id, input.days);
+      }),
   }),
 
   // Stripe Router

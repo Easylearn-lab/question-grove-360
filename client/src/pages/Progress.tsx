@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Skeleton } from "@/components/ui/skeleton";
 import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
-import { Download } from "lucide-react";
+import { Download, ChevronDown, ChevronRight } from "lucide-react";
 
 type DateRange = "7" | "14" | "30" | "90" | "all";
 
@@ -41,6 +41,32 @@ export default function Progress() {
     { days },
     { enabled: isAuthenticated }
   );
+  const { data: topicBreakdown, isLoading: topicLoading } = trpc.progress.getTopicBreakdown.useQuery(
+    { days },
+    { enabled: isAuthenticated }
+  );
+
+  // Track which specialties are expanded for topic breakdown
+  const [expandedSpecialties, setExpandedSpecialties] = useState<Set<string>>(new Set());
+
+  const toggleSpecialty = (specialty: string) => {
+    setExpandedSpecialties((prev) => {
+      const next = new Set(prev);
+      if (next.has(specialty)) {
+        next.delete(specialty);
+      } else {
+        next.add(specialty);
+      }
+      return next;
+    });
+  };
+
+  // Helper to get topic data for a specific specialty
+  const getTopicsForSpecialty = (specialty: string) => {
+    if (!topicBreakdown) return [];
+    const found = topicBreakdown.find((s: any) => s.specialty === specialty);
+    return found ? found.topics : [];
+  };
 
   // Chart dimensions
   const chartWidth = 700;
@@ -494,28 +520,86 @@ export default function Progress() {
                 ))}
               </div>
             ) : specialtyBreakdown && specialtyBreakdown.length > 0 ? (
-              <div className="space-y-3">
-                {specialtyBreakdown.map((spec: any, i: number) => (
-                  <div key={i} className="flex items-center gap-3">
-                    <span className="text-sm text-gray-700 w-40 truncate">{spec.specialty}</span>
-                    <div className="flex-1 h-3 bg-gray-100 rounded-full overflow-hidden">
-                      <div
-                        className={`h-full rounded-full transition-all duration-500 ${
-                          spec.accuracy >= 80
-                            ? "bg-green-500"
-                            : spec.accuracy >= 60
-                            ? "bg-amber-400"
-                            : "bg-red-400"
+              <div className="space-y-1">
+                {specialtyBreakdown.map((spec: any, i: number) => {
+                  const topics = getTopicsForSpecialty(spec.specialty);
+                  const isExpanded = expandedSpecialties.has(spec.specialty);
+                  const hasTopics = topics.length > 0;
+
+                  return (
+                    <div key={i} className="border border-gray-100 rounded-lg overflow-hidden">
+                      {/* Specialty row - clickable to expand */}
+                      <button
+                        className={`w-full flex items-center gap-3 p-3 hover:bg-gray-50 transition-colors ${
+                          hasTopics ? "cursor-pointer" : "cursor-default"
                         }`}
-                        style={{ width: `${spec.accuracy}%` }}
-                      />
+                        onClick={() => hasTopics && toggleSpecialty(spec.specialty)}
+                        type="button"
+                      >
+                        {hasTopics && (
+                          <span className="text-gray-400 w-4 flex-shrink-0">
+                            {isExpanded ? <ChevronDown className="w-4 h-4" /> : <ChevronRight className="w-4 h-4" />}
+                          </span>
+                        )}
+                        {!hasTopics && <span className="w-4 flex-shrink-0" />}
+                        <span className="text-sm font-medium text-gray-700 w-40 truncate text-left">{spec.specialty}</span>
+                        <div className="flex-1 h-3 bg-gray-100 rounded-full overflow-hidden">
+                          <div
+                            className={`h-full rounded-full transition-all duration-500 ${
+                              spec.accuracy >= 80
+                                ? "bg-green-500"
+                                : spec.accuracy >= 60
+                                ? "bg-amber-400"
+                                : "bg-red-400"
+                            }`}
+                            style={{ width: `${spec.accuracy}%` }}
+                          />
+                        </div>
+                        <span className="text-sm font-medium text-gray-700 w-12 text-right">{spec.accuracy}%</span>
+                        <Badge variant="outline" className="text-xs">
+                          {spec.total || spec.questionsAttempted} Qs
+                        </Badge>
+                      </button>
+
+                      {/* Topic breakdown - collapsible */}
+                      {isExpanded && hasTopics && (
+                        <div className="border-t border-gray-100 bg-gray-50/50 px-4 py-2 space-y-2">
+                          {topics.map((topic: any, j: number) => (
+                            <div key={j} className="flex items-center gap-3 pl-5">
+                              <span className="text-xs text-gray-600 w-44 truncate" title={topic.topic}>
+                                {topic.topic}
+                              </span>
+                              <div className="flex-1 h-2 bg-gray-200 rounded-full overflow-hidden">
+                                <div
+                                  className={`h-full rounded-full transition-all duration-500 ${
+                                    topic.accuracy >= 80
+                                      ? "bg-emerald-400"
+                                      : topic.accuracy >= 60
+                                      ? "bg-amber-300"
+                                      : "bg-red-300"
+                                  }`}
+                                  style={{ width: `${topic.accuracy}%` }}
+                                />
+                              </div>
+                              <span className={`text-xs font-medium w-10 text-right ${
+                                topic.accuracy >= 80
+                                  ? "text-emerald-600"
+                                  : topic.accuracy >= 60
+                                  ? "text-amber-600"
+                                  : "text-red-600"
+                              }`}>
+                                {topic.accuracy}%
+                              </span>
+                              <span className="text-xs text-gray-400 w-10 text-right">
+                                {topic.total} Qs
+                              </span>
+                            </div>
+                          ))}
+                        </div>
+                      )}
                     </div>
-                    <span className="text-sm font-medium text-gray-700 w-12 text-right">{spec.accuracy}%</span>
-                    <Badge variant="outline" className="text-xs">
-                      {spec.questionsAttempted} Qs
-                    </Badge>
-                  </div>
-                ))}
+                  );
+                })}
               </div>
             ) : (
               <div className="h-[150px] flex items-center justify-center text-gray-400">
