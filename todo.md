@@ -1253,6 +1253,10 @@
 - [x] Create /api/unsubscribe/digest endpoint (token-based, sets digestUnsubscribed = true)
 - [x] Mount both routes in server/_core/index.ts before Vite fallthrough
 - [x] Write vitest tests for digest query and unsubscribe logic (464 tests passing)
-- [ ] Show email template preview to user
-- [ ] Save checkpoint and deploy
-- [ ] Schedule Heartbeat cron: Monday 8am UTC (0 0 8 * * 1)
+- [x] Show email template preview to user
+- [x] Save checkpoint and deploy
+- [x] Schedule Heartbeat cron: Monday 8am UTC (0 0 8 * * 1) — task_uid: 4wverZMHtWqjfKfBdsVXmD
+
+## CRITICAL BUG FIXES (Jul 31, 2026)
+- [x] BUG: Topic filter chips missing from live Question Bank — root cause: users routed to legacy MRCGPAKTPractice page instead of QuestionBank. Fixed by redirecting specialty clicks to /questions?specialty=X
+- [x] BUG: Resume-where-you-left-off broken — root cause: URL params triggered deep-link bypass that always cleared session. Fixed by restoring session when URL specialty matches saved session

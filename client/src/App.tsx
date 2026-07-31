@@ -1,7 +1,7 @@
 import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import NotFound from "@/pages/NotFound";
-import { Route, Switch } from "wouter";
+import { Route, Switch, Redirect, useParams } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import Home from "./pages/Home";
@@ -26,6 +26,34 @@ import TwoFactorSettings from "./pages/TwoFactorSettings";
 import { AICoachFloating } from "./components/AICoachFloating";
 import MRCGPAKTSpecialties from "./pages/MRCGPAKTSpecialties";
 import MRCGPAKTPractice from "./pages/MRCGPAKTPractice";
+
+// Redirect legacy practice URLs to the full QuestionBank
+function MRCGPAKTPracticeRedirect() {
+  const { specialty } = useParams<{ specialty: string }>();
+  const SPECIALTIES_MAP: Record<string, string> = {
+    "ethics-organisational": "Ethics & Organisational",
+    "endocrinology": "Endocrinology",
+    "paediatrics": "Paediatrics",
+    "cardiovascular": "Cardiovascular",
+    "statistics-ebm": "Statistics & EBM",
+    "gastroenterology": "Gastroenterology",
+    "haematology": "Haematology",
+    "general-practice": "General Practice",
+    "respiratory": "Respiratory",
+    "pharmacology-prescribing": "Pharmacology & Prescribing",
+    "ophthalmology": "Ophthalmology",
+    "ent": "ENT",
+    "musculoskeletal": "Musculoskeletal",
+    "neurology": "Neurology",
+    "dermatology": "Dermatology",
+    "obstetrics-gynaecology": "Obstetrics & Gynaecology",
+    "renal-urology": "Renal & Urology",
+    "infectious-disease": "Infectious Disease",
+    "psychiatry": "Psychiatry",
+  };
+  const specialtyName = specialty ? SPECIALTIES_MAP[specialty] || specialty : "";
+  return <Redirect to={`/questions?specialty=${encodeURIComponent(specialtyName)}`} />;
+}
 import Note360List from "./pages/Note360List";
 import Note360Content from "./pages/Note360Content";
 import Picture360 from "./pages/Picture360";
@@ -64,7 +92,7 @@ function Router() {
       <Route path={"/picture360"} component={Picture360} />
       <Route path={"/picture360/:specialty"} component={Picture360Specialty} />
       <Route path={"/:mrcgp-akt"} component={MRCGPAKTSpecialties} />
-      <Route path={"/:practice/mrcgp-akt/:specialty"} component={MRCGPAKTPractice} />
+      <Route path={"/:practice/mrcgp-akt/:specialty"} component={MRCGPAKTPracticeRedirect} />
       <Route path={"/:mrcgp-akt/note360"} component={Note360List} />
       <Route path={"/:mrcgp-akt/note360/:specialty"} component={Note360Content} />
       <Route path={"/:mrcgp-akt/flashcards"} component={PatternRecognition} />

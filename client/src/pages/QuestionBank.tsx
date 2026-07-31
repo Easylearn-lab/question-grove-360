@@ -162,9 +162,20 @@ export default function QuestionBank() {
 
   // BUG FIX 1: Initialize from localStorage immediately to survive reconnections/remounts
   const [lockedQuestions, setLockedQuestions] = useState<any[] | null>(() => {
-    // When deep-linking from Progress Dashboard, always fetch fresh questions
-    if (urlSpecialty || urlTopic) return null;
     const saved = loadQBankSession();
+    // If URL has a topic param, always fetch fresh (deep-link to specific topic)
+    if (urlTopic) return null;
+    // If URL has a specialty param, restore session only if it matches the saved session's specialty
+    if (urlSpecialty) {
+      if (saved && saved.specialty === urlSpecialty) {
+        const storedQuestions = loadQBankQuestions();
+        if (storedQuestions && storedQuestions.length > 0) {
+          return storedQuestions;
+        }
+      }
+      return null; // Different specialty or no saved session — fetch fresh
+    }
+    // No URL params: restore any saved session
     if (saved && (saved.specialty === "All Specialties" || saved.specialty === specialty)) {
       const storedQuestions = loadQBankQuestions();
       if (storedQuestions && storedQuestions.length > 0) {
@@ -188,21 +199,25 @@ export default function QuestionBank() {
   const sessionRestoredRef = useRef(restoredFromSession);
 
   // BUG FIX 1: Restore currentQuestionIndex from saved session on mount
-  // URL params take priority over saved session (deep-link from Progress Dashboard)
+  // Only skip restore if deep-linking to a DIFFERENT specialty or a specific topic
   useEffect(() => {
-    if (urlSpecialty || urlTopic) {
-      // Deep-link mode: URL params already set in useState initializers, skip session restore
+    if (urlTopic) {
+      // Deep-link to specific topic: always start fresh
       return;
     }
     if (initialSession && lockedQuestions) {
-      setCurrentQuestionIndex(Math.min(initialSession.currentIndex, lockedQuestions.length - 1));
-      if (initialSession.specialty && initialSession.specialty !== "All Specialties") {
+      // Restore position if session matches (either no URL specialty, or URL specialty matches saved)
+      const sessionMatches = !urlSpecialty || initialSession.specialty === urlSpecialty;
+      if (sessionMatches) {
+        setCurrentQuestionIndex(Math.min(initialSession.currentIndex, lockedQuestions.length - 1));
+      }
+      if (initialSession.specialty && initialSession.specialty !== "All Specialties" && !urlSpecialty) {
         setSpecialty(initialSession.specialty);
       }
       if (initialSession.difficulty && initialSession.difficulty !== "All Levels") {
         setDifficulty(initialSession.difficulty);
       }
-      if (initialSession.topic) {
+      if (initialSession.topic && !urlTopic) {
         setSelectedTopic(initialSession.topic);
       }
     }

@@ -63,7 +63,8 @@ export default function MRCGPAKTSpecialties() {
       navigate("/pricing");
       return;
     }
-    navigate(`/practice/mrcgp-akt/${specialty.slug}`);
+    // Route to the full QuestionBank which has topic filtering, resume, and spaced repetition
+    navigate(`/questions?specialty=${encodeURIComponent(specialty.name)}`);
   };
 
   if (loading || specialtiesQuery.isLoading) {
