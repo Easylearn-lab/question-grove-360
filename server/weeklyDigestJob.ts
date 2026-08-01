@@ -38,12 +38,16 @@ export function decodeUnsubscribeToken(token: string): number | null {
  * Find the 3 weakest topics for a user (min 3 attempts per topic for meaningful data).
  */
 async function getWeakestTopics(userId: number): Promise<WeakTopic[]> {
+  // Get AKT breakdown
   const breakdown = await getTopicBreakdown(userId, 90); // 90 days for more data
-  if (!breakdown || breakdown.length === 0) return [];
+  // Also get PLAB1 breakdown
+  const plab1Breakdown = await getTopicBreakdown(userId, 90, 60001);
+  const combined = [...(breakdown || []), ...(plab1Breakdown || [])];
+  if (combined.length === 0) return [];
 
   // Flatten all topics across specialties, filter min 3 attempts
   const allTopics: WeakTopic[] = [];
-  for (const spec of breakdown) {
+  for (const spec of combined) {
     for (const topic of spec.topics) {
       if (topic.total >= 3) {
         allTopics.push({

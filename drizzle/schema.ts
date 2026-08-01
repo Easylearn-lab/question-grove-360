@@ -631,3 +631,53 @@ export const questionFlags = mysqlTable("question_flags", {
 });
 export type QuestionFlag = typeof questionFlags.$inferSelect;
 export type InsertQuestionFlag = typeof questionFlags.$inferInsert;
+
+// PLAB 1 Questions
+export const plab1Questions = mysqlTable("plab1_questions", {
+  id: int("id").autoincrement().primaryKey(),
+  examId: int("examId").notNull().references(() => exams.id),
+
+  // Classification
+  specialty: varchar("specialty", { length: 255 }).notNull(),
+  topic: varchar("topic", { length: 100 }).notNull(),
+  subTopic: varchar("subTopic", { length: 100 }),
+  difficulty: mysqlEnum("difficulty", ["Easy", "Medium", "Hard"]).notNull().default("Medium"),
+  questionType: mysqlEnum("questionType", ["SBA", "EMQ"]).notNull().default("SBA"),
+  ukmlaCategoryId: varchar("ukmlaCategoryId", { length: 100 }),
+
+  // Question content
+  question: text("question").notNull(),
+  optionA: text("optionA").notNull(),
+  optionB: text("optionB").notNull(),
+  optionC: text("optionC").notNull(),
+  optionD: text("optionD").notNull(),
+  optionE: text("optionE").notNull(),
+  correctAnswer: varchar("correctAnswer", { length: 10 }).notNull(),
+
+  // Explanations
+  explanationCorrect: text("explanationCorrect"),
+  explanationA: text("explanationA"),
+  explanationB: text("explanationB"),
+  explanationC: text("explanationC"),
+  explanationD: text("explanationD"),
+  explanationE: text("explanationE"),
+  reference: text("reference"),
+
+  // Image support (ECGs, X-rays, clinical photos)
+  imageUrl: varchar("imageUrl", { length: 500 }),
+  imageCaption: varchar("imageCaption", { length: 255 }),
+  imageType: mysqlEnum("imageType", ["ECG", "X-ray", "CT", "Clinical Photo", "Histology", "Other"]),
+
+  // Metadata
+  tags: json("tags"),
+  status: varchar("status", { length: 50 }).default("active"),
+  attemptCount: int("attemptCount").default(0),
+  correctCount: int("correctCount").default(0),
+  flagCount: int("flagCount").default(0),
+  reportCount: int("reportCount").default(0),
+
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+  updatedAt: timestamp("updatedAt").defaultNow().onUpdateNow().notNull(),
+});
+export type Plab1Question = typeof plab1Questions.$inferSelect;
+export type InsertPlab1Question = typeof plab1Questions.$inferInsert;

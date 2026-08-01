@@ -75,9 +75,9 @@ export function CrossSellGate({
   // Cross-sell: user has the other subscription
   if (hasOtherSubscription) {
     const otherTrackNames = userTracks.join(" & ");
-    const targetTrackName = requiredTrack === "AKT" ? "MRCGP AKT" : requiredTrack === "SCA" ? "SCA Simulator" : "MSRA";
-    const plan3mo = requiredTrack === "SCA" ? "SCA_3MONTH" : requiredTrack === "AKT" ? "AKT_3MONTH" : "MSRA_3MONTH";
-    const plan6mo = requiredTrack === "SCA" ? "SCA_6MONTH" : requiredTrack === "AKT" ? "AKT_6MONTH" : "MSRA_6MONTH";
+    const targetTrackName = requiredTrack === "AKT" ? "MRCGP AKT" : requiredTrack === "SCA" ? "SCA Simulator" : requiredTrack === "PLAB1" ? "PLAB 1" : "MSRA";
+    const plan3mo = requiredTrack === "SCA" ? "SCA_3MONTH" : requiredTrack === "AKT" ? "AKT_3MONTH" : requiredTrack === "PLAB1" ? "PLAB1_3MONTH" : "MSRA_3MONTH";
+    const plan6mo = requiredTrack === "SCA" ? "SCA_6MONTH" : requiredTrack === "AKT" ? "AKT_6MONTH" : requiredTrack === "PLAB1" ? "PLAB1_6MONTH" : "MSRA_6MONTH";
 
     return (
       <Card className="p-12 border-slate-200 text-center">

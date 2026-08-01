@@ -1260,3 +1260,37 @@
 ## CRITICAL BUG FIXES (Jul 31, 2026)
 - [x] BUG: Topic filter chips missing from live Question Bank — root cause: users routed to legacy MRCGPAKTPractice page instead of QuestionBank. Fixed by redirecting specialty clicks to /questions?specialty=X
 - [x] BUG: Resume-where-you-left-off broken — root cause: URL params triggered deep-link bypass that always cleared session. Fixed by restoring session when URL specialty matches saved session
+
+## PLAB One Module Implementation
+
+### Stage 1: Schema & Exam Record
+- [x] Add plab1Questions table to drizzle/schema.ts
+- [x] Run migration SQL via webdev_execute_sql
+- [x] Insert PLAB1 exam record into exams table
+- [x] Remove FK constraint on user_attempts.questionId (Option A)
+- [x] Confirm tests pass (464 tests passing)
+
+### Stage 2: Question Bank Page
+- [x] Add PLAB1 tRPC router (getSpecialties, getTopicsBySpecialty, getQuestions, recordAttempt, generateMockExam, submitMockExam)
+- [x] Create PLAB1QuestionBank.tsx page with topic filter sidebar, spaced repetition, session persistence
+- [x] Create PLAB1Specialties.tsx landing page with specialty cards
+- [x] Add routes in App.tsx (/plab1, /plab1/questions, /plab1/mock)
+- [x] TypeScript compiles clean
+
+### Stage 3: Mock Exam Page
+- [x] Add PLAB1 mock exam generation (180q, specialty-weighted distribution)
+- [x] Create PLAB1MockExam.tsx with 3-hour countdown timer, navigator, flag system
+- [x] Add mock results page with specialty breakdown and pass/fail indicator
+- [x] TypeScript compiles clean
+
+### Stage 4: Image Rendering
+- [x] Build ZoomableImage component (click-to-zoom, pinch-to-zoom mobile, scroll-to-zoom desktop, drag-to-pan)
+- [x] Integrate into PLAB1QuestionBank and PLAB1MockExam (renders above stem when imageUrl present)
+- [x] TypeScript compiles clean
+
+### Stage 5: Progress & Digest Integration
+- [x] Add examId filter to Progress Dashboard topic breakdown (getTopicBreakdown now accepts optional examId)
+- [x] Add examId filter to weekly digest weak-topics query (now includes PLAB1 breakdown)
+- [x] Add PLAB1 exam filter tabs (All / AKT / PLAB 1) to Progress Dashboard
+- [x] Update Practise weak topic deep links to route to /plab1/questions when PLAB1 selected
+- [x] TypeScript compiles clean

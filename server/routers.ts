@@ -13,9 +13,11 @@ import { adaptiveRouter } from "./adaptiveAlgorithm";
 import { passwordRouter } from "./passwordRouter";
 import { scaRouter } from "./scaRouter";
 import { msraRouter } from "./msraRouter";
+import { plab1Router } from "./plab1Router";
 
 export const appRouter = router({
   system: systemRouter,
+  plab1: plab1Router,
   auth: router({
     me: publicProcedure.query(opts => opts.ctx.user),
     logout: publicProcedure.mutation(({ ctx }) => {
@@ -644,11 +646,12 @@ export const appRouter = router({
       .input(
         z.object({
           days: z.number().default(30),
+          examId: z.number().optional(),
         })
       )
       .query(async ({ ctx, input }) => {
         const { getTopicBreakdown } = await import("./db");
-        return await getTopicBreakdown(ctx.user.id, input.days);
+        return await getTopicBreakdown(ctx.user.id, input.days, input.examId);
       }),
   }),
 

@@ -1730,7 +1730,7 @@ export async function updateSubscriptionByStripeId(
  * Returns only topics the user has attempted at least one question in.
  * Sorted by accuracy ascending (weakest first) within each specialty.
  */
-export async function getTopicBreakdown(userId: number, days: number = 30) {
+export async function getTopicBreakdown(userId: number, days: number = 30, examId?: number) {
   const db = await getDb();
   if (!db) return [];
 
@@ -1738,6 +1738,45 @@ export async function getTopicBreakdown(userId: number, days: number = 30) {
     const { userAttempts, questions } = await import("../drizzle/schema");
     const cutoffDate = new Date();
     cutoffDate.setDate(cutoffDate.getDate() - days);
+
+    // If examId is provided, query from the specific exam's attempts directly
+    if (examId === 60001) {
+      // PLAB1 - query from plab1_questions table
+      const result = await db.execute(
+        sql`SELECT q.specialty, q.topic, ua.isCorrect FROM user_attempts ua INNER JOIN plab1_questions q ON ua.questionId = q.id WHERE ua.userId = ${userId} AND ua.examId = ${examId} AND ua.createdAt >= ${cutoffDate}`
+      );
+      const rows = Array.isArray(result) && Array.isArray(result[0]) ? result[0] : result;
+      const specialtyTopicMap: Record<string, Record<string, { total: number; correct: number }>> = {};
+      (rows as any[]).forEach((a: any) => {
+        const specialty = a.specialty || "Unknown";
+        const topic = a.topic || "Uncategorised";
+        if (!specialtyTopicMap[specialty]) specialtyTopicMap[specialty] = {};
+        if (!specialtyTopicMap[specialty][topic]) specialtyTopicMap[specialty][topic] = { total: 0, correct: 0 };
+        specialtyTopicMap[specialty][topic].total += 1;
+        if (a.isCorrect) specialtyTopicMap[specialty][topic].correct += 1;
+      });
+      return Object.entries(specialtyTopicMap).map(([specialty, topics]) => ({
+        specialty,
+        topics: Object.entries(topics)
+          .filter(([, stats]) => stats.total > 0)
+          .map(([topic, stats]) => ({
+            topic,
+            total: stats.total,
+            correct: stats.correct,
+            accuracy: Math.round((stats.correct / stats.total) * 100),
+          }))
+          .sort((a, b) => a.accuracy - b.accuracy),
+      }));
+    }
+
+    // Default: AKT questions table
+    const conditions = [
+      eq(userAttempts.userId, userId),
+      gte(userAttempts.createdAt, cutoffDate),
+    ];
+    if (examId) {
+      conditions.push(eq(userAttempts.examId, examId));
+    }
 
     const attempts = await db
       .select({
@@ -1747,10 +1786,7 @@ export async function getTopicBreakdown(userId: number, days: number = 30) {
       })
       .from(userAttempts)
       .innerJoin(questions, eq(userAttempts.questionId, questions.id))
-      .where(and(
-        eq(userAttempts.userId, userId),
-        gte(userAttempts.createdAt, cutoffDate)
-      ));
+      .where(and(...conditions));
 
     // Group by specialty -> topic
     const specialtyTopicMap: Record<string, Record<string, { total: number; correct: number }>> = {};
@@ -1870,5 +1906,210 @@ export async function setDigestUnsubscribed(userId: number, unsubscribed: boolea
   } catch (error) {
     console.error("[Database] Failed to set digest unsubscribed:", error);
     return false;
+  }
+}
+
+
+// ============================================================
+// PLAB 1 Question Bank
+// ============================================================
+
+const PLAB1_EXAM_ID = 60001;
+
+// PLAB 1 - Get specialties with question counts
+export async function getPlab1Specialties() {
+  const db = await getDb();
+  if (!db) return [];
+
+  try {
+    const result = await db.execute(
+      sql`SELECT specialty, COUNT(*) AS count FROM plab1_questions WHERE examId = ${PLAB1_EXAM_ID} AND status = 'active' GROUP BY specialty ORDER BY count DESC`
+    );
+    const rows = Array.isArray(result) && Array.isArray(result[0]) ? result[0] : result;
+    return (rows as any[]).map((r: any) => ({
+      specialty: r.specialty as string,
+      count: Number(r.count),
+    }));
+  } catch (error) {
+    console.error("[Database] Failed to get PLAB1 specialties:", error);
+    return [];
+  }
+}
+
+// PLAB 1 - Get topics for a specialty
+export async function getPlab1TopicsBySpecialty(specialty: string) {
+  const db = await getDb();
+  if (!db) return [];
+
+  try {
+    const result = await db.execute(
+      sql`SELECT topic, COUNT(*) AS count FROM plab1_questions WHERE specialty = ${specialty} AND examId = ${PLAB1_EXAM_ID} AND status = 'active' GROUP BY topic ORDER BY topic ASC`
+    );
+    const rows = Array.isArray(result) && Array.isArray(result[0]) ? result[0] : result;
+    return (rows as any[]).map((r: any) => ({
+      topic: r.topic as string,
+      count: Number(r.count),
+    }));
+  } catch (error) {
+    console.error("[Database] Failed to get PLAB1 topics:", error);
+    return [];
+  }
+}
+
+// PLAB 1 - Get questions with spaced repetition weighting
+export async function getPlab1Questions(specialty?: string, topic?: string, limit: number = 500, userId?: number) {
+  const db = await getDb();
+  if (!db) return [];
+
+  try {
+    if (userId) {
+      let whereClause = sql`q.examId = ${PLAB1_EXAM_ID} AND q.status = 'active'`;
+      if (specialty) {
+        whereClause = sql`q.examId = ${PLAB1_EXAM_ID} AND q.status = 'active' AND q.specialty = ${specialty}`;
+      }
+      if (specialty && topic) {
+        whereClause = sql`q.examId = ${PLAB1_EXAM_ID} AND q.status = 'active' AND q.specialty = ${specialty} AND q.topic = ${topic}`;
+      }
+
+      const result = await db.execute(sql`
+        SELECT q.* FROM plab1_questions q
+        LEFT JOIN (
+          SELECT questionId,
+            SUM(CASE WHEN isCorrect = 1 THEN 1 ELSE 0 END) as correct_count,
+            SUM(CASE WHEN isCorrect = 0 THEN 1 ELSE 0 END) as incorrect_count,
+            COUNT(*) as total_attempts
+          FROM user_attempts
+          WHERE userId = ${userId} AND examId = ${PLAB1_EXAM_ID}
+          GROUP BY questionId
+        ) ua ON q.id = ua.questionId
+        WHERE ${whereClause}
+        ORDER BY -LOG(RAND()) / (
+          CASE
+            WHEN ua.total_attempts IS NULL THEN 2.0
+            WHEN ua.incorrect_count > ua.correct_count THEN 3.0
+            WHEN ua.incorrect_count = ua.correct_count THEN 2.0
+            ELSE 1.0
+          END
+        )
+        LIMIT ${limit}
+      `);
+      const rows = Array.isArray(result) && Array.isArray(result[0]) ? result[0] : result;
+      return rows as any[];
+    }
+
+    // Fallback: pure random if no userId
+    const conditions: string[] = [`examId = ${PLAB1_EXAM_ID}`, `status = 'active'`];
+    if (specialty) conditions.push(`specialty = '${specialty}'`);
+    if (topic) conditions.push(`topic = '${topic}'`);
+    
+    const result = await db.execute(
+      sql.raw(`SELECT * FROM plab1_questions WHERE ${conditions.join(' AND ')} ORDER BY RAND() LIMIT ${limit}`)
+    );
+    const rows = Array.isArray(result) && Array.isArray(result[0]) ? result[0] : result;
+    return rows as any[];
+  } catch (error) {
+    console.error("[Database] Failed to get PLAB1 questions:", error);
+    return [];
+  }
+}
+
+// PLAB 1 - Get a single question by ID
+export async function getPlab1QuestionById(questionId: number) {
+  const db = await getDb();
+  if (!db) return null;
+
+  try {
+    const result = await db.execute(
+      sql`SELECT * FROM plab1_questions WHERE id = ${questionId}`
+    );
+    const rows = Array.isArray(result) && Array.isArray(result[0]) ? result[0] : result;
+    return (rows as any[])[0] || null;
+  } catch (error) {
+    console.error("[Database] Failed to get PLAB1 question:", error);
+    return null;
+  }
+}
+
+// PLAB 1 - Record an attempt
+export async function recordPlab1Attempt(
+  userId: number,
+  questionId: number,
+  selectedAnswer: string,
+  isCorrect: boolean,
+  timeTaken?: number
+) {
+  const db = await getDb();
+  if (!db) return null;
+
+  try {
+    await db.execute(
+      sql`INSERT INTO user_attempts (userId, questionId, examId, selectedAnswer, isCorrect, timeTaken, createdAt) VALUES (${userId}, ${questionId}, ${PLAB1_EXAM_ID}, ${selectedAnswer}, ${isCorrect ? 1 : 0}, ${timeTaken || null}, NOW())`
+    );
+    // Update global attempt/correct counts on the question
+    if (isCorrect) {
+      await db.execute(
+        sql`UPDATE plab1_questions SET attemptCount = attemptCount + 1, correctCount = correctCount + 1 WHERE id = ${questionId}`
+      );
+    } else {
+      await db.execute(
+        sql`UPDATE plab1_questions SET attemptCount = attemptCount + 1 WHERE id = ${questionId}`
+      );
+    }
+    return { success: true };
+  } catch (error) {
+    console.error("[Database] Failed to record PLAB1 attempt:", error);
+    return null;
+  }
+}
+
+// PLAB 1 - Generate mock exam (180 questions, specialty-weighted)
+export async function generatePlab1MockExam() {
+  const db = await getDb();
+  if (!db) return [];
+
+  // Specialty weighting for 180 questions
+  const weights: Record<string, number> = {
+    "Medicine": 54,
+    "Surgery": 27,
+    "Obstetrics and Gynaecology": 22,
+    "Paediatrics": 18,
+    "Psychiatry": 14,
+    "General Practice and Public Health": 18,
+    "Clinical Pharmacology and Therapeutics": 14,
+    "Ethics and Law": 13,
+  };
+
+  try {
+    const allQuestions: any[] = [];
+    for (const [specialty, count] of Object.entries(weights)) {
+      const result = await db.execute(
+        sql`SELECT id, question, optionA, optionB, optionC, optionD, optionE, specialty, topic, difficulty, imageUrl, imageCaption, imageType FROM plab1_questions WHERE examId = ${PLAB1_EXAM_ID} AND specialty = ${specialty} AND status = 'active' ORDER BY RAND() LIMIT ${count}`
+      );
+      const rows = Array.isArray(result) && Array.isArray(result[0]) ? result[0] : result;
+      allQuestions.push(...(rows as any[]));
+    }
+
+    // If we don't have enough from weighted selection, fill from any specialty
+    if (allQuestions.length < 180) {
+      const existingIds = allQuestions.map(q => q.id);
+      const remaining = 180 - allQuestions.length;
+      const excludeClause = existingIds.length > 0 ? `AND id NOT IN (${existingIds.join(',')})` : '';
+      const result = await db.execute(
+        sql.raw(`SELECT id, question, optionA, optionB, optionC, optionD, optionE, specialty, topic, difficulty, imageUrl, imageCaption, imageType FROM plab1_questions WHERE examId = ${PLAB1_EXAM_ID} AND status = 'active' ${excludeClause} ORDER BY RAND() LIMIT ${remaining}`)
+      );
+      const rows = Array.isArray(result) && Array.isArray(result[0]) ? result[0] : result;
+      allQuestions.push(...(rows as any[]));
+    }
+
+    // Shuffle the final array
+    for (let i = allQuestions.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [allQuestions[i], allQuestions[j]] = [allQuestions[j], allQuestions[i]];
+    }
+
+    return allQuestions;
+  } catch (error) {
+    console.error("[Database] Failed to generate PLAB1 mock exam:", error);
+    return [];
   }
 }

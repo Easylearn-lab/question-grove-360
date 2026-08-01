@@ -11,11 +11,13 @@ import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip
 import { Download, ChevronDown, ChevronRight } from "lucide-react";
 
 type DateRange = "7" | "14" | "30" | "90" | "all";
+type ExamFilter = "all" | "akt" | "plab1";
 
 export default function Progress() {
   const { isAuthenticated, loading: authLoading } = useAuth();
   const [, navigate] = useLocation();
   const [dateRange, setDateRange] = useState<DateRange>("30");
+  const [examFilter, setExamFilter] = useState<ExamFilter>("all");
 
   useEffect(() => {
     if (!authLoading && !isAuthenticated) {
@@ -41,9 +43,15 @@ export default function Progress() {
     { days },
     { enabled: isAuthenticated }
   );
+  const topicExamId = examFilter === "plab1" ? 60001 : examFilter === "akt" ? undefined : undefined;
   const { data: topicBreakdown, isLoading: topicLoading } = trpc.progress.getTopicBreakdown.useQuery(
-    { days },
+    { days, ...(topicExamId ? { examId: topicExamId } : {}) },
     { enabled: isAuthenticated }
+  );
+  // Also fetch PLAB1 topic breakdown when "all" is selected
+  const { data: plab1TopicBreakdown } = trpc.progress.getTopicBreakdown.useQuery(
+    { days, examId: 60001 },
+    { enabled: isAuthenticated && examFilter === "all" }
   );
 
   // Track which specialties are expanded for topic breakdown
@@ -509,8 +517,27 @@ export default function Progress() {
         {/* Specialty Breakdown */}
         <Card>
           <CardHeader>
-            <CardTitle className="text-lg">Performance by Specialty</CardTitle>
-            <CardDescription>Your accuracy across different medical specialties</CardDescription>
+            <div className="flex items-center justify-between">
+              <div>
+                <CardTitle className="text-lg">Performance by Specialty</CardTitle>
+                <CardDescription>Your accuracy across different medical specialties</CardDescription>
+              </div>
+              <div className="flex items-center gap-1 bg-gray-100 rounded-lg p-1">
+                {(["all", "akt", "plab1"] as ExamFilter[]).map((f) => (
+                  <button
+                    key={f}
+                    onClick={() => setExamFilter(f)}
+                    className={`px-3 py-1.5 text-xs font-medium rounded-md transition-all duration-200 ${
+                      examFilter === f
+                        ? "bg-white text-gray-900 shadow-sm"
+                        : "text-gray-500 hover:text-gray-700"
+                    }`}
+                  >
+                    {f === "all" ? "All" : f === "akt" ? "AKT" : "PLAB 1"}
+                  </button>
+                ))}
+              </div>
+            </div>
           </CardHeader>
           <CardContent>
             {specLoading ? (
@@ -599,7 +626,8 @@ export default function Progress() {
                                 className="h-6 px-2 text-xs text-blue-600 hover:text-blue-800 hover:bg-blue-50"
                                 onClick={(e) => {
                                   e.stopPropagation();
-                                  navigate(`/questions?specialty=${encodeURIComponent(spec.specialty)}&topic=${encodeURIComponent(topic.topic)}`);
+                                  const basePath = examFilter === "plab1" ? "/plab1/questions" : "/questions";
+                                  navigate(`${basePath}?specialty=${encodeURIComponent(spec.specialty)}&topic=${encodeURIComponent(topic.topic)}`);
                                 }}
                               >
                                 Practise

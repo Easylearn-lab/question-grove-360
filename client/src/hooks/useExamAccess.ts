@@ -1,6 +1,6 @@
 import { useSubscription, SubscriptionEntry } from "./useSubscription";
 
-export type ExamTrack = "AKT" | "SCA" | "MSRA";
+export type ExamTrack = "AKT" | "SCA" | "MSRA" | "PLAB1";
 
 /**
  * Hook that checks whether the current user has access to a specific exam track.
@@ -17,6 +17,7 @@ export type ExamTrack = "AKT" | "SCA" | "MSRA";
  * - AKT_3MONTH, AKT_6MONTH → "AKT"
  * - SCA_3MONTH, SCA_6MONTH → "SCA"
  * - MSRA_3MONTH, MSRA_6MONTH → "MSRA"
+ * - PLAB1_3MONTH, PLAB1_6MONTH → "PLAB1"
  */
 export function useExamAccess(requiredTrack: ExamTrack) {
   const { isPremium, isLoading, status, plan, subscriptions } = useSubscription();
@@ -58,5 +59,6 @@ export function getExamTrackFromPlan(plan: string | null): ExamTrack | null {
   if (upperPlan.startsWith("AKT")) return "AKT";
   if (upperPlan.startsWith("SCA")) return "SCA";
   if (upperPlan.startsWith("MSRA")) return "MSRA";
+  if (upperPlan.startsWith("PLAB1") || upperPlan.startsWith("PLAB")) return "PLAB1";
   return null;
 }
