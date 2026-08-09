@@ -162,8 +162,8 @@ export default function DashboardRedesigned() {
                       </span>
                     )}
                   {isMSRA && (
-                    <span className="block text-[10px] text-gray-400 mt-0.5">
-                      Coming soon
+                    <span className="block text-[10px] text-green-600 mt-0.5">
+                      Live
                     </span>
                   )}
                 </button>

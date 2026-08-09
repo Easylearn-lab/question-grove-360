@@ -13,7 +13,7 @@ export type ExamTrack = "AKT" | "SCA" | "MSRA";
 export const PAYMENT_ENABLED: Record<ExamTrack, boolean> = {
   AKT: true,   // Live and active
   SCA: true,   // Live — 60 cases available
-  MSRA: false, // Coming soon
+  MSRA: true,  // Live and active
 };
 
 export const AKT_FEATURES = [
@@ -72,12 +72,12 @@ const PRICE_IDS = {
     live: "price_picture360_live",
   },
   MSRA_3MONTH: {
-    test: "price_msra_3month_test",
-    live: "price_msra_3month_live",
+    test: "price_1U2fTZIVrH3MHAvapPeNeGPp",
+    live: "price_1U2fTZIVrH3MHAvapPeNeGPp",
   },
   MSRA_6MONTH: {
-    test: "price_msra_6month_test",
-    live: "price_msra_6month_live",
+    test: "price_1U2fVPIVrH3MHAvahldKVigf",
+    live: "price_1U2fVPIVrH3MHAvahldKVigf",
   },
 };
 

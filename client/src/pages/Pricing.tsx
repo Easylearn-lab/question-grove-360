@@ -80,17 +80,54 @@ const SCA_PLANS = [
   },
 ];
 
+const MSRA_PLANS = [
+  {
+    key: "MSRA_3MONTH",
+    name: "3-Month",
+    price: 25,
+    fullPrice: "24.99",
+    savings: "Save vs monthly",
+    perMonth: "£8.33",
+    interval: "3 months",
+    description: "Great for focused exam sprints",
+    popular: false,
+  },
+  {
+    key: "MSRA_6MONTH",
+    name: "6-Month",
+    price: 40,
+    fullPrice: "49.98",
+    savings: "13.98",
+    perMonth: "£6.67",
+    interval: "6 months",
+    description: "Ideal study timeline",
+    popular: true,
+  },
+];
+
+const MSRA_FEATURES = [
+  "Clinical Problem Solving question bank (SBA + EMQ)",
+  "Professional Dilemmas practice (Ranking + Pick 3)",
+  "MSRA flashcards with spaced repetition",
+  "AI Coach360 assistant",
+  "Full mock MSRA exams",
+  "Priority support",
+];
+
 export default function Pricing() {
   const [, navigate] = useLocation();
   const { isAuthenticated } = useAuth();
   const [loadingPlan, setLoadingPlan] = useState<string | null>(null);
-  const [activeTrack, setActiveTrack] = useState<"AKT" | "SCA">("AKT");
+  const [activeTrack, setActiveTrack] = useState<"AKT" | "SCA" | "MSRA">("AKT");
   const createCheckout = trpc.stripe.createCheckoutSession.useMutation();
 
   const handleCheckout = async (planKey: string) => {
     if (!isAuthenticated) {
       // Store the pending purchase intent so we can resume after login
-      if (planKey.startsWith("SCA")) {
+      if (planKey.startsWith("MSRA")) {
+        localStorage.setItem("msra_pending_purchase", planKey);
+        window.location.href = getLoginUrl("/pricing");
+      } else if (planKey.startsWith("SCA")) {
         localStorage.setItem("sca_pending_purchase", planKey);
         window.location.href = getLoginUrl("/sca");
       } else {
@@ -115,8 +152,8 @@ export default function Pricing() {
     }
   };
 
-  const plans = activeTrack === "AKT" ? AKT_PLANS : SCA_PLANS;
-  const features = activeTrack === "AKT" ? AKT_FEATURES : SCA_FEATURES;
+  const plans = activeTrack === "AKT" ? AKT_PLANS : activeTrack === "SCA" ? SCA_PLANS : MSRA_PLANS;
+  const features = activeTrack === "AKT" ? AKT_FEATURES : activeTrack === "SCA" ? SCA_FEATURES : MSRA_FEATURES;
   const isTrackDisabled = false; // SCA payments now enabled
 
   return (
@@ -176,6 +213,16 @@ export default function Pricing() {
               }`}
             >
               SCA (Clinical Assessment)
+            </button>
+            <button
+              onClick={() => setActiveTrack("MSRA")}
+              className={`px-6 sm:px-8 py-3 rounded-lg font-semibold text-sm transition-all ${
+                activeTrack === "MSRA"
+                  ? "bg-green-600 text-gray-900 shadow-md"
+                  : "text-slate-600 hover:text-slate-900"
+              }`}
+            >
+              MSRA
             </button>
           </div>
         </div>
