@@ -34,6 +34,7 @@ export function Whiteboard({ isOpen, onClose }: WhiteboardProps) {
   const [resizeStart, setResizeStart] = useState({ x: 0, y: 0 });
   const [history, setHistory] = useState<ImageData[]>([]);
   const [backgroundColor, setBackgroundColor] = useState("white");
+  const [activeStylusPointerId, setActiveStylusPointerId] = useState<number | null>(null);
 
   // Initialize canvas
   useEffect(() => {
@@ -61,12 +62,22 @@ export function Whiteboard({ isOpen, onClose }: WhiteboardProps) {
     setHistory([...history, ctx.getImageData(0, 0, canvas.width, canvas.height)]);
   };
 
-  // Handle mouse/touch down
+  // Handle pointer down (mouse, touch, stylus)
   const handlePointerDown = (e: React.PointerEvent<HTMLCanvasElement>) => {
     if (panelState !== "open") return;
 
     const canvas = canvasRef.current;
     if (!canvas) return;
+
+    // Palm rejection: if stylus is active and this is touch, ignore it
+    if (activeStylusPointerId !== null && e.pointerType === "touch") {
+      return;
+    }
+
+    // Track stylus pointer ID for palm rejection
+    if (e.pointerType === "pen") {
+      setActiveStylusPointerId(e.pointerId);
+    }
 
     const rect = canvas.getBoundingClientRect();
     const x = e.clientX - rect.left;
@@ -84,12 +95,17 @@ export function Whiteboard({ isOpen, onClose }: WhiteboardProps) {
     }
   };
 
-  // Handle mouse/touch move
+  // Handle pointer move (mouse, touch, stylus)
   const handlePointerMove = (e: React.PointerEvent<HTMLCanvasElement>) => {
     if (!isDrawing || panelState !== "open") return;
 
     const canvas = canvasRef.current;
     if (!canvas) return;
+
+    // Palm rejection: if stylus is active and this is touch, ignore it
+    if (activeStylusPointerId !== null && e.pointerType === "touch" && e.pointerId !== activeStylusPointerId) {
+      return;
+    }
 
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
@@ -98,20 +114,29 @@ export function Whiteboard({ isOpen, onClose }: WhiteboardProps) {
     const x = e.clientX - rect.left;
     const y = e.clientY - rect.top;
 
+    // Get pressure sensitivity (0-1 for stylus, 0.5 for mouse/touch)
+    const pressure = e.pressure || 0.5;
+    // Use pressure to vary line width slightly for natural feel (0.5x to 1.5x)
+    const pressureAdjustedWidth = lineWidth * (0.5 + pressure);
+
     if (mode === "pen") {
       ctx.strokeStyle = color;
-      ctx.lineWidth = lineWidth;
+      ctx.lineWidth = pressureAdjustedWidth;
       ctx.lineCap = "round";
       ctx.lineJoin = "round";
       ctx.lineTo(x, y);
       ctx.stroke();
     } else if (mode === "eraser") {
-      ctx.clearRect(x - lineWidth / 2, y - lineWidth / 2, lineWidth, lineWidth);
+      ctx.clearRect(x - pressureAdjustedWidth / 2, y - pressureAdjustedWidth / 2, pressureAdjustedWidth, pressureAdjustedWidth);
     }
   };
 
-  // Handle mouse/touch up
-  const handlePointerUp = () => {
+  // Handle pointer up (mouse, touch, stylus)
+  const handlePointerUp = (e: React.PointerEvent<HTMLCanvasElement>) => {
+    // Clear stylus tracking when stylus pointer ends
+    if (e.pointerType === "pen" && e.pointerId === activeStylusPointerId) {
+      setActiveStylusPointerId(null);
+    }
     setIsDrawing(false);
   };
 
@@ -394,6 +419,7 @@ export function Whiteboard({ isOpen, onClose }: WhiteboardProps) {
           onPointerLeave={handlePointerUp}
           className="w-full h-full cursor-crosshair bg-white"
           style={{ touchAction: "none" }}
+          onContextMenu={(e) => e.preventDefault()}
         />
       </div>
 
