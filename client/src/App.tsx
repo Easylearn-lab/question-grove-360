@@ -60,6 +60,7 @@ import Picture360 from "./pages/Picture360";
 import Picture360Specialty from "./pages/Picture360Specialty";
 import SCAHistory from "./pages/SCAHistory";
 import MSRA from "./pages/MSRA";
+import MSRAQuestionBank from "./pages/MSRAQuestionBank";
 import PLAB1QuestionBank from "./pages/PLAB1QuestionBank";
 import PLAB1MockExam from "./pages/PLAB1MockExam";
 import PLAB1Specialties from "./pages/PLAB1Specialties";
@@ -82,6 +83,7 @@ function Router() {
       <Route path={"/sca/history"} component={SCAHistory} />
       <Route path={"/sca"} component={SCASimulator} />
       <Route path={"/msra"} component={MSRA} />
+      <Route path={"/msra/questions"} component={MSRAQuestionBank} />
       <Route path={"/plab1"} component={PLAB1Specialties} />
       <Route path={"/plab1/questions"} component={PLAB1QuestionBank} />
       <Route path={"/plab1/mock"} component={PLAB1MockExam} />
