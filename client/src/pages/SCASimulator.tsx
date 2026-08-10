@@ -1468,7 +1468,7 @@ function ConsultationView({
     }
   };
 
-  // ---- Web Speech API (browser-native, real-time) ----
+  // ---- Web Speech API with continuous listening and 800ms silence detection ----
   const startWebSpeechRecording = () => {
     const SpeechRecognition = (window as any).SpeechRecognition || (window as any).webkitSpeechRecognition;
     if (!SpeechRecognition) return false;
@@ -1479,6 +1479,20 @@ function ConsultationView({
     recognition.lang = "en-GB";
 
     let finalTranscript = "";
+    let silenceTimeoutRef: NodeJS.Timeout | null = null;
+    const SILENCE_DURATION = 800; // 800ms silence detection
+
+    const resetSilenceTimer = () => {
+      if (silenceTimeoutRef) clearTimeout(silenceTimeoutRef);
+      silenceTimeoutRef = setTimeout(() => {
+        // Send the accumulated transcript after 800ms of silence
+        if (finalTranscript.trim()) {
+          handleSendMessage(finalTranscript.trim());
+          finalTranscript = "";
+          setLiveTranscript("");
+        }
+      }, SILENCE_DURATION);
+    };
 
     recognition.onresult = (event: any) => {
       let interim = "";
@@ -1491,6 +1505,8 @@ function ConsultationView({
         }
       }
       setLiveTranscript(finalTranscript + interim);
+      // Reset silence timer on any speech activity
+      resetSilenceTimer();
     };
 
     recognition.onerror = (event: any) => {
@@ -1498,14 +1514,16 @@ function ConsultationView({
       if (event.error === "not-allowed") {
         toast.error("Microphone access denied. Please allow microphone permissions.");
       }
+      if (silenceTimeoutRef) clearTimeout(silenceTimeoutRef);
       setIsRecording(false);
       setLiveTranscript("");
     };
 
     recognition.onend = () => {
-      // Only send if we have a final transcript and recording was intentionally stopped
-      if (finalTranscript.trim() && !isRecording) {
-        handleSendMessage(finalTranscript.trim());
+      if (silenceTimeoutRef) clearTimeout(silenceTimeoutRef);
+      // Restart recognition to keep listening (continuous mode)
+      if (isRecording) {
+        try { recognition.start(); } catch {}
       }
       setLiveTranscript("");
     };
@@ -1518,7 +1536,7 @@ function ConsultationView({
 
   const stopWebSpeechRecording = () => {
     if (recognitionRef.current) {
-      setIsRecording(false); // Set before stop so onend knows it was intentional
+      setIsRecording(false);
       recognitionRef.current.stop();
       recognitionRef.current = null;
     }
@@ -1787,7 +1805,7 @@ function ConsultationView({
             )}
           </button>
           <p className="text-slate-400 text-sm">
-            {isRecording ? "Tap to stop" : isTranscribing ? "Processing..." : "Tap to speak"}
+            {isRecording ? "Listening... (auto-sends after silence)" : isTranscribing ? "Processing..." : "Press to start"}
           </p>
           {/* Message count indicator */}
           <p className="text-slate-500 text-xs">{messages.length} messages in this consultation</p>
