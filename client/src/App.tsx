@@ -65,6 +65,8 @@ import PLAB1QuestionBank from "./pages/PLAB1QuestionBank";
 import PLAB1MockExam from "./pages/PLAB1MockExam";
 import PLAB1Specialties from "./pages/PLAB1Specialties";
 import { useGracefulFetch } from "./hooks/useGracefulFetch";
+import { Whiteboard } from "./components/Whiteboard";
+import { useState } from "react";
 
 function Router() {
   // make sure to consider if you need authentication for certain routes
@@ -119,6 +121,7 @@ function Router() {
 function App() {
   // Intercept fetch to handle cold-start errors gracefully during study sessions
   useGracefulFetch();
+  const [whiteboardOpen, setWhiteboardOpen] = useState(false);
 
   return (
     <ErrorBoundary>
@@ -130,6 +133,16 @@ function App() {
           <Toaster />
           <Router />
           <AICoachFloating />
+          <Whiteboard isOpen={whiteboardOpen} onClose={() => setWhiteboardOpen(false)} />
+          <button
+            onClick={() => setWhiteboardOpen(!whiteboardOpen)}
+            className="fixed top-4 right-4 z-40 w-10 h-10 bg-green-600 hover:bg-green-700 text-white rounded-full shadow-lg flex items-center justify-center transition-all"
+            title="Toggle whiteboard"
+          >
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
+            </svg>
+          </button>
         </TooltipProvider>
       </ThemeProvider>
     </ErrorBoundary>
