@@ -1294,3 +1294,20 @@
 - [x] Add PLAB1 exam filter tabs (All / AKT / PLAB 1) to Progress Dashboard
 - [x] Update Practise weak topic deep links to route to /plab1/questions when PLAB1 selected
 - [x] TypeScript compiles clean
+
+## PLAB1 SURGERY BATCH 1 IMPORT
+- [x] Reconcile current plab1_questions count and identify any Surgery Batch 1 rows already inserted during diagnostics (three diagnostic rows removed; baseline restored to 500)
+- [x] Import the remaining Surgery Batch 1 questions in sequential 5-row batches, verifying the count after each batch (10 batches completed; counts 505, 510, 515, 520, 525, 530, 535, 540, 545, 550)
+- [x] Verify the final total is 550 and no other table was modified (final specialty breakdown confirmed)
+
+**Note:** User requested ten sequential 5-row batches. Two rows may already have been inserted during the prior diagnostic attempt; do not duplicate them.
+
+## PLAB1 GP BATCH 2 IMPORT
+- [x] Validate PLAB1_GP_Batch2.sql and confirm the starting plab1_questions count (500)
+- [x] Import PLAB1 GP Batch 2 into plab1_questions only and verify the final count (10 sequential 5-row batches; final 600)
+- [x] Confirm the final total is 600 and no other table was modified (final specialty breakdown verified)
+
+## PLAB1 PHARMACOLOGY BATCH 1 IMPORT
+- [x] Validate PLAB1_Pharmacology_Batch1.sql and confirm the starting plab1_questions count (600; 48 validated rows)
+- [x] Import PLAB1 Pharmacology Batch 1 into plab1_questions only and verify the final count (8 validated chunks; final 648)
+- [x] Confirm the final total is 648 and no other table was modified
