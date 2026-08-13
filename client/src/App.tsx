@@ -122,6 +122,7 @@ function App() {
   // Intercept fetch to handle cold-start errors gracefully during study sessions
   useGracefulFetch();
   const [whiteboardOpen, setWhiteboardOpen] = useState(false);
+  const [whiteboardSnapped, setWhiteboardSnapped] = useState(false);
 
   return (
     <ErrorBoundary>
@@ -131,9 +132,15 @@ function App() {
       >
         <TooltipProvider>
           <Toaster />
-          <Router />
+          <div className={whiteboardSnapped ? "mr-[40vw] transition-[margin] duration-300" : "transition-[margin] duration-300"}>
+            <Router />
+          </div>
           <AICoachFloating />
-          <Whiteboard isOpen={whiteboardOpen} onClose={() => setWhiteboardOpen(false)} />
+          <Whiteboard
+            isOpen={whiteboardOpen}
+            onClose={() => { setWhiteboardOpen(false); setWhiteboardSnapped(false); }}
+            onSnapChange={(snapped) => setWhiteboardSnapped(snapped)}
+          />
           <button
             onClick={() => setWhiteboardOpen(!whiteboardOpen)}
             className="fixed top-4 right-4 z-40 w-10 h-10 bg-green-600 hover:bg-green-700 text-white rounded-full shadow-lg flex items-center justify-center transition-all"

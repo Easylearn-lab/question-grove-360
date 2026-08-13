@@ -9,10 +9,14 @@ import {
   Trash2,
   Palette,
   Minus,
+  Download,
+  PanelRightOpen,
+  PanelRightClose,
 } from "lucide-react";
 
 type DrawingMode = "pen" | "eraser";
 type PanelState = "open" | "minimized" | "closed";
+type SnapState = "floating" | "snapped";
 
 interface Stroke {
   points: { x: number; y: number; pressure: number }[];
@@ -24,9 +28,10 @@ interface Stroke {
 interface WhiteboardProps {
   isOpen: boolean;
   onClose: () => void;
+  onSnapChange?: (snapped: boolean) => void;
 }
 
-export function Whiteboard({ isOpen, onClose }: WhiteboardProps) {
+export function Whiteboard({ isOpen, onClose, onSnapChange }: WhiteboardProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const [mode, setMode] = useState<DrawingMode>("pen");
@@ -41,6 +46,7 @@ export function Whiteboard({ isOpen, onClose }: WhiteboardProps) {
   const [resizeStart, setResizeStart] = useState({ x: 0, y: 0 });
   const [backgroundColor, setBackgroundColor] = useState("white");
   const [activeStylusPointerId, setActiveStylusPointerId] = useState<number | null>(null);
+  const [snapState, setSnapState] = useState<SnapState>("floating");
 
   // Store strokes as data, not ImageData — allows proper redraw on resize
   const strokesRef = useRef<Stroke[]>([]);
@@ -141,7 +147,7 @@ export function Whiteboard({ isOpen, onClose }: WhiteboardProps) {
     // Small delay to let DOM layout settle
     const timer = setTimeout(resizeCanvas, 50);
     return () => clearTimeout(timer);
-  }, [size, panelState, resizeCanvas]);
+  }, [size, panelState, resizeCanvas, snapState]);
 
   // Also resize on window resize
   useEffect(() => {
@@ -303,8 +309,53 @@ export function Whiteboard({ isOpen, onClose }: WhiteboardProps) {
     redrawCanvas();
   };
 
+  // Download canvas as PNG
+  const handleDownload = () => {
+    const canvas = canvasRef.current;
+    if (!canvas) return;
+
+    // Create a temporary canvas at 1x DPR for clean export
+    const exportCanvas = document.createElement("canvas");
+    const container = containerRef.current;
+    if (!container) return;
+    const rect = container.getBoundingClientRect();
+    exportCanvas.width = rect.width;
+    exportCanvas.height = rect.height;
+    const exportCtx = exportCanvas.getContext("2d");
+    if (!exportCtx) return;
+
+    // Fill background
+    if (backgroundColor === "white") {
+      exportCtx.fillStyle = "#ffffff";
+      exportCtx.fillRect(0, 0, exportCanvas.width, exportCanvas.height);
+    }
+
+    // Redraw all strokes on export canvas
+    for (const stroke of strokesRef.current) {
+      drawStroke(exportCtx, stroke);
+    }
+
+    // Trigger download
+    const link = document.createElement("a");
+    const timestamp = new Date().toISOString().replace(/[:.]/g, "-").slice(0, 19);
+    link.download = `whiteboard-${timestamp}.png`;
+    link.href = exportCanvas.toDataURL("image/png");
+    link.click();
+  };
+
+  // Toggle snap-to-side mode
+  const handleSnapToggle = () => {
+    // Disable snap on mobile (<768px)
+    if (window.innerWidth < 768) return;
+
+    const newState = snapState === "floating" ? "snapped" : "floating";
+    setSnapState(newState);
+    onSnapChange?.(newState === "snapped");
+  };
+
   // Handle panel drag
   const handleHeaderMouseDown = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (snapState === "snapped") return; // No dragging in snap mode
     if ((e.target as HTMLElement).closest("button")) return;
     setIsDragging(true);
     setDragOffset({
@@ -385,27 +436,54 @@ export function Whiteboard({ isOpen, onClose }: WhiteboardProps) {
     );
   }
 
-  return (
-    <Card
-      className="fixed shadow-2xl border border-slate-300 flex flex-col bg-white"
-      style={{
+  // Snapped mode: fixed right panel
+  const isSnapped = snapState === "snapped";
+  const panelStyle: React.CSSProperties = isSnapped
+    ? {
+        top: 0,
+        right: 0,
+        width: "40vw",
+        height: "100vh",
+        zIndex: 9999,
+        borderRadius: 0,
+      }
+    : {
         left: `${position.x}px`,
         top: `${position.y}px`,
         width: `${size.width}px`,
         height: `${size.height}px`,
         zIndex: 9999,
-      }}
+      };
+
+  return (
+    <Card
+      className={`fixed shadow-2xl border border-slate-300 flex flex-col bg-white ${isSnapped ? "rounded-none" : ""}`}
+      style={panelStyle}
     >
       {/* Header */}
       <div
         onMouseDown={handleHeaderMouseDown}
-        className="bg-gradient-to-r from-green-50 to-green-100 border-b border-green-200 px-4 py-3 flex items-center justify-between cursor-move select-none shrink-0"
+        className={`bg-gradient-to-r from-green-50 to-green-100 border-b border-green-200 px-4 py-3 flex items-center justify-between select-none shrink-0 ${isSnapped ? "cursor-default" : "cursor-move"}`}
       >
         <div className="flex items-center gap-2">
           <Palette className="w-5 h-5 text-green-600" />
           <h3 className="font-semibold text-slate-900">Whiteboard</h3>
+          {isSnapped && <span className="text-xs text-green-600 bg-green-100 px-2 py-0.5 rounded">Snapped</span>}
         </div>
         <div className="flex items-center gap-1">
+          <Button
+            variant="ghost"
+            size="sm"
+            onClick={handleSnapToggle}
+            className="h-8 w-8 p-0"
+            title={isSnapped ? "Undock whiteboard" : "Snap to right side"}
+          >
+            {isSnapped ? (
+              <PanelRightClose className="w-4 h-4" />
+            ) : (
+              <PanelRightOpen className="w-4 h-4" />
+            )}
+          </Button>
           <Button
             variant="ghost"
             size="sm"
@@ -525,6 +603,7 @@ export function Whiteboard({ isOpen, onClose }: WhiteboardProps) {
             onClick={handleUndo}
             disabled={strokeCount === 0}
             className="h-8 w-8 p-0"
+            title="Undo"
           >
             <Undo2 className="w-4 h-4" />
           </Button>
@@ -533,8 +612,19 @@ export function Whiteboard({ isOpen, onClose }: WhiteboardProps) {
             size="sm"
             onClick={handleClear}
             className="h-8 w-8 p-0"
+            title="Clear all"
           >
             <Trash2 className="w-4 h-4" />
+          </Button>
+          <Button
+            variant="outline"
+            size="sm"
+            onClick={handleDownload}
+            disabled={strokeCount === 0}
+            className="h-8 w-8 p-0"
+            title="Download as PNG"
+          >
+            <Download className="w-4 h-4" />
           </Button>
         </div>
       </div>
@@ -560,12 +650,12 @@ export function Whiteboard({ isOpen, onClose }: WhiteboardProps) {
       </div>
 
       {/* Resize handle */}
-      <div
+      {!isSnapped && <div
         onMouseDown={handleResizeMouseDown}
         className="absolute bottom-0 right-0 w-4 h-4 bg-green-600 cursor-se-resize rounded-tl"
         style={{ zIndex: 10000 }}
         title="Drag to resize"
-      />
+      />}
     </Card>
   );
 }
