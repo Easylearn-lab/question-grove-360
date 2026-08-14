@@ -1,8 +1,17 @@
 import { useState, useEffect, useCallback, useRef } from "react";
 import { useLocation } from "wouter";
 import { trpc } from "../lib/trpc";
+import JAMBPaywall from "../components/JAMBPaywall";
 
 export default function JAMBBiology() {
+  return (
+    <JAMBPaywall>
+      <JAMBBiologyContent />
+    </JAMBPaywall>
+  );
+}
+
+function JAMBBiologyContent() {
   const [, navigate] = useLocation();
   const [currentIndex, setCurrentIndex] = useState(0);
   const [answers, setAnswers] = useState<Record<number, string>>({});

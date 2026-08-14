@@ -5,6 +5,16 @@ import { jambQuestions } from "../drizzle/schema";
 import { eq, sql, and } from "drizzle-orm";
 
 export const jambRouter = router({
+  checkSubscription: protectedProcedure.query(async ({ ctx }) => {
+    const db = await getDb();
+    if (!db) throw new Error("Database unavailable");
+    const result = await db.execute(
+      sql`SELECT id FROM subscriptions WHERE userId = ${ctx.user.id} AND planType = 'jamb' AND status = 'active' AND currentPeriodEnd > NOW() LIMIT 1`
+    );
+    const rows = Array.isArray(result) && Array.isArray(result[0]) ? result[0] : result;
+    return { hasAccess: (rows as any[]).length > 0 };
+  }),
+
   getQuestions: publicProcedure
     .input(z.object({ subject: z.string() }))
     .query(async ({ input }) => {
@@ -61,8 +71,8 @@ export const jambRouter = router({
       }
 
       const plans: Record<string, { amount: number; name: string }> = {
-        monthly: { amount: 200000, name: "JAMB Monthly (₦2,000)" },
-        quarterly: { amount: 500000, name: "JAMB Quarterly (₦5,000)" },
+        monthly: { amount: 150000, name: "JAMB All Subjects — Monthly (₦1,500)" },
+        quarterly: { amount: 400000, name: "JAMB All Subjects — Quarterly (₦4,000)" },
       };
 
       const plan = plans[input.plan];
