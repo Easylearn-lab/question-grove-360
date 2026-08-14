@@ -96,7 +96,7 @@ export default function Home() {
               <h3 className="text-2xl font-bold text-gray-900 mb-2">International Exams</h3>
               <p className="text-gray-600 mb-6">Complete preparation for 17+ international licensing exams including USMLE, MCCQE, AMC, and Middle East exams.</p>
               
-              <a href={getLoginUrl()} className="w-full bg-purple-600 text-white py-3 rounded-lg font-semibold hover:bg-purple-700 text-center block">
+              <a href="/international" className="w-full bg-purple-600 text-white py-3 rounded-lg font-semibold hover:bg-purple-700 text-center block">
                 Access International Exams →
               </a>
             </div>

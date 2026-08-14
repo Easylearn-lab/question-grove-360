@@ -681,3 +681,22 @@ export const plab1Questions = mysqlTable("plab1_questions", {
 });
 export type Plab1Question = typeof plab1Questions.$inferSelect;
 export type InsertPlab1Question = typeof plab1Questions.$inferInsert;
+
+// ─── JAMB (Nigeria) Questions ─────────────────────────────────────────────────
+export const jambQuestions = mysqlTable("jamb_questions", {
+  id: int("id").autoincrement().primaryKey(),
+  questionText: text("question_text").notNull(),
+  optionA: varchar("option_a", { length: 500 }).notNull(),
+  optionB: varchar("option_b", { length: 500 }).notNull(),
+  optionC: varchar("option_c", { length: 500 }).notNull(),
+  optionD: varchar("option_d", { length: 500 }).notNull(),
+  correctAnswer: varchar("correct_answer", { length: 1 }).notNull(), // A, B, C, or D
+  explanation: text("explanation"),
+  subject: varchar("subject", { length: 100 }).notNull(), // Biology, Chemistry, Physics, English Language
+  topic: varchar("topic", { length: 200 }),
+  country: varchar("country", { length: 100 }).default("Nigeria"),
+  region: varchar("region", { length: 100 }).default("West Africa"),
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+});
+export type JambQuestion = typeof jambQuestions.$inferSelect;
+export type InsertJambQuestion = typeof jambQuestions.$inferInsert;

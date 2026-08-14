@@ -1351,3 +1351,12 @@ WHERE (correctAnswer = 'A' AND explanationA LIKE 'Incorrect%')
    OR (explanationE LIKE 'CORRECT%' AND correctAnswer != 'E');
 ```
 Do not close any import task until this validation returns 0 for both banks.
+
+## INTERNATIONAL EXAMS: Country Picker + Nigeria/JAMB (Aug 14)
+- [x] Create jamb_questions table in Drizzle schema and execute migration SQL
+- [x] Build InternationalExams country picker page (Nigeria active, others Coming Soon)
+- [x] Build NigeriaExams page listing JAMB
+- [x] Build JAMBDashboard page with 4 subjects (Biology active, others Coming Soon)
+- [x] Add routes in App.tsx
+- [x] Add advertising banner section to homepage (done earlier)
+- [x] Confirm tests pass (464 passing) and deploy
