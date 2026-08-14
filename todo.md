@@ -1311,3 +1311,43 @@
 - [x] Validate PLAB1_Pharmacology_Batch1.sql and confirm the starting plab1_questions count (600; 48 validated rows)
 - [x] Import PLAB1 Pharmacology Batch 1 into plab1_questions only and verify the final count (8 validated chunks; final 648)
 - [x] Confirm the final total is 648 and no other table was modified
+
+## DATA INTEGRITY: ANSWER-EXPLANATION MISMATCH FIX (Aug 14)
+- [x] Ran validation query across all 2,265 AKT questions — found 2 mismatches (IDs 177, 270599)
+- [x] Ran validation query across all 648 PLAB1 questions — 0 mismatches
+- [x] Fixed Q177: correctAnswer D → C (explanation confirms 48 mmol/mol = Option C)
+- [x] Fixed Q270599: correctAnswer C → E (explanation confirms 48 mmol/mol = Option E)
+- [x] Re-validated both banks: 0 mismatches remaining
+- [x] Deleted Q270599 as confirmed duplicate of Q177 (identical stem, same options reordered, same clinical answer)
+- [x] AKT total now 2,265 questions (was 2,266 before duplicate removal)
+
+## POST-IMPORT VALIDATION CHECKLIST (Standard procedure for all future imports)
+After every new question batch is imported, run the following validation query and report results:
+```sql
+-- Check AKT
+SELECT COUNT(*) AS mismatches FROM questions
+WHERE (correctAnswer = 'A' AND explanationA LIKE 'Incorrect%')
+   OR (correctAnswer = 'B' AND explanationB LIKE 'Incorrect%')
+   OR (correctAnswer = 'C' AND explanationC LIKE 'Incorrect%')
+   OR (correctAnswer = 'D' AND explanationD LIKE 'Incorrect%')
+   OR (correctAnswer = 'E' AND explanationE LIKE 'Incorrect%')
+   OR (explanationA LIKE 'CORRECT%' AND correctAnswer != 'A')
+   OR (explanationB LIKE 'CORRECT%' AND correctAnswer != 'B')
+   OR (explanationC LIKE 'CORRECT%' AND correctAnswer != 'C')
+   OR (explanationD LIKE 'CORRECT%' AND correctAnswer != 'D')
+   OR (explanationE LIKE 'CORRECT%' AND correctAnswer != 'E');
+
+-- Check PLAB1
+SELECT COUNT(*) AS mismatches FROM plab1_questions
+WHERE (correctAnswer = 'A' AND explanationA LIKE 'Incorrect%')
+   OR (correctAnswer = 'B' AND explanationB LIKE 'Incorrect%')
+   OR (correctAnswer = 'C' AND explanationC LIKE 'Incorrect%')
+   OR (correctAnswer = 'D' AND explanationD LIKE 'Incorrect%')
+   OR (correctAnswer = 'E' AND explanationE LIKE 'Incorrect%')
+   OR (explanationA LIKE 'CORRECT%' AND correctAnswer != 'A')
+   OR (explanationB LIKE 'CORRECT%' AND correctAnswer != 'B')
+   OR (explanationC LIKE 'CORRECT%' AND correctAnswer != 'C')
+   OR (explanationD LIKE 'CORRECT%' AND correctAnswer != 'D')
+   OR (explanationE LIKE 'CORRECT%' AND correctAnswer != 'E');
+```
+Do not close any import task until this validation returns 0 for both banks.

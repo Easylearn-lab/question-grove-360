@@ -183,6 +183,50 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Advertising Banner Section */}
+      <section className="bg-gray-950 border-t border-gray-800 py-10 px-4">
+        <div className="max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {[1, 2, 3].map((slot) => (
+              <div
+                key={slot}
+                className="relative flex flex-col items-center justify-center rounded-xl border border-gray-700/50 bg-gray-900/60 p-8 min-h-[160px] group hover:border-green-500/30 transition-colors"
+              >
+                <div className="absolute top-3 right-3 text-[10px] uppercase tracking-wider text-gray-600 font-medium">
+                  Ad Space {slot}
+                </div>
+                <svg
+                  className="w-8 h-8 text-gray-600 mb-3 group-hover:text-green-500/60 transition-colors"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={1.5}
+                    d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909M3.75 21h16.5A2.25 2.25 0 0022.5 18.75V5.25A2.25 2.25 0 0020.25 3H3.75A2.25 2.25 0 001.5 5.25v13.5A2.25 2.25 0 003.75 21z"
+                  />
+                </svg>
+                <p className="text-gray-400 text-sm font-medium mb-2">Advertise with us</p>
+                <a
+                  href="mailto:advertise@questiongrove360.com"
+                  className="text-xs text-green-500 hover:text-green-400 font-medium transition-colors"
+                >
+                  Contact us →
+                </a>
+              </div>
+            ))}
+          </div>
+          <p className="text-center text-gray-600 text-xs mt-4">
+            Reach thousands of medical professionals preparing for UK exams.{" "}
+            <a href="mailto:advertise@questiongrove360.com" className="text-green-500/70 hover:text-green-400">
+              Learn more about advertising
+            </a>
+          </p>
+        </div>
+      </section>
+
       {/* Footer */}
       <footer className="bg-gray-900 text-gray-400 py-12 px-4">
         <div className="max-w-6xl mx-auto text-center">
