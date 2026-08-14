@@ -90,12 +90,12 @@ const PRICE_IDS = {
     live: "price_1U2fVPIVrH3MHAvahldKVigf",
   },
   PLAB1_3MONTH: {
-    test: "price_1Tj1epIVrH3MHAvaSQrfCd0l",
-    live: "price_1Tj1ctIVrH3MHAvaTRmgqVsw",
+    test: "price_1U4LSZIVrH3MHAvaXMUMNs6H",
+    live: "price_1U4LSZIVrH3MHAvaXMUMNs6H",
   },
   PLAB1_6MONTH: {
-    test: "price_1Tj1eqIVrH3MHAvaw910M1Yo",
-    live: "price_1Tj1ctIVrH3MHAvag6I5W549",
+    test: "price_1U4LSZIVrH3MHAvayjScAE0r",
+    live: "price_1U4LSZIVrH3MHAvayjScAE0r",
   },
 };
 
