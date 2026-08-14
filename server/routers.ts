@@ -14,10 +14,12 @@ import { passwordRouter } from "./passwordRouter";
 import { scaRouter } from "./scaRouter";
 import { msraRouter } from "./msraRouter";
 import { plab1Router } from "./plab1Router";
+import { jambRouter } from "./jambRouter";
 
 export const appRouter = router({
   system: systemRouter,
   plab1: plab1Router,
+  jamb: jambRouter,
   auth: router({
     me: publicProcedure.query(opts => opts.ctx.user),
     logout: publicProcedure.mutation(({ ctx }) => {

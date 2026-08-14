@@ -218,6 +218,12 @@ Guidelines:
     return unsubscribeDigestHandler(req, res);
   });
 
+  // Paystack webhook
+  app.post("/api/paystack/webhook", express.json(), async (req, res) => {
+    const { paystackWebhookHandler } = await import("../paystackWebhook");
+    return paystackWebhookHandler(req, res);
+  });
+
   registerStorageProxy(app);
   registerOAuthRoutes(app);
   // tRPC API

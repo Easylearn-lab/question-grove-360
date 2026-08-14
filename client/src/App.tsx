@@ -67,6 +67,7 @@ import PLAB1Specialties from "./pages/PLAB1Specialties";
 import InternationalExams from "./pages/InternationalExams";
 import NigeriaExams from "./pages/NigeriaExams";
 import JAMBDashboard from "./pages/JAMBDashboard";
+import JAMBBiology from "./pages/JAMBBiology";
 import { useGracefulFetch } from "./hooks/useGracefulFetch";
 import { Whiteboard } from "./components/Whiteboard";
 import { useState } from "react";
@@ -95,6 +96,7 @@ function Router() {
       <Route path={"/international"} component={InternationalExams} />
       <Route path={"/international/nigeria"} component={NigeriaExams} />
       <Route path={"/international/nigeria/jamb"} component={JAMBDashboard} />
+      <Route path={"/international/nigeria/jamb/biology"} component={JAMBBiology} />
       <Route path={"/pricing"} component={Pricing} />
       <Route path={"/admin"} component={AdminPanel} />
       <Route path={"/coach"} component={AICoach} />
