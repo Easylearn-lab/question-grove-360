@@ -114,11 +114,45 @@ const MSRA_FEATURES = [
   "Priority support",
 ];
 
+const PLAB1_PLANS = [
+  {
+    key: "PLAB1_3MONTH",
+    name: "3-Month",
+    price: 20,
+    fullPrice: "23.97",
+    savings: "Save vs monthly",
+    perMonth: "£6.67",
+    interval: "3 months",
+    description: "Great for focused exam sprints",
+    popular: false,
+  },
+  {
+    key: "PLAB1_6MONTH",
+    name: "6-Month",
+    price: 35,
+    fullPrice: "47.94",
+    savings: "12.94",
+    perMonth: "£5.83",
+    interval: "6 months",
+    description: "Ideal study timeline",
+    popular: true,
+  },
+];
+
+const PLAB1_FEATURES = [
+  "648+ PLAB1 SBA questions across 8 specialties",
+  "Full-length 180-question mock exams (3-hour timer)",
+  "Topic-level filtering and analytics",
+  "Spaced repetition and weak-topic targeting",
+  "AI Coach360 assistant",
+  "Priority support",
+];
+
 export default function Pricing() {
   const [, navigate] = useLocation();
   const { isAuthenticated } = useAuth();
   const [loadingPlan, setLoadingPlan] = useState<string | null>(null);
-  const [activeTrack, setActiveTrack] = useState<"AKT" | "SCA" | "MSRA">("AKT");
+  const [activeTrack, setActiveTrack] = useState<"AKT" | "SCA" | "MSRA" | "PLAB1">("AKT");
   const createCheckout = trpc.stripe.createCheckoutSession.useMutation();
 
   const handleCheckout = async (planKey: string) => {
@@ -152,8 +186,8 @@ export default function Pricing() {
     }
   };
 
-  const plans = activeTrack === "AKT" ? AKT_PLANS : activeTrack === "SCA" ? SCA_PLANS : MSRA_PLANS;
-  const features = activeTrack === "AKT" ? AKT_FEATURES : activeTrack === "SCA" ? SCA_FEATURES : MSRA_FEATURES;
+  const plans = activeTrack === "AKT" ? AKT_PLANS : activeTrack === "SCA" ? SCA_PLANS : activeTrack === "PLAB1" ? PLAB1_PLANS : MSRA_PLANS;
+  const features = activeTrack === "AKT" ? AKT_FEATURES : activeTrack === "SCA" ? SCA_FEATURES : activeTrack === "PLAB1" ? PLAB1_FEATURES : MSRA_FEATURES;
   const isTrackDisabled = false; // SCA payments now enabled
 
   return (
@@ -222,7 +256,17 @@ export default function Pricing() {
                   : "text-slate-600 hover:text-slate-900"
               }`}
             >
-              MSRA
+             MSRA
+            </button>
+            <button
+              onClick={() => setActiveTrack("PLAB1")}
+              className={`px-6 sm:px-8 py-3 rounded-lg font-semibold text-sm transition-all ${
+                activeTrack === "PLAB1"
+                  ? "bg-green-600 text-gray-900 shadow-md"
+                  : "text-slate-600 hover:text-slate-900"
+              }`}
+            >
+              PLAB 1
             </button>
           </div>
         </div>

@@ -8,12 +8,13 @@
  * The correct ID is selected at runtime based on the STRIPE_SECRET_KEY prefix.
  */
 
-export type ExamTrack = "AKT" | "SCA" | "MSRA";
+export type ExamTrack = "AKT" | "SCA" | "MSRA" | "PLAB1";
 
 export const PAYMENT_ENABLED: Record<ExamTrack, boolean> = {
   AKT: true,   // Live and active
   SCA: true,   // Live — 60 cases available
   MSRA: true,  // Live and active
+  PLAB1: true, // Live and active
 };
 
 export const AKT_FEATURES = [
@@ -40,6 +41,15 @@ export const MSRA_FEATURES = [
   "MSRA flashcards with spaced repetition",
   "AI Coach360 assistant",
   "Full mock MSRA exams",
+  "Priority support",
+];
+
+export const PLAB1_FEATURES = [
+  "648+ PLAB1 SBA questions across 8 specialties",
+  "Full-length 180-question mock exams (3-hour timer)",
+  "Topic-level filtering and analytics",
+  "Spaced repetition and weak-topic targeting",
+  "AI Coach360 assistant",
   "Priority support",
 ];
 
@@ -78,6 +88,14 @@ const PRICE_IDS = {
   MSRA_6MONTH: {
     test: "price_1U2fVPIVrH3MHAvahldKVigf",
     live: "price_1U2fVPIVrH3MHAvahldKVigf",
+  },
+  PLAB1_3MONTH: {
+    test: "price_1Tj1epIVrH3MHAvaSQrfCd0l",
+    live: "price_1Tj1ctIVrH3MHAvaTRmgqVsw",
+  },
+  PLAB1_6MONTH: {
+    test: "price_1Tj1eqIVrH3MHAvaw910M1Yo",
+    live: "price_1Tj1ctIVrH3MHAvag6I5W549",
   },
 };
 
@@ -168,6 +186,33 @@ export const SUBSCRIPTION_PLANS = {
     get stripePriceId() { return getPriceId("MSRA_6MONTH"); },
     popular: true,
   },
+  PLAB1_3MONTH: {
+    name: "PLAB1 3-Month Access",
+    description: "Great for focused exam sprints",
+    price: 20,
+    monthlyEquivalent: 6.67,
+    monthlyReference: 7.99,
+    fullPrice: 23.97,
+    savings: 3.97,
+    interval: "3 months" as const,
+    intervalCount: 3,
+    examTrack: "PLAB1" as ExamTrack,
+    get stripePriceId() { return getPriceId("PLAB1_3MONTH"); },
+  },
+  PLAB1_6MONTH: {
+    name: "PLAB1 6-Month Access",
+    description: "Ideal study timeline — best value",
+    price: 35,
+    monthlyEquivalent: 5.83,
+    monthlyReference: 7.99,
+    fullPrice: 47.94,
+    savings: 12.94,
+    interval: "6 months" as const,
+    intervalCount: 6,
+    examTrack: "PLAB1" as ExamTrack,
+    get stripePriceId() { return getPriceId("PLAB1_6MONTH"); },
+    popular: true,
+  },
 };
 
 export type PlanKey = keyof typeof SUBSCRIPTION_PLANS;
@@ -185,6 +230,7 @@ export function getPlansForTrack(track: ExamTrack) {
 export function getFeaturesForTrack(track: ExamTrack) {
   if (track === "AKT") return AKT_FEATURES;
   if (track === "MSRA") return MSRA_FEATURES;
+  if (track === "PLAB1") return PLAB1_FEATURES;
   return SCA_FEATURES;
 }
 

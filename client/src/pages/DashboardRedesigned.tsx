@@ -132,7 +132,8 @@ export default function DashboardRedesigned() {
               const isMRCGPAKT = exam.id === "MRCGP AKT";
               const isMRCGPSCA = exam.id === "MRCGP SCA";
               const isMSRA = exam.id === "MSRA";
-              const isActiveExam = isMRCGPAKT || isMRCGPSCA || isMSRA;
+              const isPLAB1 = exam.id === "PLAB 1";
+              const isActiveExam = isMRCGPAKT || isMRCGPSCA || isMSRA || isPLAB1;
               return (
                 <button
                   key={exam.id}
@@ -143,6 +144,8 @@ export default function DashboardRedesigned() {
                       navigate("/sca");
                     } else if (isMSRA) {
                       navigate("/msra");
+                    } else if (isPLAB1) {
+                      navigate("/plab1");
                     } else {
                       setSelectedExam(exam.id);
                     }
@@ -162,6 +165,11 @@ export default function DashboardRedesigned() {
                       </span>
                     )}
                   {isMSRA && (
+                    <span className="block text-[10px] text-green-600 mt-0.5">
+                      Live
+                    </span>
+                  )}
+                  {isPLAB1 && (
                     <span className="block text-[10px] text-green-600 mt-0.5">
                       Live
                     </span>
