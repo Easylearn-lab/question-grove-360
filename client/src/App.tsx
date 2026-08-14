@@ -64,6 +64,7 @@ import MSRAQuestionBank from "./pages/MSRAQuestionBank";
 import PLAB1QuestionBank from "./pages/PLAB1QuestionBank";
 import PLAB1MockExam from "./pages/PLAB1MockExam";
 import PLAB1Specialties from "./pages/PLAB1Specialties";
+import PLAB1Landing from "./pages/PLAB1Landing";
 import InternationalExams from "./pages/InternationalExams";
 import NigeriaExams from "./pages/NigeriaExams";
 import JAMBDashboard from "./pages/JAMBDashboard";
@@ -90,7 +91,8 @@ function Router() {
       <Route path={"/sca"} component={SCASimulator} />
       <Route path={"/msra"} component={MSRA} />
       <Route path={"/msra/questions"} component={MSRAQuestionBank} />
-      <Route path={"/plab1"} component={PLAB1Specialties} />
+      <Route path={"/plab1"} component={PLAB1Landing} />
+      <Route path={"/plab1/specialties"} component={PLAB1Specialties} />
       <Route path={"/plab1/questions"} component={PLAB1QuestionBank} />
       <Route path={"/plab1/mock"} component={PLAB1MockExam} />
       <Route path={"/international"} component={InternationalExams} />
