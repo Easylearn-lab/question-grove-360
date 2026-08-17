@@ -2390,9 +2390,39 @@ function DebriefView({
         competencyScores,
         empathyScore: empathyResult.score,
         isFreeTrial,
-      }).then(() => setSaved(true)).catch(() => {});
+      }).then(() => {
+        setSaved(true);
+        console.log("[SCA] Consultation saved successfully");
+      }).catch((err) => {
+        console.error("[SCA] Failed to save consultation:", err);
+        // Retry once after 3 seconds
+        setTimeout(() => {
+          if (!saved) {
+            saveConsultation.mutateAsync({
+              caseId: caseData.id,
+              caseTitle: caseData.title,
+              mode: "practice",
+              transcript: messages.map(m => ({ role: m.role, content: m.content, timestamp: m.timestamp })),
+              duration,
+              domain1Score: domainScores[0]?.percentage || 0,
+              domain2Score: domainScores[1]?.percentage || 0,
+              domain3Score: domainScores[2]?.percentage || 0,
+              totalScore: totalPercentage,
+              passed,
+              competencyScores,
+              empathyScore: empathyResult.score,
+              isFreeTrial,
+            }).then(() => {
+              setSaved(true);
+              console.log("[SCA] Consultation saved on retry");
+            }).catch((retryErr) => {
+              console.error("[SCA] Retry also failed:", retryErr);
+            });
+          }
+        }, 3000);
+      });
     }
-  }, []);
+  }, [userId, saved]);
 
   // Radar chart using SVG
   const radarSize = 200;
