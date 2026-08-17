@@ -4,7 +4,28 @@ import { Card } from "@/components/ui/card";
 import { getLoginUrl } from "@/const";
 import { BookOpen, Brain, Zap, BarChart3, Users, Award, ArrowRight, CheckCircle2 } from "lucide-react";
 import { useLocation } from "wouter";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+
+function SessionExpiredBanner() {
+  const [show, setShow] = useState(false);
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    if (params.get("session_expired") === "1") {
+      setShow(true);
+      // Clean up the URL without reloading
+      const url = new URL(window.location.href);
+      url.searchParams.delete("session_expired");
+      window.history.replaceState({}, "", url.pathname);
+    }
+  }, []);
+  if (!show) return null;
+  return (
+    <div className="fixed top-0 left-0 right-0 z-[60] bg-amber-500 text-gray-900 text-center py-3 px-4 font-medium shadow-md">
+      You were signed out after 24 hours of inactivity. Please sign in again to continue.
+      <button onClick={() => setShow(false)} className="ml-4 text-gray-800 hover:text-gray-900 font-bold">✕</button>
+    </div>
+  );
+}
 
 export default function Home() {
   const { user, isAuthenticated, loading } = useAuth();
@@ -44,6 +65,7 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-white">
+      <SessionExpiredBanner />
       {/* Navigation */}
       <nav className="sticky top-0 z-50 bg-white border-b border-gray-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">

@@ -1,5 +1,7 @@
 import { COOKIE_NAME } from "@shared/const";
+import { ONE_YEAR_MS } from "@shared/const";
 import { getSessionCookieOptions } from "./_core/cookies";
+import { sdk } from "./_core/sdk";
 import { systemRouter } from "./_core/systemRouter";
 import { publicProcedure, router, protectedProcedure } from "./_core/trpc";
 import { z } from "zod";
@@ -28,6 +30,15 @@ export const appRouter = router({
       return {
         success: true,
       } as const;
+    }),
+    refreshActivity: protectedProcedure.mutation(async ({ ctx }) => {
+      const sessionToken = await sdk.signSession(
+        { openId: ctx.user.openId, appId: process.env.VITE_APP_ID || "", name: ctx.user.name || "" },
+        { expiresInMs: ONE_YEAR_MS }
+      );
+      const cookieOptions = getSessionCookieOptions(ctx.req);
+      ctx.res.cookie(COOKIE_NAME, sessionToken, { ...cookieOptions, maxAge: ONE_YEAR_MS });
+      return { success: true } as const;
     }),
   }),
 

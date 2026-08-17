@@ -72,6 +72,7 @@ import JAMBBiology from "./pages/JAMBBiology";
 import { useGracefulFetch } from "./hooks/useGracefulFetch";
 import { Whiteboard } from "./components/Whiteboard";
 import { useState } from "react";
+import { ActivityTracker } from "./components/ActivityTracker";
 
 function Router() {
   // make sure to consider if you need authentication for certain routes
@@ -142,6 +143,7 @@ function App() {
       >
         <TooltipProvider>
           <Toaster />
+          <ActivityTracker />
           <div className={whiteboardSnapped ? "mr-[40vw] transition-[margin] duration-300" : "transition-[margin] duration-300"}>
             <Router />
           </div>

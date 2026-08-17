@@ -1,4 +1,4 @@
-import { AXIOS_TIMEOUT_MS, COOKIE_NAME, ONE_YEAR_MS } from "@shared/const";
+import { AXIOS_TIMEOUT_MS, COOKIE_NAME, INACTIVITY_TIMEOUT_MS, ONE_YEAR_MS } from "@shared/const";
 import { ForbiddenError } from "@shared/_core/errors";
 import axios, { type AxiosInstance } from "axios";
 import { parse as parseCookieHeader } from "cookie";
@@ -191,6 +191,7 @@ class SDKServer {
       openId: payload.openId,
       appId: payload.appId,
       name: payload.name,
+      lastActivity: issuedAt,
     })
       .setProtectedHeader({ alg: "HS256", typ: "JWT" })
       .setExpirationTime(expirationSeconds)
@@ -199,7 +200,7 @@ class SDKServer {
 
   async verifySession(
     cookieValue: string | undefined | null
-  ): Promise<{ openId: string; appId: string; name: string } | null> {
+  ): Promise<{ openId: string; appId: string; name: string; lastActivity?: number } | null> {
     if (!cookieValue) {
       console.warn("[Auth] Missing session cookie");
       return null;
@@ -210,7 +211,7 @@ class SDKServer {
       const { payload } = await jwtVerify(cookieValue, secretKey, {
         algorithms: ["HS256"],
       });
-      const { openId, appId, name } = payload as Record<string, unknown>;
+      const { openId, appId, name, lastActivity } = payload as Record<string, unknown>;
 
       // Only openId and appId are strictly required - name can be empty
       if (
@@ -221,10 +222,20 @@ class SDKServer {
         return null;
       }
 
+      // Check 24-hour inactivity timeout
+      if (typeof lastActivity === "number") {
+        const elapsed = Date.now() - lastActivity;
+        if (elapsed > INACTIVITY_TIMEOUT_MS) {
+          console.warn("[Auth] Session expired due to 24h inactivity");
+          return null;
+        }
+      }
+
       return {
         openId,
         appId,
         name: typeof name === "string" ? name : "",
+        lastActivity: typeof lastActivity === "number" ? lastActivity : undefined,
       };
     } catch (error) {
       console.warn("[Auth] Session verification failed", String(error));

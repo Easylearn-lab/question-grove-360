@@ -1360,3 +1360,10 @@ Do not close any import task until this validation returns 0 for both banks.
 - [x] Add routes in App.tsx
 - [x] Add advertising banner section to homepage (done earlier)
 - [x] Confirm tests pass (464 passing) and deploy
+
+## AUTO-LOGOUT AFTER 24H INACTIVITY
+- [x] Add lastActivity claim to JWT session token (set on sign-in and refreshed on API calls)
+- [x] Add server-side middleware to check lastActivity and reject expired sessions
+- [x] Add client-side ActivityTracker component that updates lastActivity and auto-redirects
+- [x] Show "signed out due to inactivity" message on homepage when redirected
+- [x] Confirm tests pass (467 passing)
