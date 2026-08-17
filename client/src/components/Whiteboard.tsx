@@ -90,7 +90,9 @@ export function Whiteboard({ isOpen, onClose, onSnapChange }: WhiteboardProps) {
       ctx.beginPath();
       ctx.moveTo(stroke.points[0].x, stroke.points[0].y);
       for (let i = 1; i < stroke.points.length; i++) {
-        ctx.lineTo(stroke.points[i].x, stroke.points[i].y);
+        const midX = (stroke.points[i - 1].x + stroke.points[i].x) / 2;
+        const midY = (stroke.points[i - 1].y + stroke.points[i].y) / 2;
+        ctx.quadraticCurveTo(stroke.points[i - 1].x, stroke.points[i - 1].y, midX, midY);
       }
       ctx.lineWidth = stroke.lineWidth * 3;
       ctx.lineCap = "round";
@@ -98,23 +100,59 @@ export function Whiteboard({ isOpen, onClose, onSnapChange }: WhiteboardProps) {
       ctx.stroke();
       ctx.globalCompositeOperation = savedComposite;
     } else {
-      // Draw pen stroke with pressure-varying width using segments
+      // Draw pen stroke with pressure-varying width using quadratic curve smoothing
       ctx.strokeStyle = stroke.color;
       ctx.lineCap = "round";
       ctx.lineJoin = "round";
       ctx.globalCompositeOperation = "source-over";
 
-      for (let i = 1; i < stroke.points.length; i++) {
-        const prev = stroke.points[i - 1];
-        const curr = stroke.points[i];
-        const pressure = curr.pressure || 0.5;
-        const width = stroke.lineWidth * (0.5 + pressure);
-
+      if (stroke.points.length === 2) {
+        // Only 2 points — draw a simple line
+        const p0 = stroke.points[0];
+        const p1 = stroke.points[1];
+        const pressure = (p0.pressure + p1.pressure) / 2 || 0.5;
+        ctx.lineWidth = stroke.lineWidth * (0.5 + pressure);
         ctx.beginPath();
-        ctx.moveTo(prev.x, prev.y);
-        ctx.lineTo(curr.x, curr.y);
-        ctx.lineWidth = width;
+        ctx.moveTo(p0.x, p0.y);
+        ctx.lineTo(p1.x, p1.y);
         ctx.stroke();
+      } else {
+        // Use quadratic Bézier curves through midpoints for smooth rendering
+        // Variable width: draw in short segments with averaged pressure
+        for (let i = 1; i < stroke.points.length; i++) {
+          const prev = stroke.points[i - 1];
+          const curr = stroke.points[i];
+          const pressure = (prev.pressure + curr.pressure) / 2 || 0.5;
+          const width = stroke.lineWidth * (0.5 + pressure);
+
+          ctx.lineWidth = width;
+          ctx.beginPath();
+
+          if (i === 1) {
+            // First segment: move to first point, curve to midpoint
+            ctx.moveTo(prev.x, prev.y);
+            const midX = (prev.x + curr.x) / 2;
+            const midY = (prev.y + curr.y) / 2;
+            ctx.quadraticCurveTo(prev.x, prev.y, midX, midY);
+          } else if (i === stroke.points.length - 1) {
+            // Last segment: curve from previous midpoint to final point
+            const prevPrev = stroke.points[i - 2];
+            const prevMidX = (prevPrev.x + prev.x) / 2;
+            const prevMidY = (prevPrev.y + prev.y) / 2;
+            ctx.moveTo(prevMidX, prevMidY);
+            ctx.quadraticCurveTo(prev.x, prev.y, curr.x, curr.y);
+          } else {
+            // Middle segments: curve between midpoints using control point
+            const prevPrev = stroke.points[i - 2];
+            const prevMidX = (prevPrev.x + prev.x) / 2;
+            const prevMidY = (prevPrev.y + prev.y) / 2;
+            const midX = (prev.x + curr.x) / 2;
+            const midY = (prev.y + curr.y) / 2;
+            ctx.moveTo(prevMidX, prevMidY);
+            ctx.quadraticCurveTo(prev.x, prev.y, midX, midY);
+          }
+          ctx.stroke();
+        }
       }
     }
   };
@@ -215,46 +253,79 @@ export function Whiteboard({ isOpen, onClose, onSnapChange }: WhiteboardProps) {
       return;
     }
 
-    const point = getCanvasPoint(e);
-    const pressure = e.pressure || 0.5;
+    // Use getCoalescedEvents to capture all intermediate pen points
+    const nativeEvent = e.nativeEvent;
+    const coalescedEvents = (nativeEvent as any).getCoalescedEvents
+      ? (nativeEvent as any).getCoalescedEvents()
+      : [nativeEvent];
 
-    if (currentStrokeRef.current) {
-      currentStrokeRef.current.points.push({ x: point.x, y: point.y, pressure });
+    if (!currentStrokeRef.current) return;
 
-      // Draw only the latest segment for performance (incremental rendering)
-      const canvas = canvasRef.current;
-      if (!canvas) return;
-      const ctx = canvas.getContext("2d");
-      if (!ctx) return;
+    const canvas = canvasRef.current;
+    if (!canvas) return;
+    const ctx = canvas.getContext("2d");
+    if (!ctx) return;
+    const rect = canvas.getBoundingClientRect();
+
+    for (const coalescedEvent of coalescedEvents) {
+      const x = coalescedEvent.clientX - rect.left;
+      const y = coalescedEvent.clientY - rect.top;
+      const pressure = coalescedEvent.pressure || 0.5;
+
+      currentStrokeRef.current.points.push({ x, y, pressure });
 
       const points = currentStrokeRef.current.points;
       const len = points.length;
-      if (len < 2) return;
+      if (len < 2) continue;
 
+      // Incremental smooth rendering using quadratic curves
       const prev = points[len - 2];
       const curr = points[len - 1];
 
       if (currentStrokeRef.current.mode === "eraser") {
         const savedComposite = ctx.globalCompositeOperation;
         ctx.globalCompositeOperation = "destination-out";
-        ctx.beginPath();
-        ctx.moveTo(prev.x, prev.y);
-        ctx.lineTo(curr.x, curr.y);
         ctx.lineWidth = currentStrokeRef.current.lineWidth * 3;
         ctx.lineCap = "round";
         ctx.lineJoin = "round";
+        ctx.beginPath();
+        if (len >= 3) {
+          const prevPrev = points[len - 3];
+          const midPrevX = (prevPrev.x + prev.x) / 2;
+          const midPrevY = (prevPrev.y + prev.y) / 2;
+          const midX = (prev.x + curr.x) / 2;
+          const midY = (prev.y + curr.y) / 2;
+          ctx.moveTo(midPrevX, midPrevY);
+          ctx.quadraticCurveTo(prev.x, prev.y, midX, midY);
+        } else {
+          ctx.moveTo(prev.x, prev.y);
+          ctx.lineTo(curr.x, curr.y);
+        }
         ctx.stroke();
         ctx.globalCompositeOperation = savedComposite;
       } else {
-        const width = currentStrokeRef.current.lineWidth * (0.5 + pressure);
+        const avgPressure = (prev.pressure + curr.pressure) / 2 || 0.5;
+        const width = currentStrokeRef.current.lineWidth * (0.5 + avgPressure);
         ctx.globalCompositeOperation = "source-over";
         ctx.strokeStyle = currentStrokeRef.current.color;
         ctx.lineWidth = width;
         ctx.lineCap = "round";
         ctx.lineJoin = "round";
         ctx.beginPath();
-        ctx.moveTo(prev.x, prev.y);
-        ctx.lineTo(curr.x, curr.y);
+        if (len >= 3) {
+          // Quadratic curve smoothing: draw from previous midpoint through control point to current midpoint
+          const prevPrev = points[len - 3];
+          const midPrevX = (prevPrev.x + prev.x) / 2;
+          const midPrevY = (prevPrev.y + prev.y) / 2;
+          const midX = (prev.x + curr.x) / 2;
+          const midY = (prev.y + curr.y) / 2;
+          ctx.moveTo(midPrevX, midPrevY);
+          ctx.quadraticCurveTo(prev.x, prev.y, midX, midY);
+        } else {
+          // First segment: simple line
+          ctx.moveTo(prev.x, prev.y);
+          ctx.lineTo(curr.x, curr.y);
+        }
         ctx.stroke();
       }
     }

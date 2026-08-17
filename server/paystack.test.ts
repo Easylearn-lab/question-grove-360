@@ -22,6 +22,5 @@ describe("Paystack Integration", () => {
     // 404 means the key is valid but the reference doesn't exist (expected)
     // 401 would mean invalid key
     expect(response.status).not.toBe(401);
-  });
+  }, 15000);
 });
-

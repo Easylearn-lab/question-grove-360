@@ -1367,3 +1367,10 @@ Do not close any import task until this validation returns 0 for both banks.
 - [x] Add client-side ActivityTracker component that updates lastActivity and auto-redirects
 - [x] Show "signed out due to inactivity" message on homepage when redirected
 - [x] Confirm tests pass (467 passing)
+## WHITEBOARD DRAWING QUALITY FIX (Aug 17)
+- [x] Implement getCoalescedEvents() to capture all intermediate stylus points between browser pointer move samples
+- [x] Apply quadratic Bézier curve smoothing between points for natural handwriting (not blocky segments)
+- [x] Set lineCap and lineJoin to round for smooth continuous strokes
+- [x] Confirm touch-action: none is set on canvas element (already present)
+- [x] Fix Paystack test timeout (external API call needs 15s timeout)
+- [x] Confirm all 467 tests passing and TypeScript clean
