@@ -1374,3 +1374,17 @@ Do not close any import task until this validation returns 0 for both banks.
 - [x] Confirm touch-action: none is set on canvas element (already present)
 - [x] Fix Paystack test timeout (external API call needs 15s timeout)
 - [x] Confirm all 467 tests passing and TypeScript clean
+## ADMIN PANEL UPGRADE (Aug 17)
+- [x] Fix Analytics tab: wire to real getAnalytics backend procedure
+- [x] Fix Users tab: wire to real getUsers procedure, make Edit/Delete functional
+- [x] Mount AdminCouponManager in admin panel
+- [x] Add "Add Question" button to AKT Questions tab using createQuestion procedure
+- [x] Add "Delete" button to each AKT question row using deleteQuestion procedure
+- [x] Add PLAB1 question management (view/create/edit/delete)
+- [x] Add MSRA CPS question management (view/create/edit/delete)
+- [x] Add JAMB question management (view/create/edit/delete)
+- [x] Add Flashcard management tab (view/create/edit/delete)
+- [x] Add SCA Case management tab (view/create/edit/delete)
+- [x] Add Bulk Upload system (CSV/JSON, template download, preview, import)
+- [x] Add image upload for question creation/editing (S3 storage)
+- [x] Confirm all tests passing before deploying (469 tests)

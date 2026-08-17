@@ -127,6 +127,8 @@ export const questions = mysqlTable("questions", {
   flagCount: int("flagCount").default(0),
   reportCount: int("reportCount").default(0),
   topic: varchar("topic", { length: 100 }),
+  imageUrl: varchar("imageUrl", { length: 500 }),
+  imageCaption: varchar("imageCaption", { length: 255 }),
   createdAt: timestamp("createdAt").defaultNow().notNull(),
   updatedAt: timestamp("updatedAt").defaultNow().onUpdateNow().notNull(),
 });
@@ -556,6 +558,7 @@ export const msraCpsQuestions = mysqlTable("msra_cps_questions", {
   // Common fields
   reference: text("reference"),
   tags: text("tags"),
+  imageUrl: varchar("imageUrl", { length: 500 }),
   status: varchar("status", { length: 50 }).default("active"),
   attemptCount: int("attemptCount").default(0),
   correctCount: int("correctCount").default(0),
@@ -696,6 +699,7 @@ export const jambQuestions = mysqlTable("jamb_questions", {
   topic: varchar("topic", { length: 200 }),
   country: varchar("country", { length: 100 }).default("Nigeria"),
   region: varchar("region", { length: 100 }).default("West Africa"),
+  imageUrl: varchar("imageUrl", { length: 500 }),
   createdAt: timestamp("createdAt").defaultNow().notNull(),
 });
 export type JambQuestion = typeof jambQuestions.$inferSelect;
