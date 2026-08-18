@@ -176,9 +176,10 @@ export function AICoachFloating() {
       {/* Floating Button */}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className={`fixed bottom-6 right-6 w-14 h-14 rounded-full bg-green-600 hover:bg-green-700 text-gray-900 shadow-lg flex items-center justify-center transition-all z-40 ${
+        className={`w-14 h-14 rounded-full bg-green-600 hover:bg-green-700 text-gray-900 shadow-lg flex items-center justify-center transition-all ${
           isOpen ? "scale-0" : "scale-100"
         }`}
+        style={{ position: "fixed", bottom: "20px", right: "20px", zIndex: 9998 }}
       >
         <MessageCircle className="w-6 h-6" />
       </button>
@@ -186,7 +187,8 @@ export function AICoachFloating() {
       {/* Slide-in Panel */}
       {isOpen && (
         <div
-          className="fixed bottom-0 right-0 w-full sm:w-96 h-screen sm:h-[600px] bg-white rounded-t-lg sm:rounded-lg shadow-2xl flex flex-col z-50 animate-in slide-in-from-bottom-4 duration-300 relative"
+          className="w-full sm:w-96 h-screen sm:h-[600px] bg-white rounded-t-lg sm:rounded-lg shadow-2xl flex flex-col animate-in slide-in-from-bottom-4 duration-300 relative"
+          style={{ position: "fixed", bottom: "20px", right: "20px", zIndex: 9999, maxHeight: "calc(100vh - 40px)" }}
           onDragEnter={handleDragEnter}
           onDragLeave={handleDragLeave}
           onDragOver={handleDragOver}
