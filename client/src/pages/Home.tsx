@@ -153,6 +153,7 @@ export default function Home() {
               { icon: "📊", title: "Mock Exams", desc: "Full-length timed exams with detailed analytics" },
               { icon: "📝", title: "Note360", desc: "Exam-focused revision notes by specialty" },
               { icon: "🎴", title: "Pattern Recognition", desc: "Spaced repetition flashcards with mastery tracking" },
+              { icon: "🎯", title: "Live Quiz", desc: "Kahoot-style real-time multiplayer quizzes" },
             ].map((feature, i) => (
               <div key={i} className="bg-gray-800 rounded-lg p-6 text-center hover:bg-gray-700 transition-all">
                 <div className="text-4xl mb-4">{feature.icon}</div>

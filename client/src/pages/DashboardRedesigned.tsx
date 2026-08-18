@@ -273,6 +273,22 @@ export default function DashboardRedesigned() {
             </div>
           </Card>
         </div>
+
+        {/* Live Quiz CTA */}
+        <div className="mt-8">
+          <Card className="p-6 bg-gradient-to-r from-indigo-50 to-purple-50 border-indigo-200 hover:shadow-lg transition-all cursor-pointer" onClick={() => navigate("/live")}>
+            <div className="flex items-center justify-between">
+              <div className="flex items-center gap-4">
+                <div className="w-12 h-12 bg-indigo-100 rounded-xl flex items-center justify-center text-2xl">🎯</div>
+                <div>
+                  <h3 className="text-lg font-bold text-gray-900">Live Quiz</h3>
+                  <p className="text-sm text-gray-600">Host or join real-time interactive quizzes with friends and classmates</p>
+                </div>
+              </div>
+              <Button className="bg-indigo-600 hover:bg-indigo-700 text-white">Play Now →</Button>
+            </div>
+          </Card>
+        </div>
       </div>
     </div>
   );
