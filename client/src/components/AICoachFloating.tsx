@@ -187,8 +187,17 @@ export function AICoachFloating() {
       {/* Slide-in Panel */}
       {isOpen && (
         <div
-          className="w-full sm:w-96 h-screen sm:h-[600px] bg-white rounded-t-lg sm:rounded-lg shadow-2xl flex flex-col animate-in slide-in-from-bottom-4 duration-300 relative"
-          style={{ position: "fixed", bottom: "20px", right: "20px", zIndex: 9999, maxHeight: "calc(100vh - 40px)" }}
+          className="w-full h-full sm:w-96 sm:h-[600px] bg-white sm:rounded-lg shadow-2xl flex flex-col animate-in slide-in-from-bottom-4 duration-300 relative"
+          style={{ position: "fixed", inset: "0", zIndex: 9999 }}
+          ref={(el) => {
+            // On sm+ screens, override to bottom-right anchored panel
+            if (el && window.matchMedia("(min-width: 640px)").matches) {
+              el.style.inset = "auto";
+              el.style.bottom = "20px";
+              el.style.right = "20px";
+              el.style.maxHeight = "calc(100vh - 40px)";
+            }
+          }}
           onDragEnter={handleDragEnter}
           onDragLeave={handleDragLeave}
           onDragOver={handleDragOver}
