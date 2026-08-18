@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useLocation } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { ArrowLeft, BookOpen, Brain, CheckCircle2, Sparkles } from "lucide-react";
+import { ArrowLeft, BookOpen, Brain, CheckCircle2, Sparkles, Clock, Users } from "lucide-react";
 import { trpc } from "@/lib/trpc";
 import { toast } from "sonner";
 import { useAuth } from "@/_core/hooks/useAuth";
@@ -102,6 +102,28 @@ export default function MSRA() {
             Start preparing for your MSRA today.
           </p>
         </Card>
+
+        {/* Quick Access Cards */}
+        <div className="grid sm:grid-cols-3 gap-4 mb-10">
+          <Card className="p-6 hover:shadow-lg transition-all cursor-pointer border-blue-200 bg-blue-50/50" onClick={() => navigate("/msra/questions")}>
+            <BookOpen className="w-8 h-8 text-blue-600 mb-3" />
+            <h4 className="font-bold text-slate-900 mb-1">CPS Question Bank</h4>
+            <p className="text-sm text-slate-600">190 Clinical Problem Solving questions by specialty</p>
+            <Button variant="outline" size="sm" className="mt-3 border-blue-300 text-blue-700 hover:bg-blue-100">Practice CPS →</Button>
+          </Card>
+          <Card className="p-6 hover:shadow-lg transition-all cursor-pointer border-purple-200 bg-purple-50/50" onClick={() => navigate("/msra/pd")}>
+            <Users className="w-8 h-8 text-purple-600 mb-3" />
+            <h4 className="font-bold text-slate-900 mb-1">PD Question Bank</h4>
+            <p className="text-sm text-slate-600">190 Professional Dilemmas — Ranking and Pick 3 formats</p>
+            <Button variant="outline" size="sm" className="mt-3 border-purple-300 text-purple-700 hover:bg-purple-100">Practice PD →</Button>
+          </Card>
+          <Card className="p-6 hover:shadow-lg transition-all cursor-pointer border-green-200 bg-green-50/50" onClick={() => navigate("/msra/mock")}>
+            <Clock className="w-8 h-8 text-green-600 mb-3" />
+            <h4 className="font-bold text-slate-900 mb-1">Full Mock Exam</h4>
+            <p className="text-sm text-slate-600">172 questions (97 CPS + 75 PD), 3 hours 15 minutes</p>
+            <Button variant="outline" size="sm" className="mt-3 border-green-300 text-green-700 hover:bg-green-100">Start Mock →</Button>
+          </Card>
+        </div>
 
         {/* What's Included */}
         <Card className="p-8 sm:p-10 mb-10">

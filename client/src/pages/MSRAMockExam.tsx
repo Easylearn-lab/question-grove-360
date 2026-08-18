@@ -10,7 +10,7 @@ import { useProtectedRoute } from "@/hooks/useProtectedRoute";
 import { CrossSellGate } from "@/components/CrossSellGate";
 import { useExamAccess } from "@/hooks/useExamAccess";
 
-type ExamState = "intro" | "active" | "results";
+type ExamState = "intro" | "active" | "results" | "review";
 type CpsQuestion = { id: number; section: "CPS"; question: string; optionA: string | null; optionB: string | null; optionC: string | null; optionD: string | null; optionE: string | null; correctAnswer: string | null; explanationCorrect: string | null; specialty: string | null; topic: string | null; };
 type PdQuestion = { id: number; section: "PD"; questionType: string; domain: string | null; scenario: string | null; actionA: string | null; actionB: string | null; actionC: string | null; actionD: string | null; actionE: string | null; correctRanking: string[] | null; explanationRanking: string | null; optionA: string | null; optionB: string | null; optionC: string | null; optionD: string | null; optionE: string | null; correctOptions: string[] | null; explanationOptions: string | null; };
 type AnyQuestion = CpsQuestion | PdQuestion;
@@ -26,6 +26,7 @@ export default function MSRAMockExam() {
   const [answers, setAnswers] = useState<Record<number, any>>({});
   const [timeLeft, setTimeLeft] = useState(195 * 60); // 3h15m in seconds
   const timerRef = useRef<any>(null);
+  const [reviewIdx, setReviewIdx] = useState(0);
 
   // PD ranking state
   const [rankOrder, setRankOrder] = useState<string[]>(["A", "B", "C", "D", "E"]);
@@ -275,6 +276,144 @@ export default function MSRAMockExam() {
             <Button onClick={() => { setExamState("intro"); setAllQuestions([]); }} variant="outline" className="flex-1">Try Again</Button>
             <Button onClick={() => navigate("/msra")} className="flex-1 bg-green-600 hover:bg-green-700 text-white">Back to MSRA</Button>
           </div>
+
+          {/* Review Answers Button */}
+          <Button onClick={() => { setReviewIdx(0); setExamState("review"); }} variant="outline" className="w-full border-blue-300 text-blue-700 hover:bg-blue-50">
+            Review All Answers →
+          </Button>
+        </main>
+      </div>
+    );
+  }
+
+  // ─── REVIEW MODE ─────────────────────────────────────────────────────────
+  if (examState === "review") {
+    const rq = allQuestions[reviewIdx];
+    const rAnswer = answers[reviewIdx];
+    const isCpsR = rq?.section === "CPS";
+    const isPdR = rq?.section === "PD";
+    const pdR = rq as PdQuestion;
+    const cpsR = rq as CpsQuestion;
+
+    return (
+      <div className="min-h-screen bg-gray-50">
+        <header className="bg-white border-b px-4 py-3 flex items-center justify-between sticky top-0 z-10">
+          <div className="flex items-center gap-3">
+            <Button variant="ghost" size="sm" onClick={() => setExamState("results")}><ArrowLeft className="w-4 h-4" /></Button>
+            <span className="text-sm font-medium text-slate-700">Review: Q{reviewIdx + 1}/{allQuestions.length}</span>
+          </div>
+          <Badge className={isCpsR ? "bg-blue-100 text-blue-800" : "bg-purple-100 text-purple-800"}>{isCpsR ? "CPS" : "PD"}</Badge>
+        </header>
+        <Progress value={(reviewIdx + 1) / allQuestions.length * 100} className="h-1 rounded-none" />
+
+        <main className="max-w-4xl mx-auto px-4 py-6">
+          {/* CPS Review */}
+          {isCpsR && (
+            <div>
+              <Card className="mb-4"><CardContent className="p-6"><p className="text-slate-800 leading-relaxed">{cpsR.question}</p></CardContent></Card>
+              <div className="space-y-2 mb-4">
+                {["A", "B", "C", "D", "E"].map((letter) => {
+                  const text = (cpsR as any)[`option${letter}`];
+                  if (!text) return null;
+                  const isCorrect = cpsR.correctAnswer === letter;
+                  const isUserAnswer = rAnswer?.answer === letter;
+                  const isWrong = isUserAnswer && !isCorrect;
+                  return (
+                    <div key={letter} className={`p-3 rounded-lg border ${isCorrect ? "border-green-400 bg-green-50" : isWrong ? "border-red-300 bg-red-50" : "border-gray-200 bg-white"}`}>
+                      <div className="flex items-center gap-2">
+                        {isCorrect && <CheckCircle2 className="w-4 h-4 text-green-600 flex-shrink-0" />}
+                        {isWrong && <XCircle className="w-4 h-4 text-red-500 flex-shrink-0" />}
+                        <span className="font-medium text-gray-700">{letter}.</span>
+                        <span className="text-sm text-slate-700">{text}</span>
+                        {isUserAnswer && <Badge variant="outline" className="ml-auto text-xs">Your answer</Badge>}
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+              {cpsR.explanationCorrect && (
+                <Card className="border-green-200 bg-green-50"><CardContent className="p-4">
+                  <p className="text-sm font-semibold text-green-800 mb-1">Explanation</p>
+                  <p className="text-sm text-slate-700">{cpsR.explanationCorrect}</p>
+                </CardContent></Card>
+              )}
+            </div>
+          )}
+
+          {/* PD RANKING Review */}
+          {isPdR && pdR.questionType === "RANKING" && (
+            <div>
+              <Card className="mb-4"><CardContent className="p-6"><p className="text-slate-800 leading-relaxed">{pdR.scenario}</p></CardContent></Card>
+              <div className="grid md:grid-cols-2 gap-4 mb-4">
+                <div>
+                  <p className="text-sm font-semibold text-gray-600 mb-2">Your Ranking:</p>
+                  {(rAnswer?.answer || ["A","B","C","D","E"]).map((letter: string, idx: number) => (
+                    <div key={idx} className="flex items-center gap-2 p-2 border-b border-gray-100">
+                      <span className="text-xs font-bold text-gray-400 w-5">{idx+1}.</span>
+                      <span className="text-sm">{letter}. {(pdR as any)[`action${letter}`]?.slice(0, 60)}...</span>
+                    </div>
+                  ))}
+                </div>
+                <div>
+                  <p className="text-sm font-semibold text-green-700 mb-2">Correct Ranking:</p>
+                  {(pdR.correctRanking || []).map((letter: string, idx: number) => (
+                    <div key={idx} className="flex items-center gap-2 p-2 border-b border-green-100 bg-green-50/50">
+                      <span className="text-xs font-bold text-green-600 w-5">{idx+1}.</span>
+                      <span className="text-sm">{letter}. {(pdR as any)[`action${letter}`]?.slice(0, 60)}...</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+              {pdR.explanationRanking && (
+                <Card className="border-green-200 bg-green-50"><CardContent className="p-4">
+                  <p className="text-sm font-semibold text-green-800 mb-1">Explanation</p>
+                  <p className="text-sm text-slate-700 whitespace-pre-line">{pdR.explanationRanking}</p>
+                </CardContent></Card>
+              )}
+            </div>
+          )}
+
+          {/* PD PICK3 Review */}
+          {isPdR && pdR.questionType === "PICK3" && (
+            <div>
+              <Card className="mb-4"><CardContent className="p-6"><p className="text-slate-800 leading-relaxed">{pdR.scenario}</p></CardContent></Card>
+              <div className="space-y-2 mb-4">
+                {["A", "B", "C", "D", "E"].map((letter) => {
+                  const text = (pdR as any)[`option${letter}`];
+                  if (!text) return null;
+                  const isCorrect = pdR.correctOptions?.includes(letter);
+                  const isUserPick = rAnswer?.answer?.includes(letter);
+                  const isWrong = isUserPick && !isCorrect;
+                  const isMissed = !isUserPick && isCorrect;
+                  return (
+                    <div key={letter} className={`p-3 rounded-lg border ${isCorrect && isUserPick ? "border-green-400 bg-green-50" : isWrong ? "border-red-300 bg-red-50" : isMissed ? "border-yellow-300 bg-yellow-50" : "border-gray-200 bg-white"}`}>
+                      <div className="flex items-center gap-2">
+                        {isCorrect && isUserPick && <CheckCircle2 className="w-4 h-4 text-green-600" />}
+                        {isWrong && <XCircle className="w-4 h-4 text-red-500" />}
+                        {isMissed && <span className="text-xs text-yellow-600 font-medium">Missed</span>}
+                        <span className="font-medium text-gray-700">{letter}.</span>
+                        <span className="text-sm text-slate-700 flex-1">{text}</span>
+                        {isUserPick && <Badge variant="outline" className="text-xs">Selected</Badge>}
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+              {pdR.explanationOptions && (
+                <Card className="border-green-200 bg-green-50"><CardContent className="p-4">
+                  <p className="text-sm font-semibold text-green-800 mb-1">Explanation</p>
+                  <p className="text-sm text-slate-700 whitespace-pre-line">{pdR.explanationOptions}</p>
+                </CardContent></Card>
+              )}
+            </div>
+          )}
+
+          {/* Review Navigation */}
+          <div className="flex gap-3 mt-6">
+            <Button variant="outline" onClick={() => setReviewIdx(Math.max(0, reviewIdx - 1))} disabled={reviewIdx === 0} className="flex-1">← Previous</Button>
+            <Button onClick={() => setReviewIdx(Math.min(allQuestions.length - 1, reviewIdx + 1))} disabled={reviewIdx >= allQuestions.length - 1} className="flex-1 bg-green-600 hover:bg-green-700 text-white">Next →</Button>
+          </div>
+          <Button variant="outline" onClick={() => setExamState("results")} className="w-full mt-3">Back to Results</Button>
         </main>
       </div>
     );

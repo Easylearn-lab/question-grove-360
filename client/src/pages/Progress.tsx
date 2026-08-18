@@ -11,7 +11,7 @@ import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip
 import { Download, ChevronDown, ChevronRight } from "lucide-react";
 
 type DateRange = "7" | "14" | "30" | "90" | "all";
-type ExamFilter = "all" | "akt" | "plab1";
+type ExamFilter = "all" | "akt" | "plab1" | "msra";
 
 export default function Progress() {
   const { isAuthenticated, loading: authLoading } = useAuth();
@@ -53,6 +53,12 @@ export default function Progress() {
     { days, examId: 60001 },
     { enabled: isAuthenticated && examFilter === "all" }
   );
+
+  // MSRA PD topic performance (uses msra.getPdQuestions data isn't stored in user_attempts yet,
+  // so we'll show a dedicated PD section when MSRA filter is active)
+  const { data: msraPdTopics } = trpc.msra.getPdTopics.useQuery(undefined, {
+    enabled: isAuthenticated && (examFilter === "msra" || examFilter === "all"),
+  });
 
   // Track which specialties are expanded for topic breakdown
   const [expandedSpecialties, setExpandedSpecialties] = useState<Set<string>>(new Set());
@@ -523,7 +529,7 @@ export default function Progress() {
                 <CardDescription>Your accuracy across different medical specialties</CardDescription>
               </div>
               <div className="flex items-center gap-1 bg-gray-100 rounded-lg p-1">
-                {(["all", "akt", "plab1"] as ExamFilter[]).map((f) => (
+                {(["all", "akt", "plab1", "msra"] as ExamFilter[]).map((f) => (
                   <button
                     key={f}
                     onClick={() => setExamFilter(f)}
@@ -533,7 +539,7 @@ export default function Progress() {
                         : "text-gray-500 hover:text-gray-700"
                     }`}
                   >
-                    {f === "all" ? "All" : f === "akt" ? "AKT" : "PLAB 1"}
+                    {f === "all" ? "All" : f === "akt" ? "AKT" : f === "plab1" ? "PLAB 1" : "MSRA"}
                   </button>
                 ))}
               </div>
@@ -650,6 +656,38 @@ export default function Progress() {
             )}
           </CardContent>
         </Card>
+
+        {/* MSRA PD Performance Section */}
+        {(examFilter === "msra" || examFilter === "all") && msraPdTopics && msraPdTopics.length > 0 && (
+          <Card className="mt-6">
+            <CardHeader>
+              <CardTitle className="text-lg">MSRA Professional Dilemmas — Topics</CardTitle>
+              <CardDescription>Practice these PD topics to improve your MSRA score</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="space-y-2">
+                {msraPdTopics.map((topic, i) => (
+                  <div key={i} className="flex items-center gap-3 p-3 border border-gray-100 rounded-lg hover:bg-gray-50">
+                    <span className="text-sm font-medium text-gray-700 w-56 truncate" title={topic}>{topic}</span>
+                    <div className="flex-1 h-2 bg-gray-200 rounded-full overflow-hidden">
+                      <div className="h-full rounded-full bg-purple-300" style={{ width: "0%" }} />
+                    </div>
+                    <span className="text-xs text-gray-400 w-16 text-right">Not started</span>
+                    <Button
+                      variant="ghost"
+                      size="sm"
+                      className="h-6 px-2 text-xs text-purple-600 hover:text-purple-800 hover:bg-purple-50"
+                      onClick={() => navigate(`/msra/pd?topic=${encodeURIComponent(topic)}`)}
+                    >
+                      Practise
+                    </Button>
+                  </div>
+                ))}
+              </div>
+              <p className="text-xs text-gray-400 mt-3">PD topic accuracy will populate as you answer questions in the PD Question Bank.</p>
+            </CardContent>
+          </Card>
+        )}
       </main>
     </div>
   );

@@ -1415,3 +1415,8 @@ Do not close any import task until this validation returns 0 for both banks.
 - [x] Add MSRA PD to admin panel with CRUD and bulk upload
 - [x] Add routes to App.tsx
 - [x] Confirm all tests pass (474 tests, 37 files)
+
+## MSRA ENHANCEMENTS (Aug 19)
+- [x] Add navigation links on MSRA landing page to /msra/pd and /msra/mock
+- [x] Add MSRA PD performance tracking to Progress Dashboard (accuracy by PD topic)
+- [x] Add Review Answers mode to MSRA mock exam results
