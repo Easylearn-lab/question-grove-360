@@ -1388,3 +1388,11 @@ Do not close any import task until this validation returns 0 for both banks.
 - [x] Add Bulk Upload system (CSV/JSON, template download, preview, import)
 - [x] Add image upload for question creation/editing (S3 storage)
 - [x] Confirm all tests passing before deploying (469 tests)
+## PICTURE360 EXPANSION (Aug 18)
+- [x] Add 20 new Dermatology conditions to picture360_images
+- [x] Add 20 new Ophthalmology conditions to picture360_images
+- [x] Add 10 new ECG conditions to picture360_images
+- [x] Add 10 new ENT conditions to picture360_images
+- [x] Add 10 new Chest X-ray conditions to picture360_images
+- [x] Add 10 new Paediatrics conditions to picture360_images (note: Eczema Herpeticum listed twice in request — replaced duplicate with Congenital Hypothyroidism)
+- [x] Verify total row count: 120 → 200
