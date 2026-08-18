@@ -401,6 +401,98 @@ export const adminRouter = router({
       return { success: true };
     }),
 
+  // ─── MSRA PD QUESTION MANAGEMENT ──────────────────────────────────────────
+  getMsraPdQuestions: adminProcedure
+    .input(z.object({ limit: z.number().default(50), offset: z.number().default(0), domain: z.string().optional(), questionType: z.enum(["RANKING", "PICK3"]).optional() }))
+    .query(async ({ input }) => {
+      const { getDb } = await import("./db");
+      const db = await getDb();
+      if (!db) throw new TRPCError({ code: "INTERNAL_SERVER_ERROR" });
+      const { msraPdQuestions } = await import("../drizzle/schema");
+      const conditions: any[] = [];
+      if (input.domain) conditions.push(eq(msraPdQuestions.domain, input.domain));
+      if (input.questionType) conditions.push(eq(msraPdQuestions.questionType, input.questionType));
+      const { and: andOp } = await import("drizzle-orm");
+      const whereClause = conditions.length > 0 ? andOp(...conditions) : undefined;
+      const result = await db.select().from(msraPdQuestions).where(whereClause).orderBy(desc(msraPdQuestions.createdAt)).limit(input.limit).offset(input.offset);
+      const totalResult = await db.select({ total: count() }).from(msraPdQuestions).where(whereClause);
+      return { questions: result, total: totalResult[0]?.total || 0 };
+    }),
+
+  createMsraPdQuestion: adminProcedure
+    .input(z.object({
+      questionType: z.enum(["RANKING", "PICK3"]),
+      domain: z.string().min(1),
+      scenario: z.string().min(10),
+      actionA: z.string().nullable().optional(),
+      actionB: z.string().nullable().optional(),
+      actionC: z.string().nullable().optional(),
+      actionD: z.string().nullable().optional(),
+      actionE: z.string().nullable().optional(),
+      correctRanking: z.array(z.string()).nullable().optional(),
+      explanationRanking: z.string().nullable().optional(),
+      optionA: z.string().nullable().optional(),
+      optionB: z.string().nullable().optional(),
+      optionC: z.string().nullable().optional(),
+      optionD: z.string().nullable().optional(),
+      optionE: z.string().nullable().optional(),
+      correctOptions: z.array(z.string()).nullable().optional(),
+      explanationOptions: z.string().nullable().optional(),
+      reference: z.string().nullable().optional(),
+    }))
+    .mutation(async ({ input }) => {
+      const { getDb } = await import("./db");
+      const db = await getDb();
+      if (!db) throw new TRPCError({ code: "INTERNAL_SERVER_ERROR" });
+      const { msraPdQuestions } = await import("../drizzle/schema");
+      await db.insert(msraPdQuestions).values({ ...input, status: "active" });
+      return { success: true };
+    }),
+
+  updateMsraPdQuestion: adminProcedure
+    .input(z.object({
+      id: z.number(),
+      data: z.object({
+        questionType: z.enum(["RANKING", "PICK3"]).optional(),
+        domain: z.string().optional(),
+        scenario: z.string().optional(),
+        actionA: z.string().nullable().optional(),
+        actionB: z.string().nullable().optional(),
+        actionC: z.string().nullable().optional(),
+        actionD: z.string().nullable().optional(),
+        actionE: z.string().nullable().optional(),
+        correctRanking: z.array(z.string()).nullable().optional(),
+        explanationRanking: z.string().nullable().optional(),
+        optionA: z.string().nullable().optional(),
+        optionB: z.string().nullable().optional(),
+        optionC: z.string().nullable().optional(),
+        optionD: z.string().nullable().optional(),
+        optionE: z.string().nullable().optional(),
+        correctOptions: z.array(z.string()).nullable().optional(),
+        explanationOptions: z.string().nullable().optional(),
+        reference: z.string().nullable().optional(),
+      }),
+    }))
+    .mutation(async ({ input }) => {
+      const { getDb } = await import("./db");
+      const db = await getDb();
+      if (!db) throw new TRPCError({ code: "INTERNAL_SERVER_ERROR" });
+      const { msraPdQuestions } = await import("../drizzle/schema");
+      await db.update(msraPdQuestions).set(input.data).where(eq(msraPdQuestions.id, input.id));
+      return { success: true };
+    }),
+
+  deleteMsraPdQuestion: adminProcedure
+    .input(z.number())
+    .mutation(async ({ input: questionId }) => {
+      const { getDb } = await import("./db");
+      const db = await getDb();
+      if (!db) throw new TRPCError({ code: "INTERNAL_SERVER_ERROR" });
+      const { msraPdQuestions } = await import("../drizzle/schema");
+      await db.update(msraPdQuestions).set({ status: "archived" }).where(eq(msraPdQuestions.id, questionId));
+      return { success: true };
+    }),
+
   // ─── JAMB QUESTION MANAGEMENT ──────────────────────────────────────────────
   getJambQuestions: adminProcedure
     .input(z.object({ limit: z.number().default(50), offset: z.number().default(0), subject: z.string().optional() }))
@@ -612,7 +704,7 @@ export const adminRouter = router({
   // ─── BULK UPLOAD ──────────────────────────────────────────────────────────
   bulkUpload: adminProcedure
     .input(z.object({
-      contentType: z.enum(["akt", "plab1", "msra", "jamb", "flashcards", "sca"]),
+      contentType: z.enum(["akt", "plab1", "msra", "msra_pd", "jamb", "flashcards", "sca"]),
       rows: z.array(z.record(z.string(), z.any())),
     }))
     .mutation(async ({ input }) => {
@@ -698,6 +790,38 @@ export const adminRouter = router({
               explanationCorrect: r.explanationCorrect || r.explanation || null,
               reference: r.reference || null,
               imageUrl: r.imageUrl || null,
+              status: "active",
+            });
+            inserted++;
+          } catch (err: any) {
+            errors.push({ row: i + 1, error: err.message?.slice(0, 100) || "Unknown error" });
+        }
+      }
+    } else if (input.contentType === "msra_pd") {
+        const { msraPdQuestions } = await import("../drizzle/schema");
+        for (let i = 0; i < input.rows.length; i++) {
+          try {
+            const r = input.rows[i];
+            const qType = (r.questionType || r.question_type || "RANKING").toUpperCase();
+            await db.insert(msraPdQuestions).values({
+              questionType: qType === "PICK3" ? "PICK3" : "RANKING",
+              domain: r.domain || r.topic || "",
+              scenario: r.scenario || "",
+              actionA: qType === "RANKING" ? (r.actionA || r.action_a || null) : null,
+              actionB: qType === "RANKING" ? (r.actionB || r.action_b || null) : null,
+              actionC: qType === "RANKING" ? (r.actionC || r.action_c || null) : null,
+              actionD: qType === "RANKING" ? (r.actionD || r.action_d || null) : null,
+              actionE: qType === "RANKING" ? (r.actionE || r.action_e || null) : null,
+              correctRanking: qType === "RANKING" ? (r.correctRanking || r.correct_ranking || null) : null,
+              explanationRanking: qType === "RANKING" ? (r.explanationRanking || r.explanation_ranking || r.explanation || null) : null,
+              optionA: qType === "PICK3" ? (r.optionA || r.option_a || null) : null,
+              optionB: qType === "PICK3" ? (r.optionB || r.option_b || null) : null,
+              optionC: qType === "PICK3" ? (r.optionC || r.option_c || null) : null,
+              optionD: qType === "PICK3" ? (r.optionD || r.option_d || null) : null,
+              optionE: qType === "PICK3" ? (r.optionE || r.option_e || null) : null,
+              correctOptions: qType === "PICK3" ? (r.correctOptions || r.correct_options || null) : null,
+              explanationOptions: qType === "PICK3" ? (r.explanationOptions || r.explanation_options || r.explanation || null) : null,
+              reference: r.reference || null,
               status: "active",
             });
             inserted++;

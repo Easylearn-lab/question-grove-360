@@ -801,6 +801,7 @@ export default function AdminPanel() {
               <TabsTrigger value="akt" className="gap-1 text-xs"><BookOpen className="w-3.5 h-3.5" />AKT</TabsTrigger>
               <TabsTrigger value="plab1" className="gap-1 text-xs"><Stethoscope className="w-3.5 h-3.5" />PLAB1</TabsTrigger>
               <TabsTrigger value="msra" className="gap-1 text-xs"><Brain className="w-3.5 h-3.5" />MSRA</TabsTrigger>
+              <TabsTrigger value="msra_pd" className="gap-1 text-xs"><Brain className="w-3.5 h-3.5" />MSRA PD</TabsTrigger>
               <TabsTrigger value="jamb" className="gap-1 text-xs"><FileText className="w-3.5 h-3.5" />JAMB</TabsTrigger>
               <TabsTrigger value="flashcards" className="gap-1 text-xs"><Tag className="w-3.5 h-3.5" />Flashcards</TabsTrigger>
               <TabsTrigger value="sca" className="gap-1 text-xs"><Stethoscope className="w-3.5 h-3.5" />SCA</TabsTrigger>
@@ -892,6 +893,38 @@ export default function AdminPanel() {
                 { key: "optionE", label: "Option E" },
                 { key: "correctAnswer", label: "Correct Answer", required: true },
                 { key: "explanationCorrect", label: "Explanation", type: "textarea" },
+              ]}
+            />
+          </TabsContent>
+
+          {/* JAMB Questions */}
+
+          {/* MSRA PD Questions */}
+          <TabsContent value="msra_pd">
+            <GenericQuestionAdmin
+              examType="MSRA PD Question"
+              queryHook={(input: any) => trpc.admin.getMsraPdQuestions.useQuery(input)}
+              createHook={(opts: any) => trpc.admin.createMsraPdQuestion.useMutation(opts)}
+              updateHook={(opts: any) => trpc.admin.updateMsraPdQuestion.useMutation(opts)}
+              deleteHook={(opts: any) => trpc.admin.deleteMsraPdQuestion.useMutation(opts)}
+              specialtyOptions={["Professional integrity and honesty", "Patient safety and duty of care", "Team working and communication", "Prioritisation under pressure", "Dealing with colleagues in difficulty", "NHS values and professionalism", "Consent and confidentiality", "Raising concerns and whistleblowing"]}
+              fields={[
+                { key: "questionType", label: "Format (RANKING or PICK3)", required: true },
+                { key: "domain", label: "Topic/Domain", type: "select", required: true },
+                { key: "scenario", label: "Scenario", type: "textarea", required: true },
+                { key: "actionA", label: "Action A (Ranking)" },
+                { key: "actionB", label: "Action B (Ranking)" },
+                { key: "actionC", label: "Action C (Ranking)" },
+                { key: "actionD", label: "Action D (Ranking)" },
+                { key: "actionE", label: "Action E (Ranking)" },
+                { key: "explanationRanking", label: "Ranking Explanation", type: "textarea" },
+                { key: "optionA", label: "Option A (Pick3)" },
+                { key: "optionB", label: "Option B (Pick3)" },
+                { key: "optionC", label: "Option C (Pick3)" },
+                { key: "optionD", label: "Option D (Pick3)" },
+                { key: "optionE", label: "Option E (Pick3)" },
+                { key: "explanationOptions", label: "Pick3 Explanation", type: "textarea" },
+                { key: "reference", label: "Reference" },
               ]}
             />
           </TabsContent>

@@ -1408,3 +1408,10 @@ Do not close any import task until this validation returns 0 for both banks.
 - [x] QR code generation for session join
 - [x] Add routes to App.tsx
 - [x] Confirm all existing tests still pass (474 tests, 37 files)
+
+## MSRA PD MODULE (Aug 19)
+- [x] Build MSRA PD question bank page at /msra/pd with drag-and-drop ranking and multi-select pick-3
+- [x] Build MSRA mock exam at /msra/mock combining CPS (97) and PD (75) with 3h15m timer
+- [x] Add MSRA PD to admin panel with CRUD and bulk upload
+- [x] Add routes to App.tsx
+- [x] Confirm all tests pass (474 tests, 37 files)

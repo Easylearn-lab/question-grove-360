@@ -1,7 +1,7 @@
 import { z } from "zod";
 import { publicProcedure, protectedProcedure, router } from "./_core/trpc";
-import { msraCpsQuestions } from "../drizzle/schema";
-import { desc, eq, and } from "drizzle-orm";
+import { msraCpsQuestions, msraPdQuestions } from "../drizzle/schema";
+import { desc, eq, and, sql } from "drizzle-orm";
 
 export const msraRouter = router({
   /**
@@ -121,4 +121,90 @@ export const msraRouter = router({
 
       return topics.filter((t) => t.topic).map((t) => t.topic!);
     }),
+
+  // ─── MSRA PD PROCEDURES ─────────────────────────────────────────────────
+
+  /**
+   * Get PD topics (domains)
+   */
+  getPdTopics: publicProcedure.query(async () => {
+    const { getDb } = await import("./db");
+    const db = await getDb();
+    if (!db) throw new Error("Database not available");
+    const topics = await db
+      .selectDistinct({ domain: msraPdQuestions.domain })
+      .from(msraPdQuestions)
+      .where(eq(msraPdQuestions.status, "active"))
+      .orderBy(msraPdQuestions.domain);
+    return topics.filter((t) => t.domain).map((t) => t.domain!);
+  }),
+
+  /**
+   * Get PD questions with optional topic/type filter
+   */
+  getPdQuestions: publicProcedure
+    .input(z.object({
+      domain: z.string().optional(),
+      questionType: z.enum(["RANKING", "PICK3"]).optional(),
+      limit: z.number().default(20),
+      offset: z.number().default(0),
+    }))
+    .query(async ({ input }) => {
+      const { getDb } = await import("./db");
+      const db = await getDb();
+      if (!db) throw new Error("Database not available");
+      const conditions: any[] = [eq(msraPdQuestions.status, "active")];
+      if (input.domain) conditions.push(eq(msraPdQuestions.domain, input.domain));
+      if (input.questionType) conditions.push(eq(msraPdQuestions.questionType, input.questionType));
+      const questions = await db.select().from(msraPdQuestions).where(and(...conditions)).limit(input.limit).offset(input.offset);
+      return questions;
+    }),
+
+  /**
+   * Get PD question count
+   */
+  getPdCount: publicProcedure
+    .input(z.object({ domain: z.string().optional(), questionType: z.enum(["RANKING", "PICK3"]).optional() }))
+    .query(async ({ input }) => {
+      const { getDb } = await import("./db");
+      const db = await getDb();
+      if (!db) throw new Error("Database not available");
+      const conditions: any[] = [eq(msraPdQuestions.status, "active")];
+      if (input.domain) conditions.push(eq(msraPdQuestions.domain, input.domain));
+      if (input.questionType) conditions.push(eq(msraPdQuestions.questionType, input.questionType));
+      const [result] = await db.select({ count: sql<number>`COUNT(*)` }).from(msraPdQuestions).where(and(...conditions));
+      return result.count;
+    }),
+
+  /**
+   * Generate MSRA mock exam: 97 CPS + 75 PD = 172 questions
+   */
+  generateMockExam: protectedProcedure.mutation(async () => {
+    const { getDb } = await import("./db");
+    const db = await getDb();
+    if (!db) throw new Error("Database not available");
+
+    // Get 97 random CPS questions
+    const cpsQuestions = await db
+      .select({ id: msraCpsQuestions.id, question: msraCpsQuestions.question, optionA: msraCpsQuestions.optionA, optionB: msraCpsQuestions.optionB, optionC: msraCpsQuestions.optionC, optionD: msraCpsQuestions.optionD, optionE: msraCpsQuestions.optionE, correctAnswer: msraCpsQuestions.correctAnswer, explanationCorrect: msraCpsQuestions.explanationCorrect, explanationA: msraCpsQuestions.explanationA, explanationB: msraCpsQuestions.explanationB, explanationC: msraCpsQuestions.explanationC, explanationD: msraCpsQuestions.explanationD, explanationE: msraCpsQuestions.explanationE, specialty: msraCpsQuestions.specialty, topic: msraCpsQuestions.topic })
+      .from(msraCpsQuestions)
+      .where(eq(msraCpsQuestions.status, "active"))
+      .orderBy(sql`RAND()`)
+      .limit(97);
+
+    // Get 75 random PD questions (mix of RANKING and PICK3)
+    const pdQuestions = await db
+      .select()
+      .from(msraPdQuestions)
+      .where(eq(msraPdQuestions.status, "active"))
+      .orderBy(sql`RAND()`)
+      .limit(75);
+
+    return {
+      cpsQuestions: cpsQuestions.map((q) => ({ ...q, section: "CPS" as const })),
+      pdQuestions: pdQuestions.map((q) => ({ ...q, section: "PD" as const })),
+      totalQuestions: cpsQuestions.length + pdQuestions.length,
+      timeLimitMinutes: 195, // 3 hours 15 minutes
+    };
+  }),
 });
