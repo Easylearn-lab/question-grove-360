@@ -69,6 +69,9 @@ import InternationalExams from "./pages/InternationalExams";
 import NigeriaExams from "./pages/NigeriaExams";
 import JAMBDashboard from "./pages/JAMBDashboard";
 import JAMBBiology from "./pages/JAMBBiology";
+import LiveQuiz from "./pages/LiveQuiz";
+import LiveQuizHost from "./pages/LiveQuizHost";
+import LiveQuizPlay from "./pages/LiveQuizPlay";
 import { useGracefulFetch } from "./hooks/useGracefulFetch";
 import { Whiteboard } from "./components/Whiteboard";
 import { useState } from "react";
@@ -112,6 +115,10 @@ function Router() {
       <Route path={"/settings/2fa"} component={TwoFactorSettings} />
       <Route path={"/picture360"} component={Picture360} />
       <Route path={"/picture360/:specialty"} component={Picture360Specialty} />
+      <Route path={"/live"} component={LiveQuiz} />
+      <Route path={"/live/host/:id"} component={LiveQuizHost} />
+      <Route path={"/live/play"} component={LiveQuizPlay} />
+      <Route path={"/live/join"} component={LiveQuizPlay} />
       <Route path={"/:mrcgp-akt"} component={MRCGPAKTSpecialties} />
       <Route path={"/:practice/mrcgp-akt/:specialty"} component={MRCGPAKTPracticeRedirect} />
       <Route path={"/:mrcgp-akt/note360"} component={Note360List} />

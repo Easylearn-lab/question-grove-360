@@ -2,6 +2,7 @@ import "dotenv/config";
 import express from "express";
 import { createServer } from "http";
 import net from "net";
+import { randomUUID } from "crypto";
 import { createExpressMiddleware } from "@trpc/server/adapters/express";
 import { registerOAuthRoutes } from "./oauth";
 import { registerStorageProxy } from "./storageProxy";
@@ -9,6 +10,7 @@ import { appRouter } from "../routers";
 import { createContext } from "./context";
 import { serveStatic, setupVite } from "./vite";
 import { invokeLLM } from "./llm";
+import { addSSEClient, removeSSEClient } from "../liveQuizRouter";
 
 function isPortAvailable(port: number): Promise<boolean> {
   return new Promise(resolve => {
@@ -226,6 +228,22 @@ Guidelines:
 
   registerStorageProxy(app);
   registerOAuthRoutes(app);
+
+  // ─── SSE ENDPOINT FOR LIVE QUIZ ──────────────────────────────────────────
+  app.get("/api/live-quiz/events/:sessionCode", (req, res) => {
+    const { sessionCode } = req.params;
+    res.writeHead(200, {
+      "Content-Type": "text/event-stream",
+      "Cache-Control": "no-cache",
+      Connection: "keep-alive",
+      "Access-Control-Allow-Origin": "*",
+    });
+    res.write(`event: connected\ndata: ${JSON.stringify({ sessionCode })}\n\n`);
+    const clientId = randomUUID();
+    addSSEClient({ id: clientId, res, sessionCode });
+    req.on("close", () => { removeSSEClient(clientId); });
+  });
+
   // tRPC API
   app.use(
     "/api/trpc",

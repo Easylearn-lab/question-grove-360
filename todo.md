@@ -1396,3 +1396,15 @@ Do not close any import task until this validation returns 0 for both banks.
 - [x] Add 10 new Chest X-ray conditions to picture360_images
 - [x] Add 10 new Paediatrics conditions to picture360_images (note: Eczema Herpeticum listed twice in request — replaced duplicate with Congenital Hypothyroidism)
 - [x] Verify total row count: 120 → 200
+## LIVE INTERACTIVE QUIZ (Aug 18)
+- [x] Create 4 new database tables (live_sessions, live_session_questions, live_participants, live_responses)
+- [x] Build SSE real-time infrastructure for broadcasting
+- [x] Build liveQuizRouter backend (create session, join, start, submit answer, leaderboard, analytics)
+- [x] Build Host pages (create session, control panel with bar charts, post-session analytics)
+- [x] Build Participant pages (join by code, lobby, quiz view, results card)
+- [x] Implement Kahoot-style scoring (correctness + speed)
+- [x] Team mode with aggregated team scores
+- [x] Public session directory and global leaderboard
+- [x] QR code generation for session join
+- [x] Add routes to App.tsx
+- [x] Confirm all existing tests still pass (474 tests, 37 files)

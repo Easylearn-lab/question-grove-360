@@ -704,3 +704,57 @@ export const jambQuestions = mysqlTable("jamb_questions", {
 });
 export type JambQuestion = typeof jambQuestions.$inferSelect;
 export type InsertJambQuestion = typeof jambQuestions.$inferInsert;
+
+// ─── LIVE INTERACTIVE QUIZ ───────────────────────────────────────────────────
+export const liveSessions = mysqlTable("live_sessions", {
+  id: int("id").autoincrement().primaryKey(),
+  hostUserId: int("hostUserId").notNull().references(() => users.id),
+  sessionCode: varchar("sessionCode", { length: 10 }).notNull(),
+  title: varchar("title", { length: 255 }).notNull(),
+  examSource: varchar("examSource", { length: 100 }).notNull(), // table name: questions, plab1_questions, msra_cps_questions, jamb_questions
+  topicFilter: varchar("topicFilter", { length: 255 }),
+  specialtyFilter: varchar("specialtyFilter", { length: 255 }),
+  questionCount: int("questionCount").default(10),
+  timeLimitSeconds: int("timeLimitSeconds").default(30),
+  status: mysqlEnum("status", ["waiting", "active", "ended"]).default("waiting").notNull(),
+  isPublic: boolean("isPublic").default(false),
+  currentQuestionIndex: int("currentQuestionIndex").default(-1),
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+  endedAt: timestamp("endedAt"),
+});
+export type LiveSession = typeof liveSessions.$inferSelect;
+export type InsertLiveSession = typeof liveSessions.$inferInsert;
+
+export const liveSessionQuestions = mysqlTable("live_session_questions", {
+  id: int("id").autoincrement().primaryKey(),
+  sessionId: int("sessionId").notNull().references(() => liveSessions.id),
+  questionId: int("questionId").notNull(),
+  questionSourceTable: varchar("questionSourceTable", { length: 100 }).notNull(),
+  orderIndex: int("orderIndex").notNull(),
+  timeLimitSeconds: int("timeLimitSeconds").default(30),
+});
+export type LiveSessionQuestion = typeof liveSessionQuestions.$inferSelect;
+
+export const liveParticipants = mysqlTable("live_participants", {
+  id: int("id").autoincrement().primaryKey(),
+  sessionId: int("sessionId").notNull().references(() => liveSessions.id),
+  userId: int("userId"),
+  displayName: varchar("displayName", { length: 100 }).notNull(),
+  teamName: varchar("teamName", { length: 100 }),
+  totalScore: int("totalScore").default(0),
+  joinedAt: timestamp("joinedAt").defaultNow().notNull(),
+});
+export type LiveParticipant = typeof liveParticipants.$inferSelect;
+
+export const liveResponses = mysqlTable("live_responses", {
+  id: int("id").autoincrement().primaryKey(),
+  sessionId: int("sessionId").notNull().references(() => liveSessions.id),
+  participantId: int("participantId").notNull().references(() => liveParticipants.id),
+  questionId: int("questionId").notNull(),
+  selectedAnswer: varchar("selectedAnswer", { length: 10 }).notNull(),
+  isCorrect: boolean("isCorrect").notNull(),
+  responseTimeMs: int("responseTimeMs").notNull(),
+  pointsAwarded: int("pointsAwarded").default(0),
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+});
+export type LiveResponse = typeof liveResponses.$inferSelect;
