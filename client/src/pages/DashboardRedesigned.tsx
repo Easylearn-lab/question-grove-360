@@ -289,6 +289,26 @@ export default function DashboardRedesigned() {
             </div>
           </Card>
         </div>
+
+        {/* Topics Library CTA */}
+        <div className="mt-4">
+          <Card className="p-6 border-[#32CD32]/30 bg-gradient-to-r from-green-50 to-emerald-50 hover:shadow-lg transition-all cursor-pointer" onClick={() => navigate("/topics")}>
+            <div className="flex items-center justify-between">
+              <div className="flex items-center gap-4">
+                <div className="w-12 h-12 rounded-xl flex items-center justify-center text-2xl" style={{ backgroundColor: "#32CD3220" }}>📚</div>
+                <div>
+                  <h3 className="text-lg font-bold text-gray-900">Topics Library</h3>
+                  <p className="text-sm text-gray-600">Interactive visual learning — Biology diagrams, Maths tools, and more</p>
+                  <div className="flex items-center gap-2 mt-1.5">
+                    <span className="text-xs font-medium px-2 py-0.5 rounded-full" style={{ backgroundColor: "#32CD3220", color: "#228B22" }}>2 subjects available</span>
+                    <button onClick={(e) => { e.stopPropagation(); navigate("/topics/spelling-bee"); }} className="text-xs font-medium px-2 py-0.5 rounded-full bg-amber-100 text-amber-700 hover:bg-amber-200 transition-colors">🐝 Spelling Bee</button>
+                  </div>
+                </div>
+              </div>
+              <Button className="text-white" style={{ backgroundColor: "#32CD32" }} onClick={(e) => { e.stopPropagation(); navigate("/topics"); }}>Explore →</Button>
+            </div>
+          </Card>
+        </div>
       </div>
     </div>
   );
