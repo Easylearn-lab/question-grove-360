@@ -1425,3 +1425,9 @@ Do not close any import task until this validation returns 0 for both banks.
 - [x] Record PD question attempts to user_attempts with topic, format, and correctness
 - [x] Build MSRA public landing page at /msra-landing
 - [x] Add weakest PD topics to weekly email digest for MSRA subscribers
+
+## MSRA ENHANCEMENTS PHASE 3 (Aug 19)
+- [x] Fix invalid hook call error in MSRAPDQuestionBank (recordAttempt placed outside component body)
+- [x] Record CPS question attempts to user_attempts with specialty and correctness
+- [x] Add spaced repetition mode for MSRA PD (prioritizes recently failed questions)
+- [x] Link MSRA landing page from homepage UK Exams section

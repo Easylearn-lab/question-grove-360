@@ -240,6 +240,166 @@ export const msraRouter = router({
     }),
 
   /**
+   * Record a CPS question attempt
+   */
+  recordCpsAttempt: protectedProcedure
+    .input(z.object({
+      questionId: z.number(),
+      specialty: z.string(),
+      selectedAnswer: z.string(),
+      isCorrect: z.boolean(),
+    }))
+    .mutation(async ({ ctx, input }) => {
+      const { getDb } = await import("./db");
+      const db = await getDb();
+      if (!db) throw new Error("Database not available");
+
+      await db.insert(userAttempts).values({
+        userId: ctx.user.id,
+        questionId: input.questionId,
+        examId: 70002, // MSRA CPS examId
+        selectedAnswer: input.selectedAnswer,
+        isCorrect: input.isCorrect,
+        timeTaken: 0,
+        mode: "practice",
+        sessionId: null,
+        specialty: input.specialty,
+      });
+
+      return { success: true };
+    }),
+
+  /**
+   * Get CPS performance breakdown by specialty
+   */
+  getCpsPerformance: protectedProcedure.query(async ({ ctx }) => {
+    const { getDb } = await import("./db");
+    const db = await getDb();
+    if (!db) throw new Error("Database not available");
+
+    const attempts = await db
+      .select({
+        specialty: userAttempts.specialty,
+        isCorrect: userAttempts.isCorrect,
+      })
+      .from(userAttempts)
+      .where(and(
+        eq(userAttempts.userId, ctx.user.id),
+        eq(userAttempts.examId, 70002)
+      ));
+
+    if (attempts.length === 0) return [];
+
+    const specStats: Record<string, { correct: number; total: number }> = {};
+    for (const a of attempts) {
+      const spec = a.specialty || "Unknown";
+      if (!specStats[spec]) specStats[spec] = { correct: 0, total: 0 };
+      specStats[spec].total++;
+      if (a.isCorrect) specStats[spec].correct++;
+    }
+
+    return Object.entries(specStats)
+      .map(([specialty, stats]) => ({
+        specialty,
+        accuracy: Math.round((stats.correct / stats.total) * 100),
+        total: stats.total,
+        correct: stats.correct,
+      }))
+      .sort((a, b) => a.accuracy - b.accuracy);
+  }),
+
+  /**
+   * Get PD questions for spaced repetition — prioritizes recently failed questions
+   */
+  getPdSpacedRepetition: protectedProcedure
+    .input(z.object({ limit: z.number().default(20) }))
+    .query(async ({ ctx, input }) => {
+      const { getDb } = await import("./db");
+      const db = await getDb();
+      if (!db) throw new Error("Database not available");
+
+      // Get all PD attempts for this user, ordered by most recent
+      const attempts = await db
+        .select({
+          questionId: userAttempts.questionId,
+          isCorrect: userAttempts.isCorrect,
+          createdAt: userAttempts.createdAt,
+        })
+        .from(userAttempts)
+        .where(and(
+          eq(userAttempts.userId, ctx.user.id),
+          eq(userAttempts.examId, 70001)
+        ))
+        .orderBy(desc(userAttempts.createdAt));
+
+      if (attempts.length === 0) {
+        // No attempts yet — return random questions
+        const questions = await db.select().from(msraPdQuestions)
+          .where(eq(msraPdQuestions.status, "active"))
+          .orderBy(sql`RAND()`)
+          .limit(input.limit);
+        return questions;
+      }
+
+      // Build a map of questionId -> { lastWrong: Date | null, wrongCount: number, rightCount: number }
+      const questionStats: Map<number, { lastWrong: Date | null; wrongCount: number; rightCount: number }> = new Map();
+      for (const a of attempts) {
+        const existing = questionStats.get(a.questionId);
+        if (!existing) {
+          questionStats.set(a.questionId, {
+            lastWrong: !a.isCorrect ? a.createdAt : null,
+            wrongCount: a.isCorrect ? 0 : 1,
+            rightCount: a.isCorrect ? 1 : 0,
+          });
+        } else {
+          if (!a.isCorrect) {
+            existing.wrongCount++;
+            if (!existing.lastWrong) existing.lastWrong = a.createdAt;
+          } else {
+            existing.rightCount++;
+          }
+        }
+      }
+
+      // Get question IDs that were answered wrong, sorted by recency and frequency
+      const wrongQuestionIds = Array.from(questionStats.entries())
+        .filter(([_, stats]) => stats.wrongCount > 0)
+        .sort((a, b) => {
+          // More recent failures first
+          const aTime = a[1].lastWrong?.getTime() || 0;
+          const bTime = b[1].lastWrong?.getTime() || 0;
+          if (bTime !== aTime) return bTime - aTime;
+          // More failures = higher priority
+          return b[1].wrongCount - a[1].wrongCount;
+        })
+        .map(([id]) => id)
+        .slice(0, input.limit);
+
+      if (wrongQuestionIds.length === 0) {
+        // All correct — return unanswered questions
+        const answeredIds = Array.from(questionStats.keys());
+        const questions = await db.select().from(msraPdQuestions)
+          .where(and(
+            eq(msraPdQuestions.status, "active"),
+            sql`${msraPdQuestions.id} NOT IN (${sql.join(answeredIds.map(id => sql`${id}`), sql`, `)})`
+          ))
+          .orderBy(sql`RAND()`)
+          .limit(input.limit);
+        return questions;
+      }
+
+      // Fetch the wrong questions
+      const questions = await db.select().from(msraPdQuestions)
+        .where(sql`${msraPdQuestions.id} IN (${sql.join(wrongQuestionIds.map(id => sql`${id}`), sql`, `)})`);
+
+      // Sort them in the same priority order
+      const orderMap = new Map(wrongQuestionIds.map((id, idx) => [id, idx]));
+      questions.sort((a, b) => (orderMap.get(a.id) || 0) - (orderMap.get(b.id) || 0));
+
+      return questions;
+    }),
+
+  /**
    * Get PD performance breakdown by domain (topic)
    */
   getPdPerformance: protectedProcedure.query(async ({ ctx }) => {

@@ -8,6 +8,7 @@ import { toast } from "sonner";
 
 export default function MSRAQuestionBank() {
   const [, navigate] = useLocation();
+  const recordCpsAttempt = trpc.msra.recordCpsAttempt.useMutation();
   const [selectedSpecialty, setSelectedSpecialty] = useState<string | null>(null);
   const [selectedTopic, setSelectedTopic] = useState<string | null>(null);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
@@ -54,6 +55,16 @@ export default function MSRAQuestionBank() {
   const handleSubmitAnswer = (option: string) => {
     setSelectedAnswer(option);
     setShowExplanation(true);
+    // Record the attempt
+    if (questions && questions[currentQuestionIndex]) {
+      const q = questions[currentQuestionIndex];
+      recordCpsAttempt.mutate({
+        questionId: q.id,
+        specialty: q.specialty || selectedSpecialty || "",
+        selectedAnswer: option,
+        isCorrect: option === q.correctAnswer,
+      });
+    }
   };
 
   const handleNext = () => {

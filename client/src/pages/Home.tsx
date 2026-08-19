@@ -105,7 +105,13 @@ export default function Home() {
             <div className="bg-white rounded-xl p-8 border-t-4 border-green-500 shadow-lg hover:shadow-xl transition-all hover:-translate-y-2">
               <div className="text-4xl mb-4">🇬🇧</div>
               <h3 className="text-2xl font-bold text-gray-900 mb-2">UK Medical Exams</h3>
-              <p className="text-gray-600 mb-6">Complete preparation for 15+ UK postgraduate and licensing exams including MRCGP, PLAB, UKMLA, MRCP, and more.</p>
+              <p className="text-gray-600 mb-4">Complete preparation for 15+ UK postgraduate and licensing exams including MRCGP, PLAB, UKMLA, MRCP, and more.</p>
+              <div className="flex flex-wrap gap-2 mb-4">
+                <a href="/plab1" className="text-xs bg-green-100 text-green-800 px-2 py-1 rounded-full hover:bg-green-200 transition-colors">PLAB 1</a>
+                <a href="/msra-landing" className="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded-full hover:bg-blue-200 transition-colors">MSRA</a>
+                <a href={getLoginUrl()} className="text-xs bg-gray-100 text-gray-700 px-2 py-1 rounded-full hover:bg-gray-200 transition-colors">AKT</a>
+                <a href={getLoginUrl()} className="text-xs bg-gray-100 text-gray-700 px-2 py-1 rounded-full hover:bg-gray-200 transition-colors">SCA</a>
+              </div>
               
               <a href={getLoginUrl()} className="w-full bg-green-600 text-gray-900 py-3 rounded-lg font-semibold hover:bg-green-700 text-center block">
                 Access UK Exams →

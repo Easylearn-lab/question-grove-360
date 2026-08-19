@@ -28,15 +28,25 @@ export default function MSRAPDQuestionBank() {
   // Pick3 state
   const [selectedOptions, setSelectedOptions] = useState<string[]>([]);
 
+  // Study mode: "browse" or "spaced"
+  const [studyMode, setStudyMode] = useState<"browse" | "spaced">("browse");
+
   const topicsQuery = trpc.msra.getPdTopics.useQuery();
+  const recordAttempt = trpc.msra.recordPdAttempt.useMutation();
   const questionsQuery = trpc.msra.getPdQuestions.useQuery({
     domain: selectedTopic === "all" ? undefined : selectedTopic,
     questionType: selectedType === "all" ? undefined : selectedType as any,
     limit: 500,
     offset: 0,
-  });
+  }, { enabled: studyMode === "browse" });
 
-  const questions = questionsQuery.data || [];
+  // Spaced repetition query
+  const spacedQuery = trpc.msra.getPdSpacedRepetition.useQuery(
+    { limit: 30 },
+    { enabled: studyMode === "spaced" }
+  );
+
+  const questions = studyMode === "spaced" ? (spacedQuery.data || []) : (questionsQuery.data || []);
   const currentQ = questions[currentIndex];
 
   const resetQuestion = useCallback(() => {
@@ -66,6 +76,7 @@ export default function MSRAPDQuestionBank() {
     setSelectedOptions([]);
     setRankOrder(["A", "B", "C", "D", "E"]);
     setScore({ correct: 0, total: 0 });
+    setStudyMode("browse");
   };
 
   // Drag and drop for ranking
@@ -193,6 +204,11 @@ export default function MSRAPDQuestionBank() {
 
         {/* Filters */}
         <div className="flex gap-3 mb-6 flex-wrap">
+          {/* Study mode toggle */}
+          <div className="flex items-center gap-1 bg-gray-100 rounded-lg p-1">
+            <button onClick={() => { setStudyMode("browse"); setCurrentIndex(0); setSubmitted(false); setScore({ correct: 0, total: 0 }); }} className={`px-3 py-1.5 text-xs font-medium rounded-md transition-all ${studyMode === "browse" ? "bg-white text-gray-900 shadow-sm" : "text-gray-500 hover:text-gray-700"}`}>Browse</button>
+            <button onClick={() => { setStudyMode("spaced"); setCurrentIndex(0); setSubmitted(false); setScore({ correct: 0, total: 0 }); }} className={`px-3 py-1.5 text-xs font-medium rounded-md transition-all ${studyMode === "spaced" ? "bg-white text-purple-700 shadow-sm" : "text-gray-500 hover:text-gray-700"}`}>🔄 Spaced Repetition</button>
+          </div>
           <Select value={selectedTopic} onValueChange={(v) => handleFilterChange(v, selectedType)}>
             <SelectTrigger className="w-64"><SelectValue placeholder="All Topics" /></SelectTrigger>
             <SelectContent>
@@ -372,4 +388,3 @@ export default function MSRAPDQuestionBank() {
     </div>
   );
 }
-  const recordAttempt = trpc.msra.recordPdAttempt.useMutation();
