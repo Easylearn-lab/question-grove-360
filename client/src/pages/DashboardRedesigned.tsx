@@ -20,6 +20,7 @@ export default function DashboardRedesigned() {
 
   // Fetch exams and stats
   const examsQuery = trpc.dashboard.getExams.useQuery();
+  const subjectsQuery = trpc.topics.getSubjects.useQuery();
   const statsQuery = trpc.dashboard.getStats.useQuery(
     { examCode: "MRCGP-AKT" },
     { enabled: isAuthenticated }
@@ -300,12 +301,31 @@ export default function DashboardRedesigned() {
                   <h3 className="text-lg font-bold text-gray-900">Topics Library</h3>
                   <p className="text-sm text-gray-600">Interactive visual learning — Biology diagrams, Maths tools, and more</p>
                   <div className="flex items-center gap-2 mt-1.5">
-                    <span className="text-xs font-medium px-2 py-0.5 rounded-full" style={{ backgroundColor: "#32CD3220", color: "#228B22" }}>2 subjects available</span>
+                    <span className="text-xs font-medium px-2 py-0.5 rounded-full" style={{ backgroundColor: "#32CD3220", color: "#228B22" }}>{subjectsQuery.data?.length || 0} subjects available</span>
                     <button onClick={(e) => { e.stopPropagation(); navigate("/topics/spelling-bee"); }} className="text-xs font-medium px-2 py-0.5 rounded-full bg-amber-100 text-amber-700 hover:bg-amber-200 transition-colors">🐝 Spelling Bee</button>
                   </div>
                 </div>
               </div>
               <Button className="text-white" style={{ backgroundColor: "#32CD32" }} onClick={(e) => { e.stopPropagation(); navigate("/topics"); }}>Explore →</Button>
+            </div>
+          </Card>
+        </div>
+
+        {/* International Exams CTA */}
+        <div className="mt-4">
+          <Card className="p-6 bg-gradient-to-r from-teal-50 to-cyan-50 border-teal-200 hover:shadow-lg transition-all cursor-pointer" onClick={() => navigate("/international")}>
+            <div className="flex items-center justify-between">
+              <div className="flex items-center gap-4">
+                <div className="w-12 h-12 bg-teal-100 rounded-xl flex items-center justify-center text-2xl">🌍</div>
+                <div>
+                  <h3 className="text-lg font-bold text-gray-900">International Exams</h3>
+                  <p className="text-sm text-gray-600">JAMB, WAEC, and more — exam prep for students across Africa and beyond</p>
+                  <div className="flex items-center gap-2 mt-1.5">
+                    <span className="text-xs font-medium px-2 py-0.5 rounded-full bg-teal-100 text-teal-700">🇳🇬 Nigeria — JAMB Live</span>
+                  </div>
+                </div>
+              </div>
+              <Button className="bg-teal-600 hover:bg-teal-700 text-white" onClick={(e) => { e.stopPropagation(); navigate("/international"); }}>Explore →</Button>
             </div>
           </Card>
         </div>
