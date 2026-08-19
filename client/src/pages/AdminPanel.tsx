@@ -808,6 +808,8 @@ export default function AdminPanel() {
               <TabsTrigger value="bulk" className="gap-1 text-xs"><Upload className="w-3.5 h-3.5" />Bulk Upload</TabsTrigger>
               <TabsTrigger value="coupons" className="gap-1 text-xs"><Settings className="w-3.5 h-3.5" />Coupons</TabsTrigger>
               <TabsTrigger value="picture360" className="gap-1 text-xs"><Image className="w-3.5 h-3.5" />Picture360</TabsTrigger>
+              <TabsTrigger value="topics" className="gap-1 text-xs"><BookOpen className="w-3.5 h-3.5" />Topics</TabsTrigger>
+              <TabsTrigger value="spelling" className="gap-1 text-xs"><FileText className="w-3.5 h-3.5" />Spelling</TabsTrigger>
             </TabsList>
           </div>
 
@@ -1009,6 +1011,16 @@ export default function AdminPanel() {
           <TabsContent value="picture360">
             <Picture360Admin />
           </TabsContent>
+
+          {/* Topics Admin */}
+          <TabsContent value="topics">
+            <TopicsAdmin />
+          </TabsContent>
+
+          {/* Spelling Words Admin */}
+          <TabsContent value="spelling">
+            <SpellingWordsAdmin />
+          </TabsContent>
         </Tabs>
       </main>
     </div>
@@ -1040,6 +1052,88 @@ function AnalyticsTab() {
           <p className={`text-3xl font-bold ${stat.color}`}>{stat.value.toLocaleString()}</p>
         </Card>
       ))}
+    </div>
+  );
+}
+
+// ─── TOPICS ADMIN TAB ────────────────────────────────────────────────
+function TopicsAdmin() {
+  const { data: subjects } = trpc.topics.getSubjects.useQuery();
+  const [selectedSubject, setSelectedSubject] = useState<number | null>(null);
+  const selSlug = subjects?.find(s => s.id === selectedSubject)?.slug || "";
+  const { data: topicsList } = trpc.topics.getTopicsBySubjectSlug.useQuery(
+    { slug: selSlug },
+    { enabled: !!selectedSubject && !!selSlug }
+  );
+
+  return (
+    <div className="space-y-6">
+      <h3 className="text-lg font-bold">Topics Library Management</h3>
+      <div className="flex gap-2 flex-wrap">
+        {subjects?.map(s => (
+          <button key={s.id} onClick={() => setSelectedSubject(s.id)} className={`px-4 py-2 rounded-lg text-sm font-medium ${selectedSubject === s.id ? "bg-green-600 text-white" : "bg-gray-100 text-gray-600 hover:bg-gray-200"}`}>
+            {s.icon} {s.name}
+          </button>
+        ))}
+      </div>
+      {selectedSubject && topicsList && (
+        <div className="border rounded-xl overflow-hidden">
+          <table className="w-full text-sm">
+            <thead className="bg-gray-50"><tr><th className="text-left p-3">Topic</th><th className="text-left p-3">Difficulty</th><th className="text-left p-3">Linked Tag</th><th className="text-left p-3">Component</th></tr></thead>
+            <tbody>
+              {topicsList.map((t: any) => (
+                <tr key={t.id} className="border-t hover:bg-gray-50">
+                  <td className="p-3 font-medium">{t.name}</td>
+                  <td className="p-3"><span className={`px-2 py-0.5 rounded text-xs ${t.difficultyLevel === "easy" ? "bg-green-100 text-green-800" : t.difficultyLevel === "hard" ? "bg-red-100 text-red-800" : "bg-amber-100 text-amber-800"}`}>{t.difficultyLevel}</span></td>
+                  <td className="p-3 text-gray-500">{t.linkedQuestionTopicTag || "—"}</td>
+                  <td className="p-3 text-gray-500 font-mono text-xs">{t.visualizeComponent || "—"}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      )}
+      {!selectedSubject && <div className="text-center py-12 text-gray-400"><p>Select a subject above to manage its topics</p></div>}
+      <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 text-sm text-blue-800">
+        <p><strong>Note:</strong> Use the Bulk Upload tab to import new subjects and topics via CSV.</p>
+      </div>
+    </div>
+  );
+}
+
+// ─── SPELLING WORDS ADMIN TAB ────────────────────────────────────────────────
+function SpellingWordsAdmin() {
+  const [category, setCategory] = useState("");
+  const { data: categories } = trpc.topics.getSpellingCategories.useQuery();
+  const { data: words } = trpc.topics.getSpellingWords.useQuery({ category: category || undefined, limit: 200 });
+
+  return (
+    <div className="space-y-6">
+      <h3 className="text-lg font-bold">Spelling Words ({words?.length || 0} words)</h3>
+      <div className="flex gap-2 flex-wrap">
+        <button onClick={() => setCategory("")} className={`px-3 py-1.5 rounded-lg text-sm ${!category ? "bg-amber-500 text-white" : "bg-gray-100 text-gray-600"}`}>All</button>
+        {categories?.map(c => (
+          <button key={c} onClick={() => setCategory(c)} className={`px-3 py-1.5 rounded-lg text-sm ${category === c ? "bg-amber-500 text-white" : "bg-gray-100 text-gray-600"}`}>{c}</button>
+        ))}
+      </div>
+      <div className="border rounded-xl overflow-hidden max-h-[500px] overflow-y-auto">
+        <table className="w-full text-sm">
+          <thead className="bg-gray-50 sticky top-0"><tr><th className="text-left p-3">Word</th><th className="text-left p-3">Category</th><th className="text-left p-3">Difficulty</th><th className="text-left p-3">Hint</th></tr></thead>
+          <tbody>
+            {words?.map((w: any) => (
+              <tr key={w.id} className="border-t hover:bg-gray-50">
+                <td className="p-3 font-medium">{w.word}</td>
+                <td className="p-3 text-gray-500">{w.category}</td>
+                <td className="p-3"><span className={`px-2 py-0.5 rounded text-xs ${w.difficultyLevel === "easy" ? "bg-green-100 text-green-800" : w.difficultyLevel === "hard" ? "bg-red-100 text-red-800" : "bg-amber-100 text-amber-800"}`}>{w.difficultyLevel}</span></td>
+                <td className="p-3 text-gray-500 text-xs">{w.hint || "—"}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <div className="bg-amber-50 border border-amber-200 rounded-lg p-4 text-sm text-amber-800">
+        <p><strong>Tip:</strong> Use the Bulk Upload tab (select "Spelling Words" as content type) to add words in bulk via CSV.</p>
+      </div>
     </div>
   );
 }

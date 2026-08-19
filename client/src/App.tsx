@@ -74,6 +74,10 @@ import JAMBBiology from "./pages/JAMBBiology";
 import LiveQuiz from "./pages/LiveQuiz";
 import LiveQuizHost from "./pages/LiveQuizHost";
 import LiveQuizPlay from "./pages/LiveQuizPlay";
+import TopicsLibrary from "./pages/TopicsLibrary";
+import TopicsSubject from "./pages/TopicsSubject";
+import TopicDetail from "./pages/TopicDetail";
+import SpellingBee from "./pages/SpellingBee";
 import { useGracefulFetch } from "./hooks/useGracefulFetch";
 import { Whiteboard } from "./components/Whiteboard";
 import { useState } from "react";
@@ -123,6 +127,10 @@ function Router() {
       <Route path={"/live/host/:id"} component={LiveQuizHost} />
       <Route path={"/live/play"} component={LiveQuizPlay} />
       <Route path={"/live/join"} component={LiveQuizPlay} />
+      <Route path={"/topics"} component={TopicsLibrary} />
+      <Route path={"/topics/spelling-bee"} component={SpellingBee} />
+      <Route path={"/topics/:subject"} component={TopicsSubject} />
+      <Route path={"/topics/:subject/:topic"} component={TopicDetail} />
       <Route path={"/:mrcgp-akt"} component={MRCGPAKTSpecialties} />
       <Route path={"/:practice/mrcgp-akt/:specialty"} component={MRCGPAKTPracticeRedirect} />
       <Route path={"/:mrcgp-akt/note360"} component={Note360List} />

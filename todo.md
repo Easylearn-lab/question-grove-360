@@ -1433,18 +1433,18 @@ Do not close any import task until this validation returns 0 for both banks.
 - [x] Link MSRA landing page from homepage UK Exams section
 
 ## TOPICS LIBRARY + SPELLING BEE (Aug 19)
-- [ ] Create topic_subjects, topics, topic_content, spelling_words database tables
-- [ ] Build topicsRouter with CRUD for subjects, topics, content, and linked questions
-- [ ] Build spellingRouter with word fetching, category filter, and session scoring
-- [ ] Build /topics directory page (subject grid)
-- [ ] Build /topics/:subject page (topic list within subject)
-- [ ] Build /topics/:subject/:topicSlug page (Visualize, Learn, Practice tabs)
-- [ ] Build 8 Biology interactive SVG diagrams (Cardiovascular, Respiratory, Digestive, Nervous, Cell, Reproduction, Genetics, Ecology)
-- [ ] Build 8 Mathematics interactive tools (Algebra, Number Bases, Indices, Geometry, Trigonometry, Statistics, Calculus, Sets/Probability)
-- [ ] Write Learn content and key points for all 16 topics
-- [ ] Link Practice sections to jamb_questions by topic tag
-- [ ] Build Spelling Bee at /topics/spelling-bee with SpeechSynthesis, scoring, categories
-- [ ] Seed 200 spelling words (50 per category)
-- [ ] Add Topics tab to Admin panel (subjects, topics, content CRUD)
-- [ ] Add Spelling Words tab to Admin panel (CRUD + bulk upload)
-- [ ] Add Topics Library and Spelling Bee links to navigation and homepage
+- [x] Create topic_subjects, topics, topic_content, spelling_words database tables
+- [x] Build topicsRouter with CRUD for subjects, topics, content, and linked questions
+- [x] Build spellingRouter with word fetching, category filter, and session scoring
+- [x] Build /topics directory page (subject grid)
+- [x] Build /topics/:subject page (topic list within subject)
+- [x] Build /topics/:subject/:topicSlug page (Visualize, Learn, Practice tabs)
+- [x] Build 8 Biology interactive SVG diagrams (Cardiovascular, Respiratory, Digestive, Nervous, Cell, Reproduction, Genetics, Ecology)
+- [x] Build 8 Mathematics interactive tools (Algebra, Number Bases, Indices, Geometry, Trigonometry, Statistics, Calculus, Sets/Probability)
+- [x] Write Learn content and key points for all 16 topics
+- [x] Link Practice sections to jamb_questions by topic tag
+- [x] Build Spelling Bee at /topics/spelling-bee with SpeechSynthesis, scoring, categories
+- [x] Seed 200 spelling words (50 per category)
+- [x] Add Topics tab to Admin panel (subjects, topics, content CRUD)
+- [x] Add Spelling Words tab to Admin panel (CRUD + bulk upload)
+- [x] Add Topics Library and Spelling Bee links to navigation and homepage
