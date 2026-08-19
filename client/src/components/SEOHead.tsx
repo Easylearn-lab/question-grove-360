@@ -13,7 +13,7 @@ const SITE_NAME = "Question Grove 360";
 const TAGLINE = "Every exam, one platform";
 const BASE_URL = "https://questiongrove360.com";
 const DEFAULT_IMAGE = `${BASE_URL}/manus-storage/Move2Canada_careviv_c5e00de2.png`;
-const DEFAULT_OG_IMAGE = `${BASE_URL}/og-default.png`;
+const DEFAULT_OG_IMAGE = `${BASE_URL}/manus-storage/og-image-questiongrove360_df83c647.png`;
 
 export function SEOHead({ title, description, path, type = "website", image, structuredData }: SEOProps) {
   const fullTitle = `${title} — ${SITE_NAME}, ${TAGLINE}`;
