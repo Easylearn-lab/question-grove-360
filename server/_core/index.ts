@@ -215,6 +215,36 @@ Guidelines:
   });
 
   // Digest unsubscribe (one-click from email)
+  // Sitemap.xml for SEO
+  app.get("/sitemap.xml", (req, res) => {
+    const baseUrl = "https://questiongrove360.com";
+    const routes = [
+      { path: "/", priority: "1.0", changefreq: "weekly" },
+      { path: "/pricing", priority: "0.8", changefreq: "monthly" },
+      { path: "/plab1", priority: "0.9", changefreq: "weekly" },
+      { path: "/msra-landing", priority: "0.9", changefreq: "weekly" },
+      { path: "/international", priority: "0.7", changefreq: "monthly" },
+      { path: "/international/nigeria", priority: "0.7", changefreq: "monthly" },
+      { path: "/international/nigeria/jamb", priority: "0.8", changefreq: "weekly" },
+      { path: "/topics", priority: "0.8", changefreq: "weekly" },
+      { path: "/topics/biology", priority: "0.7", changefreq: "monthly" },
+      { path: "/topics/mathematics", priority: "0.7", changefreq: "monthly" },
+      { path: "/topics/spelling-bee", priority: "0.7", changefreq: "monthly" },
+      { path: "/picture360", priority: "0.7", changefreq: "monthly" },
+      { path: "/live", priority: "0.6", changefreq: "weekly" },
+    ];
+    const xml = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+${routes.map(r => `  <url>
+    <loc>${baseUrl}${r.path}</loc>
+    <changefreq>${r.changefreq}</changefreq>
+    <priority>${r.priority}</priority>
+  </url>`).join("\n")}
+</urlset>`;
+    res.set("Content-Type", "application/xml");
+    res.send(xml);
+  });
+
   app.get("/api/unsubscribe/digest", async (req, res) => {
     const { unsubscribeDigestHandler } = await import("../unsubscribeHandler");
     return unsubscribeDigestHandler(req, res);

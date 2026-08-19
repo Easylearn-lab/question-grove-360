@@ -1,4 +1,5 @@
 import { useLocation } from "wouter";
+import { SEOHead, examPrepStructuredData } from "@/components/SEOHead";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -47,6 +48,12 @@ export default function MSRALanding() {
 
   return (
     <div className="min-h-screen bg-white">
+      <SEOHead
+        title="MSRA Exam Preparation"
+        description="Prepare for the Multi-Specialty Recruitment Assessment with 190 CPS questions, 190 Professional Dilemmas, full mock exams, and topic-level analytics. Essential for UK specialty training applications."
+        path="/msra-landing"
+        structuredData={examPrepStructuredData("MSRA", "Multi-Specialty Recruitment Assessment preparation for UK specialty training", 380)}
+      />
       {/* Hero */}
       <section className="bg-gradient-to-br from-slate-900 via-slate-800 to-green-900 text-white py-20 px-4">
         <div className="max-w-5xl mx-auto text-center">

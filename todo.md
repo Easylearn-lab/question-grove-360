@@ -1448,3 +1448,19 @@ Do not close any import task until this validation returns 0 for both banks.
 - [x] Add Topics tab to Admin panel (subjects, topics, content CRUD)
 - [x] Add Spelling Words tab to Admin panel (CRUD + bulk upload)
 - [x] Add Topics Library and Spelling Bee links to navigation and homepage
+
+## COMBINED BUILD — AD BANNERS + DASHBOARD + SEO (Aug 19)
+- [x] Create ad_banners database table (id, imageUrl, destinationUrl, position, isActive, title, createdAt)
+- [x] Upload CareViv banner to S3 and insert as first banner
+- [x] Build ad banner backend router (CRUD, toggle active, position management)
+- [x] Update homepage ad section to render banners from database
+- [x] Add Ad Banners tab to Admin panel (upload, URL, toggle, position)
+- [x] Add Picture360 card to dashboard
+- [x] Reorder dashboard cards: exams > Live Quiz > Topics Library > International Exams > Picture360
+- [x] SEO: unique meta title + description per page
+- [x] SEO: Open Graph tags on every page
+- [x] SEO: canonical URLs
+- [x] SEO: auto-generated sitemap.xml
+- [x] SEO: robots.txt (allow public, block admin)
+- [x] SEO: structured data markup on question bank pages
+- [x] SEO: page titles format "Page Name — Question Grove 360"

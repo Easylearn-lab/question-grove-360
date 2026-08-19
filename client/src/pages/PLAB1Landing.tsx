@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { SEOHead, examPrepStructuredData } from "@/components/SEOHead";
 import { Card } from "@/components/ui/card";
 import {
   ArrowLeft,
@@ -81,6 +82,12 @@ export default function PLAB1Landing() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100">
+      <SEOHead
+        title="PLAB1 Exam Preparation"
+        description="Prepare for PLAB1 with 748 practice questions across 8 specialties, full-length mock exams, and detailed explanations. The UK licensing exam for international medical graduates."
+        path="/plab1"
+        structuredData={examPrepStructuredData("PLAB1", "UK licensing exam preparation for international medical graduates", 748)}
+      />
       {/* Header */}
       <header className="bg-white border-b border-slate-200">
         <div className="max-w-6xl mx-auto px-4 py-4 flex items-center gap-3">

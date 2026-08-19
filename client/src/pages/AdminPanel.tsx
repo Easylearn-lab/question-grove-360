@@ -1021,6 +1021,11 @@ export default function AdminPanel() {
           <TabsContent value="spelling">
             <SpellingWordsAdmin />
           </TabsContent>
+
+          {/* Ad Banners Admin */}
+          <TabsContent value="banners">
+            <AdBannersAdmin />
+          </TabsContent>
         </Tabs>
       </main>
     </div>
@@ -1133,6 +1138,74 @@ function SpellingWordsAdmin() {
       </div>
       <div className="bg-amber-50 border border-amber-200 rounded-lg p-4 text-sm text-amber-800">
         <p><strong>Tip:</strong> Use the Bulk Upload tab (select "Spelling Words" as content type) to add words in bulk via CSV.</p>
+      </div>
+    </div>
+  );
+}
+
+// ─── AD BANNERS ADMIN TAB ────────────────────────────────────────────────
+function AdBannersAdmin() {
+  const { data: banners, refetch } = trpc.adBanners.getAll.useQuery();
+  const [showAdd, setShowAdd] = useState(false);
+  const [newBanner, setNewBanner] = useState({ title: "", imageUrl: "", destinationUrl: "", position: 1 });
+  const createBanner = trpc.adBanners.create.useMutation({ onSuccess: () => { refetch(); setShowAdd(false); setNewBanner({ title: "", imageUrl: "", destinationUrl: "", position: 1 }); } });
+  const updateBanner = trpc.adBanners.update.useMutation({ onSuccess: () => refetch() });
+  const deleteBanner = trpc.adBanners.delete.useMutation({ onSuccess: () => refetch() });
+
+  return (
+    <div className="space-y-6">
+      <div className="flex items-center justify-between">
+        <h3 className="text-lg font-bold">Ad Banners ({banners?.length || 0})</h3>
+        <button onClick={() => setShowAdd(!showAdd)} className="px-4 py-2 bg-green-600 text-white rounded-lg text-sm font-medium hover:bg-green-700">+ Add Banner</button>
+      </div>
+
+      {showAdd && (
+        <div className="border rounded-xl p-4 bg-green-50 space-y-3">
+          <div className="grid grid-cols-2 gap-3">
+            <input type="text" placeholder="Banner title" value={newBanner.title} onChange={e => setNewBanner({...newBanner, title: e.target.value})} className="border rounded px-3 py-2 text-sm" />
+            <input type="number" placeholder="Position (1-3)" value={newBanner.position} onChange={e => setNewBanner({...newBanner, position: parseInt(e.target.value) || 1})} className="border rounded px-3 py-2 text-sm" min={1} max={3} />
+            <input type="text" placeholder="Image URL (upload to S3 first)" value={newBanner.imageUrl} onChange={e => setNewBanner({...newBanner, imageUrl: e.target.value})} className="border rounded px-3 py-2 text-sm col-span-2" />
+            <input type="text" placeholder="Destination URL (where click goes)" value={newBanner.destinationUrl} onChange={e => setNewBanner({...newBanner, destinationUrl: e.target.value})} className="border rounded px-3 py-2 text-sm col-span-2" />
+          </div>
+          <button onClick={() => createBanner.mutate({ ...newBanner, isActive: true })} disabled={!newBanner.title || !newBanner.imageUrl || !newBanner.destinationUrl} className="px-4 py-2 bg-green-600 text-white rounded-lg text-sm disabled:opacity-50">Save Banner</button>
+        </div>
+      )}
+
+      <div className="border rounded-xl overflow-hidden">
+        <table className="w-full text-sm">
+          <thead className="bg-gray-50">
+            <tr>
+              <th className="text-left p-3">Preview</th>
+              <th className="text-left p-3">Title</th>
+              <th className="text-left p-3">Position</th>
+              <th className="text-left p-3">Status</th>
+              <th className="text-left p-3">Destination</th>
+              <th className="text-left p-3">Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            {banners?.map((b: any) => (
+              <tr key={b.id} className="border-t hover:bg-gray-50">
+                <td className="p-3"><img src={b.imageUrl} alt={b.title} className="w-24 h-16 object-cover rounded" /></td>
+                <td className="p-3 font-medium">{b.title}</td>
+                <td className="p-3">Slot {b.position}</td>
+                <td className="p-3">
+                  <button onClick={() => updateBanner.mutate({ id: b.id, isActive: !b.isActive })} className={`px-2 py-0.5 rounded text-xs font-medium ${b.isActive ? "bg-green-100 text-green-800" : "bg-gray-100 text-gray-600"}`}>
+                    {b.isActive ? "Active" : "Inactive"}
+                  </button>
+                </td>
+                <td className="p-3 text-xs text-blue-600 max-w-[200px] truncate"><a href={b.destinationUrl} target="_blank" rel="noopener">{b.destinationUrl}</a></td>
+                <td className="p-3">
+                  <button onClick={() => { if (confirm("Delete this banner?")) deleteBanner.mutate({ id: b.id }); }} className="text-red-600 hover:text-red-800 text-xs font-medium">Delete</button>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 text-sm text-blue-800">
+        <p><strong>How to add a banner:</strong> Upload your banner image via the Picture360 admin tab or directly to S3, copy the returned URL, then paste it in the Image URL field above. Set the destination URL (where users go when they click), choose which ad slot position (1-3), and save.</p>
       </div>
     </div>
   );

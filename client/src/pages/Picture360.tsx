@@ -1,4 +1,5 @@
 import { useLocation } from "wouter";
+import { SEOHead } from "@/components/SEOHead";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { ArrowLeft, Lock, CheckCircle, Clock } from "lucide-react";
@@ -119,6 +120,11 @@ export default function Picture360() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100">
+      <SEOHead
+        title="Picture360 — Clinical Image Recognition"
+        description="Master clinical image recognition with 200 high-yield images across Dermatology, ECG, Chest X-ray, Ophthalmology, ENT, and Paediatrics. Learn and test modes available."
+        path="/picture360"
+      />
       {/* Header */}
       <header className="bg-white border-b border-slate-200 sticky top-0 z-40">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">

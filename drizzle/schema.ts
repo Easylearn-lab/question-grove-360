@@ -1,4 +1,4 @@
-import { int, mysqlEnum, mysqlTable, text, timestamp, varchar, boolean, decimal, json, date, uniqueIndex } from "drizzle-orm/mysql-core";
+import { int, mysqlEnum, mysqlTable, text, timestamp, varchar, boolean, decimal, json, date, uniqueIndex, tinyint } from "drizzle-orm/mysql-core";
 
 /**
  * Core user table backing auth flow.
@@ -810,3 +810,17 @@ export const spellingWords = mysqlTable("spelling_words", {
 });
 export type SpellingWord = typeof spellingWords.$inferSelect;
 export type InsertSpellingWord = typeof spellingWords.$inferInsert;
+
+// ─── AD BANNERS ─────────────────────────────────────────────────────────────
+export const adBanners = mysqlTable("ad_banners", {
+  id: int("id").primaryKey().autoincrement(),
+  title: varchar("title", { length: 255 }).notNull().default(""),
+  imageUrl: text("imageUrl").notNull(),
+  destinationUrl: text("destinationUrl").notNull(),
+  position: int("position").notNull().default(1),
+  isActive: tinyint("isActive").notNull().default(1),
+  createdAt: timestamp("createdAt").defaultNow(),
+  updatedAt: timestamp("updatedAt").defaultNow(),
+});
+export type AdBanner = typeof adBanners.$inferSelect;
+export type InsertAdBanner = typeof adBanners.$inferInsert;

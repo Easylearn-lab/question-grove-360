@@ -1,4 +1,5 @@
 import { useState, useCallback, useRef, useEffect } from "react";
+import { SEOHead } from "@/components/SEOHead";
 import { trpc } from "@/lib/trpc";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -100,6 +101,11 @@ export default function SpellingBee() {
 
   return (
     <div className="min-h-screen bg-amber-50/30">
+      <SEOHead
+        title="Spelling Bee"
+        description="Practice spelling with audio pronunciation, difficulty levels, and streak scoring. Improve your vocabulary across General, Science, Geography, and commonly misspelled words."
+        path="/topics/spelling-bee"
+      />
       <div className="max-w-3xl mx-auto px-4 py-8">
         <Button variant="ghost" onClick={() => navigate("/topics")} className="mb-6 text-gray-600">
           <ArrowLeft className="w-4 h-4 mr-2" /> Back to Topics Library

@@ -329,6 +329,26 @@ export default function DashboardRedesigned() {
             </div>
           </Card>
         </div>
+
+        {/* Picture360 CTA */}
+        <div className="mt-4">
+          <Card className="p-6 bg-gradient-to-r from-rose-50 to-pink-50 border-rose-200 hover:shadow-lg transition-all cursor-pointer" onClick={() => navigate("/picture360")}>
+            <div className="flex items-center justify-between">
+              <div className="flex items-center gap-4">
+                <div className="w-12 h-12 bg-rose-100 rounded-xl flex items-center justify-center text-2xl">🔬</div>
+                <div>
+                  <h3 className="text-lg font-bold text-gray-900">Picture360</h3>
+                  <p className="text-sm text-gray-600">Clinical image recognition — Dermatology, ECG, X-ray, Ophthalmology, ENT, Paediatrics</p>
+                  <div className="flex items-center gap-2 mt-1.5">
+                    <span className="text-xs font-medium px-2 py-0.5 rounded-full bg-rose-100 text-rose-700">200 clinical images</span>
+                    <span className="text-xs font-medium px-2 py-0.5 rounded-full bg-rose-100 text-rose-700">6 specialties</span>
+                  </div>
+                </div>
+              </div>
+              <Button className="bg-rose-600 hover:bg-rose-700 text-white" onClick={(e) => { e.stopPropagation(); navigate("/picture360"); }}>Start →</Button>
+            </div>
+          </Card>
+        </div>
       </div>
     </div>
   );

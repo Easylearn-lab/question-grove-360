@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { SEOHead } from "@/components/SEOHead";
 import { useLocation } from "wouter";
 import { trpc } from "@/lib/trpc";
 import { Card, CardContent } from "@/components/ui/card";
@@ -11,6 +12,11 @@ export default function TopicsLibrary() {
 
   return (
     <div className="min-h-screen bg-gray-50">
+      <SEOHead
+        title="Topics Library"
+        description="Interactive visual learning for Biology and Mathematics. Explore animated diagrams, interactive tools, and practice questions linked to JAMB exam topics."
+        path="/topics"
+      />
       <div className="max-w-5xl mx-auto px-4 py-12">
         <div className="text-center mb-12">
           <h1 className="text-4xl font-bold text-gray-900 mb-3">Topics Library</h1>

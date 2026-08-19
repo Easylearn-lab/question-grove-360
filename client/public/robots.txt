@@ -1,0 +1,10 @@
+# Question Grove 360 - Robots.txt
+User-agent: *
+Allow: /
+Disallow: /admin
+Disallow: /api/
+Disallow: /profile
+Disallow: /settings/
+
+Sitemap: https://questiongrove360.com/sitemap.xml
+

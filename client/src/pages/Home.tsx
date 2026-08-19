@@ -1,4 +1,6 @@
 import { useAuth } from "@/_core/hooks/useAuth";
+import { trpc } from "@/lib/trpc";
+import { SEOHead, websiteStructuredData } from "@/components/SEOHead";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { getLoginUrl } from "@/const";
@@ -65,6 +67,12 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-white">
+      <SEOHead
+        title="Medical Exam Preparation"
+        description="Your complete platform for medical and academic exam success. Prepare for AKT, SCA, PLAB1, MSRA, JAMB and more with AI-powered tools, question banks, and mock exams."
+        path="/"
+        structuredData={websiteStructuredData()}
+      />
       <SessionExpiredBanner />
       {/* Navigation */}
       <nav className="sticky top-0 z-50 bg-white border-b border-gray-200">
@@ -215,38 +223,7 @@ export default function Home() {
       {/* Advertising Banner Section */}
       <section className="bg-gray-950 border-t border-gray-800 py-10 px-4">
         <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {[1, 2, 3].map((slot) => (
-              <div
-                key={slot}
-                className="relative flex flex-col items-center justify-center rounded-xl border border-gray-700/50 bg-gray-900/60 p-8 min-h-[160px] group hover:border-green-500/30 transition-colors"
-              >
-                <div className="absolute top-3 right-3 text-[10px] uppercase tracking-wider text-gray-600 font-medium">
-                  Ad Space {slot}
-                </div>
-                <svg
-                  className="w-8 h-8 text-gray-600 mb-3 group-hover:text-green-500/60 transition-colors"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={1.5}
-                    d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909M3.75 21h16.5A2.25 2.25 0 0022.5 18.75V5.25A2.25 2.25 0 0020.25 3H3.75A2.25 2.25 0 001.5 5.25v13.5A2.25 2.25 0 003.75 21z"
-                  />
-                </svg>
-                <p className="text-gray-400 text-sm font-medium mb-2">Advertise with us</p>
-                <a
-                  href="mailto:advertise@questiongrove360.com"
-                  className="text-xs text-green-500 hover:text-green-400 font-medium transition-colors"
-                >
-                  Contact us →
-                </a>
-              </div>
-            ))}
-          </div>
+          <AdBannerSection />
           <p className="text-center text-gray-600 text-xs mt-4">
             Reach thousands of medical professionals preparing for UK exams.{" "}
             <a href="mailto:advertise@questiongrove360.com" className="text-green-500/70 hover:text-green-400">
@@ -268,6 +245,32 @@ export default function Home() {
           <p>Made with ❤️ for medical professionals worldwide</p>
         </div>
       </footer>
+    </div>
+  );
+}
+function AdBannerSection() {
+  const { data: banners } = trpc.adBanners.getActiveBanners.useQuery();
+  const slots = [1, 2, 3];
+  return (
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+      {slots.map((slot) => {
+        const banner = banners?.find(b => b.position === slot);
+        if (banner) {
+          return (
+            <a key={slot} href={banner.destinationUrl} target="_blank" rel="noopener noreferrer" className="block rounded-xl overflow-hidden border border-gray-700/50 hover:border-green-500/50 transition-all hover:shadow-lg hover:shadow-green-500/10">
+              <img src={banner.imageUrl} alt={banner.title} className="w-full h-auto object-cover" />
+            </a>
+          );
+        }
+        return (
+          <div key={slot} className="relative flex flex-col items-center justify-center rounded-xl border border-gray-700/50 bg-gray-900/60 p-8 min-h-[160px] group hover:border-green-500/30 transition-colors">
+            <div className="absolute top-3 right-3 text-[10px] uppercase tracking-wider text-gray-600 font-medium">Ad Space {slot}</div>
+            <svg className="w-8 h-8 text-gray-600 mb-3 group-hover:text-green-500/60 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909M3.75 21h16.5A2.25 2.25 0 0022.5 18.75V5.25A2.25 2.25 0 0020.25 3H3.75A2.25 2.25 0 001.5 5.25v13.5A2.25 2.25 0 003.75 21z" /></svg>
+            <p className="text-gray-400 text-sm font-medium mb-2">Advertise with us</p>
+            <a href="mailto:advertise@questiongrove360.com" className="text-xs text-green-500 hover:text-green-400 font-medium transition-colors">Contact us →</a>
+          </div>
+        );
+      })}
     </div>
   );
 }
