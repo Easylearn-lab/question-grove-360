@@ -18,12 +18,14 @@ import { msraRouter } from "./msraRouter";
 import { plab1Router } from "./plab1Router";
 import { jambRouter } from "./jambRouter";
 import { liveQuizRouter } from "./liveQuizRouter";
+import { topicsRouter } from "./topicsRouter";
 
 export const appRouter = router({
   system: systemRouter,
   plab1: plab1Router,
   jamb: jambRouter,
   liveQuiz: liveQuizRouter,
+  topics: topicsRouter,
   auth: router({
     me: publicProcedure.query(opts => opts.ctx.user),
     logout: publicProcedure.mutation(({ ctx }) => {

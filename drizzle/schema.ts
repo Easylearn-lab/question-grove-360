@@ -758,3 +758,55 @@ export const liveResponses = mysqlTable("live_responses", {
   createdAt: timestamp("createdAt").defaultNow().notNull(),
 });
 export type LiveResponse = typeof liveResponses.$inferSelect;
+
+// Topics Library
+export const topicSubjects = mysqlTable("topic_subjects", {
+  id: int("id").autoincrement().primaryKey(),
+  name: varchar("name", { length: 255 }).notNull(),
+  slug: varchar("slug", { length: 255 }).notNull().unique(),
+  icon: varchar("icon", { length: 50 }),
+  description: text("description"),
+  displayOrder: int("displayOrder").default(0),
+  createdAt: timestamp("createdAt").defaultNow(),
+});
+export type TopicSubject = typeof topicSubjects.$inferSelect;
+export type InsertTopicSubject = typeof topicSubjects.$inferInsert;
+
+export const topics = mysqlTable("topics", {
+  id: int("id").autoincrement().primaryKey(),
+  subjectId: int("subjectId").notNull().references(() => topicSubjects.id),
+  name: varchar("name", { length: 255 }).notNull(),
+  slug: varchar("slug", { length: 255 }).notNull(),
+  description: text("description"),
+  difficultyLevel: varchar("difficultyLevel", { length: 50 }).default("medium"),
+  displayOrder: int("displayOrder").default(0),
+  linkedQuestionTopicTag: varchar("linkedQuestionTopicTag", { length: 255 }),
+  visualizeComponent: varchar("visualizeComponent", { length: 255 }),
+  createdAt: timestamp("createdAt").defaultNow(),
+});
+export type Topic = typeof topics.$inferSelect;
+export type InsertTopic = typeof topics.$inferInsert;
+
+export const topicContent = mysqlTable("topic_content", {
+  id: int("id").autoincrement().primaryKey(),
+  topicId: int("topicId").notNull().references(() => topics.id),
+  learnContentMarkdown: text("learnContentMarkdown"),
+  keyPointsJson: json("keyPointsJson"),
+  createdAt: timestamp("createdAt").defaultNow(),
+  updatedAt: timestamp("updatedAt").defaultNow(),
+});
+export type TopicContent = typeof topicContent.$inferSelect;
+export type InsertTopicContent = typeof topicContent.$inferInsert;
+
+// Spelling Bee
+export const spellingWords = mysqlTable("spelling_words", {
+  id: int("id").autoincrement().primaryKey(),
+  word: varchar("word", { length: 255 }).notNull(),
+  category: varchar("category", { length: 100 }).notNull(),
+  difficultyLevel: varchar("difficultyLevel", { length: 50 }).default("medium"),
+  audioPronunciationText: varchar("audioPronunciationText", { length: 500 }),
+  hint: text("hint"),
+  createdAt: timestamp("createdAt").defaultNow(),
+});
+export type SpellingWord = typeof spellingWords.$inferSelect;
+export type InsertSpellingWord = typeof spellingWords.$inferInsert;
