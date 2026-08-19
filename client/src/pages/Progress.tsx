@@ -55,8 +55,11 @@ export default function Progress() {
   );
 
   // MSRA PD topic performance (uses msra.getPdQuestions data isn't stored in user_attempts yet,
-  // so we'll show a dedicated PD section when MSRA filter is active)
+  // MSRA PD topic performance - uses real attempt data
   const { data: msraPdTopics } = trpc.msra.getPdTopics.useQuery(undefined, {
+    enabled: isAuthenticated && (examFilter === "msra" || examFilter === "all"),
+  });
+  const { data: msraPdPerformance } = trpc.msra.getPdPerformance.useQuery(undefined, {
     enabled: isAuthenticated && (examFilter === "msra" || examFilter === "all"),
   });
 
@@ -658,7 +661,9 @@ export default function Progress() {
         </Card>
 
         {/* MSRA PD Performance Section */}
-        {(examFilter === "msra" || examFilter === "all") && msraPdTopics && msraPdTopics.length > 0 && (
+        {(examFilter === "msra" || examFilter === "all") && msraPdTopics && msraPdTopics.length > 0 && (() => {
+          const perfMap = new Map((msraPdPerformance || []).map((p: any) => [p.domain, p]));
+          return (
           <Card className="mt-6">
             <CardHeader>
               <CardTitle className="text-lg">MSRA Professional Dilemmas — Topics</CardTitle>
@@ -666,28 +671,38 @@ export default function Progress() {
             </CardHeader>
             <CardContent>
               <div className="space-y-2">
-                {msraPdTopics.map((topic, i) => (
-                  <div key={i} className="flex items-center gap-3 p-3 border border-gray-100 rounded-lg hover:bg-gray-50">
-                    <span className="text-sm font-medium text-gray-700 w-56 truncate" title={topic}>{topic}</span>
-                    <div className="flex-1 h-2 bg-gray-200 rounded-full overflow-hidden">
-                      <div className="h-full rounded-full bg-purple-300" style={{ width: "0%" }} />
+                {msraPdTopics.map((topic, i) => {
+                  const perf = perfMap.get(topic);
+                  const accuracy = perf ? perf.accuracy : 0;
+                  const total = perf ? perf.total : 0;
+                  const hasData = total > 0;
+                  return (
+                    <div key={i} className="flex items-center gap-3 p-3 border border-gray-100 rounded-lg hover:bg-gray-50">
+                      <span className="text-sm font-medium text-gray-700 w-56 truncate" title={topic}>{topic}</span>
+                      <div className="flex-1 h-2 bg-gray-200 rounded-full overflow-hidden">
+                        <div className={`h-full rounded-full transition-all duration-500 ${accuracy >= 80 ? "bg-emerald-400" : accuracy >= 60 ? "bg-amber-300" : "bg-red-300"}`} style={{ width: `${hasData ? accuracy : 0}%` }} />
+                      </div>
+                      <span className={`text-xs font-medium w-10 text-right ${hasData ? (accuracy >= 80 ? "text-emerald-600" : accuracy >= 60 ? "text-amber-600" : "text-red-600") : "text-gray-400"}`}>
+                        {hasData ? `${accuracy}%` : "—"}
+                      </span>
+                      <span className="text-xs text-gray-400 w-12 text-right">{hasData ? `${total} Qs` : "0 Qs"}</span>
+                      <Button
+                        variant="ghost"
+                        size="sm"
+                        className="h-6 px-2 text-xs text-purple-600 hover:text-purple-800 hover:bg-purple-50"
+                        onClick={() => navigate(`/msra/pd?topic=${encodeURIComponent(topic)}`)}
+                      >
+                        Practise
+                      </Button>
                     </div>
-                    <span className="text-xs text-gray-400 w-16 text-right">Not started</span>
-                    <Button
-                      variant="ghost"
-                      size="sm"
-                      className="h-6 px-2 text-xs text-purple-600 hover:text-purple-800 hover:bg-purple-50"
-                      onClick={() => navigate(`/msra/pd?topic=${encodeURIComponent(topic)}`)}
-                    >
-                      Practise
-                    </Button>
-                  </div>
-                ))}
+                  );
+                })}
               </div>
-              <p className="text-xs text-gray-400 mt-3">PD topic accuracy will populate as you answer questions in the PD Question Bank.</p>
+              <p className="text-xs text-gray-400 mt-3">{msraPdPerformance && msraPdPerformance.length > 0 ? "Sorted by accuracy — weakest topics shown first." : "Answer PD questions to see your accuracy per topic."}</p>
             </CardContent>
           </Card>
-        )}
+          );
+        })()}
       </main>
     </div>
   );

@@ -121,6 +121,16 @@ export default function MSRAPDQuestionBank() {
 
     setSubmitted(true);
     setScore((prev) => ({ correct: prev.correct + (isCorrect ? 1 : 0), total: prev.total + 1 }));
+
+    // Record attempt
+    if (currentQ.id) {
+      recordAttempt.mutate({
+        questionId: currentQ.id,
+        domain: currentQ.domain || "Unknown",
+        questionType: currentQ.questionType as "RANKING" | "PICK3",
+        isCorrect,
+      });
+    }
   };
 
   // Next question
@@ -362,3 +372,4 @@ export default function MSRAPDQuestionBank() {
     </div>
   );
 }
+  const recordAttempt = trpc.msra.recordPdAttempt.useMutation();

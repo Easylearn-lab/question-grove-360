@@ -1420,3 +1420,8 @@ Do not close any import task until this validation returns 0 for both banks.
 - [x] Add navigation links on MSRA landing page to /msra/pd and /msra/mock
 - [x] Add MSRA PD performance tracking to Progress Dashboard (accuracy by PD topic)
 - [x] Add Review Answers mode to MSRA mock exam results
+
+## MSRA ENHANCEMENTS PHASE 2 (Aug 19)
+- [x] Record PD question attempts to user_attempts with topic, format, and correctness
+- [x] Build MSRA public landing page at /msra-landing
+- [x] Add weakest PD topics to weekly email digest for MSRA subscribers

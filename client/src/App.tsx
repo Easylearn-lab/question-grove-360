@@ -180,3 +180,5 @@ function App() {
 }
 
 export default App;
+import MSRALanding from "./pages/MSRALanding";
+      <Route path={"/msra-landing"} component={MSRALanding} />

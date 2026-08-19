@@ -1,6 +1,6 @@
 import { z } from "zod";
 import { publicProcedure, protectedProcedure, router } from "./_core/trpc";
-import { msraCpsQuestions, msraPdQuestions } from "../drizzle/schema";
+import { msraCpsQuestions, msraPdQuestions, userAttempts } from "../drizzle/schema";
 import { desc, eq, and, sql } from "drizzle-orm";
 
 export const msraRouter = router({
@@ -206,5 +206,86 @@ export const msraRouter = router({
       totalQuestions: cpsQuestions.length + pdQuestions.length,
       timeLimitMinutes: 195, // 3 hours 15 minutes
     };
+  }),
+
+  /**
+   * Record a PD question attempt
+   */
+  recordPdAttempt: protectedProcedure
+    .input(z.object({
+      questionId: z.number(),
+      domain: z.string(),
+      questionType: z.enum(["RANKING", "PICK3"]),
+      isCorrect: z.boolean(),
+      timeTaken: z.number().optional(),
+    }))
+    .mutation(async ({ ctx, input }) => {
+      const { getDb } = await import("./db");
+      const db = await getDb();
+      if (!db) throw new Error("Database not available");
+
+      await db.insert(userAttempts).values({
+        userId: ctx.user.id,
+        questionId: input.questionId,
+        examId: 70001, // MSRA PD examId
+        selectedAnswer: input.questionType,
+        isCorrect: input.isCorrect,
+        timeTaken: input.timeTaken || 0,
+        mode: "practice",
+        sessionId: null,
+        specialty: input.domain,
+      });
+
+      return { success: true };
+    }),
+
+  /**
+   * Get PD performance breakdown by domain (topic)
+   */
+  getPdPerformance: protectedProcedure.query(async ({ ctx }) => {
+    const { getDb } = await import("./db");
+    const db = await getDb();
+    if (!db) throw new Error("Database not available");
+
+    // Get all PD attempts for this user
+    const attempts = await db
+      .select({
+        questionId: userAttempts.questionId,
+        isCorrect: userAttempts.isCorrect,
+      })
+      .from(userAttempts)
+      .where(and(
+        eq(userAttempts.userId, ctx.user.id),
+        eq(userAttempts.examId, 70001)
+      ));
+
+    if (attempts.length === 0) return [];
+
+    // Get the domain for each question
+    const questionIds = Array.from(new Set(attempts.map(a => a.questionId)));
+    const questions = await db
+      .select({ id: msraPdQuestions.id, domain: msraPdQuestions.domain })
+      .from(msraPdQuestions)
+      .where(sql`${msraPdQuestions.id} IN (${sql.join(questionIds.map(id => sql`${id}`), sql`, `)})`);
+
+    const domainMap = new Map(questions.map(q => [q.id, q.domain]));
+
+    // Aggregate by domain
+    const domainStats: Record<string, { correct: number; total: number }> = {};
+    for (const attempt of attempts) {
+      const domain = domainMap.get(attempt.questionId) || "Unknown";
+      if (!domainStats[domain]) domainStats[domain] = { correct: 0, total: 0 };
+      domainStats[domain].total++;
+      if (attempt.isCorrect) domainStats[domain].correct++;
+    }
+
+    return Object.entries(domainStats)
+      .map(([domain, stats]) => ({
+        domain,
+        accuracy: Math.round((stats.correct / stats.total) * 100),
+        total: stats.total,
+        correct: stats.correct,
+      }))
+      .sort((a, b) => a.accuracy - b.accuracy); // weakest first
   }),
 });

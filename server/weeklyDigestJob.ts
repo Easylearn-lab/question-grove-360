@@ -10,6 +10,7 @@ interface WeakTopic {
   topic: string;
   accuracy: number;
   total: number;
+  examType?: string;
 }
 
 /**
@@ -43,7 +44,6 @@ async function getWeakestTopics(userId: number): Promise<WeakTopic[]> {
   // Also get PLAB1 breakdown
   const plab1Breakdown = await getTopicBreakdown(userId, 90, 60001);
   const combined = [...(breakdown || []), ...(plab1Breakdown || [])];
-  if (combined.length === 0) return [];
 
   // Flatten all topics across specialties, filter min 3 attempts
   const allTopics: WeakTopic[] = [];
@@ -55,10 +55,58 @@ async function getWeakestTopics(userId: number): Promise<WeakTopic[]> {
           topic: topic.topic,
           accuracy: topic.accuracy,
           total: topic.total,
+          examType: "AKT",
         });
       }
     }
   }
+
+  // Get MSRA PD breakdown (examId 70001)
+  try {
+    const { getDb } = await import("./db");
+    const db = await getDb();
+    if (db) {
+      const { userAttempts, msraPdQuestions } = await import("../drizzle/schema");
+      const { eq, and, sql } = await import("drizzle-orm");
+      const pdAttempts = await db
+        .select({ questionId: userAttempts.questionId, isCorrect: userAttempts.isCorrect })
+        .from(userAttempts)
+        .where(and(eq(userAttempts.userId, userId), eq(userAttempts.examId, 70001)));
+
+      if (pdAttempts.length > 0) {
+        const questionIds = Array.from(new Set(pdAttempts.map((a: any) => a.questionId)));
+        const questions = await db
+          .select({ id: msraPdQuestions.id, domain: msraPdQuestions.domain })
+          .from(msraPdQuestions)
+          .where(sql`${msraPdQuestions.id} IN (${sql.join(questionIds.map((id: any) => sql`${id}`), sql`, `)})`);
+
+        const domainMap = new Map(questions.map((q: any) => [q.id, q.domain]));
+        const domainStats: Record<string, { correct: number; total: number }> = {};
+        for (const attempt of pdAttempts) {
+          const domain = domainMap.get(attempt.questionId) || "Unknown";
+          if (!domainStats[domain]) domainStats[domain] = { correct: 0, total: 0 };
+          domainStats[domain].total++;
+          if (attempt.isCorrect) domainStats[domain].correct++;
+        }
+
+        for (const [domain, stats] of Object.entries(domainStats)) {
+          if (stats.total >= 3) {
+            allTopics.push({
+              specialty: "MSRA Professional Dilemmas",
+              topic: domain,
+              accuracy: Math.round((stats.correct / stats.total) * 100),
+              total: stats.total,
+              examType: "MSRA PD",
+            });
+          }
+        }
+      }
+    }
+  } catch (err) {
+    console.error("[WeeklyDigest] Error fetching MSRA PD data:", err);
+  }
+
+  if (allTopics.length === 0) return [];
 
   // Sort by accuracy ascending (weakest first), take top 3
   allTopics.sort((a, b) => a.accuracy - b.accuracy);
@@ -75,7 +123,9 @@ export function buildDigestEmail(
 ): string {
   const topicRows = weakTopics
     .map((t) => {
-      const practiseUrl = `${SITE_URL}/questions?specialty=${encodeURIComponent(t.specialty)}&topic=${encodeURIComponent(t.topic)}`;
+      const practiseUrl = t.examType === "MSRA PD"
+        ? `${SITE_URL}/msra/pd?topic=${encodeURIComponent(t.topic)}`
+        : `${SITE_URL}/questions?specialty=${encodeURIComponent(t.specialty)}&topic=${encodeURIComponent(t.topic)}`;
       const barWidth = Math.max(t.accuracy, 5); // min 5% for visibility
       const barColor = t.accuracy < 40 ? "#EF4444" : t.accuracy < 60 ? "#F59E0B" : BRAND_COLOR;
       return `
