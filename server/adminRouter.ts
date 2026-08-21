@@ -717,10 +717,11 @@ export const adminRouter = router({
 
       if (input.contentType === "akt") {
         const { questions } = await import("../drizzle/schema");
+        const insertedIds: number[] = [];
         for (let i = 0; i < input.rows.length; i++) {
           try {
             const r = input.rows[i];
-            await db.insert(questions).values({
+            const result = await db.insert(questions).values({
               examId: 30001,
               specialty: r.specialty || "",
               question: r.question || r.stem || "",
@@ -736,9 +737,41 @@ export const adminRouter = router({
               imageUrl: r.imageUrl || null,
               status: "active",
             });
+            if ((result as any)[0]?.insertId) insertedIds.push((result as any)[0].insertId);
             inserted++;
           } catch (err: any) {
             errors.push({ row: i + 1, error: err.message?.slice(0, 100) || "Unknown error" });
+          }
+        }
+
+        // ─── POST-IMPORT VALIDATION: flag answer-explanation mismatches ───
+        if (insertedIds.length > 0) {
+          try {
+            const flagged = await db.execute(sql`
+              UPDATE questions SET reviewFlag = 'answer_mismatch'
+              WHERE id IN (${sql.raw(insertedIds.join(","))})
+              AND reviewFlag IS NULL
+              AND (CASE
+                WHEN explanationCorrect LIKE '%Option A%' OR explanationCorrect LIKE '% A)%' OR explanationCorrect LIKE '% A.%' OR explanationCorrect LIKE '%answer is A%' THEN 'A'
+                WHEN explanationCorrect LIKE '%Option B%' OR explanationCorrect LIKE '% B)%' OR explanationCorrect LIKE '% B.%' OR explanationCorrect LIKE '%answer is B%' THEN 'B'
+                WHEN explanationCorrect LIKE '%Option C%' OR explanationCorrect LIKE '% C)%' OR explanationCorrect LIKE '% C.%' OR explanationCorrect LIKE '%answer is C%' THEN 'C'
+                WHEN explanationCorrect LIKE '%Option D%' OR explanationCorrect LIKE '% D)%' OR explanationCorrect LIKE '% D.%' OR explanationCorrect LIKE '%answer is D%' THEN 'D'
+                WHEN explanationCorrect LIKE '%Option E%' OR explanationCorrect LIKE '% E)%' OR explanationCorrect LIKE '% E.%' OR explanationCorrect LIKE '%answer is E%' THEN 'E'
+                ELSE NULL END) IS NOT NULL
+              AND (CASE
+                WHEN explanationCorrect LIKE '%Option A%' OR explanationCorrect LIKE '% A)%' OR explanationCorrect LIKE '% A.%' OR explanationCorrect LIKE '%answer is A%' THEN 'A'
+                WHEN explanationCorrect LIKE '%Option B%' OR explanationCorrect LIKE '% B)%' OR explanationCorrect LIKE '% B.%' OR explanationCorrect LIKE '%answer is B%' THEN 'B'
+                WHEN explanationCorrect LIKE '%Option C%' OR explanationCorrect LIKE '% C)%' OR explanationCorrect LIKE '% C.%' OR explanationCorrect LIKE '%answer is C%' THEN 'C'
+                WHEN explanationCorrect LIKE '%Option D%' OR explanationCorrect LIKE '% D)%' OR explanationCorrect LIKE '% D.%' OR explanationCorrect LIKE '%answer is D%' THEN 'D'
+                WHEN explanationCorrect LIKE '%Option E%' OR explanationCorrect LIKE '% E)%' OR explanationCorrect LIKE '% E.%' OR explanationCorrect LIKE '%answer is E%' THEN 'E'
+                ELSE NULL END) != correctAnswer
+            `);
+            const flaggedCount = (flagged as any)[0]?.affectedRows || 0;
+            if (flaggedCount > 0) {
+              errors.push({ row: 0, error: `⚠️ Post-import validation: ${flaggedCount} question(s) auto-flagged for answer-explanation mismatch. Check the "Needs Review" filter.` });
+            }
+          } catch (validationErr) {
+            console.warn("[BulkUpload] Post-import validation error:", validationErr);
           }
         }
       } else if (input.contentType === "plab1") {

@@ -277,6 +277,29 @@ function GenericQuestionAdmin({
               <input type="file" accept="image/*" onChange={(e) => setImageFile(e.target.files?.[0] || null)} className="w-full text-sm border border-slate-300 rounded-md px-3 py-2" />
               {editingItem?.imageUrl && <p className="text-xs text-slate-500 mt-1">Current: {editingItem.imageUrl}</p>}
             </div>
+            {showReviewFilter && editingItem?.reviewFlag && (
+              <div className="bg-amber-50 border border-amber-200 rounded-md p-3">
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center gap-2">
+                    <span className="text-amber-600">⚠️</span>
+                    <span className="text-sm font-medium text-amber-800">Flagged: {editingItem.reviewFlag.replace(/_/g, " ")}</span>
+                  </div>
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    className="border-amber-300 text-amber-700 hover:bg-amber-100"
+                    onClick={() => {
+                      updateMutation.mutate({ id: editingItem.id, data: { reviewFlag: null } }, {
+                        onSuccess: () => { toast.success("Review flag cleared"); setEditingItem(null); refetch(); }
+                      });
+                    }}
+                  >
+                    Clear Review Flag
+                  </Button>
+                </div>
+                <p className="text-xs text-amber-600 mt-1">This question was auto-flagged because the explanation text may contradict the correctAnswer field. Review and correct before clearing.</p>
+              </div>
+            )}
             <div className="flex justify-end gap-2 pt-2">
               <Button variant="outline" onClick={() => setEditingItem(null)} className="gap-1"><X className="w-4 h-4" /> Cancel</Button>
               <Button onClick={handleSave} disabled={updateMutation.isPending} className="bg-green-600 hover:bg-green-700 text-white gap-1">
@@ -466,11 +489,18 @@ function BulkUploadAdmin() {
         <Card className="p-4 border-slate-200">
           <h4 className="font-bold text-slate-900 mb-2">Import Result</h4>
           <p className="text-sm text-green-700">Successfully imported: {result.inserted} / {parsedRows.length}</p>
-          {result.errors.length > 0 && (
+          {result.errors.filter((e: any) => e.row === 0).length > 0 && (
+            <div className="mt-2 bg-amber-50 border border-amber-200 rounded-md p-3">
+              {result.errors.filter((e: any) => e.row === 0).map((err: any, idx: number) => (
+                <p key={idx} className="text-sm text-amber-800">{err.error}</p>
+              ))}
+            </div>
+          )}
+          {result.errors.filter((e: any) => e.row !== 0).length > 0 && (
             <div className="mt-2">
-              <p className="text-sm text-red-600 font-medium">Errors ({result.errors.length}):</p>
+              <p className="text-sm text-red-600 font-medium">Errors ({result.errors.filter((e: any) => e.row !== 0).length}):</p>
               <div className="max-h-[150px] overflow-y-auto mt-1">
-                {result.errors.map((err, idx) => (
+                {result.errors.filter((e: any) => e.row !== 0).map((err: any, idx: number) => (
                   <p key={idx} className="text-xs text-red-500">Row {err.row}: {err.error}</p>
                 ))}
               </div>

@@ -1471,3 +1471,5 @@ Do not close any import task until this validation returns 0 for both banks.
 - [x] FIX: Check Paystack webhook (confirmed no overwrite — writes to subscriptions table only) for same overwrite pattern
 - [x] Export 41 flagged AKT questions as readable report for manual review
 - [x] Add "Needs Review" flag system to admin panel AKT questions tab
+- [x] Add "Clear Review Flag" button to admin panel AKT question edit form
+- [x] Add automated post-import validation for AKT bulk uploads (flag mismatches before going live)
