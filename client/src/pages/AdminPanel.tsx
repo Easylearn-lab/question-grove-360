@@ -23,6 +23,7 @@ function GenericQuestionAdmin({
   deleteHook,
   fields,
   specialtyOptions,
+  showReviewFilter,
 }: {
   examType: string;
   queryHook: any;
@@ -31,6 +32,7 @@ function GenericQuestionAdmin({
   deleteHook: any;
   fields: { key: string; label: string; type?: string; required?: boolean }[];
   specialtyOptions?: string[];
+  showReviewFilter?: boolean;
 }) {
   const [page, setPage] = useState(0);
   const [showCreate, setShowCreate] = useState(false);
@@ -38,6 +40,7 @@ function GenericQuestionAdmin({
   const [editForm, setEditForm] = useState<any>({});
   const [createForm, setCreateForm] = useState<any>({});
   const [imageFile, setImageFile] = useState<File | null>(null);
+  const [filterReview, setFilterReview] = useState(false);
 
   const limit = 20;
   const { data, isLoading, refetch } = queryHook({ limit, offset: page * limit });
@@ -113,14 +116,30 @@ function GenericQuestionAdmin({
   // Determine display columns (first 4 fields)
   const displayFields = fields.slice(0, 4);
 
+  // Filter items by review flag if enabled
+  const filteredItems = filterReview ? items.filter((item: any) => item.reviewFlag) : items;
+  const displayItems = filteredItems;
+
   return (
     <div>
       {/* Header */}
       <div className="flex justify-between items-center mb-4">
-        <h3 className="text-lg font-bold text-slate-900">{examType} ({total})</h3>
-        <Button onClick={() => setShowCreate(!showCreate)} className="bg-green-600 hover:bg-green-700 text-white gap-2">
-          <Plus className="w-4 h-4" /> Add New
-        </Button>
+        <div className="flex items-center gap-3">
+          <h3 className="text-lg font-bold text-slate-900">{examType} ({total})</h3>
+          {showReviewFilter && (
+            <button
+              onClick={() => setFilterReview(!filterReview)}
+              className={`px-3 py-1 text-xs rounded-full font-medium transition ${filterReview ? "bg-amber-100 text-amber-800 border border-amber-300" : "bg-slate-100 text-slate-600 border border-slate-200 hover:bg-amber-50"}`}
+            >
+              {filterReview ? "⚠️ Showing Flagged Only" : "⚠️ Show Needs Review"}
+            </button>
+          )}
+        </div>
+        <div className="flex gap-2">
+          <Button onClick={() => setShowCreate(!showCreate)} className="bg-green-600 hover:bg-green-700 text-white gap-2">
+            <Plus className="w-4 h-4" /> Add New
+          </Button>
+        </div>
       </div>
 
       {/* Create Form */}
@@ -185,12 +204,15 @@ function GenericQuestionAdmin({
             <tbody>
               {isLoading ? (
                 <tr><td colSpan={displayFields.length + 2} className="px-4 py-8 text-center text-slate-400">Loading...</td></tr>
-              ) : items.length === 0 ? (
+              ) : displayItems.length === 0 ? (
                 <tr><td colSpan={displayFields.length + 2} className="px-4 py-8 text-center text-slate-400">No items found</td></tr>
               ) : (
-                items.map((item: any) => (
-                  <tr key={item.id} className="border-b border-slate-100 hover:bg-slate-50">
-                    <td className="px-3 py-2 text-xs text-slate-400 font-mono">{item.id}</td>
+                displayItems.map((item: any) => (
+                  <tr key={item.id} className={`border-b border-slate-100 hover:bg-slate-50 ${item.reviewFlag ? "bg-amber-50" : ""}`}>
+                    <td className="px-3 py-2 text-xs text-slate-400 font-mono">
+                      {item.id}
+                      {item.reviewFlag && <span className="ml-1 text-amber-600" title="Needs Review">⚠️</span>}
+                    </td>
                     {displayFields.map((f) => (
                       <td key={f.key} className="px-3 py-2 text-sm text-slate-700 max-w-[200px] truncate">
                         {String(item[f.key] || "").slice(0, 60)}{String(item[f.key] || "").length > 60 ? "..." : ""}
@@ -832,6 +854,7 @@ export default function AdminPanel() {
               updateHook={(opts: any) => trpc.admin.updateQuestion.useMutation(opts)}
               deleteHook={(opts: any) => trpc.admin.deleteQuestion.useMutation(opts)}
               specialtyOptions={AKT_SPECIALTIES}
+              showReviewFilter={true}
               fields={[
                 { key: "question", label: "Question", type: "textarea", required: true },
                 { key: "specialty", label: "Specialty", type: "select", required: true },

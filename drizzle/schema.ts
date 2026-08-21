@@ -129,6 +129,7 @@ export const questions = mysqlTable("questions", {
   topic: varchar("topic", { length: 100 }),
   imageUrl: varchar("imageUrl", { length: 500 }),
   imageCaption: varchar("imageCaption", { length: 255 }),
+  reviewFlag: varchar("reviewFlag", { length: 50 }),
   createdAt: timestamp("createdAt").defaultNow().notNull(),
   updatedAt: timestamp("updatedAt").defaultNow().onUpdateNow().notNull(),
 });

@@ -104,6 +104,10 @@ export const stripeRouter = router({
       // Get ALL subscriptions from the subscriptions table
       const allSubscriptions = await getSubscriptionsByUserId(ctx.user.id);
 
+      // The fallback to profiles table should ONLY trigger if the subscriptions table
+      // has absolutely zero rows for this user (not just zero active ones)
+      const hasAnySubscriptionRows = allSubscriptions.length > 0;
+
       // Build the subscriptions array with live Stripe data where possible
       const subscriptionsResult: Array<{
         plan: string;
@@ -144,7 +148,9 @@ export const stripeRouter = router({
       }
 
       // If subscriptions table is empty, fall back to profiles table (migration period)
-      if (subscriptionsResult.length === 0) {
+      // Only fall back if the subscriptions table has NO rows at all for this user
+      // If there ARE rows but they're all cancelled, that's intentional — don't fall back
+      if (!hasAnySubscriptionRows) {
         const profile = await getProfileByUserId(ctx.user.id);
         if (profile && profile.subscriptionPlan && profile.subscriptionStatus !== "inactive") {
           let status = profile.subscriptionStatus || "inactive";

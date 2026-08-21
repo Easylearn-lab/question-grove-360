@@ -164,7 +164,7 @@ async function handleCheckoutSessionCompleted(session: any) {
   }
 
   // Otherwise, handle as AKT/SCA/MSRA subscription
-  const { getProfileByUserId, updateProfile, getOrCreateProfile, upsertSubscription } = await import("../db");
+  const { getProfileByUserId, updateProfile, getOrCreateProfile, upsertSubscription, getSubscriptionsByUserId } = await import("../db");
 
   // Ensure profile exists
   await getOrCreateProfile(userId);
@@ -172,13 +172,29 @@ async function handleCheckoutSessionCompleted(session: any) {
   const planKey = session.metadata?.plan_key || "AKT_3MONTH";
   const stripeSubscriptionId = session.subscription;
 
-  // 1. Update profiles table (backward compat — stores the LATEST subscription)
-  await updateProfile(userId, {
-    stripeCustomerId: session.customer,
-    stripeSubscriptionId: stripeSubscriptionId,
-    subscriptionStatus: "active",
-    subscriptionPlan: planKey,
-  });
+  // 1. Update profiles table ONLY if user has no existing active subscription
+  // This prevents overwriting a user's first subscription when they buy a second product
+  const existingSubscriptions = await getSubscriptionsByUserId(userId);
+  const hasActiveSubscription = existingSubscriptions.some(
+    (sub: any) => sub.status === "active" || sub.status === "trialing"
+  );
+
+  if (!hasActiveSubscription) {
+    // No active subscription yet — safe to set profiles fields
+    await updateProfile(userId, {
+      stripeCustomerId: session.customer,
+      stripeSubscriptionId: stripeSubscriptionId,
+      subscriptionStatus: "active",
+      subscriptionPlan: planKey,
+    });
+  } else {
+    // User already has an active subscription — only update stripeCustomerId (harmless)
+    // Do NOT overwrite subscriptionPlan or stripeSubscriptionId
+    await updateProfile(userId, {
+      stripeCustomerId: session.customer,
+    });
+    console.log(`[Webhook] User ${userId} already has active subscription(s), NOT overwriting profiles table plan/status`);
+  }
 
   // 2. ALSO insert/upsert into the subscriptions table (multi-subscription support)
   if (stripeSubscriptionId) {

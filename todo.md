@@ -1464,3 +1464,10 @@ Do not close any import task until this validation returns 0 for both banks.
 - [x] SEO: robots.txt (allow public, block admin)
 - [x] SEO: structured data markup on question bank pages
 - [x] SEO: page titles format "Page Name — Question Grove 360"
+
+## Bug Fixes (August 2026)
+- [x] FIX: Subscription overwrite bug — profiles table should not overwrite existing active subscription
+- [x] FIX: getSubscriptionStatus fallback should only trigger if subscriptions table returns zero rows
+- [x] FIX: Check Paystack webhook (confirmed no overwrite — writes to subscriptions table only) for same overwrite pattern
+- [x] Export 41 flagged AKT questions as readable report for manual review
+- [x] Add "Needs Review" flag system to admin panel AKT questions tab
