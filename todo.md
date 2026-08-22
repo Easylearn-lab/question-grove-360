@@ -1473,3 +1473,6 @@ Do not close any import task until this validation returns 0 for both banks.
 - [x] Add "Needs Review" flag system to admin panel AKT questions tab
 - [x] Add "Clear Review Flag" button to admin panel AKT question edit form
 - [x] Add automated post-import validation for AKT bulk uploads (flag mismatches before going live)
+- [x] Correct AKT question 420026 correctAnswer from E to B after manual review
+- [x] Clear reviewFlag on all 41 manually reviewed AKT questions
+- [x] Verify question 420026, confirm zero remaining review flags, and run full tests
