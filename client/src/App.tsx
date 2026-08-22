@@ -70,7 +70,7 @@ import PLAB1Landing from "./pages/PLAB1Landing";
 import InternationalExams from "./pages/InternationalExams";
 import NigeriaExams from "./pages/NigeriaExams";
 import JAMBDashboard from "./pages/JAMBDashboard";
-import JAMBBiology from "./pages/JAMBBiology";
+import JAMBPractice from "./pages/JAMBPractice";
 import LiveQuiz from "./pages/LiveQuiz";
 import LiveQuizHost from "./pages/LiveQuizHost";
 import LiveQuizPlay from "./pages/LiveQuizPlay";
@@ -110,7 +110,7 @@ function Router() {
       <Route path={"/international"} component={InternationalExams} />
       <Route path={"/international/nigeria"} component={NigeriaExams} />
       <Route path={"/international/nigeria/jamb"} component={JAMBDashboard} />
-      <Route path={"/international/nigeria/jamb/biology"} component={JAMBBiology} />
+      <Route path={"/international/nigeria/jamb/:subjectSlug"} component={JAMBPractice} />
       <Route path={"/pricing"} component={Pricing} />
       <Route path={"/admin"} component={AdminPanel} />
       <Route path={"/coach"} component={AICoach} />

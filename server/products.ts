@@ -10,6 +10,24 @@
 
 export type ExamTrack = "AKT" | "SCA" | "MSRA" | "PLAB1";
 
+export type CurrencyCode = "GBP" | "NGN" | "USD";
+export type PaymentProvider = "stripe" | "paystack";
+
+/**
+ * Database values in exams.currency and exams.paymentProvider are the runtime
+ * source of truth. These defaults seed and safeguard future exam categories.
+ */
+export const EXAM_PAYMENT_DEFAULTS = {
+  "MRCGP-AKT": { currency: "GBP", paymentProvider: "stripe" },
+  "MRCGP-SCA": { currency: "GBP", paymentProvider: "stripe" },
+  "MSRA": { currency: "GBP", paymentProvider: "stripe" },
+  "PLAB1": { currency: "GBP", paymentProvider: "stripe" },
+  "JAMB-UTME": { currency: "NGN", paymentProvider: "paystack" },
+  "WAEC": { currency: "NGN", paymentProvider: "paystack" },
+  "IELTS": { currency: "USD", paymentProvider: "stripe" },
+  "OET": { currency: "USD", paymentProvider: "stripe" },
+} as const satisfies Record<string, { currency: CurrencyCode; paymentProvider: PaymentProvider }>;
+
 export const PAYMENT_ENABLED: Record<ExamTrack, boolean> = {
   AKT: true,   // Live and active
   SCA: true,   // Live — 60 cases available

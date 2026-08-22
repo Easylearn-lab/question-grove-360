@@ -1476,3 +1476,15 @@ Do not close any import task until this validation returns 0 for both banks.
 - [x] Correct AKT question 420026 correctAnswer from E to B after manual review
 - [x] Clear reviewFlag on all 41 manually reviewed AKT questions
 - [x] Verify question 420026, confirm zero remaining review flags, and run full tests
+
+## JAMB SUBJECT EXPANSION + PAYMENT PREPARATION (Aug 22, 2026)
+- [x] Audit JAMB subject data, selector ordering, admin editability, current pricing, and Paystack test-mode configuration
+- [x] Remove Civic Education, Christian Religious Studies, and Islamic Religious Studies from the JAMB subject experience if present
+- [x] Set the exact JAMB selector order: English Language, Mathematics, Biology, Chemistry, Physics, Economics, Government, Geography, Literature in English, Commerce, Principles of Accounts, History
+- [x] Generate and validate 100 UTME-aligned questions for each new JAMB subject: Mathematics, Economics, Government, Geography, Literature in English, Commerce, Principles of Accounts, and History
+- [x] Import new JAMB question banks without changing existing English, Biology, Chemistry, or Physics records
+- [x] Confirm all JAMB subjects remain editable from the existing Admin panel JAMB tab
+- [x] Add configurable per-exam currency and payment-provider metadata without changing active subscription behaviour
+- [x] Audit JAMB landing and payment pricing displays for naira consistency and remove stale placeholder figures
+- [x] Document exact Paystack live-key, webhook, callback, and deployment steps without enabling live processing
+- [x] Run full test suite, verify question counts and selector order, and save a checkpoint

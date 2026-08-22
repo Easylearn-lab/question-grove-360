@@ -1,122 +1,28 @@
 import { useLocation } from "wouter";
-
-const subjects = [
-  {
-    name: "Biology",
-    description: "Cell biology, genetics, ecology, evolution, and human physiology.",
-    active: true,
-    path: "/international/nigeria/jamb/biology",
-    icon: "🧬",
-    questionCount: 0,
-  },
-  {
-    name: "English Language",
-    description: "Comprehension, lexis and structure, oral English, and essay writing.",
-    active: false,
-    path: "",
-    icon: "📖",
-    questionCount: 0,
-  },
-  {
-    name: "Chemistry",
-    description: "Organic, inorganic, and physical chemistry for JAMB UTME.",
-    active: false,
-    path: "",
-    icon: "⚗️",
-    questionCount: 0,
-  },
-  {
-    name: "Physics",
-    description: "Mechanics, waves, electricity, magnetism, and modern physics.",
-    active: false,
-    path: "",
-    icon: "⚡",
-    questionCount: 0,
-  },
-];
+import { trpc } from "../lib/trpc";
 
 export default function JAMBDashboard() {
   const [, navigate] = useLocation();
+  const { data: subjects, isLoading } = trpc.jamb.getSubjects.useQuery();
 
   return (
-    <div className="min-h-screen bg-gray-50">
-      {/* Header */}
-      <div className="bg-white border-b">
+    <div className="min-h-screen bg-slate-50">
+      <header className="bg-white border-b border-slate-200">
         <div className="max-w-6xl mx-auto px-4 py-6">
-          <button
-            onClick={() => navigate("/international/nigeria")}
-            className="text-sm text-gray-500 hover:text-gray-700 mb-2 flex items-center gap-1"
-          >
-            ← Back to Nigeria Exams
-          </button>
-          <div className="flex items-center gap-3">
-            <span className="text-3xl">🎓</span>
-            <div>
-              <h1 className="text-3xl font-bold text-gray-900">JAMB UTME</h1>
-              <p className="text-gray-600 mt-1">
-                Joint Admissions and Matriculation Board — University Entrance Exam
-              </p>
-            </div>
-          </div>
+          <button onClick={() => navigate("/international/nigeria")} className="text-sm text-slate-500 hover:text-slate-700 mb-3">← Back to Nigeria exams</button>
+          <div className="flex items-center gap-3"><span className="text-4xl">🎓</span><div><h1 className="text-3xl font-bold text-slate-900">JAMB UTME</h1><p className="text-slate-600 mt-1">Choose a subject and practise with CBT-style questions, timers, answers, and explanations.</p></div></div>
         </div>
-      </div>
+      </header>
 
-      {/* Info Banner */}
-      <div className="max-w-6xl mx-auto px-4 pt-8">
-        <div className="bg-green-50 border border-green-200 rounded-xl p-4 flex items-start gap-3">
-          <span className="text-lg">💡</span>
-          <div>
-            <p className="text-sm text-green-800 font-medium">About JAMB UTME</p>
-            <p className="text-sm text-green-700 mt-1">
-              The Unified Tertiary Matriculation Examination (UTME) is a computer-based test (CBT) 
-              with 180 questions across 4 subjects, completed in 2 hours. Each subject has 40-50 questions. 
-              Practice here in the same CBT format used on exam day.
-            </p>
-          </div>
-        </div>
-      </div>
+      <main className="max-w-6xl mx-auto px-4 py-10">
+        <section className="rounded-2xl border border-green-200 bg-green-50 p-5 mb-8"><div className="flex gap-3"><span className="text-xl">ℹ️</span><p className="text-sm leading-6 text-green-900">UTME candidates take <strong>Use of English plus three other subjects</strong> selected for their intended course. Your Question Grove 360 subscription covers all available JAMB subjects.</p></div></section>
+        <div className="flex items-end justify-between gap-4 mb-6"><div><h2 className="text-xl font-bold text-slate-900">Choose a subject</h2><p className="text-sm text-slate-500 mt-1">Subjects are ordered to match the Question Grove 360 JAMB study pathway.</p></div><span className="text-xs font-semibold bg-slate-100 text-slate-600 px-3 py-1 rounded-full">12 subjects</span></div>
 
-      {/* Subjects Grid */}
-      <div className="max-w-6xl mx-auto px-4 py-8">
-        <h2 className="text-xl font-bold text-gray-900 mb-6">Choose a Subject</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-          {subjects.map((subject) => (
-            <div
-              key={subject.name}
-              onClick={() => subject.active && navigate(subject.path)}
-              className={`relative rounded-xl border p-6 transition-all ${
-                subject.active
-                  ? "bg-white border-green-200 shadow-sm hover:shadow-md hover:border-green-400 cursor-pointer hover:-translate-y-1"
-                  : "bg-gray-100 border-gray-200 opacity-60 cursor-not-allowed"
-              }`}
-            >
-              {!subject.active && (
-                <span className="absolute top-3 right-3 text-xs font-medium bg-gray-200 text-gray-500 px-2 py-0.5 rounded-full">
-                  Coming Soon
-                </span>
-              )}
-              {subject.active && (
-                <span className="absolute top-3 right-3 text-xs font-medium bg-green-100 text-green-700 px-2 py-0.5 rounded-full">
-                  Active
-                </span>
-              )}
-              <div className="text-3xl mb-3">{subject.icon}</div>
-              <h3 className={`text-lg font-bold mb-1 ${subject.active ? "text-gray-900" : "text-gray-500"}`}>
-                {subject.name}
-              </h3>
-              <p className={`text-sm mb-3 ${subject.active ? "text-gray-600" : "text-gray-400"}`}>
-                {subject.description}
-              </p>
-              {subject.active && (
-                <div className="mt-2 text-sm font-medium text-green-600 flex items-center gap-1">
-                  Start practising →
-                </div>
-              )}
-            </div>
-          ))}
-        </div>
-      </div>
+        {isLoading ? <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">{Array.from({ length: 12 }).map((_, index) => <div key={index} className="h-48 bg-white rounded-xl border animate-pulse" />)}</div> : <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">{subjects?.map((subject) => <button key={subject.slug} type="button" disabled={!subject.active} onClick={() => subject.active && navigate(`/international/nigeria/jamb/${subject.slug}`)} className={`relative rounded-xl border p-6 text-left transition-all ${subject.active ? "bg-white border-green-200 shadow-sm hover:shadow-md hover:border-green-400 hover:-translate-y-0.5" : "bg-slate-100 border-slate-200 opacity-70 cursor-not-allowed"}`}>
+          <span className={`absolute top-3 right-3 text-xs font-semibold px-2 py-0.5 rounded-full ${subject.active ? "bg-green-100 text-green-700" : "bg-slate-200 text-slate-500"}`}>{subject.active ? "Ready" : "Coming soon"}</span>
+          <span className="text-3xl block mb-3">{subject.icon}</span><h3 className="text-lg font-bold text-slate-900">{subject.name}</h3><p className="text-sm text-slate-600 mt-2 min-h-10">{subject.description}</p><div className="mt-4 flex items-center justify-between text-sm"><span className="text-slate-500">{subject.questionCount} questions</span><span className={subject.active ? "font-semibold text-green-700" : "text-slate-400"}>{subject.active ? "Start practising →" : "In development"}</span></div>
+        </button>)}</div>}
+      </main>
     </div>
   );
 }
-

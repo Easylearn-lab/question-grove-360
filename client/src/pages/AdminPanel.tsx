@@ -1,6 +1,6 @@
 import { useAuth } from "@/_core/hooks/useAuth";
 import { useLocation } from "wouter";
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -13,6 +13,7 @@ import {
 } from "lucide-react";
 import { trpc } from "@/lib/trpc";
 import { toast } from "sonner";
+import { JAMB_SUBJECT_ORDER } from "../../../shared/jamb";
 
 // ─── GENERIC QUESTION ADMIN COMPONENT ─────────────────────────────────────────
 function GenericQuestionAdmin({
@@ -24,6 +25,7 @@ function GenericQuestionAdmin({
   fields,
   specialtyOptions,
   showReviewFilter,
+  filterOptions,
 }: {
   examType: string;
   queryHook: any;
@@ -33,6 +35,7 @@ function GenericQuestionAdmin({
   fields: { key: string; label: string; type?: string; required?: boolean }[];
   specialtyOptions?: string[];
   showReviewFilter?: boolean;
+  filterOptions?: { field: string; label: string; options: readonly string[] };
 }) {
   const [page, setPage] = useState(0);
   const [showCreate, setShowCreate] = useState(false);
@@ -41,9 +44,15 @@ function GenericQuestionAdmin({
   const [createForm, setCreateForm] = useState<any>({});
   const [imageFile, setImageFile] = useState<File | null>(null);
   const [filterReview, setFilterReview] = useState(false);
+  const [contentFilter, setContentFilter] = useState("");
 
   const limit = 20;
-  const { data, isLoading, refetch } = queryHook({ limit, offset: page * limit });
+  const queryInput = useMemo(() => ({
+    limit,
+    offset: page * limit,
+    ...(filterOptions && contentFilter ? { [filterOptions.field]: contentFilter } : {}),
+  }), [contentFilter, filterOptions, page]);
+  const { data, isLoading, refetch } = queryHook(queryInput);
 
   const createMutation = createHook({
     onSuccess: () => { toast.success(`${examType} question created`); setShowCreate(false); setCreateForm({}); refetch(); },
@@ -136,6 +145,17 @@ function GenericQuestionAdmin({
           )}
         </div>
         <div className="flex gap-2">
+          {filterOptions && (
+            <select
+              value={contentFilter}
+              onChange={(event) => { setContentFilter(event.target.value); setPage(0); }}
+              className="h-9 rounded-md border border-slate-300 bg-white px-3 text-sm text-slate-700"
+              aria-label={filterOptions.label}
+            >
+              <option value="">All subjects</option>
+              {filterOptions.options.map((option) => <option key={option} value={option}>{option}</option>)}
+            </select>
+          )}
           <Button onClick={() => setShowCreate(!showCreate)} className="bg-green-600 hover:bg-green-700 text-white gap-2">
             <Plus className="w-4 h-4" /> Add New
           </Button>
@@ -831,7 +851,7 @@ export default function AdminPanel() {
 
   const AKT_SPECIALTIES = ["Cardiology", "Respiratory", "Neurology", "Gastroenterology", "Endocrinology", "Renal", "Rheumatology", "Dermatology", "Haematology", "Infectious Disease", "Ophthalmology", "ENT", "Psychiatry", "Paediatrics", "Obstetrics & Gynaecology", "Pharmacology & Prescribing", "Statistics & Evidence-Based Medicine", "Ethics & Professionalism", "Musculoskeletal"];
   const PLAB1_SPECIALTIES = ["Medicine", "Surgery", "Obstetrics & Gynaecology", "Paediatrics", "Psychiatry", "GP & Public Health", "Clinical Pharmacology", "Ethics & Law"];
-  const JAMB_SUBJECTS = ["Biology", "Chemistry", "Physics", "English Language"];
+  const JAMB_SUBJECTS = [...JAMB_SUBJECT_ORDER];
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100">
@@ -993,6 +1013,7 @@ export default function AdminPanel() {
               updateHook={(opts: any) => trpc.admin.updateJambQuestion.useMutation(opts)}
               deleteHook={(opts: any) => trpc.admin.deleteJambQuestion.useMutation(opts)}
               specialtyOptions={JAMB_SUBJECTS}
+              filterOptions={{ field: "subject", label: "Filter JAMB subject", options: JAMB_SUBJECTS }}
               fields={[
                 { key: "questionText", label: "Question", type: "textarea", required: true },
                 { key: "subject", label: "Subject", type: "select", required: true },

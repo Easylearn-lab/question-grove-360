@@ -4,11 +4,11 @@ const exams = [
   {
     name: "JAMB",
     fullName: "Joint Admissions and Matriculation Board",
-    description: "Nigeria's university entrance exam. Practice Biology, Chemistry, Physics and English in exam-style CBT format.",
+    description: "Nigeria's university entrance exam. Practise 12 UTME subjects in an exam-style CBT format.",
     active: true,
     path: "/international/nigeria/jamb",
     icon: "🎓",
-    subjects: 4,
+    subjects: 12,
   },
   {
     name: "WAEC",

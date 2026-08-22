@@ -501,8 +501,9 @@ export const adminRouter = router({
       const db = await getDb();
       if (!db) throw new TRPCError({ code: "INTERNAL_SERVER_ERROR" });
       const { jambQuestions } = await import("../drizzle/schema");
-      const result = await db.select().from(jambQuestions).orderBy(desc(jambQuestions.createdAt)).limit(input.limit).offset(input.offset);
-      const totalResult = await db.select({ total: count() }).from(jambQuestions);
+      const whereClause = input.subject ? eq(jambQuestions.subject, input.subject) : undefined;
+      const result = await db.select().from(jambQuestions).where(whereClause).orderBy(desc(jambQuestions.createdAt)).limit(input.limit).offset(input.offset);
+      const totalResult = await db.select({ total: count() }).from(jambQuestions).where(whereClause);
       return { questions: result, total: totalResult[0]?.total || 0 };
     }),
 

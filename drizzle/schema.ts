@@ -91,6 +91,8 @@ export const exams = mysqlTable("exams", {
   category: varchar("category", { length: 50 }), // 'uk', 'international'
   description: text("description"),
   passMark: decimal("passMark", { precision: 5, scale: 2 }),
+  currency: varchar("currency", { length: 3 }), // ISO 4217, e.g. GBP, NGN, USD
+  paymentProvider: varchar("paymentProvider", { length: 30 }), // e.g. stripe, paystack
   isActive: boolean("isActive").default(true),
   createdAt: timestamp("createdAt").defaultNow().notNull(),
 });
